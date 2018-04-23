@@ -1,0 +1,16 @@
+project hcv
+  run file glue/phdrDeleteProjectExtension.glue
+  exit
+
+schema-project hcv
+  run file glue/phdrDeleteSchemaExtension.glue
+  exit
+
+schema-project hcv
+  run file glue/phdrAddSchemaExtension.glue
+  exit
+  
+project hcv
+  run file glue/phdrAddProjectExtension.glue
+  exit
+  

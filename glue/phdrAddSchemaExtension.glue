@@ -1,0 +1,12 @@
+create custom-table phdr_ras
+
+create custom-table phdr_drug
+
+create custom-table phdr_resistance_finding
+
+create link variation phdr_ras
+
+create link phdr_ras phdr_resistance_finding -m ONE_TO_MANY
+
+create link phdr_resistance_finding phdr_drug -m MANY_TO_ONE
+
