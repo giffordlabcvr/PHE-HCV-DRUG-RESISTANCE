@@ -1,5 +1,2 @@
 delete module --whereClause "name like 'phdr%'"
 multi-delete variation --whereClause "name like 'phdr%'"
-multi-delete phdr_drug -a
-multi-delete phdr_resistance_finding -a
-multi-delete phdr_ras -a
