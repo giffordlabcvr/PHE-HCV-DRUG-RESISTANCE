@@ -5,6 +5,11 @@ create custom-table phdr_in_vitro_result
 create custom-table phdr_in_vivo_result
 create custom-table phdr_publication
 
+table phdr_in_vitro_result
+  create field ec50_min DOUBLE
+  create field ec50_max DOUBLE
+  exit
+
 create link variation phdr_ras
 create link alignment phdr_resistance_finding -m ONE_TO_MANY
 create link phdr_ras phdr_resistance_finding -m ONE_TO_MANY
