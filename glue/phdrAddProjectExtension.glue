@@ -5,4 +5,4 @@ multi-delete phdr_drug -a
 multi-delete phdr_resistance_finding -a
 multi-delete phdr_ras -a
 
-run script glue/phdrLoadData.js
+run file glue/phdrLoadData.glue

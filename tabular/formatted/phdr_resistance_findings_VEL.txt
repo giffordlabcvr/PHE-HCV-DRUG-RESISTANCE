@@ -1,0 +1,123 @@
+virusGenotype	substitution	drug	vitroOrVivo	ec50	clinicalTrialName	trialRegimen	trialCohort	trialNotes	pubmed	Weight of evidence
+1a	28T	VEL	in vitro	5.9					EASL 2013 Poster 1191	
+1a	93H	VEL	in vitro	609.1					EASL 2013 Poster 1191	
+1a	30E	VEL	in vitro	37.3					EASL 2013 Poster 1191	
+1a	30R	VEL	in vitro	2.2					EASL 2013 Poster 1191	
+1a	31M	VEL	in vitro	11.8					EASL 2013 Poster 1191	
+1a	93C	VEL	in vitro	10.9					EASL 2013 Poster 1191	
+2b	44K	VEL	in vitro	2.8					EASL 2013 Poster 1191	
+2b	58S	VEL	in vitro	2.5					EASL 2013 Poster 1191	
+3a	30K	VEL	in vitro	16.2					EASL 2013 Poster 1191	
+3a	93H	VEL	in vitro	246.2					EASL 2013 Poster 1191	
+1a	31V	VEL	in vitro	>999					29274866	
+1a	32del	VEL	in vitro	>999					29274866	
+1a	93H	VEL	in vitro	80-999					29274866	
+1a	93C	VEL	in vitro	>999					29274866	
+1a	30K	VEL	in vitro	4-79					29274866	
+1a	93N	VEL	in vitro	>999					29274866	
+1b	93N	VEL	in vitro	4-79					29274866	
+1b	28M+93N	VEL	in vitro	80-999					29274866	
+1b	32del	VEL	in vitro	>999					29274866	
+1b	31M+93H	VEL	in vitro	80-999					29274866	
+2a	93H	VEL	in vitro	>999					29274866	
+2b	93H	VEL	in vitro	>999					29274866	
+2a	28S	VEL	in vitro	>999					29274866	
+2a	31M	VEL	in vitro	4-79					29274866	
+2a	31V	VEL	in vitro	4-79					29274866	
+2a	28S+93H	VEL	in vitro	>999					29274866	
+2a	62D+93H	VEL	in vitro	>999					29274866	
+2b	24F+93H	VEL	in vitro	>999					29274866	
+2b	24T+93H	VEL	in vitro	>999					29274866	
+3a	31F	VEL	in vitro	4-79					29274866	
+3a	31V	VEL	in vitro	>999					29274866	
+3a	93H	VEL	in vitro	80-999					29274866	
+3a	31F+93H	VEL	in vitro	>999					29274866	
+3a	93H+99A	VEL	in vitro	80-999					29274866	
+6a	31M	VEL	in vitro	4-79					29274866	
+6a	31V	VEL	in vitro	>999					29274866	
+7a	24R+31F	VEL	in vitro	4-79					29274866	
+1a	28T	VEL	in vitro	7.5					27353271	
+1a	30E	VEL	in vitro	17.7					27353271	
+1a	30H	VEL	in vitro	2.3					27353271	
+1a	30K	VEL	in vitro	10.4					27353271	
+1a	30R	VEL	in vitro	2.2					27353271	
+1a	31M	VEL	in vitro	16.0					27353271	
+1a	31V	VEL	in vitro	67.5					27353271	
+1a	31I	VEL	in vitro	4.4					27353271	
+1a	32L	VEL	in vitro	28.4					27353271	
+1a	58D	VEL	in vitro	7.3					27353271	
+1a	93C	VEL	in vitro	3.8					27353271	
+1a	93H	VEL	in vitro	609.1					27353271	
+1a	93N	VEL	in vitro	2758					27353271	
+1a	93W	VEL	in vitro	998.9					27353271	
+1a	93R	VEL	in vitro	497.2					27353271	
+1a	93S	VEL	in vitro	63.9					27353271	
+1a	93F	VEL	in vitro	2.5					27353271	
+1a	30H+31M	VEL	in vitro	105.7					27353271	
+1a	30H+93H	VEL	in vitro	2835					27353271	
+1a	30R+31M	VEL	in vitro	198.4					27353271	
+1a	30R+93H	VEL	in vitro	>419					27353271	
+1b	93H	VEL	in vitro	3.3					27353271	
+1b	93N	VEL	in vitro	2.8					27353271	
+1b	31V	VEL	in vitro	2.3					27353271	
+2a	31V	VEL	in vitro	10.1					27353271	
+2a	93H	VEL	in vitro	45.7					27353271	
+3a	93H	VEL	in vitro	723.5					27353271	
+3a	30K	VEL	in vitro	50.0					27353271	
+3a	31M	VEL	in vitro	70.8					27353271	
+4a	30R	VEL	in vitro	2.4					27353271	
+4a	93H	VEL	in vitro	2.9					27353271	
+4a	93N	VEL	in vitro	12.7					27353271	
+1a	93N	VEL	both	805	Pooled analysis	SOF/VEL		T-Em; 2 patients with VF	29221887	
+1a	93H	VEL	both	609	Pooled analysis	SOF/VEL		T-Em	29221887	
+1b	31M+93H	VEL	both	44	Pooled analysis	SOF/VEL		BL	29221887	
+1c	30R+31M	VEL	in vivo	1.4	Pooled analysis	SOF/VEL		BL	29221887	
+1c	30R+31M+93H	VEL	both	763	Pooled analysis	SOF/VEL		T-Em	29221887	
+1h	30R+31M	VEL	in vivo	1.4	Pooled analysis	SOF/VEL		BL	29221887	
+1h	30R+31M+93H	VEL	both	763	Pooled analysis	SOF/VEL		T-Em	29221887	
+3a	93H	VEL	both	302-1221	Pooled analysis	SOF/VEL		BL; 3 patients with VF	29221887	
+3a	30K	VEL	both	30-50	Pooled analysis	SOF/VEL		BL	29221887	
+3a	30K+93H	VEL	both	35154	Pooled analysis	SOF/VEL		T-Em	29221887	
+3a	93H	VEL	both	74-1138	Pooled analysis	SOF/VEL		T-Em; 8 patients with VF	29221887	
+3a	93H	VEL	in vivo	NA	ASTRAL-3	SOF/VEL		BL, 3 patients with VF	26575258	
+3a	93H	VEL	in vivo	NA	ASTRAL-3	SOF/VEL		VF; 5 patients 	26575258	
+3	93H	VEL	in vivo	NA	ASTRAL-3	SOF/VEL		VF	26575258	
+3a	30K	VEL	in vivo	NA	ASTRAL-3	SOF/VEL		BL in patient with VL	26575258	
+3a	30K+93H	VEL	in vivo	NA	ASTRAL-3	SOF/VEL		T-em	26575258	
+1a	93N	VEL	in vivo	NA	POLARIS-1	SOF/VEL/VOX		BL; 80K also at BL	28564569	
+3a	93H	VEL	in vivo	NA	POLARIS-1	SOF/VEL/VOX		BL x2 patients	28564569	
+3a	30K	VEL	in vivo	NA	POLARIS-1	SOF/VEL/VOX		BL	28564569	
+4d	30R	VEL	in vivo	NA	POLARIS-1	SOF/VEL/VOX		BL	28564569	
+4d	30R+93H	VEL	in vivo	NA	POLARIS-1	SOF/VEL/VOX		T Em	28564569	
+1a	30T	VEL	in vivo	NA	POLARIS-1	SOF/VEL/VOX		BL; q80K at BL	28564569	
+1a	30T+31M+93H	VEL	in vivo	NA	POLARIS-1	SOF/VEL/VOX		T-Em; q80K at BL	28564569	
+1a	93H	VEL	in vivo	NA	POLARIS-4	SOF/VEL 		T-Em; 155K/170V at BL	28564569	
+1a	31M	VEL	in vivo	NA	POLARIS-4	SOF/VEL 		BL; with q80K	28564569	
+1a	31M+58D+93C	VEL	in vivo	NA	POLARIS-4	SOF/VEL 		T-Em; 80K at bl	28564569	
+1a	24R 	VEL	in vivo	NA	POLARIS-4	SOF/VEL 		BL; 80K also present	28564569	
+1a	93H	VEL	in vivo	NA	POLARIS-4	SOF/VEL 		T Em; 80K at BL	28564569	
+3a	93H	VEL	in vivo	NA	POLARIS-4	SOF/VEL 		T Em; 7 patients	28564569	
+3a	30K	VEL	in vivo	NA	POLARIS-4	SOF/VEL 		BL	28564569	
+3a	30K+93H	VEL	in vivo	NA	POLARIS-4	SOF/VEL 		T Em	28564569	
+2a	24S+31M	VEL	in vivo	NA	POLARIS-4	SOF/VEL 		BL	28564569	
+2a	24S+31M+93H	VEL	in vivo	NA	POLARIS-4	SOF/VEL 		T Em	28564569	
+2d	24S+31M	VEL	in vivo	NA	POLARIS-4	SOF/VEL 		BL	28564569	
+2d	24S+31M+93H	VEL	in vivo	NA	POLARIS-4	SOF/VEL 		T Em	28564569	
+2j	24S+31M	VEL	in vivo	NA	POLARIS-4	SOF/VEL 		BL	28564569	
+2j	24S+31M+93H	VEL	in vivo	NA	POLARIS-4	SOF/VEL 		T Em	28564569	
+3	93H	VEL	in vivo	NA	NCT02300103	SOF/VEL		BL; 2 patients	28498551	
+3a	93H	VEL	in vivo	NA	NCT02300103	SOF/VEL		T Em	28498551	
+2b	31M	VEL	in vivo	NA	NCT02300103	SOF/VEL		BL	28498551	
+3a	93H	VEL	in vivo	NA	ASTRAL-4	SOF/VEL		BL	26569658	
+3a	93H	VEL	in vivo	NA	ASTRAL-4	SOF/VEL		T Em; 11 patients	26569658	
+3	93H	VEL	in vivo	NA	ASTRAL-4	SOF/VEL		T Em	26569658	
+1b	93H	VEL	in vivo	NA	ASTRAL-4	SOF/VEL		BL; 2 patients	26569658	
+1b	31V+93H	VEL	in vivo	NA	ASTRAL-4	SOF/VEL		T Em	26569658	
+1b	31M+93H	VEL	in vivo	NA	ASTRAL-4	SOF/VEL		T Em	26569658	
+1a	30H+93H	VEL	in vivo	NA	ASTRAL-4	SOF/VEL		BL; BL 159F	26569658	
+1b	31M	VEL	in vivo	NA	ASTRAL-4	SOF/VEL		BL	26569658	
+1b	31M+93H	VEL	in vivo	NA	ASTRAL-4	SOF/VEL		T Em	26569658	
+1a	30R+58D	VEL	in vivo	NA	ASTRAL-4	SOF/VEL		T Em	26569658	
+1a	93N	VEL	in vivo	NA	ASTRAL-4	SOF/VEL		T Em	26569658	
+6a	31V	VEL	in vitro	2384-3066					29454794	
+6a	28S	VEL	in vitro	58.1					29454794	

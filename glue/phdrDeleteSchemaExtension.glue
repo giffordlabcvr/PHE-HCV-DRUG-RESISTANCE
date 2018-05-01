@@ -1,15 +1,17 @@
-
 delete link phdr_resistance_finding phdr_drug 
-
 delete link variation phdr_ras
-
+delete link alignment phdr_resistance_finding
 delete link phdr_ras phdr_resistance_finding 
+delete link phdr_resistance_finding phdr_publication 
+delete link phdr_resistance_finding phdr_in_vitro_result
+delete link phdr_resistance_finding phdr_in_vivo_result
 
 delete custom-table phdr_ras
-
 delete custom-table phdr_drug
-
 delete custom-table phdr_resistance_finding
+delete custom-table phdr_in_vitro_result
+delete custom-table phdr_in_vivo_result
+delete custom-table phdr_publication
 
 
 

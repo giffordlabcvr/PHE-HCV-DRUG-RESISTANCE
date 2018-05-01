@@ -1,13 +1,7 @@
-var drugObjs;
 var rasObjs;
 
 glue.inMode("module/phdrTabularUtility", function() {
-	drugObjs = glue.tableToObjects(glue.command(["load-tabular", "tabular/formatted/phdr_drug.txt"]));
 	rasObjs = glue.tableToObjects(glue.command(["load-tabular", "tabular/formatted/phdr_ras.txt"]));
-});
-
-_.each(drugObjs, function(drugObj) {
-	glue.command(["create", "custom-table-row", "phdr_drug", drugObj.id]);
 });
 
 var varObjs = {};
@@ -24,7 +18,6 @@ _.each(rasObjs, function(rasObj) {
 					gene: gene,
 					structure: structure
 			};
-			glue.logInfo("varObj", varObjs[variationId]);
 		}
 	} else {
 		var variationId = "phdr_ras:"+rasObj.gene+":"+rasObj.structure;
@@ -41,7 +34,6 @@ _.each(rasObjs, function(rasObj) {
 _.each(_.pairs(varObjs), function(pair) {
 	var variationId = pair[0];
 	var varObj = pair[1];
-	//glue.logInfo("varObj", varObj);
 	glue.inMode("reference/REF_MASTER_NC_004102/feature-location/"+varObj.gene, function() {
 		if(varObj.structure.indexOf("del") > 0) {
 			// deletion
