@@ -1,117 +1,117 @@
 gene	virusGenotype	substitution	drug	vitroOrVivo	ec50	clinicalTrialName	trialRegimen	trialCohort	trialNotes	pubmed	Weight of evidence	
-NS3	1a	36L+80K	VOX	in vivo	BL 			Reau	DAA naïve/cirrhosis/8wk	AASLD 2016 Abs 846		
-NS3	3a	80R	VOX	in vivo	T em (with BL 93H)			Reau	DAA exp/cirrhosis/12wk	AASLD 2016 Abs 846		
-NS3	1a	80K	VOX	in vivo	BL (with BL 93N)			Sarrazin	NS5A-inhib exp	Pooled phase III EASL 2017 Abs 248		
-NS3	1a	168A	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	168F	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	168I	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	168T	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	36G	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	41R	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	168K	VOX	in vitro 	20-100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	168L	VOX	in vitro 	20-100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	168R	VOX	in vitro 	20-100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	156L	VOX	in vitro 	>100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1b	156S	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1b	122D	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1b	168Y	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	2a	43V	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	2a	156T	VOX	in vitro 	20-100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	2a	156L	VOX	in vitro 	>100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	2a	156V	VOX	in vitro 	>100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	3a	41K	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	3a	175M	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	3a	80K	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	3a	156T	VOX	in vitro 	>100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	3a	156V	VOX	in vitro 	>100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	4a	41R	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	4a	168E	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	4a	168T	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	4a	168V	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	4a	156L	VOX	in vitro 	>100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	4a	156T	VOX	in vitro 	>100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	4a	156V	VOX	in vitro 	>100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	5a	168A	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	5a	168H	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	5a	168K	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	5a	168R	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	5a	168Y	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	6a	41K	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	6a	56H	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	6a	168H	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	6a	41R	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	6a	168A	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	36M+122N	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	36L+54S	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	36M+80K	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	41R+168H	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	54S+56H	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	168A+170T	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	36M+41R	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	41R+168G	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	41K+80K	VOX	in vitro 	2.8			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	80K+168E	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	122N+168Y	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	41R+168A	VOX	in vitro 	20-100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	155T+168N	VOX	in vitro 	20-100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	41R+156T	VOX	in vitro 	>100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1b	36M+156S	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	3a	41R+170I	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	3a	41R+55I	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	3a	56H+168R	VOX	in vitro 	>100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	5a	122N+168A	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	5a	41R+168H	VOX	in vitro 	20-100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	5a	41R+168A	VOX	in vitro 	20-100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	6a	36A+168A	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	6a	36A+41R	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	6a	41R+168A	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	6a	168Y+41R	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	6a	168A+122N	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	6a	168H+41R	VOX	in vitro 	20-100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	6a	56H+168E	VOX	in vitro 	20-100			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	41H+80K+122G	VOX	in vitro 	2			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	43L+80K	VOX	in vitro 	3.4			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	36M+155K+170V	VOX	in vitro 	3.6			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	54S+55I+122G+155K+170V	VOX	in vitro 	4.1			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	55A+80R+168E+170V	VOX	in vitro 	4.9			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	122G+155K+170V	VOX	in vitro 	5.2			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	54S+55I+122G+155K 	VOX	in vitro 	5.9			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	122G+155K 	VOX	in vitro 	6.2			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	54S+55I+80L	VOX	in vitro 	7			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	80K+168E+170V	VOX	in vitro 	8			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	54S+122G+155K+180V	VOX	in vitro 	9.2			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	122R+155N+168E	VOX	in vitro 	10.7			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	80L+168E	VOX	in vitro 	10.8			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	54S+56H+170V	VOX	in vitro 	11.1			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	80K+168Y	VOX	in vitro 	116.5			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	41K+43L+80K+168Y	VOX	in vitro 	232.7			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1b	56F+122N+170I	VOX	in vitro 	3.3			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1b	56F+122N 	VOX	in vitro 	3.4			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	6a	55A+80K+122N	VOX	in vitro 	2			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	36M+41R+168G	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	54S+155T+168N	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	80K+155T+168N	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	36A	VOX	in vitro 	2			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	36L	VOX	in vitro 	2.1			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	43S	VOX	in vitro 	5.1			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	168A	VOX	in vitro 	3.4			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	168V	VOX	in vitro 	4.2			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	36L+80K	VOX	in vitro 	3.8			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1b	36M	VOX	in vitro 	3.4			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1b	54A	VOX	in vitro 	2.4			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1b	54S	VOX	in vitro 	2.5			Dvory-Sobol		AASLD 2017 Abs 1176		
-NS3	1a	80K	VOX	in vivo	BL mutation; 6 patients			Wyles	DAA naïve	EASL 2017 Abs THU-257		
-NS3	1a	80L 	VOX	in vivo	BL mutation			Wyles	DAA naïve	EASL 2017 Abs THU-257		
-NS3	1a	55A	VOX	in vivo	BL mutation			Wyles	DAA naïve	EASL 2017 Abs THU-257		
-NS3	5a	168E	VOX	in vivo	BL mutation			Wyles	DAA naïve	EASL 2017 Abs THU-257		
-NS3	5a	168D	VOX	in vivo	BL mutation			Wyles	DAA naïve	EASL 2017 Abs THU-257		
-NS3	1a	155G	VOX	in vitro 	4.6			Lawitz		AASLD 2015 Abs 718		
-NS3	1a	155W	VOX	in vitro 	56			Lawitz		AASLD 2015 Abs 718		
-NS3	1a	156T	VOX	in vitro 	581			Lawitz		AASLD 2015 Abs 718		
-NS3	1b	36A	VOX	in vitro 	4.3			Lawitz		AASLD 2015 Abs 718		
-NS3	1b	155W	VOX	in vitro 	95.9			Lawitz		AASLD 2015 Abs 718		
-NS3	1b	156V	VOX	in vitro 	458.2			Lawitz		AASLD 2015 Abs 718		
-NS3	1b	156T	VOX	in vitro 	552.8			Lawitz		AASLD 2015 Abs 718		
-NS3	1b	168V	VOX	in vitro 	2.6			Lawitz		AASLD 2015 Abs 718		
-NS3	1b	170A	VOX	in vitro 	5.7			Lawitz		AASLD 2015 Abs 718		
-NS3	3a	41R	VOX	in vitro 	2.5			Lawitz		AASLD 2015 Abs 718		
+NS3	1a	36L+80K	VOX	in vivo	BL 			Reau	DAA naïve/cirrhosis/8wk	AASLD_2016_Abs_846		
+NS3	3a	80R	VOX	in vivo	T em (with BL 93H)			Reau	DAA exp/cirrhosis/12wk	AASLD_2016_Abs_846		
+NS3	1a	80K	VOX	in vivo	BL (with BL 93N)			Sarrazin	NS5A-inhib exp	Pooled_phase_III_EASL_2017_Abs_248		
+NS3	1a	168A	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	168F	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	168I	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	168T	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	36G	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	41R	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	168K	VOX	in vitro 	20-100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	168L	VOX	in vitro 	20-100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	168R	VOX	in vitro 	20-100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	156L	VOX	in vitro 	>100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1b	156S	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1b	122D	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1b	168Y	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	2a	43V	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	2a	156T	VOX	in vitro 	20-100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	2a	156L	VOX	in vitro 	>100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	2a	156V	VOX	in vitro 	>100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	3a	41K	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	3a	175M	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	3a	80K	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	3a	156T	VOX	in vitro 	>100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	3a	156V	VOX	in vitro 	>100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	4a	41R	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	4a	168E	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	4a	168T	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	4a	168V	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	4a	156L	VOX	in vitro 	>100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	4a	156T	VOX	in vitro 	>100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	4a	156V	VOX	in vitro 	>100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	5a	168A	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	5a	168H	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	5a	168K	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	5a	168R	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	5a	168Y	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	6a	41K	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	6a	56H	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	6a	168H	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	6a	41R	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	6a	168A	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	36M+122N	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	36L+54S	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	36M+80K	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	41R+168H	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	54S+56H	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	168A+170T	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	36M+41R	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	41R+168G	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	41K+80K	VOX	in vitro 	2.8			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	80K+168E	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	122N+168Y	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	41R+168A	VOX	in vitro 	20-100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	155T+168N	VOX	in vitro 	20-100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	41R+156T	VOX	in vitro 	>100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1b	36M+156S	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	3a	41R+170I	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	3a	41R+55I	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	3a	56H+168R	VOX	in vitro 	>100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	5a	122N+168A	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	5a	41R+168H	VOX	in vitro 	20-100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	5a	41R+168A	VOX	in vitro 	20-100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	6a	36A+168A	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	6a	36A+41R	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	6a	41R+168A	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	6a	168Y+41R	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	6a	168A+122N	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	6a	168H+41R	VOX	in vitro 	20-100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	6a	56H+168E	VOX	in vitro 	20-100			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	41H+80K+122G	VOX	in vitro 	2			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	43L+80K	VOX	in vitro 	3.4			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	36M+155K+170V	VOX	in vitro 	3.6			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	54S+55I+122G+155K+170V	VOX	in vitro 	4.1			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	55A+80R+168E+170V	VOX	in vitro 	4.9			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	122G+155K+170V	VOX	in vitro 	5.2			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	54S+55I+122G+155K 	VOX	in vitro 	5.9			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	122G+155K 	VOX	in vitro 	6.2			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	54S+55I+80L	VOX	in vitro 	7			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	80K+168E+170V	VOX	in vitro 	8			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	54S+122G+155K+180V	VOX	in vitro 	9.2			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	122R+155N+168E	VOX	in vitro 	10.7			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	80L+168E	VOX	in vitro 	10.8			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	54S+56H+170V	VOX	in vitro 	11.1			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	80K+168Y	VOX	in vitro 	116.5			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	41K+43L+80K+168Y	VOX	in vitro 	232.7			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1b	56F+122N+170I	VOX	in vitro 	3.3			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1b	56F+122N 	VOX	in vitro 	3.4			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	6a	55A+80K+122N	VOX	in vitro 	2			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	36M+41R+168G	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	54S+155T+168N	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	80K+155T+168N	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	36A	VOX	in vitro 	2			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	36L	VOX	in vitro 	2.1			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	43S	VOX	in vitro 	5.1			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	168A	VOX	in vitro 	3.4			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	168V	VOX	in vitro 	4.2			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	36L+80K	VOX	in vitro 	3.8			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1b	36M	VOX	in vitro 	3.4			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1b	54A	VOX	in vitro 	2.4			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1b	54S	VOX	in vitro 	2.5			Dvory-Sobol		AASLD_2017_Abs_1176		
+NS3	1a	80K	VOX	in vivo	BL mutation; 6 patients			Wyles	DAA naïve	EASL_2017_Abs_THU-257		
+NS3	1a	80L 	VOX	in vivo	BL mutation			Wyles	DAA naïve	EASL_2017_Abs_THU-257		
+NS3	1a	55A	VOX	in vivo	BL mutation			Wyles	DAA naïve	EASL_2017_Abs_THU-257		
+NS3	5a	168E	VOX	in vivo	BL mutation			Wyles	DAA naïve	EASL_2017_Abs_THU-257		
+NS3	5a	168D	VOX	in vivo	BL mutation			Wyles	DAA naïve	EASL_2017_Abs_THU-257		
+NS3	1a	155G	VOX	in vitro 	4.6			Lawitz		AASLD_2015_Abs_718		
+NS3	1a	155W	VOX	in vitro 	56			Lawitz		AASLD_2015_Abs_718		
+NS3	1a	156T	VOX	in vitro 	581			Lawitz		AASLD_2015_Abs_718		
+NS3	1b	36A	VOX	in vitro 	4.3			Lawitz		AASLD_2015_Abs_718		
+NS3	1b	155W	VOX	in vitro 	95.9			Lawitz		AASLD_2015_Abs_718		
+NS3	1b	156V	VOX	in vitro 	458.2			Lawitz		AASLD_2015_Abs_718		
+NS3	1b	156T	VOX	in vitro 	552.8			Lawitz		AASLD_2015_Abs_718		
+NS3	1b	168V	VOX	in vitro 	2.6			Lawitz		AASLD_2015_Abs_718		
+NS3	1b	170A	VOX	in vitro 	5.7			Lawitz		AASLD_2015_Abs_718		
+NS3	3a	41R	VOX	in vitro 	2.5			Lawitz		AASLD_2015_Abs_718		

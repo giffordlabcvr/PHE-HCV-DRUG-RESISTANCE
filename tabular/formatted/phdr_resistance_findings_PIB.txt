@@ -19,20 +19,20 @@ NS5A	28T+30R+31M	1a	Pibrentasvir	in vitro	4.6	NA	NA	NA	NA	28193664
 NS5A	30R+31M+93C	1a	Pibrentasvir	in vitro	42.0	NA	NA	NA	NA	28193664
 NS5A	93H	3a	Pibrentasvir	in vitro	2.3	NA	NA	NA	NA	28193664
 NS5A	31F	5a	Pibrentasvir	in vitro	2.1	NA	NA	NA	NA	28193664
-NS5A	30R+31M+58D	1a	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL 2017 FRI 205 
-NS5A	93N	1a	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL 2017 FRI 205 
-NS5A	30R+58D	1a	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL 2017 FRI 205 
-NS5A	28G	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL 2017 FRI 205 
-NS5A	30G	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL 2017 FRI 205 
-NS5A	30K	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL 2017 FRI 205 
-NS5A	31F	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL 2017 FRI 205 
-NS5A	31M	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL 2017 FRI 205 
-NS5A	58T	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL 2017 FRI 205 
-NS5A	93H	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL 2017 FRI 205 
-NS5A	30R+93N	1a	Pibrentasvir	in vitro	131.0	Pooled	GLE/PIB	NA	NA	EASL 2017 FRI 205 
-NS5A	31M+58D	1a	Pibrentasvir	in vitro	23.0	Pooled	GLE/PIB	NA	NA	EASL 2017 FRI 205 
-NS5A	30R+31M+58D	1a	Pibrentasvir	in vitro	1704.0	Pooled	GLE/PIB	NA	NA	EASL 2017 FRI 205 
-NS5A	30K+93H	3a	Pibrentasvir	in vitro	69.0	Pooled	GLE/PIB	NA	NA	EASL 2017 FRI 205 
+NS5A	30R+31M+58D	1a	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
+NS5A	93N	1a	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
+NS5A	30R+58D	1a	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
+NS5A	28G	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
+NS5A	30G	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
+NS5A	30K	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
+NS5A	31F	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
+NS5A	31M	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
+NS5A	58T	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
+NS5A	93H	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
+NS5A	30R+93N	1a	Pibrentasvir	in vitro	131.0	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
+NS5A	31M+58D	1a	Pibrentasvir	in vitro	23.0	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
+NS5A	30R+31M+58D	1a	Pibrentasvir	in vitro	1704.0	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
+NS5A	30K+93H	3a	Pibrentasvir	in vitro	69.0	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
 NS5A	31M+58D	1a	Pibrentasvir	in vivo	NA	Magellan-1, Part 1	GLE/PIB	NA	NA	28128852
 NS5A	30R	1a	Pibrentasvir	in vivo	NA	Magellan-1, Part 1	GLE/PIB	NA	NA	28128852
 NS5A	30R+58C	1a	Pibrentasvir	in vivo	NA	Magellan-1, Part 1	GLE/PIB	NA	NA	28128852

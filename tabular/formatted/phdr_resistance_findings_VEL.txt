@@ -1,14 +1,14 @@
 virusGenotype	substitution	drug	vitroOrVivo	ec50	clinicalTrialName	trialRegimen	trialCohort	trialNotes	pubmed	Weight of evidence
-1a	28T	VEL	in vitro	5.9					EASL 2013 Poster 1191	
-1a	93H	VEL	in vitro	609.1					EASL 2013 Poster 1191	
-1a	30E	VEL	in vitro	37.3					EASL 2013 Poster 1191	
-1a	30R	VEL	in vitro	2.2					EASL 2013 Poster 1191	
-1a	31M	VEL	in vitro	11.8					EASL 2013 Poster 1191	
-1a	93C	VEL	in vitro	10.9					EASL 2013 Poster 1191	
-2b	44K	VEL	in vitro	2.8					EASL 2013 Poster 1191	
-2b	58S	VEL	in vitro	2.5					EASL 2013 Poster 1191	
-3a	30K	VEL	in vitro	16.2					EASL 2013 Poster 1191	
-3a	93H	VEL	in vitro	246.2					EASL 2013 Poster 1191	
+1a	28T	VEL	in vitro	5.9					EASL_2013_Poster_1191	
+1a	93H	VEL	in vitro	609.1					EASL_2013_Poster_1191	
+1a	30E	VEL	in vitro	37.3					EASL_2013_Poster_1191	
+1a	30R	VEL	in vitro	2.2					EASL_2013_Poster_1191	
+1a	31M	VEL	in vitro	11.8					EASL_2013_Poster_1191	
+1a	93C	VEL	in vitro	10.9					EASL_2013_Poster_1191	
+2b	44K	VEL	in vitro	2.8					EASL_2013_Poster_1191	
+2b	58S	VEL	in vitro	2.5					EASL_2013_Poster_1191	
+3a	30K	VEL	in vitro	16.2					EASL_2013_Poster_1191	
+3a	93H	VEL	in vitro	246.2					EASL_2013_Poster_1191	
 1a	31V	VEL	in vitro	>999					29274866	
 1a	32del	VEL	in vitro	>999					29274866	
 1a	93H	VEL	in vitro	80-999					29274866	

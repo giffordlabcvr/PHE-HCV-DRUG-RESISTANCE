@@ -21,6 +21,8 @@ function loadResistanceFindings(shortname, longname, gene) {
 			glue.command(["set", "link-target", "phdr_ras", "custom-table-row/phdr_ras/"+gene+":"+structure]);
 			var genotype = rfObj.virusGenotype.trim();
 			glue.command(["set", "link-target", "alignment", "alignment/AL_"+genotype]);
+			var pub_id = rfObj.pubmed.trim();
+			glue.command(["set", "link-target", "phdr_publication", "custom-table-row/phdr_publication/"+pub_id]);
 		});
 		var vitroOrVivo = rfObj.vitroOrVivo.trim().replace(" ", "").toLowerCase();
 		if(vitroOrVivo == "invitro" || vitroOrVivo == "both") {

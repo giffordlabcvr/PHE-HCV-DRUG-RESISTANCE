@@ -9,6 +9,18 @@ table phdr_in_vitro_result
   create field ec50_min DOUBLE
   create field ec50_max DOUBLE
   exit
+  
+table phdr_publication
+  create field title VARCHAR 500
+  create field authors_short VARCHAR
+  create field authors_full VARCHAR 500
+  create field year INTEGER
+  create field journal VARCHAR
+  create field volume VARCHAR
+  create field issue VARCHAR
+  create field pages VARCHAR
+  create field url VARCHAR 500
+  exit
 
 create link variation phdr_ras
 create link alignment phdr_resistance_finding -m ONE_TO_MANY
