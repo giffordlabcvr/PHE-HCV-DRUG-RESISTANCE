@@ -5,7 +5,8 @@ delete link phdr_ras phdr_resistance_finding
 delete link phdr_resistance_finding phdr_publication 
 delete link phdr_resistance_finding phdr_in_vitro_result
 delete link phdr_resistance_finding phdr_in_vivo_result
-delete link phdr_in_vivo_result phdr_clinical_trial
+delete link phdr_in_vivo_result phdr_result_trial 
+delete link phdr_result_trial phdr_clinical_trial 
 
 delete custom-table phdr_ras
 delete custom-table phdr_drug
@@ -14,6 +15,7 @@ delete custom-table phdr_in_vitro_result
 delete custom-table phdr_in_vivo_result
 delete custom-table phdr_publication
 delete custom-table phdr_clinical_trial
+delete custom-table phdr_result_trial
 
 
 

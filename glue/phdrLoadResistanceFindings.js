@@ -5,7 +5,15 @@ function error(rfObj, errorTxt) {
 	throw new Error(errorTxt);
 }
 
-function loadResistanceFindings(shortname, longname, gene) {
+function linkResultToTrial(resultId, trialId) {
+	glue.command(["create", "custom-table-row", "phdr_result_trial", resultId+":"+trialId]);
+	glue.inMode("custom-table-row/phdr_result_trial/"+resultId+":"+trialId, function() {
+		glue.command(["set", "link-target", "phdr_clinical_trial", "custom-table-row/phdr_clinical_trial/"+trialId]);
+		glue.command(["set", "link-target", "phdr_in_vivo_result", "custom-table-row/phdr_in_vivo_result/"+resultId]);
+	});
+}
+
+function loadResistanceFindings(shortname, longname, gene, pooledMap) {
 	glue.inMode("module/phdrTabularUtility", function() {
 		rfObjs = glue.tableToObjects(glue.command(["load-tabular", "tabular/formatted/phdr_resistance_findings_"+shortname+".txt"]));
 	});
@@ -63,11 +71,30 @@ function loadResistanceFindings(shortname, longname, gene) {
 				}
 			});
 		}
+		if(vitroOrVivo == "invivo" || vitroOrVivo == "both") {
+			glue.command(["create", "custom-table-row", "phdr_in_vivo_result", rfId]);
+			glue.inMode("custom-table-row/phdr_in_vivo_result/"+rfId, function() {
+				glue.command(["set", "link-target", "phdr_resistance_finding", "custom-table-row/phdr_resistance_finding/"+rfId]);
+			});
+			var trialNameString = rfObj.clinicalTrialName;
+			if(trialNameString.trim() == "" || trialNameString == null || trialNameString.trim() == "NA") {
+				error(rfObj, "Resistance finding with in vivo result does not report clinical trial name");
+			}
+			var pooledMapList = pooledMap[trialNameString.trim()];
+			if(pooledMapList != null) {
+				_.each(pooledMapList, function(trialId) {
+					linkResultToTrial(rfId, trialId);
+				});
+			} else {
+				linkResultToTrial(rfId, trialNameString.trim());
+			}
+		}
 		idx++;
 	});
 }
 
-loadResistanceFindings("GLE", "glecaprevir", "NS3");
-loadResistanceFindings("PIB", "pibrentasvir", "NS5A");
-loadResistanceFindings("VEL", "velpatasvir", "NS5A");
-loadResistanceFindings("VOX", "voxilaprevir", "NS3");
+loadResistanceFindings("GLE", "glecaprevir", "NS3", {"Surveyor-1_and_2":["Surveyor-1", "Surveyor-2"], "Pooled analysis": ["Surveyor-1", "Surveyor-2", "Endurance-1", "Endurance-2", "Endurance-3", "Endurance-4", "Expedition-1", "Expedition-2"]});
+loadResistanceFindings("PIB", "pibrentasvir", "NS5A", {"Pooled": ["Surveyor-1", "Surveyor-2", "Endurance-1", "Endurance-2", "Endurance-3", "Endurance-4", "Expedition-1", "Expedition-2"]});
+loadResistanceFindings("VEL", "velpatasvir", "NS5A", {"Pooled analysis": ["ASTRAL-1", "ASTRAL-2", "ASTRAL-3", "ASTRAL-5", "POLARIS-2", "POLARIS-3"]});
+loadResistanceFindings("VOX", "voxilaprevir", "NS3", {"Pooled1": ["GS-US-367-1169", "GS-US-367-1871", "GS-US-337-1468", "GS-US-367-1168"], 
+	"Pooled2": ["POLARIS-1", "POLARIS-4"], "Pooled3": ["POLARIS-2", "POLARIS-3"]});

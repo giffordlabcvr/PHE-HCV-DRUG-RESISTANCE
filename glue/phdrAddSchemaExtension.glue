@@ -5,6 +5,7 @@ create custom-table phdr_in_vitro_result
 create custom-table phdr_in_vivo_result
 create custom-table phdr_publication
 create custom-table phdr_clinical_trial
+create custom-table phdr_result_trial
 
 table phdr_clinical_trial
   create field display_name VARCHAR
@@ -35,4 +36,5 @@ create link phdr_resistance_finding phdr_drug -m MANY_TO_ONE
 create link phdr_resistance_finding phdr_publication -m MANY_TO_ONE
 create link phdr_resistance_finding phdr_in_vitro_result -m ONE_TO_ONE
 create link phdr_resistance_finding phdr_in_vivo_result -m ONE_TO_ONE
-create link phdr_in_vivo_result phdr_clinical_trial -m ONE_TO_MANY
+create link phdr_in_vivo_result phdr_result_trial -m ONE_TO_MANY
+create link phdr_result_trial phdr_clinical_trial -m MANY_TO_ONE
