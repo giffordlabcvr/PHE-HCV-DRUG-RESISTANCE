@@ -1,7 +1,7 @@
 gene	virusGenotype	substitution	drug	vitroOrVivo	ec50	clinicalTrialName	trialRegimen	trialCohort	trialNotes	pubmed	Weight of evidence	
-NS3	1a	36L+80K	VOX	in vivo	BL 			Reau	DAA naïve/cirrhosis/8wk	AASLD_2016_Abs_846		
-NS3	3a	80R	VOX	in vivo	T em (with BL 93H)			Reau	DAA exp/cirrhosis/12wk	AASLD_2016_Abs_846		
-NS3	1a	80K	VOX	in vivo	BL (with BL 93N)			Sarrazin	NS5A-inhib exp	Pooled_phase_III_EASL_2017_Abs_248		
+NS3	1a	36L+80K	VOX	in vivo	BL 	Pooled1		Reau	DAA naïve/cirrhosis/8wk	AASLD_2016_Abs_846		
+NS3	3a	80R	VOX	in vivo	T em (with BL 93H)	Pooled1		Reau	DAA exp/cirrhosis/12wk	AASLD_2016_Abs_846		
+NS3	1a	80K	VOX	in vivo	BL (with BL 93N)	Pooled2		Sarrazin	NS5A-inhib exp	Pooled_phase_III_EASL_2017_Abs_248		
 NS3	1a	168A	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
 NS3	1a	168F	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
 NS3	1a	168I	VOX	in vitro 	2.5-20			Dvory-Sobol		AASLD_2017_Abs_1176		
@@ -100,11 +100,11 @@ NS3	1a	36L+80K	VOX	in vitro 	3.8			Dvory-Sobol		AASLD_2017_Abs_1176
 NS3	1b	36M	VOX	in vitro 	3.4			Dvory-Sobol		AASLD_2017_Abs_1176		
 NS3	1b	54A	VOX	in vitro 	2.4			Dvory-Sobol		AASLD_2017_Abs_1176		
 NS3	1b	54S	VOX	in vitro 	2.5			Dvory-Sobol		AASLD_2017_Abs_1176		
-NS3	1a	80K	VOX	in vivo	BL mutation; 6 patients			Wyles	DAA naïve	EASL_2017_Abs_THU-257		
-NS3	1a	80L 	VOX	in vivo	BL mutation			Wyles	DAA naïve	EASL_2017_Abs_THU-257		
-NS3	1a	55A	VOX	in vivo	BL mutation			Wyles	DAA naïve	EASL_2017_Abs_THU-257		
-NS3	5a	168E	VOX	in vivo	BL mutation			Wyles	DAA naïve	EASL_2017_Abs_THU-257		
-NS3	5a	168D	VOX	in vivo	BL mutation			Wyles	DAA naïve	EASL_2017_Abs_THU-257		
+NS3	1a	80K	VOX	in vivo	BL mutation; 6 patients	Pooled3		Wyles	DAA naïve	EASL_2017_Abs_THU-257		
+NS3	1a	80L 	VOX	in vivo	BL mutation	Pooled3		Wyles	DAA naïve	EASL_2017_Abs_THU-257		
+NS3	1a	55A	VOX	in vivo	BL mutation	Pooled3		Wyles	DAA naïve	EASL_2017_Abs_THU-257		
+NS3	5a	168E	VOX	in vivo	BL mutation	Pooled3		Wyles	DAA naïve	EASL_2017_Abs_THU-257		
+NS3	5a	168D	VOX	in vivo	BL mutation	Pooled3		Wyles	DAA naïve	EASL_2017_Abs_THU-257		
 NS3	1a	155G	VOX	in vitro 	4.6			Lawitz		AASLD_2015_Abs_718		
 NS3	1a	155W	VOX	in vitro 	56			Lawitz		AASLD_2015_Abs_718		
 NS3	1a	156T	VOX	in vitro 	581			Lawitz		AASLD_2015_Abs_718		

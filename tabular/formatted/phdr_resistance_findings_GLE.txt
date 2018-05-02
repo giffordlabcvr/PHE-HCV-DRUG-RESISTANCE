@@ -44,16 +44,16 @@ NS3	166S	3	Glecaprevir	in vivo	NA	Pooled analysis	EASL_2017_FRI_205
 NS3	80R	3a	Glecaprevir	in vitro	21.0	Pooled analysis	EASL_2017_FRI_205 	
 NS3	166T	3a	Glecaprevir	in vitro	4.7	Pooled analysis	EASL_2017_FRI_205 	
 NS3	168L	3a	Glecaprevir	in vitro	13.0	Pooled analysis	EASL_2017_FRI_205 	
-NS3	156V	1a	Glecaprevir	in vivo	NA	Magellan-1, Part 1	28128852	
-NS3	168A	1a	Glecaprevir	in vivo	NA	Magellan-1, Part 1	28128852	
-NS3	56H	1a	Glecaprevir	in vivo	NA	Magellan-1, Part 1	28128852	
-NS3	156V	1a	Glecaprevir	in vivo	NA	Magellan-1, Part 2	29152781	
-NS3	36M+155K	1a	Glecaprevir	in vivo	NA	Magellan-1, Part 2	29152781	
-NS3	156T	1a	Glecaprevir	in vivo	NA	Magellan-1, Part 2	29152781	
-NS3	56H+168A	1a	Glecaprevir	in vivo	NA	Magellan-1, Part 2	29152781	
-NS3	156G	1a	Glecaprevir	in vivo	NA	Magellan-1, Part 2	29152781	
-NS3	56H+168E	1a	Glecaprevir	in vivo	NA	Magellan-1, Part 2	29152781	
-NS3	36M 	1a	Glecaprevir	in vivo	NA	Magellan-1, Part 2	29152781	
-NS3	168A	1a	Glecaprevir	in vivo	NA	Magellan-1, Part 2	29152781	
-NS3	155T+156V	1a	Glecaprevir	in vivo	NA	Magellan-1, Part 2	29152781	
-NS3	168K	1a	Glecaprevir	in vivo	NA	Surveyor-1 and -2	28412293	
+NS3	156V	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_1	28128852	
+NS3	168A	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_1	28128852	
+NS3	56H	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_1	28128852	
+NS3	156V	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	29152781	
+NS3	36M+155K	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	29152781	
+NS3	156T	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	29152781	
+NS3	56H+168A	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	29152781	
+NS3	156G	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	29152781	
+NS3	56H+168E	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	29152781	
+NS3	36M 	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	29152781	
+NS3	168A	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	29152781	
+NS3	155T+156V	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	29152781	
+NS3	168K	1a	Glecaprevir	in vivo	NA	Surveyor-1_and_2	28412293	
