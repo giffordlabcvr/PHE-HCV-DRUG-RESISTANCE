@@ -29,12 +29,21 @@ table phdr_publication
   create field url VARCHAR 500
   exit
 
-create link variation phdr_ras
-create link alignment phdr_resistance_finding -m ONE_TO_MANY
+# resistance variations will have a phdr_ras object associated
+create link variation phdr_ras -m ONE_TO_ONE
+# phdr_ras objects will have multiple phdr_resistance_finding objects associated, corresponding to each line of the spreadshet.
 create link phdr_ras phdr_resistance_finding -m ONE_TO_MANY
+# phdr_resistance_finding objects are each associated to a genotype / subtype in the alignment tree
+create link phdr_resistance_finding alignment -m MANY_TO_ONE
+# phdr_resistance_finding objects are each associated to a drug
 create link phdr_resistance_finding phdr_drug -m MANY_TO_ONE
+# phdr_resistance_finding objects are each associated to a publication
 create link phdr_resistance_finding phdr_publication -m MANY_TO_ONE
+# phdr_resistance_finding objects are associated zero or one phdr_in_vitro_result objects
 create link phdr_resistance_finding phdr_in_vitro_result -m ONE_TO_ONE
+# phdr_resistance_finding objects are associated zero or one phdr_in_vivo_result objects
 create link phdr_resistance_finding phdr_in_vivo_result -m ONE_TO_ONE
+# phdr_in_vivo_result objects are associated to a set of clinical trials, in a many-to-many relationship
+# implemented using an intermediate join table phdr_result_trial
 create link phdr_in_vivo_result phdr_result_trial -m ONE_TO_MANY
 create link phdr_result_trial phdr_clinical_trial -m MANY_TO_ONE
