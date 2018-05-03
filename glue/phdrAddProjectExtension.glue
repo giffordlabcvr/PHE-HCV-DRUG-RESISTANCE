@@ -3,6 +3,9 @@ create module --fileName modules/phdrSamReporter.xml
 create module --fileName modules/phdrFastaSequenceReporter.xml
 create module --fileName modules/phdrFastaUtility.xml
 create module --fileName modules/phdrReportingController.xml --loadResources
+create module --fileName modules/phdrRasVariationRenderer.xml --loadResources
+create module --fileName modules/phdrPublicationRenderer.xml --loadResources
+  
   
 multi-unset link-target variation -a phr_ras
 multi-delete phdr_drug -a

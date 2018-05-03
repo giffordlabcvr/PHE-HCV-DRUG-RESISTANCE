@@ -30,9 +30,9 @@ function reportFasta(fastaFilePath) {
 				var variationWhereClause = "phdr_ras != null";
 				var targetRefName = genotypingResultToTargetRefName(genotypingResult);
 				sequenceResult.targetRefName = targetRefName;
-				var scanResults = []
+				var scanResults;
 				glue.inMode("module/phdrFastaSequenceReporter", function() {
-					scanResults.push(glue.command({
+					scanResults = glue.command({
 						"string" :{
 							"variation":{
 								"scan":{
@@ -50,10 +50,20 @@ function reportFasta(fastaFilePath) {
 								}
 							}
 						}
-					}));
+					}).variationScanMatchCommandResult.variations;
 				});
 				sequenceResult.rasScanResults = scanResults;
 				glue.log("FINE", "phdrReportingController.reportFasta rasScanResults:", sequenceResult.rasScanResults);
+				var rasFindings = [];
+				_.each(scanResults, function(scanResult) {
+					glue.inMode("/reference/"+scanResult.referenceName+
+								"/feature-location/"+scanResult.featureName+
+								"/variation/"+scanResult.variationName, function() {
+						rasFindings.push(glue.command(["render-object", "phdrRasVariationRenderer"]));
+					});
+				});
+				sequenceResult.rasFindings = rasFindings;
+				glue.log("FINE", "phdrReportingController.reportFasta rasFindings:", sequenceResult.rasFindings);
 			}
 		}
 	});
@@ -128,6 +138,16 @@ function reportBam(bamFilePath) {
 			});
 			samRefResult.rasScanResults = scanResults;
 			glue.log("FINE", "phdrReportingController.reportBam rasScanResults:", samRefResult.rasScanResults);
+			var rasFindings = [];
+			_.each(scanResults, function(scanResult) {
+				glue.inMode("/reference/"+scanResult.referenceName+
+							"/feature-location/"+scanResult.featureName+
+							"/variation/"+scanResult.variationName, function() {
+					rasFindings.push(glue.command(["render-object", "phdrRasVariationRenderer"]));
+				});
+			});
+			samRefResult.rasFindings = rasFindings;
+			glue.log("FINE", "phdrReportingController.reportBam rasFindings:", samRefResult.rasFindings);
 		}
 	});
 	var bamReport = 
@@ -263,4 +283,20 @@ function recogniseFasta(fastaMap, resultMap) {
 	});
 }
 
+function enhanceInVitroRasScanResult(genotypingResult, scanResult) {
+	var subtypeFinalClade = genotypingResult.subtypeFinalClade;
+	var genotypeFinalClade = genotypingResult.genotypeFinalClade;
+	var relevantClades = "('"+genotypeFinalClade+"')"
+	if(subtypeFinalClade != null) {
+		relevantClades = "('"+genotypeFinalClade+"', '"+subtypeFinalClade+"')"
+	}
+	scanResult.rasDetails = glue.command(
+			["multi-render", "phdr_resistance_finding", 
+              "--whereClause", 
+              "phdr_ras.variation.featureLoc.referenceSequence.name = '"+scanResult.referenceName+"' and "+
+              "phdr_ras.variation.featureLoc.feature.name = '"+scanResult.featureName+"' and "+
+              "phdr_ras.variation.name = '"+scanResult.variationName+"' and "+
+              "alignment.name in "+relevantClades, 
+              "hcvDRInVitroFindingRenderer"]).multiRenderResult.resultDocument;
+}
 

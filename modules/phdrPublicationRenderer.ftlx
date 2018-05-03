@@ -1,0 +1,14 @@
+<#include "/utils/glueDocUtils.ftlx">
+
+<publication>
+	<id>${id}</id>
+	<authors_short>${authors_short}</authors_short>
+	<authors_full>${authors_full}</authors_full>
+	<title>${title}</title>
+    <@elem tag="year" expr="year"/>
+    <@elem tag="journal" expr="journal"/>
+    <@elem tag="volume" expr="volume"/>
+    <@elem tag="issue" expr="issue"/>
+    <@elem tag="pages" expr="pages"/>
+	<url>${url}</url>
+</publication>
