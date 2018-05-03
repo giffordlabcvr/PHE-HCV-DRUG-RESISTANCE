@@ -1,0 +1,19 @@
+<ecmaFunctionInvoker>
+	<scriptFileName>phdrReportingController.js</scriptFileName>
+	<function>
+		<name>reportFasta</name>
+		<parameter>
+			<name>fastaFilePath</name>
+			<pathCompleter/>
+		</parameter>
+		<documentResultType/> 
+	</function>
+	<function>
+		<name>reportBam</name>
+		<parameter>
+			<name>bamFilePath</name>
+			<pathCompleter/>
+		</parameter>
+		<documentResultType/> 
+	</function>
+</ecmaFunctionInvoker>
