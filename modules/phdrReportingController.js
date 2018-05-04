@@ -22,6 +22,9 @@ function reportFasta(fastaFilePath) {
 	var genotypingFastaMap = filterFastaMapForGenotyping(fastaMap, resultMap);
 	// apply genotyping
 	genotypeFasta(genotypingFastaMap, resultMap);
+	
+	var publicationIdToObj = {};
+	
 	// apply variation scanning
 	_.each(_.values(resultMap), function(sequenceResult) {
 		var genotypingResult = sequenceResult.genotypingResult;
@@ -62,20 +65,36 @@ function reportFasta(fastaFilePath) {
 						rasFindings.push(glue.command(["render-object", "phdrRasVariationRenderer"]));
 					});
 				});
+				_.each(rasFindings, function(rasFinding) {
+					addRasPublications(rasFinding, publicationIdToObj);
+				});
 				sequenceResult.rasFindings = rasFindings;
-				glue.log("FINE", "phdrReportingController.reportFasta rasFindings:", sequenceResult.rasFindings);
 			}
 		}
 	});
+	glue.log("FINE", "phdrReportingController.reportFasta publicationIdToObj:", publicationIdToObj);
+	
 	var results = _.values(resultMap);
 	var fastaReport = { 
 		fastaReport: {
 			fastaFilePath: fastaFilePath,
-			sequenceResults: results 
+			sequenceResults: results, 
+			publications: _.values(publicationIdToObj)
 		}
 	};
 	glue.log("FINE", "phdrReportingController.reportFasta fastaReport:", fastaReport);
 	return fastaReport;
+}
+
+function addRasPublications(rasFinding, publicationIdToObj) {
+	_.each(rasFinding.phdrRasVariation.resistanceFinding, function(resistanceFinding) {
+		var publicationId = resistanceFinding.publication.id;
+		if(publicationIdToObj[publicationId] == null) {
+			glue.inMode("/custom-table-row/phdr_publication/"+publicationId, function() {
+				publicationIdToObj[publicationId] = glue.command(["render-object", "phdrPublicationRenderer"]).publication;
+			});							
+		}
+	});
 }
 
 function reportBam(bamFilePath) {
@@ -111,6 +130,9 @@ function reportBam(bamFilePath) {
 	var genotypingFastaMap = filterFastaMapForGenotyping(consensusFastaMap, resultMap);
 	// apply genotyping
 	genotypeFasta(genotypingFastaMap, resultMap);
+	
+	var publicationIdToObj = {};
+	
 	// scan variations for each sam reference
 	_.each(_.values(resultMap), function(samRefResult) {
 		var genotypingResult = samRefResult.genotypingResult;
@@ -146,15 +168,21 @@ function reportBam(bamFilePath) {
 					rasFindings.push(glue.command(["render-object", "phdrRasVariationRenderer"]));
 				});
 			});
+			_.each(rasFindings, function(rasFinding) {
+				addRasPublications(rasFinding, publicationIdToObj);
+			});
 			samRefResult.rasFindings = rasFindings;
 			glue.log("FINE", "phdrReportingController.reportBam rasFindings:", samRefResult.rasFindings);
 		}
 	});
+	glue.log("FINE", "phdrReportingController.reportBam publicationIdToObj:", publicationIdToObj);
+
 	var bamReport = 
 	{ 
 		bamReport: { 
 			bamFilePath: bamFilePath,
-			samReferenceResults: _.values(resultMap)
+			samReferenceResults: _.values(resultMap),
+			publications: _.values(publicationIdToObj)
 		} 
 	};
 	
