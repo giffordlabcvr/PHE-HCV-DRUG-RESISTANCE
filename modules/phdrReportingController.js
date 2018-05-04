@@ -1,3 +1,25 @@
+function reportFastaAsHtml(fastaFilePath, htmlFilePath) {
+	var reportDoc = reportFasta(fastaFilePath);
+	glue.inMode("module/phdrRasReportTransformer", function() {
+		glue.command({"transform-to-file" : {
+			commandDocument: reportDoc,
+			outputFile: htmlFilePath
+		}});
+	});
+}
+
+
+function reportBamAsHtml(bamFilePath, htmlFilePath) {
+	var reportDoc = reportBam(bamFilePath);
+	glue.inMode("module/phdrRasReportTransformer", function() {
+		glue.command({"transform-to-file" : {
+			commandDocument: reportDoc,
+			outputFile: htmlFilePath
+		}});
+	});
+}
+
+
 function reportFasta(fastaFilePath) {
 	glue.log("FINE", "phdrReportingController.reportFasta invoked, input file:"+fastaFilePath);
 	// Load fasta and put in a fastaMap

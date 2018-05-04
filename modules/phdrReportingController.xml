@@ -16,4 +16,30 @@
 		</parameter>
 		<documentResultType/> 
 	</function>
+	<function>
+		<name>reportFastaAsHtml</name>
+		<parameter>
+			<name>fastaFilePath</name>
+			<pathCompleter/>
+		</parameter>
+		<parameter>
+			<name>htmlFilePath</name>
+			<pathCompleter/>
+		</parameter>
+		<okFromNullResultType/> 
+	</function>
+	<function>
+		<name>reportBamAsHtml</name>
+		<parameter>
+			<name>bamFilePath</name>
+			<pathCompleter/>
+		</parameter>
+		<parameter>
+			<name>htmlFilePath</name>
+			<pathCompleter/>
+		</parameter>
+		<okFromNullResultType/> 
+	</function>
+
+
 </ecmaFunctionInvoker>
