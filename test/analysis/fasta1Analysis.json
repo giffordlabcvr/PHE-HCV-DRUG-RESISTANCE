@@ -167,7 +167,8 @@
                   },
                   "publication": {
                     "id": "EASL_2017_FRI_205",
-                    "displayName": "Krishnan et al., 2017"
+                    "displayName": "Krishnan et al., 2017",
+                    "index": 1
                   }
                 },
                 {
@@ -192,7 +193,8 @@
                   },
                   "publication": {
                     "id": "EASL_2017_Abs_THU-257",
-                    "displayName": "Wyles, et al., 2017"
+                    "displayName": "Wyles, et al., 2017",
+                    "index": 2
                   }
                 },
                 {
@@ -217,7 +219,8 @@
                   },
                   "publication": {
                     "id": "Pooled_phase_III_EASL_2017_Abs_248",
-                    "displayName": "Sarrazin et al., 2017"
+                    "displayName": "Sarrazin et al., 2017",
+                    "index": 3
                   }
                 },
                 {
@@ -232,7 +235,8 @@
                   },
                   "publication": {
                     "id": "AASLD_2017_Abs_1176",
-                    "displayName": "Dvory-Sobol et al., 2017"
+                    "displayName": "Dvory-Sobol et al., 2017",
+                    "index": 4
                   }
                 }
               ]
@@ -294,7 +298,8 @@
                   },
                   "publication": {
                     "id": "EASL_2017_Abs_THU-257",
-                    "displayName": "Wyles, et al., 2017"
+                    "displayName": "Wyles, et al., 2017",
+                    "index": 2
                   }
                 }
               ]
@@ -346,7 +351,8 @@
                   },
                   "publication": {
                     "id": "27353271",
-                    "displayName": "Lawitz et al., 2016"
+                    "displayName": "Lawitz et al., 2016",
+                    "index": 5
                   }
                 }
               ]
@@ -440,7 +446,8 @@
                   },
                   "publication": {
                     "id": "29152781",
-                    "displayName": "Poordad et al., 2018"
+                    "displayName": "Poordad et al., 2018",
+                    "index": 6
                   }
                 },
                 {
@@ -460,7 +467,8 @@
                   },
                   "publication": {
                     "id": "26569658",
-                    "displayName": "Curry et al., 2015"
+                    "displayName": "Curry et al., 2015",
+                    "index": 7
                   }
                 },
                 {
@@ -475,7 +483,8 @@
                   },
                   "publication": {
                     "id": "27353271",
-                    "displayName": "Lawitz et al., 2016"
+                    "displayName": "Lawitz et al., 2016",
+                    "index": 5
                   }
                 }
               ]
@@ -532,7 +541,8 @@
                   },
                   "publication": {
                     "id": "29152781",
-                    "displayName": "Poordad et al., 2018"
+                    "displayName": "Poordad et al., 2018",
+                    "index": 6
                   }
                 },
                 {
@@ -547,7 +557,8 @@
                   },
                   "publication": {
                     "id": "28193664",
-                    "displayName": "Ng et al., 2017"
+                    "displayName": "Ng et al., 2017",
+                    "index": 8
                   }
                 },
                 {
@@ -602,7 +613,8 @@
                   },
                   "publication": {
                     "id": "EASL_2017_FRI_205",
-                    "displayName": "Krishnan et al., 2017"
+                    "displayName": "Krishnan et al., 2017",
+                    "index": 1
                   }
                 },
                 {
@@ -617,7 +629,8 @@
                   },
                   "publication": {
                     "id": "28193664",
-                    "displayName": "Ng et al., 2017"
+                    "displayName": "Ng et al., 2017",
+                    "index": 8
                   }
                 },
                 {
@@ -632,7 +645,8 @@
                   },
                   "publication": {
                     "id": "29274866",
-                    "displayName": "Gottwein et al., 2018"
+                    "displayName": "Gottwein et al., 2018",
+                    "index": 9
                   }
                 },
                 {
@@ -647,7 +661,8 @@
                   },
                   "publication": {
                     "id": "EASL_2013_Poster_1191",
-                    "displayName": "Cheng et al., 2013"
+                    "displayName": "Cheng et al., 2013",
+                    "index": 10
                   }
                 },
                 {
@@ -662,7 +677,8 @@
                   },
                   "publication": {
                     "id": "27353271",
-                    "displayName": "Lawitz et al., 2016"
+                    "displayName": "Lawitz et al., 2016",
+                    "index": 5
                   }
                 },
                 {
@@ -711,7 +727,8 @@
                   },
                   "publication": {
                     "id": "29221887",
-                    "displayName": "Hezode et al., 2018"
+                    "displayName": "Hezode et al., 2018",
+                    "index": 11
                   }
                 },
                 {
@@ -731,7 +748,8 @@
                   },
                   "publication": {
                     "id": "28564569",
-                    "displayName": "Bourlière et al., 2017"
+                    "displayName": "Bourlière et al., 2017",
+                    "index": 12
                   }
                 },
                 {
@@ -751,7 +769,8 @@
                   },
                   "publication": {
                     "id": "28564569",
-                    "displayName": "Bourlière et al., 2017"
+                    "displayName": "Bourlière et al., 2017",
+                    "index": 12
                   }
                 },
                 {
@@ -771,7 +790,8 @@
                   },
                   "publication": {
                     "id": "26569658",
-                    "displayName": "Curry et al., 2015"
+                    "displayName": "Curry et al., 2015",
+                    "index": 7
                   }
                 },
                 {
@@ -786,7 +806,8 @@
                   },
                   "publication": {
                     "id": "27353271",
-                    "displayName": "Lawitz et al., 2016"
+                    "displayName": "Lawitz et al., 2016",
+                    "index": 5
                   }
                 },
                 {
@@ -801,7 +822,8 @@
                   },
                   "publication": {
                     "id": "29274866",
-                    "displayName": "Gottwein et al., 2018"
+                    "displayName": "Gottwein et al., 2018",
+                    "index": 9
                   }
                 },
                 {
@@ -816,7 +838,8 @@
                   },
                   "publication": {
                     "id": "27353271",
-                    "displayName": "Lawitz et al., 2016"
+                    "displayName": "Lawitz et al., 2016",
+                    "index": 5
                   }
                 },
                 {
@@ -831,7 +854,8 @@
                   },
                   "publication": {
                     "id": "29274866",
-                    "displayName": "Gottwein et al., 2018"
+                    "displayName": "Gottwein et al., 2018",
+                    "index": 9
                   }
                 },
                 {
@@ -851,7 +875,8 @@
                   },
                   "publication": {
                     "id": "28498551",
-                    "displayName": "Gane et al., 2017"
+                    "displayName": "Gane et al., 2017",
+                    "index": 13
                   }
                 },
                 {
@@ -871,7 +896,8 @@
                   },
                   "publication": {
                     "id": "26569658",
-                    "displayName": "Curry et al., 2015"
+                    "displayName": "Curry et al., 2015",
+                    "index": 7
                   }
                 },
                 {
@@ -891,7 +917,8 @@
                   },
                   "publication": {
                     "id": "26575258",
-                    "displayName": "Foster et al., 2015"
+                    "displayName": "Foster et al., 2015",
+                    "index": 14
                   }
                 },
                 {
@@ -906,7 +933,8 @@
                   },
                   "publication": {
                     "id": "EASL_2013_Poster_1191",
-                    "displayName": "Cheng et al., 2013"
+                    "displayName": "Cheng et al., 2013",
+                    "index": 10
                   }
                 },
                 {
@@ -926,7 +954,8 @@
                   },
                   "publication": {
                     "id": "28498551",
-                    "displayName": "Gane et al., 2017"
+                    "displayName": "Gane et al., 2017",
+                    "index": 13
                   }
                 },
                 {
@@ -946,7 +975,8 @@
                   },
                   "publication": {
                     "id": "26569658",
-                    "displayName": "Curry et al., 2015"
+                    "displayName": "Curry et al., 2015",
+                    "index": 7
                   }
                 },
                 {
@@ -966,7 +996,8 @@
                   },
                   "publication": {
                     "id": "26569658",
-                    "displayName": "Curry et al., 2015"
+                    "displayName": "Curry et al., 2015",
+                    "index": 7
                   }
                 },
                 {
@@ -981,7 +1012,8 @@
                   },
                   "publication": {
                     "id": "29274866",
-                    "displayName": "Gottwein et al., 2018"
+                    "displayName": "Gottwein et al., 2018",
+                    "index": 9
                   }
                 },
                 {
@@ -996,7 +1028,8 @@
                   },
                   "publication": {
                     "id": "27353271",
-                    "displayName": "Lawitz et al., 2016"
+                    "displayName": "Lawitz et al., 2016",
+                    "index": 5
                   }
                 },
                 {
@@ -1045,7 +1078,8 @@
                   },
                   "publication": {
                     "id": "29221887",
-                    "displayName": "Hezode et al., 2018"
+                    "displayName": "Hezode et al., 2018",
+                    "index": 11
                   }
                 },
                 {
@@ -1094,7 +1128,8 @@
                   },
                   "publication": {
                     "id": "29221887",
-                    "displayName": "Hezode et al., 2018"
+                    "displayName": "Hezode et al., 2018",
+                    "index": 11
                   }
                 },
                 {
@@ -1114,7 +1149,8 @@
                   },
                   "publication": {
                     "id": "26575258",
-                    "displayName": "Foster et al., 2015"
+                    "displayName": "Foster et al., 2015",
+                    "index": 14
                   }
                 },
                 {
@@ -1134,7 +1170,8 @@
                   },
                   "publication": {
                     "id": "26575258",
-                    "displayName": "Foster et al., 2015"
+                    "displayName": "Foster et al., 2015",
+                    "index": 14
                   }
                 },
                 {
@@ -1154,7 +1191,8 @@
                   },
                   "publication": {
                     "id": "28564569",
-                    "displayName": "Bourlière et al., 2017"
+                    "displayName": "Bourlière et al., 2017",
+                    "index": 12
                   }
                 },
                 {
@@ -1174,7 +1212,8 @@
                   },
                   "publication": {
                     "id": "28564569",
-                    "displayName": "Bourlière et al., 2017"
+                    "displayName": "Bourlière et al., 2017",
+                    "index": 12
                   }
                 },
                 {
@@ -1189,7 +1228,8 @@
                   },
                   "publication": {
                     "id": "27353271",
-                    "displayName": "Lawitz et al., 2016"
+                    "displayName": "Lawitz et al., 2016",
+                    "index": 5
                   }
                 }
               ]
@@ -1200,114 +1240,6 @@
     ],
     "publications": [
       {
-        "id": "26569658",
-        "authors_short": "Curry et al.",
-        "authors_full": "Curry MP, O'Leary JG, Bzowej N, Muir AJ, Korenblat KM, Fenkel JM, Reddy KR, Lawitz E, Flamm SL, Schiano T, Teperman L, Fontana R, Schiff E, Fried M, Doehle B, An D, McNally J, Osinusi A, Brainard DM, McHutchison JG, Brown RS Jr, Charlton M",
-        "title": "Sofosbuvir and Velpatasvir for HCV in Patients with Decompensated Cirrhosis.",
-        "year": "2015",
-        "journal": "N. Engl. J. Med.",
-        "volume": "373",
-        "issue": "27",
-        "pages": "2618-28",
-        "url": "https://doi.org/10.1056/NEJMoa1512614"
-      },
-      {
-        "id": "26575258",
-        "authors_short": "Foster et al.",
-        "authors_full": "Foster GR, Afdhal N, Roberts SK, Bräu N, Gane EJ, Pianko S, Lawitz E, Thompson A, Shiffman ML, Cooper C, Towner WJ, Conway B, Ruane P, Bourlière M, Asselah T, Berg T, Zeuzem S, Rosenberg W, Agarwal K, Stedman CA, Mo H, Dvory-Sobol H, Han L, Wang J, McNally J, Osinusi A, Brainard DM, McHutchison JG, Mazzotta F, Tran TT, Gordon SC, Patel K, Reau N, Mangia A, Sulkowski M",
-        "title": "Sofosbuvir and Velpatasvir for HCV Genotype 2 and 3 Infection.",
-        "year": "2015",
-        "journal": "N. Engl. J. Med.",
-        "volume": "373",
-        "issue": "27",
-        "pages": "2608-17",
-        "url": "https://doi.org/10.1056/NEJMoa1512612"
-      },
-      {
-        "id": "27353271",
-        "authors_short": "Lawitz et al.",
-        "authors_full": "Lawitz EJ, Dvory-Sobol H, Doehle BP, Worth AS, McNally J, Brainard DM, Link JO, Miller MD, Mo H",
-        "title": "Clinical Resistance to Velpatasvir (GS-5816), a Novel Pan-Genotypic Inhibitor of the Hepatitis C Virus NS5A Protein.",
-        "year": "2016",
-        "journal": "Antimicrob. Agents Chemother.",
-        "volume": "60",
-        "issue": "9",
-        "pages": "5368-78",
-        "url": "https://doi.org/10.1128/AAC.00763-16"
-      },
-      {
-        "id": "28193664",
-        "authors_short": "Ng et al.",
-        "authors_full": "Ng TI, Krishnan P, Pilot-Matias T, Kati W, Schnell G, Beyer J, Reisch T, Lu L, Dekhtyar T, Irvin M, Tripathi R, Maring C, Randolph JT, Wagner R, Collins C",
-        "title": "In Vitro Antiviral Activity and Resistance Profile of the Next-Generation Hepatitis C Virus NS5A Inhibitor Pibrentasvir.",
-        "year": "2017",
-        "journal": "Antimicrob. Agents Chemother.",
-        "volume": "61",
-        "issue": "5",
-        "pages": null,
-        "url": "https://doi.org/10.1128/AAC.02558-16"
-      },
-      {
-        "id": "28498551",
-        "authors_short": "Gane et al.",
-        "authors_full": "Gane EJ, Shiffman ML, Etzkorn K, Morelli G, Stedman CAM, Davis MN, Hinestrosa F, Dvory-Sobol H, Huang KC, Osinusi A, McNally J, Brainard DM, McHutchison JG, Thompson AJ, Sulkowski MS",
-        "title": "Sofosbuvir-velpatasvir with ribavirin for 24 weeks in hepatitis C virus patients previously treated with a direct-acting antiviral regimen.",
-        "year": "2017",
-        "journal": "Hepatology",
-        "volume": "66",
-        "issue": "4",
-        "pages": "1083-1089",
-        "url": "https://doi.org/10.1002/hep.29256"
-      },
-      {
-        "id": "28564569",
-        "authors_short": "Bourlière et al.",
-        "authors_full": "Bourlière M, Gordon SC, Flamm SL, Cooper CL, Ramji A, Tong M, Ravendhran N, Vierling JM, Tran TT, Pianko S, Bansal MB, de Lédinghen V, Hyland RH, Stamm LM, Dvory-Sobol H, Svarovskaia E, Zhang J, Huang KC, Subramanian GM, Brainard DM, McHutchison JG, Verna EC, Buggisch P, Landis CS, Younes ZH, Curry MP, Strasser SI, Schiff ER, Reddy KR, Manns MP, Kowdley KV, Zeuzem S",
-        "title": "Sofosbuvir, Velpatasvir, and Voxilaprevir for Previously Treated HCV Infection.",
-        "year": "2017",
-        "journal": "N. Engl. J. Med.",
-        "volume": "376",
-        "issue": "22",
-        "pages": "2134-2146",
-        "url": "https://doi.org/10.1056/NEJMoa1613512"
-      },
-      {
-        "id": "29152781",
-        "authors_short": "Poordad et al.",
-        "authors_full": "Poordad F, Pol S, Asatryan A, Buti M, Shaw D, Hézode C, Felizarta F, Reindollar RW, Gordon SC, Pianko S, Fried MW, Bernstein DE, Gallant J, Lin CW, Lei Y, Ng TI, Krishnan P, Kopecky-Bromberg S, Kort J, Mensa FJ",
-        "title": "Glecaprevir/Pibrentasvir in patients with hepatitis C virus genotype 1 or 4 and past direct-acting antiviral treatment failure.",
-        "year": "2018",
-        "journal": "Hepatology",
-        "volume": "67",
-        "issue": "4",
-        "pages": "1253-1260",
-        "url": "https://doi.org/10.1002/hep.29671"
-      },
-      {
-        "id": "29221887",
-        "authors_short": "Hezode et al.",
-        "authors_full": "Hezode C, Reau N, Svarovskaia ES, Doehle BP, Shanmugam R, Dvory-Sobol H, Hedskog C, McNally J, Osinusi A, Brainard DM, Miller MD, Mo H, Roberts SK, O'Leary JG, Shafran SD, Zeuzem S",
-        "title": "Resistance analysis in patients with genotype 1-6 HCV infection treated with sofosbuvir/velpatasvir in the phase III studies.",
-        "year": "2018",
-        "journal": "J. Hepatol.",
-        "volume": "68",
-        "issue": "5",
-        "pages": "895-903",
-        "url": "https://doi.org/10.1016/j.jhep.2017.11.032"
-      },
-      {
-        "id": "29274866",
-        "authors_short": "Gottwein et al.",
-        "authors_full": "Gottwein JM, Pham LV, Mikkelsen LS, Ghanem L, Ramirez S, Scheel TKH, Carlsen THR, Bukh J",
-        "title": "Efficacy of NS5A Inhibitors Against Hepatitis C Virus Genotypes 1-7 and Escape Variants.",
-        "year": "2018",
-        "journal": "Gastroenterology",
-        "volume": "154",
-        "issue": "5",
-        "pages": "1435-1448",
-        "url": "https://doi.org/10.1053/j.gastro.2017.12.015"
-      },
-      {
         "id": "EASL_2017_FRI_205",
         "authors_short": "Krishnan et al.",
         "authors_full": "P. Krishnan, G. Schnell, R. Tripathi, T. Ng, T. Reisch, J. Beyer, T. Dekhtyar, M. Irvin, W. Xie, L. Larsen, F. Mensa, T. Pilot-Matias and C. Collins",
@@ -1317,7 +1249,8 @@
         "volume": "66",
         "issue": "1",
         "pages": "S500",
-        "url": "https://doi.org/10.1016/S0168-8278(17)31399-5"
+        "url": "https://doi.org/10.1016/S0168-8278(17)31399-5",
+        "index": 1
       },
       {
         "id": "EASL_2017_Abs_THU-257",
@@ -1329,7 +1262,8 @@
         "volume": "66",
         "issue": "1",
         "pages": "S303",
-        "url": "https://doi.org/10.1016/S0168-8278(17)30924-8"
+        "url": "https://doi.org/10.1016/S0168-8278(17)30924-8",
+        "index": 2
       },
       {
         "id": "Pooled_phase_III_EASL_2017_Abs_248",
@@ -1341,7 +1275,8 @@
         "volume": "66",
         "issue": "1",
         "pages": "S299",
-        "url": "https://doi.org/10.1016/S0168-8278(17)30915-7"
+        "url": "https://doi.org/10.1016/S0168-8278(17)30915-7",
+        "index": 3
       },
       {
         "id": "AASLD_2017_Abs_1176",
@@ -1353,7 +1288,73 @@
         "volume": "66",
         "issue": "S1",
         "pages": "632A",
-        "url": "https://doi.org/10.1002/hep.29501"
+        "url": "https://doi.org/10.1002/hep.29501",
+        "index": 4
+      },
+      {
+        "id": "27353271",
+        "authors_short": "Lawitz et al.",
+        "authors_full": "Lawitz EJ, Dvory-Sobol H, Doehle BP, Worth AS, McNally J, Brainard DM, Link JO, Miller MD, Mo H",
+        "title": "Clinical Resistance to Velpatasvir (GS-5816), a Novel Pan-Genotypic Inhibitor of the Hepatitis C Virus NS5A Protein.",
+        "year": "2016",
+        "journal": "Antimicrob. Agents Chemother.",
+        "volume": "60",
+        "issue": "9",
+        "pages": "5368-78",
+        "url": "https://doi.org/10.1128/AAC.00763-16",
+        "index": 5
+      },
+      {
+        "id": "29152781",
+        "authors_short": "Poordad et al.",
+        "authors_full": "Poordad F, Pol S, Asatryan A, Buti M, Shaw D, Hézode C, Felizarta F, Reindollar RW, Gordon SC, Pianko S, Fried MW, Bernstein DE, Gallant J, Lin CW, Lei Y, Ng TI, Krishnan P, Kopecky-Bromberg S, Kort J, Mensa FJ",
+        "title": "Glecaprevir/Pibrentasvir in patients with hepatitis C virus genotype 1 or 4 and past direct-acting antiviral treatment failure.",
+        "year": "2018",
+        "journal": "Hepatology",
+        "volume": "67",
+        "issue": "4",
+        "pages": "1253-1260",
+        "url": "https://doi.org/10.1002/hep.29671",
+        "index": 6
+      },
+      {
+        "id": "26569658",
+        "authors_short": "Curry et al.",
+        "authors_full": "Curry MP, O'Leary JG, Bzowej N, Muir AJ, Korenblat KM, Fenkel JM, Reddy KR, Lawitz E, Flamm SL, Schiano T, Teperman L, Fontana R, Schiff E, Fried M, Doehle B, An D, McNally J, Osinusi A, Brainard DM, McHutchison JG, Brown RS Jr, Charlton M",
+        "title": "Sofosbuvir and Velpatasvir for HCV in Patients with Decompensated Cirrhosis.",
+        "year": "2015",
+        "journal": "N. Engl. J. Med.",
+        "volume": "373",
+        "issue": "27",
+        "pages": "2618-28",
+        "url": "https://doi.org/10.1056/NEJMoa1512614",
+        "index": 7
+      },
+      {
+        "id": "28193664",
+        "authors_short": "Ng et al.",
+        "authors_full": "Ng TI, Krishnan P, Pilot-Matias T, Kati W, Schnell G, Beyer J, Reisch T, Lu L, Dekhtyar T, Irvin M, Tripathi R, Maring C, Randolph JT, Wagner R, Collins C",
+        "title": "In Vitro Antiviral Activity and Resistance Profile of the Next-Generation Hepatitis C Virus NS5A Inhibitor Pibrentasvir.",
+        "year": "2017",
+        "journal": "Antimicrob. Agents Chemother.",
+        "volume": "61",
+        "issue": "5",
+        "pages": null,
+        "url": "https://doi.org/10.1128/AAC.02558-16",
+        "index": 8
+      },
+      {
+        "id": "29274866",
+        "authors_short": "Gottwein et al.",
+        "authors_full": "Gottwein JM, Pham LV, Mikkelsen LS, Ghanem L, Ramirez S, Scheel TKH, Carlsen THR, Bukh J",
+        "title": "Efficacy of NS5A Inhibitors Against Hepatitis C Virus Genotypes 1-7 and Escape Variants.",
+        "year": "2018",
+        "journal": "Gastroenterology",
+        "volume": "154",
+        "issue": "5",
+        "pages": "1435-1448",
+        "url": "https://doi.org/10.1053/j.gastro.2017.12.015",
+        "index": 9
       },
       {
         "id": "EASL_2013_Poster_1191",
@@ -1365,7 +1366,60 @@
         "volume": "58",
         "issue": "Supplement 1",
         "pages": "S484-S485",
-        "url": "https://doi.org/10.1016/S0168-8278(13)61192-7"
+        "url": "https://doi.org/10.1016/S0168-8278(13)61192-7",
+        "index": 10
+      },
+      {
+        "id": "29221887",
+        "authors_short": "Hezode et al.",
+        "authors_full": "Hezode C, Reau N, Svarovskaia ES, Doehle BP, Shanmugam R, Dvory-Sobol H, Hedskog C, McNally J, Osinusi A, Brainard DM, Miller MD, Mo H, Roberts SK, O'Leary JG, Shafran SD, Zeuzem S",
+        "title": "Resistance analysis in patients with genotype 1-6 HCV infection treated with sofosbuvir/velpatasvir in the phase III studies.",
+        "year": "2018",
+        "journal": "J. Hepatol.",
+        "volume": "68",
+        "issue": "5",
+        "pages": "895-903",
+        "url": "https://doi.org/10.1016/j.jhep.2017.11.032",
+        "index": 11
+      },
+      {
+        "id": "28564569",
+        "authors_short": "Bourlière et al.",
+        "authors_full": "Bourlière M, Gordon SC, Flamm SL, Cooper CL, Ramji A, Tong M, Ravendhran N, Vierling JM, Tran TT, Pianko S, Bansal MB, de Lédinghen V, Hyland RH, Stamm LM, Dvory-Sobol H, Svarovskaia E, Zhang J, Huang KC, Subramanian GM, Brainard DM, McHutchison JG, Verna EC, Buggisch P, Landis CS, Younes ZH, Curry MP, Strasser SI, Schiff ER, Reddy KR, Manns MP, Kowdley KV, Zeuzem S",
+        "title": "Sofosbuvir, Velpatasvir, and Voxilaprevir for Previously Treated HCV Infection.",
+        "year": "2017",
+        "journal": "N. Engl. J. Med.",
+        "volume": "376",
+        "issue": "22",
+        "pages": "2134-2146",
+        "url": "https://doi.org/10.1056/NEJMoa1613512",
+        "index": 12
+      },
+      {
+        "id": "28498551",
+        "authors_short": "Gane et al.",
+        "authors_full": "Gane EJ, Shiffman ML, Etzkorn K, Morelli G, Stedman CAM, Davis MN, Hinestrosa F, Dvory-Sobol H, Huang KC, Osinusi A, McNally J, Brainard DM, McHutchison JG, Thompson AJ, Sulkowski MS",
+        "title": "Sofosbuvir-velpatasvir with ribavirin for 24 weeks in hepatitis C virus patients previously treated with a direct-acting antiviral regimen.",
+        "year": "2017",
+        "journal": "Hepatology",
+        "volume": "66",
+        "issue": "4",
+        "pages": "1083-1089",
+        "url": "https://doi.org/10.1002/hep.29256",
+        "index": 13
+      },
+      {
+        "id": "26575258",
+        "authors_short": "Foster et al.",
+        "authors_full": "Foster GR, Afdhal N, Roberts SK, Bräu N, Gane EJ, Pianko S, Lawitz E, Thompson A, Shiffman ML, Cooper C, Towner WJ, Conway B, Ruane P, Bourlière M, Asselah T, Berg T, Zeuzem S, Rosenberg W, Agarwal K, Stedman CA, Mo H, Dvory-Sobol H, Han L, Wang J, McNally J, Osinusi A, Brainard DM, McHutchison JG, Mazzotta F, Tran TT, Gordon SC, Patel K, Reau N, Mangia A, Sulkowski M",
+        "title": "Sofosbuvir and Velpatasvir for HCV Genotype 2 and 3 Infection.",
+        "year": "2015",
+        "journal": "N. Engl. J. Med.",
+        "volume": "373",
+        "issue": "27",
+        "pages": "2608-17",
+        "url": "https://doi.org/10.1056/NEJMoa1512612",
+        "index": 14
       }
     ]
   }

@@ -98,7 +98,9 @@ The sequence was not identified as hepatitis C virus.
 <th>Virus protein</th>
 <th>Polymorphism</th>
 <th>Resisted drug</th>
-<th>Genotype / subtype</th>
+<th>Genotype / Subtype</th>
+<th><em>In vitro</em> evidence</th>
+<th><em>In vivo</em> evidence</th>
 <th>Reference</th>
 </tr>
 </thead>
@@ -116,7 +118,9 @@ The sequence was not identified as hepatitis C virus.
 </#if>
 <td <#if evenRow>id="resistanceFindingEven"</#if>>${resistanceFinding.drug}</td>
 <td <#if evenRow>id="resistanceFindingEven"</#if>>${resistanceFinding.clade.displayName}</td>
-<td <#if evenRow>id="resistanceFindingEven"</#if>>${resistanceFinding.publication.displayName}</td>
+<td <#if evenRow>id="resistanceFindingEven"</#if>></td>
+<td <#if evenRow>id="resistanceFindingEven"</#if>></td>
+<td <#if evenRow>id="resistanceFindingEven"</#if>>${resistanceFinding.publication.displayName} [${resistanceFinding.publication.index}]</td>
 <#if evenRow>
 <#assign evenRow=false>
 <#else>
@@ -139,7 +143,7 @@ The sequence was not identified as hepatitis C virus.
 <#assign pubIdx=1>
 <#list publications as publication>
 <p>
-[${publication.authors_short}, ${publication.year}] 
+[${publication.index}] 
 <b>${publication.title}</b>
 ${publication.authors_full}, 
 ${publication.journal}

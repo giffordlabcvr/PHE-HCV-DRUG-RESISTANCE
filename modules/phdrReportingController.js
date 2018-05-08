@@ -1,3 +1,6 @@
+
+var nextPubIndex = 1;
+
 function reportFastaAsHtml(fastaFilePath, htmlFilePath) {
 	var reportDoc = reportFasta(fastaFilePath);
 	glue.inMode("module/phdrRasReportTransformer", function() {
@@ -51,6 +54,7 @@ function reportFasta(fastaFilePath) {
 	glue.log("FINE", "phdrReportingController.reportFasta, result map after genotyping", resultMap);
 
 	var publicationIdToObj = {};
+	nextPubIndex = 1;
 	
 	// apply variation scanning
 	_.each(_.values(resultMap), function(sequenceResult) {
@@ -96,13 +100,18 @@ function reportFasta(fastaFilePath) {
 	glue.log("FINE", "phdrReportingController.reportFasta publicationIdToObj:", publicationIdToObj);
 	
 	var results = _.values(resultMap);
+	var publications = _.values(publicationIdToObj);
+	publications = _.sortBy(publications, "index");
+
+	
 	var fastaReport = { 
 		fastaReport: {
 			fastaFilePath: fastaFilePath,
 			sequenceResults: results, 
-			publications: _.values(publicationIdToObj)
+			publications: publications
 		}
 	};
+
 	glue.log("FINE", "phdrReportingController.reportFasta fastaReport:", fastaReport);
 	return fastaReport;
 }
@@ -110,11 +119,16 @@ function reportFasta(fastaFilePath) {
 function addRasPublications(rasFinding, publicationIdToObj) {
 	_.each(rasFinding.phdrRasVariation.resistanceFinding, function(resistanceFinding) {
 		var publicationId = resistanceFinding.publication.id;
-		if(publicationIdToObj[publicationId] == null) {
+		var publicationObj = publicationIdToObj[publicationId];
+		if(publicationObj == null) {
 			glue.inMode("/custom-table-row/phdr_publication/"+publicationId, function() {
-				publicationIdToObj[publicationId] = glue.command(["render-object", "phdrPublicationRenderer"]).publication;
+				publicationObj = glue.command(["render-object", "phdrPublicationRenderer"]).publication;
+				publicationObj.index = nextPubIndex;
+				nextPubIndex++;
+				publicationIdToObj[publicationId] = publicationObj;
 			});							
 		}
+		resistanceFinding.publication.index = publicationObj.index;
 	});
 }
 
@@ -153,7 +167,8 @@ function reportBam(bamFilePath) {
 	genotypeFasta(genotypingFastaMap, resultMap);
 	
 	var publicationIdToObj = {};
-	
+	nextPubIndex = 1;
+
 	// scan variations for each sam reference
 	_.each(_.values(resultMap), function(samRefResult) {
 		var genotypingResult = samRefResult.genotypingResult;
@@ -191,13 +206,16 @@ function reportBam(bamFilePath) {
 	});
 	glue.log("FINE", "phdrReportingController.reportBam publicationIdToObj:", publicationIdToObj);
 
+	var publications = _.values(publicationIdToObj);
+	publications = _.sortBy(publications, "index");
+	
 	var bamReport = 
 	{ 
 		bamReport: { 
 			bamFilePath: bamFilePath,
 			samReferenceResults: _.values(resultMap),
-			publications: _.values(publicationIdToObj)
-		} 
+			publications: publications
+		}
 	};
 	
 	glue.log("FINE", "phdrReportingController.reportBam bamReport:", bamReport);
