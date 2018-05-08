@@ -84,18 +84,16 @@ function reportFasta(fastaFilePath) {
 				});
 				sequenceResult.rasScanResults = scanResults;
 				glue.log("FINE", "phdrReportingController.reportFasta rasScanResults:", sequenceResult.rasScanResults);
-				var rasFindings = [];
 				_.each(scanResults, function(scanResult) {
+					var rasFinding;
 					glue.inMode("/reference/"+scanResult.referenceName+
 								"/feature-location/"+scanResult.featureName+
 								"/variation/"+scanResult.variationName, function() {
-						rasFindings.push(glue.command(["render-object", "phdrRasVariationRenderer"]));
+						rasFinding = glue.command(["render-object", "phdrRasVariationRenderer"]);
+						scanResult.rasDetails = rasFinding.phdrRasVariation;
 					});
-				});
-				_.each(rasFindings, function(rasFinding) {
 					addRasPublications(rasFinding, publicationIdToObj);
 				});
-				sequenceResult.rasFindings = rasFindings;
 			}
 		}
 	});
@@ -187,19 +185,16 @@ function reportBam(bamFilePath) {
 			});
 			samRefResult.rasScanResults = scanResults;
 			glue.log("FINE", "phdrReportingController.reportBam rasScanResults:", samRefResult.rasScanResults);
-			var rasFindings = [];
 			_.each(scanResults, function(scanResult) {
+				var rasFinding;
 				glue.inMode("/reference/"+scanResult.referenceName+
 							"/feature-location/"+scanResult.featureName+
 							"/variation/"+scanResult.variationName, function() {
-					rasFindings.push(glue.command(["render-object", "phdrRasVariationRenderer"]));
+					rasFinding = glue.command(["render-object", "phdrRasVariationRenderer"]);
+					scanResult.rasDetails = rasFinding.phdrRasVariation;
 				});
-			});
-			_.each(rasFindings, function(rasFinding) {
 				addRasPublications(rasFinding, publicationIdToObj);
 			});
-			samRefResult.rasFindings = rasFindings;
-			glue.log("FINE", "phdrReportingController.reportBam rasFindings:", samRefResult.rasFindings);
 		}
 	});
 	glue.log("FINE", "phdrReportingController.reportBam publicationIdToObj:", publicationIdToObj);
@@ -360,22 +355,5 @@ function recogniseFasta(fastaMap, resultMap) {
 			resultMap[recogniserResult.querySequenceId].isReverseHcv = true;
 		} 
 	});
-}
-
-function enhanceInVitroRasScanResult(genotypingResult, scanResult) {
-	var subtypeFinalClade = genotypingResult.subtypeFinalClade;
-	var genotypeFinalClade = genotypingResult.genotypeFinalClade;
-	var relevantClades = "('"+genotypeFinalClade+"')"
-	if(subtypeFinalClade != null) {
-		relevantClades = "('"+genotypeFinalClade+"', '"+subtypeFinalClade+"')"
-	}
-	scanResult.rasDetails = glue.command(
-			["multi-render", "phdr_resistance_finding", 
-              "--whereClause", 
-              "phdr_ras.variation.featureLoc.referenceSequence.name = '"+scanResult.referenceName+"' and "+
-              "phdr_ras.variation.featureLoc.feature.name = '"+scanResult.featureName+"' and "+
-              "phdr_ras.variation.name = '"+scanResult.variationName+"' and "+
-              "alignment.name in "+relevantClades, 
-              "hcvDRInVitroFindingRenderer"]).multiRenderResult.resultDocument;
 }
 

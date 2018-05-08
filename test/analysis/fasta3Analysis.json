@@ -1,0 +1,108 @@
+{
+  "fastaReport": {
+    "fastaFilePath": "test/inputs/fasta3.fasta",
+    "sequenceResults": [
+      {
+        "id": "unclearSubtype",
+        "isForwardHcv": true,
+        "isReverseHcv": false,
+        "genotypingResult": {
+          "queryName": "unclearSubtype",
+          "queryCladeCategoryResult": [
+            {
+              "categoryName": "genotype",
+              "categoryDisplayName": "Genotype",
+              "queryCladeResult": [
+                {
+                  "cladeName": "AL_1",
+                  "cladeRenderedName": "HCV Genotype 1",
+                  "percentScore": 100
+                }
+              ],
+              "finalClade": "AL_1",
+              "finalCladeRenderedName": "HCV Genotype 1",
+              "closestMemberAlignmentName": "AL_1c",
+              "closestMemberSourceName": "ncbi-refseqs",
+              "closestMemberSequenceID": "AY651061",
+              "shortRenderedName": "1"
+            },
+            {
+              "categoryName": "subtype",
+              "categoryDisplayName": "Subtype",
+              "queryCladeResult": [
+                {
+                  "cladeName": "AL_1c",
+                  "cladeRenderedName": "HCV Subtype 1c",
+                  "percentScore": 43.17024143244757
+                },
+                {
+                  "cladeName": "AL_1a",
+                  "cladeRenderedName": "HCV Subtype 1a",
+                  "percentScore": 56.671601059496254
+                },
+                {
+                  "cladeName": "AL_1n",
+                  "cladeRenderedName": "HCV Subtype 1n",
+                  "percentScore": 0.15815750805618678
+                }
+              ],
+              "finalClade": null,
+              "finalCladeRenderedName": null,
+              "closestMemberAlignmentName": null,
+              "closestMemberSourceName": null,
+              "closestMemberSequenceID": null,
+              "shortRenderedName": "unknown"
+            }
+          ],
+          "genotypeCladeCategoryResult": {
+            "categoryName": "genotype",
+            "categoryDisplayName": "Genotype",
+            "queryCladeResult": [
+              {
+                "cladeName": "AL_1",
+                "cladeRenderedName": "HCV Genotype 1",
+                "percentScore": 100
+              }
+            ],
+            "finalClade": "AL_1",
+            "finalCladeRenderedName": "HCV Genotype 1",
+            "closestMemberAlignmentName": "AL_1c",
+            "closestMemberSourceName": "ncbi-refseqs",
+            "closestMemberSequenceID": "AY651061",
+            "shortRenderedName": "1"
+          },
+          "subtypeCladeCategoryResult": {
+            "categoryName": "subtype",
+            "categoryDisplayName": "Subtype",
+            "queryCladeResult": [
+              {
+                "cladeName": "AL_1c",
+                "cladeRenderedName": "HCV Subtype 1c",
+                "percentScore": 43.17024143244757
+              },
+              {
+                "cladeName": "AL_1a",
+                "cladeRenderedName": "HCV Subtype 1a",
+                "percentScore": 56.671601059496254
+              },
+              {
+                "cladeName": "AL_1n",
+                "cladeRenderedName": "HCV Subtype 1n",
+                "percentScore": 0.15815750805618678
+              }
+            ],
+            "finalClade": null,
+            "finalCladeRenderedName": null,
+            "closestMemberAlignmentName": null,
+            "closestMemberSourceName": null,
+            "closestMemberSequenceID": null,
+            "shortRenderedName": "unknown"
+          }
+        },
+        "targetRefName": "REF_1c_AY651061",
+        "rasScanResults": []
+      }
+    ],
+    "publications": []
+  }
+}

@@ -2,7 +2,7 @@
 <h1>Hepatitis C virus sequence report</h1>
 <#list sequenceResults as sequenceResult>
 <h2>Sequence ${sequenceResult.id}</h2>
-<h3>Classification</h3>
+<h3>Phylogenetic classification</h3>
 <#assign isHcv=true>
 <#if sequenceResult.isForwardHcv>
 The sequence was identified as hepatitis C virus.
@@ -15,17 +15,45 @@ The sequence was not identified as hepatitis C virus.
 <#if isHcv>
 <table>
 <tr>
-<td>Genotype</td>
+
+<td><b>Genotype</b></td>
 <td>${sequenceResult.genotypingResult.genotypeCladeCategoryResult.shortRenderedName}</td>
 </tr>
 <tr>
-<td>Subtype</td>
+
+<td><b>Subtype</b></td>
 <td>${sequenceResult.genotypingResult.subtypeCladeCategoryResult.shortRenderedName}</td>
 </tr>
+
+<tr>
+<td><b>Closest reference sequence</b></td>
+<td>${sequenceResult.genotypingResult.genotypeCladeCategoryResult.closestMemberSequenceID}</td>
+</tr>
+
+</table>
+
+<h3>Resistance-associated sequence polymorphisms detected</h3>
+<#if sequenceResult.rasScanResults??>
+<table>
+<#list sequenceResult.rasScanResults as rasScanResult>
+<#assign firstRow=true>
+<#list rasScanResult.rasDetails.resistanceFinding as resistanceFinding>
+<tr>
+<#if firstRow>
+<td rowspan = "${rasScanResult.rasDetails.resistanceFinding?size}">${rasScanResult.rasDetails.gene}</td>
+<td rowspan = "${rasScanResult.rasDetails.resistanceFinding?size}">${rasScanResult.rasDetails.structure}</td>
+<#assign firstRow=false>
+</#if>
+<td>${resistanceFinding.drug}</td>
+<td>${resistanceFinding.publication.displayName}</td>
+</tr>
+</#list>
+</#list>
 </table>
 </#if>
-</#list>
 
+</#if>
+</#list>
 
 
 <#if publications??>

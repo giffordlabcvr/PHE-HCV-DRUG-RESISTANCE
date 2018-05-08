@@ -4,6 +4,8 @@
 	<featureName>${featureLoc.feature.name}</featureName>
 	<name>${name}</name>
 	<type>${type}</type>
+	<gene>${phdr_ras.gene}</gene>
+	<structure>${phdr_ras.structure}</structure>
 	<@elem tag="displayName" expr="description"/>
 	<@elem tag="description" expr="description"/>
 	<#list metatags as metatag>

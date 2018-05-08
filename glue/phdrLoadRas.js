@@ -56,6 +56,10 @@ _.each(rasObjs, function(rasObj) {
 	var rasId = rasObj.gene+":"+rasObj.structure;
 	var variationId = "phdr_ras:"+rasId;
 	glue.command(["create", "custom-table-row", "phdr_ras", rasId]);
+	glue.inMode("custom-table-row/phdr_ras/"+rasId, function() {
+		glue.command(["set", "field", "gene", rasObj.gene]);
+		glue.command(["set", "field", "structure", rasObj.structure]);
+	});
 	glue.inMode("reference/REF_MASTER_NC_004102/feature-location/"+rasObj.gene, function() {
 		if(rasObj.structure.indexOf("+") > 0) {
 			// conjunction

@@ -1,0 +1,13 @@
+{
+  "fastaReport": {
+    "fastaFilePath": "test/inputs/fasta2.fasta",
+    "sequenceResults": [
+      {
+        "id": "Nonsense",
+        "isForwardHcv": false,
+        "isReverseHcv": false
+      }
+    ],
+    "publications": []
+  }
+}

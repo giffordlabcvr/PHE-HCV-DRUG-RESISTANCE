@@ -7,6 +7,11 @@ create custom-table phdr_publication
 create custom-table phdr_clinical_trial
 create custom-table phdr_result_trial
 
+table phdr_ras
+  create field gene VARCHAR
+  create field structure VARCHAR
+  exit
+
 table phdr_clinical_trial
   create field display_name VARCHAR
   create field regimen VARCHAR
