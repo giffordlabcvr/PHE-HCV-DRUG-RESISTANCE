@@ -198,21 +198,6 @@
                 {
                   "drug": "voxilaprevir",
                   "clade": {
-                    "alignmentName": "AL_3a",
-                    "displayName": "HCV Subtype 3a"
-                  },
-                  "inVitroResult": {
-                    "minEC50FoldChange": 2.5,
-                    "maxEC50FoldChange": 20
-                  },
-                  "publication": {
-                    "id": "AASLD_2017_Abs_1176",
-                    "displayName": "Dvory-Sobol et al., 2017"
-                  }
-                },
-                {
-                  "drug": "voxilaprevir",
-                  "clade": {
                     "alignmentName": "AL_1a",
                     "displayName": "HCV Subtype 1a"
                   },
@@ -233,6 +218,21 @@
                   "publication": {
                     "id": "Pooled_phase_III_EASL_2017_Abs_248",
                     "displayName": "Sarrazin et al., 2017"
+                  }
+                },
+                {
+                  "drug": "voxilaprevir",
+                  "clade": {
+                    "alignmentName": "AL_3a",
+                    "displayName": "HCV Subtype 3a"
+                  },
+                  "inVitroResult": {
+                    "minEC50FoldChange": 2.5,
+                    "maxEC50FoldChange": 20
+                  },
+                  "publication": {
+                    "id": "AASLD_2017_Abs_1176",
+                    "displayName": "Dvory-Sobol et al., 2017"
                   }
                 }
               ]
@@ -518,12 +518,32 @@
                 {
                   "drug": "pibrentasvir",
                   "clade": {
-                    "alignmentName": "AL_3a",
-                    "displayName": "HCV Subtype 3a"
+                    "alignmentName": "AL_1a",
+                    "displayName": "HCV Subtype 1a"
+                  },
+                  "inVivoResult": {
+                    "clinicalTrial": [
+                      {
+                        "id": "Magellan-1_Part_2",
+                        "displayName": "Magellan-1, Part 2",
+                        "regimen": "GLE/PIB"
+                      }
+                    ]
+                  },
+                  "publication": {
+                    "id": "29152781",
+                    "displayName": "Poordad et al., 2018"
+                  }
+                },
+                {
+                  "drug": "pibrentasvir",
+                  "clade": {
+                    "alignmentName": "AL_1a",
+                    "displayName": "HCV Subtype 1a"
                   },
                   "inVitroResult": {
-                    "minEC50FoldChange": 2.3,
-                    "maxEC50FoldChange": 2.3
+                    "minEC50FoldChange": 6.7,
+                    "maxEC50FoldChange": 6.7
                   },
                   "publication": {
                     "id": "28193664",
@@ -588,32 +608,12 @@
                 {
                   "drug": "pibrentasvir",
                   "clade": {
-                    "alignmentName": "AL_1a",
-                    "displayName": "HCV Subtype 1a"
-                  },
-                  "inVivoResult": {
-                    "clinicalTrial": [
-                      {
-                        "id": "Magellan-1_Part_2",
-                        "displayName": "Magellan-1, Part 2",
-                        "regimen": "GLE/PIB"
-                      }
-                    ]
-                  },
-                  "publication": {
-                    "id": "29152781",
-                    "displayName": "Poordad et al., 2018"
-                  }
-                },
-                {
-                  "drug": "pibrentasvir",
-                  "clade": {
-                    "alignmentName": "AL_1a",
-                    "displayName": "HCV Subtype 1a"
+                    "alignmentName": "AL_3a",
+                    "displayName": "HCV Subtype 3a"
                   },
                   "inVitroResult": {
-                    "minEC50FoldChange": 6.7,
-                    "maxEC50FoldChange": 6.7
+                    "minEC50FoldChange": 2.3,
+                    "maxEC50FoldChange": 2.3
                   },
                   "publication": {
                     "id": "28193664",
@@ -623,141 +623,6 @@
                 {
                   "drug": "velpatasvir",
                   "clade": {
-                    "alignmentName": "AL_3a",
-                    "displayName": "HCV Subtype 3a"
-                  },
-                  "inVitroResult": {
-                    "minEC50FoldChange": 246.2,
-                    "maxEC50FoldChange": 246.2
-                  },
-                  "publication": {
-                    "id": "EASL_2013_Poster_1191",
-                    "displayName": "Cheng et al., 2013"
-                  }
-                },
-                {
-                  "drug": "velpatasvir",
-                  "clade": {
-                    "alignmentName": "AL_3",
-                    "displayName": "HCV Genotype 3"
-                  },
-                  "inVivoResult": {
-                    "clinicalTrial": [
-                      {
-                        "id": "NCT02300103",
-                        "displayName": "NCT02300103",
-                        "regimen": "SOF/VEL"
-                      }
-                    ]
-                  },
-                  "publication": {
-                    "id": "28498551",
-                    "displayName": "Gane et al., 2017"
-                  }
-                },
-                {
-                  "drug": "velpatasvir",
-                  "clade": {
-                    "alignmentName": "AL_3a",
-                    "displayName": "HCV Subtype 3a"
-                  },
-                  "inVivoResult": {
-                    "clinicalTrial": [
-                      {
-                        "id": "NCT02300103",
-                        "displayName": "NCT02300103",
-                        "regimen": "SOF/VEL"
-                      }
-                    ]
-                  },
-                  "publication": {
-                    "id": "28498551",
-                    "displayName": "Gane et al., 2017"
-                  }
-                },
-                {
-                  "drug": "velpatasvir",
-                  "clade": {
-                    "alignmentName": "AL_3a",
-                    "displayName": "HCV Subtype 3a"
-                  },
-                  "inVivoResult": {
-                    "clinicalTrial": [
-                      {
-                        "id": "ASTRAL-4",
-                        "displayName": "ASTRAL-4",
-                        "regimen": "SOF/VEL"
-                      }
-                    ]
-                  },
-                  "publication": {
-                    "id": "26569658",
-                    "displayName": "Curry et al., 2015"
-                  }
-                },
-                {
-                  "drug": "velpatasvir",
-                  "clade": {
-                    "alignmentName": "AL_3a",
-                    "displayName": "HCV Subtype 3a"
-                  },
-                  "inVivoResult": {
-                    "clinicalTrial": [
-                      {
-                        "id": "ASTRAL-4",
-                        "displayName": "ASTRAL-4",
-                        "regimen": "SOF/VEL"
-                      }
-                    ]
-                  },
-                  "publication": {
-                    "id": "26569658",
-                    "displayName": "Curry et al., 2015"
-                  }
-                },
-                {
-                  "drug": "velpatasvir",
-                  "clade": {
-                    "alignmentName": "AL_3",
-                    "displayName": "HCV Genotype 3"
-                  },
-                  "inVivoResult": {
-                    "clinicalTrial": [
-                      {
-                        "id": "ASTRAL-4",
-                        "displayName": "ASTRAL-4",
-                        "regimen": "SOF/VEL"
-                      }
-                    ]
-                  },
-                  "publication": {
-                    "id": "26569658",
-                    "displayName": "Curry et al., 2015"
-                  }
-                },
-                {
-                  "drug": "velpatasvir",
-                  "clade": {
-                    "alignmentName": "AL_1b",
-                    "displayName": "HCV Subtype 1b"
-                  },
-                  "inVivoResult": {
-                    "clinicalTrial": [
-                      {
-                        "id": "ASTRAL-4",
-                        "displayName": "ASTRAL-4",
-                        "regimen": "SOF/VEL"
-                      }
-                    ]
-                  },
-                  "publication": {
-                    "id": "26569658",
-                    "displayName": "Curry et al., 2015"
-                  }
-                },
-                {
-                  "drug": "velpatasvir",
-                  "clade": {
                     "alignmentName": "AL_1a",
                     "displayName": "HCV Subtype 1a"
                   },
@@ -788,117 +653,12 @@
                 {
                   "drug": "velpatasvir",
                   "clade": {
-                    "alignmentName": "AL_2a",
-                    "displayName": "HCV Subtype 2a"
-                  },
-                  "inVitroResult": {
-                    "minEC50FoldChange": 999,
-                    "maxEC50FoldChange": null
-                  },
-                  "publication": {
-                    "id": "29274866",
-                    "displayName": "Gottwein et al., 2018"
-                  }
-                },
-                {
-                  "drug": "velpatasvir",
-                  "clade": {
-                    "alignmentName": "AL_2b",
-                    "displayName": "HCV Subtype 2b"
-                  },
-                  "inVitroResult": {
-                    "minEC50FoldChange": 999,
-                    "maxEC50FoldChange": null
-                  },
-                  "publication": {
-                    "id": "29274866",
-                    "displayName": "Gottwein et al., 2018"
-                  }
-                },
-                {
-                  "drug": "velpatasvir",
-                  "clade": {
-                    "alignmentName": "AL_3a",
-                    "displayName": "HCV Subtype 3a"
-                  },
-                  "inVitroResult": {
-                    "minEC50FoldChange": 80,
-                    "maxEC50FoldChange": 999
-                  },
-                  "publication": {
-                    "id": "29274866",
-                    "displayName": "Gottwein et al., 2018"
-                  }
-                },
-                {
-                  "drug": "velpatasvir",
-                  "clade": {
                     "alignmentName": "AL_1a",
                     "displayName": "HCV Subtype 1a"
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 609.1,
                     "maxEC50FoldChange": 609.1
-                  },
-                  "publication": {
-                    "id": "27353271",
-                    "displayName": "Lawitz et al., 2016"
-                  }
-                },
-                {
-                  "drug": "velpatasvir",
-                  "clade": {
-                    "alignmentName": "AL_1b",
-                    "displayName": "HCV Subtype 1b"
-                  },
-                  "inVitroResult": {
-                    "minEC50FoldChange": 3.3,
-                    "maxEC50FoldChange": 3.3
-                  },
-                  "publication": {
-                    "id": "27353271",
-                    "displayName": "Lawitz et al., 2016"
-                  }
-                },
-                {
-                  "drug": "velpatasvir",
-                  "clade": {
-                    "alignmentName": "AL_2a",
-                    "displayName": "HCV Subtype 2a"
-                  },
-                  "inVitroResult": {
-                    "minEC50FoldChange": 45.7,
-                    "maxEC50FoldChange": 45.7
-                  },
-                  "publication": {
-                    "id": "27353271",
-                    "displayName": "Lawitz et al., 2016"
-                  }
-                },
-                {
-                  "drug": "velpatasvir",
-                  "clade": {
-                    "alignmentName": "AL_3a",
-                    "displayName": "HCV Subtype 3a"
-                  },
-                  "inVitroResult": {
-                    "minEC50FoldChange": 723.5,
-                    "maxEC50FoldChange": 723.5
-                  },
-                  "publication": {
-                    "id": "27353271",
-                    "displayName": "Lawitz et al., 2016"
-                  }
-                },
-                {
-                  "drug": "velpatasvir",
-                  "clade": {
-                    "alignmentName": "AL_4a",
-                    "displayName": "HCV Subtype 4a"
-                  },
-                  "inVitroResult": {
-                    "minEC50FoldChange": 2.9,
-                    "maxEC50FoldChange": 2.9
                   },
                   "publication": {
                     "id": "27353271",
@@ -952,6 +712,291 @@
                   "publication": {
                     "id": "29221887",
                     "displayName": "Hezode et al., 2018"
+                  }
+                },
+                {
+                  "drug": "velpatasvir",
+                  "clade": {
+                    "alignmentName": "AL_1a",
+                    "displayName": "HCV Subtype 1a"
+                  },
+                  "inVivoResult": {
+                    "clinicalTrial": [
+                      {
+                        "id": "POLARIS-4",
+                        "displayName": "POLARIS-4",
+                        "regimen": "SOF/VEL"
+                      }
+                    ]
+                  },
+                  "publication": {
+                    "id": "28564569",
+                    "displayName": "Bourlière et al., 2017"
+                  }
+                },
+                {
+                  "drug": "velpatasvir",
+                  "clade": {
+                    "alignmentName": "AL_1a",
+                    "displayName": "HCV Subtype 1a"
+                  },
+                  "inVivoResult": {
+                    "clinicalTrial": [
+                      {
+                        "id": "POLARIS-4",
+                        "displayName": "POLARIS-4",
+                        "regimen": "SOF/VEL"
+                      }
+                    ]
+                  },
+                  "publication": {
+                    "id": "28564569",
+                    "displayName": "Bourlière et al., 2017"
+                  }
+                },
+                {
+                  "drug": "velpatasvir",
+                  "clade": {
+                    "alignmentName": "AL_1b",
+                    "displayName": "HCV Subtype 1b"
+                  },
+                  "inVivoResult": {
+                    "clinicalTrial": [
+                      {
+                        "id": "ASTRAL-4",
+                        "displayName": "ASTRAL-4",
+                        "regimen": "SOF/VEL"
+                      }
+                    ]
+                  },
+                  "publication": {
+                    "id": "26569658",
+                    "displayName": "Curry et al., 2015"
+                  }
+                },
+                {
+                  "drug": "velpatasvir",
+                  "clade": {
+                    "alignmentName": "AL_1b",
+                    "displayName": "HCV Subtype 1b"
+                  },
+                  "inVitroResult": {
+                    "minEC50FoldChange": 3.3,
+                    "maxEC50FoldChange": 3.3
+                  },
+                  "publication": {
+                    "id": "27353271",
+                    "displayName": "Lawitz et al., 2016"
+                  }
+                },
+                {
+                  "drug": "velpatasvir",
+                  "clade": {
+                    "alignmentName": "AL_2a",
+                    "displayName": "HCV Subtype 2a"
+                  },
+                  "inVitroResult": {
+                    "minEC50FoldChange": 999,
+                    "maxEC50FoldChange": null
+                  },
+                  "publication": {
+                    "id": "29274866",
+                    "displayName": "Gottwein et al., 2018"
+                  }
+                },
+                {
+                  "drug": "velpatasvir",
+                  "clade": {
+                    "alignmentName": "AL_2a",
+                    "displayName": "HCV Subtype 2a"
+                  },
+                  "inVitroResult": {
+                    "minEC50FoldChange": 45.7,
+                    "maxEC50FoldChange": 45.7
+                  },
+                  "publication": {
+                    "id": "27353271",
+                    "displayName": "Lawitz et al., 2016"
+                  }
+                },
+                {
+                  "drug": "velpatasvir",
+                  "clade": {
+                    "alignmentName": "AL_2b",
+                    "displayName": "HCV Subtype 2b"
+                  },
+                  "inVitroResult": {
+                    "minEC50FoldChange": 999,
+                    "maxEC50FoldChange": null
+                  },
+                  "publication": {
+                    "id": "29274866",
+                    "displayName": "Gottwein et al., 2018"
+                  }
+                },
+                {
+                  "drug": "velpatasvir",
+                  "clade": {
+                    "alignmentName": "AL_3",
+                    "displayName": "HCV Genotype 3"
+                  },
+                  "inVivoResult": {
+                    "clinicalTrial": [
+                      {
+                        "id": "NCT02300103",
+                        "displayName": "NCT02300103",
+                        "regimen": "SOF/VEL"
+                      }
+                    ]
+                  },
+                  "publication": {
+                    "id": "28498551",
+                    "displayName": "Gane et al., 2017"
+                  }
+                },
+                {
+                  "drug": "velpatasvir",
+                  "clade": {
+                    "alignmentName": "AL_3",
+                    "displayName": "HCV Genotype 3"
+                  },
+                  "inVivoResult": {
+                    "clinicalTrial": [
+                      {
+                        "id": "ASTRAL-4",
+                        "displayName": "ASTRAL-4",
+                        "regimen": "SOF/VEL"
+                      }
+                    ]
+                  },
+                  "publication": {
+                    "id": "26569658",
+                    "displayName": "Curry et al., 2015"
+                  }
+                },
+                {
+                  "drug": "velpatasvir",
+                  "clade": {
+                    "alignmentName": "AL_3",
+                    "displayName": "HCV Genotype 3"
+                  },
+                  "inVivoResult": {
+                    "clinicalTrial": [
+                      {
+                        "id": "ASTRAL-3",
+                        "displayName": "ASTRAL-3",
+                        "regimen": "SOF/VEL"
+                      }
+                    ]
+                  },
+                  "publication": {
+                    "id": "26575258",
+                    "displayName": "Foster et al., 2015"
+                  }
+                },
+                {
+                  "drug": "velpatasvir",
+                  "clade": {
+                    "alignmentName": "AL_3a",
+                    "displayName": "HCV Subtype 3a"
+                  },
+                  "inVitroResult": {
+                    "minEC50FoldChange": 246.2,
+                    "maxEC50FoldChange": 246.2
+                  },
+                  "publication": {
+                    "id": "EASL_2013_Poster_1191",
+                    "displayName": "Cheng et al., 2013"
+                  }
+                },
+                {
+                  "drug": "velpatasvir",
+                  "clade": {
+                    "alignmentName": "AL_3a",
+                    "displayName": "HCV Subtype 3a"
+                  },
+                  "inVivoResult": {
+                    "clinicalTrial": [
+                      {
+                        "id": "NCT02300103",
+                        "displayName": "NCT02300103",
+                        "regimen": "SOF/VEL"
+                      }
+                    ]
+                  },
+                  "publication": {
+                    "id": "28498551",
+                    "displayName": "Gane et al., 2017"
+                  }
+                },
+                {
+                  "drug": "velpatasvir",
+                  "clade": {
+                    "alignmentName": "AL_3a",
+                    "displayName": "HCV Subtype 3a"
+                  },
+                  "inVivoResult": {
+                    "clinicalTrial": [
+                      {
+                        "id": "ASTRAL-4",
+                        "displayName": "ASTRAL-4",
+                        "regimen": "SOF/VEL"
+                      }
+                    ]
+                  },
+                  "publication": {
+                    "id": "26569658",
+                    "displayName": "Curry et al., 2015"
+                  }
+                },
+                {
+                  "drug": "velpatasvir",
+                  "clade": {
+                    "alignmentName": "AL_3a",
+                    "displayName": "HCV Subtype 3a"
+                  },
+                  "inVivoResult": {
+                    "clinicalTrial": [
+                      {
+                        "id": "ASTRAL-4",
+                        "displayName": "ASTRAL-4",
+                        "regimen": "SOF/VEL"
+                      }
+                    ]
+                  },
+                  "publication": {
+                    "id": "26569658",
+                    "displayName": "Curry et al., 2015"
+                  }
+                },
+                {
+                  "drug": "velpatasvir",
+                  "clade": {
+                    "alignmentName": "AL_3a",
+                    "displayName": "HCV Subtype 3a"
+                  },
+                  "inVitroResult": {
+                    "minEC50FoldChange": 80,
+                    "maxEC50FoldChange": 999
+                  },
+                  "publication": {
+                    "id": "29274866",
+                    "displayName": "Gottwein et al., 2018"
+                  }
+                },
+                {
+                  "drug": "velpatasvir",
+                  "clade": {
+                    "alignmentName": "AL_3a",
+                    "displayName": "HCV Subtype 3a"
+                  },
+                  "inVitroResult": {
+                    "minEC50FoldChange": 723.5,
+                    "maxEC50FoldChange": 723.5
+                  },
+                  "publication": {
+                    "id": "27353271",
+                    "displayName": "Lawitz et al., 2016"
                   }
                 },
                 {
@@ -1095,26 +1140,6 @@
                 {
                   "drug": "velpatasvir",
                   "clade": {
-                    "alignmentName": "AL_3",
-                    "displayName": "HCV Genotype 3"
-                  },
-                  "inVivoResult": {
-                    "clinicalTrial": [
-                      {
-                        "id": "ASTRAL-3",
-                        "displayName": "ASTRAL-3",
-                        "regimen": "SOF/VEL"
-                      }
-                    ]
-                  },
-                  "publication": {
-                    "id": "26575258",
-                    "displayName": "Foster et al., 2015"
-                  }
-                },
-                {
-                  "drug": "velpatasvir",
-                  "clade": {
                     "alignmentName": "AL_3a",
                     "displayName": "HCV Subtype 3a"
                   },
@@ -1135,46 +1160,6 @@
                 {
                   "drug": "velpatasvir",
                   "clade": {
-                    "alignmentName": "AL_1a",
-                    "displayName": "HCV Subtype 1a"
-                  },
-                  "inVivoResult": {
-                    "clinicalTrial": [
-                      {
-                        "id": "POLARIS-4",
-                        "displayName": "POLARIS-4",
-                        "regimen": "SOF/VEL"
-                      }
-                    ]
-                  },
-                  "publication": {
-                    "id": "28564569",
-                    "displayName": "Bourlière et al., 2017"
-                  }
-                },
-                {
-                  "drug": "velpatasvir",
-                  "clade": {
-                    "alignmentName": "AL_1a",
-                    "displayName": "HCV Subtype 1a"
-                  },
-                  "inVivoResult": {
-                    "clinicalTrial": [
-                      {
-                        "id": "POLARIS-4",
-                        "displayName": "POLARIS-4",
-                        "regimen": "SOF/VEL"
-                      }
-                    ]
-                  },
-                  "publication": {
-                    "id": "28564569",
-                    "displayName": "Bourlière et al., 2017"
-                  }
-                },
-                {
-                  "drug": "velpatasvir",
-                  "clade": {
                     "alignmentName": "AL_3a",
                     "displayName": "HCV Subtype 3a"
                   },
@@ -1190,6 +1175,21 @@
                   "publication": {
                     "id": "28564569",
                     "displayName": "Bourlière et al., 2017"
+                  }
+                },
+                {
+                  "drug": "velpatasvir",
+                  "clade": {
+                    "alignmentName": "AL_4a",
+                    "displayName": "HCV Subtype 4a"
+                  },
+                  "inVitroResult": {
+                    "minEC50FoldChange": 2.9,
+                    "maxEC50FoldChange": 2.9
+                  },
+                  "publication": {
+                    "id": "27353271",
+                    "displayName": "Lawitz et al., 2016"
                   }
                 }
               ]
@@ -1332,18 +1332,6 @@
         "url": "https://doi.org/10.1016/S0168-8278(17)30924-8"
       },
       {
-        "id": "AASLD_2017_Abs_1176",
-        "authors_short": "Dvory-Sobol et al.",
-        "authors_full": "H. Dvory-Sobol, B. Han, J. Lu, B. Parhy, D. Hsieh, E. Zhou, M. Bourlière, I. Jacobson, L. M. Stamm, G. Camus, R. Martin, E. S. Svarovskaia and H. Mo",
-        "title": "Susceptibility to Voxilaprevir of NS3 Resistance-Associated Substitutions and of Clinical Isolates from Direct Acting Antiviral-Experienced and-Naive Patients",
-        "year": "2017",
-        "journal": "Hepatology",
-        "volume": "66",
-        "issue": "S1",
-        "pages": "632A",
-        "url": "https://doi.org/10.1002/hep.29501"
-      },
-      {
         "id": "Pooled_phase_III_EASL_2017_Abs_248",
         "authors_short": "Sarrazin et al.",
         "authors_full": "C. Sarrazin, C.L. Cooper, M.P. Manns, R.K. Reddy, K. Kowdley, H. Dvory-Sobol, E. Svarovskia, R. Martin, B.P. Doehle, G. Camus, L.M. Stamm, R.H. Hyland, D.M. Brainard, H. Mo, S.C. Gordon, M. Bourlière, S. Zeuzem and S.L. Flamm",
@@ -1354,6 +1342,18 @@
         "issue": "1",
         "pages": "S299",
         "url": "https://doi.org/10.1016/S0168-8278(17)30915-7"
+      },
+      {
+        "id": "AASLD_2017_Abs_1176",
+        "authors_short": "Dvory-Sobol et al.",
+        "authors_full": "H. Dvory-Sobol, B. Han, J. Lu, B. Parhy, D. Hsieh, E. Zhou, M. Bourlière, I. Jacobson, L. M. Stamm, G. Camus, R. Martin, E. S. Svarovskaia and H. Mo",
+        "title": "Susceptibility to Voxilaprevir of NS3 Resistance-Associated Substitutions and of Clinical Isolates from Direct Acting Antiviral-Experienced and-Naive Patients",
+        "year": "2017",
+        "journal": "Hepatology",
+        "volume": "66",
+        "issue": "S1",
+        "pages": "632A",
+        "url": "https://doi.org/10.1002/hep.29501"
       },
       {
         "id": "EASL_2013_Poster_1191",

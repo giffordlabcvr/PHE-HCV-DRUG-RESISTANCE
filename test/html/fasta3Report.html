@@ -1,9 +1,66 @@
 <html>
+<head>
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+tr {
+    border-top: 1px solid #000;
+}
+
+tr + tr {
+    border-top: 1px solid #ddd;
+}
+
+td {
+    border-left: 1px solid #000;
+    vertical-align: top;
+}
+
+td + td {
+    border-left: 1px solid #ddd;
+}
+
+#rasFirstRow {
+    border-top: 1px solid #000;
+}
+
+#resistanceFinding {
+    width: 100%;
+}
+
+#resistanceFindingEven {
+	background-color: #f2f2f2;
+}
+
+td, th {
+    padding: 8px;
+}
+
+#resistanceFinding th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #c2daef;
+}
+
+</style>
+</head>
+<body>
 <h1>Hepatitis C virus sequence report</h1>
 <h2>Sequence unclearSubtype</h2>
 <h3>Phylogenetic classification</h3>
+<table id="phylogenetics">
+<tr>
+<td colspan = "2">
 The sequence was identified as hepatitis C virus.
-<table>
+</td>
 <tr>
 
 <td><b>Genotype</b></td>
@@ -26,4 +83,5 @@ The sequence was identified as hepatitis C virus.
 
 
 
+</body>
 </html>

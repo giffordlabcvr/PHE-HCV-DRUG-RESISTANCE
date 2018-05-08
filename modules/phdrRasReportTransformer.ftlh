@@ -1,8 +1,65 @@
 <html>
+<head>
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+tr {
+    border-top: 1px solid #000;
+}
+
+tr + tr {
+    border-top: 1px solid #ddd;
+}
+
+td {
+    border-left: 1px solid #000;
+    vertical-align: top;
+}
+
+td + td {
+    border-left: 1px solid #ddd;
+}
+
+#rasFirstRow {
+    border-top: 1px solid #000;
+}
+
+#resistanceFinding {
+    width: 100%;
+}
+
+#resistanceFindingEven {
+	background-color: #f2f2f2;
+}
+
+td, th {
+    padding: 8px;
+}
+
+#resistanceFinding th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #c2daef;
+}
+
+</style>
+</head>
+<body>
 <h1>Hepatitis C virus sequence report</h1>
 <#list sequenceResults as sequenceResult>
 <h2>Sequence ${sequenceResult.id}</h2>
 <h3>Phylogenetic classification</h3>
+<table id="phylogenetics">
+<tr>
+<td colspan = "2">
 <#assign isHcv=true>
 <#if sequenceResult.isForwardHcv>
 The sequence was identified as hepatitis C virus.
@@ -12,8 +69,8 @@ The sequence was identified as hepatitis C virus (reverse complement).
 <#assign isHcv=false>
 The sequence was not identified as hepatitis C virus.
 </#if>
+</td>
 <#if isHcv>
-<table>
 <tr>
 
 <td><b>Genotype</b></td>
@@ -34,21 +91,41 @@ The sequence was not identified as hepatitis C virus.
 
 <h3>Resistance-associated sequence polymorphisms detected</h3>
 <#if sequenceResult.rasScanResults??>
-<table>
+<#assign evenRow=true>
+<table id="resistanceFinding">
+<thead>
+<tr>
+<th>Virus protein</th>
+<th>Polymorphism</th>
+<th>Resisted drug</th>
+<th>Genotype / subtype</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
 <#list sequenceResult.rasScanResults as rasScanResult>
 <#assign firstRow=true>
 <#list rasScanResult.rasDetails.resistanceFinding as resistanceFinding>
-<tr>
 <#if firstRow>
+<tr id="rasFirstRow">
 <td rowspan = "${rasScanResult.rasDetails.resistanceFinding?size}">${rasScanResult.rasDetails.gene}</td>
 <td rowspan = "${rasScanResult.rasDetails.resistanceFinding?size}">${rasScanResult.rasDetails.structure}</td>
 <#assign firstRow=false>
+<#else>
+<tr>
 </#if>
-<td>${resistanceFinding.drug}</td>
-<td>${resistanceFinding.publication.displayName}</td>
+<td <#if evenRow>id="resistanceFindingEven"</#if>>${resistanceFinding.drug}</td>
+<td <#if evenRow>id="resistanceFindingEven"</#if>>${resistanceFinding.clade.displayName}</td>
+<td <#if evenRow>id="resistanceFindingEven"</#if>>${resistanceFinding.publication.displayName}</td>
+<#if evenRow>
+<#assign evenRow=false>
+<#else>
+<#assign evenRow=true>
+</#if>
 </tr>
 </#list>
 </#list>
+</tbody>
 </table>
 </#if>
 
@@ -79,4 +156,5 @@ ${publication.journal}
 </p>
 </#list>
 </#if>
+</body>
 </html>

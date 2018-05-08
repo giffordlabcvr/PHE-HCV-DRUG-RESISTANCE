@@ -1,9 +1,66 @@
 <html>
+<head>
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+tr {
+    border-top: 1px solid #000;
+}
+
+tr + tr {
+    border-top: 1px solid #ddd;
+}
+
+td {
+    border-left: 1px solid #000;
+    vertical-align: top;
+}
+
+td + td {
+    border-left: 1px solid #ddd;
+}
+
+#rasFirstRow {
+    border-top: 1px solid #000;
+}
+
+#resistanceFinding {
+    width: 100%;
+}
+
+#resistanceFindingEven {
+	background-color: #f2f2f2;
+}
+
+td, th {
+    padding: 8px;
+}
+
+#resistanceFinding th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #c2daef;
+}
+
+</style>
+</head>
+<body>
 <h1>Hepatitis C virus sequence report</h1>
 <h2>Sequence EF407428</h2>
 <h3>Phylogenetic classification</h3>
+<table id="phylogenetics">
+<tr>
+<td colspan = "2">
 The sequence was identified as hepatitis C virus.
-<table>
+</td>
 <tr>
 
 <td><b>Genotype</b></td>
@@ -23,177 +80,228 @@ The sequence was identified as hepatitis C virus.
 </table>
 
 <h3>Resistance-associated sequence polymorphisms detected</h3>
-<table>
+<table id="resistanceFinding">
+<thead>
 <tr>
+<th>Virus protein</th>
+<th>Polymorphism</th>
+<th>Resisted drug</th>
+<th>Genotype / subtype</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr id="rasFirstRow">
 <td rowspan = "4">NS3</td>
 <td rowspan = "4">80K</td>
-<td>glecaprevir</td>
-<td>Krishnan et al., 2017</td>
+<td id="resistanceFindingEven">glecaprevir</td>
+<td id="resistanceFindingEven">HCV Genotype 3</td>
+<td id="resistanceFindingEven">Krishnan et al., 2017</td>
 </tr>
 <tr>
-<td>voxilaprevir</td>
-<td>Wyles, et al., 2017</td>
+<td >voxilaprevir</td>
+<td >HCV Subtype 1a</td>
+<td >Wyles, et al., 2017</td>
 </tr>
 <tr>
-<td>voxilaprevir</td>
-<td>Dvory-Sobol et al., 2017</td>
+<td id="resistanceFindingEven">voxilaprevir</td>
+<td id="resistanceFindingEven">HCV Subtype 1a</td>
+<td id="resistanceFindingEven">Sarrazin et al., 2017</td>
 </tr>
 <tr>
-<td>voxilaprevir</td>
-<td>Sarrazin et al., 2017</td>
+<td >voxilaprevir</td>
+<td >HCV Subtype 3a</td>
+<td >Dvory-Sobol et al., 2017</td>
 </tr>
-<tr>
+<tr id="rasFirstRow">
 <td rowspan = "1">NS3</td>
 <td rowspan = "1">168D</td>
-<td>voxilaprevir</td>
-<td>Wyles, et al., 2017</td>
+<td id="resistanceFindingEven">voxilaprevir</td>
+<td id="resistanceFindingEven">HCV Subtype 5a</td>
+<td id="resistanceFindingEven">Wyles, et al., 2017</td>
 </tr>
-<tr>
+<tr id="rasFirstRow">
 <td rowspan = "1">NS5A</td>
 <td rowspan = "1">30H</td>
-<td>velpatasvir</td>
-<td>Lawitz et al., 2016</td>
+<td >velpatasvir</td>
+<td >HCV Subtype 1a</td>
+<td >Lawitz et al., 2016</td>
 </tr>
-<tr>
+<tr id="rasFirstRow">
 <td rowspan = "3">NS5A</td>
 <td rowspan = "3">30H+93H</td>
-<td>pibrentasvir</td>
-<td>Poordad et al., 2018</td>
+<td id="resistanceFindingEven">pibrentasvir</td>
+<td id="resistanceFindingEven">HCV Subtype 1a</td>
+<td id="resistanceFindingEven">Poordad et al., 2018</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Curry et al., 2015</td>
+<td >velpatasvir</td>
+<td >HCV Subtype 1a</td>
+<td >Curry et al., 2015</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Lawitz et al., 2016</td>
+<td id="resistanceFindingEven">velpatasvir</td>
+<td id="resistanceFindingEven">HCV Subtype 1a</td>
+<td id="resistanceFindingEven">Lawitz et al., 2016</td>
 </tr>
-<tr>
+<tr id="rasFirstRow">
 <td rowspan = "31">NS5A</td>
 <td rowspan = "31">93H</td>
-<td>pibrentasvir</td>
-<td>Ng et al., 2017</td>
+<td >pibrentasvir</td>
+<td >HCV Subtype 1a</td>
+<td >Poordad et al., 2018</td>
 </tr>
 <tr>
-<td>pibrentasvir</td>
-<td>Krishnan et al., 2017</td>
+<td id="resistanceFindingEven">pibrentasvir</td>
+<td id="resistanceFindingEven">HCV Subtype 1a</td>
+<td id="resistanceFindingEven">Ng et al., 2017</td>
 </tr>
 <tr>
-<td>pibrentasvir</td>
-<td>Poordad et al., 2018</td>
+<td >pibrentasvir</td>
+<td >HCV Genotype 3</td>
+<td >Krishnan et al., 2017</td>
 </tr>
 <tr>
-<td>pibrentasvir</td>
-<td>Ng et al., 2017</td>
+<td id="resistanceFindingEven">pibrentasvir</td>
+<td id="resistanceFindingEven">HCV Subtype 3a</td>
+<td id="resistanceFindingEven">Ng et al., 2017</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Cheng et al., 2013</td>
+<td >velpatasvir</td>
+<td >HCV Subtype 1a</td>
+<td >Gottwein et al., 2018</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Gane et al., 2017</td>
+<td id="resistanceFindingEven">velpatasvir</td>
+<td id="resistanceFindingEven">HCV Subtype 1a</td>
+<td id="resistanceFindingEven">Cheng et al., 2013</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Gane et al., 2017</td>
+<td >velpatasvir</td>
+<td >HCV Subtype 1a</td>
+<td >Lawitz et al., 2016</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Curry et al., 2015</td>
+<td id="resistanceFindingEven">velpatasvir</td>
+<td id="resistanceFindingEven">HCV Subtype 1a</td>
+<td id="resistanceFindingEven">Hezode et al., 2018</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Curry et al., 2015</td>
+<td >velpatasvir</td>
+<td >HCV Subtype 1a</td>
+<td >Bourlière et al., 2017</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Curry et al., 2015</td>
+<td id="resistanceFindingEven">velpatasvir</td>
+<td id="resistanceFindingEven">HCV Subtype 1a</td>
+<td id="resistanceFindingEven">Bourlière et al., 2017</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Curry et al., 2015</td>
+<td >velpatasvir</td>
+<td >HCV Subtype 1b</td>
+<td >Curry et al., 2015</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Gottwein et al., 2018</td>
+<td id="resistanceFindingEven">velpatasvir</td>
+<td id="resistanceFindingEven">HCV Subtype 1b</td>
+<td id="resistanceFindingEven">Lawitz et al., 2016</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Cheng et al., 2013</td>
+<td >velpatasvir</td>
+<td >HCV Subtype 2a</td>
+<td >Gottwein et al., 2018</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Gottwein et al., 2018</td>
+<td id="resistanceFindingEven">velpatasvir</td>
+<td id="resistanceFindingEven">HCV Subtype 2a</td>
+<td id="resistanceFindingEven">Lawitz et al., 2016</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Gottwein et al., 2018</td>
+<td >velpatasvir</td>
+<td >HCV Subtype 2b</td>
+<td >Gottwein et al., 2018</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Gottwein et al., 2018</td>
+<td id="resistanceFindingEven">velpatasvir</td>
+<td id="resistanceFindingEven">HCV Genotype 3</td>
+<td id="resistanceFindingEven">Gane et al., 2017</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Lawitz et al., 2016</td>
+<td >velpatasvir</td>
+<td >HCV Genotype 3</td>
+<td >Curry et al., 2015</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Lawitz et al., 2016</td>
+<td id="resistanceFindingEven">velpatasvir</td>
+<td id="resistanceFindingEven">HCV Genotype 3</td>
+<td id="resistanceFindingEven">Foster et al., 2015</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Lawitz et al., 2016</td>
+<td >velpatasvir</td>
+<td >HCV Subtype 3a</td>
+<td >Cheng et al., 2013</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Lawitz et al., 2016</td>
+<td id="resistanceFindingEven">velpatasvir</td>
+<td id="resistanceFindingEven">HCV Subtype 3a</td>
+<td id="resistanceFindingEven">Gane et al., 2017</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Lawitz et al., 2016</td>
+<td >velpatasvir</td>
+<td >HCV Subtype 3a</td>
+<td >Curry et al., 2015</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Hezode et al., 2018</td>
+<td id="resistanceFindingEven">velpatasvir</td>
+<td id="resistanceFindingEven">HCV Subtype 3a</td>
+<td id="resistanceFindingEven">Curry et al., 2015</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Hezode et al., 2018</td>
+<td >velpatasvir</td>
+<td >HCV Subtype 3a</td>
+<td >Gottwein et al., 2018</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Hezode et al., 2018</td>
+<td id="resistanceFindingEven">velpatasvir</td>
+<td id="resistanceFindingEven">HCV Subtype 3a</td>
+<td id="resistanceFindingEven">Lawitz et al., 2016</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Foster et al., 2015</td>
+<td >velpatasvir</td>
+<td >HCV Subtype 3a</td>
+<td >Hezode et al., 2018</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Foster et al., 2015</td>
+<td id="resistanceFindingEven">velpatasvir</td>
+<td id="resistanceFindingEven">HCV Subtype 3a</td>
+<td id="resistanceFindingEven">Hezode et al., 2018</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Foster et al., 2015</td>
+<td >velpatasvir</td>
+<td >HCV Subtype 3a</td>
+<td >Foster et al., 2015</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Bourlière et al., 2017</td>
+<td id="resistanceFindingEven">velpatasvir</td>
+<td id="resistanceFindingEven">HCV Subtype 3a</td>
+<td id="resistanceFindingEven">Foster et al., 2015</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Bourlière et al., 2017</td>
+<td >velpatasvir</td>
+<td >HCV Subtype 3a</td>
+<td >Bourlière et al., 2017</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Bourlière et al., 2017</td>
+<td id="resistanceFindingEven">velpatasvir</td>
+<td id="resistanceFindingEven">HCV Subtype 3a</td>
+<td id="resistanceFindingEven">Bourlière et al., 2017</td>
 </tr>
 <tr>
-<td>velpatasvir</td>
-<td>Bourlière et al., 2017</td>
+<td >velpatasvir</td>
+<td >HCV Subtype 4a</td>
+<td >Lawitz et al., 2016</td>
 </tr>
+</tbody>
 </table>
 
 
@@ -321,17 +429,6 @@ J. Hepatol.
 <a href="https://doi.org/10.1016/S0168-8278(17)30924-8">https://doi.org/10.1016/S0168-8278(17)30924-8</a> 
 </p>
 <p>
-[Dvory-Sobol et al., 2017] 
-<b>Susceptibility to Voxilaprevir of NS3 Resistance-Associated Substitutions and of Clinical Isolates from Direct Acting Antiviral-Experienced and-Naive Patients</b>
-H. Dvory-Sobol, B. Han, J. Lu, B. Parhy, D. Hsieh, E. Zhou, M. Bourlière, I. Jacobson, L. M. Stamm, G. Camus, R. Martin, E. S. Svarovskaia and H. Mo, 
-Hepatology
-	66(S1),
-	632A
-(2017)
-<br/>
-<a href="https://doi.org/10.1002/hep.29501">https://doi.org/10.1002/hep.29501</a> 
-</p>
-<p>
 [Sarrazin et al., 2017] 
 <b>No impact of RASs on the high efficacy of SOF/VEL/VOX for 12 weeks in DAA-experienced patients: an integrated resistance analysis of the POLARIS-1 and POLARIS-4 studies</b>
 C. Sarrazin, C.L. Cooper, M.P. Manns, R.K. Reddy, K. Kowdley, H. Dvory-Sobol, E. Svarovskia, R. Martin, B.P. Doehle, G. Camus, L.M. Stamm, R.H. Hyland, D.M. Brainard, H. Mo, S.C. Gordon, M. Bourlière, S. Zeuzem and S.L. Flamm, 
@@ -341,6 +438,17 @@ J. Hepatol.
 (2017)
 <br/>
 <a href="https://doi.org/10.1016/S0168-8278(17)30915-7">https://doi.org/10.1016/S0168-8278(17)30915-7</a> 
+</p>
+<p>
+[Dvory-Sobol et al., 2017] 
+<b>Susceptibility to Voxilaprevir of NS3 Resistance-Associated Substitutions and of Clinical Isolates from Direct Acting Antiviral-Experienced and-Naive Patients</b>
+H. Dvory-Sobol, B. Han, J. Lu, B. Parhy, D. Hsieh, E. Zhou, M. Bourlière, I. Jacobson, L. M. Stamm, G. Camus, R. Martin, E. S. Svarovskaia and H. Mo, 
+Hepatology
+	66(S1),
+	632A
+(2017)
+<br/>
+<a href="https://doi.org/10.1002/hep.29501">https://doi.org/10.1002/hep.29501</a> 
 </p>
 <p>
 [Cheng et al., 2013] 
@@ -353,4 +461,5 @@ J. Hepatol.
 <br/>
 <a href="https://doi.org/10.1016/S0168-8278(13)61192-7">https://doi.org/10.1016/S0168-8278(13)61192-7</a> 
 </p>
+</body>
 </html>

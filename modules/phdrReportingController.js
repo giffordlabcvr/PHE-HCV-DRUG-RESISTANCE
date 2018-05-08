@@ -85,13 +85,9 @@ function reportFasta(fastaFilePath) {
 				sequenceResult.rasScanResults = scanResults;
 				glue.log("FINE", "phdrReportingController.reportFasta rasScanResults:", sequenceResult.rasScanResults);
 				_.each(scanResults, function(scanResult) {
-					var rasFinding;
-					glue.inMode("/reference/"+scanResult.referenceName+
-								"/feature-location/"+scanResult.featureName+
-								"/variation/"+scanResult.variationName, function() {
-						rasFinding = glue.command(["render-object", "phdrRasVariationRenderer"]);
-						scanResult.rasDetails = rasFinding.phdrRasVariation;
-					});
+					var rasFinding = getRasFinding(scanResult.referenceName, 
+							scanResult.featureName, scanResult.variationName);
+					scanResult.rasDetails = rasFinding.phdrRasVariation;
 					addRasPublications(rasFinding, publicationIdToObj);
 				});
 			}
@@ -186,13 +182,9 @@ function reportBam(bamFilePath) {
 			samRefResult.rasScanResults = scanResults;
 			glue.log("FINE", "phdrReportingController.reportBam rasScanResults:", samRefResult.rasScanResults);
 			_.each(scanResults, function(scanResult) {
-				var rasFinding;
-				glue.inMode("/reference/"+scanResult.referenceName+
-							"/feature-location/"+scanResult.featureName+
-							"/variation/"+scanResult.variationName, function() {
-					rasFinding = glue.command(["render-object", "phdrRasVariationRenderer"]);
-					scanResult.rasDetails = rasFinding.phdrRasVariation;
-				});
+				var rasFinding = getRasFinding(scanResult.referenceName, 
+						scanResult.featureName, scanResult.variationName);
+				scanResult.rasDetails = rasFinding.phdrRasVariation;
 				addRasPublications(rasFinding, publicationIdToObj);
 			});
 		}
@@ -211,6 +203,21 @@ function reportBam(bamFilePath) {
 	glue.log("FINE", "phdrReportingController.reportBam bamReport:", bamReport);
 	
 	return bamReport;
+}
+
+function getRasFinding(referenceName, featureName, variationName) {
+	var rasFinding;
+	glue.inMode("/reference/"+referenceName+
+			"/feature-location/"+featureName+
+			"/variation/"+variationName, function() {
+		rasFinding = glue.command(["render-object", "phdrRasVariationRenderer"]);
+		rasFinding.phdrRasVariation.resistanceFinding.sort(function (f1, f2) {
+			var dComp = f1.drug.localeCompare(f2.drug);
+			if(dComp != 0) { return dComp; }
+			return f1.clade.alignmentName.localeCompare(f2.clade.alignmentName);
+		});
+	});
+	return rasFinding;
 }
 
 /*
