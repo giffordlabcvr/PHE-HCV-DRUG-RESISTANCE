@@ -41,17 +41,22 @@ function reportFasta(fastaFilePath) {
 	// apply recogniser to fastaMap
 	recogniseFasta(fastaMap, resultMap);
 
+	glue.log("FINE", "phdrReportingController.reportFasta, result map after recogniser", resultMap);
+
+	
 	var genotypingFastaMap = filterFastaMapForGenotyping(fastaMap, resultMap);
 	// apply genotyping
 	genotypeFasta(genotypingFastaMap, resultMap);
-	
+
+	glue.log("FINE", "phdrReportingController.reportFasta, result map after genotyping", resultMap);
+
 	var publicationIdToObj = {};
 	
 	// apply variation scanning
 	_.each(_.values(resultMap), function(sequenceResult) {
 		var genotypingResult = sequenceResult.genotypingResult;
 		if(genotypingResult != null) {
-			if(genotypingResult.genotypeFinalClade != null) {
+			if(genotypingResult.genotypeCladeCategoryResult.finalClade != null) {
 				var variationWhereClause = "phdr_ras != null";
 				var targetRefName = genotypingResultToTargetRefName(genotypingResult);
 				sequenceResult.targetRefName = targetRefName;
@@ -159,8 +164,8 @@ function reportBam(bamFilePath) {
 	_.each(_.values(resultMap), function(samRefResult) {
 		var genotypingResult = samRefResult.genotypingResult;
 		if(genotypingResult != null) {
-			var variationWhereClause = "phdr_ras != null";
 			var targetRefName = genotypingResultToTargetRefName(genotypingResult);
+			var variationWhereClause = "phdr_ras != null";
 			samRefResult.targetRefName = targetRefName;
 			var samRefSense = "FORWARD";
 			if(samRefResult.isReverseHcv) {
@@ -239,13 +244,13 @@ function filterFastaMapForGenotyping(fastaMap, resultMap) {
 function genotypingResultToTargetRefName(genotypingResult) {
 	var targetRefSourceName;
 	var targetRefSequenceID;
-	var subtypeFinalClade = genotypingResult.subtypeFinalClade;
+	var subtypeFinalClade = genotypingResult.subtypeCladeCategoryResult.finalClade;
 	if(subtypeFinalClade != null) {
-		targetRefSourceName = genotypingResult.subtypeClosestMemberSourceName;
-		targetRefSequenceID = genotypingResult.subtypeClosestMemberSequenceID;
+		targetRefSourceName = genotypingResult.subtypeCladeCategoryResult.closestMemberSourceName;
+		targetRefSequenceID = genotypingResult.subtypeCladeCategoryResult.closestMemberSequenceID;
 	} else {
-		targetRefSourceName = genotypingResult.genotypeClosestMemberSourceName;
-		targetRefSequenceID = genotypingResult.genotypeClosestMemberSequenceID;
+		targetRefSourceName = genotypingResult.genotypeCladeCategoryResult.closestMemberSourceName;
+		targetRefSequenceID = genotypingResult.genotypeCladeCategoryResult.closestMemberSequenceID;
 	}
 	var targetRefOptions = glue.tableToObjects(glue.command([
          "list", "reference", 
@@ -259,26 +264,50 @@ function genotypingResultToTargetRefName(genotypingResult) {
  * The the genotyping result object is recorded in the result map for each sequence.
  */
 function genotypeFasta(fastaMap, resultMap) {
-	var genotypingResults;
-	glue.inMode("module/maxLikelihoodGenotyper", function() {
-		genotypingResults = glue.tableToObjects(glue.command({
+	if(!_.isEmpty(fastaMap)) {
+		var genotypingResults;
+		glue.inMode("module/maxLikelihoodGenotyper", function() {
+			genotypingResults = glue.command({
 				"genotype": {
 					"fasta-document":
-						{
-							"fastaCommandDocument": {
-								"nucleotideFasta" : {
-									"sequences": _.values(fastaMap)
-								}
-							}, 
-							"detailLevel" : "HIGH"
-						}
+					{
+						"fastaCommandDocument": {
+							"nucleotideFasta" : {
+								"sequences": _.values(fastaMap)
+							}
+						}, 
+						"documentResult" : true
+					}
 				}
-		}));
-	});
-	glue.log("FINE", "phdrReportingController.reportFasta genotypingResults:", genotypingResults);
-	_.each(genotypingResults, function(genotypingResult) {
-		resultMap[genotypingResult.queryName].genotypingResult = genotypingResult;
-	});
+			}).genotypingDocumentResult.queryGenotypingResults;
+		});
+		glue.log("FINE", "phdrReportingController.reportFasta genotypingResults:", genotypingResults);
+		_.each(genotypingResults, function(genotypingResult) {
+			genotypingResult.genotypeCladeCategoryResult = _.find(genotypingResult.queryCladeCategoryResult, 
+					function(cladeCategoryResult) { return cladeCategoryResult.categoryName == "genotype"; });
+			genotypingResult.subtypeCladeCategoryResult = _.find(genotypingResult.queryCladeCategoryResult, 
+					function(cladeCategoryResult) { return cladeCategoryResult.categoryName == "subtype"; });
+			if(genotypingResult.genotypeCladeCategoryResult.finalCladeRenderedName == null) {
+				genotypingResult.genotypeCladeCategoryResult.shortRenderedName = "unknown";
+			} else {
+				genotypingResult.genotypeCladeCategoryResult.shortRenderedName = 
+					genotypingResult.genotypeCladeCategoryResult.finalCladeRenderedName.replace("HCV Genotype ", "");
+			}
+			if(genotypingResult.subtypeCladeCategoryResult.finalCladeRenderedName == null) {
+				genotypingResult.subtypeCladeCategoryResult.shortRenderedName = "unknown";
+			} else {
+				genotypingResult.subtypeCladeCategoryResult.shortRenderedName = 
+					genotypingResult.subtypeCladeCategoryResult.finalCladeRenderedName.replace("HCV Subtype ", "");
+			}
+				
+				
+			glue.log("FINE", "phdrReportingController, genotypeCladeCategoryResult", genotypingResult.genotypeCladeCategoryResult);
+			glue.log("FINE", "phdrReportingController, subtypeCladeCategoryResult", genotypingResult.subtypeCladeCategoryResult);
+			
+			
+			resultMap[genotypingResult.queryName].genotypingResult = genotypingResult;
+		});
+	}
 }
 
 /*
