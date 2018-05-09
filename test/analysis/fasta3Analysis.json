@@ -1,6 +1,7 @@
 {
-  "fastaReport": {
-    "fastaFilePath": "test/inputs/fasta3.fasta",
+  "phdrReport": {
+    "sequenceDataFormat": "FASTA",
+    "filePath": "test/inputs/fasta3.fasta",
     "sequenceResults": [
       {
         "id": "unclearSubtype",
@@ -103,6 +104,10 @@
         "rasScanResults": []
       }
     ],
-    "publications": []
+    "publications": [],
+    "reportGenerationDate": "09/05/2018",
+    "engineVersion": "0.1.153",
+    "projectVersion": "0.1.26",
+    "extensionVersion": "0.1.1"
   }
 }

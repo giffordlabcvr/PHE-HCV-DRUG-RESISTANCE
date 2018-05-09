@@ -1,6 +1,7 @@
 {
-  "fastaReport": {
-    "fastaFilePath": "test/inputs/fasta2.fasta",
+  "phdrReport": {
+    "sequenceDataFormat": "FASTA",
+    "filePath": "test/inputs/fasta2.fasta",
     "sequenceResults": [
       {
         "id": "Nonsense",
@@ -8,6 +9,10 @@
         "isReverseHcv": false
       }
     ],
-    "publications": []
+    "publications": [],
+    "reportGenerationDate": "09/05/2018",
+    "engineVersion": "0.1.153",
+    "projectVersion": "0.1.26",
+    "extensionVersion": "0.1.1"
   }
 }

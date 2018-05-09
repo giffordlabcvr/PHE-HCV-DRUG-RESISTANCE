@@ -1,2 +1,5 @@
+unset extension-setting phdr extension-version 
+unset extension-setting phdr extension-description
+
 delete module --whereClause "name like 'phdr%'"
 multi-delete variation --whereClause "name like 'phdr%'"

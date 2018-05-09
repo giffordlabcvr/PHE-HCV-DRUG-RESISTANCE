@@ -1,6 +1,7 @@
 {
-  "fastaReport": {
-    "fastaFilePath": "test/inputs/fasta1.fasta",
+  "phdrReport": {
+    "sequenceDataFormat": "FASTA",
+    "filePath": "test/inputs/fasta1.fasta",
     "sequenceResults": [
       {
         "id": "EF407428",
@@ -182,12 +183,12 @@
                       {
                         "id": "POLARIS-2",
                         "displayName": "POLARIS-2",
-                        "regimen": "SOF/VEL"
+                        "regimen": "SOF/VEL/VOX"
                       },
                       {
                         "id": "POLARIS-3",
                         "displayName": "POLARIS-3",
-                        "regimen": "SOF/VEL"
+                        "regimen": "SOF/VEL/VOX"
                       }
                     ]
                   },
@@ -213,7 +214,7 @@
                       {
                         "id": "POLARIS-4",
                         "displayName": "POLARIS-4",
-                        "regimen": "SOF/VEL"
+                        "regimen": "SOF/VEL/VOX"
                       }
                     ]
                   },
@@ -231,7 +232,8 @@
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 2.5,
-                    "maxEC50FoldChange": 20
+                    "maxEC50FoldChange": 20,
+                    "ec50RangeString": "2.5 - 20"
                   },
                   "publication": {
                     "id": "AASLD_2017_Abs_1176",
@@ -287,12 +289,12 @@
                       {
                         "id": "POLARIS-2",
                         "displayName": "POLARIS-2",
-                        "regimen": "SOF/VEL"
+                        "regimen": "SOF/VEL/VOX"
                       },
                       {
                         "id": "POLARIS-3",
                         "displayName": "POLARIS-3",
-                        "regimen": "SOF/VEL"
+                        "regimen": "SOF/VEL/VOX"
                       }
                     ]
                   },
@@ -347,7 +349,8 @@
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 2.3,
-                    "maxEC50FoldChange": 2.3
+                    "maxEC50FoldChange": 2.3,
+                    "ec50RangeString": "2.3"
                   },
                   "publication": {
                     "id": "27353271",
@@ -479,7 +482,8 @@
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 2835,
-                    "maxEC50FoldChange": 2835
+                    "maxEC50FoldChange": 2835,
+                    "ec50RangeString": "2835"
                   },
                   "publication": {
                     "id": "27353271",
@@ -553,7 +557,8 @@
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 6.7,
-                    "maxEC50FoldChange": 6.7
+                    "maxEC50FoldChange": 6.7,
+                    "ec50RangeString": "6.7"
                   },
                   "publication": {
                     "id": "28193664",
@@ -625,7 +630,8 @@
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 2.3,
-                    "maxEC50FoldChange": 2.3
+                    "maxEC50FoldChange": 2.3,
+                    "ec50RangeString": "2.3"
                   },
                   "publication": {
                     "id": "28193664",
@@ -641,7 +647,8 @@
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 80,
-                    "maxEC50FoldChange": 999
+                    "maxEC50FoldChange": 999,
+                    "ec50RangeString": "80 - 999"
                   },
                   "publication": {
                     "id": "29274866",
@@ -657,7 +664,8 @@
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 609.1,
-                    "maxEC50FoldChange": 609.1
+                    "maxEC50FoldChange": 609.1,
+                    "ec50RangeString": "609.1"
                   },
                   "publication": {
                     "id": "EASL_2013_Poster_1191",
@@ -673,7 +681,8 @@
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 609.1,
-                    "maxEC50FoldChange": 609.1
+                    "maxEC50FoldChange": 609.1,
+                    "ec50RangeString": "609.1"
                   },
                   "publication": {
                     "id": "27353271",
@@ -689,7 +698,8 @@
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 609,
-                    "maxEC50FoldChange": 609
+                    "maxEC50FoldChange": 609,
+                    "ec50RangeString": "609"
                   },
                   "inVivoResult": {
                     "clinicalTrial": [
@@ -716,12 +726,12 @@
                       {
                         "id": "POLARIS-2",
                         "displayName": "POLARIS-2",
-                        "regimen": "SOF/VEL"
+                        "regimen": "SOF/VEL/VOX"
                       },
                       {
                         "id": "POLARIS-3",
                         "displayName": "POLARIS-3",
-                        "regimen": "SOF/VEL"
+                        "regimen": "SOF/VEL/VOX"
                       }
                     ]
                   },
@@ -742,7 +752,7 @@
                       {
                         "id": "POLARIS-4",
                         "displayName": "POLARIS-4",
-                        "regimen": "SOF/VEL"
+                        "regimen": "SOF/VEL/VOX"
                       }
                     ]
                   },
@@ -763,7 +773,7 @@
                       {
                         "id": "POLARIS-4",
                         "displayName": "POLARIS-4",
-                        "regimen": "SOF/VEL"
+                        "regimen": "SOF/VEL/VOX"
                       }
                     ]
                   },
@@ -802,7 +812,8 @@
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 3.3,
-                    "maxEC50FoldChange": 3.3
+                    "maxEC50FoldChange": 3.3,
+                    "ec50RangeString": "3.3"
                   },
                   "publication": {
                     "id": "27353271",
@@ -818,7 +829,8 @@
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 999,
-                    "maxEC50FoldChange": null
+                    "maxEC50FoldChange": null,
+                    "ec50RangeString": "> 999"
                   },
                   "publication": {
                     "id": "29274866",
@@ -834,7 +846,8 @@
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 45.7,
-                    "maxEC50FoldChange": 45.7
+                    "maxEC50FoldChange": 45.7,
+                    "ec50RangeString": "45.7"
                   },
                   "publication": {
                     "id": "27353271",
@@ -850,7 +863,8 @@
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 999,
-                    "maxEC50FoldChange": null
+                    "maxEC50FoldChange": null,
+                    "ec50RangeString": "> 999"
                   },
                   "publication": {
                     "id": "29274866",
@@ -929,7 +943,8 @@
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 246.2,
-                    "maxEC50FoldChange": 246.2
+                    "maxEC50FoldChange": 246.2,
+                    "ec50RangeString": "246.2"
                   },
                   "publication": {
                     "id": "EASL_2013_Poster_1191",
@@ -1008,7 +1023,8 @@
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 80,
-                    "maxEC50FoldChange": 999
+                    "maxEC50FoldChange": 999,
+                    "ec50RangeString": "80 - 999"
                   },
                   "publication": {
                     "id": "29274866",
@@ -1024,7 +1040,8 @@
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 723.5,
-                    "maxEC50FoldChange": 723.5
+                    "maxEC50FoldChange": 723.5,
+                    "ec50RangeString": "723.5"
                   },
                   "publication": {
                     "id": "27353271",
@@ -1040,7 +1057,8 @@
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 302,
-                    "maxEC50FoldChange": 1221
+                    "maxEC50FoldChange": 1221,
+                    "ec50RangeString": "302 - 1221"
                   },
                   "inVivoResult": {
                     "clinicalTrial": [
@@ -1067,12 +1085,12 @@
                       {
                         "id": "POLARIS-2",
                         "displayName": "POLARIS-2",
-                        "regimen": "SOF/VEL"
+                        "regimen": "SOF/VEL/VOX"
                       },
                       {
                         "id": "POLARIS-3",
                         "displayName": "POLARIS-3",
-                        "regimen": "SOF/VEL"
+                        "regimen": "SOF/VEL/VOX"
                       }
                     ]
                   },
@@ -1090,7 +1108,8 @@
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 74,
-                    "maxEC50FoldChange": 1138
+                    "maxEC50FoldChange": 1138,
+                    "ec50RangeString": "74 - 1138"
                   },
                   "inVivoResult": {
                     "clinicalTrial": [
@@ -1117,12 +1136,12 @@
                       {
                         "id": "POLARIS-2",
                         "displayName": "POLARIS-2",
-                        "regimen": "SOF/VEL"
+                        "regimen": "SOF/VEL/VOX"
                       },
                       {
                         "id": "POLARIS-3",
                         "displayName": "POLARIS-3",
-                        "regimen": "SOF/VEL"
+                        "regimen": "SOF/VEL/VOX"
                       }
                     ]
                   },
@@ -1206,7 +1225,7 @@
                       {
                         "id": "POLARIS-4",
                         "displayName": "POLARIS-4",
-                        "regimen": "SOF/VEL"
+                        "regimen": "SOF/VEL/VOX"
                       }
                     ]
                   },
@@ -1224,7 +1243,8 @@
                   },
                   "inVitroResult": {
                     "minEC50FoldChange": 2.9,
-                    "maxEC50FoldChange": 2.9
+                    "maxEC50FoldChange": 2.9,
+                    "ec50RangeString": "2.9"
                   },
                   "publication": {
                     "id": "27353271",
@@ -1421,6 +1441,10 @@
         "url": "https://doi.org/10.1056/NEJMoa1512612",
         "index": 14
       }
-    ]
+    ],
+    "reportGenerationDate": "09/05/2018",
+    "engineVersion": "0.1.153",
+    "projectVersion": "0.1.26",
+    "extensionVersion": "0.1.1"
   }
 }

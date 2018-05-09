@@ -54,8 +54,25 @@ td, th {
 </head>
 <body>
 <h1>Hepatitis C virus sequence report</h1>
+
 <#list sequenceResults as sequenceResult>
-<h2>Sequence ${sequenceResult.id}</h2>
+
+<h3>Overview</h3>
+<table id="overview">
+<tr><td><b>Sequence ID</b></td><td>${sequenceResult.id}</td></tr>
+<tr><td><b>Sequance data format</b></td><td>
+<#if sequenceDataFormat = "FASTA"> 
+Consensus (FASTA)
+<#elseif sequenceDataFormat = "SAM/BAM">
+Deep sequencing (SAM/BAM)
+</#if>
+</td></tr>
+<tr><td><b>Report generation date</b></td><td>${reportGenerationDate}</td></tr>
+<tr><td><b>GLUE engine version</b></td><td>${engineVersion}</td></tr>
+<tr><td><b>HCV project version</b></td><td>${projectVersion}</td></tr>
+<tr><td><b>PHE extension version</b></td><td>${extensionVersion}</td></tr>
+</table>
+
 <h3>Phylogenetic classification</h3>
 <table id="phylogenetics">
 <tr>
@@ -99,8 +116,8 @@ The sequence was not identified as hepatitis C virus.
 <th>Polymorphism</th>
 <th>Resisted drug</th>
 <th>Genotype / Subtype</th>
-<th><em>In vitro</em> evidence</th>
-<th><em>In vivo</em> evidence</th>
+<th><em>In vitro</em> resistance level<br/>(EC50 log fold change)</th>
+<th>Clinical trials</th>
 <th>Reference</th>
 </tr>
 </thead>
@@ -118,8 +135,22 @@ The sequence was not identified as hepatitis C virus.
 </#if>
 <td <#if evenRow>id="resistanceFindingEven"</#if>>${resistanceFinding.drug}</td>
 <td <#if evenRow>id="resistanceFindingEven"</#if>>${resistanceFinding.clade.displayName}</td>
-<td <#if evenRow>id="resistanceFindingEven"</#if>></td>
-<td <#if evenRow>id="resistanceFindingEven"</#if>></td>
+<td <#if evenRow>id="resistanceFindingEven"</#if>>
+<#if resistanceFinding.inVitroResult?? && resistanceFinding.inVitroResult.ec50RangeString??>
+${(resistanceFinding.inVitroResult.ec50RangeString)}
+<#else>
+-
+</#if>
+</td>
+<td <#if evenRow>id="resistanceFindingEven"</#if>>
+<#if resistanceFinding.inVivoResult?? && resistanceFinding.inVivoResult.clinicalTrial??>
+<#list resistanceFinding.inVivoResult.clinicalTrial as clinicalTrial>
+${clinicalTrial.displayName} [${clinicalTrial.regimen}]</br>
+</#list>
+<#else>
+-
+</#if>
+</td>
 <td <#if evenRow>id="resistanceFindingEven"</#if>>${resistanceFinding.publication.displayName} [${resistanceFinding.publication.index}]</td>
 <#if evenRow>
 <#assign evenRow=false>

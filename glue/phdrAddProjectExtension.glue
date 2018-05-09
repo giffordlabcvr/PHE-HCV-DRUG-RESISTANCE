@@ -1,3 +1,6 @@
+  set extension-setting phdr extension-version 0.1.1
+  set extension-setting phdr extension-description "PHE extension for drug resistance analysis"
+
 create module --fileName modules/phdrTabularUtility.xml
 create module --fileName modules/phdrSamReporter.xml
 create module --fileName modules/phdrFastaSequenceReporter.xml

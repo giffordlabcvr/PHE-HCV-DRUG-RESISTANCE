@@ -104,16 +104,18 @@ function reportFasta(fastaFilePath) {
 	publications = _.sortBy(publications, "index");
 
 	
-	var fastaReport = { 
-		fastaReport: {
-			fastaFilePath: fastaFilePath,
+	var phdrReport = { 
+		phdrReport: {
+			sequenceDataFormat: "FASTA",
+			filePath: fastaFilePath,
 			sequenceResults: results, 
 			publications: publications
 		}
 	};
+	addOverview(phdrReport);
 
-	glue.log("FINE", "phdrReportingController.reportFasta fastaReport:", fastaReport);
-	return fastaReport;
+	glue.log("FINE", "phdrReportingController.reportFasta phdrReport:", phdrReport);
+	return phdrReport;
 }
 
 function addRasPublications(rasFinding, publicationIdToObj) {
@@ -209,18 +211,18 @@ function reportBam(bamFilePath) {
 	var publications = _.values(publicationIdToObj);
 	publications = _.sortBy(publications, "index");
 	
-	var bamReport = 
-	{ 
-		bamReport: { 
-			bamFilePath: bamFilePath,
-			samReferenceResults: _.values(resultMap),
-			publications: publications
-		}
+	var phdrReport = { 
+			phdrReport: {
+				sequenceDataFormat: "SAM/BAM",
+				filePath: bamFilePath,
+				samReferenceResults: _.values(resultMap),
+				publications: publications
+			}
 	};
+	addOverview(phdrReport);
+	glue.log("FINE", "phdrReportingController.reportBam phdrReport:", phdrReport);
 	
-	glue.log("FINE", "phdrReportingController.reportBam bamReport:", bamReport);
-	
-	return bamReport;
+	return phdrReport;
 }
 
 function getRasFinding(referenceName, featureName, variationName) {
@@ -233,6 +235,25 @@ function getRasFinding(referenceName, featureName, variationName) {
 			var dComp = f1.drug.localeCompare(f2.drug);
 			if(dComp != 0) { return dComp; }
 			return f1.clade.alignmentName.localeCompare(f2.clade.alignmentName);
+		});
+		_.each(rasFinding.phdrRasVariation.resistanceFinding, function(resistanceFinding) {
+			if(resistanceFinding.inVitroResult != null) {
+				var ec50Min = resistanceFinding.inVitroResult.minEC50FoldChange;
+				var ec50Max = resistanceFinding.inVitroResult.maxEC50FoldChange;
+				var ec50RangeString = null;
+				if(ec50Min != null && ec50Max != null) {
+					if(ec50Min == ec50Max) {
+						ec50RangeString = ec50Min.toString();
+					} else {
+						ec50RangeString = ec50Min.toString()+" - "+ec50Max.toString();
+					}
+				} else if(ec50Min != null && ec50Max == null) {
+					ec50RangeString = "> "+ec50Min.toString();
+				} else if(ec50Min == null && ec50Max != null) {
+					ec50RangeString = "< "+ec50Max.toString();
+				}
+				resistanceFinding.inVitroResult.ec50RangeString = ec50RangeString; 
+			}
 		});
 	});
 	return rasFinding;
@@ -380,5 +401,25 @@ function recogniseFasta(fastaMap, resultMap) {
 			resultMap[recogniserResult.querySequenceId].isReverseHcv = true;
 		} 
 	});
+}
+
+function addOverview(phdrReport) {
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1; // January is 0!
+	var yyyy = today.getFullYear();
+	if(dd < 10) {
+	    dd = '0'+dd
+	} 
+	if(mm < 10) {
+	    mm = '0'+mm
+	} 
+	phdrReport.phdrReport.reportGenerationDate = dd + '/' + mm + '/' + yyyy;
+	phdrReport.phdrReport.engineVersion = 
+		glue.command(["glue-engine","show-version"]).glueEngineShowVersionResult.glueEngineVersion;
+	phdrReport.phdrReport.projectVersion = 
+		glue.command(["show","setting","project-version"]).projectShowSettingResult.settingValue;
+	phdrReport.phdrReport.extensionVersion = 
+		glue.command(["show","extension-setting","phdr","extension-version"]).projectShowExtensionSettingResult.extSettingValue;
 }
 
