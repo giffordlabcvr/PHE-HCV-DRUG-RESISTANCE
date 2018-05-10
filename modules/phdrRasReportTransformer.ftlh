@@ -14,6 +14,11 @@ ${getResourceAsString('phdrRasReport.css')?no_esc}
 <h1>Hepatitis C virus sequence report</h1>
 
 <table id="overview">
+<colgroup>
+    <col class="tableHeader"/>
+    <col/>
+</colgroup>
+
 <tr><td><b>Sequence ID</b></td><td>${phdrReport.sequenceResult.id}</td></tr>
 <tr><td><b>File path</b></td><td>${phdrReport.filePath}</td></tr>
 <tr><td><b>Sequance data format</b></td><td>
@@ -32,6 +37,10 @@ Deep sequencing (SAM/BAM)
 
 <h3>Phylogenetic classification</h3>
 <table id="phylogenetics">
+<colgroup>
+    <col class="tableHeader"/>
+    <col/>
+</colgroup>
 <tr>
 <td><b>Identified as hepatitis C?</b></td>
 <td>
@@ -72,12 +81,41 @@ No
 <td>N/A</td>
 </#if>
 </tr>
+</table>
+
+<table id="overview">
+<colgroup>
+    <col class="tableHeader"/>
+    <col/>
+</colgroup>
+
+<div id="antiviralResistance">
+<h3>Antiviral resistance summary</h3>
+<#if isHcv>
+<table id="drugScores">
+<thead>
+<tr>
+	<th>Drug</th>
+	<th colspan="2">Resistance level</th>
+</tr>
+</thead>
+<#list phdrReport.sequenceResult.drugScores as drugScore>
+<tr>
+	<td>${drugScore.drug}</td>
+	<td>${drugScore.drugScoreDisplay}</td>
+	<td class="resistanceBlock resistanceColourCode_${drugScore.drugScore}"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+</tr>
+</#list>
 
 </table>
+</div>
+<#else>
+No resistance analysis was performed for the sequence.
+</#if>
 
 <div class="pagebreak"> </div>
 
-<h3>Resistance-associated polymorphisms</h3>
+<h3>Resistance-associated polymorphism details</h3>
 <#if isHcv>
 <#if phdrReport.sequenceResult.rasScanResults??>
 <#assign evenRow=true>

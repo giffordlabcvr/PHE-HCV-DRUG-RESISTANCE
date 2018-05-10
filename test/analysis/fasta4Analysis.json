@@ -685,28 +685,20 @@
         {
           "drug": "glecaprevir",
           "drugScore": "susceptible",
+          "drugScoreDisplay": "Susceptible",
           "rasScores": [
             {
               "gene": "NS3",
               "structure": "166T",
               "score": 1
-            },
-            {
-              "gene": "NS5A",
-              "structure": "93H",
-              "score": 0
             }
           ]
         },
         {
           "drug": "pibrentasvir",
           "drugScore": "possibly_resistant",
+          "drugScoreDisplay": "Possibly resistant",
           "rasScores": [
-            {
-              "gene": "NS3",
-              "structure": "166T",
-              "score": 0
-            },
             {
               "gene": "NS5A",
               "structure": "93H",
@@ -717,12 +709,8 @@
         {
           "drug": "velpatasvir",
           "drugScore": "resistant",
+          "drugScoreDisplay": "Resistant",
           "rasScores": [
-            {
-              "gene": "NS3",
-              "structure": "166T",
-              "score": 0
-            },
             {
               "gene": "NS5A",
               "structure": "93H",
@@ -733,18 +721,8 @@
         {
           "drug": "voxilaprevir",
           "drugScore": "susceptible",
-          "rasScores": [
-            {
-              "gene": "NS3",
-              "structure": "166T",
-              "score": 0
-            },
-            {
-              "gene": "NS5A",
-              "structure": "93H",
-              "score": 0
-            }
-          ]
+          "drugScoreDisplay": "Susceptible",
+          "rasScores": []
         }
       ]
     },

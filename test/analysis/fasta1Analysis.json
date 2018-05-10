@@ -637,43 +637,14 @@
         {
           "drug": "glecaprevir",
           "drugScore": "susceptible",
-          "rasScores": [
-            {
-              "gene": "NS3",
-              "structure": "80K",
-              "score": 0
-            },
-            {
-              "gene": "NS5A",
-              "structure": "30H",
-              "score": 0
-            },
-            {
-              "gene": "NS5A",
-              "structure": "30H+93H",
-              "score": 0
-            },
-            {
-              "gene": "NS5A",
-              "structure": "93H",
-              "score": 0
-            }
-          ]
+          "drugScoreDisplay": "Susceptible",
+          "rasScores": []
         },
         {
           "drug": "pibrentasvir",
           "drugScore": "probably_resistant",
+          "drugScoreDisplay": "Probably resistant",
           "rasScores": [
-            {
-              "gene": "NS3",
-              "structure": "80K",
-              "score": 0
-            },
-            {
-              "gene": "NS5A",
-              "structure": "30H",
-              "score": 0
-            },
             {
               "gene": "NS5A",
               "structure": "30H+93H",
@@ -689,12 +660,8 @@
         {
           "drug": "velpatasvir",
           "drugScore": "resistant",
+          "drugScoreDisplay": "Resistant",
           "rasScores": [
-            {
-              "gene": "NS3",
-              "structure": "80K",
-              "score": 0
-            },
             {
               "gene": "NS5A",
               "structure": "30H",
@@ -715,26 +682,12 @@
         {
           "drug": "voxilaprevir",
           "drugScore": "possibly_resistant",
+          "drugScoreDisplay": "Possibly resistant",
           "rasScores": [
             {
               "gene": "NS3",
               "structure": "80K",
               "score": 7
-            },
-            {
-              "gene": "NS5A",
-              "structure": "30H",
-              "score": 0
-            },
-            {
-              "gene": "NS5A",
-              "structure": "30H+93H",
-              "score": 0
-            },
-            {
-              "gene": "NS5A",
-              "structure": "93H",
-              "score": 0
             }
           ]
         }

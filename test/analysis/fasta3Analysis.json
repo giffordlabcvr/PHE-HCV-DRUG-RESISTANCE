@@ -105,21 +105,25 @@
         {
           "drug": "glecaprevir",
           "drugScore": "susceptible",
+          "drugScoreDisplay": "Susceptible",
           "rasScores": []
         },
         {
           "drug": "pibrentasvir",
           "drugScore": "susceptible",
+          "drugScoreDisplay": "Susceptible",
           "rasScores": []
         },
         {
           "drug": "velpatasvir",
           "drugScore": "susceptible",
+          "drugScoreDisplay": "Susceptible",
           "rasScores": []
         },
         {
           "drug": "voxilaprevir",
           "drugScore": "susceptible",
+          "drugScoreDisplay": "Susceptible",
           "rasScores": []
         }
       ]

@@ -12,7 +12,7 @@ tr {
 }
 
 tr + tr {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #bbb;
 }
 
 td {
@@ -21,7 +21,11 @@ td {
 }
 
 td + td {
-    border-left: 1px solid #ddd;
+    border-left: 1px solid #bbb;
+}
+
+th + th {
+    border-left: 1px solid #bbb;
 }
 
 #rasFirstRow {
@@ -49,8 +53,40 @@ td, th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #c2daef;
+    background-color: #dbf0ff;
 }
+
+#drugScores th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #dbf0ff;
+}
+
+.resistanceBlock {
+	padding: 0px;
+}
+
+.resistanceColourCode_susceptible {
+	background-color: #56d369;
+}
+
+.resistanceColourCode_possibly_resistant {
+	background-color: #fcf95a;
+}
+
+.resistanceColourCode_probably_resistant {
+	background-color: #ffb349;
+}
+
+.resistanceColourCode_resistant {
+	background-color: #ff0202;
+}
+
+.tableHeader {
+    background-color: #dbf0ff;
+}
+
 
 #title {
 	float: right;

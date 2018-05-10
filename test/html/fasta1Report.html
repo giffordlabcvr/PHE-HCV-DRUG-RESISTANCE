@@ -16,7 +16,7 @@ tr {
 }
 
 tr + tr {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #bbb;
 }
 
 td {
@@ -25,7 +25,11 @@ td {
 }
 
 td + td {
-    border-left: 1px solid #ddd;
+    border-left: 1px solid #bbb;
+}
+
+th + th {
+    border-left: 1px solid #bbb;
 }
 
 #rasFirstRow {
@@ -53,8 +57,40 @@ td, th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #c2daef;
+    background-color: #dbf0ff;
 }
+
+#drugScores th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #dbf0ff;
+}
+
+.resistanceBlock {
+	padding: 0px;
+}
+
+.resistanceColourCode_susceptible {
+	background-color: #56d369;
+}
+
+.resistanceColourCode_possibly_resistant {
+	background-color: #fcf95a;
+}
+
+.resistanceColourCode_probably_resistant {
+	background-color: #ffb349;
+}
+
+.resistanceColourCode_resistant {
+	background-color: #ff0202;
+}
+
+.tableHeader {
+    background-color: #dbf0ff;
+}
+
 
 #title {
 	float: right;
@@ -75,6 +111,11 @@ td, th {
 <h1>Hepatitis C virus sequence report</h1>
 
 <table id="overview">
+<colgroup>
+    <col class="tableHeader"/>
+    <col/>
+</colgroup>
+
 <tr><td><b>Sequence ID</b></td><td>EF407428</td></tr>
 <tr><td><b>File path</b></td><td>test/inputs/fasta1.fasta</td></tr>
 <tr><td><b>Sequance data format</b></td><td>
@@ -89,6 +130,10 @@ Consensus (FASTA)
 
 <h3>Phylogenetic classification</h3>
 <table id="phylogenetics">
+<colgroup>
+    <col class="tableHeader"/>
+    <col/>
+</colgroup>
 <tr>
 <td><b>Identified as hepatitis C?</b></td>
 <td>
@@ -109,12 +154,50 @@ Yes
 <td><b>Closest reference sequence</b></td>
 <td>M62321</td>
 </tr>
+</table>
+
+<table id="overview">
+<colgroup>
+    <col class="tableHeader"/>
+    <col/>
+</colgroup>
+
+<div id="antiviralResistance">
+<h3>Antiviral resistance summary</h3>
+<table id="drugScores">
+<thead>
+<tr>
+	<th>Drug</th>
+	<th colspan="2">Resistance level</th>
+</tr>
+</thead>
+<tr>
+	<td>glecaprevir</td>
+	<td>Susceptible</td>
+	<td class="resistanceBlock resistanceColourCode_susceptible"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+</tr>
+<tr>
+	<td>pibrentasvir</td>
+	<td>Probably resistant</td>
+	<td class="resistanceBlock resistanceColourCode_probably_resistant"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+</tr>
+<tr>
+	<td>velpatasvir</td>
+	<td>Resistant</td>
+	<td class="resistanceBlock resistanceColourCode_resistant"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+</tr>
+<tr>
+	<td>voxilaprevir</td>
+	<td>Possibly resistant</td>
+	<td class="resistanceBlock resistanceColourCode_possibly_resistant"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+</tr>
 
 </table>
+</div>
 
 <div class="pagebreak"> </div>
 
-<h3>Resistance-associated polymorphisms</h3>
+<h3>Resistance-associated polymorphism details</h3>
 <table id="resistanceFinding">
 <thead>
 <tr>

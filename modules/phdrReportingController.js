@@ -351,19 +351,25 @@ function assessResistanceForDrug(scanResults, drug) {
 	});
 
 	var drugScore;
+	var drugScoreDisplay;
 	if(maxRasScore >= 15 || combinedRasScore >= 20) {
 		drugScore = 'resistant';
+		drugScoreDisplay = 'Resistant';
 	} else if(maxRasScore >= 10 || combinedRasScore >= 15) {
 		drugScore = 'probably_resistant';
+		drugScoreDisplay = 'Probably resistant';
 	} else if(maxRasScore >= 5 || combinedRasScore >= 10) {
 		drugScore = 'possibly_resistant';
+		drugScoreDisplay = 'Possibly resistant';
 	} else {
 		drugScore = 'susceptible';
+		drugScoreDisplay = 'Susceptible';
 	}
 	
 	return {
 		drug: drug,
 		drugScore: drugScore, 
+		drugScoreDisplay: drugScoreDisplay,
 		rasScores: rasScores
 	};
 	
