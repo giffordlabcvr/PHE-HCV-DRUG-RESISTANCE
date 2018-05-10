@@ -100,7 +100,29 @@
         }
       },
       "targetRefName": "REF_1c_AY651061",
-      "rasScanResults": []
+      "rasScanResults": [],
+      "drugScores": [
+        {
+          "drug": "glecaprevir",
+          "drugScore": "susceptible",
+          "rasScores": []
+        },
+        {
+          "drug": "pibrentasvir",
+          "drugScore": "susceptible",
+          "rasScores": []
+        },
+        {
+          "drug": "velpatasvir",
+          "drugScore": "susceptible",
+          "rasScores": []
+        },
+        {
+          "drug": "voxilaprevir",
+          "drugScore": "susceptible",
+          "rasScores": []
+        }
+      ]
     },
     "publications": [],
     "reportGenerationDate": "10/05/2018",

@@ -632,6 +632,112 @@
             ]
           }
         }
+      ],
+      "drugScores": [
+        {
+          "drug": "glecaprevir",
+          "drugScore": "susceptible",
+          "rasScores": [
+            {
+              "gene": "NS3",
+              "structure": "80K",
+              "score": 0
+            },
+            {
+              "gene": "NS5A",
+              "structure": "30H",
+              "score": 0
+            },
+            {
+              "gene": "NS5A",
+              "structure": "30H+93H",
+              "score": 0
+            },
+            {
+              "gene": "NS5A",
+              "structure": "93H",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "drug": "pibrentasvir",
+          "drugScore": "probably_resistant",
+          "rasScores": [
+            {
+              "gene": "NS3",
+              "structure": "80K",
+              "score": 0
+            },
+            {
+              "gene": "NS5A",
+              "structure": "30H",
+              "score": 0
+            },
+            {
+              "gene": "NS5A",
+              "structure": "30H+93H",
+              "score": 7
+            },
+            {
+              "gene": "NS5A",
+              "structure": "93H",
+              "score": 8
+            }
+          ]
+        },
+        {
+          "drug": "velpatasvir",
+          "drugScore": "resistant",
+          "rasScores": [
+            {
+              "gene": "NS3",
+              "structure": "80K",
+              "score": 0
+            },
+            {
+              "gene": "NS5A",
+              "structure": "30H",
+              "score": 1
+            },
+            {
+              "gene": "NS5A",
+              "structure": "30H+93H",
+              "score": 17
+            },
+            {
+              "gene": "NS5A",
+              "structure": "93H",
+              "score": 17
+            }
+          ]
+        },
+        {
+          "drug": "voxilaprevir",
+          "drugScore": "possibly_resistant",
+          "rasScores": [
+            {
+              "gene": "NS3",
+              "structure": "80K",
+              "score": 7
+            },
+            {
+              "gene": "NS5A",
+              "structure": "30H",
+              "score": 0
+            },
+            {
+              "gene": "NS5A",
+              "structure": "30H+93H",
+              "score": 0
+            },
+            {
+              "gene": "NS5A",
+              "structure": "93H",
+              "score": 0
+            }
+          ]
+        }
       ]
     },
     "publications": [

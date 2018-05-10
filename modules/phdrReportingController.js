@@ -102,6 +102,7 @@ function reportFasta(fastaFilePath) {
 					scanResult.rasDetails = rasFinding.phdrRasVariation;
 					addRasPublications(rasFinding, publicationIdToObj);
 				});
+				sequenceResult.drugScores = assessResistance(scanResults);
 			}
 		}
 	});
@@ -241,7 +242,9 @@ function reportBam(bamFilePath) {
 						scanResult.featureName, scanResult.variationName);
 				scanResult.rasDetails = rasFinding.phdrRasVariation;
 				addRasPublications(rasFinding, publicationIdToObj);
+				
 			});
+			samRefResult.drugScores = assessResistance(scanResults);
 		}
 	});
 	glue.log("FINE", "phdrReportingController.reportBam publicationIdToObj:", publicationIdToObj);
@@ -261,6 +264,109 @@ function reportBam(bamFilePath) {
 	glue.log("FINE", "phdrReportingController.reportBam phdrReport:", phdrReport);
 	
 	return phdrReport;
+}
+
+
+function assessResistance(scanResults) {
+	var drugIDs = 
+		glue.getTableColumn(
+				glue.command(["list", "custom-table-row", "phdr_drug"]), "id");
+	return _.map(drugIDs, function(drug) { 
+		return assessResistanceForDrug(scanResults, drug); 
+	});
+}
+
+function assessResistanceForDrug(scanResults, drug) {
+	
+	var rasScores = [];
+	
+	_.each(scanResults, function(scanResult) {
+		// individual RAS score.
+		var lowInVitro = false; // EC50 [2, 20) observed:		add 1 points.
+		var medInVitro = false; // EC50 [20, 100) observed:		add 3 points.
+		var highInVitro = false;// EC50 >= 100 observed:		add 10 points.
+		var inVivo = false; // any in vivo evidence. 			add 7 points.
+
+		_.each(scanResult.rasDetails.resistanceFinding, function(finding) {
+			if(finding.drug != drug) {
+				return;
+			}
+			if(finding.inVitroResult != null) {
+				var ec50Value;
+				var minEC50 = finding.inVitroResult.minEC50FoldChange;
+				var maxEC50 = finding.inVitroResult.maxEC50FoldChange;
+				
+				if(minEC50 != null && maxEC50 != null) {
+					ec50Value = (minEC50 + maxEC50) / 2;
+				} else if(minEC50 == null && maxEC50 != null) {
+					ec50Value = maxEC50 / 2;
+				} else if(minEC50 != null && maxEC50 == null) {
+					ec50Value = minEC50;
+				}
+				
+				if(ec50Value < 20.0) {
+					lowInVitro = true;
+				} else if(ec50Value < 100.0) {
+					medInVitro = true;
+				} else if(ec50Value >= 100.0) {
+					highInVitro = true;
+				} 
+			}
+			if(finding.inVivoResult != null) {
+				inVivo = true;
+			}
+		});
+		var rasScore = 0;
+		if(highInVitro) {
+			rasScore += 10;
+		} else if(medInVitro) {
+			rasScore += 3;
+		} else if(lowInVitro) {
+			rasScore += 1;
+		}
+		if(inVivo) {
+			rasScore += 7;
+		}
+		if(rasScore > 0) {
+			rasScores.push({
+				gene: scanResult.rasDetails.gene,
+				structure: scanResult.rasDetails.structure,
+				score: rasScore
+			}); 
+		}
+
+	});
+	
+	// drug score: 4 levels:
+	// resistant:				Any RAS score of 15 or a combined RAS score of 20.
+	// probably_resistant:		Any RAS score of 10 or a combined RAS score of 15.
+	// possibly_resistant:		Any RAS score of 5 or a combined RAS score of 10.
+	// susceptible:				None of the above.
+	
+	var maxRasScore = 0;
+	var combinedRasScore = 0;
+	_.each(rasScores, function(rasScore) {
+		maxRasScore = Math.max(maxRasScore, rasScore.score);
+		combinedRasScore += rasScore.score;
+	});
+
+	var drugScore;
+	if(maxRasScore >= 15 || combinedRasScore >= 20) {
+		drugScore = 'resistant';
+	} else if(maxRasScore >= 10 || combinedRasScore >= 15) {
+		drugScore = 'probably_resistant';
+	} else if(maxRasScore >= 5 || combinedRasScore >= 10) {
+		drugScore = 'possibly_resistant';
+	} else {
+		drugScore = 'susceptible';
+	}
+	
+	return {
+		drug: drug,
+		drugScore: drugScore, 
+		rasScores: rasScores
+	};
+	
 }
 
 function getRasFinding(genotypingResult, referenceName, featureName, variationName) {
