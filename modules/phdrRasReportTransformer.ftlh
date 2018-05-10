@@ -1,86 +1,42 @@
 <html>
 <head>
 <style>
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-table {
-    border: 1px solid #000;
-    border-collapse: collapse;
-}
-
-tr {
-    border-top: 1px solid #000;
-}
-
-tr + tr {
-    border-top: 1px solid #ddd;
-}
-
-td {
-    border-left: 1px solid #000;
-    vertical-align: top;
-}
-
-td + td {
-    border-left: 1px solid #ddd;
-}
-
-#rasFirstRow {
-    border-top: 1px solid #000;
-}
-
-#resistanceFinding {
-    width: 100%;
-}
-
-#resistanceFindingEven {
-	background-color: #f2f2f2;
-}
-
-td, th {
-    padding: 8px;
-}
-
-#resistanceFinding th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #c2daef;
-}
-
+${getResourceAsString('phdrRasReport.css')?no_esc}
 </style>
 </head>
 <body>
+
+<div id="title">
+<img height="150px" alt="PHE logo" src="data:image/svg+xml;base64,${getResourceAsBase64('pheLogo.svg')}" />
+<img height="150px" alt="CVR logo" src="data:image/svg+xml;base64,${getResourceAsBase64('cvrLogo.svg')}" />
+</div>
 <h1>Hepatitis C virus sequence report</h1>
 
-<#list sequenceResults as sequenceResult>
-
-<h3>Overview</h3>
 <table id="overview">
-<tr><td><b>Sequence ID</b></td><td>${sequenceResult.id}</td></tr>
+<tr><td><b>Sequence ID</b></td><td>${phdrReport.sequenceResult.id}</td></tr>
+<tr><td><b>File path</b></td><td>${phdrReport.filePath}</td></tr>
 <tr><td><b>Sequance data format</b></td><td>
-<#if sequenceDataFormat = "FASTA"> 
+<#if phdrReport.sequenceDataFormat = "FASTA"> 
 Consensus (FASTA)
-<#elseif sequenceDataFormat = "SAM/BAM">
+<#elseif phdrReport.sequenceDataFormat = "SAM/BAM">
 Deep sequencing (SAM/BAM)
 </#if>
 </td></tr>
-<tr><td><b>Report generation date</b></td><td>${reportGenerationDate}</td></tr>
-<tr><td><b>GLUE engine version</b></td><td>${engineVersion}</td></tr>
-<tr><td><b>HCV project version</b></td><td>${projectVersion}</td></tr>
-<tr><td><b>PHE extension version</b></td><td>${extensionVersion}</td></tr>
+<tr><td><b>Report generation date</b></td><td>${phdrReport.reportGenerationDate}</td></tr>
+<tr><td><b>GLUE engine version</b></td><td>${phdrReport.engineVersion}</td></tr>
+<tr><td><b>HCV project version</b></td><td>${phdrReport.projectVersion}</td></tr>
+<tr><td><b>PHE extension version</b></td><td>${phdrReport.extensionVersion}</td></tr>
 </table>
+</div>
 
 <h3>Phylogenetic classification</h3>
 <table id="phylogenetics">
 <tr>
 <td colspan = "2">
 <#assign isHcv=true>
-<#if sequenceResult.isForwardHcv>
+<#if phdrReport.sequenceResult.isForwardHcv>
 The sequence was identified as hepatitis C virus.
-<#elseif sequenceResult.isReverseHcv>
+<#elseif phdrReport.sequenceResult.isReverseHcv>
 The sequence was identified as hepatitis C virus (reverse complement).
 <#else>
 <#assign isHcv=false>
@@ -91,23 +47,23 @@ The sequence was not identified as hepatitis C virus.
 <tr>
 
 <td><b>Genotype</b></td>
-<td>${sequenceResult.genotypingResult.genotypeCladeCategoryResult.shortRenderedName}</td>
+<td>${phdrReport.sequenceResult.genotypingResult.genotypeCladeCategoryResult.shortRenderedName}</td>
 </tr>
 <tr>
 
 <td><b>Subtype</b></td>
-<td>${sequenceResult.genotypingResult.subtypeCladeCategoryResult.shortRenderedName}</td>
+<td>${phdrReport.sequenceResult.genotypingResult.subtypeCladeCategoryResult.shortRenderedName}</td>
 </tr>
 
 <tr>
 <td><b>Closest reference sequence</b></td>
-<td>${sequenceResult.genotypingResult.genotypeCladeCategoryResult.closestMemberSequenceID}</td>
+<td>${phdrReport.sequenceResult.genotypingResult.genotypeCladeCategoryResult.closestMemberSequenceID}</td>
 </tr>
 
 </table>
 
 <h3>Resistance-associated sequence polymorphisms detected</h3>
-<#if sequenceResult.rasScanResults??>
+<#if phdrReport.sequenceResult.rasScanResults??>
 <#assign evenRow=true>
 <table id="resistanceFinding">
 <thead>
@@ -122,7 +78,7 @@ The sequence was not identified as hepatitis C virus.
 </tr>
 </thead>
 <tbody>
-<#list sequenceResult.rasScanResults as rasScanResult>
+<#list phdrReport.sequenceResult.rasScanResults as rasScanResult>
 <#assign firstRow=true>
 <#list rasScanResult.rasDetails.resistanceFinding as resistanceFinding>
 <#if firstRow>
@@ -165,14 +121,12 @@ ${clinicalTrial.displayName} [${clinicalTrial.regimen}]</br>
 </#if>
 
 </#if>
-</#list>
 
-
-<#if publications??>
+<#if phdrReport.publications??>
 <h2>References</h2>
 
 <#assign pubIdx=1>
-<#list publications as publication>
+<#list phdrReport.publications as publication>
 <p>
 [${publication.index}] 
 <b>${publication.title}</b>

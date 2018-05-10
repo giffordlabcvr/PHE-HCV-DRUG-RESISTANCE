@@ -1,3 +1,8 @@
 <freemarkerDocTransformer>
 	<templateFileName>phdrRasReportTransformer.ftlh</templateFileName>
+	<resourceFileName>sheets-of-paper.css</resourceFileName>
+	<resourceFileName>sheets-of-paper-a4.css</resourceFileName>
+	<resourceFileName>phdrRasReport.css</resourceFileName>
+	<resourceFileName>cvrLogo.svg</resourceFileName>
+	<resourceFileName>pheLogo.svg</resourceFileName>
 </freemarkerDocTransformer>

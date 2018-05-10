@@ -31,10 +31,18 @@ function reportFasta(fastaFilePath) {
 		fastaDocument = glue.command(["load-nucleotide-fasta", fastaFilePath]);
 	});
 	glue.log("FINE", "phdrReportingController.reportFasta fastaDocument:", fastaDocument);
+	var numSequencesInFile = 0;
 	var fastaMap = {};
 	_.each(fastaDocument.nucleotideFasta.sequences, function(sequenceObj) {
 		fastaMap[sequenceObj.id] = sequenceObj;
+		numSequencesInFile++;
 	});
+	if(numSequencesInFile == 0) {
+		throw new Error("No sequences found in FASTA file");
+	}
+	if(numSequencesInFile > 1) {
+		throw new Error("Please use only one sequence per FASTA file");
+	}
 	// initialise result map.
 	var resultMap = {};
 	var sequenceObjs = _.values(fastaMap);
@@ -108,7 +116,7 @@ function reportFasta(fastaFilePath) {
 		phdrReport: {
 			sequenceDataFormat: "FASTA",
 			filePath: fastaFilePath,
-			sequenceResults: results, 
+			sequenceResult: results[0], 
 			publications: publications
 		}
 	};
@@ -144,12 +152,22 @@ function reportBam(bamFilePath) {
 	
 	var resultMap = {};
 
+	var numSamReferencesInFile = 0;
 	_.each(samReferences, function(samReference) {
 		resultMap[samReference.name] = {
 			id: samReference.name,
 			samReference: samReference
 		};
+		numSamReferencesInFile++;
 	});
+	if(numSamReferencesInFile == 0) {
+		throw new Error("No SAM reference sequences found in SAM/BAM file");
+	}
+	if(numSamReferencesInFile > 1) {
+		throw new Error("Multiple reference sequences found in SAM/BAM file");
+	}
+
+	
 	
 	var consensusFastaMap = {};
 	_.each(samReferences, function(samReference) {
@@ -215,7 +233,7 @@ function reportBam(bamFilePath) {
 			phdrReport: {
 				sequenceDataFormat: "SAM/BAM",
 				filePath: bamFilePath,
-				samReferenceResults: _.values(resultMap),
+				samReferenceResult: _.values(resultMap)[0],
 				publications: publications
 			}
 	};

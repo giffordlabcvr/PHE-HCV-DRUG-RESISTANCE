@@ -2,15 +2,13 @@
   "phdrReport": {
     "sequenceDataFormat": "FASTA",
     "filePath": "test/inputs/fasta2.fasta",
-    "sequenceResults": [
-      {
-        "id": "Nonsense",
-        "isForwardHcv": false,
-        "isReverseHcv": false
-      }
-    ],
+    "sequenceResult": {
+      "id": "Nonsense",
+      "isForwardHcv": false,
+      "isReverseHcv": false
+    },
     "publications": [],
-    "reportGenerationDate": "09/05/2018",
+    "reportGenerationDate": "10/05/2018",
     "engineVersion": "0.1.153",
     "projectVersion": "0.1.26",
     "extensionVersion": "0.1.1"
