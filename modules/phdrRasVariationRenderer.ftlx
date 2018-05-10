@@ -21,6 +21,10 @@
 			<alignmentName>${resistanceFinding.alignment.name}</alignmentName>
 			<displayName>${resistanceFinding.alignment.displayName}</displayName>
 		</clade>
+		<parentClade>
+			<alignmentName>${resistanceFinding.alignment.parent.name}</alignmentName>
+			<displayName>${resistanceFinding.alignment.parent.displayName}</displayName>
+		</parentClade>
 		<#if resistanceFinding.phdr_in_vitro_result??>
 		<inVitroResult>
 			<@elem tag="minEC50FoldChange" expr="context.ec50_min" type="Double" context=resistanceFinding.phdr_in_vitro_result/>

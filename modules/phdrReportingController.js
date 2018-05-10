@@ -69,7 +69,7 @@ function reportFasta(fastaFilePath) {
 		var genotypingResult = sequenceResult.genotypingResult;
 		if(genotypingResult != null) {
 			if(genotypingResult.genotypeCladeCategoryResult.finalClade != null) {
-				var variationWhereClause = "phdr_ras != null";
+				var variationWhereClause = getVariationWhereClause(genotypingResult);
 				var targetRefName = genotypingResultToTargetRefName(genotypingResult);
 				sequenceResult.targetRefName = targetRefName;
 				var scanResults;
@@ -97,7 +97,7 @@ function reportFasta(fastaFilePath) {
 				sequenceResult.rasScanResults = scanResults;
 				glue.log("FINE", "phdrReportingController.reportFasta rasScanResults:", sequenceResult.rasScanResults);
 				_.each(scanResults, function(scanResult) {
-					var rasFinding = getRasFinding(scanResult.referenceName, 
+					var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
 							scanResult.featureName, scanResult.variationName);
 					scanResult.rasDetails = rasFinding.phdrRasVariation;
 					addRasPublications(rasFinding, publicationIdToObj);
@@ -124,6 +124,26 @@ function reportFasta(fastaFilePath) {
 
 	glue.log("FINE", "phdrReportingController.reportFasta phdrReport:", phdrReport);
 	return phdrReport;
+}
+
+function getVariationWhereClause(genotypingResult) {
+	var variationWhereClause = "phdr_ras != null";
+	var genotypeAlmtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
+	var subtypeAlmtName = genotypingResult.subtypeCladeCategoryResult.finalClade;
+	if(genotypeAlmtName != null && subtypeAlmtName == null) {
+		// genotype known, subtype unknown, include RASs for any subtype of genotype.
+		variationWhereClause = variationWhereClause + 
+		" and (phdr_ras.phdr_resistance_finding.alignment.name ='"+genotypeAlmtName+"' or "+
+		"phdr_ras.phdr_resistance_finding.alignment.parent.name ='"+genotypeAlmtName+"')"
+	}
+	if(genotypeAlmtName != null && subtypeAlmtName != null) {
+		// genotype known, subtype known, include RASs for specific subtype or genotype.
+		variationWhereClause = variationWhereClause + 
+		" and (phdr_ras.phdr_resistance_finding.alignment.name ='"+subtypeAlmtName+"' or "+
+		"phdr_ras.phdr_resistance_finding.alignment.name ='"+genotypeAlmtName+"')"
+	}
+	glue.log("FINEST", "variationWhereClause", variationWhereClause);
+	return variationWhereClause;
 }
 
 function addRasPublications(rasFinding, publicationIdToObj) {
@@ -194,7 +214,7 @@ function reportBam(bamFilePath) {
 		var genotypingResult = samRefResult.genotypingResult;
 		if(genotypingResult != null) {
 			var targetRefName = genotypingResultToTargetRefName(genotypingResult);
-			var variationWhereClause = "phdr_ras != null";
+			var variationWhereClause = getVariationWhereClause(genotypingResult);
 			samRefResult.targetRefName = targetRefName;
 			var samRefSense = "FORWARD";
 			if(samRefResult.isReverseHcv) {
@@ -217,7 +237,7 @@ function reportBam(bamFilePath) {
 			samRefResult.rasScanResults = scanResults;
 			glue.log("FINE", "phdrReportingController.reportBam rasScanResults:", samRefResult.rasScanResults);
 			_.each(scanResults, function(scanResult) {
-				var rasFinding = getRasFinding(scanResult.referenceName, 
+				var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
 						scanResult.featureName, scanResult.variationName);
 				scanResult.rasDetails = rasFinding.phdrRasVariation;
 				addRasPublications(rasFinding, publicationIdToObj);
@@ -243,12 +263,26 @@ function reportBam(bamFilePath) {
 	return phdrReport;
 }
 
-function getRasFinding(referenceName, featureName, variationName) {
+function getRasFinding(genotypingResult, referenceName, featureName, variationName) {
 	var rasFinding;
 	glue.inMode("/reference/"+referenceName+
 			"/feature-location/"+featureName+
 			"/variation/"+variationName, function() {
 		rasFinding = glue.command(["render-object", "phdrRasVariationRenderer"]);
+		var genotypeAlmtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
+		var subtypeAlmtName = genotypingResult.subtypeCladeCategoryResult.finalClade;
+		rasFinding.phdrRasVariation.resistanceFinding = 
+			_.filter(rasFinding.phdrRasVariation.resistanceFinding, function(finding) {
+				if(genotypeAlmtName != null && subtypeAlmtName == null) {
+					return finding.clade.alignmentName == genotypeAlmtName ||
+					finding.parentClade.alignmentName == genotypeAlmtName;
+				}
+				if(genotypeAlmtName != null && subtypeAlmtName != null) {
+					return finding.clade.alignmentName == genotypeAlmtName ||
+						finding.clade.alignmentName == subtypeAlmtName;
+				}
+				return true;
+			});
 		rasFinding.phdrRasVariation.resistanceFinding.sort(function (f1, f2) {
 			var dComp = f1.drug.localeCompare(f2.drug);
 			if(dComp != 0) { return dComp; }

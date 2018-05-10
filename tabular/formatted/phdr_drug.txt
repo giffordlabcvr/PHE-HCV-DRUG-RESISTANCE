@@ -1,5 +1,6 @@
-id
-glecaprevir
-velpatasvir
-pibrentasvir
-voxilaprevir
+id	abbreviation
+glecaprevir	GLE
+velpatasvir	VEL
+pibrentasvir	PIB
+voxilaprevir	VOX
+	

@@ -1,5 +1,6 @@
 <html>
 <head>
+<meta charset="UTF-8">
 <style>
 ${getResourceAsString('phdrRasReport.css')?no_esc}
 </style>
@@ -7,8 +8,8 @@ ${getResourceAsString('phdrRasReport.css')?no_esc}
 <body>
 
 <div id="title">
-<img height="100px" alt="PHE logo" src="data:image/svg+xml;base64,${getResourceAsBase64('pheLogo.svg')}" />
-<img height="100px" alt="CVR logo" src="data:image/svg+xml;base64,${getResourceAsBase64('cvrLogo.svg')}" />
+<img height="125px" alt="PHE logo" src="data:image/svg+xml;base64,${getResourceAsBase64('pheLogo.svg')}" />
+<img height="125px" alt="CVR logo" src="data:image/svg+xml;base64,${getResourceAsBase64('cvrLogo.svg')}" />
 </div>
 <h1>Hepatitis C virus sequence report</h1>
 
@@ -32,39 +33,52 @@ Deep sequencing (SAM/BAM)
 <h3>Phylogenetic classification</h3>
 <table id="phylogenetics">
 <tr>
-<td colspan = "2">
+<td><b>Identified as hepatitis C?</b></td>
+<td>
 <#assign isHcv=true>
 <#if phdrReport.sequenceResult.isForwardHcv>
-The sequence was identified as hepatitis C virus.
+Yes
 <#elseif phdrReport.sequenceResult.isReverseHcv>
-The sequence was identified as hepatitis C virus (reverse complement).
+Yes (reverse complement).
 <#else>
 <#assign isHcv=false>
-The sequence was not identified as hepatitis C virus.
+No
 </#if>
 </td>
-<#if isHcv>
 <tr>
 
 <td><b>Genotype</b></td>
+<#if isHcv>
 <td>${phdrReport.sequenceResult.genotypingResult.genotypeCladeCategoryResult.shortRenderedName}</td>
+<#else>
+<td>N/A</td>
+</#if>
 </tr>
 <tr>
 
 <td><b>Subtype</b></td>
+<#if isHcv>
 <td>${phdrReport.sequenceResult.genotypingResult.subtypeCladeCategoryResult.shortRenderedName}</td>
+<#else>
+<td>N/A</td>
+</#if>
 </tr>
 
 <tr>
 <td><b>Closest reference sequence</b></td>
+<#if isHcv>
 <td>${phdrReport.sequenceResult.genotypingResult.genotypeCladeCategoryResult.closestMemberSequenceID}</td>
+<#else>
+<td>N/A</td>
+</#if>
 </tr>
 
 </table>
 
 <div class="pagebreak"> </div>
 
-<h3>Resistance-associated sequence polymorphisms detected</h3>
+<h3>Resistance-associated polymorphisms</h3>
+<#if isHcv>
 <#if phdrReport.sequenceResult.rasScanResults??>
 <#assign evenRow=true>
 <table id="resistanceFinding">
@@ -120,12 +134,18 @@ ${clinicalTrial.displayName} [${clinicalTrial.regimen}]</br>
 </#list>
 </tbody>
 </table>
+<#else>
+No resistance-associated polymorphisms were detected.
+</#if>
+<#else>
+No resistance analysis was performed for the sequence.
 </#if>
 
-</#if>
+<div class="pagebreak"> </div>
 
-<#if phdrReport.publications??>
-<h2>References</h2>
+<#if phdrReport.publications?? && phdrReport.publications?size != 0>
+<div id="references">
+<h3>References</h3>
 
 <#assign pubIdx=1>
 <#list phdrReport.publications as publication>
@@ -147,5 +167,6 @@ ${publication.journal}
 </p>
 </#list>
 </#if>
+</div>
 </body>
 </html>
