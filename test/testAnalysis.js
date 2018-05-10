@@ -1,4 +1,4 @@
-var inputs = ["fasta1", "fasta2", "fasta3"];
+var inputs = ["fasta1", "fasta2", "fasta3", "fasta4"];
 
 glue.inMode("module/phdrReportingController", function() {
 	glue.command("load configuration modules/phdrReportingController.xml --loadResources");
