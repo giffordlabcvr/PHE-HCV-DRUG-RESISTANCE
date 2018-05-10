@@ -7,8 +7,8 @@ ${getResourceAsString('phdrRasReport.css')?no_esc}
 <body>
 
 <div id="title">
-<img height="150px" alt="PHE logo" src="data:image/svg+xml;base64,${getResourceAsBase64('pheLogo.svg')}" />
-<img height="150px" alt="CVR logo" src="data:image/svg+xml;base64,${getResourceAsBase64('cvrLogo.svg')}" />
+<img height="100px" alt="PHE logo" src="data:image/svg+xml;base64,${getResourceAsBase64('pheLogo.svg')}" />
+<img height="100px" alt="CVR logo" src="data:image/svg+xml;base64,${getResourceAsBase64('cvrLogo.svg')}" />
 </div>
 <h1>Hepatitis C virus sequence report</h1>
 
@@ -61,6 +61,8 @@ The sequence was not identified as hepatitis C virus.
 </tr>
 
 </table>
+
+<div class="pagebreak"> </div>
 
 <h3>Resistance-associated sequence polymorphisms detected</h3>
 <#if phdrReport.sequenceResult.rasScanResults??>
