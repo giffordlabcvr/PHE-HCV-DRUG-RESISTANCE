@@ -95,16 +95,38 @@ No
 <table id="drugScores">
 <thead>
 <tr>
+	<th>Drug category</th>
 	<th>Drug</th>
 	<th colspan="2">Resistance level</th>
+	<th>Resistance-associated polymorphisms</th>
 </tr>
 </thead>
-<#list phdrReport.sequenceResult.drugScores as drugScore>
+<#list phdrReport.sequenceResult.drugScores as categoryDrugScores>
+<#list categoryDrugScores.drugAssessments as drugScore>
+<#if drugScore?index == 0>
+<tr class="firstRow">
+<#else>
 <tr>
-	<td>${drugScore.drug}</td>
+</#if>
+<#if drugScore?index == 0>
+	<td rowspan = "2">${categoryDrugScores.category}</td>
+	</#if>
+	<td>${drugScore.drug.id}</td>
 	<td>${drugScore.drugScoreDisplay}</td>
 	<td class="resistanceBlock resistanceColourCode_${drugScore.drugScore}"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+	<td>
+	<#if drugScore.rasScores??>
+	<#list drugScore.rasScores.fieldNames as gene>
+    ${gene}:
+	<#list drugScore.rasScores[gene] as rasScore><#if rasScore?index gt 0>,</#if>
+		<span class="rasColourCode_${rasScore.rasLevel}">${rasScore.structure}</span></#list>
+	</#list>
+	<#else>
+		None relevant 
+	</#if>
+	</td>
 </tr>
+</#list>
 </#list>
 
 </table>
@@ -133,13 +155,11 @@ No resistance analysis was performed for the sequence.
 </thead>
 <tbody>
 <#list phdrReport.sequenceResult.rasScanResults as rasScanResult>
-<#assign firstRow=true>
 <#list rasScanResult.rasDetails.resistanceFinding as resistanceFinding>
-<#if firstRow>
-<tr id="rasFirstRow">
+<#if resistanceFinding?index == 0>
+<tr class="firstRow">
 <td rowspan = "${rasScanResult.rasDetails.resistanceFinding?size}">${rasScanResult.rasDetails.gene}</td>
 <td rowspan = "${rasScanResult.rasDetails.resistanceFinding?size}">${rasScanResult.rasDetails.structure}</td>
-<#assign firstRow=false>
 <#else>
 <tr>
 </#if>

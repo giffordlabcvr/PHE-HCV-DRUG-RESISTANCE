@@ -32,7 +32,7 @@ th + th {
     border-left: 1px solid #bbb;
 }
 
-#rasFirstRow {
+.firstRow {
 	border-top: 1px solid #000;
 }
 
@@ -87,12 +87,37 @@ td, th {
 	background-color: #ff0202;
 }
 
+.rasColourCode_marginal {
+	color: #aaaaaa;
+}
+
+.rasColourCode_low {
+	font-weight: bold;
+	color: #aaaaaa;
+}
+
+.rasColourCode_medium {
+	font-weight: bold;
+	color: #ffb349;
+}
+
+.rasColourCode_high {
+	font-weight: bold;
+	color: #ff0202;
+}
+
+
+
 .tableHeader {
     background-color: #dbf0ff;
 }
 
 
 #title {
+	float: right;
+}
+
+#antiviralResistance {
 	float: right;
 }
 
@@ -121,7 +146,7 @@ td, th {
 <tr><td><b>Sequance data format</b></td><td>
 Consensus (FASTA)
 </td></tr>
-<tr><td><b>Report generation date</b></td><td>10/05/2018</td></tr>
+<tr><td><b>Report generation date</b></td><td>11/05/2018</td></tr>
 <tr><td><b>GLUE engine version</b></td><td>0.1.153</td></tr>
 <tr><td><b>HCV project version</b></td><td>0.1.26</td></tr>
 <tr><td><b>PHE extension version</b></td><td>0.1.1</td></tr>
@@ -167,29 +192,50 @@ Yes
 <table id="drugScores">
 <thead>
 <tr>
+	<th>Drug category</th>
 	<th>Drug</th>
 	<th colspan="2">Resistance level</th>
+	<th>Resistance-associated polymorphisms</th>
 </tr>
 </thead>
-<tr>
+<tr class="firstRow">
+	<td rowspan = "2">NS3/4A protease inhibitors</td>
 	<td>glecaprevir</td>
 	<td>Susceptible</td>
 	<td class="resistanceBlock resistanceColourCode_susceptible"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
-</tr>
-<tr>
-	<td>pibrentasvir</td>
-	<td>Possibly resistant</td>
-	<td class="resistanceBlock resistanceColourCode_possibly_resistant"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
-</tr>
-<tr>
-	<td>velpatasvir</td>
-	<td>Resistant</td>
-	<td class="resistanceBlock resistanceColourCode_resistant"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+	<td>
+    NS3:
+	
+		<span class="rasColourCode_marginal">166T</span>
+	</td>
 </tr>
 <tr>
 	<td>voxilaprevir</td>
 	<td>Susceptible</td>
 	<td class="resistanceBlock resistanceColourCode_susceptible"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+	<td>
+	</td>
+</tr>
+<tr class="firstRow">
+	<td rowspan = "2">NS5A inhibitors</td>
+	<td>pibrentasvir</td>
+	<td>Possibly resistant</td>
+	<td class="resistanceBlock resistanceColourCode_possibly_resistant"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+	<td>
+    NS5A:
+	
+		<span class="rasColourCode_low">93H</span>
+	</td>
+</tr>
+<tr>
+	<td>velpatasvir</td>
+	<td>Resistant</td>
+	<td class="resistanceBlock resistanceColourCode_resistant"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+	<td>
+    NS5A:
+	
+		<span class="rasColourCode_high">93H</span>
+	</td>
 </tr>
 
 </table>
@@ -211,7 +257,7 @@ Yes
 </tr>
 </thead>
 <tbody>
-<tr id="rasFirstRow">
+<tr class="firstRow">
 <td rowspan = "1">NS3</td>
 <td rowspan = "1">166T</td>
 <td id="resistanceFindingEven">glecaprevir</td>
@@ -224,7 +270,7 @@ Yes
 </td>
 <td id="resistanceFindingEven">Krishnan et al., 2017 [1]</td>
 </tr>
-<tr id="rasFirstRow">
+<tr class="firstRow">
 <td rowspan = "17">NS5A</td>
 <td rowspan = "17">93H</td>
 <td >pibrentasvir</td>

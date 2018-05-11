@@ -683,46 +683,77 @@
       ],
       "drugScores": [
         {
-          "drug": "glecaprevir",
-          "drugScore": "susceptible",
-          "drugScoreDisplay": "Susceptible",
-          "rasScores": [
+          "category": "NS3/4A protease inhibitors",
+          "drugAssessments": [
             {
-              "gene": "NS3",
-              "structure": "166T",
-              "score": 1
+              "drug": {
+                "id": "glecaprevir",
+                "category": "NS3/4A protease inhibitors"
+              },
+              "drugScore": "susceptible",
+              "drugScoreDisplay": "Susceptible",
+              "rasScores": {
+                "NS3": [
+                  {
+                    "gene": "NS3",
+                    "structure": "166T",
+                    "score": 1,
+                    "rasLevel": "marginal"
+                  }
+                ]
+              }
+            },
+            {
+              "drug": {
+                "id": "voxilaprevir",
+                "category": "NS3/4A protease inhibitors"
+              },
+              "drugScore": "susceptible",
+              "drugScoreDisplay": "Susceptible",
+              "rasScores": {}
             }
           ]
         },
         {
-          "drug": "pibrentasvir",
-          "drugScore": "possibly_resistant",
-          "drugScoreDisplay": "Possibly resistant",
-          "rasScores": [
+          "category": "NS5A inhibitors",
+          "drugAssessments": [
             {
-              "gene": "NS5A",
-              "structure": "93H",
-              "score": 8
+              "drug": {
+                "id": "pibrentasvir",
+                "category": "NS5A inhibitors"
+              },
+              "drugScore": "possibly_resistant",
+              "drugScoreDisplay": "Possibly resistant",
+              "rasScores": {
+                "NS5A": [
+                  {
+                    "gene": "NS5A",
+                    "structure": "93H",
+                    "score": 8,
+                    "rasLevel": "low"
+                  }
+                ]
+              }
+            },
+            {
+              "drug": {
+                "id": "velpatasvir",
+                "category": "NS5A inhibitors"
+              },
+              "drugScore": "resistant",
+              "drugScoreDisplay": "Resistant",
+              "rasScores": {
+                "NS5A": [
+                  {
+                    "gene": "NS5A",
+                    "structure": "93H",
+                    "score": 17,
+                    "rasLevel": "high"
+                  }
+                ]
+              }
             }
           ]
-        },
-        {
-          "drug": "velpatasvir",
-          "drugScore": "resistant",
-          "drugScoreDisplay": "Resistant",
-          "rasScores": [
-            {
-              "gene": "NS5A",
-              "structure": "93H",
-              "score": 17
-            }
-          ]
-        },
-        {
-          "drug": "voxilaprevir",
-          "drugScore": "susceptible",
-          "drugScoreDisplay": "Susceptible",
-          "rasScores": []
         }
       ]
     },
@@ -858,7 +889,7 @@
         "index": 10
       }
     ],
-    "reportGenerationDate": "10/05/2018",
+    "reportGenerationDate": "11/05/2018",
     "engineVersion": "0.1.153",
     "projectVersion": "0.1.26",
     "extensionVersion": "0.1.1"

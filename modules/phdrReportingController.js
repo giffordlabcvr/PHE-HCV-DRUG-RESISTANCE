@@ -268,12 +268,14 @@ function reportBam(bamFilePath) {
 
 
 function assessResistance(scanResults) {
-	var drugIDs = 
-		glue.getTableColumn(
-				glue.command(["list", "custom-table-row", "phdr_drug"]), "id");
-	return _.map(drugIDs, function(drug) { 
+	var drugs = 
+		glue.tableToObjects(
+				glue.command(["list", "custom-table-row", "phdr_drug", "id", "category"]));
+	var assessmentList = _.map(drugs, function(drug) { 
 		return assessResistanceForDrug(scanResults, drug); 
 	});
+	var categoryToDrugs = _.groupBy(assessmentList, function(assessment) { return assessment.drug.category; });
+	return _.map(_.pairs(categoryToDrugs), function(pair) {return { category:pair[0], drugAssessments:pair[1]};});
 }
 
 function assessResistanceForDrug(scanResults, drug) {
@@ -288,7 +290,7 @@ function assessResistanceForDrug(scanResults, drug) {
 		var inVivo = false; // any in vivo evidence. 			add 7 points.
 
 		_.each(scanResult.rasDetails.resistanceFinding, function(finding) {
-			if(finding.drug != drug) {
+			if(finding.drug != drug.id) {
 				return;
 			}
 			if(finding.inVitroResult != null) {
@@ -328,14 +330,32 @@ function assessResistanceForDrug(scanResults, drug) {
 			rasScore += 7;
 		}
 		if(rasScore > 0) {
+			var rasLevel;
+			if(rasScore < 5) {
+				rasLevel = "marginal";
+			} else if(rasScore < 10) {
+				rasLevel = "low";
+			} else if(rasScore < 15) {
+				rasLevel = "medium";
+			} else {
+				rasLevel = "high";
+			}
 			rasScores.push({
 				gene: scanResult.rasDetails.gene,
 				structure: scanResult.rasDetails.structure,
-				score: rasScore
+				score: rasScore,
+				rasLevel: rasLevel
 			}); 
 		}
 
 	});
+	
+	// rasLevel: 3 levels
+	// marginal:			RAS score < 5;
+	// low:					RAS score >= 5 and < 10;
+	// medium:				RAS score >= 10 and < 15;
+	// high:				RAS score >= 15;
+	
 	
 	// drug score: 4 levels:
 	// resistant:				Any RAS score of 15 or a combined RAS score of 20.
@@ -370,7 +390,7 @@ function assessResistanceForDrug(scanResults, drug) {
 		drug: drug,
 		drugScore: drugScore, 
 		drugScoreDisplay: drugScoreDisplay,
-		rasScores: rasScores
+		rasScores: _.groupBy(rasScores, "gene")
 	};
 	
 }

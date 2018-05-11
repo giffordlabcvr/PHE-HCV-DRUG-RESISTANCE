@@ -635,59 +635,93 @@
       ],
       "drugScores": [
         {
-          "drug": "glecaprevir",
-          "drugScore": "susceptible",
-          "drugScoreDisplay": "Susceptible",
-          "rasScores": []
-        },
-        {
-          "drug": "pibrentasvir",
-          "drugScore": "probably_resistant",
-          "drugScoreDisplay": "Probably resistant",
-          "rasScores": [
+          "category": "NS3/4A protease inhibitors",
+          "drugAssessments": [
             {
-              "gene": "NS5A",
-              "structure": "30H+93H",
-              "score": 7
+              "drug": {
+                "id": "glecaprevir",
+                "category": "NS3/4A protease inhibitors"
+              },
+              "drugScore": "susceptible",
+              "drugScoreDisplay": "Susceptible",
+              "rasScores": {}
             },
             {
-              "gene": "NS5A",
-              "structure": "93H",
-              "score": 8
+              "drug": {
+                "id": "voxilaprevir",
+                "category": "NS3/4A protease inhibitors"
+              },
+              "drugScore": "possibly_resistant",
+              "drugScoreDisplay": "Possibly resistant",
+              "rasScores": {
+                "NS3": [
+                  {
+                    "gene": "NS3",
+                    "structure": "80K",
+                    "score": 7,
+                    "rasLevel": "low"
+                  }
+                ]
+              }
             }
           ]
         },
         {
-          "drug": "velpatasvir",
-          "drugScore": "resistant",
-          "drugScoreDisplay": "Resistant",
-          "rasScores": [
+          "category": "NS5A inhibitors",
+          "drugAssessments": [
             {
-              "gene": "NS5A",
-              "structure": "30H",
-              "score": 1
+              "drug": {
+                "id": "pibrentasvir",
+                "category": "NS5A inhibitors"
+              },
+              "drugScore": "probably_resistant",
+              "drugScoreDisplay": "Probably resistant",
+              "rasScores": {
+                "NS5A": [
+                  {
+                    "gene": "NS5A",
+                    "structure": "30H+93H",
+                    "score": 7,
+                    "rasLevel": "low"
+                  },
+                  {
+                    "gene": "NS5A",
+                    "structure": "93H",
+                    "score": 8,
+                    "rasLevel": "low"
+                  }
+                ]
+              }
             },
             {
-              "gene": "NS5A",
-              "structure": "30H+93H",
-              "score": 17
-            },
-            {
-              "gene": "NS5A",
-              "structure": "93H",
-              "score": 17
-            }
-          ]
-        },
-        {
-          "drug": "voxilaprevir",
-          "drugScore": "possibly_resistant",
-          "drugScoreDisplay": "Possibly resistant",
-          "rasScores": [
-            {
-              "gene": "NS3",
-              "structure": "80K",
-              "score": 7
+              "drug": {
+                "id": "velpatasvir",
+                "category": "NS5A inhibitors"
+              },
+              "drugScore": "resistant",
+              "drugScoreDisplay": "Resistant",
+              "rasScores": {
+                "NS5A": [
+                  {
+                    "gene": "NS5A",
+                    "structure": "30H",
+                    "score": 1,
+                    "rasLevel": "marginal"
+                  },
+                  {
+                    "gene": "NS5A",
+                    "structure": "30H+93H",
+                    "score": 17,
+                    "rasLevel": "high"
+                  },
+                  {
+                    "gene": "NS5A",
+                    "structure": "93H",
+                    "score": 17,
+                    "rasLevel": "high"
+                  }
+                ]
+              }
             }
           ]
         }
@@ -825,7 +859,7 @@
         "index": 10
       }
     ],
-    "reportGenerationDate": "10/05/2018",
+    "reportGenerationDate": "11/05/2018",
     "engineVersion": "0.1.153",
     "projectVersion": "0.1.26",
     "extensionVersion": "0.1.1"

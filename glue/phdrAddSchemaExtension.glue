@@ -9,6 +9,7 @@ create custom-table phdr_result_trial
 
 table phdr_drug
   create field abbreviation VARCHAR
+  create field category VARCHAR
   exit
 
 table phdr_ras

@@ -103,33 +103,55 @@
       "rasScanResults": [],
       "drugScores": [
         {
-          "drug": "glecaprevir",
-          "drugScore": "susceptible",
-          "drugScoreDisplay": "Susceptible",
-          "rasScores": []
+          "category": "NS3/4A protease inhibitors",
+          "drugAssessments": [
+            {
+              "drug": {
+                "id": "glecaprevir",
+                "category": "NS3/4A protease inhibitors"
+              },
+              "drugScore": "susceptible",
+              "drugScoreDisplay": "Susceptible",
+              "rasScores": {}
+            },
+            {
+              "drug": {
+                "id": "voxilaprevir",
+                "category": "NS3/4A protease inhibitors"
+              },
+              "drugScore": "susceptible",
+              "drugScoreDisplay": "Susceptible",
+              "rasScores": {}
+            }
+          ]
         },
         {
-          "drug": "pibrentasvir",
-          "drugScore": "susceptible",
-          "drugScoreDisplay": "Susceptible",
-          "rasScores": []
-        },
-        {
-          "drug": "velpatasvir",
-          "drugScore": "susceptible",
-          "drugScoreDisplay": "Susceptible",
-          "rasScores": []
-        },
-        {
-          "drug": "voxilaprevir",
-          "drugScore": "susceptible",
-          "drugScoreDisplay": "Susceptible",
-          "rasScores": []
+          "category": "NS5A inhibitors",
+          "drugAssessments": [
+            {
+              "drug": {
+                "id": "pibrentasvir",
+                "category": "NS5A inhibitors"
+              },
+              "drugScore": "susceptible",
+              "drugScoreDisplay": "Susceptible",
+              "rasScores": {}
+            },
+            {
+              "drug": {
+                "id": "velpatasvir",
+                "category": "NS5A inhibitors"
+              },
+              "drugScore": "susceptible",
+              "drugScoreDisplay": "Susceptible",
+              "rasScores": {}
+            }
+          ]
         }
       ]
     },
     "publications": [],
-    "reportGenerationDate": "10/05/2018",
+    "reportGenerationDate": "11/05/2018",
     "engineVersion": "0.1.153",
     "projectVersion": "0.1.26",
     "extensionVersion": "0.1.1"

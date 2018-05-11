@@ -1,6 +1,5 @@
-id	abbreviation
-glecaprevir	GLE
-velpatasvir	VEL
-pibrentasvir	PIB
-voxilaprevir	VOX
-	
+id	abbreviation	category
+glecaprevir	GLE	NS3/4A protease inhibitors
+velpatasvir	VEL	NS5A inhibitors
+pibrentasvir	PIB	NS5A inhibitors
+voxilaprevir	VOX	NS3/4A protease inhibitors
