@@ -7,24 +7,22 @@ ${getResourceAsString('phdrRasReport.css')?no_esc}
 </head>
 <body>
 
-<div id="title">
-<img height="125px" alt="PHE logo" src="data:image/svg+xml;base64,${getResourceAsBase64('pheLogo.svg')}" />
-<img height="125px" alt="CVR logo" src="data:image/svg+xml;base64,${getResourceAsBase64('cvrLogo.svg')}" />
-</div>
+<div id="block1">
+<div id="titleAndOverview">
 <h1>Hepatitis C virus sequence report</h1>
-
 <table id="overview">
 <colgroup>
     <col class="tableHeader"/>
     <col/>
 </colgroup>
 
-<tr><td><b>Sequence ID</b></td><td>${phdrReport.sequenceResult.id}</td></tr>
 <tr><td><b>File path</b></td><td>${phdrReport.filePath}</td></tr>
 <tr><td><b>Sequance data format</b></td><td>
 <#if phdrReport.sequenceDataFormat = "FASTA"> 
+<#assign result = phdrReport.sequenceResult>
 Consensus (FASTA)
 <#elseif phdrReport.sequenceDataFormat = "SAM/BAM">
+<#assign result = phdrReport.samReferenceResult>
 Deep sequencing (SAM/BAM)
 </#if>
 </td></tr>
@@ -34,7 +32,15 @@ Deep sequencing (SAM/BAM)
 <tr><td><b>PHE extension version</b></td><td>${phdrReport.extensionVersion}</td></tr>
 </table>
 </div>
+<div id="logos">
+<img id="pheLogo" alt="PHE logo" src="data:image/svg+xml;base64,${getResourceAsBase64('pheLogo.svg')}" />
+<img id="cvrLogo" alt="CVR logo" src="data:image/svg+xml;base64,${getResourceAsBase64('cvrLogo.svg')}" />
+</div>
+</div>
 
+<div id="block2">
+
+<div id="phylo">
 <h3>Phylogenetic classification</h3>
 <table id="phylogenetics">
 <colgroup>
@@ -45,9 +51,9 @@ Deep sequencing (SAM/BAM)
 <td><b>Identified as hepatitis C?</b></td>
 <td>
 <#assign isHcv=true>
-<#if phdrReport.sequenceResult.isForwardHcv>
+<#if result.isForwardHcv>
 Yes
-<#elseif phdrReport.sequenceResult.isReverseHcv>
+<#elseif result.isReverseHcv>
 Yes (reverse complement).
 <#else>
 <#assign isHcv=false>
@@ -58,7 +64,7 @@ No
 
 <td><b>Genotype</b></td>
 <#if isHcv>
-<td>${phdrReport.sequenceResult.genotypingResult.genotypeCladeCategoryResult.shortRenderedName}</td>
+<td>${result.genotypingResult.genotypeCladeCategoryResult.shortRenderedName}</td>
 <#else>
 <td>N/A</td>
 </#if>
@@ -67,7 +73,7 @@ No
 
 <td><b>Subtype</b></td>
 <#if isHcv>
-<td>${phdrReport.sequenceResult.genotypingResult.subtypeCladeCategoryResult.shortRenderedName}</td>
+<td>${result.genotypingResult.subtypeCladeCategoryResult.shortRenderedName}</td>
 <#else>
 <td>N/A</td>
 </#if>
@@ -76,19 +82,13 @@ No
 <tr>
 <td><b>Closest reference sequence</b></td>
 <#if isHcv>
-<td>${phdrReport.sequenceResult.genotypingResult.genotypeCladeCategoryResult.closestMemberSequenceID}</td>
+<td>${result.genotypingResult.genotypeCladeCategoryResult.closestMemberSequenceID}</td>
 <#else>
 <td>N/A</td>
 </#if>
 </tr>
 </table>
-
-<table id="overview">
-<colgroup>
-    <col class="tableHeader"/>
-    <col/>
-</colgroup>
-
+</div>
 <div id="antiviralResistance">
 <h3>Antiviral resistance summary</h3>
 <#if isHcv>
@@ -101,7 +101,7 @@ No
 	<th>Resistance-associated polymorphisms</th>
 </tr>
 </thead>
-<#list phdrReport.sequenceResult.drugScores as categoryDrugScores>
+<#list result.drugScores as categoryDrugScores>
 <#list categoryDrugScores.drugAssessments as drugScore>
 <#if drugScore?index == 0>
 <tr class="firstRow">
@@ -115,7 +115,7 @@ No
 	<td>${drugScore.drugScoreDisplay}</td>
 	<td class="resistanceBlock resistanceColourCode_${drugScore.drugScore}"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 	<td>
-	<#if drugScore.rasScores??>
+	<#if drugScore.rasScores?? && drugScore.rasScores.fieldNames?size gt 0>
 	<#list drugScore.rasScores.fieldNames as gene>
     ${gene}:
 	<#list drugScore.rasScores[gene] as rasScore><#if rasScore?index gt 0>,</#if>
@@ -130,22 +130,28 @@ No
 </#list>
 
 </table>
-</div>
 <#else>
 No resistance analysis was performed for the sequence.
 </#if>
+</div>
+</div>
 
 <div class="pagebreak"> </div>
 
+<div id="block3">
 <h3>Resistance-associated polymorphism details</h3>
 <#if isHcv>
-<#if phdrReport.sequenceResult.rasScanResults??>
+<#if result.rasScanResults??>
 <#assign evenRow=true>
 <table id="resistanceFinding">
 <thead>
 <tr>
 <th>Virus protein</th>
 <th>Polymorphism</th>
+<#if phdrReport.sequenceDataFormat = "SAM/BAM">
+<th>Read proportion</th>
+<th>Read depth</th>
+</#if>
 <th>Resisted drug</th>
 <th>Genotype / Subtype</th>
 <th><em>In vitro</em> resistance level<br/>(EC50 log fold change)</th>
@@ -154,12 +160,16 @@ No resistance analysis was performed for the sequence.
 </tr>
 </thead>
 <tbody>
-<#list phdrReport.sequenceResult.rasScanResults as rasScanResult>
+<#list result.rasScanResults as rasScanResult>
 <#list rasScanResult.rasDetails.resistanceFinding as resistanceFinding>
 <#if resistanceFinding?index == 0>
 <tr class="firstRow">
 <td rowspan = "${rasScanResult.rasDetails.resistanceFinding?size}">${rasScanResult.rasDetails.gene}</td>
 <td rowspan = "${rasScanResult.rasDetails.resistanceFinding?size}">${rasScanResult.rasDetails.structure}</td>
+<#if phdrReport.sequenceDataFormat = "SAM/BAM">
+<td rowspan = "${rasScanResult.rasDetails.resistanceFinding?size}">${rasScanResult.pctPresent?string("##0.#")}%</td>
+<td rowspan = "${rasScanResult.rasDetails.resistanceFinding?size}">${(rasScanResult.readsPresent+rasScanResult.readsAbsent)?c}</td>
+</#if>
 <#else>
 <tr>
 </#if>
@@ -198,10 +208,11 @@ No resistance-associated polymorphisms were detected.
 <#else>
 No resistance analysis was performed for the sequence.
 </#if>
-
-<div class="pagebreak"> </div>
+</div>
 
 <#if phdrReport.publications?? && phdrReport.publications?size != 0>
+<div class="pagebreak"> </div>
+
 <div id="references">
 <h3>References</h3>
 
@@ -226,5 +237,7 @@ ${publication.journal}
 </#list>
 </#if>
 </div>
+
+
 </body>
 </html>

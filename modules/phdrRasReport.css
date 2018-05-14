@@ -2,6 +2,13 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+@media screen {
+	body {
+	    margin-left: 50px;
+	    margin-right: 50px;
+	}
+}
+
 table {
     border: 1px solid #000;
     border-collapse: collapse;
@@ -33,7 +40,6 @@ th + th {
 }
 
 #resistanceFinding {
-    width: 100%;
     font-size: 10pt;
 }
 
@@ -108,13 +114,70 @@ td, th {
     background-color: #dbf0ff;
 }
 
-
-#title {
-	float: right;
+#block1 {
+	width: 100%;
+	overflow: hidden;
 }
 
-#title {
-	float: right;
+#titleAndOverview {
+	float: left;
+	width: 55%;
+	padding-bottom: 100%;
+    margin-bottom: -100%;
+}
+
+#overview {
+    width:90%;
+}
+
+
+#logos {
+	float: left;
+	width: 45%;
+	text-align: right;
+	padding-bottom: 100%;
+    margin-bottom: -100%;
+}
+
+#cvrLogo {
+	display: inline-block;
+	height:125px;	
+}
+
+#pheLogo {
+	display: inline-block;	
+	height:125px;
+}
+
+#block2 {
+	width: 100%;
+	overflow: hidden;
+}
+
+#phylo {
+	float: left;
+	width: 35%;
+	padding-bottom: 100%;
+    margin-bottom: -100%;
+}
+
+#phylogenetics {
+    width:90%;
+}
+
+#drugScores {
+    width:100%;
+}
+
+#antiviralResistance {
+	float: left;
+	width: 65%;
+	padding-bottom: 100%;
+    margin-bottom: -100%;
+}
+
+#resistanceFinding {
+    width:100%;
 }
 
 .pagebreak { page-break-before: always; }

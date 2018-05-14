@@ -233,7 +233,7 @@ function reportBam(bamFilePath) {
 				   				              "--autoAlign",
 				   				              "--targetRefName", targetRefName,
 				   				              "--whereClause", variationWhereClause,
-				   				              "--minPresentPct", 15]));					
+				   				              "--minPresentPct", 1]));					
 			});
 			samRefResult.rasScanResults = scanResults;
 			glue.log("FINE", "phdrReportingController.reportBam rasScanResults:", samRefResult.rasScanResults);
