@@ -1,0 +1,32 @@
+<samFileGenerator>
+	<mainReference>REF_6a_HQ639936</mainReference>
+	<!-- this will produce a depth of 20 across most of the genome --> 
+	<steppedReadSet>
+		<read1Length>100</read1Length>
+		<gapSize>50</gapSize>
+		<read2Length>100</read2Length>
+		<stepSize>10</stepSize>
+		<readNamePrefix>steppedReads</readNamePrefix>
+	</steppedReadSet>
+	<!-- This set covers NS3 168 and 179 on read2 -->
+	<fixedLocationReadSet>
+		<read1Length>120</read1Length>
+		<gapSize>60</gapSize>
+		<read2Length>120</read2Length>
+		<startFeature>NS3</startFeature> 
+		<startCodonLabel>100</startCodonLabel> 
+		<readNamePrefix>ns5aReads</readNamePrefix>
+		<numReads>10</numReads>
+		<aminoAcidSubstitution>
+			<featureName>NS5A</featureName>
+			<codonLabel>168</codonLabel>
+			<aminoAcid>H</aminoAcid>
+		</aminoAcidSubstitution>
+		<aminoAcidSubstitution>
+			<featureName>NS5A</featureName>
+			<codonLabel>179</codonLabel>
+			<aminoAcid>T</aminoAcid>
+		</aminoAcidSubstitution>
+	</fixedLocationReadSet>
+	
+</samFileGenerator>

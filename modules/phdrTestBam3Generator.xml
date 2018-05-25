@@ -1,0 +1,37 @@
+<samFileGenerator>
+	<mainReference>REF_3a_NC_009824</mainReference>
+	<!-- this will produce a depth of 20 across most of the genome --> 
+	<steppedReadSet>
+		<read1Length>100</read1Length>
+		<gapSize>50</gapSize>
+		<read2Length>100</read2Length>
+		<stepSize>10</stepSize>
+		<readNamePrefix>steppedReads</readNamePrefix>
+	</steppedReadSet>
+	<!-- This set covers NS5A:24, 28 and 30 on read 1 -->
+	<fixedLocationReadSet>
+		<read1Length>100</read1Length>
+		<gapSize>20</gapSize>
+		<read2Length>100</read2Length>
+		<startFeature>NS5A</startFeature> 
+		<startCodonLabel>20</startCodonLabel> 
+		<readNamePrefix>ns5aReads</readNamePrefix>
+		<numReads>10</numReads>
+		<aminoAcidSubstitution>
+			<featureName>NS5A</featureName>
+			<codonLabel>24</codonLabel>
+			<aminoAcid>F</aminoAcid>
+		</aminoAcidSubstitution>
+		<aminoAcidSubstitution>
+			<featureName>NS5A</featureName>
+			<codonLabel>28</codonLabel>
+			<aminoAcid>K</aminoAcid>
+		</aminoAcidSubstitution>
+		<aminoAcidSubstitution>
+			<featureName>NS5A</featureName>
+			<codonLabel>30</codonLabel>
+			<aminoAcid>K</aminoAcid>
+		</aminoAcidSubstitution>
+	</fixedLocationReadSet>
+	
+</samFileGenerator>

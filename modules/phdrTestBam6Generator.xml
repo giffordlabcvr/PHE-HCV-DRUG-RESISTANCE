@@ -1,0 +1,32 @@
+<samFileGenerator>
+	<mainReference>REF_3a_JN714194</mainReference>
+	<!-- this will produce a depth of 20 across most of the genome --> 
+	<steppedReadSet>
+		<read1Length>100</read1Length>
+		<gapSize>50</gapSize>
+		<read2Length>100</read2Length>
+		<stepSize>10</stepSize>
+		<readNamePrefix>steppedReads</readNamePrefix>
+	</steppedReadSet>
+	<!-- This set covers NS3:56 on read 1 and NS3:168 on read 2 -->
+	<fixedLocationReadSet>
+		<read1Length>90</read1Length>
+		<gapSize>210</gapSize>
+		<read2Length>90</read2Length>
+		<startFeature>NS3</startFeature> 
+		<startCodonLabel>50</startCodonLabel> 
+		<readNamePrefix>ns5aReads</readNamePrefix>
+		<numReads>10</numReads>
+		<aminoAcidSubstitution>
+			<featureName>NS3</featureName>
+			<codonLabel>56</codonLabel>
+			<aminoAcid>H</aminoAcid>
+		</aminoAcidSubstitution>
+		<aminoAcidSubstitution>
+			<featureName>NS3</featureName>
+			<codonLabel>168</codonLabel>
+			<aminoAcid>R</aminoAcid>
+		</aminoAcidSubstitution>
+	</fixedLocationReadSet>
+	
+</samFileGenerator>
