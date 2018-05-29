@@ -1,0 +1,30 @@
+<samFileGenerator>
+	<mainReference>REF_MASTER_NC_004102</mainReference>
+	<!-- this will produce a depth of 20 across most of the genome --> 
+	<steppedReadSet>
+		<read1Length>100</read1Length>
+		<gapSize>50</gapSize>
+		<read2Length>100</read2Length>
+		<stepSize>10</stepSize>
+		<readNamePrefix>steppedReads</readNamePrefix>
+	</steppedReadSet>
+	<!-- This set covers NS3:80 but only on read2, which has lower mapping quality -->
+	<fixedLocationReadSet>
+		<read1Length>90</read1Length>
+		<read1MappingQuality>38</read1MappingQuality>
+		<gapSize>-90</gapSize>
+		<read2Length>90</read2Length>
+		<read2MappingQuality>33</read2MappingQuality>
+		<startFeature>NS3</startFeature> 
+		<startCodonLabel>60</startCodonLabel> 
+		<readNamePrefix>ns3Reads</readNamePrefix>
+		<numReads>10</numReads>
+		<aminoAcidSubstitution>
+			<applyToRead1>false</applyToRead1>
+			<featureName>NS3</featureName>
+			<codonLabel>80</codonLabel>
+			<aminoAcid>K</aminoAcid>
+		</aminoAcidSubstitution>
+	</fixedLocationReadSet>
+	
+</samFileGenerator>
