@@ -1,4 +1,4 @@
-var inputs = ["fasta1", "fasta2", "fasta3", "fasta4"];
+var inputs = ["fasta1", "fasta2", "fasta3", "fasta4", "bam1"];
 
 glue.inMode("module/phdrRasReportTransformer", function() {
 	glue.command("load configuration modules/phdrRasReportTransformer.xml --loadResources");

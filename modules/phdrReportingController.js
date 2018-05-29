@@ -233,7 +233,7 @@ function reportBam(bamFilePath) {
 				   				              "--autoAlign",
 				   				              "--targetRefName", targetRefName,
 				   				              "--whereClause", variationWhereClause,
-				   				              "--minPresentPct", 1]));					
+				   				              "--minPresentPct", 10]));					
 			});
 			samRefResult.rasScanResults = scanResults;
 			glue.log("FINE", "phdrReportingController.reportBam rasScanResults:", samRefResult.rasScanResults);
@@ -340,12 +340,16 @@ function assessResistanceForDrug(scanResults, drug) {
 			} else {
 				rasLevel = "high";
 			}
-			rasScores.push({
+			var rasScoreDetails = {
 				gene: scanResult.rasDetails.gene,
 				structure: scanResult.rasDetails.structure,
 				score: rasScore,
 				rasLevel: rasLevel
-			}); 
+			};
+			rasScores.push(rasScoreDetails); 
+			if(scanResult.pctPresent != null) {
+				rasScoreDetails.readsPctPresent = scanResult.pctPresent;
+			}
 		}
 
 	});

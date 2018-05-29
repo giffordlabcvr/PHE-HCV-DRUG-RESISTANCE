@@ -119,7 +119,7 @@ No
 	<#list drugScore.rasScores.fieldNames as gene>
     ${gene}:
 	<#list drugScore.rasScores[gene] as rasScore><#if rasScore?index gt 0>,</#if>
-		<span class="rasColourCode_${rasScore.rasLevel}">${rasScore.structure}</span></#list>
+		<span class="rasColourCode_${rasScore.rasLevel}">${rasScore.structure}</span><#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if></#list>
 	</#list>
 	<#else>
 		None relevant 
