@@ -8,7 +8,7 @@
 		<stepSize>10</stepSize>
 		<readNamePrefix>steppedReads</readNamePrefix>
 	</steppedReadSet>
-	<!-- This set covers NS3:30 on read 1 and NS3:80 read 2 -->
+	<!-- This set covers NS3:80 read 2 -->
 	<fixedLocationReadSet>
 		<read1Length>100</read1Length>
 		<gapSize>50</gapSize>
@@ -17,11 +17,6 @@
 		<startCodonLabel>25</startCodonLabel> 
 		<readNamePrefix>ns3Reads</readNamePrefix>
 		<numReads>10</numReads>
-		<aminoAcidSubstitution>
-			<featureName>NS3</featureName>
-			<codonLabel>30</codonLabel>
-			<aminoAcid>M</aminoAcid>
-		</aminoAcidSubstitution>
 		<aminoAcidSubstitution>
 			<featureName>NS3</featureName>
 			<codonLabel>80</codonLabel>

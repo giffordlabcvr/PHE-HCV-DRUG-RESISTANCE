@@ -15,15 +15,15 @@
 		<read2Length>120</read2Length>
 		<startFeature>NS3</startFeature> 
 		<startCodonLabel>100</startCodonLabel> 
-		<readNamePrefix>ns5aReads</readNamePrefix>
+		<readNamePrefix>ns3Reads</readNamePrefix>
 		<numReads>10</numReads>
 		<aminoAcidSubstitution>
-			<featureName>NS5A</featureName>
+			<featureName>NS3</featureName>
 			<codonLabel>168</codonLabel>
 			<aminoAcid>H</aminoAcid>
 		</aminoAcidSubstitution>
 		<aminoAcidSubstitution>
-			<featureName>NS5A</featureName>
+			<featureName>NS3</featureName>
 			<codonLabel>179</codonLabel>
 			<aminoAcid>T</aminoAcid>
 		</aminoAcidSubstitution>
