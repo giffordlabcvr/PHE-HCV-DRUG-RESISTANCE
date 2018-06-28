@@ -1,59 +1,62 @@
-gene	substitution	virusGenotype	drug	vitroOrVivo	ec50	clinicalTrialName	pubmed	
-NS3	156T	1a	Glecaprevir	in vitro	1361.0	NA	29084747	
-NS3	168A	1a	Glecaprevir	in vitro	4.0	NA	29084747	
-NS3	168V	1a	Glecaprevir	in vitro	4.4	NA	29084747	
-NS3	71A+170V	1a	Glecaprevir	in vitro	3.3	NA	29084747	
-NS3	89R+156T	1a	Glecaprevir	in vitro	3585.0	NA	29084747	
-NS3	156T	1b	Glecaprevir	in vitro	640.0	NA	29084747	
-NS3	156V	1b	Glecaprevir	in vitro	1786.0	NA	29084747	
-NS3	168V	1b	Glecaprevir	in vitro	3.2	NA	29084747	
-NS3	89L+156T	1b	Glecaprevir	in vitro	1674.0	NA	29084747	
-NS3	89L+156V	1b	Glecaprevir	in vitro	4234.0	NA	29084747	
-NS3	156V+168V	1b	Glecaprevir	in vitro	5244.0	NA	29084747	
-NS3	156T	2a	Glecaprevir	in vitro	216.0	NA	29084747	
-NS3	156V	2a	Glecaprevir	in vitro	1143.0	NA	29084747	
-NS3	168E	2a	Glecaprevir	in vitro	3.3	NA	29084747	
-NS3	168V	2a	Glecaprevir	in vitro	2.0	NA	29084747	
-NS3	156T	2b	Glecaprevir	in vitro	148.0	NA	29084747	
-NS3	156V	2b	Glecaprevir	in vitro	1455.0	NA	29084747	
-NS3	168E	2b	Glecaprevir	in vitro	2.1	NA	29084747	
-NS3	168V	2b	Glecaprevir	in vitro	2.9	NA	29084747	
-NS3	156G	3a	Glecaprevir	in vitro	1654.0	NA	29084747	
-NS3	168R	3a	Glecaprevir	in vitro	54.0	NA	29084747	
-NS3	56H+168R	3a	Glecaprevir	in vitro	1387.0	NA	29084747	
-NS3	155C	4a	Glecaprevir	in vitro	2.6	NA	29084747	
-NS3	156T	4a	Glecaprevir	in vitro	1436.0	NA	29084747	
-NS3	156V	4a	Glecaprevir	in vitro	3106.0	NA	29084747	
-NS3	168H	4a	Glecaprevir	in vitro	22.0	NA	29084747	
-NS3	168V	4a	Glecaprevir	in vitro	9.7	NA	29084747	
-NS3	168E	5a	Glecaprevir	in vitro	4.2	NA	29084747	
-NS3	168H	5a	Glecaprevir	in vitro	38.0	NA	29084747	
-NS3	168A	6a	Glecaprevir	in vitro	81.0	NA	29084747	
-NS3	168H	6a	Glecaprevir	in vitro	146.0	NA	29084747	
-NS3	168V	6a	Glecaprevir	in vitro	38.0	NA	29084747	
-NS3	168H+179T	6a	Glecaprevir	in vitro	153.0	NA	29084747	
-NS3	156V	1a	Glecaprevir	in vivo	NA	Pooled analysis	EASL_2017_FRI_205 	
-NS3	56H	3	Glecaprevir	in vivo	NA	Pooled analysis	EASL_2017_FRI_205 	
-NS3	56N	3	Glecaprevir	in vivo	NA	Pooled analysis	EASL_2017_FRI_205 	
-NS3	80K	3	Glecaprevir	in vivo	NA	Pooled analysis	EASL_2017_FRI_205 	
-NS3	80R	3	Glecaprevir	in vivo	NA	Pooled analysis	EASL_2017_FRI_205 	
-NS3	156G	3	Glecaprevir	in vivo	NA	Pooled analysis	EASL_2017_FRI_205 	
-NS3	168L	3	Glecaprevir	in vivo	NA	Pooled analysis	EASL_2017_FRI_205 	
-NS3	168R	3	Glecaprevir	in vivo	NA	Pooled analysis	EASL_2017_FRI_205 	
-NS3	166S	3	Glecaprevir	in vivo	NA	Pooled analysis	EASL_2017_FRI_205 	
-NS3	80R	3a	Glecaprevir	in vitro	21.0	Pooled analysis	EASL_2017_FRI_205 	
-NS3	166T	3a	Glecaprevir	in vitro	4.7	Pooled analysis	EASL_2017_FRI_205 	
-NS3	168L	3a	Glecaprevir	in vitro	13.0	Pooled analysis	EASL_2017_FRI_205 	
-NS3	156V	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_1	28128852	
-NS3	168A	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_1	28128852	
-NS3	56H	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_1	28128852	
-NS3	156V	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	29152781	
-NS3	36M+155K	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	29152781	
-NS3	156T	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	29152781	
-NS3	56H+168A	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	29152781	
-NS3	156G	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	29152781	
-NS3	56H+168E	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	29152781	
-NS3	36M 	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	29152781	
-NS3	168A	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	29152781	
-NS3	155T+156V	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	29152781	
-NS3	168K	1a	Glecaprevir	in vivo	NA	Surveyor-1_and_2	28412293	
+gene	substitution	baselineRas	rxEmergentRas	rasContext	virusGenotype	drug	vitroOrVivo	ec50	clinicalTrialName	trialRegimen	trialCohort	trialNotes	pubmed	Weight of evidence	
+NS3	155C	NA	NA	NA	4a	Glecaprevir	in vitro	2.6	NA	NA	NA	NA	29084747		
+NS3	155T+156V	No	Yes	168A	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781		
+NS3	156G	NA	NA	NA	3a	Glecaprevir	in vitro	1654.0	NA	NA	NA	NA	29084747		
+NS3	156G	No	Yes  	None	3	Glecaprevir	in vivo	NA	Pooled analysis	GLE/PIB	NA	NA	EASL_2017_FRI_205		
+NS3	156G	No	Yes	56H+168A	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781		
+NS3	156T	NA	NA	NA	1a	Glecaprevir	in vitro	1361.0	NA	NA	NA	NA	29084747		
+NS3	156T	NA	NA	NA	1b	Glecaprevir	in vitro	640.0	NA	NA	NA	NA	29084747		
+NS3	156T	NA	NA	NA	2a	Glecaprevir	in vitro	216.0	NA	NA	NA	NA	29084747		
+NS3	156T	NA	NA	NA	2b	Glecaprevir	in vitro	148.0	NA	NA	NA	NA	29084747		
+NS3	156T	NA	NA	NA	4a	Glecaprevir	in vitro	1436.0	NA	NA	NA	NA	29084747		
+NS3	156T	No	Yes	36M+155K	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781		
+NS3	156V	NA	NA	NA	1b	Glecaprevir	in vitro	1786.0	NA	NA	NA	NA	29084747		
+NS3	156V	NA	NA	NA	2a	Glecaprevir	in vitro	1143.0	NA	NA	NA	NA	29084747		
+NS3	156V	NA	NA	NA	2b	Glecaprevir	in vitro	1455.0	NA	NA	NA	NA	29084747		
+NS3	156V	NA	NA	NA	4a	Glecaprevir	in vitro	3106.0	NA	NA	NA	NA	29084747		
+NS3	156V	No 	Yes  	None	1a	Glecaprevir	in vivo	NA	Pooled analysis	GLE/PIB	NA	NA	EASL_2017_FRI_205		
+NS3	156V	No	Yes	None	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_1	GLE/PIB	NA	NA	28128852		
+NS3	156V	No	Yes	None	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781		
+NS3	156V+168V	NA	NA	NA	1b	Glecaprevir	in vitro	5244.0	NA	NA	NA	NA	29084747		
+NS3	166S	Yes	No	NA	3a	Glecaprevir	in vivo	NA	Pooled analysis	GLE/PIB	NA	NA	EASL_2017_FRI_205		
+NS3	166S+168R	Yes	No	NA	3	Glecaprevir	in vivo	NA	Pooled analysis	GLE/PIB	NA	NA	EASL_2017_FRI_205		
+NS3	166T	NA	NA	NA	3a	Glecaprevir	in vitro	4.7	Pooled analysis	GLE/PIB	NA	NA	EASL_2017_FRI_205		
+NS3	166T	Yes	No	NA	3a	Glecaprevir	in vivo	NA	Surveyor-1_and_2	GLE/PIB	NA	NA	28412293		
+NS3	168A	NA	NA	NA	1a	Glecaprevir	in vitro	4.0	NA	NA	NA	NA	29084747		
+NS3	168A	NA	NA	NA	6a	Glecaprevir	in vitro	81.0	NA	NA	NA	NA	29084747		
+NS3	168A	Yes	No	NA	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_1	GLE/PIB	NA	NA	28128852		
+NS3	168A	Yes	No	NA	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781		
+NS3	168E	NA	NA	NA	2a	Glecaprevir	in vitro	3.3	NA	NA	NA	NA	29084747		
+NS3	168E	NA	NA	NA	2b	Glecaprevir	in vitro	2.1	NA	NA	NA	NA	29084747		
+NS3	168E	NA	NA	NA	5a	Glecaprevir	in vitro	4.2	NA	NA	NA	NA	29084747		
+NS3	168H	NA	NA	NA	4a	Glecaprevir	in vitro	22.0	NA	NA	NA	NA	29084747		
+NS3	168H	NA	NA	NA	5a	Glecaprevir	in vitro	38.0	NA	NA	NA	NA	29084747		
+NS3	168H	NA	NA	NA	6a	Glecaprevir	in vitro	146.0	NA	NA	NA	NA	29084747		
+NS3	168H+179T	NA	NA	NA	6a	Glecaprevir	in vitro	153.0	NA	NA	NA	NA	29084747		
+NS3	168L	No	Yes  	None	3	Glecaprevir	in vivo	NA	Pooled analysis	GLE/PIB	NA	NA	EASL_2017_FRI_205		
+NS3	168L	NA	NA	NA	3a	Glecaprevir	in vitro	13.0	Pooled analysis	GLE/PIB	NA	NA	EASL_2017_FRI_205		
+NS3	168R	NA	NA	NA	3a	Glecaprevir	in vitro	54.0	NA	NA	NA	NA	29084747		
+NS3	168R	Yes	Yes  	None	3	Glecaprevir	in vivo	NA	Pooled analysis	GLE/PIB	NA	NA	EASL_2017_FRI_205		
+NS3	168V	NA	NA	NA	1a	Glecaprevir	in vitro	4.4	NA	NA	NA	NA	29084747		
+NS3	168V	NA	NA	NA	1b	Glecaprevir	in vitro	3.2	NA	NA	NA	NA	29084747		
+NS3	168V	NA	NA	NA	2a	Glecaprevir	in vitro	2.0	NA	NA	NA	NA	29084747		
+NS3	168V	NA	NA	NA	2b	Glecaprevir	in vitro	2.9	NA	NA	NA	NA	29084747		
+NS3	168V	NA	NA	NA	4a	Glecaprevir	in vitro	9.7	NA	NA	NA	NA	29084747		
+NS3	168V	NA	NA	NA	6a	Glecaprevir	in vitro	38.0	NA	NA	NA	NA	29084747		
+NS3	36M	No	Yes	56H+168E	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781		
+NS3	36M+155K	Yes	No	NA	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781		
+NS3	56H	No	Yes  	None	3	Glecaprevir	in vivo	NA	Pooled analysis	GLE/PIB	NA	NA	EASL_2017_FRI_205		
+NS3	56H	No	Yes	168A	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_1	GLE/PIB	NA	NA	28128852		
+NS3	56H+168A	Yes	No	NA	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781		
+NS3	56H+168E	Yes	No	NA	1a	Glecaprevir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781		
+NS3	56H+168K	No	Yes	None	3a	Glecaprevir	in vivo	NA	Surveyor-1_and_2	GLE/PIB	NA	NA	28412293		
+NS3	56H+168L	No	Yes	166S	3a	Glecaprevir	in vivo	NA	Surveyor-1_and_2	GLE/PIB	NA	NA	28412293		
+NS3	56H+168R	NA	NA	NA	3a	Glecaprevir	in vitro	1387.0	NA	NA	NA	NA	29084747		
+NS3	56H+168R	No	Yes	None	3a	Glecaprevir	in vivo	NA	Surveyor-1_and_2	GLE/PIB	NA	NA	28412293		
+NS3	56N	No	Yes  	None	3	Glecaprevir	in vivo	NA	Pooled analysis	GLE/PIB	NA	NA	EASL_2017_FRI_205		
+NS3	71A+170V	NA	NA	NA	1a	Glecaprevir	in vitro	3.3	NA	NA	NA	NA	29084747		
+NS3	80K	No	Yes  	None	3	Glecaprevir	in vivo	NA	Pooled analysis	GLE/PIB	NA	NA	EASL_2017_FRI_205		
+NS3	80R	Yes  	Yes  	None	3	Glecaprevir	in vivo	NA	Pooled analysis	GLE/PIB	NA	NA	EASL_2017_FRI_205		
+NS3	89L+156T	NA	NA	NA	1b	Glecaprevir	in vitro	1674.0	NA	NA	NA	NA	29084747		
+NS3	89L+156V	NA	NA	NA	1b	Glecaprevir	in vitro	4234.0	NA	NA	NA	NA	29084747		
+NS3	89R+156T	NA	NA	NA	1a	Glecaprevir	in vitro	3585.0	NA	NA	NA	NA	29084747		

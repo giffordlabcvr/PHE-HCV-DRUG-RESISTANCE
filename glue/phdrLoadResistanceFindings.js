@@ -75,6 +75,26 @@ function loadResistanceFindings(shortname, longname, gene, pooledMap) {
 			glue.command(["create", "custom-table-row", "phdr_in_vivo_result", rfId]);
 			glue.inMode("custom-table-row/phdr_in_vivo_result/"+rfId, function() {
 				glue.command(["set", "link-target", "phdr_resistance_finding", "custom-table-row/phdr_resistance_finding/"+rfId]);
+				var baselineRas = rfObj.baselineRas.trim();
+				if(baselineRas == "Yes") {
+					glue.command(["set", "field", "baseline", "true"]);
+				} else if(baselineRas == "No") {
+					glue.command(["set", "field", "baseline", "false"]);
+				} else if(baselineRas == "NA") {
+					// leave null
+				} else {
+					error(rfObj, "Unknown value for baselineRas: "+baselineRas);
+				}
+				var rxEmergentRas = rfObj.rxEmergentRas.trim();
+				if(rxEmergentRas == "Yes") {
+					glue.command(["set", "field", "treatment_emergent", "true"]);
+				} else if(rxEmergentRas == "No") {
+					glue.command(["set", "field", "treatment_emergent", "false"]);
+				} else if(rxEmergentRas == "NA") {
+					// leave null
+				} else {
+					error(rfObj, "Unknown value for rxEmergentRas: "+rxEmergentRas);
+				}
 			});
 			var trialNameString = rfObj.clinicalTrialName;
 			if(trialNameString.trim() == "" || trialNameString == null || trialNameString.trim() == "NA") {
@@ -94,7 +114,7 @@ function loadResistanceFindings(shortname, longname, gene, pooledMap) {
 }
 
 loadResistanceFindings("GLE", "glecaprevir", "NS3", {"Surveyor-1_and_2":["Surveyor-1", "Surveyor-2"], "Pooled analysis": ["Surveyor-1", "Surveyor-2", "Endurance-1", "Endurance-2", "Endurance-3", "Endurance-4", "Expedition-1", "Expedition-2"]});
-loadResistanceFindings("PIB", "pibrentasvir", "NS5A", {"Pooled": ["Surveyor-1", "Surveyor-2", "Endurance-1", "Endurance-2", "Endurance-3", "Endurance-4", "Expedition-1", "Expedition-2"]});
+loadResistanceFindings("PIB", "pibrentasvir", "NS5A", {"Surveyor-1_and_2":["Surveyor-1", "Surveyor-2"], "Pooled": ["Surveyor-1", "Surveyor-2", "Endurance-1", "Endurance-2", "Endurance-3", "Endurance-4", "Expedition-1", "Expedition-2"]});
 loadResistanceFindings("VEL", "velpatasvir", "NS5A", {"Pooled analysis": ["ASTRAL-1", "ASTRAL-2", "ASTRAL-3", "ASTRAL-5", "POLARIS-2", "POLARIS-3"]});
 loadResistanceFindings("VOX", "voxilaprevir", "NS3", {"Pooled1": ["GS-US-367-1169", "GS-US-367-1871", "GS-US-337-1468", "GS-US-367-1168"], 
 	"Pooled2": ["POLARIS-1", "POLARIS-4"], "Pooled3": ["POLARIS-2", "POLARIS-3"]});

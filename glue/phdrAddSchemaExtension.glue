@@ -27,6 +27,11 @@ table phdr_in_vitro_result
   create field ec50_max DOUBLE
   exit
   
+table phdr_in_vivo_result
+  create field baseline BOOLEAN
+  create field treatment_emergent BOOLEAN
+  exit
+  
 table phdr_publication
   create field title VARCHAR 500
   create field authors_short VARCHAR

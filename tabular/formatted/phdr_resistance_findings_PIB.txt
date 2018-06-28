@@ -1,59 +1,69 @@
-gene	substitution	virusGenotype	drug	vitroOrVivo	ec50	clinicalTrialName	trialRegimen	trialCohort	trialNotes	pubmed
-NS5A	30D 	1a	Pibrentasvir	in vitro	94.0	NA	NA	NA	NA	28193664
-NS5A	30del	1a	Pibrentasvir	in vitro	3549.0	NA	NA	NA	NA	28193664
-NS5A	58D+93H	1a	Pibrentasvir	in vitro	2238.0	NA	NA	NA	NA	28193664
-NS5A	28S+31I	2a	Pibrentasvir	in vitro	14448.0	NA	NA	NA	NA	28193664
-NS5A	29S+30G	2a	Pibrentasvir	in vitro	2.3	NA	NA	NA	NA	28193664
-NS5A	28T	1a	Pibrentasvir	in vitro	2.1	NA	NA	NA	NA	28193664
-NS5A	30E	1a	Pibrentasvir	in vitro	2.4	NA	NA	NA	NA	28193664
-NS5A	93H	1a	Pibrentasvir	in vitro	6.7	NA	NA	NA	NA	28193664
-NS5A	93N	1a	Pibrentasvir	in vitro	7.1	NA	NA	NA	NA	28193664
-NS5A	28T+93C	1a	Pibrentasvir	in vitro	3.1	NA	NA	NA	NA	28193664
-NS5A	30R+31M	1a	Pibrentasvir	in vitro	2.4	NA	NA	NA	NA	28193664
-NS5A	30R+58D	1a	Pibrentasvir	in vitro	108.0	NA	NA	NA	NA	28193664
-NS5A	30R+93H	1a	Pibrentasvir	in vitro	260.0	NA	NA	NA	NA	28193664
-NS5A	30R+93C	1a	Pibrentasvir	in vitro	3.8	NA	NA	NA	NA	28193664
-NS5A	31M+93C	1a	Pibrentasvir	in vitro	6.1	NA	NA	NA	NA	28193664
-NS5A	31V+93H	1a	Pibrentasvir	in vitro	94.0	NA	NA	NA	NA	28193664
-NS5A	28T+30R+31M	1a	Pibrentasvir	in vitro	4.6	NA	NA	NA	NA	28193664
-NS5A	30R+31M+93C	1a	Pibrentasvir	in vitro	42.0	NA	NA	NA	NA	28193664
-NS5A	93H	3a	Pibrentasvir	in vitro	2.3	NA	NA	NA	NA	28193664
-NS5A	31F	5a	Pibrentasvir	in vitro	2.1	NA	NA	NA	NA	28193664
-NS5A	30R+31M+58D	1a	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
-NS5A	93N	1a	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
-NS5A	30R+58D	1a	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
-NS5A	28G	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
-NS5A	30G	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
-NS5A	30K	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
-NS5A	31F	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
-NS5A	31M	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
-NS5A	58T	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
-NS5A	93H	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
-NS5A	30R+93N	1a	Pibrentasvir	in vitro	131.0	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
-NS5A	31M+58D	1a	Pibrentasvir	in vitro	23.0	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
-NS5A	30R+31M+58D	1a	Pibrentasvir	in vitro	1704.0	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
-NS5A	30K+93H	3a	Pibrentasvir	in vitro	69.0	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205
-NS5A	31M+58D	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_1	GLE/PIB	NA	NA	28128852
-NS5A	30R	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_1	GLE/PIB	NA	NA	28128852
-NS5A	30R+58C	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_1	GLE/PIB	NA	NA	28128852
-NS5A	28G	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_1	GLE/PIB	NA	NA	28128852
-NS5A	30E	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781
-NS5A	30K	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781
-NS5A	93H	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781
-NS5A	28V+30R	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781
-NS5A	28G+30R	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781
-NS5A	30G	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781
-NS5A	29R	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781
-NS5A	30R+58D	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781
-NS5A	28M+32del	1b	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781
-NS5A	28T+30R+31M	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781
-NS5A	28V+30R+31M	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781
-NS5A	24Q+93H	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781
-NS5A	24R+30K+93H	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781
-NS5A	30H+93H	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781
-NS5A	28A+58D	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781
-NS5A	30R+31M	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781
-NS5A	58D 	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781
-NS5A	30K	3a	Pibrentasvir	in vivo	NA	NCT02068222	PIB/PTV/r	NA	NA	26778412
-NS5A	24F+28K	3a	Pibrentasvir	in vivo	NA	NCT02068222	PIB/PTV/r	NA	NA	26778412
-NS5A	24F+28K+30K	3a	Pibrentasvir	in vitro	>5000	NCT02068222	PIB/PTV/r	NA	NA	26778412
+gene	substitution	baselineRas	rxEmergentRas	rasContext	virusGenotype	drug	vitroOrVivo	ec50	clinicalTrialName	trialRegimen	trialCohort	trialNotes	pubmed	Weight of evidence
+NS5A	24F+28K	No	Yes	30K	3a	Pibrentasvir	in vivo	NA	NCT02068222	PIB/PTV/r	NA	NA	26778412	
+NS5A	24F+28K	No	Yes	None	3a	Pibrentasvir	in vivo	NA	Surveyor-1_and_2	GLE/PIB	NA	NA	28412293	
+NS5A	24F+28K+30K	NA	NA	NA	3a	Pibrentasvir	in vitro	>5000	NCT02068222	PIB/PTV/r	NA	NA	26778412	
+NS5A	24Q+93H	Yes	No	NA	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781	
+NS5A	24R+30K	No	Yes	93H	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781	
+NS5A	28A+58D	No	Yes	30H+93H	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781	
+NS5A	28G	No	Yes  	NA	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205	
+NS5A	28G	No	Yes	30R+58C	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_1	GLE/PIB	NA	NA	28128852	
+NS5A	28G	No	Yes	28V+30R	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781	
+NS5A	28K	No	Yes	None	3a	Pibrentasvir	in vivo	NA	Surveyor-1_and_2	GLE/PIB	NA	NA	28412293	
+NS5A	28M+32del	Yes	No	NA	1b	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781	
+NS5A	28S+31I	NA	NA	NA	2a	Pibrentasvir	in vitro	14448.0	NA	NA	NA	NA	28193664	
+NS5A	28T	NA	NA	NA	1a	Pibrentasvir	in vitro	2.1	NA	NA	NA	NA	28193664	
+NS5A	28T+30R+31M	NA	NA	NA	1a	Pibrentasvir	in vitro	4.6	NA	NA	NA	NA	28193664	
+NS5A	28T+30R+31M	Yes	No	NA	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781	
+NS5A	28T+93C	NA	NA	NA	1a	Pibrentasvir	in vitro	3.1	NA	NA	NA	NA	28193664	
+NS5A	28V+30R	Yes	No	NA	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781	
+NS5A	28V+30R+31M	Yes	No	NA	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781	
+NS5A	29R	No	Yes	30G	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781	
+NS5A	29S+30G	NA	NA	NA	2a	Pibrentasvir	in vitro	2.3	NA	NA	NA	NA	28193664	
+NS5A	30D 	NA	NA	NA	1a	Pibrentasvir	in vitro	94.0	NA	NA	NA	NA	28193664	
+NS5A	30del	NA	NA	NA	1a	Pibrentasvir	in vitro	3549.0	NA	NA	NA	NA	28193664	
+NS5A	30E	NA	NA	NA	1a	Pibrentasvir	in vitro	2.4	NA	NA	NA	NA	28193664	
+NS5A	30E	Yes	No	NA	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781	
+NS5A	30G	No	Yes  	NA	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205	
+NS5A	30G	Yes	No	NA	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781	
+NS5A	30H+93H	Yes	No	NA	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781	
+NS5A	30K	Yes  	Yes  	NA	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205	
+NS5A	30K	Yes	No	NA	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781	
+NS5A	30K	No	Yes	24Q+93H	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781	
+NS5A	30K	Yes	No	NA	3a	Pibrentasvir	in vivo	NA	NCT02068222	PIB/PTV/r	NA	NA	26778412	
+NS5A	30K+58D	No	Yes	62A	1a	Pibrentasvir	in vivo	NA	Surveyor-1_and_2	GLE/PIB	NA	NA	28412293	
+NS5A	30K+93H	Yes	No	NA	3a	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205	
+NS5A	30K+93H	No	No	NA	3a	Pibrentasvir	in vitro	69.0	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205	
+NS5A	30R	No	Yes	31M+58D	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_1	GLE/PIB	NA	NA	28128852	
+NS5A	30R+31M	NA	NA	NA	1a	Pibrentasvir	in vitro	2.4	NA	NA	NA	NA	28193664	
+NS5A	30R+31M	Yes	No	NA	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781	
+NS5A	30R+31M+58D	No	Yes  	None	1a	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205	
+NS5A	30R+31M+58D	NA	NA	NA	1a	Pibrentasvir	in vitro	1704.0	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205	
+NS5A	30R+31M+93C	NA	NA	NA	1a	Pibrentasvir	in vitro	42.0	NA	NA	NA	NA	28193664	
+NS5A	30R+58C	Yes	No	NA	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_1	GLE/PIB	NA	NA	28128852	
+NS5A	30R+58D	NA	NA	NA	1a	Pibrentasvir	in vitro	108.0	NA	NA	NA	NA	28193664	
+NS5A	30R+58D	No	Yes  	93N	1a	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205	
+NS5A	30R+58D	Yes	No	NA	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781	
+NS5A	30R+93C	NA	NA	NA	1a	Pibrentasvir	in vitro	3.8	NA	NA	NA	NA	28193664	
+NS5A	30R+93H	NA	NA	NA	1a	Pibrentasvir	in vitro	260.0	NA	NA	NA	NA	28193664	
+NS5A	30R+93N	NA	NA	NA	1a	Pibrentasvir	in vitro	131.0	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205	
+NS5A	31F	NA	NA	NA	5a	Pibrentasvir	in vitro	2.1	NA	NA	NA	NA	28193664	
+NS5A	31F	No	Yes  	NA	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205	
+NS5A	31F	No	Yes	93H	3a	Pibrentasvir	in vivo	NA	Surveyor-1_and_2	GLE/PIB	NA	NA	28412293	
+NS5A	31I+93H	No	Yes	30K	3a	Pibrentasvir	in vivo	NA	Surveyor-1_and_2	GLE/PIB	NA	NA	28412293	
+NS5A	31M	Yes  	No	NA	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205	
+NS5A	31M+58D	NA	NA	NA	1a	Pibrentasvir	in vitro	23.0	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205	
+NS5A	31M+58D	Yes	No	NA	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_1	GLE/PIB	NA	NA	28128852	
+NS5A	31M+93C	NA	NA	NA	1a	Pibrentasvir	in vitro	6.1	NA	NA	NA	NA	28193664	
+NS5A	31V+93H	NA	NA	NA	1a	Pibrentasvir	in vitro	94.0	NA	NA	NA	NA	28193664	
+NS5A	58D 	No	Yes	30R+31M	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781	
+NS5A	58D+93H	NA	NA	NA	1a	Pibrentasvir	in vitro	2238.0	NA	NA	NA	NA	28193664	
+NS5A	58T	No	Yes  	NA	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205	
+NS5A	62A	Yes	No	NA	1a	Pibrentasvir	in vivo	NA	Surveyor-1_and_2	GLE/PIB	NA	NA	28412293	
+NS5A	93H	NA	NA	NA	1a	Pibrentasvir	in vitro	6.7	NA	NA	NA	NA	28193664	
+NS5A	93H	NA	NA	NA	3a	Pibrentasvir	in vitro	2.3	NA	NA	NA	NA	28193664	
+NS5A	93H	Yes	Yes  	NA	3	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205	
+NS5A	93H	No	Yes	30E/K	1a	Pibrentasvir	in vivo	NA	Magellan-1_Part_2	GLE/PIB	NA	NA	29152781	
+NS5A	93H	Yes	No	NA	3a	Pibrentasvir	in vivo	NA	Surveyor-1_and_2	GLE/PIB	NA	NA	28412293	
+NS5A	93H	No	Yes	30K	3a	Pibrentasvir	in vivo	NA	Surveyor-1_and_2	GLE/PIB	NA	NA	28412293	
+NS5A	93N	NA	NA	NA	1a	Pibrentasvir	in vitro	7.1	NA	NA	NA	NA	28193664	
+NS5A	93N	Yes  	No	NA	1a	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205	
