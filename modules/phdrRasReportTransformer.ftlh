@@ -27,9 +27,6 @@ Deep sequencing (SAM/BAM)
 </#if>
 </td></tr>
 <tr><td><b>Report generation date</b></td><td>${phdrReport.reportGenerationDate}</td></tr>
-<tr><td><b>GLUE engine version</b></td><td>${phdrReport.engineVersion}</td></tr>
-<tr><td><b>HCV project version</b></td><td>${phdrReport.projectVersion}</td></tr>
-<tr><td><b>PHE extension version</b></td><td>${phdrReport.extensionVersion}</td></tr>
 </table>
 </div>
 <div id="logos">
@@ -242,9 +239,29 @@ No resistance analysis was performed for the sequence.
 <#if phdrReport.publications?? && phdrReport.publications?size != 0>
 <div class="pagebreak"> </div>
 
-<div id="references">
-<h3>References</h3>
+<div id="configuration">
+<h3>System configuration</h3>
+<table id="systemConfigTable">
+<colgroup style="width:50%">
+    <col class="tableHeader"/>
+</colgroup>
+<colgroup style="width:50%">
+    <col>
+</colgroup>
+<tr><td><b>GLUE engine version</b></td><td>${phdrReport.engineVersion}</td></tr>
+<tr><td><b>HCV project version</b></td><td>${phdrReport.projectVersion}</td></tr>
+<tr><td><b>PHE extension version</b></td><td>${phdrReport.extensionVersion}</td></tr>
+<#if phdrReport.sequenceDataFormat = "SAM/BAM">
+<tr><td><b>Minimum read proportion</b></td><td>${phdrReport.phdrSamThresholds.minReadProportionPct?string("##0.#")}%</td></tr>
+<tr><td><b>Minimum read depth</b></td><td>${phdrReport.phdrSamThresholds.minDepth?c}</td></tr>
+<tr><td><b>Minimum base quality</b></td><td>${phdrReport.phdrSamThresholds.minQScore}</td></tr>
+<tr><td><b>Minimum mapping quality</b></td><td>${phdrReport.phdrSamThresholds.minMapQ}</td></tr>
+</#if>
+</table>
+</div>
 
+<h3>References</h3>
+<div id="references">
 <#assign pubIdx=1>
 <#list phdrReport.publications as publication>
 <p>

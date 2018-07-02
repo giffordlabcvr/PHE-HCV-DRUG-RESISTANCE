@@ -130,6 +130,10 @@ td, th {
     width:90%;
 }
 
+#systemConfigTable {
+    width:50%;
+}
+
 
 #logos {
 	float: left;

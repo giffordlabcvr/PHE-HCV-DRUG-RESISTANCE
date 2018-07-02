@@ -197,7 +197,10 @@ function reportBam(bamFilePath) {
 			                                  "--fileName", bamFilePath, 
 			                                  "--samRefName", samReference.name, 
 			                                  "--consensusID", samReference.name,
-			                                  "--preview"]);
+			                                  "--preview",
+				   				              "--minQScore", phdrSamThresholds.minQScore,
+				   				              "--minMapQ", phdrSamThresholds.minMapQ,
+				   				              "--minDepth", phdrSamThresholds.minDepth]);
 		});
 		consensusFastaMap[samReference.name] = consensusDocument.nucleotideFasta.sequences[0];
 	});
@@ -233,7 +236,10 @@ function reportBam(bamFilePath) {
 				   				              "--autoAlign",
 				   				              "--targetRefName", targetRefName,
 				   				              "--whereClause", variationWhereClause,
-				   				              "--minPresentPct", 10]));					
+				   				              "--minQScore", phdrSamThresholds.minQScore,
+				   				              "--minMapQ", phdrSamThresholds.minMapQ,
+				   				              "--minDepth", phdrSamThresholds.minDepth,
+				   				              "--minPresentPct", phdrSamThresholds.minReadProportionPct]));					
 			});
 			samRefResult.rasScanResults = scanResults;
 			glue.log("FINE", "phdrReportingController.reportBam rasScanResults:", samRefResult.rasScanResults);
@@ -609,5 +615,8 @@ function addOverview(phdrReport) {
 		glue.command(["show","setting","project-version"]).projectShowSettingResult.settingValue;
 	phdrReport.phdrReport.extensionVersion = 
 		glue.command(["show","extension-setting","phdr","extension-version"]).projectShowExtensionSettingResult.extSettingValue;
+	
+	phdrReport.phdrReport.phdrSamThresholds = phdrSamThresholds;
+	
 }
 
