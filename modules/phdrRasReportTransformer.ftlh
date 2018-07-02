@@ -155,7 +155,10 @@ No resistance analysis was performed for the sequence.
 <th>Resisted drug</th>
 <th>Genotype / Subtype</th>
 <th><em>In vitro</em> resistance level<br/>(EC50 log fold change)</th>
+
 <th>Clinical trials</th>
+<th>Fount at baseline?</th>
+<th>Treatment-emergent?</th>
 <th>Reference</th>
 </tr>
 </thead>
@@ -187,6 +190,32 @@ ${(resistanceFinding.inVitroResult.ec50RangeString)}
 <#list resistanceFinding.inVivoResult.clinicalTrial as clinicalTrial>
 ${clinicalTrial.displayName} [${clinicalTrial.regimen}]</br>
 </#list>
+<#else>
+-
+</#if>
+</td>
+<td <#if evenRow>id="resistanceFindingEven"</#if>>
+<#if resistanceFinding.inVivoResult?? && resistanceFinding.inVivoResult.foundAtBaseline??>
+<#if resistanceFinding.inVivoResult.foundAtBaseline = true>
+Yes
+<#elseif resistanceFinding.inVivoResult.foundAtBaseline = false>
+No
+<#else>
+-
+</#if>
+<#else>
+-
+</#if>
+</td>
+<td <#if evenRow>id="resistanceFindingEven"</#if>>
+<#if resistanceFinding.inVivoResult?? && resistanceFinding.inVivoResult.treatmentEmergent??>
+<#if resistanceFinding.inVivoResult.treatmentEmergent = true>
+Yes
+<#elseif resistanceFinding.inVivoResult.treatmentEmergent = false>
+No
+<#else>
+-
+</#if>
 <#else>
 -
 </#if>

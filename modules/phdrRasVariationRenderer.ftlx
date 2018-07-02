@@ -33,6 +33,8 @@
 		</#if>
 		<#if resistanceFinding.phdr_in_vivo_result??>
 		<inVivoResult>
+			<@elem tag="foundAtBaseline" expr="context.baseline" type="Boolean" context=resistanceFinding.phdr_in_vivo_result/>
+			<@elem tag="treatmentEmergent" expr="context.treatment_emergent" type="Boolean" context=resistanceFinding.phdr_in_vivo_result/>
 			<#list resistanceFinding.phdr_in_vivo_result.phdr_result_trial as resultTrial>
 			<clinicalTrial glueType="Object[]">
 				<id>${resultTrial.phdr_clinical_trial.id}</id>
