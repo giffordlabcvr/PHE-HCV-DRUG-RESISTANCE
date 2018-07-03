@@ -116,7 +116,7 @@ No
 	<#list drugScore.rasScores.fieldNames as gene>
     ${gene}:
 	<#list drugScore.rasScores[gene] as rasScore><#if rasScore?index gt 0>,</#if>
-		<span class="rasColourCode_${rasScore.rasLevel}">${rasScore.structure}</span><#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if></#list>
+		<span class="rasColourCode_${rasScore.rasLevel}">${rasScore.displayStructure}</span><#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if></#list>
 	</#list>
 	<#else>
 		None relevant 
@@ -165,7 +165,7 @@ No resistance analysis was performed for the sequence.
 <#if resistanceFinding?index == 0>
 <tr class="firstRow">
 <td rowspan = "${rasScanResult.rasDetails.resistanceFinding?size}">${rasScanResult.rasDetails.gene}</td>
-<td rowspan = "${rasScanResult.rasDetails.resistanceFinding?size}">${rasScanResult.rasDetails.structure}</td>
+<td rowspan = "${rasScanResult.rasDetails.resistanceFinding?size}">${rasScanResult.rasDetails.displayStructure}</td>
 <#if phdrReport.sequenceDataFormat = "SAM/BAM">
 <td rowspan = "${rasScanResult.rasDetails.resistanceFinding?size}">${rasScanResult.pctPresent?string("##0.#")}%</td>
 <td rowspan = "${rasScanResult.rasDetails.resistanceFinding?size}">${(rasScanResult.readsPresent+rasScanResult.readsAbsent)?c}</td>

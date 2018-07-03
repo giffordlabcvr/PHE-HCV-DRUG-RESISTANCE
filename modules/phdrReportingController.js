@@ -349,6 +349,7 @@ function assessResistanceForDrug(scanResults, drug) {
 			var rasScoreDetails = {
 				gene: scanResult.rasDetails.gene,
 				structure: scanResult.rasDetails.structure,
+				displayStructure: scanResult.rasDetails.displayStructure,
 				score: rasScore,
 				rasLevel: rasLevel
 			};
@@ -413,6 +414,26 @@ function getRasFinding(genotypingResult, referenceName, featureName, variationNa
 		rasFinding = glue.command(["render-object", "phdrRasVariationRenderer"]);
 		var genotypeAlmtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
 		var subtypeAlmtName = genotypingResult.subtypeCladeCategoryResult.finalClade;
+		if(subtypeAlmtName != null) {
+			var subtypeDisplayRas = _.find(rasFinding.phdrRasVariation.displayRas, function(displayRas) {
+				if(displayRas.alignmentName == subtypeAlmtName) {
+					return true;
+				}
+			});
+			if(subtypeDisplayRas != null) {
+				rasFinding.phdrRasVariation.displayStructure = subtypeDisplayRas.displayStructure;
+			}
+		}
+		if(rasFinding.phdrRasVariation.displayStructure == null && genotypeAlmtName != null) {
+			var genotypeDisplayRas = _.find(rasFinding.phdrRasVariation.displayRas, function(displayRas) {
+				if(displayRas.alignmentName == genotypeAlmtName) {
+					return true;
+				}
+			});
+			if(genotypeDisplayRas != null) {
+				rasFinding.phdrRasVariation.displayStructure = genotypeDisplayRas.displayStructure;
+			}
+		}
 		rasFinding.phdrRasVariation.resistanceFinding = 
 			_.filter(rasFinding.phdrRasVariation.resistanceFinding, function(finding) {
 				if(genotypeAlmtName != null && subtypeAlmtName == null) {

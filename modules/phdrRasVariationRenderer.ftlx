@@ -14,6 +14,13 @@
 		<value>${metatag.value}</value>
     </metatag>
     </#list>
+	<#list phdr_ras.phdr_display_ras as displayRas>
+    <displayRas glueType="Object[]">
+		<displayStructure>${displayRas.display_structure}</displayStructure>
+		<alignmentName>${displayRas.alignment.name}</alignmentName>
+		<alignmentDisplayName>${displayRas.alignment.displayName}</alignmentDisplayName>
+	</displayRas>
+	</#list>
 	<#list phdr_ras.phdr_resistance_finding as resistanceFinding>
     <resistanceFinding glueType="Object[]">
 		<drug>${resistanceFinding.phdr_drug.id}</drug>
