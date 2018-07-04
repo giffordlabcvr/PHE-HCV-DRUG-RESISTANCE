@@ -30,7 +30,7 @@ def scmCustomKey = System.getProperty("user.name").equals('joshsinger') ? '/User
 
 scmVersion {
 	hooks {
-        pre 'fileUpdate', [file: 'glue/phdrAddProjectExtension.glue', pattern: {v, c -> /set extension-setting phdr extension-version $v/}, replacement: {v, c -> "set extension-setting hcv_dr extension-version $v"}]
+        pre 'fileUpdate', [file: 'glue/phdrAddProjectExtension.glue', pattern: {v, c -> /set extension-setting phdr extension-version $v/}, replacement: {v, c -> "set extension-setting phdr extension-version $v"}]
 		pre 'commit', {v, p -> "Release version $v"}
     }
 
