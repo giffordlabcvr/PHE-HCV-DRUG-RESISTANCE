@@ -289,11 +289,12 @@ function assessResistanceForDrug(scanResults, drug) {
 	var rasScores = [];
 	
 	_.each(scanResults, function(scanResult) {
-		// individual RAS score.
-		var lowInVitro = false; // EC50 [2, 20) observed:		add 1 points.
-		var medInVitro = false; // EC50 [20, 100) observed:		add 3 points.
-		var highInVitro = false;// EC50 >= 100 observed:		add 10 points.
-		var inVivo = false; // any in vivo evidence. 			add 7 points.
+		// individual RAS category.
+		var insignificantInVitro = false; // EC50 [0, 5) observed.
+		var lowInVitro = false; // EC50 [5, 50).
+		var highInVitro = false;// EC50 >= 50 observed.
+		var inVivoBaseline = false; // observed at baseline in clinical trial.
+		var inVivoTreatmentEmergent = false; // treatment emergent in clinical trial.
 
 		_.each(scanResult.rasDetails.resistanceFinding, function(finding) {
 			if(finding.drug != drug.id) {
@@ -312,84 +313,87 @@ function assessResistanceForDrug(scanResults, drug) {
 					ec50Value = minEC50;
 				}
 				
-				if(ec50Value < 20.0) {
+				if(ec50Value < 5.0) {
+					insignificantInVitro = true;
+				} else if(ec50Value < 50.0) {
 					lowInVitro = true;
-				} else if(ec50Value < 100.0) {
-					medInVitro = true;
-				} else if(ec50Value >= 100.0) {
+				} else if(ec50Value >= 50.0) {
 					highInVitro = true;
 				} 
 			}
 			if(finding.inVivoResult != null) {
-				inVivo = true;
+				if(finding.inVivoResult.foundAtBaseline) {
+					inVivoBaseline = true;
+				}
+				if(finding.inVivoResult.treatmentEmergent) {
+					inVivoTreatmentEmergent = true;
+				}
 			}
 		});
-		var rasScore = 0;
-		if(highInVitro) {
-			rasScore += 10;
-		} else if(medInVitro) {
-			rasScore += 3;
+		var rasCategory = "insignificant";
+		var displayCategory = "-";
+		if((lowInVitro || highInVitro) && (inVivoBaseline || inVivoTreatmentEmergent)) {
+			rasCategory = "category_I";
+			displayCategory = "I";
+		} else if(inVivoBaseline && inVivoTreatmentEmergent) {
+			rasCategory = "category_I";
+			displayCategory = "I";
+		} else if(highInVitro || inVivoBaseline || inVivoTreatmentEmergent) {
+			rasCategory = "category_II";
+			displayCategory = "II";
 		} else if(lowInVitro) {
-			rasScore += 1;
+			rasCategory = "category_III";
+			displayCategory = "III";
 		}
-		if(inVivo) {
-			rasScore += 7;
-		}
-		if(rasScore > 0) {
-			var rasLevel;
-			if(rasScore < 5) {
-				rasLevel = "marginal";
-			} else if(rasScore < 10) {
-				rasLevel = "low";
-			} else if(rasScore < 15) {
-				rasLevel = "medium";
-			} else {
-				rasLevel = "high";
-			}
+
+		scanResult.rasDetails.category = rasCategory;
+		
+		if(rasCategory != "insignificant") {
 			var rasScoreDetails = {
 				gene: scanResult.rasDetails.gene,
 				structure: scanResult.rasDetails.structure,
 				displayStructure: scanResult.rasDetails.displayStructure,
-				score: rasScore,
-				rasLevel: rasLevel
+				category: rasCategory,
+				displayCategory: displayCategory
 			};
-			rasScores.push(rasScoreDetails); 
 			if(scanResult.pctPresent != null) {
 				rasScoreDetails.readsPctPresent = scanResult.pctPresent;
 			}
+			rasScores.push(rasScoreDetails); 
 		}
 
 	});
 	
-	// rasLevel: 3 levels
-	// marginal:			RAS score < 5;
-	// low:					RAS score >= 5 and < 10;
-	// medium:				RAS score >= 10 and < 15;
-	// high:				RAS score >= 15;
-	
-	
 	// drug score: 4 levels:
-	// resistant:				Any RAS score of 15 or a combined RAS score of 20.
-	// probably_resistant:		Any RAS score of 10 or a combined RAS score of 15.
-	// possibly_resistant:		Any RAS score of 5 or a combined RAS score of 10.
+	// resistant:				Any category I RAS or multiple category II RASs.
+	// probably_resistant:		Any category II RAS or multiple category III RAS.
+	// possibly_resistant:		Any category III RAS.
 	// susceptible:				None of the above.
 	
-	var maxRasScore = 0;
-	var combinedRasScore = 0;
+	var numCategoryI = 0;
+	var numCategoryII = 0;
+	var numCategoryIII = 0;
 	_.each(rasScores, function(rasScore) {
-		maxRasScore = Math.max(maxRasScore, rasScore.score);
-		combinedRasScore += rasScore.score;
+		if(rasScore.category == 'category_I') {
+			numCategoryI++;
+		}
+		if(rasScore.category == 'category_II') {
+			numCategoryII++;
+		}
+		if(rasScore.category == 'category_III') {
+			numCategoryIII++;
+		}
 	});
 
 	var drugScore;
 	var drugScoreDisplay;
-	if(maxRasScore >= 15 || combinedRasScore >= 20) {
+	if(numCategoryI > 0 || numCategoryII > 1) {
 		drugScore = 'resistant';
 		drugScoreDisplay = 'Resistant';
-	} else if(maxRasScore >= 10 || combinedRasScore >= 15) {
+	} else if(numCategoryII > 0 || numCategoryIII > 1) {
 		drugScore = 'probably_resistant';
 		drugScoreDisplay = 'Probably resistant';
-	} else if(maxRasScore >= 5 || combinedRasScore >= 10) {
+	} else if(numCategoryIII > 0) {
 		drugScore = 'possibly_resistant';
 		drugScoreDisplay = 'Possibly resistant';
 	} else {

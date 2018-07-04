@@ -94,8 +94,8 @@ No
 <tr>
 	<th>Drug category</th>
 	<th>Drug</th>
-	<th colspan="2">Resistance level</th>
-	<th>Resistance-associated polymorphisms</th>
+	<th>Resistance-associated polymorphisms<sup>1</sup></th>
+	<th colspan="2">Resistance level<sup>2</sup></th>
 </tr>
 </thead>
 <#list result.drugScores as categoryDrugScores>
@@ -109,24 +109,37 @@ No
 	<td rowspan = "2">${categoryDrugScores.category}</td>
 	</#if>
 	<td>${drugScore.drug.id}</td>
-	<td>${drugScore.drugScoreDisplay}</td>
-	<td class="resistanceBlock resistanceColourCode_${drugScore.drugScore}"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 	<td>
 	<#if drugScore.rasScores?? && drugScore.rasScores.fieldNames?size gt 0>
 	<#list drugScore.rasScores.fieldNames as gene>
     ${gene}:
 	<#list drugScore.rasScores[gene] as rasScore><#if rasScore?index gt 0>,</#if>
-		<span class="rasColourCode_${rasScore.rasLevel}">${rasScore.displayStructure}</span><#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if></#list>
+		<span class="rasColourCode_${rasScore.category}">${rasScore.displayStructure}</span> (${rasScore.displayCategory}<#if phdrReport.sequenceDataFormat = "SAM/BAM">, ${rasScore.readsPctPresent?string("##0.#")}%</#if>)</#list>
 	</#list>
 	<#else>
 		None relevant 
 	</#if>
 	</td>
+	<td>${drugScore.drugScoreDisplay}</td>
+	<td class="resistanceBlock resistanceColourCode_${drugScore.drugScore}"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 </tr>
 </#list>
 </#list>
-
 </table>
+<div id="resistanceAlgorithmNotes">
+<ol>
+<li>Polymorphisms are assigned to one of three categories according to the drug resistance evidence base. 
+Category I: either (a) <em>in vitro</em> resistance level &ge; 5 and found at baseline or treatment-emergent in clinical trials, or 
+(b) both found at baseline and treatment-emergent. Category II: <em>in vitro</em> level &ge; 50 or found at baseline or treatment-emergent.
+Category III: <em>in vitro</em> level &ge; 5</li>
+<li>Resistance level to a given drug is assigned to one of four categories. 
+Resistant: any category I polymorphism or multiple category II polymorphisms.
+Probably resistant: any category II polymorphism or multiple category III polymorphisms. 
+Possibly resistant: any category III polymorphisms. 
+Susceptible: none of the above.
+</li>
+</ol>
+</div>
 <#else>
 No resistance analysis was performed for the sequence.
 </#if>

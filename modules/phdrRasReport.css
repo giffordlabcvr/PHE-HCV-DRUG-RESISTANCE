@@ -43,6 +43,10 @@ th + th {
     font-size: 10pt;
 }
 
+#resistanceAlgorithmNotes {
+    font-size: 10pt;
+}
+
 #references {
     font-size: 10pt;
 }
@@ -89,21 +93,21 @@ td, th {
 	background-color: #ff0202;
 }
 
-.rasColourCode_marginal {
+.rasColourCode_insignificant {
 	color: #aaaaaa;
 }
 
-.rasColourCode_low {
+.rasColourCode_category_III {
 	font-weight: bold;
 	color: #aaaaaa;
 }
 
-.rasColourCode_medium {
+.rasColourCode_category_II {
 	font-weight: bold;
 	color: #ffb349;
 }
 
-.rasColourCode_high {
+.rasColourCode_category_I {
 	font-weight: bold;
 	color: #ff0202;
 }
