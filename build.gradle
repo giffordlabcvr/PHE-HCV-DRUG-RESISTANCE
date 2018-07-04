@@ -43,6 +43,5 @@ scmVersion {
 	        prefix = 'PHE-HCV-DRUG-RESISTANCE'
 	    }
     }
-
 }
 
