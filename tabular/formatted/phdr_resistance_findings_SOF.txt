@@ -1,0 +1,103 @@
+gene	virusGenotype	substitution	baselineRas	rxEmergentRas	rasContext	drug	vitroOrVivo	ec50	clinicalTrialName	trialRegimen	trialCohort	trialNotes / no of patients	pubmed	Weight of evidence
+NS5B	3	159F	No	Yes  	None	Sofosbuvir	In vivo	NA	Real world*	SOF/RBV; SOF/PEG/RBV	Dietz	NA	29146520	
+NS5B	3a	159F	NA	NA	NA	Sofosbuvir	in vitro	2	NA	NA	Smith		29425396	
+NS5B	1b	159F	Yes	NA	NS5A: 31M  	Sofosbuvir	In vivo	NA	See publication*	SOF/LDV	Iio		28332272	
+NS5B	3a	159F	No	Yes	None	Sofosbuvir	in vivo	NA	Real world*	SOF mono	Di Maio	1	28105744	
+NS5B	1b	159F	Yes	No	NA	Sofosbuvir	in vivo	NA	Pooled7	SOF mono	Svarovskaia	6	26603202	
+NS5B	1a	159F	No	Yes	None	Sofosbuvir	in vivo	NA	Pooled7	SOF mono; SOF/LDV	Svarovskaia	≥ 3	26603202	
+NS5B	1b	159F	No	Yes	None	Sofosbuvir	in vivo	NA	Pooled7	SOF mono	Svarovskaia	≥ 5	26603202	
+NS5B	2	159F	No	Yes	None	Sofosbuvir	in vivo	NA	Pooled7	SOF mono	Svarovskaia	≥ 1	26603202	
+NS5B	3	159F	No	Yes	None	Sofosbuvir	in vivo	NA	Pooled7	SOF mono	Svarovskaia	≥ 35	26603202	
+NS5B	1	159F	No	Yes	NS5A RAS present	Sofosbuvir	in vivo	NA	ION-4	SOF/LDV	Naggie	1	26196665	
+NS5B	1a	159F	No	Yes	NS5A: 93N	Sofosbuvir	in vivo	NA	ALLY-2	SOF/DCV	Wyles	1	26196502	
+NS5B	1	159F	No	Yes	NA	Sofosbuvir	in vivo	NA	PHOTON-2	SOF/RBV	Molina	1	25659285	
+NS5B	3a	159F	No	Yes	NA	Sofosbuvir	in vivo	NA	PHOTON-2	SOF/RBV	Molina	1	25659285	
+NS5B	3	159F	No	Yes	None	Sofosbuvir	in vivo	NA	See publication*	SOF/PEG/RBV	Lawitz	1	25322962	
+NS5B	3	159F	No	Yes	None	Sofosbuvir	in vivo	NA	Pooled2	SOF mono; SOF/RBV; SOF/PEG/RBV	Svarovskaia	6	25266287	
+NS5B	3	159F	Yes	No	None	Sofosbuvir	in vivo	NA	Pooled2	SOF mono; SOF/RBV; SOF/PEG/RBV	Svarovskaia	1	25266287	
+NS5B	3	159F	No	Yes	None	Sofosbuvir	in vivo	NA	VALENCE	SOF/RBV	Zeuzem	6	24795201	
+NS5B	1a	159F+282T	NA	NA	NA	Sofosbuvir	in vitro	24	NA	NA	Gane		29404477	
+NS5B	1b	159F+282T	NA	NA	NA	Sofosbuvir	in vitro	11	NA	NA	Tong		24154738	
+NS5B	1a	159F+282T	NA	NA	NA	Sofosbuvir	in vitro	30	NA	NA	Tong		24154738	
+NS5B	1b	159F+282T+320F	NA	NA	NA	Sofosbuvir	in vitro	23	NA	NA	Tong		24154738	
+NS5B	1b	159F+316H	No	Yes  	None	Sofosbuvir	In vivo	NA	Real world*	SOF/RBV; SOF/PEG/RBV	Dietz	1	29146520	
+NS5B	1b	159F+316N	No	Yes	None	Sofosbuvir	in vivo	NA	Real world*	SOF/SIM; SOF/LDV	Di Maio	4	28105744	
+NS5B	1b	159F+316N	Yes	No	NA	Sofosbuvir	in vivo	NA	Real world*	SOF mono	Di Maio	1	28105744	
+NS5B	1b	159F+316N	Yes	No	NA	Sofosbuvir	in vivo	NA	Pooled7	SOF mono	Svarovskaia	2	26603202	
+NS5B	1b	159F+316N	Yes	No	NA	Sofosbuvir	in vivo	NA	Pooled6	SOF/PEG/RBV	Pol	1	25847509	
+NS5B	3	159F+316N	Yes	No	None	Sofosbuvir	in vivo	NA	Pooled2	SOF mono; SOF/RBV; SOF/PEG/RBV	Svarovskaia	1	25266287	
+NS5B	1a	159F+320F	NA	NA	NA	Sofosbuvir	in vitro	2.2	NA	NA	Svarovskaia		26603202	
+NS5B	1b	159F+320F	NA	NA	NA	Sofosbuvir	in vitro	2.2	NA	NA	Svarovskaia		26603202	
+NS5B	1b	159F+320F	NA	NA	NA	Sofosbuvir	in vitro	2.6	NA	NA	Tong		24154738	
+NS5B	1a	159F+320F	NA	NA	NA	Sofosbuvir	in vitro	4.3	NA	NA	Tong		24154738	
+NS5B	1b	159F+321A	No	Yes	None	Sofosbuvir	in vivo	NA	Pooled7	SOF mono	Svarovskaia	4	26603202	
+NS5B	1b	179A	NA	NA	NA	Sofosbuvir	in vitro	2	NA	NA	Lam		22430955	
+NS5B	2a	179A+282T+289L+293L	NA	NA	NA	Sofosbuvir	in vitro	9.5	NA	NA	Lam		22430955	
+NS5B	2a	179A+282T+293L	NA	NA	NA	Sofosbuvir	in vitro	8.3	NA	NA	Lam		22430955	
+NS5B	1a	237G	No	Yes	None	Sofosbuvir	in vivo	NA	Pooled5	SOF/LDV	Wyles		27923693	
+NS5B	3	282T	No	Yes  	None	Sofosbuvir	In vivo	NA	Real world*	SOF/DCV; SOF/LDV	Dietz	2	29146520	
+NS5B	4	282T	No	Yes  	None	Sofosbuvir	In vivo	NA	Real world*	SOF/DCV; SOF/LDV	Dietz	3	29146520	
+NS5B	1a	282T	No	Yes  	None	Sofosbuvir	In vivo	NA	Real world*	SOF/DCV; SOF/LDV	Dietz	1	29146520	
+NS5B	1b	282T	No	Yes  	None	Sofosbuvir	In vivo	NA	Real world*	SOF/DCV; SOF/LDV	Dietz	1	29146520	
+NS5B	6a	282T	NA	NA	NA	Sofosbuvir	in vitro	>8	NA	NA	Pham		29454794	
+NS5B	3a	282T	NA	NA	NA	Sofosbuvir	in vitro	>5	NA	NA	Smith		29425396	
+NS5B	4r	282T	No	Yes	321I	Sofosbuvir	In vivo	NA	Pooled4	SOF/DCV; SOF/LDV	Camus	1	28984067	
+NS5B	4	282T	NA	NA	NA	Sofosbuvir	in vitro	6.1	NA	NA	Camus		28984067	
+NS5B	3a	282T	No	Yes	NS5A: 58S+93H	Sofosbuvir	In vivo	NA	Real world*	SOF/DCV	Bartolini		28783119	
+NS5B	2b	282T	No	Yes	None	Sofosbuvir	in vivo	NA	> 40 studies*	SOF mono	Gane	1	29404477	
+NS5B	1b	282T	No	Yes	None	Sofosbuvir	in vivo	NA	> 40 studies*	SOF mono	Gane	1	29404477	
+NS5B	1a	282T	No	Yes	None	Sofosbuvir	in vivo	NA	> 40 studies*	SOF/LDV	Gane	3	29404477	
+NS5B	3a	282T	No	Yes	None	Sofosbuvir	in vivo	NA	> 40 studies*	SOF/LDV	Gane	1	29404477	
+NS5B	4r	282T	No	Yes	NS5A: 30R+31M	Sofosbuvir	in vivo	NA	> 40 studies*	SOF/LDV	Gane	1	29404477	
+NS5B	6l	282T	No	Yes	NS5A: 24K+28V+30A+58P	Sofosbuvir	in vivo	NA	> 40 studies*	SOF/LDV	Gane	1	29404477	
+NS5B	1a	282T	NA	NA	NA	Sofosbuvir	in vitro	17	NA	NA	Gane		29404477	
+NS5B	3a	282T	No	Yes	None	Sofosbuvir	in vivo	NA	Real world*	SOF/DCV	Walker		28595606	
+NS5B	2a	282T	No	Yes	NS5A: 24S+31M	Sofosbuvir	in vivo	NA	POLARIS-4	SOF/VEL	Bourliere		28564569	
+NS5B	2d	282T	No	Yes	NS5A: 24S+31M	Sofosbuvir	in vivo	NA	POLARIS-4	SOF/VEL	Bourliere		28564569	
+NS5B	2j	282T	No	Yes	NS5A: 24S+31M	Sofosbuvir	in vivo	NA	POLARIS-4	SOF/VEL	Bourliere		28564569	
+NS5B	1a	282T	No	Yes	NS5A: 31M	Sofosbuvir	in vivo	NA	Pooled5	SOF/LDV	Wyles		27923693	
+NS5B	1a	282T	NA	NA	NA	Sofosbuvir	in vitro	8.4	NA	NA	Wyles		27923693	
+NS5B	4a	282T	No	Yes	None	Sofosbuvir	in vivo	NA	Real world*	SOF/SIM; SOF/LDV	Di Maio	2	28105744	
+NS5B	3a	282T	No	Yes	None	Sofosbuvir	in vivo	NA	Real world*	SOF mono	Di Maio	1	28105744	
+NS5B	3a	282T	NA	NA	NA	Sofosbuvir	in vitro	10	NA	NA	Ramirez		27453546	
+NS5B	4r	282T	No	Yes	None	Sofosbuvir	in vivo	NA	GS-US-337-1119	SOF/LDV	Abergel	1	27351341	
+NS5B	1b	282T	NA	NA	NA	Sofosbuvir	in vitro	8.8	NA	NA	Svarovskaia		26603202	
+NS5B	2b	282T	NA	NA	NA	Sofosbuvir	in vitro	16.2	NA	NA	Svarovskaia		26603202	
+NS5B	3a	282T	NA	NA	NA	Sofosbuvir	in vitro	3.5	NA	NA	Svarovskaia		26603202	
+NS5B	1b	282T	No	Yes	NS5A: 31M	Sofosbuvir	in vivo	NA	NCT01805882 	SOF/LDV	Wilson	1	26521268	
+NS5B	1b	282T	NA	NA	NA	Sofosbuvir	in vitro	7.3	NA	NA	Tong		24154738	
+NS5B	1a	282T	NA	NA	NA	Sofosbuvir	in vitro	12	NA	NA	Tong		24154738	
+NS5B	1b	282T	NA	NA	NA	Sofosbuvir	in vitro	7.8	NA	NA	Lam		22430955	
+NS5B	2a 	282T	NA	NA	NA	Sofosbuvir	in vitro	2.0-5.2	NA	NA	Lam		22430955	
+NS5B	2b	282T	NA	NA	NA	Sofosbuvir	in vitro	7.8	NA	NA	Lam		22430955	
+NS5B	1a	282T	NA	NA	NA	Sofosbuvir	in vitro	13	NA	NA	Lam		22430955	
+NS5B	1a	282T+159F	No	Yes	1 patient: NS5A: 31M	Sofosbuvir	in vivo	NA	> 40 studies*	SOF/LDV	Gane	1	29404477	
+NS5B	1b	282T+289L	NA	NA	NA	Sofosbuvir	in vitro	10.8	NA	NA	Lam		22430955	
+NS5B	2a	282T+289L	NA	NA	NA	Sofosbuvir	in vitro	5.0-6.3	NA	NA	Lam		22430955	
+NS5B	1b	282T+320F	NA	NA	NA	Sofosbuvir	in vitro	13	NA	NA	Tong		24154738	
+NS5B	1a	282T+320F	NA	NA	NA	Sofosbuvir	in vitro	41	NA	NA	Tong		24154738	
+NS5B	4	282T+321I	NA	NA	NA	Sofosbuvir	in vitro	3	NA	NA	Camus		28984067	
+NS5B	3	289I	Yes	No	None	Sofosbuvir	in vivo	NA	Pooled2	SOF mono; SOF/RBV; SOF/PEG/RBV	Svarovskaia	1	25266287	
+NS5B	1b	289L	NA	NA	NA	Sofosbuvir	in vitro	2	NA	NA	Lam		22430955	
+NS5B	2a	289L	NA	NA	NA	Sofosbuvir	in vitro	2.9	NA	NA	Lam		22430955	
+NS5B	1b	316H	No	Yes	None	Sofosbuvir	in vivo	NA	Real world*	SOF/SIM	Di Maio	1	28105744	
+NS5B	2	316H+321I 	Yes	No	NS5A: 31M	Sofosbuvir	in vivo	NA	ALLY-2	SOF/DCV	Wyles	1	26196502	
+NS5B	1b	316N	Yes  	NA	NA	Sofosbuvir	In vivo	NA	See publication*	SOF/LDV	Ikeda	6	29504692	
+NS5B	1b	316N	Yes	No	NA	Sofosbuvir	In vivo	NA	HCV TARGET*	SOF/LDV	Wang	1	29453451	
+NS5B	1b	316N	No	Yes	None	Sofosbuvir	in vivo	NA	Real world*	SOF/SIM	Di Maio	1	28105744	
+NS5B	1a	320F	NA	NA	NA	Sofosbuvir	in vitro	2.7	NA	NA	Tong		24154738	
+NS5B	3	321A	No	Yes  	None	Sofosbuvir	In vivo	NA	Real world*	SOF/RBV; SOF/PEG/RBV	Dietz	NA	29146520	
+NS5B	3a	321A	NA	NA	NA	Sofosbuvir	in vitro	>5	NA	NA	Smith		29425396	
+NS5B	1a	321A	No	Yes	None	Sofosbuvir	in vivo	NA	Pooled7	SOF mono; SOF/LDV	Svarovskaia	≥ 4	26603202	
+NS5B	3	321A	No	Yes	None	Sofosbuvir	in vivo	NA	Pooled7	SOF mono	Svarovskaia	13	26603202	
+NS5B	3	321A	No	Yes	None	Sofosbuvir	in vivo	NA	Pooled2	SOF mono; SOF/RBV; SOF/PEG/RBV	Svarovskaia	5	25266287	
+NS5B	3	321A	No	Yes	None	Sofosbuvir	in vivo	NA	VALENCE	SOF/RBV	Zeuzem	2	24795201	
+NS5B	1b	321I	Yes  	NA	NS5A: 31M+93H	Sofosbuvir	In vivo	NA	Pooled1	SOF/VEL	Hezode	1	29221887	
+NS5B	4r	321I	Yes	NA	NA	Sofosbuvir	In vivo	NA	Pooled3	SOF/LDV; SOF/VEL	Camus	2	28984067	
+NS5B	2a	282T+289L+479P	NA	NA	NA	Sofosbuvir	in vitro	7.4	NA	NA	Lam		22430955	
+NS5B	2a	282T+289L+293L+479P	NA	NA	NA	Sofosbuvir	in vitro	8.4	NA	NA	Lam		22430955	
+NS5B	2a	282T+289L+293L+434T	NA	NA	NA	Sofosbuvir	in vitro	7.1	NA	NA	Lam		22430955	
+NS5B	2a	179A+282T+293L+479P	NA	NA	NA	Sofosbuvir	in vitro	9	NA	NA	Lam		22430955	
+NS5B	2a	179A+282T+289L+479P	NA	NA	NA	Sofosbuvir	in vitro	11.4	NA	NA	Lam		22430955	
+NS5B	2a	179A+282T+289L+293L+479P	NA	NA	NA	Sofosbuvir	in vitro	11.8	NA	NA	Lam		22430955	
+NS5B	2a	179A+282T+289L+293L+434T	NA	NA	NA	Sofosbuvir	in vitro	10.6	NA	NA	Lam		22430955	

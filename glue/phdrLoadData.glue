@@ -1,5 +1,7 @@
 run script glue/phdrLoadDrugs.js
 
+run script glue/phdrLoadRegimens.js
+
 run script glue/phdrLoadClinicalTrials.js
 
 run script glue/phdrLoadPublications.js

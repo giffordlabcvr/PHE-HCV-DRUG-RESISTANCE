@@ -13,6 +13,16 @@ function linkResultToTrial(resultId, trialId) {
 	});
 }
 
+
+function linkResultToRegimen(resultId, regimenId) {
+	glue.command(["create", "custom-table-row", "phdr_result_regimen", resultId+":"+regimenId]);
+	glue.inMode("custom-table-row/phdr_result_regimen/"+resultId+":"+regimenId, function() {
+		glue.command(["set", "link-target", "phdr_regimen", "custom-table-row/phdr_regimen/"+regimenId]);
+		glue.command(["set", "link-target", "phdr_in_vivo_result", "custom-table-row/phdr_in_vivo_result/"+resultId]);
+	});
+}
+
+
 function loadResistanceFindings(shortname, longname, gene, pooledMap) {
 	glue.inMode("module/phdrTabularUtility", function() {
 		rfObjs = glue.tableToObjects(glue.command(["load-tabular", "tabular/formatted/phdr_resistance_findings_"+shortname+".txt"]));
@@ -105,18 +115,33 @@ function loadResistanceFindings(shortname, longname, gene, pooledMap) {
 					error(rfObj, "Unknown value for rxEmergentRas: "+rxEmergentRas);
 				}
 			});
-			var trialNameString = rfObj.clinicalTrialName;
-			if(trialNameString.trim() == "" || trialNameString == null || trialNameString.trim() == "NA") {
-				error(rfObj, "Resistance finding with in vivo result does not report clinical trial name");
+			// in vivo results may list a single clinical trial, a pooled set of trials or, if
+			// terminated with a '*', some other string describing the subject cohort, e.g. "Real world".
+			var cohortString = rfObj.clinicalTrialName;
+			if(cohortString == null || cohortString.trim() == "" || cohortString.trim() == "NA") {
+				error(rfObj, "Resistance finding with in vivo result does not report clinical trials / cohort description");
 			}
-			var pooledMapList = pooledMap[trialNameString.trim()];
-			if(pooledMapList != null) {
-				_.each(pooledMapList, function(trialId) {
-					linkResultToTrial(rfId, trialId);
+			cohortString = cohortString.trim();
+			if(cohortString.endsWith("*")) {
+				glue.inMode("custom-table-row/phdr_in_vivo_result/"+rfId, function() {
+					glue.command(["set", "field", "cohort_description", cohortString.substring(0, cohortString.length - 1)]);
 				});
 			} else {
-				linkResultToTrial(rfId, trialNameString.trim());
+				var pooledMapList = pooledMap[cohortString];
+				if(pooledMapList != null) {
+					_.each(pooledMapList, function(trialId) {
+						linkResultToTrial(rfId, trialId);
+					});
+				} else {
+					linkResultToTrial(rfId, cohortString);
+				}
 			}
+			var trialRegimenString = rfObj.trialRegimen;
+			var trialRegimenBits = trialRegimenString.split(";");
+			_.each(trialRegimenBits, function(trialRegimenBit) {
+				var regimenId = trialRegimenBit.trim().split("/").join("_").replace(" ", "_");
+				linkResultToRegimen(rfId, regimenId);
+			});
 		}
 		idx++;
 	});
@@ -171,3 +196,16 @@ loadResistanceFindings("PIB", "pibrentasvir", "NS5A", {"Surveyor-1_and_2":["Surv
 loadResistanceFindings("VEL", "velpatasvir", "NS5A", {"Pooled analysis": ["ASTRAL-1", "ASTRAL-2", "ASTRAL-3", "ASTRAL-5", "POLARIS-2", "POLARIS-3"]});
 loadResistanceFindings("VOX", "voxilaprevir", "NS3", {"Pooled1": ["GS-US-367-1169", "GS-US-367-1871", "GS-US-337-1468", "GS-US-367-1168"], 
 	"Pooled2": ["POLARIS-1", "POLARIS-4"], "Pooled3": ["POLARIS-2", "POLARIS-3"]});
+loadResistanceFindings("SOF", "sofosbuvir", "NS5B", 
+		{"Pooled1": ["ASTRAL-1", "ASTRAL-2", "ASTRAL-3", "ASTRAL-5", "POLARIS-2", "POLARIS-3"], 
+		 "Pooled2": ["QUANTUM", "P7977-0221", "PROTON", "ELECTRON", "ATOMIC", "POSITRON", "FUSION", "NEUTRINO", "FISSION"], 
+		 "Pooled3": ["GS-US-337-1119", "GS-US-342-1138"], 
+		 "Pooled4": [], 
+		 "Pooled5": ["LONESTAR", "ELECTRON", "ION-1", "ION-2", "ION-3"], 
+		 "Pooled6": ["GS-US-248-0120", "GS-US-248-0121", "GS-US-196-0123", "GS-US-196-0124", "GS-US-196-0140", "GS-US-256-0148"], 
+		 "Pooled7": ["NEUTRINO", "FISSION", "POSITRON", "FUSION", "VALENCE", "PHOTON-1", "PHOTON-2", "P7977-2025", "LONESTAR", "ELECTRON", "ION-1", "ION-2", "ION-3"]});
+
+
+
+
+

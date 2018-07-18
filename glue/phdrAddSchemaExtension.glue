@@ -7,6 +7,8 @@ create custom-table phdr_in_vivo_result
 create custom-table phdr_publication
 create custom-table phdr_clinical_trial
 create custom-table phdr_result_trial
+create custom-table phdr_regimen
+create custom-table phdr_result_regimen
 
 table phdr_drug
   create field abbreviation VARCHAR
@@ -24,10 +26,12 @@ table phdr_display_ras
   create field display_structure VARCHAR
   exit
 
+table phdr_regimen
+  create field display_name VARCHAR
+  exit
 
 table phdr_clinical_trial
   create field display_name VARCHAR
-  create field regimen VARCHAR
   exit
 
 table phdr_in_vitro_result
@@ -37,6 +41,7 @@ table phdr_in_vitro_result
   
 table phdr_in_vivo_result
   create field baseline BOOLEAN
+  create field cohort_description VARCHAR 50
   create field treatment_emergent BOOLEAN
   exit
   
@@ -44,7 +49,7 @@ table phdr_in_vivo_result
 table phdr_publication
   create field title VARCHAR 500
   create field authors_short VARCHAR
-  create field authors_full VARCHAR 500
+  create field authors_full VARCHAR 1000
   create field year INTEGER
   create field journal VARCHAR
   create field volume VARCHAR
@@ -83,3 +88,9 @@ create link phdr_resistance_finding phdr_in_vivo_result -m ONE_TO_ONE
 # implemented using an intermediate join table phdr_result_trial
 create link phdr_in_vivo_result phdr_result_trial -m ONE_TO_MANY
 create link phdr_result_trial phdr_clinical_trial -m MANY_TO_ONE
+
+# phdr_in_vivo_result objects are associated to a set of regimens, in a many-to-many relationship
+# implemented using an intermediate join table phdr_result_regimen
+create link phdr_in_vivo_result phdr_result_regimen -m ONE_TO_MANY
+create link phdr_result_regimen phdr_regimen -m MANY_TO_ONE
+
