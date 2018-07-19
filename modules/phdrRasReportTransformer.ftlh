@@ -284,7 +284,7 @@ No resistance analysis was performed for the sequence.
 </#if>
 </div>
 
-<#if phdrReport.publications?? && phdrReport.publications?size != 0>
+
 <div class="pagebreak"> </div>
 
 <div id="configuration">
@@ -307,6 +307,8 @@ No resistance analysis was performed for the sequence.
 </#if>
 </table>
 </div>
+
+<#if phdrReport.publications?? && phdrReport.publications?size != 0>
 
 <h3>References</h3>
 <div id="references">
