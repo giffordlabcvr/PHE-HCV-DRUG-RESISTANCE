@@ -286,7 +286,9 @@ function assessResistance(scanResults) {
 
 function assessResistanceForDrug(scanResults, drug) {
 	
-	var rasScores = [];
+	var rasScores_category_I = [];
+	var rasScores_category_II = [];
+	var rasScores_category_III = [];
 	
 	_.each(scanResults, function(scanResult) {
 		// individual RAS category.
@@ -359,7 +361,13 @@ function assessResistanceForDrug(scanResults, drug) {
 			if(scanResult.pctPresent != null) {
 				rasScoreDetails.readsPctPresent = scanResult.pctPresent;
 			}
-			rasScores.push(rasScoreDetails); 
+			if(rasCategory == "category_I") {
+				rasScores_category_I.push(rasScoreDetails); 
+			} else if(rasCategory == "category_II") {
+				rasScores_category_II.push(rasScoreDetails); 
+			} else if(rasCategory == "category_III") {
+				rasScores_category_III.push(rasScoreDetails); 
+			}
 		}
 
 	});
@@ -370,20 +378,9 @@ function assessResistanceForDrug(scanResults, drug) {
 	// possibly_resistant:		Any category III RAS.
 	// susceptible:				None of the above.
 	
-	var numCategoryI = 0;
-	var numCategoryII = 0;
-	var numCategoryIII = 0;
-	_.each(rasScores, function(rasScore) {
-		if(rasScore.category == 'category_I') {
-			numCategoryI++;
-		}
-		if(rasScore.category == 'category_II') {
-			numCategoryII++;
-		}
-		if(rasScore.category == 'category_III') {
-			numCategoryIII++;
-		}
-	});
+	var numCategoryI = rasScores_category_I.length;
+	var numCategoryII = rasScores_category_II.length;
+	var numCategoryIII = rasScores_category_III.length;
 
 	var drugScore;
 	var drugScoreDisplay;
@@ -405,7 +402,9 @@ function assessResistanceForDrug(scanResults, drug) {
 		drug: drug,
 		drugScore: drugScore, 
 		drugScoreDisplay: drugScoreDisplay,
-		rasScores: _.groupBy(rasScores, "gene")
+		rasScores_category_I: rasScores_category_I,
+		rasScores_category_II: rasScores_category_II,
+		rasScores_category_III: rasScores_category_III
 	};
 	
 }

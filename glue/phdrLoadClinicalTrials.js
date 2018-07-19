@@ -8,5 +8,6 @@ _.each(ctObjs, function(ctObj) {
 	glue.command(["create", "custom-table-row", "phdr_clinical_trial", ctObj.id]);
 	glue.inMode("custom-table-row/phdr_clinical_trial/"+ctObj.id, function() {
 		glue.command(["set", "field", "display_name", ctObj.display_name]);
+		glue.command(["set", "field", "nct_id", ctObj.nct_id]);
 	});
 });

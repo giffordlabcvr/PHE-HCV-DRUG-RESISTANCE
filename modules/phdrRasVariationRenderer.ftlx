@@ -46,8 +46,15 @@
 			<clinicalTrial glueType="Object[]">
 				<id>${resultTrial.phdr_clinical_trial.id}</id>
 				<displayName>${resultTrial.phdr_clinical_trial.display_name}</displayName>
-				<regimen>${resultTrial.phdr_clinical_trial.regimen}</regimen>
+				<nctId>${resultTrial.phdr_clinical_trial.nct_id}</nctId>
 			</clinicalTrial>
+			</#list>
+			<@elem tag="cohortDescription" expr="context.cohort_description" context=resistanceFinding.phdr_in_vivo_result/>
+			<#list resistanceFinding.phdr_in_vivo_result.phdr_result_regimen as resultRegimen>
+			<regimen glueType="Object[]">
+				<id>${resultRegimen.phdr_regimen.id}</id>
+				<displayName>${resultRegimen.phdr_regimen.display_name}</displayName>
+			</regimen>
 			</#list>
 		</inVivoResult>
 		</#if>

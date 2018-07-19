@@ -20,6 +20,7 @@ table {
 
 tr {
     border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
 }
 
 tr + tr {
@@ -44,6 +45,10 @@ th + th {
 }
 
 #resistanceFinding {
+    font-size: 10pt;
+}
+
+#resistanceAlgorithmNotes {
     font-size: 10pt;
 }
 
@@ -93,21 +98,21 @@ td, th {
 	background-color: #ff0202;
 }
 
-.rasColourCode_marginal {
+.rasColourCode_insignificant {
 	color: #aaaaaa;
 }
 
-.rasColourCode_low {
+.rasColourCode_category_III {
 	font-weight: bold;
 	color: #aaaaaa;
 }
 
-.rasColourCode_medium {
+.rasColourCode_category_II {
 	font-weight: bold;
 	color: #ffb349;
 }
 
-.rasColourCode_high {
+.rasColourCode_category_I {
 	font-weight: bold;
 	color: #ff0202;
 }
@@ -132,6 +137,10 @@ td, th {
 
 #overview {
     width:90%;
+}
+
+#systemConfigTable {
+    width:50%;
 }
 
 
@@ -205,10 +214,7 @@ td, th {
 <tr><td><b>Sequance data format</b></td><td>
 Consensus (FASTA)
 </td></tr>
-<tr><td><b>Report generation date</b></td><td>11/05/2018</td></tr>
-<tr><td><b>GLUE engine version</b></td><td>0.1.153</td></tr>
-<tr><td><b>HCV project version</b></td><td>0.1.26</td></tr>
-<tr><td><b>PHE extension version</b></td><td>0.1.1</td></tr>
+<tr><td><b>Report generation date</b></td><td>18/07/2018</td></tr>
 </table>
 </div>
 <div id="logos">
@@ -253,57 +259,105 @@ Yes
 <table id="drugScores">
 <thead>
 <tr>
-	<th>Drug category</th>
-	<th>Drug</th>
-	<th colspan="2">Resistance level</th>
-	<th>Resistance-associated polymorphisms</th>
+	<th rowspan="2">Drug category</th>
+	<th rowspan="2">Drug</th>
+	<th colspan="3">Resistance-associated polymorphisms<sup>1</sup></th>
+	<th rowspan="2" colspan="2">Resistance level<sup>2</sup></th>
+</tr>
+<tr>
+	<th>Category I</th>
+	<th>Category II</th>
+	<th>Category III</th>
 </tr>
 </thead>
 <tr class="firstRow">
-	<td rowspan = "2">NS3/4A protease inhibitors</td>
-	<td>glecaprevir</td>
-	<td>Susceptible</td>
-	<td class="resistanceBlock resistanceColourCode_susceptible"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
-	<td>
-		None relevant 
-	</td>
+<td rowspan = "2">NS3/4A protease inhibitors</td>
+<td>glecaprevir</td>
+<td>
+	-
+</td>
+<td>
+	- 
+</td>
+<td>
+	- 
+</td>
+<td>Susceptible</td>
+<td class="resistanceBlock resistanceColourCode_susceptible"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 </tr>
 <tr>
-	<td>voxilaprevir</td>
-	<td>Possibly resistant</td>
-	<td class="resistanceBlock resistanceColourCode_possibly_resistant"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
-	<td>
-    NS3:
-	
-		<span class="rasColourCode_low">80K</span>
-	</td>
+<td>voxilaprevir</td>
+<td>
+	-
+</td>
+<td>
+	Q/K80K
+</td>
+<td>
+	- 
+</td>
+<td>Probably resistant</td>
+<td class="resistanceBlock resistanceColourCode_probably_resistant"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 </tr>
 <tr class="firstRow">
-	<td rowspan = "2">NS5A inhibitors</td>
-	<td>pibrentasvir</td>
-	<td>Probably resistant</td>
-	<td class="resistanceBlock resistanceColourCode_probably_resistant"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
-	<td>
-    NS5A:
-	
-		<span class="rasColourCode_low">30H+93H</span>,
-		<span class="rasColourCode_low">93H</span>
-	</td>
+<td rowspan = "2">NS5A inhibitors</td>
+<td>pibrentasvir</td>
+<td>
+	Y93H
+</td>
+<td>
+	Q30H+Y93H
+</td>
+<td>
+	- 
+</td>
+<td>Resistant</td>
+<td class="resistanceBlock resistanceColourCode_resistant"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 </tr>
 <tr>
-	<td>velpatasvir</td>
-	<td>Resistant</td>
-	<td class="resistanceBlock resistanceColourCode_resistant"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
-	<td>
-    NS5A:
-	
-		<span class="rasColourCode_marginal">30H</span>,
-		<span class="rasColourCode_high">30H+93H</span>,
-		<span class="rasColourCode_high">93H</span>
-	</td>
+<td>velpatasvir</td>
+<td>
+	Q30H+Y93H,	Y93H
+</td>
+<td>
+	- 
+</td>
+<td>
+	- 
+</td>
+<td>Resistant</td>
+<td class="resistanceBlock resistanceColourCode_resistant"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 </tr>
-
+<tr class="firstRow">
+<td rowspan = "2">NS5B RNA polymerase inhibitors</td>
+<td>sofosbuvir</td>
+<td>
+	-
+</td>
+<td>
+	- 
+</td>
+<td>
+	- 
+</td>
+<td>Susceptible</td>
+<td class="resistanceBlock resistanceColourCode_susceptible"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+</tr>
 </table>
+<div id="resistanceAlgorithmNotes">
+<ol>
+<li>Polymorphisms are assigned to one of three categories according to the strength of evidence for drug resistance. 
+Category I polymorphisms have the strongest evidence: either (a) <em>in vitro</em> resistance level &ge; 5 and found at baseline or treatment-emergent <em>in vivo</em>, or 
+(b) both found at baseline and treatment-emergent. Category II: <em>in vitro</em> level &ge; 50 or found at baseline or treatment-emergent.
+Category III: <em>in vitro</em> level &ge; 5</li>
+<li>Resistance level to a given drug is assigned to one of four categories. 
+Resistant: any category I polymorphism or multiple category II polymorphisms.
+Probably resistant: any category II polymorphism or multiple category III polymorphisms. 
+Possibly resistant: any category III polymorphisms. 
+Susceptible: none of the above.
+</li>
+</ol>
+</div>
 </div>
 </div>
 
@@ -319,24 +373,37 @@ Yes
 <th>Resisted drug</th>
 <th>Genotype / Subtype</th>
 <th><em>In vitro</em> resistance level<br/>(EC50 log fold change)</th>
-<th>Clinical trials</th>
+
+<th>Clinical trials / study cohort</th>
+<th>Associated drug regimens</th>
+<th>Fount at baseline?</th>
+<th>Treatment-emergent?</th>
 <th>Reference</th>
 </tr>
 </thead>
 <tbody>
 <tr class="firstRow">
 <td rowspan = "2">NS3</td>
-<td rowspan = "2">80K</td>
+<td rowspan = "2">Q/K80K</td>
 <td id="resistanceFindingEven">voxilaprevir</td>
 <td id="resistanceFindingEven">HCV Subtype 1a</td>
 <td id="resistanceFindingEven">
 -
 </td>
 <td id="resistanceFindingEven">
-POLARIS-2 [SOF/VEL/VOX]</br>
-POLARIS-3 [SOF/VEL/VOX]</br>
+<a target="_blank" href="https://clinicaltrials.gov/ct2/show/NCT02607735">POLARIS-1</a>;
+<a target="_blank" href="https://clinicaltrials.gov/ct2/show/NCT02639247">POLARIS-4</a>
 </td>
-<td id="resistanceFindingEven">Wyles, et al., 2017 [1]</td>
+<td id="resistanceFindingEven">
+SOF/VEL/VOX
+</td>
+<td id="resistanceFindingEven">
+Yes
+</td>
+<td id="resistanceFindingEven">
+No
+</td>
+<td id="resistanceFindingEven">Sarrazin et al., 2017 [1]</td>
 </tr>
 <tr>
 <td >voxilaprevir</td>
@@ -345,14 +412,23 @@ POLARIS-3 [SOF/VEL/VOX]</br>
 -
 </td>
 <td >
-POLARIS-1 [SOF/VEL/VOX]</br>
-POLARIS-4 [SOF/VEL/VOX]</br>
+<a target="_blank" href="https://clinicaltrials.gov/ct2/show/NCT02607800">POLARIS-2</a>;
+<a target="_blank" href="https://clinicaltrials.gov/ct2/show/NCT02639338">POLARIS-3</a>
 </td>
-<td >Sarrazin et al., 2017 [2]</td>
+<td >
+SOF/VEL/VOX
+</td>
+<td >
+Yes
+</td>
+<td >
+No
+</td>
+<td >Wyles, et al., 2017 [2]</td>
 </tr>
 <tr class="firstRow">
 <td rowspan = "1">NS5A</td>
-<td rowspan = "1">30H</td>
+<td rowspan = "1">Q30H</td>
 <td id="resistanceFindingEven">velpatasvir</td>
 <td id="resistanceFindingEven">HCV Subtype 1a</td>
 <td id="resistanceFindingEven">
@@ -361,18 +437,36 @@ POLARIS-4 [SOF/VEL/VOX]</br>
 <td id="resistanceFindingEven">
 -
 </td>
+<td id="resistanceFindingEven">
+-
+</td>
+<td id="resistanceFindingEven">
+-
+</td>
+<td id="resistanceFindingEven">
+-
+</td>
 <td id="resistanceFindingEven">Lawitz et al., 2016 [3]</td>
 </tr>
 <tr class="firstRow">
 <td rowspan = "3">NS5A</td>
-<td rowspan = "3">30H+93H</td>
+<td rowspan = "3">Q30H+Y93H</td>
 <td >pibrentasvir</td>
 <td >HCV Subtype 1a</td>
 <td >
 -
 </td>
 <td >
-Magellan-1, Part 2 [GLE/PIB]</br>
+<a target="_blank" href="https://clinicaltrials.gov/ct2/show/NCT02446717">Magellan-1, Part 2</a>
+</td>
+<td >
+GLE/PIB
+</td>
+<td >
+Yes
+</td>
+<td >
+No
 </td>
 <td >Poordad et al., 2018 [4]</td>
 </tr>
@@ -380,75 +474,138 @@ Magellan-1, Part 2 [GLE/PIB]</br>
 <td id="resistanceFindingEven">velpatasvir</td>
 <td id="resistanceFindingEven">HCV Subtype 1a</td>
 <td id="resistanceFindingEven">
+2835
+</td>
+<td id="resistanceFindingEven">
 -
 </td>
 <td id="resistanceFindingEven">
-ASTRAL-4 [SOF/VEL]</br>
+-
 </td>
-<td id="resistanceFindingEven">Curry et al., 2015 [5]</td>
+<td id="resistanceFindingEven">
+-
+</td>
+<td id="resistanceFindingEven">
+-
+</td>
+<td id="resistanceFindingEven">Lawitz et al., 2016 [3]</td>
 </tr>
 <tr>
 <td >velpatasvir</td>
 <td >HCV Subtype 1a</td>
 <td >
-2835
-</td>
-<td >
 -
 </td>
-<td >Lawitz et al., 2016 [3]</td>
+<td >
+<a target="_blank" href="https://clinicaltrials.gov/ct2/show/NCT02201901">ASTRAL-4</a>
+</td>
+<td >
+SOF/VEL
+</td>
+<td >
+Yes
+</td>
+<td >
+No
+</td>
+<td >Curry et al., 2015 [5]</td>
 </tr>
 <tr class="firstRow">
-<td rowspan = "8">NS5A</td>
-<td rowspan = "8">93H</td>
+<td rowspan = "7">NS5A</td>
+<td rowspan = "7">Y93H</td>
 <td id="resistanceFindingEven">pibrentasvir</td>
 <td id="resistanceFindingEven">HCV Subtype 1a</td>
 <td id="resistanceFindingEven">
+6.7
+</td>
+<td id="resistanceFindingEven">
 -
 </td>
 <td id="resistanceFindingEven">
-Magellan-1, Part 2 [GLE/PIB]</br>
+-
 </td>
-<td id="resistanceFindingEven">Poordad et al., 2018 [4]</td>
+<td id="resistanceFindingEven">
+-
+</td>
+<td id="resistanceFindingEven">
+-
+</td>
+<td id="resistanceFindingEven">Ng et al., 2017 [6]</td>
 </tr>
 <tr>
 <td >pibrentasvir</td>
 <td >HCV Subtype 1a</td>
 <td >
-6.7
-</td>
-<td >
 -
 </td>
-<td >Ng et al., 2017 [6]</td>
+<td >
+<a target="_blank" href="https://clinicaltrials.gov/ct2/show/NCT02446717">Magellan-1, Part 2</a>
+</td>
+<td >
+GLE/PIB
+</td>
+<td >
+No
+</td>
+<td >
+Yes
+</td>
+<td >Poordad et al., 2018 [4]</td>
 </tr>
 <tr>
 <td id="resistanceFindingEven">velpatasvir</td>
 <td id="resistanceFindingEven">HCV Subtype 1a</td>
 <td id="resistanceFindingEven">
-80 - 999
+609.1
 </td>
 <td id="resistanceFindingEven">
 -
 </td>
-<td id="resistanceFindingEven">Gottwein et al., 2018 [7]</td>
+<td id="resistanceFindingEven">
+-
+</td>
+<td id="resistanceFindingEven">
+-
+</td>
+<td id="resistanceFindingEven">
+-
+</td>
+<td id="resistanceFindingEven">Cheng et al., 2013 [7]</td>
 </tr>
 <tr>
 <td >velpatasvir</td>
 <td >HCV Subtype 1a</td>
 <td >
-609.1
+80 - 999
 </td>
 <td >
 -
 </td>
-<td >Cheng et al., 2013 [8]</td>
+<td >
+-
+</td>
+<td >
+-
+</td>
+<td >
+-
+</td>
+<td >Gottwein et al., 2018 [8]</td>
 </tr>
 <tr>
 <td id="resistanceFindingEven">velpatasvir</td>
 <td id="resistanceFindingEven">HCV Subtype 1a</td>
 <td id="resistanceFindingEven">
 609.1
+</td>
+<td id="resistanceFindingEven">
+-
+</td>
+<td id="resistanceFindingEven">
+-
+</td>
+<td id="resistanceFindingEven">
+-
 </td>
 <td id="resistanceFindingEven">
 -
@@ -462,12 +619,21 @@ Magellan-1, Part 2 [GLE/PIB]</br>
 609
 </td>
 <td >
-ASTRAL-1 [SOF/VEL]</br>
-ASTRAL-2 [SOF/VEL]</br>
-ASTRAL-3 [SOF/VEL]</br>
-ASTRAL-5 [SOF/VEL]</br>
-POLARIS-2 [SOF/VEL/VOX]</br>
-POLARIS-3 [SOF/VEL/VOX]</br>
+<a target="_blank" href="https://clinicaltrials.gov/ct2/show/NCT02201940">ASTRAL-1</a>;
+<a target="_blank" href="https://clinicaltrials.gov/ct2/show/NCT02220998">ASTRAL-2</a>;
+<a target="_blank" href="https://clinicaltrials.gov/ct2/show/NCT02201953">ASTRAL-3</a>;
+<a target="_blank" href="https://clinicaltrials.gov/ct2/show/NCT02480712">ASTRAL-5</a>;
+<a target="_blank" href="https://clinicaltrials.gov/ct2/show/NCT02607800">POLARIS-2</a>;
+<a target="_blank" href="https://clinicaltrials.gov/ct2/show/NCT02639338">POLARIS-3</a>
+</td>
+<td >
+SOF/VEL
+</td>
+<td >
+No
+</td>
+<td >
+Yes
 </td>
 <td >Hezode et al., 2018 [9]</td>
 </tr>
@@ -478,20 +644,18 @@ POLARIS-3 [SOF/VEL/VOX]</br>
 -
 </td>
 <td id="resistanceFindingEven">
-POLARIS-4 [SOF/VEL/VOX]</br>
+<a target="_blank" href="https://clinicaltrials.gov/ct2/show/NCT02639247">POLARIS-4</a>
+</td>
+<td id="resistanceFindingEven">
+SOF/VEL
+</td>
+<td id="resistanceFindingEven">
+No
+</td>
+<td id="resistanceFindingEven">
+Yes
 </td>
 <td id="resistanceFindingEven">Bourlière et al., 2017 [10]</td>
-</tr>
-<tr>
-<td >velpatasvir</td>
-<td >HCV Subtype 1a</td>
-<td >
--
-</td>
-<td >
-POLARIS-4 [SOF/VEL/VOX]</br>
-</td>
-<td >Bourlière et al., 2017 [10]</td>
 </tr>
 </tbody>
 </table>
@@ -499,22 +663,25 @@ POLARIS-4 [SOF/VEL/VOX]</br>
 
 <div class="pagebreak"> </div>
 
-<div id="references">
-<h3>References</h3>
+<div id="configuration">
+<h3>System configuration</h3>
+<table id="systemConfigTable">
+<colgroup style="width:50%">
+    <col class="tableHeader"/>
+</colgroup>
+<colgroup style="width:50%">
+    <col>
+</colgroup>
+<tr><td><b>GLUE engine version</b></td><td>1.0.8</td></tr>
+<tr><td><b>HCV project version</b></td><td>0.1.30</td></tr>
+<tr><td><b>PHE extension version</b></td><td>0.1.2</td></tr>
+</table>
+</div>
 
+<h3>References</h3>
+<div id="references">
 <p>
 [1] 
-<b>No impact of RASs on the high efficacy of SOF/VEL/VOX for 8 weeks in DAA-naïve patients: an integrated resistance analysis of the POLARIS-2 and POLARIS-3 studies</b>
-D. Wyles, A. Thompson, E. Lawitz, B. Willems, E.J. Gane, E. Svarovskaia, H. Dvory-Sobol, R. Martin, G. Camus, B.P. Doehle, L.M. Stamm, R.H. Hyland, D.M. Brainard, H.M. Mo, T. Asselah, I. Jacobson, G.R. Foster and S. Roberts, 
-J. Hepatol.
-	66(1),
-	S303
-(2017)
-<br/>
-<a href="https://doi.org/10.1016/S0168-8278(17)30924-8">https://doi.org/10.1016/S0168-8278(17)30924-8</a> 
-</p>
-<p>
-[2] 
 <b>No impact of RASs on the high efficacy of SOF/VEL/VOX for 12 weeks in DAA-experienced patients: an integrated resistance analysis of the POLARIS-1 and POLARIS-4 studies</b>
 C. Sarrazin, C.L. Cooper, M.P. Manns, R.K. Reddy, K. Kowdley, H. Dvory-Sobol, E. Svarovskia, R. Martin, B.P. Doehle, G. Camus, L.M. Stamm, R.H. Hyland, D.M. Brainard, H. Mo, S.C. Gordon, M. Bourlière, S. Zeuzem and S.L. Flamm, 
 J. Hepatol.
@@ -522,64 +689,64 @@ J. Hepatol.
 	S299
 (2017)
 <br/>
-<a href="https://doi.org/10.1016/S0168-8278(17)30915-7">https://doi.org/10.1016/S0168-8278(17)30915-7</a> 
+<a target="_blank" href="https://doi.org/10.1016/S0168-8278(17)30915-7">https://doi.org/10.1016/S0168-8278(17)30915-7</a> 
+</p>
+<p>
+[2] 
+<b>No impact of RASs on the high efficacy of SOF/VEL/VOX for 8 weeks in DAA-naïve patients: an integrated resistance analysis of the POLARIS-2 and POLARIS-3 studies</b>
+D. Wyles, A. Thompson, E. Lawitz, B. Willems, E.J. Gane, E. Svarovskaia, H. Dvory-Sobol, R. Martin, G. Camus, B.P. Doehle, L.M. Stamm, R.H. Hyland, D.M. Brainard, H.M. Mo, T. Asselah, I. Jacobson, G.R. Foster and S. Roberts, 
+J. Hepatol.
+	66(1),
+	S303
+(2017)
+<br/>
+<a target="_blank" href="https://doi.org/10.1016/S0168-8278(17)30924-8">https://doi.org/10.1016/S0168-8278(17)30924-8</a> 
 </p>
 <p>
 [3] 
 <b>Clinical Resistance to Velpatasvir (GS-5816), a Novel Pan-Genotypic Inhibitor of the Hepatitis C Virus NS5A Protein.</b>
-Lawitz EJ, Dvory-Sobol H, Doehle BP, Worth AS, McNally J, Brainard DM, Link JO, Miller MD, Mo H, 
+E. J. Lawitz, H. Dvory-Sobol, B. P. Doehle, A. S. Worth, J. McNally, D. M. Brainard, J. O. Link, M. D. Miller and H. Mo, 
 Antimicrob. Agents Chemother.
 	60(9),
 	5368-78
 (2016)
 <br/>
-<a href="https://doi.org/10.1128/AAC.00763-16">https://doi.org/10.1128/AAC.00763-16</a> 
+<a target="_blank" href="https://doi.org/10.1128/AAC.00763-16">https://doi.org/10.1128/AAC.00763-16</a> 
 </p>
 <p>
 [4] 
 <b>Glecaprevir/Pibrentasvir in patients with hepatitis C virus genotype 1 or 4 and past direct-acting antiviral treatment failure.</b>
-Poordad F, Pol S, Asatryan A, Buti M, Shaw D, Hézode C, Felizarta F, Reindollar RW, Gordon SC, Pianko S, Fried MW, Bernstein DE, Gallant J, Lin CW, Lei Y, Ng TI, Krishnan P, Kopecky-Bromberg S, Kort J, Mensa FJ, 
+F. Poordad, S. Pol, A. Asatryan, M. Buti, D. Shaw, C. Hézode, F. Felizarta, R. W. Reindollar, S. C. Gordon, S. Pianko, M. W. Fried, D. E. Bernstein, J. Gallant, C. W. Lin, Y. Lei, T. I. Ng, P. Krishnan, S. Kopecky-Bromberg, J. Kort and F. J. Mensa, 
 Hepatology
 	67(4),
 	1253-1260
 (2018)
 <br/>
-<a href="https://doi.org/10.1002/hep.29671">https://doi.org/10.1002/hep.29671</a> 
+<a target="_blank" href="https://doi.org/10.1002/hep.29671">https://doi.org/10.1002/hep.29671</a> 
 </p>
 <p>
 [5] 
 <b>Sofosbuvir and Velpatasvir for HCV in Patients with Decompensated Cirrhosis.</b>
-Curry MP, O&#39;Leary JG, Bzowej N, Muir AJ, Korenblat KM, Fenkel JM, Reddy KR, Lawitz E, Flamm SL, Schiano T, Teperman L, Fontana R, Schiff E, Fried M, Doehle B, An D, McNally J, Osinusi A, Brainard DM, McHutchison JG, Brown RS Jr, Charlton M, 
+M. P. Curry, J. G. O&#39;Leary, N. Bzowej, A. J. Muir, K. M. Korenblat, J. M. Fenkel, K. R. Reddy, E. Lawitz, S. L. Flamm, T. Schiano, L. Teperman, R. Fontana, E. Schiff, M. Fried, B. Doehle, D. An, J. McNally, A. Osinusi, D. M. Brainard, J. G. McHutchison, R. S. Brown, M. Charlton and ASTRAL-4 Investigators, 
 N. Engl. J. Med.
 	373(27),
 	2618-28
 (2015)
 <br/>
-<a href="https://doi.org/10.1056/NEJMoa1512614">https://doi.org/10.1056/NEJMoa1512614</a> 
+<a target="_blank" href="https://doi.org/10.1056/NEJMoa1512614">https://doi.org/10.1056/NEJMoa1512614</a> 
 </p>
 <p>
 [6] 
-<b>In Vitro Antiviral Activity and Resistance Profile of the Next-Generation Hepatitis C Virus NS5A Inhibitor Pibrentasvir.</b>
-Ng TI, Krishnan P, Pilot-Matias T, Kati W, Schnell G, Beyer J, Reisch T, Lu L, Dekhtyar T, Irvin M, Tripathi R, Maring C, Randolph JT, Wagner R, Collins C, 
+<b>Antiviral Activity and Resistance Profile of the Next-Generation Hepatitis C Virus NS5A Inhibitor Pibrentasvir.</b>
+T. I. Ng, P. Krishnan, T. Pilot-Matias, W. Kati, G. Schnell, J. Beyer, T. Reisch, L. Lu, T. Dekhtyar, M. Irvin, R. Tripathi, C. Maring, J. T. Randolph, R. Wagner and C. Collins, 
 Antimicrob. Agents Chemother.
 	61(5),
 (2017)
 <br/>
-<a href="https://doi.org/10.1128/AAC.02558-16">https://doi.org/10.1128/AAC.02558-16</a> 
+<a target="_blank" href="https://doi.org/10.1128/AAC.02558-16">https://doi.org/10.1128/AAC.02558-16</a> 
 </p>
 <p>
 [7] 
-<b>Efficacy of NS5A Inhibitors Against Hepatitis C Virus Genotypes 1-7 and Escape Variants.</b>
-Gottwein JM, Pham LV, Mikkelsen LS, Ghanem L, Ramirez S, Scheel TKH, Carlsen THR, Bukh J, 
-Gastroenterology
-	154(5),
-	1435-1448
-(2018)
-<br/>
-<a href="https://doi.org/10.1053/j.gastro.2017.12.015">https://doi.org/10.1053/j.gastro.2017.12.015</a> 
-</p>
-<p>
-[8] 
 <b>GS-5816, A SECOND GENERATION HCV NS5A INHIBITOR WITH POTENT ANTIVIRAL ACTIVITY, BROAD GENOTYPIC COVERAGE AND A HIGH RESISTANCE BARRIER</b>
 G. Cheng, M. Yu, B. Peng, Y.-J. Lee, A. Trejo-Martin, R. Gong, C. Bush, A. Worth, M. Nash, K. Chan, H. Yang, R. Beran, Y. Tian, J. Perry, J. Taylor, C. Yang, M. Paulson, W. Delaney and J.O. Link, 
 J. Hepatol.
@@ -587,29 +754,40 @@ J. Hepatol.
 	S484-S485
 (2013)
 <br/>
-<a href="https://doi.org/10.1016/S0168-8278(13)61192-7">https://doi.org/10.1016/S0168-8278(13)61192-7</a> 
+<a target="_blank" href="https://doi.org/10.1016/S0168-8278(13)61192-7">https://doi.org/10.1016/S0168-8278(13)61192-7</a> 
+</p>
+<p>
+[8] 
+<b>Efficacy of NS5A Inhibitors Against Hepatitis C Virus Genotypes 1-7 and Escape Variants.</b>
+J. M. Gottwein, L. V. Pham, L. S. Mikkelsen, L. Ghanem, S. Ramirez, T. K. H. Scheel, T. H. R. Carlsen and J. Bukh, 
+Gastroenterology
+	154(5),
+	1435-1448
+(2018)
+<br/>
+<a target="_blank" href="https://doi.org/10.1053/j.gastro.2017.12.015">https://doi.org/10.1053/j.gastro.2017.12.015</a> 
 </p>
 <p>
 [9] 
 <b>Resistance analysis in patients with genotype 1-6 HCV infection treated with sofosbuvir/velpatasvir in the phase III studies.</b>
-Hezode C, Reau N, Svarovskaia ES, Doehle BP, Shanmugam R, Dvory-Sobol H, Hedskog C, McNally J, Osinusi A, Brainard DM, Miller MD, Mo H, Roberts SK, O&#39;Leary JG, Shafran SD, Zeuzem S, 
+C. Hezode, N. Reau, E. S. Svarovskaia, B. P. Doehle, R. Shanmugam, H. Dvory-Sobol, C. Hedskog, J. McNally, A. Osinusi, D. M. Brainard, M. D. Miller, H. Mo, S. K. Roberts, J. G. O&#39;Leary, S. D. Shafran and S. Zeuzem, 
 J. Hepatol.
 	68(5),
 	895-903
 (2018)
 <br/>
-<a href="https://doi.org/10.1016/j.jhep.2017.11.032">https://doi.org/10.1016/j.jhep.2017.11.032</a> 
+<a target="_blank" href="https://doi.org/10.1016/j.jhep.2017.11.032">https://doi.org/10.1016/j.jhep.2017.11.032</a> 
 </p>
 <p>
 [10] 
 <b>Sofosbuvir, Velpatasvir, and Voxilaprevir for Previously Treated HCV Infection.</b>
-Bourlière M, Gordon SC, Flamm SL, Cooper CL, Ramji A, Tong M, Ravendhran N, Vierling JM, Tran TT, Pianko S, Bansal MB, de Lédinghen V, Hyland RH, Stamm LM, Dvory-Sobol H, Svarovskaia E, Zhang J, Huang KC, Subramanian GM, Brainard DM, McHutchison JG, Verna EC, Buggisch P, Landis CS, Younes ZH, Curry MP, Strasser SI, Schiff ER, Reddy KR, Manns MP, Kowdley KV, Zeuzem S, 
+M. Bourlière, S. C. Gordon, S. L. Flamm, C. L. Cooper, A. Ramji, M. Tong, N. Ravendhran, J. M. Vierling, T. T. Tran, S. Pianko, M. B. Bansal, V. de Lédinghen, R. H. Hyland, L. M. Stamm, H. Dvory-Sobol, E. Svarovskaia, J. Zhang, K. C. Huang, G. M. Subramanian, D. M. Brainard, J. G. McHutchison, E. C. Verna, P. Buggisch, C. S. Landis, Z. H. Younes, M. P. Curry, S. I. Strasser, E. R. Schiff, K. R. Reddy, M. P. Manns, K. V. Kowdley, S. Zeuzem and POLARIS-1 and POLARIS-4 Investigators, 
 N. Engl. J. Med.
 	376(22),
 	2134-2146
 (2017)
 <br/>
-<a href="https://doi.org/10.1056/NEJMoa1613512">https://doi.org/10.1056/NEJMoa1613512</a> 
+<a target="_blank" href="https://doi.org/10.1056/NEJMoa1613512">https://doi.org/10.1056/NEJMoa1613512</a> 
 </p>
 </div>
 

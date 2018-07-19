@@ -92,44 +92,62 @@ No
 <table id="drugScores">
 <thead>
 <tr>
-	<th>Drug category</th>
-	<th>Drug</th>
-	<th>Resistance-associated polymorphisms<sup>1</sup></th>
-	<th colspan="2">Resistance level<sup>2</sup></th>
+	<th rowspan="2">Drug category</th>
+	<th rowspan="2">Drug</th>
+	<th colspan="3">Resistance-associated polymorphisms<sup>1</sup></th>
+	<th rowspan="2" colspan="2">Resistance level<sup>2</sup></th>
+</tr>
+<tr>
+	<th>Category I</th>
+	<th>Category II</th>
+	<th>Category III</th>
 </tr>
 </thead>
 <#list result.drugScores as categoryDrugScores>
-<#list categoryDrugScores.drugAssessments as drugScore>
-<#if drugScore?index == 0>
+<#list categoryDrugScores.drugAssessments as drugAssessment>
+<#if drugAssessment?index == 0>
 <tr class="firstRow">
 <#else>
 <tr>
 </#if>
-<#if drugScore?index == 0>
-	<td rowspan = "2">${categoryDrugScores.category}</td>
-	</#if>
-	<td>${drugScore.drug.id}</td>
-	<td>
-	<#if drugScore.rasScores?? && drugScore.rasScores.fieldNames?size gt 0>
-	<#list drugScore.rasScores.fieldNames as gene>
-    ${gene}:
-	<#list drugScore.rasScores[gene] as rasScore><#if rasScore?index gt 0>,</#if>
-		<span class="rasColourCode_${rasScore.category}">${rasScore.displayStructure}</span> (${rasScore.displayCategory}<#if phdrReport.sequenceDataFormat = "SAM/BAM">, ${rasScore.readsPctPresent?string("##0.#")}%</#if>)</#list>
-	</#list>
-	<#else>
-		None relevant 
-	</#if>
-	</td>
-	<td>${drugScore.drugScoreDisplay}</td>
-	<td class="resistanceBlock resistanceColourCode_${drugScore.drugScore}"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+<#if drugAssessment?index == 0>
+<td rowspan = "2">${categoryDrugScores.category}</td>
+</#if>
+<td>${drugAssessment.drug.id}</td>
+<td>
+<#if drugAssessment.rasScores_category_I?? && drugAssessment.rasScores_category_I?size gt 0>
+<#list drugAssessment.rasScores_category_I as rasScore>
+	${rasScore.displayStructure}<#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if><#if !rasScore?is_last>,</#if></#list>
+<#else>
+	-
+</#if>
+</td>
+<td>
+<#if drugAssessment.rasScores_category_II?? && drugAssessment.rasScores_category_II?size gt 0>
+<#list drugAssessment.rasScores_category_II as rasScore>
+	${rasScore.displayStructure}<#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if><#if !rasScore?is_last>,</#if></#list>
+<#else>
+	- 
+</#if>
+</td>
+<td>
+<#if drugAssessment.rasScores_category_III?? && drugAssessment.rasScores_category_III?size gt 0>
+<#list drugAssessment.rasScores_category_III as rasScore>
+	${rasScore.displayStructure}<#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if><#if !rasScore?is_last>,</#if></#list>
+<#else>
+	- 
+</#if>
+</td>
+<td>${drugAssessment.drugScoreDisplay}</td>
+<td class="resistanceBlock resistanceColourCode_${drugAssessment.drugScore}"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 </tr>
 </#list>
 </#list>
 </table>
 <div id="resistanceAlgorithmNotes">
 <ol>
-<li>Polymorphisms are assigned to one of three categories according to the drug resistance evidence base. 
-Category I: either (a) <em>in vitro</em> resistance level &ge; 5 and found at baseline or treatment-emergent in clinical trials, or 
+<li>Polymorphisms are assigned to one of three categories according to the strength of evidence for drug resistance. 
+Category I polymorphisms have the strongest evidence: either (a) <em>in vitro</em> resistance level &ge; 5 and found at baseline or treatment-emergent <em>in vivo</em>, or 
 (b) both found at baseline and treatment-emergent. Category II: <em>in vitro</em> level &ge; 50 or found at baseline or treatment-emergent.
 Category III: <em>in vitro</em> level &ge; 5</li>
 <li>Resistance level to a given drug is assigned to one of four categories. 
@@ -166,7 +184,8 @@ No resistance analysis was performed for the sequence.
 <th>Genotype / Subtype</th>
 <th><em>In vitro</em> resistance level<br/>(EC50 log fold change)</th>
 
-<th>Clinical trials</th>
+<th>Clinical trials / study cohort</th>
+<th>Associated drug regimens</th>
 <th>Fount at baseline?</th>
 <th>Treatment-emergent?</th>
 <th>Reference</th>
@@ -196,9 +215,22 @@ ${(resistanceFinding.inVitroResult.ec50RangeString)}
 </#if>
 </td>
 <td <#if evenRow>id="resistanceFindingEven"</#if>>
-<#if resistanceFinding.inVivoResult?? && resistanceFinding.inVivoResult.clinicalTrial??>
+<#if resistanceFinding.inVivoResult??>
+<#if resistanceFinding.inVivoResult.clinicalTrial??>
 <#list resistanceFinding.inVivoResult.clinicalTrial as clinicalTrial>
-${clinicalTrial.displayName} [${clinicalTrial.regimen}]</br>
+<a target="_blank" href="https://clinicaltrials.gov/ct2/show/${clinicalTrial.nctId}">${clinicalTrial.displayName}</a><#if !clinicalTrial?is_last>;</#if>
+</#list>
+<#else>
+${resistanceFinding.inVivoResult.cohortDescription}
+</#if>
+<#else>
+-
+</#if>
+</td>
+<td <#if evenRow>id="resistanceFindingEven"</#if>>
+<#if resistanceFinding.inVivoResult??>
+<#list resistanceFinding.inVivoResult.regimen as regimen>
+${regimen.displayName}<#if !regimen?is_last>;</#if>
 </#list>
 <#else>
 -
@@ -290,7 +322,7 @@ ${publication.journal}
 </#if>
 (${publication.year})
 <br/>
-<a href="${publication.url}">${publication.url}</a> 
+<a target="_blank" href="${publication.url}">${publication.url}</a> 
 <#assign pubIdx=pubIdx+1>
 </p>
 </#list>

@@ -202,7 +202,7 @@ loadResistanceFindings("SOF", "sofosbuvir", "NS5B",
 		 "Pooled3": ["GS-US-337-1119", "GS-US-342-1138"], 
 		 "Pooled4": [], 
 		 "Pooled5": ["LONESTAR", "ELECTRON", "ION-1", "ION-2", "ION-3"], 
-		 "Pooled6": ["GS-US-248-0120", "GS-US-248-0121", "GS-US-196-0123", "GS-US-196-0124", "GS-US-196-0140", "GS-US-256-0148"], 
+		 "Pooled6": ["GS-US-248-0120", "GS-US-248-0121", "GS-US-196-0123", "GS-US-256-0124", "GS-US-196-0140", "GS-US-256-0148"], 
 		 "Pooled7": ["NEUTRINO", "FISSION", "POSITRON", "FUSION", "VALENCE", "PHOTON-1", "PHOTON-2", "P7977-2025", "LONESTAR", "ELECTRON", "ION-1", "ION-2", "ION-3"]});
 
 

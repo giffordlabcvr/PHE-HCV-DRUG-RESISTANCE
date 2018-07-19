@@ -32,6 +32,7 @@ table phdr_regimen
 
 table phdr_clinical_trial
   create field display_name VARCHAR
+  create field nct_id VARCHAR
   exit
 
 table phdr_in_vitro_result
