@@ -41,7 +41,7 @@
 		<okFromNullResultType/> 
 	</function>
 	<configDocument name="phdrSamThresholds">
-		<minDepth glueType="Integer">100</minDepth>
+		<minDepth glueType="Integer">10</minDepth>
 		<minMapQ glueType="Integer">5</minMapQ>
 		<minQScore glueType="Integer">5</minQScore>
 		<minReadProportionPct glueType="Double">15.0</minReadProportionPct>
