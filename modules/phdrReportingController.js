@@ -132,10 +132,9 @@ function getVariationWhereClause(genotypingResult) {
 	var genotypeAlmtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
 	var subtypeAlmtName = genotypingResult.subtypeCladeCategoryResult.finalClade;
 	if(genotypeAlmtName != null && subtypeAlmtName == null) {
-		// genotype known, subtype unknown, include RASs for any subtype of genotype.
+		// genotype known, subtype unknown, include RASs for genotype only.
 		variationWhereClause = variationWhereClause + 
-		" and (phdr_ras.phdr_resistance_finding.alignment.name ='"+genotypeAlmtName+"' or "+
-		"phdr_ras.phdr_resistance_finding.alignment.parent.name ='"+genotypeAlmtName+"')"
+		" and phdr_ras.phdr_resistance_finding.alignment.name ='"+genotypeAlmtName+"'"
 	}
 	if(genotypeAlmtName != null && subtypeAlmtName != null) {
 		// genotype known, subtype known, include RASs for specific subtype or genotype.
