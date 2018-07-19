@@ -61,6 +61,7 @@
 		<publication>
 			<id>${resistanceFinding.phdr_publication.id}</id>
 			<displayName>${resistanceFinding.phdr_publication.authors_short}, ${resistanceFinding.phdr_publication.year?c}</displayName>
+			<url>${resistanceFinding.phdr_publication.url}</url>
 		</publication>
     </resistanceFinding>
     </#list>

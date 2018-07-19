@@ -111,7 +111,7 @@ No
 <tr>
 </#if>
 <#if drugAssessment?index == 0>
-<td rowspan = "2">${categoryDrugScores.category}</td>
+<td rowspan = "${categoryDrugScores.drugAssessments?size}">${categoryDrugScores.category}</td>
 </#if>
 <td>${drugAssessment.drug.id}</td>
 <td>
@@ -262,7 +262,10 @@ No
 -
 </#if>
 </td>
-<td <#if evenRow>id="resistanceFindingEven"</#if>>${resistanceFinding.publication.displayName} [${resistanceFinding.publication.index}]</td>
+<td <#if evenRow>id="resistanceFindingEven"</#if>>
+<a target="_blank" href="${resistanceFinding.publication.url}">${resistanceFinding.publication.displayName}</a> [${resistanceFinding.publication.index}]
+
+</td>
 <#if evenRow>
 <#assign evenRow=false>
 <#else>
