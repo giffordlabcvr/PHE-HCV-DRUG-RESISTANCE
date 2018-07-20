@@ -3168,6 +3168,982 @@
         "gene": "NS5A"
     },
     {
+        "codon": "159",
+        "aminoAcid": "L",
+        "numMembers": 1511,
+        "pctMembers": 99.93386243386243,
+        "almtName": "AL_3",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "159",
+        "aminoAcid": "F",
+        "numMembers": 1,
+        "pctMembers": 0.06613756613756613,
+        "almtName": "AL_3",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "159",
+        "aminoAcid": "P",
+        "numMembers": 2,
+        "pctMembers": 0.02699419624780672,
+        "almtName": "AL_1",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "159",
+        "aminoAcid": "L",
+        "numMembers": 7042,
+        "pctMembers": 95.04656498852746,
+        "almtName": "AL_1",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "159",
+        "aminoAcid": "F",
+        "numMembers": 365,
+        "pctMembers": 4.926440815224726,
+        "almtName": "AL_1",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "159",
+        "aminoAcid": "P",
+        "numMembers": 2,
+        "pctMembers": 0.049431537320810674,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "159",
+        "aminoAcid": "L",
+        "numMembers": 4040,
+        "pctMembers": 99.85170538803757,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "159",
+        "aminoAcid": "F",
+        "numMembers": 4,
+        "pctMembers": 0.09886307464162135,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "159",
+        "aminoAcid": "L",
+        "numMembers": 1435,
+        "pctMembers": 99.93036211699165,
+        "almtName": "AL_3a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "159",
+        "aminoAcid": "F",
+        "numMembers": 1,
+        "pctMembers": 0.06963788300835655,
+        "almtName": "AL_3a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "159",
+        "aminoAcid": "L",
+        "numMembers": 2951,
+        "pctMembers": 89.10024154589372,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "159",
+        "aminoAcid": "F",
+        "numMembers": 361,
+        "pctMembers": 10.89975845410628,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "159",
+        "aminoAcid": "S",
+        "numMembers": 1,
+        "pctMembers": 0.056753688989784334,
+        "almtName": "AL_2",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "159",
+        "aminoAcid": "L",
+        "numMembers": 1761,
+        "pctMembers": 99.94324631101021,
+        "almtName": "AL_2",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "179",
+        "aminoAcid": "A",
+        "numMembers": 3,
+        "pctMembers": 0.2457002457002457,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "179",
+        "aminoAcid": "T",
+        "numMembers": 1210,
+        "pctMembers": 99.09909909909909,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "179",
+        "aminoAcid": "M",
+        "numMembers": 4,
+        "pctMembers": 0.3276003276003276,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "179",
+        "aminoAcid": "L",
+        "numMembers": 1,
+        "pctMembers": 0.0819000819000819,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "179",
+        "aminoAcid": "I",
+        "numMembers": 3,
+        "pctMembers": 0.2457002457002457,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "179",
+        "aminoAcid": "V",
+        "numMembers": 3314,
+        "pctMembers": 100,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "S",
+        "numMembers": 1333,
+        "pctMembers": 99.92503748125937,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "G",
+        "numMembers": 1,
+        "pctMembers": 0.07496251874062969,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "T",
+        "numMembers": 6,
+        "pctMembers": 0.13077593722755013,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "S",
+        "numMembers": 4578,
+        "pctMembers": 99.78204010462075,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "R",
+        "numMembers": 1,
+        "pctMembers": 0.021795989537925022,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "N",
+        "numMembers": 1,
+        "pctMembers": 0.021795989537925022,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "G",
+        "numMembers": 2,
+        "pctMembers": 0.043591979075850044,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "T",
+        "numMembers": 3,
+        "pctMembers": 0.062086092715231786,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "S",
+        "numMembers": 4826,
+        "pctMembers": 99.87582781456953,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "R",
+        "numMembers": 1,
+        "pctMembers": 0.020695364238410598,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "G",
+        "numMembers": 2,
+        "pctMembers": 0.041390728476821195,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "T",
+        "numMembers": 2,
+        "pctMembers": 0.07867820613690008,
+        "almtName": "AL_3",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "S",
+        "numMembers": 2537,
+        "pctMembers": 99.80330448465774,
+        "almtName": "AL_3",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "R",
+        "numMembers": 2,
+        "pctMembers": 0.07867820613690008,
+        "almtName": "AL_3",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "G",
+        "numMembers": 1,
+        "pctMembers": 0.03933910306845004,
+        "almtName": "AL_3",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "T",
+        "numMembers": 2,
+        "pctMembers": 0.34305317324185247,
+        "almtName": "AL_4",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "S",
+        "numMembers": 580,
+        "pctMembers": 99.48542024013722,
+        "almtName": "AL_4",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "R",
+        "numMembers": 1,
+        "pctMembers": 0.17152658662092624,
+        "almtName": "AL_4",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "S",
+        "numMembers": 341,
+        "pctMembers": 100,
+        "almtName": "AL_6a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "T",
+        "numMembers": 2,
+        "pctMembers": 0.0942507068803016,
+        "almtName": "AL_3a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "S",
+        "numMembers": 2118,
+        "pctMembers": 99.8114985862394,
+        "almtName": "AL_3a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "R",
+        "numMembers": 2,
+        "pctMembers": 0.0942507068803016,
+        "almtName": "AL_3a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "S",
+        "numMembers": 23,
+        "pctMembers": 100,
+        "almtName": "AL_4r",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "S",
+        "numMembers": 491,
+        "pctMembers": 100,
+        "almtName": "AL_2b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "S",
+        "numMembers": 13,
+        "pctMembers": 100,
+        "almtName": "AL_6l",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "S",
+        "numMembers": 2,
+        "pctMembers": 100,
+        "almtName": "AL_2d",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "S",
+        "numMembers": 13,
+        "pctMembers": 100,
+        "almtName": "AL_2j",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "T",
+        "numMembers": 2,
+        "pctMembers": 0.6825938566552902,
+        "almtName": "AL_4a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "282",
+        "aminoAcid": "S",
+        "numMembers": 291,
+        "pctMembers": 99.31740614334471,
+        "almtName": "AL_4a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "289",
+        "aminoAcid": "V",
+        "numMembers": 2,
+        "pctMembers": 0.15003750937734434,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "289",
+        "aminoAcid": "T",
+        "numMembers": 2,
+        "pctMembers": 0.15003750937734434,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "289",
+        "aminoAcid": "M",
+        "numMembers": 1326,
+        "pctMembers": 99.47486871717929,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "289",
+        "aminoAcid": "L",
+        "numMembers": 2,
+        "pctMembers": 0.15003750937734434,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "289",
+        "aminoAcid": "I",
+        "numMembers": 1,
+        "pctMembers": 0.07501875468867217,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "289",
+        "aminoAcid": "C",
+        "numMembers": 4834,
+        "pctMembers": 99.9586435070306,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "289",
+        "aminoAcid": "S",
+        "numMembers": 1,
+        "pctMembers": 0.0206782464846981,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "289",
+        "aminoAcid": "R",
+        "numMembers": 1,
+        "pctMembers": 0.0206782464846981,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "289",
+        "aminoAcid": "Y",
+        "numMembers": 2,
+        "pctMembers": 0.07855459544383346,
+        "almtName": "AL_3",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "289",
+        "aminoAcid": "L",
+        "numMembers": 2,
+        "pctMembers": 0.07855459544383346,
+        "almtName": "AL_3",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "289",
+        "aminoAcid": "F",
+        "numMembers": 2542,
+        "pctMembers": 99.84289080911233,
+        "almtName": "AL_3",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "479",
+        "aminoAcid": "P",
+        "numMembers": 194,
+        "pctMembers": 94.63414634146342,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "479",
+        "aminoAcid": "H",
+        "numMembers": 11,
+        "pctMembers": 5.365853658536586,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "293",
+        "aminoAcid": "T",
+        "numMembers": 1,
+        "pctMembers": 0.07496251874062969,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "293",
+        "aminoAcid": "N",
+        "numMembers": 1,
+        "pctMembers": 0.07496251874062969,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "293",
+        "aminoAcid": "I",
+        "numMembers": 1332,
+        "pctMembers": 99.85007496251875,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "434",
+        "aminoAcid": "T",
+        "numMembers": 2,
+        "pctMembers": 0.14958863126402394,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "434",
+        "aminoAcid": "S",
+        "numMembers": 2,
+        "pctMembers": 0.14958863126402394,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "434",
+        "aminoAcid": "M",
+        "numMembers": 1330,
+        "pctMembers": 99.47643979057591,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "434",
+        "aminoAcid": "L",
+        "numMembers": 2,
+        "pctMembers": 0.14958863126402394,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "434",
+        "aminoAcid": "I",
+        "numMembers": 1,
+        "pctMembers": 0.07479431563201197,
+        "almtName": "AL_2a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "320",
+        "aminoAcid": "R",
+        "numMembers": 1,
+        "pctMembers": 0.020703933747412008,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "320",
+        "aminoAcid": "P",
+        "numMembers": 2,
+        "pctMembers": 0.041407867494824016,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "320",
+        "aminoAcid": "L",
+        "numMembers": 4826,
+        "pctMembers": 99.91718426501035,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "320",
+        "aminoAcid": "F",
+        "numMembers": 1,
+        "pctMembers": 0.020703933747412008,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "320",
+        "aminoAcid": "S",
+        "numMembers": 1,
+        "pctMembers": 0.022007042253521125,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "320",
+        "aminoAcid": "L",
+        "numMembers": 4542,
+        "pctMembers": 99.95598591549296,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "320",
+        "aminoAcid": "F",
+        "numMembers": 1,
+        "pctMembers": 0.022007042253521125,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "316",
+        "aminoAcid": "C",
+        "numMembers": 3531,
+        "pctMembers": 73.12072892938497,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "316",
+        "aminoAcid": "Y",
+        "numMembers": 2,
+        "pctMembers": 0.04141644232760406,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "316",
+        "aminoAcid": "S",
+        "numMembers": 2,
+        "pctMembers": 0.04141644232760406,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "316",
+        "aminoAcid": "R",
+        "numMembers": 3,
+        "pctMembers": 0.062124663491406086,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "316",
+        "aminoAcid": "N",
+        "numMembers": 1266,
+        "pctMembers": 26.21660799337337,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "316",
+        "aminoAcid": "H",
+        "numMembers": 25,
+        "pctMembers": 0.5177055290950507,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "316",
+        "aminoAcid": "C",
+        "numMembers": 2351,
+        "pctMembers": 93.51630867143993,
+        "almtName": "AL_3",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "316",
+        "aminoAcid": "A",
+        "numMembers": 12,
+        "pctMembers": 0.477326968973747,
+        "almtName": "AL_3",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "316",
+        "aminoAcid": "S",
+        "numMembers": 142,
+        "pctMembers": 5.648369132856006,
+        "almtName": "AL_3",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "316",
+        "aminoAcid": "G",
+        "numMembers": 7,
+        "pctMembers": 0.27844073190135243,
+        "almtName": "AL_3",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "316",
+        "aminoAcid": "F",
+        "numMembers": 2,
+        "pctMembers": 0.07955449482895784,
+        "almtName": "AL_3",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "316",
+        "aminoAcid": "C",
+        "numMembers": 2050,
+        "pctMembers": 99.85387238188018,
+        "almtName": "AL_2",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "316",
+        "aminoAcid": "Y",
+        "numMembers": 1,
+        "pctMembers": 0.04870920603994155,
+        "almtName": "AL_2",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "316",
+        "aminoAcid": "W",
+        "numMembers": 1,
+        "pctMembers": 0.04870920603994155,
+        "almtName": "AL_2",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "316",
+        "aminoAcid": "H",
+        "numMembers": 1,
+        "pctMembers": 0.04870920603994155,
+        "almtName": "AL_2",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "A",
+        "numMembers": 1,
+        "pctMembers": 0.020712510356255178,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "V",
+        "numMembers": 4781,
+        "pctMembers": 99.02651201325601,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "I",
+        "numMembers": 46,
+        "pctMembers": 0.9527754763877382,
+        "almtName": "AL_1b",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "V",
+        "numMembers": 568,
+        "pctMembers": 97.42710120068611,
+        "almtName": "AL_4",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "I",
+        "numMembers": 14,
+        "pctMembers": 2.4013722126929675,
+        "almtName": "AL_4",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "F",
+        "numMembers": 1,
+        "pctMembers": 0.17152658662092624,
+        "almtName": "AL_4",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "V",
+        "numMembers": 2043,
+        "pctMembers": 99.51290793960058,
+        "almtName": "AL_2",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "L",
+        "numMembers": 5,
+        "pctMembers": 0.24354603019970775,
+        "almtName": "AL_2",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "I",
+        "numMembers": 4,
+        "pctMembers": 0.1948368241597662,
+        "almtName": "AL_2",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "F",
+        "numMembers": 1,
+        "pctMembers": 0.04870920603994155,
+        "almtName": "AL_2",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "Y",
+        "numMembers": 7,
+        "pctMembers": 0.27569909413154786,
+        "almtName": "AL_3",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "V",
+        "numMembers": 2528,
+        "pctMembers": 99.56675856636471,
+        "almtName": "AL_3",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "M",
+        "numMembers": 1,
+        "pctMembers": 0.03938558487593541,
+        "almtName": "AL_3",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "I",
+        "numMembers": 2,
+        "pctMembers": 0.07877116975187082,
+        "almtName": "AL_3",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "G",
+        "numMembers": 1,
+        "pctMembers": 0.03938558487593541,
+        "almtName": "AL_3",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "Y",
+        "numMembers": 7,
+        "pctMembers": 0.33034450212364325,
+        "almtName": "AL_3a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "V",
+        "numMembers": 2109,
+        "pctMembers": 99.52807928268051,
+        "almtName": "AL_3a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "I",
+        "numMembers": 2,
+        "pctMembers": 0.09438414346389806,
+        "almtName": "AL_3a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "G",
+        "numMembers": 1,
+        "pctMembers": 0.04719207173194903,
+        "almtName": "AL_3a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "A",
+        "numMembers": 2,
+        "pctMembers": 0.04406256884776383,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "V",
+        "numMembers": 4530,
+        "pctMembers": 99.80171844018507,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "S",
+        "numMembers": 1,
+        "pctMembers": 0.022031284423881914,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "I",
+        "numMembers": 5,
+        "pctMembers": 0.11015642211940956,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "F",
+        "numMembers": 1,
+        "pctMembers": 0.022031284423881914,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "V",
+        "numMembers": 10,
+        "pctMembers": 43.47826086956522,
+        "almtName": "AL_4r",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "321",
+        "aminoAcid": "I",
+        "numMembers": 13,
+        "pctMembers": 56.52173913043478,
+        "almtName": "AL_4r",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "237",
+        "aminoAcid": "A",
+        "numMembers": 2,
+        "pctMembers": 0.04406256884776383,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "237",
+        "aminoAcid": "K",
+        "numMembers": 1,
+        "pctMembers": 0.022031284423881914,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "237",
+        "aminoAcid": "G",
+        "numMembers": 10,
+        "pctMembers": 0.2203128442388191,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
+        "codon": "237",
+        "aminoAcid": "E",
+        "numMembers": 4526,
+        "pctMembers": 99.71359330248954,
+        "almtName": "AL_1a",
+        "gene": "NS5B"
+    },
+    {
         "codon": "99",
         "aminoAcid": "A",
         "numMembers": 3,
