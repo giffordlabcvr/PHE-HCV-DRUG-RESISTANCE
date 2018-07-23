@@ -174,21 +174,33 @@ No resistance analysis was performed for the sequence.
 <table id="resistanceFinding">
 <thead>
 <tr>
-<th>Virus protein</th>
-<th>Polymorphism</th>
 <#if phdrReport.sequenceDataFormat = "SAM/BAM">
-<th>Read proportion</th>
-<th>Read depth</th>
-</#if>
-<th>Resisted drug</th>
-<th>Genotype / Subtype</th>
-<th><em>In vitro</em> resistance level<br/>(EC50 log fold change)</th>
+<th style="width:7%">Virus protein</th>
+<th style="width:7%">Polymorphism</th>
+<th style="width:7%">Read proportion</th>
+<th style="width:7%">Read depth</th>
+<th style="width:7%">Resisted drug</th>
+<th style="width:7%">Genotype / Subtype</th>
+<th style="width:7%"><em>In vitro</em> resistance level<br/>(EC50 log fold change)</th>
 
-<th>Clinical trials / study cohort</th>
-<th>Associated drug regimens</th>
-<th>Fount at baseline?</th>
-<th>Treatment-emergent?</th>
-<th>Reference</th>
+<th style="width:17%">Clinical trials / study cohort</th>
+<th style="width:7%">Associated drug regimens</th>
+<th style="width:7%">Fount at baseline?</th>
+<th style="width:7%">Treatment-emergent?</th>
+<th style="width:13%">Reference</th>
+<#else>
+<th style="width:8%">Virus protein</th>
+<th style="width:8%">Polymorphism</th>
+<th style="width:8%">Resisted drug</th>
+<th style="width:8%">Genotype / Subtype</th>
+<th style="width:8%"><em>In vitro</em> resistance level<br/>(EC50 log fold change)</th>
+
+<th style="width:21%">Clinical trials / study cohort</th>
+<th style="width:8%">Associated drug regimens</th>
+<th style="width:8%">Fount at baseline?</th>
+<th style="width:8%">Treatment-emergent?</th>
+<th style="width:15%">Reference</th>
+</#if>
 </tr>
 </thead>
 <tbody>
@@ -206,7 +218,7 @@ No resistance analysis was performed for the sequence.
 <tr>
 </#if>
 <td <#if evenRow>id="resistanceFindingEven"</#if>>${resistanceFinding.drug}</td>
-<td <#if evenRow>id="resistanceFindingEven"</#if>>${resistanceFinding.clade.displayName}</td>
+<td <#if evenRow>id="resistanceFindingEven"</#if>>${resistanceFinding.clade.displayName?replace("HCV ", "")}</td>
 <td <#if evenRow>id="resistanceFindingEven"</#if>>
 <#if resistanceFinding.inVitroResult?? && resistanceFinding.inVitroResult.ec50RangeString??>
 ${(resistanceFinding.inVitroResult.ec50RangeString)}
