@@ -64,21 +64,50 @@ function reportFasta(fastaFilePath) {
 	var publicationIdToObj = {};
 	nextPubIndex = 1;
 	
+	var alignerModule;
+	glue.inMode("module/phdrFastaSequenceReporter", function() {
+		alignerModule = glue.command(["show", "property", "alignerModuleName"]).moduleShowPropertyResult.propertyValue;
+	});
+	
 	// apply variation scanning
 	_.each(_.values(resultMap), function(sequenceResult) {
 		var genotypingResult = sequenceResult.genotypingResult;
 		if(genotypingResult != null) {
 			if(genotypingResult.genotypeCladeCategoryResult.finalClade != null) {
-				var variationWhereClause = getVariationWhereClause(genotypingResult);
 				var targetRefName = genotypingResultToTargetRefName(genotypingResult);
+
+				// TODO -- these could all be done together.
+				var alignResult;
+				glue.inMode("module/"+alignerModule, function() {
+					alignResult = glue.command({align: {
+							referenceName: targetRefName,
+							sequence: [
+							    { 
+							    	queryId: sequenceResult.id, 
+							    	nucleotides: genotypingFastaMap[sequenceResult.id].sequence
+							    }
+							]
+						}
+					});
+					glue.log("FINE", "phdrReportingController.reportFasta, alignResult", alignResult);
+				});
+				var queryToTargetRefSegs = alignResult.compoundAlignerResult.sequence[0].alignedSegment;
+				
+				var variationWhereClause = getVariationWhereClause(genotypingResult);
 				sequenceResult.targetRefName = targetRefName;
+				var queryNucleotides = genotypingFastaMap[sequenceResult.id].sequence;
 				var scanResults;
 				glue.inMode("module/phdrFastaSequenceReporter", function() {
 					scanResults = glue.command({
-						"string" :{
+						"string-plus-alignment" :{
 							"variation":{
 								"scan":{
-									"fastaString":genotypingFastaMap[sequenceResult.id].sequence,
+									"fastaString":queryNucleotides,
+									"queryToTargetSegs": {
+										queryToTargetSegs: {
+											alignedSegment: queryToTargetRefSegs
+										}
+									},
 									"whereClause": variationWhereClause,
 									"targetRefName":targetRefName,
 									"acRefName":"REF_MASTER_NC_004102",
@@ -103,6 +132,8 @@ function reportFasta(fastaFilePath) {
 					addRasPublications(rasFinding, publicationIdToObj);
 				});
 				sequenceResult.drugScores = assessResistance(scanResults);
+				
+				sequenceResult.genomeVisualisation = genomeVisualisation(queryNucleotides, targetRefName, queryToTargetRefSegs);
 			}
 		}
 	});
@@ -126,6 +157,32 @@ function reportFasta(fastaFilePath) {
 	glue.log("FINE", "phdrReportingController.reportFasta phdrReport:", phdrReport);
 	return phdrReport;
 }
+
+function genomeVisualisation(queryNucleotides, targetRefName, queryToTargetRefSegs) {
+	//var features = ["precursor_polyprotein", "NS3", "NS5A", "NS5B"];
+	var features = ["p7"];
+	var featureVisualisations = [];
+	_.each(features, function(feature) {
+		var featureVisualisation;
+		glue.inMode("module/phdrVisualisationUtility", function() {
+			featureVisualisation = glue.command({
+				"visualise-feature": {
+					"referenceName":targetRefName,
+					"featureName":feature,
+					"queryNucleotides":queryNucleotides,
+					"queryToRefSegments": {
+						"queryToRefSegments" : {
+							"alignedSegment" : queryToTargetRefSegs
+						}
+					}
+				}
+			});
+		});
+		featureVisualisations.push(featureVisualisation);
+	});
+	return featureVisualisations;
+}
+
 
 function getVariationWhereClause(genotypingResult) {
 	var variationWhereClause = "phdr_ras != null";
