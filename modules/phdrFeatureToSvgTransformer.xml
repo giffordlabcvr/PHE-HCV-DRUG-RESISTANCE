@@ -1,0 +1,4 @@
+<freemarkerDocTransformer>
+	<templateFileName>phdrFeatureToSvgTransformer.ftlx</templateFileName>
+	<resourceFileName>phdrFeatureToSvgTransformer.css</resourceFileName>
+</freemarkerDocTransformer>

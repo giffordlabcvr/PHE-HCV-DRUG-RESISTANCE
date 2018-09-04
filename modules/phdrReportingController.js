@@ -110,10 +110,10 @@ function reportFasta(fastaFilePath) {
 									},
 									"whereClause": variationWhereClause,
 									"targetRefName":targetRefName,
-									"acRefName":"REF_MASTER_NC_004102",
+									"relRefName":"REF_MASTER_NC_004102",
+									"linkingAlmtName":"AL_UNCONSTRAINED",
 									"featureName":"precursor_polyprotein",
 									"descendentFeatures":"true",
-									"multiReference":"false",
 									"excludeAbsent":"true",
 									"excludeInsufficientCoverage":"true",
 									"showMatchesAsDocument":"true",
@@ -160,23 +160,20 @@ function reportFasta(fastaFilePath) {
 
 function genomeVisualisation(queryNucleotides, targetRefName, queryToTargetRefSegs) {
 	//var features = ["precursor_polyprotein", "NS3", "NS5A", "NS5B"];
-	var features = ["p7"];
+	var features = ["NS3"];
 	var featureVisualisations = [];
 	_.each(features, function(feature) {
 		var featureVisualisation;
 		glue.inMode("module/phdrVisualisationUtility", function() {
-			featureVisualisation = glue.command({
+			var glueCmd = {
 				"visualise-feature": {
 					"referenceName":targetRefName,
 					"featureName":feature,
 					"queryNucleotides":queryNucleotides,
-					"queryToRefSegments": {
-						"queryToRefSegments" : {
-							"alignedSegment" : queryToTargetRefSegs
-						}
-					}
+					"queryToRefSegments": queryToTargetRefSegs
 				}
-			});
+			};
+			featureVisualisation = glue.command(glueCmd);
 		});
 		featureVisualisations.push(featureVisualisation);
 	});
@@ -286,11 +283,12 @@ function reportBam(bamFilePath) {
 				   				              "--fileName", bamFilePath, 
 				   				              "--samRefSense", samRefSense, 
 				   				              "--samRefName", samRefResult.samReference.name,
-				   				              "--acRefName", "REF_MASTER_NC_004102",
+				   				              "--relRefName", "REF_MASTER_NC_004102",
 				   				              "--featureName", "precursor_polyprotein",
 				   				              "--descendentFeatures",
 				   				              "--autoAlign",
 				   				              "--targetRefName", targetRefName,
+				   				              "--linkingAlmtName", "AL_UNCONSTRAINED",
 				   				              "--whereClause", variationWhereClause,
 				   				              "--minQScore", phdrSamThresholds.minQScore,
 				   				              "--minMapQ", phdrSamThresholds.minMapQ,
