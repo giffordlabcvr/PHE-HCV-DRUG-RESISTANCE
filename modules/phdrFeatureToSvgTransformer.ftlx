@@ -4,23 +4,14 @@
 <#assign ntHeightPx = ntWidthPx>
 <#assign ntSpacingPx = ntWidthPx / 4>
 <#assign aaHeightPx = ntWidthPx * 1.5>
+<#assign linkingHeightPx = aaHeightPx / 4>
 <#assign ntIndexHeightPx = ntWidthPx * 2.5>
 <#assign rowSpacingPx = ntSpacingPx * 1.5>
 
 <#assign svgWidthPx = ( alignmentNtColumns * ntWidthPx ) + ( (alignmentNtColumns-1) * ntSpacingPx) >
 
-<#assign svgHeightPx = 
-	aaHeightPx + <#-- codon label -->
-	aaHeightPx + <#-- ref AA -->
-	ntHeightPx + <#-- ref NT content -->
-	rowSpacingPx +
-	ntIndexHeightPx + <#-- ref NT index -->
-	rowSpacingPx +
-	aaHeightPx + <#-- query AA -->
-	ntHeightPx + <#-- query NT content -->
-	rowSpacingPx +
-	ntIndexHeightPx <#-- query NT index -->
->
+<#assign detailAnnotationsList = []>
+
 
 <#list transformerInput.featureVisualisation.annotationRows as annotationRow>
 	<#switch annotationRow.annotationType>
@@ -45,9 +36,26 @@
 	  <#case "queryNtIndex">
 		<#assign queryNtIndexAnnotations = annotationRow.annotations>
 	    <#break>
+	  <#case "detail">
+		<#assign detailAnnotationsList = detailAnnotationsList + [ annotationRow.annotations ]>
+	    <#break>
 	  <#default>
 	</#switch>
 </#list>
+
+<#assign svgHeightPx = 
+	aaHeightPx + <#-- codon label -->
+	aaHeightPx + <#-- ref AA -->
+	ntHeightPx + <#-- ref NT content -->
+	rowSpacingPx +
+	ntIndexHeightPx + <#-- ref NT index -->
+	rowSpacingPx +
+	aaHeightPx + <#-- query AA -->
+	ntHeightPx + <#-- query NT content -->
+	rowSpacingPx +
+	ntIndexHeightPx + <#-- query NT index -->
+	( detailAnnotationsList?size * (rowSpacingPx + aaHeightPx) )> <#-- detail rows -->
+
 
 <svg width="${svgWidthPx?c}" height="${svgHeightPx?c}"
      xmlns="http://www.w3.org/2000/svg">
@@ -176,5 +184,42 @@
 		  	x="${queryNtIndexXPx?c}" y="${queryNtIndexYPx?c}" dy=".35em" transform='rotate(90 ${queryNtIndexXPx?c} ${queryNtIndexYPx?c})'>${annotation.ntIndex?c}</text> 
   </#list>
 
+  <#assign y = y + ntIndexHeightPx>
+
+  <#list detailAnnotationsList as detailAnnotations>
+	  <#assign y = y + rowSpacingPx>
+
+	  <#list detailAnnotations as annotation>
+	      <#if (annotation.segments?size > 1)>
+	          <#assign linkingRectWidthNts = ( annotation.maxRefEnd - annotation.minRefStart ) + 1>
+	      	  <#assign linkingRectWidthPx = (linkingRectWidthNts * ntWidthPx ) + ( (linkingRectWidthNts-1) * ntSpacingPx) >
+			  <#assign linkingRectXPx = ( (annotation.minRefStart - 1) * (ntWidthPx + ntSpacingPx))>
+			  <#assign linkingRectHeightPx = linkingHeightPx>
+			  <#assign linkingRectYPx = y + ( (aaHeightPx - linkingHeightPx) / 2)>
+			  
+			  <#assign linkingRectClass = "resistanceBackground">
+
+  			  <rect class="${linkingRectClass}" 
+			  	x="${linkingRectXPx?c}" y="${linkingRectYPx?c}" width="${linkingRectWidthPx?c}" height="${linkingRectHeightPx?c}"></rect>
+	      </#if>
+	  
+	      <#list annotation.segments as segment>
+	      
+	          <#assign segmentRectWidthNts = ( segment.displayNtEnd - segment.displayNtStart ) + 1>
+	      	  <#assign segmentRectWidthPx = (segmentRectWidthNts * ntWidthPx ) + ( (segmentRectWidthNts-1) * ntSpacingPx) >
+			  <#assign segmentRectXPx = ( (segment.displayNtStart - 1) * (ntWidthPx + ntSpacingPx))>
+			  <#assign segmentRectHeightPx = aaHeightPx>
+			  <#assign segmentRectYPx = y>
+			  
+			  <#assign segmentRectClass = "resistanceBackground">
+
+  			  <rect class="${segmentRectClass}" 
+			  	x="${segmentRectXPx?c}" y="${segmentRectYPx?c}" width="${segmentRectWidthPx?c}" height="${segmentRectHeightPx?c}"></rect>
+	      
+	      </#list>
+	  </#list>
+
+  	  <#assign y = y + aaHeightPx>
+  </#list>
 
 </svg>
