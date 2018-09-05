@@ -110,7 +110,12 @@
 	  <#assign refNtIndexYPx = y >
 	  <#assign refNtIndexXPx = ( ((annotation.displayNtPos - 1)) * (ntWidthPx + ntSpacingPx) ) + (ntWidthPx / 2) >
 	  
-	  <text class="referenceNtIndex" 
+	  <#assign indexClass = "referenceNtIndexRegular">
+	  <#if annotation.endOfSegment>
+		  <#assign indexClass = "referenceNtIndexSegmentEnd">
+	  </#if>
+
+	  <text class="${indexClass}" 
 		  	x="${refNtIndexXPx?c}" y="${refNtIndexYPx?c}" dy=".35em" transform='rotate(90 ${refNtIndexXPx?c} ${refNtIndexYPx?c})'>${annotation.ntIndex?c}</text> 
   </#list>
 
@@ -180,7 +185,12 @@
 	  <#assign queryNtIndexYPx = y>
 	  <#assign queryNtIndexXPx = ( ((annotation.displayNtPos - 1)) * (ntWidthPx + ntSpacingPx) ) + (ntWidthPx / 2) >
 	  
-	  <text class="queryNtIndex" 
+	  <#assign indexClass = "queryNtIndexRegular">
+	  <#if annotation.endOfSegment>
+		  <#assign indexClass = "queryNtIndexSegmentEnd">
+	  </#if>
+	  
+	  <text class="${indexClass}" 
 		  	x="${queryNtIndexXPx?c}" y="${queryNtIndexYPx?c}" dy=".35em" transform='rotate(90 ${queryNtIndexXPx?c} ${queryNtIndexYPx?c})'>${annotation.ntIndex?c}</text> 
   </#list>
 

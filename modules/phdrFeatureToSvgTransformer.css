@@ -24,7 +24,14 @@ svg {
 	font-size: 90%;
 }
 
-.referenceNtIndex {
+.referenceNtIndexSegmentEnd {
+	text-anchor: left;
+	fill: #88aacc;
+	font-size: 90%;
+	font-weight: bold;
+}
+
+.referenceNtIndexRegular {
 	text-anchor: left;
 	fill: #88aacc;
 	font-size: 90%;
@@ -68,7 +75,14 @@ svg {
 	fill: #aaaaaa;
 }
 
-.queryNtIndex {
+.queryNtIndexSegmentEnd {
+	text-anchor: left;
+	fill: #99bb77;
+	font-size: 90%;
+	font-weight: bold;
+}
+
+.queryNtIndexRegular {
 	text-anchor: left;
 	fill: #99bb77;
 	font-size: 90%;
