@@ -22,13 +22,13 @@ function reportBamAsHtml(bamFilePath, htmlFilePath) {
 	});
 }
 
-function reportFastaWeb(base64) {
+function reportFastaWeb(base64, filePath) {
 	glue.log("FINE", "phdrReportingController.reportFastaWeb invoked");
 	var fastaDocument;
 	glue.inMode("module/phdrFastaUtility", function() {
 		fastaDocument = glue.command(["base64-to-nucleotide-fasta", base64]);
 	});
-	return reportFastaDocument(fastaDocument);
+	return reportFastaDocument(fastaDocument, filePath);
 }
 
 function reportFasta(fastaFilePath) {
@@ -38,10 +38,10 @@ function reportFasta(fastaFilePath) {
 	glue.inMode("module/phdrFastaUtility", function() {
 		fastaDocument = glue.command(["load-nucleotide-fasta", fastaFilePath]);
 	});
-	return reportFastaDocument(fastaDocument);
+	return reportFastaDocument(fastaDocument, fastaFilePath);
 }
 
-function reportFastaDocument(fastaDocument) {
+function reportFastaDocument(fastaDocument, fastaFilePath) {
 	glue.log("FINE", "phdrReportingController.reportFastaDocument fastaDocument:", fastaDocument);
 	var numSequencesInFile = 0;
 	var fastaMap = {};
@@ -145,7 +145,7 @@ function reportFastaDocument(fastaDocument) {
 				});
 				sequenceResult.drugScores = assessResistance(scanResults);
 				
-				sequenceResult.genomeVisualisation = genomeVisualisation(queryNucleotides, targetRefName, queryToTargetRefSegs);
+				sequenceResult.visualisationdHints = visualisationHints(queryNucleotides, targetRefName, genotypingResult, queryToTargetRefSegs);
 			}
 		}
 	});
@@ -170,26 +170,47 @@ function reportFastaDocument(fastaDocument) {
 	return phdrReport;
 }
 
-function genomeVisualisation(queryNucleotides, targetRefName, queryToTargetRefSegs) {
-	//var features = ["precursor_polyprotein", "NS3", "NS5A", "NS5B"];
-	var features = ["NS3"];
-	var featureVisualisations = [];
-	_.each(features, function(feature) {
-		var featureVisualisation;
-		glue.inMode("module/phdrVisualisationUtility", function() {
-			var glueCmd = {
-				"visualise-feature": {
-					"referenceName":targetRefName,
-					"featureName":feature,
-					"queryNucleotides":queryNucleotides,
-					"queryToRefSegments": queryToTargetRefSegs
-				}
-			};
-			featureVisualisation = glue.command(glueCmd);
+function visualisationHints(queryNucleotides, targetRefName, genotypingResult, queryToTargetRefSegs) {
+	// consider the target ref, subtype ref, genotype ref and master ref as comparison refs.
+	var comparisonReferenceNames = ["REF_MASTER_NC_004102"];
+	var genotypeAlmtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
+	if(genotypeAlmtName != null) {
+		glue.inMode("alignment/"+genotypeAlmtName, function() {
+			comparisonReferenceNames.push(glue.command(["show", "reference"]).showReferenceResult.referenceName);
 		});
-		featureVisualisations.push(featureVisualisation);
+	}
+	var subtypeAlmtName = genotypingResult.subtypeCladeCategoryResult.finalClade;
+	if(subtypeAlmtName != null) {
+		glue.inMode("alignment/"+subtypeAlmtName, function() {
+			comparisonReferenceNames.push(glue.command(["show", "reference"]).showReferenceResult.referenceName);
+		});
+	}
+	comparisonReferenceNames.push(targetRefName);
+	var seqs = [];
+	var comparisonRefs = [];
+	
+	// eliminate duplicates and enhance with display names.
+	_.each(comparisonReferenceNames, function(refName) {
+		glue.inMode("reference/"+refName, function() {
+			var seqID = glue.command(["show", "sequence"]).showSequenceResult["sequence.sequenceID"];
+			if(seqs.indexOf(seqID) < 0) {
+				seqs.push(seqID);
+				comparisonRefs.push({
+					"refName": refName,
+					"refDisplayName": glue.command(["show", "property", "displayName"]).propertyValueResult.value
+				});
+			}
+		});
 	});
-	return featureVisualisations;
+	
+	return {
+		"features": ["precursor_polyprotein", "Core", "E1", "E2", "p7", "NS2", "NS3", "NS4A", "NS4B", "NS5A", "NS5B"],
+		"comparisonRefs": comparisonRefs,
+		"visualisationUtilityModule": "phdrVisualisationUtility",
+		"targetReferenceName":targetRefName,
+		"queryNucleotides":queryNucleotides,
+		"queryToTargetRefSegments": queryToTargetRefSegs
+	};
 }
 
 
