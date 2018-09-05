@@ -460,9 +460,9 @@ function assessResistanceForDrug(scanResults, drug) {
 	});
 	
 	// drug score: 4 levels:
-	// resistant:				Any category I RAS or multiple category II RASs.
-	// probably_resistant:		Any category II RAS or multiple category III RAS.
-	// possibly_resistant:		Any category III RAS.
+	// strong_resistance:		Any category I RAS or multiple category II RASs.
+	// moderate_resistance:		Any category II RAS or multiple category III RAS.
+	// weak_resistance:			Any category III RAS.
 	// susceptible:				None of the above.
 	
 	var numCategoryI = rasScores_category_I.length;
@@ -472,14 +472,14 @@ function assessResistanceForDrug(scanResults, drug) {
 	var drugScore;
 	var drugScoreDisplay;
 	if(numCategoryI > 0 || numCategoryII > 1) {
-		drugScore = 'resistant';
-		drugScoreDisplay = 'Resistant';
+		drugScore = 'strong_resistance';
+		drugScoreDisplay = 'Strong resistance';
 	} else if(numCategoryII > 0 || numCategoryIII > 1) {
-		drugScore = 'probably_resistant';
-		drugScoreDisplay = 'Probably resistant';
+		drugScore = 'moderate_resistance';
+		drugScoreDisplay = 'Moderate resistance';
 	} else if(numCategoryIII > 0) {
-		drugScore = 'possibly_resistant';
-		drugScoreDisplay = 'Possibly resistant';
+		drugScore = 'weak_resistance';
+		drugScoreDisplay = 'Weak resistance';
 	} else {
 		drugScore = 'susceptible';
 		drugScoreDisplay = 'Susceptible';

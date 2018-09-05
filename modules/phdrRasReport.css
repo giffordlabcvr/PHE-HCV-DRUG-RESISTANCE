@@ -82,15 +82,15 @@ td, th {
 	background-color: #56d369;
 }
 
-.resistanceColourCode_possibly_resistant {
+.resistanceColourCode_weak_resistance {
 	background-color: #fcf95a;
 }
 
-.resistanceColourCode_probably_resistant {
+.resistanceColourCode_moderate_resistance {
 	background-color: #ffb349;
 }
 
-.resistanceColourCode_resistant {
+.resistanceColourCode_strong_resistance {
 	background-color: #ff0202;
 }
 
@@ -126,7 +126,7 @@ td, th {
 
 #titleAndOverview {
 	float: left;
-	width: 55%;
+	width: 50%;
 	padding-bottom: 100%;
     margin-bottom: -100%;
 }
@@ -142,7 +142,7 @@ td, th {
 
 #logos {
 	float: left;
-	width: 45%;
+	width: 50%;
 	text-align: right;
 	padding-bottom: 100%;
     margin-bottom: -100%;
@@ -150,24 +150,17 @@ td, th {
 
 #cvrLogo {
 	display: inline-block;
-	height:125px;	
+	height:115px;	
 }
 
 #pheLogo {
 	display: inline-block;	
-	height:125px;
+	height:115px;
 }
 
-#block2 {
-	width: 100%;
-	overflow: hidden;
-}
 
 #phylo {
-	float: left;
 	width: 35%;
-	padding-bottom: 100%;
-    margin-bottom: -100%;
 }
 
 #phylogenetics {
@@ -179,10 +172,7 @@ td, th {
 }
 
 #antiviralResistance {
-	float: left;
-	width: 65%;
-	padding-bottom: 100%;
-    margin-bottom: -100%;
+	width: 100%;
 }
 
 #resistanceFinding {

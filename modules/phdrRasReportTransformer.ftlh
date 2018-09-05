@@ -9,8 +9,8 @@ ${getResourceAsString('phdrRasReport.css')?no_esc}
 
 <div id="block1">
 <div id="titleAndOverview">
-<h1>Hepatitis C virus sequence report</h1>
 <table id="overview">
+<h2>Hepatitis C virus sequence report</h2>
 <colgroup>
     <col class="tableHeader"/>
     <col/>
@@ -34,8 +34,6 @@ Deep sequencing (SAM/BAM)
 <img id="cvrLogo" alt="CVR logo" src="data:image/svg+xml;base64,${getResourceAsBase64('cvrLogo.svg')}" />
 </div>
 </div>
-
-<div id="block2">
 
 <div id="phylo">
 <h3>Phylogenetic classification</h3>
@@ -151,9 +149,9 @@ Category I polymorphisms have the strongest evidence: either (a) <em>in vitro</e
 (b) both found at baseline and treatment-emergent. Category II: <em>in vitro</em> level &ge; 50 or found at baseline or treatment-emergent.
 Category III: <em>in vitro</em> level &ge; 5</li>
 <li>Resistance level to a given drug is assigned to one of four categories. 
-Resistant: any category I polymorphism or multiple category II polymorphisms.
-Probably resistant: any category II polymorphism or multiple category III polymorphisms. 
-Possibly resistant: any category III polymorphisms. 
+Strong resistance: any category I polymorphism or multiple category II polymorphisms.
+Moderate resistance: any category II polymorphism or multiple category III polymorphisms. 
+Weak resistance: any category III polymorphisms. 
 Susceptible: none of the above.
 </li>
 </ol>
@@ -161,7 +159,6 @@ Susceptible: none of the above.
 <#else>
 No resistance analysis was performed for the sequence.
 </#if>
-</div>
 </div>
 
 <div class="pagebreak"> </div>
