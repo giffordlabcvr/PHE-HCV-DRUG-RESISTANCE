@@ -1,0 +1,30 @@
+<#include "/utils/glueDocUtils.ftlx">
+<phdrRasVariation>
+	<id>${id}</id>
+	<gene>${gene}</gene>
+	<#-- use this hash as a set -->
+	<#assign displayStructures = {}>
+	<#list phdr_display_ras as displayRas>
+	<#assign displayStructures = displayStructures + { displayRas.display_structure : "yes" }>
+	</#list>
+	<#list displayStructures?keys as displayStructure>
+    <displayStructure glueType="String[]">${displayStructure}</displayStructure>
+	</#list>
+	<#-- use this hash as a set -->
+	<#assign clades = {}>
+	<#-- use this hash as a set -->
+	<#assign drugs = {}>
+	<#list phdr_resistance_finding as resistanceFinding>
+		<#assign drugs = drugs + { resistanceFinding.phdr_drug.id : "yes" }>
+		<#assign clades = clades + { resistanceFinding.alignment.name : { "alignmentName": resistanceFinding.alignment.name, "alignmentDisplayName": resistanceFinding.alignment.displayName} }>
+    </#list>
+	<#list drugs?keys?sort as drug>
+    <drug glueType="String[]">${drug}</drug>
+	</#list>
+	<#list clades?values?sort_by("alignmentName") as clade>
+    <clade glueType="Object[]">
+    	<alignmentName>${clade.alignmentName}</alignmentName>
+    	<alignmentDisplayName>${clade.alignmentDisplayName}</alignmentDisplayName>
+    </clade>
+	</#list>
+</phdrRasVariation>

@@ -9,5 +9,7 @@ _.each(drugObjs, function(drugObj) {
 	glue.inMode("custom-table-row/phdr_drug/"+drugObj.id, function() {
 		glue.command(["set", "field", "abbreviation", drugObj.abbreviation]);
 		glue.command(["set", "field", "category", drugObj.category]);
+		glue.command(["set", "field", "producer", drugObj.producer]);
+		glue.command(["set", "field", "research_code", drugObj.researchCode]);
 	});
 });

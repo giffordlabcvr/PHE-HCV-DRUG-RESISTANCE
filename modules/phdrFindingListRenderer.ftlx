@@ -1,0 +1,47 @@
+<#include "/utils/glueDocUtils.ftlx">
+<phdrResistanceFinding>
+	<drug>${phdr_drug.id}</drug>
+	<rasId>${phdr_ras.id}</rasId>	
+	<rasGene>${phdr_ras.gene}</rasGene>	
+	<#list phdr_ras.phdr_display_ras as displayRas>
+	<#if displayRas.alignment.name = alignment.name>
+    <displayStructure>${displayRas.display_structure}</displayStructure>
+	</#if>
+	</#list>
+	<clade>
+		<alignmentName>${alignment.name}</alignmentName>
+		<displayName>${alignment.displayName}</displayName>
+	</clade>
+	<#if phdr_in_vitro_result??>
+	<inVitroResult>
+		<@elem tag="minEC50FoldChange" expr="context.ec50_min" type="Double" context=phdr_in_vitro_result/>
+		<@elem tag="maxEC50FoldChange" expr="context.ec50_max" type="Double" context=phdr_in_vitro_result/>
+	</inVitroResult>
+	</#if>
+	<#if phdr_in_vivo_result??>
+	<inVivoResult>
+		<@elem tag="foundAtBaseline" expr="context.baseline" type="Boolean" context=phdr_in_vivo_result/>
+		<@elem tag="treatmentEmergent" expr="context.treatment_emergent" type="Boolean" context=phdr_in_vivo_result/>
+		<#list phdr_in_vivo_result.phdr_result_trial as resultTrial>
+		<clinicalTrial glueType="Object[]">
+			<id>${resultTrial.phdr_clinical_trial.id}</id>
+			<displayName>${resultTrial.phdr_clinical_trial.display_name}</displayName>
+			<nctId>${resultTrial.phdr_clinical_trial.nct_id}</nctId>
+		</clinicalTrial>
+		</#list>
+		<@elem tag="cohortDescription" expr="context.cohort_description" context=phdr_in_vivo_result/>
+		<#list phdr_in_vivo_result.phdr_result_regimen as resultRegimen>
+		<regimen glueType="Object[]">
+			<id>${resultRegimen.phdr_regimen.id}</id>
+			<displayName>${resultRegimen.phdr_regimen.display_name}</displayName>
+		</regimen>
+		</#list>
+	</inVivoResult>
+	</#if>
+	<#assign pubId = phdr_publication.id>
+	<publication>
+		<id>${pubId}</id>
+		<displayName>${phdr_publication.authors_short}, ${phdr_publication.year?c}</displayName>
+		<url>${phdr_publication.url}</url>
+	</publication>
+</phdrResistanceFinding>

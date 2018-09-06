@@ -7,6 +7,10 @@ create module --fileName modules/phdrFastaSequenceReporter.xml
 create module --fileName modules/phdrFastaUtility.xml
 create module --fileName modules/phdrReportingController.xml --loadResources
 create module --fileName modules/phdrRasVariationRenderer.xml --loadResources
+create module --fileName modules/phdrRasRenderer.xml --loadResources
+create module --fileName modules/phdrDrugRenderer.xml --loadResources
+create module --fileName modules/phdrRasListRenderer.xml --loadResources
+create module --fileName modules/phdrFindingListRenderer.xml --loadResources
 create module --fileName modules/phdrPublicationRenderer.xml --loadResources
 create module --fileName modules/phdrRasReportTransformer.xml --loadResources
 create module --fileName modules/phdrVisualisationUtility.xml  

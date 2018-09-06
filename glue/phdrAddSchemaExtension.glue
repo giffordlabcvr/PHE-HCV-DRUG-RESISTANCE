@@ -13,12 +13,15 @@ create custom-table phdr_result_regimen
 table phdr_drug
   create field abbreviation VARCHAR
   create field category VARCHAR
+  create field producer VARCHAR
+  create field research_code VARCHAR
   exit
 
 table phdr_ras
   create field gene VARCHAR
   # example 30R+93H
   create field structure VARCHAR
+  create field sort_key VARCHAR
   exit
 
 table phdr_display_ras

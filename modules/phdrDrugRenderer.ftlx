@@ -1,0 +1,8 @@
+<#include "/utils/glueDocUtils.ftlx">
+<phdrDrug>
+	<id>${id}</id>
+	<category>${category}</category>
+	<abbreviation>${abbreviation}</abbreviation>
+	<researchCode>${research_code}</researchCode>
+	<producer>${producer}</producer>
+</phdrDrug>

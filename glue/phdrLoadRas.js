@@ -51,6 +51,39 @@ _.each(_.pairs(varObjs), function(pair) {
 	});
 });
 
+function generateSortKey(structure) {
+	var bits = structure.split("+");
+	var numericPart = "";
+	var alphaPart = "";
+	for(var i = 0; i < bits.length; i++) {
+		var bit = bits[i];
+		if(i > 0) {
+			numericPart += "_";
+			alphaPart += "_";
+		}
+		var number;
+		var alpha;
+		if(bit.indexOf("del") > 0) {
+			number = bit.replace("del", "");
+			alpha = "del";
+		} else {
+			number = bit.substring(0, bit.length - 1);
+			alpha = bit.substring(bit.length - 1, bit.length);
+		}
+		numericPart += pad(number, 5);
+		alphaPart += alpha;
+	}
+	return numericPart + "_" + alphaPart;
+}
+
+function pad(num, size) {
+    var s = num+"";
+    while (s.length < size) {
+    	s = "0" + s;
+    }
+    return s;
+}
+
 // create conjunct variations, custom RAS rows and associations
 _.each(rasObjs, function(rasObj) {
 	var rasId = rasObj.gene+":"+rasObj.structure;
@@ -59,6 +92,7 @@ _.each(rasObjs, function(rasObj) {
 	glue.inMode("custom-table-row/phdr_ras/"+rasId, function() {
 		glue.command(["set", "field", "gene", rasObj.gene]);
 		glue.command(["set", "field", "structure", rasObj.structure]);
+		glue.command(["set", "field", "sort_key", generateSortKey(rasObj.structure)]);
 	});
 	glue.inMode("reference/REF_MASTER_NC_004102/feature-location/"+rasObj.gene, function() {
 		if(rasObj.structure.indexOf("+") > 0) {
@@ -76,4 +110,6 @@ _.each(rasObjs, function(rasObj) {
 		});		
 	});
 });
+
+
 
