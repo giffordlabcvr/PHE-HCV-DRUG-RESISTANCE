@@ -172,53 +172,60 @@ No resistance analysis was performed for the sequence.
 <thead>
 <tr>
 <#if phdrReport.sequenceDataFormat = "SAM/BAM">
-<th style="width:7%">Virus protein</th>
+<th style="width:6%">Virus protein</th>
 <th style="width:7%">Polymorphism</th>
-<th style="width:7%">Read proportion</th>
-<th style="width:7%">Read depth</th>
+<th style="width:6%">Read proportion</th>
+<th style="width:6%">Read depth</th>
+<th style="width:8%">Genotype / Subtype</th>
 <th style="width:7%">Resisted drug</th>
-<th style="width:7%">Genotype / Subtype</th>
+<th style="width:6%">Resistance category</th>
 <th style="width:7%"><em>In vitro</em> resistance level<br/>(EC50 log fold change)</th>
 
-<th style="width:17%">Clinical trials / study cohort</th>
+<th style="width:15%">Clinical trials / study cohort</th>
 <th style="width:7%">Associated drug regimens</th>
 <th style="width:7%">Fount at baseline?</th>
 <th style="width:7%">Treatment-emergent?</th>
-<th style="width:13%">Reference</th>
+<th style="width:11%">Reference</th>
 <#else>
-<th style="width:8%">Virus protein</th>
+<th style="width:6%">Virus protein</th>
 <th style="width:8%">Polymorphism</th>
-<th style="width:8%">Resisted drug</th>
 <th style="width:8%">Genotype / Subtype</th>
-<th style="width:8%"><em>In vitro</em> resistance level<br/>(EC50 log fold change)</th>
+<th style="width:8%">Resisted drug</th>
+<th style="width:6%">Resistance category</th>
+<th style="width:8%">EC50 log fold change <em>in vitro</em></th>
 
-<th style="width:21%">Clinical trials / study cohort</th>
+<th style="width:19%">Clinical trials / study cohort</th>
 <th style="width:8%">Associated drug regimens</th>
 <th style="width:8%">Fount at baseline?</th>
 <th style="width:8%">Treatment-emergent?</th>
-<th style="width:15%">Reference</th>
+<th style="width:13%">Reference</th>
 </#if>
 </tr>
 </thead>
 <tbody>
 <#list result.rasScanResults as rasScanResult>
-<#list rasScanResult.rasDetails.resistanceFinding as resistanceFinding>
-<#if resistanceFinding?index == 0>
+<#list rasScanResult.rasDetails.alignmentRas as alignmentRas>
+<#list alignmentRas.alignmentRasDrug as alignmentRasDrug>
+<#list alignmentRasDrug.resistanceFinding as resistanceFinding>
+<#if resistanceFinding?index == 0 && alignmentRasDrug?index == 0>
 <tr class="firstRow">
-<td rowspan = "${rasScanResult.rasDetails.resistanceFinding?size}">${rasScanResult.rasDetails.gene}</td>
-<td rowspan = "${rasScanResult.rasDetails.resistanceFinding?size}">${rasScanResult.rasDetails.displayStructure}</td>
+<td rowspan = "${alignmentRas.numFindings}">${rasScanResult.rasDetails.gene}</td>
+<td rowspan = "${alignmentRas.numFindings}">${alignmentRas.displayStructure}</td>
 <#if phdrReport.sequenceDataFormat = "SAM/BAM">
-<td rowspan = "${rasScanResult.rasDetails.resistanceFinding?size}">${rasScanResult.pctPresent?string("##0.#")}%</td>
-<td rowspan = "${rasScanResult.rasDetails.resistanceFinding?size}">${(rasScanResult.readsPresent+rasScanResult.readsAbsent)?c}</td>
+<td rowspan = "${alignmentRas.numFindings}">${rasScanResult.pctPresent?string("##0.#")}%</td>
+<td rowspan = "${alignmentRas.numFindings}">${(rasScanResult.readsPresent+rasScanResult.readsAbsent)?c}</td>
 </#if>
+<td rowspan = "${alignmentRas.numFindings}">${alignmentRas.clade.displayName?replace("HCV ", "")}</td>
 <#else>
 <tr>
 </#if>
-<td <#if evenRow>id="resistanceFindingEven"</#if>>${resistanceFinding.drug}</td>
-<td <#if evenRow>id="resistanceFindingEven"</#if>>${resistanceFinding.clade.displayName?replace("HCV ", "")}</td>
+<#if resistanceFinding?index == 0>
+<td rowspan = "${alignmentRasDrug.numFindings}">${alignmentRasDrug.drug}</td>
+<td rowspan = "${alignmentRasDrug.numFindings}">${alignmentRasDrug.displayResistanceCategory}</td>
+</#if>
 <td <#if evenRow>id="resistanceFindingEven"</#if>>
-<#if resistanceFinding.inVitroResult?? && resistanceFinding.inVitroResult.ec50RangeString??>
-${(resistanceFinding.inVitroResult.ec50RangeString)}
+<#if resistanceFinding.inVitroResult?? && resistanceFinding.inVitroResult.rangeEC50FoldChange??>
+${(resistanceFinding.inVitroResult.rangeEC50FoldChange)}
 <#else>
 -
 </#if>
@@ -281,6 +288,8 @@ No
 <#assign evenRow=true>
 </#if>
 </tr>
+</#list>
+</#list>
 </#list>
 </#list>
 </tbody>

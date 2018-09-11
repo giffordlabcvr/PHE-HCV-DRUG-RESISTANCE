@@ -14,56 +14,61 @@
 		<value>${metatag.value}</value>
     </metatag>
     </#list>
-	<#list phdr_ras.phdr_display_ras as displayRas>
-    <displayRas glueType="Object[]">
-		<displayStructure>${displayRas.display_structure}</displayStructure>
-		<alignmentName>${displayRas.alignment.name}</alignmentName>
-		<alignmentDisplayName>${displayRas.alignment.displayName}</alignmentDisplayName>
-	</displayRas>
-	</#list>
-	<#list phdr_ras.phdr_resistance_finding as resistanceFinding>
-    <resistanceFinding glueType="Object[]">
-		<drug>${resistanceFinding.phdr_drug.id}</drug>
+	<#list phdr_ras.phdr_alignment_ras as alignmentRas>
+	<alignmentRas glueType="Object[]">
+		<displayStructure>${alignmentRas.display_structure}</displayStructure>
 		<clade>
-			<alignmentName>${resistanceFinding.alignment.name}</alignmentName>
-			<displayName>${resistanceFinding.alignment.displayName}</displayName>
+			<alignmentName>${alignmentRas.alignment.name}</alignmentName>
+			<displayName>${alignmentRas.alignment.displayName}</displayName>
 		</clade>
 		<parentClade>
-			<alignmentName>${resistanceFinding.alignment.parent.name}</alignmentName>
-			<displayName>${resistanceFinding.alignment.parent.displayName}</displayName>
+			<alignmentName>${alignmentRas.alignment.parent.name}</alignmentName>
+			<displayName>${alignmentRas.alignment.parent.displayName}</displayName>
 		</parentClade>
-		<#if resistanceFinding.phdr_in_vitro_result??>
-		<inVitroResult>
-			<@elem tag="minEC50FoldChange" expr="context.ec50_min" type="Double" context=resistanceFinding.phdr_in_vitro_result/>
-			<@elem tag="maxEC50FoldChange" expr="context.ec50_max" type="Double" context=resistanceFinding.phdr_in_vitro_result/>
-		</inVitroResult>
-		</#if>
-		<#if resistanceFinding.phdr_in_vivo_result??>
-		<inVivoResult>
-			<@elem tag="foundAtBaseline" expr="context.baseline" type="Boolean" context=resistanceFinding.phdr_in_vivo_result/>
-			<@elem tag="treatmentEmergent" expr="context.treatment_emergent" type="Boolean" context=resistanceFinding.phdr_in_vivo_result/>
-			<#list resistanceFinding.phdr_in_vivo_result.phdr_result_trial as resultTrial>
-			<clinicalTrial glueType="Object[]">
-				<id>${resultTrial.phdr_clinical_trial.id}</id>
-				<displayName>${resultTrial.phdr_clinical_trial.display_name}</displayName>
-				<nctId>${resultTrial.phdr_clinical_trial.nct_id}</nctId>
-			</clinicalTrial>
-			</#list>
-			<@elem tag="cohortDescription" expr="context.cohort_description" context=resistanceFinding.phdr_in_vivo_result/>
-			<#list resistanceFinding.phdr_in_vivo_result.phdr_result_regimen as resultRegimen>
-			<regimen glueType="Object[]">
-				<id>${resultRegimen.phdr_regimen.id}</id>
-				<displayName>${resultRegimen.phdr_regimen.display_name}</displayName>
-			</regimen>
-			</#list>
-		</inVivoResult>
-		</#if>
-		<publication>
-			<id>${resistanceFinding.phdr_publication.id}</id>
-			<displayName>${resistanceFinding.phdr_publication.authors_short}, ${resistanceFinding.phdr_publication.year?c}</displayName>
-			<url>${resistanceFinding.phdr_publication.url}</url>
-		</publication>
-    </resistanceFinding>
-    </#list>
-    
+		<#list alignmentRas.phdr_alignment_ras_drug as alignmentRasDrug>
+		<alignmentRasDrug glueType="Object[]">
+			<drug>${alignmentRasDrug.phdr_drug.id}</drug>
+			<resistanceCategory>${alignmentRasDrug.resistance_category}</resistanceCategory>
+			<displayResistanceCategory>${alignmentRasDrug.display_resistance_category}</displayResistanceCategory>
+			<#list alignmentRasDrug.phdr_resistance_finding as resistanceFinding>
+		    <resistanceFinding glueType="Object[]">
+				<#if resistanceFinding.phdr_in_vitro_result??>
+				<inVitroResult>
+					<@elem tag="minEC50FoldChange" expr="context.ec50_min" type="Double" context=resistanceFinding.phdr_in_vitro_result/>
+					<@elem tag="maxEC50FoldChange" expr="context.ec50_max" type="Double" context=resistanceFinding.phdr_in_vitro_result/>
+					<@elem tag="midpointEC50FoldChange" expr="context.ec50_midpoint" type="Double" context=resistanceFinding.phdr_in_vitro_result/>
+					<@elem tag="rangeEC50FoldChange" expr="context.ec50_range_string" type="String" context=resistanceFinding.phdr_in_vitro_result/>
+				</inVitroResult>
+				</#if>
+				<#if resistanceFinding.phdr_in_vivo_result??>
+				<inVivoResult>
+					<@elem tag="foundAtBaseline" expr="context.baseline" type="Boolean" context=resistanceFinding.phdr_in_vivo_result/>
+					<@elem tag="treatmentEmergent" expr="context.treatment_emergent" type="Boolean" context=resistanceFinding.phdr_in_vivo_result/>
+					<#list resistanceFinding.phdr_in_vivo_result.phdr_result_trial as resultTrial>
+					<clinicalTrial glueType="Object[]">
+						<id>${resultTrial.phdr_clinical_trial.id}</id>
+						<displayName>${resultTrial.phdr_clinical_trial.display_name}</displayName>
+						<nctId>${resultTrial.phdr_clinical_trial.nct_id}</nctId>
+					</clinicalTrial>
+					</#list>
+					<@elem tag="cohortDescription" expr="context.cohort_description" context=resistanceFinding.phdr_in_vivo_result/>
+					<#list resistanceFinding.phdr_in_vivo_result.phdr_result_regimen as resultRegimen>
+					<regimen glueType="Object[]">
+						<id>${resultRegimen.phdr_regimen.id}</id>
+						<displayName>${resultRegimen.phdr_regimen.display_name}</displayName>
+					</regimen>
+					</#list>
+				</inVivoResult>
+				</#if>
+				<publication>
+					<id>${resistanceFinding.phdr_publication.id}</id>
+					<displayName>${resistanceFinding.phdr_publication.authors_short}, ${resistanceFinding.phdr_publication.year?c}</displayName>
+					<url>${resistanceFinding.phdr_publication.url}</url>
+				</publication>
+		    </resistanceFinding>
+	    	</#list>
+	    </alignmentRasDrug>
+		</#list>
+	</alignmentRas>
+	</#list>
 </phdrRasVariation>

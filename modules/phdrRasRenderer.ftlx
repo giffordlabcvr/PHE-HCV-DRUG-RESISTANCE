@@ -6,8 +6,8 @@
 
 	<#-- use this hash as a set -->
 	<#assign displayStructures = {}>
-	<#list phdr_display_ras as displayRas>
-	<#assign displayStructures = displayStructures + { displayRas.display_structure : "yes" }>
+	<#list phdr_alignment_ras as alignmentRas>
+	<#assign displayStructures = displayStructures + { alignmentRas.display_structure : "yes" }>
 	</#list>
 	<#list displayStructures?keys as displayStructure>
     <displayStructure glueType="String[]">${displayStructure}</displayStructure>

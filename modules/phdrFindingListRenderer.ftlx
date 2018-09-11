@@ -3,9 +3,9 @@
 	<drug>${phdr_drug.id}</drug>
 	<rasId>${phdr_ras.id}</rasId>	
 	<rasGene>${phdr_ras.gene}</rasGene>	
-	<#list phdr_ras.phdr_display_ras as displayRas>
-	<#if displayRas.alignment.name = alignment.name>
-    <displayStructure>${displayRas.display_structure}</displayStructure>
+	<#list phdr_ras.phdr_alignment_ras as alignmentRas>
+	<#if alignmentRas.alignment.name = alignment.name>
+    <displayStructure>${alignmentRas.display_structure}</displayStructure>
 	</#if>
 	</#list>
 	<clade>

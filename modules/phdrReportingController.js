@@ -140,11 +140,13 @@ function reportFastaDocument(fastaDocument, fastaFilePath) {
 				_.each(scanResults, function(scanResult) {
 					var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
 							scanResult.featureName, scanResult.variationName);
+					glue.log("FINE", "phdrReportingController.reportFastaDocument rasFinding:", rasFinding);
 					scanResult.rasDetails = rasFinding.phdrRasVariation;
 					addRasPublications(rasFinding, publicationIdToObj);
+					
 				});
 				sequenceResult.drugScores = assessResistance(scanResults);
-				
+				glue.log("FINE", "phdrReportingController.reportFastaDocument sequenceResult.drugScores:", sequenceResult.drugScores);
 				sequenceResult.visualisationdHints = visualisationHints(queryNucleotides, targetRefName, genotypingResult, queryToTargetRefSegs);
 			}
 		}
@@ -221,31 +223,35 @@ function getVariationWhereClause(genotypingResult) {
 	if(genotypeAlmtName != null && subtypeAlmtName == null) {
 		// genotype known, subtype unknown, include RASs for genotype only.
 		variationWhereClause = variationWhereClause + 
-		" and phdr_ras.phdr_resistance_finding.alignment.name ='"+genotypeAlmtName+"'"
+		" and phdr_ras.phdr_alignment_ras.alignment.name ='"+genotypeAlmtName+"'"
 	}
 	if(genotypeAlmtName != null && subtypeAlmtName != null) {
 		// genotype known, subtype known, include RASs for specific subtype or genotype.
 		variationWhereClause = variationWhereClause + 
-		" and (phdr_ras.phdr_resistance_finding.alignment.name ='"+subtypeAlmtName+"' or "+
-		"phdr_ras.phdr_resistance_finding.alignment.name ='"+genotypeAlmtName+"')"
+		" and (phdr_ras.phdr_alignment_ras.alignment.name ='"+subtypeAlmtName+"' or "+
+		"phdr_ras.phdr_alignment_ras.alignment.name ='"+genotypeAlmtName+"')"
 	}
 	glue.log("FINEST", "variationWhereClause", variationWhereClause);
 	return variationWhereClause;
 }
 
 function addRasPublications(rasFinding, publicationIdToObj) {
-	_.each(rasFinding.phdrRasVariation.resistanceFinding, function(resistanceFinding) {
-		var publicationId = resistanceFinding.publication.id;
-		var publicationObj = publicationIdToObj[publicationId];
-		if(publicationObj == null) {
-			glue.inMode("/custom-table-row/phdr_publication/"+publicationId, function() {
-				publicationObj = glue.command(["render-object", "phdrPublicationRenderer"]).publication;
-				publicationObj.index = nextPubIndex;
-				nextPubIndex++;
-				publicationIdToObj[publicationId] = publicationObj;
-			});							
-		}
-		resistanceFinding.publication.index = publicationObj.index;
+	_.each(rasFinding.phdrRasVariation.alignmentRas, function(alignmentRas) {
+		_.each(alignmentRas.alignmentRasDrug, function(alignmentRasDrug) {
+			_.each(alignmentRasDrug.resistanceFinding, function(resistanceFinding) {
+				var publicationId = resistanceFinding.publication.id;
+				var publicationObj = publicationIdToObj[publicationId];
+				if(publicationObj == null) {
+					glue.inMode("/custom-table-row/phdr_publication/"+publicationId, function() {
+						publicationObj = glue.command(["render-object", "phdrPublicationRenderer"]).publication;
+						publicationObj.index = nextPubIndex;
+						nextPubIndex++;
+						publicationIdToObj[publicationId] = publicationObj;
+					});							
+				}
+				resistanceFinding.publication.index = publicationObj.index;
+			});
+		});
 	});
 }
 
@@ -333,11 +339,14 @@ function reportBam(bamFilePath) {
 			_.each(scanResults, function(scanResult) {
 				var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
 						scanResult.featureName, scanResult.variationName);
+				glue.log("FINE", "phdrReportingController.reportBam rasFinding:", rasFinding);
 				scanResult.rasDetails = rasFinding.phdrRasVariation;
 				addRasPublications(rasFinding, publicationIdToObj);
 				
 			});
 			samRefResult.drugScores = assessResistance(scanResults);
+			glue.log("FINE", "phdrReportingController.reportBam samRefResult.drugScores:", samRefResult.drugScores);
+
 		}
 	});
 	glue.log("FINE", "phdrReportingController.reportBam publicationIdToObj:", publicationIdToObj);
@@ -378,85 +387,31 @@ function assessResistanceForDrug(scanResults, drug) {
 	var rasScores_category_III = [];
 	
 	_.each(scanResults, function(scanResult) {
-		// individual RAS category.
-		var insignificantInVitro = false; // EC50 [0, 5) observed.
-		var lowInVitro = false; // EC50 [5, 50).
-		var highInVitro = false;// EC50 >= 50 observed.
-		var inVivoBaseline = false; // observed at baseline in clinical trial.
-		var inVivoTreatmentEmergent = false; // treatment emergent in clinical trial.
-
-		_.each(scanResult.rasDetails.resistanceFinding, function(finding) {
-			if(finding.drug != drug.id) {
-				return;
-			}
-			if(finding.inVitroResult != null) {
-				var ec50Value;
-				var minEC50 = finding.inVitroResult.minEC50FoldChange;
-				var maxEC50 = finding.inVitroResult.maxEC50FoldChange;
-				
-				if(minEC50 != null && maxEC50 != null) {
-					ec50Value = (minEC50 + maxEC50) / 2;
-				} else if(minEC50 == null && maxEC50 != null) {
-					ec50Value = maxEC50 / 2;
-				} else if(minEC50 != null && maxEC50 == null) {
-					ec50Value = minEC50;
+		_.each(scanResult.rasDetails.alignmentRas, function(alignmentRas) {
+			_.each(alignmentRas.alignmentRasDrug, function(alignmentRasDrug) {
+				if(alignmentRasDrug.drug == drug.id) {
+					if(alignmentRasDrug.resistanceCategory != "insignificant") {
+						var rasScoreDetails = {
+							gene: scanResult.rasDetails.gene,
+							structure: scanResult.rasDetails.structure,
+							displayStructure: alignmentRas.displayStructure,
+							category: alignmentRasDrug.resistanceCategory,
+							displayCategory: alignmentRasDrug.displayCategory
+						};
+						if(scanResult.pctPresent != null) {
+							rasScoreDetails.readsPctPresent = scanResult.pctPresent;
+						}
+						if(alignmentRasDrug.resistanceCategory == "category_I") {
+							rasScores_category_I.push(rasScoreDetails); 
+						} else if(alignmentRasDrug.resistanceCategory == "category_II") {
+							rasScores_category_II.push(rasScoreDetails); 
+						} else if(alignmentRasDrug.resistanceCategory == "category_III") {
+							rasScores_category_III.push(rasScoreDetails); 
+						}
+					}
 				}
-				
-				if(ec50Value < 5.0) {
-					insignificantInVitro = true;
-				} else if(ec50Value < 50.0) {
-					lowInVitro = true;
-				} else if(ec50Value >= 50.0) {
-					highInVitro = true;
-				} 
-			}
-			if(finding.inVivoResult != null) {
-				if(finding.inVivoResult.foundAtBaseline) {
-					inVivoBaseline = true;
-				}
-				if(finding.inVivoResult.treatmentEmergent) {
-					inVivoTreatmentEmergent = true;
-				}
-			}
+			});
 		});
-		var rasCategory = "insignificant";
-		var displayCategory = "-";
-		if((lowInVitro || highInVitro) && (inVivoBaseline || inVivoTreatmentEmergent)) {
-			rasCategory = "category_I";
-			displayCategory = "I";
-		} else if(inVivoBaseline && inVivoTreatmentEmergent) {
-			rasCategory = "category_I";
-			displayCategory = "I";
-		} else if(highInVitro || inVivoBaseline || inVivoTreatmentEmergent) {
-			rasCategory = "category_II";
-			displayCategory = "II";
-		} else if(lowInVitro) {
-			rasCategory = "category_III";
-			displayCategory = "III";
-		}
-
-		scanResult.rasDetails.category = rasCategory;
-		
-		if(rasCategory != "insignificant") {
-			var rasScoreDetails = {
-				gene: scanResult.rasDetails.gene,
-				structure: scanResult.rasDetails.structure,
-				displayStructure: scanResult.rasDetails.displayStructure,
-				category: rasCategory,
-				displayCategory: displayCategory
-			};
-			if(scanResult.pctPresent != null) {
-				rasScoreDetails.readsPctPresent = scanResult.pctPresent;
-			}
-			if(rasCategory == "category_I") {
-				rasScores_category_I.push(rasScoreDetails); 
-			} else if(rasCategory == "category_II") {
-				rasScores_category_II.push(rasScoreDetails); 
-			} else if(rasCategory == "category_III") {
-				rasScores_category_III.push(rasScoreDetails); 
-			}
-		}
-
 	});
 	
 	// drug score: 4 levels:
@@ -504,62 +459,43 @@ function getRasFinding(genotypingResult, referenceName, featureName, variationNa
 		rasFinding = glue.command(["render-object", "phdrRasVariationRenderer"]);
 		var genotypeAlmtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
 		var subtypeAlmtName = genotypingResult.subtypeCladeCategoryResult.finalClade;
-		if(subtypeAlmtName != null) {
-			var subtypeDisplayRas = _.find(rasFinding.phdrRasVariation.displayRas, function(displayRas) {
-				if(displayRas.alignmentName == subtypeAlmtName) {
+		if(subtypeAlmtName != null && genotypeAlmtName != null) {
+			rasFinding.phdrRasVariation.alignmentRas = _.filter(rasFinding.phdrRasVariation.alignmentRas, function(alignmentRas) {
+				if(alignmentRas.clade.alignmentName == subtypeAlmtName || alignmentRas.clade.alignmentName == genotypeAlmtName ) {
 					return true;
 				}
 			});
-			if(subtypeDisplayRas != null) {
-				rasFinding.phdrRasVariation.displayStructure = subtypeDisplayRas.displayStructure;
-			}
-		}
-		if(rasFinding.phdrRasVariation.displayStructure == null && genotypeAlmtName != null) {
-			var genotypeDisplayRas = _.find(rasFinding.phdrRasVariation.displayRas, function(displayRas) {
-				if(displayRas.alignmentName == genotypeAlmtName) {
+		} else if(genotypeAlmtName != null) {
+			rasFinding.phdrRasVariation.alignmentRas = _.filter(rasFinding.phdrRasVariation.alignmentRas, function(alignmentRas) {
+				if(alignmentRas.clade.alignmentName == genotypeAlmtName ) {
 					return true;
 				}
 			});
-			if(genotypeDisplayRas != null) {
-				rasFinding.phdrRasVariation.displayStructure = genotypeDisplayRas.displayStructure;
-			}
+		} else {
+			rasFinding.phdrRasVariation.alignmentRas = [];
 		}
-		rasFinding.phdrRasVariation.resistanceFinding = 
-			_.filter(rasFinding.phdrRasVariation.resistanceFinding, function(finding) {
-				if(genotypeAlmtName != null && subtypeAlmtName == null) {
-					return finding.clade.alignmentName == genotypeAlmtName ||
-					finding.parentClade.alignmentName == genotypeAlmtName;
-				}
-				if(genotypeAlmtName != null && subtypeAlmtName != null) {
-					return finding.clade.alignmentName == genotypeAlmtName ||
-						finding.clade.alignmentName == subtypeAlmtName;
-				}
-				return true;
-			});
-		rasFinding.phdrRasVariation.resistanceFinding.sort(function (f1, f2) {
-			var dComp = f1.drug.localeCompare(f2.drug);
-			if(dComp != 0) { return dComp; }
+		rasFinding.phdrRasVariation.alignmentRas.sort(function (f1, f2) {
 			return f1.clade.alignmentName.localeCompare(f2.clade.alignmentName);
 		});
-		_.each(rasFinding.phdrRasVariation.resistanceFinding, function(resistanceFinding) {
-			if(resistanceFinding.inVitroResult != null) {
-				var ec50Min = resistanceFinding.inVitroResult.minEC50FoldChange;
-				var ec50Max = resistanceFinding.inVitroResult.maxEC50FoldChange;
-				var ec50RangeString = null;
-				if(ec50Min != null && ec50Max != null) {
-					if(ec50Min == ec50Max) {
-						ec50RangeString = ec50Min.toString();
-					} else {
-						ec50RangeString = ec50Min.toString()+" - "+ec50Max.toString();
-					}
-				} else if(ec50Min != null && ec50Max == null) {
-					ec50RangeString = "> "+ec50Min.toString();
-				} else if(ec50Min == null && ec50Max != null) {
-					ec50RangeString = "< "+ec50Max.toString();
-				}
-				resistanceFinding.inVitroResult.ec50RangeString = ec50RangeString; 
-			}
+		_.each(rasFinding.phdrRasVariation.alignmentRas, function(alignmentRas) {
+			alignmentRas.alignmentRasDrug.sort(function (f1, f2) {
+				return f1.drug.localeCompare(f2.drug);
+			});
 		});
+
+		
+		var variationNumFindings = 0;
+		_.each(rasFinding.phdrRasVariation.alignmentRas, function(alignmentRas) {
+			var alignmentRasNumFindings = 0;
+			_.each(alignmentRas.alignmentRasDrug, function(alignmentRasDrug) {
+				alignmentRasDrug.numFindings = alignmentRasDrug.resistanceFinding.length;
+				alignmentRasNumFindings += alignmentRasDrug.numFindings;
+			});
+			alignmentRas.numFindings = alignmentRasNumFindings;
+			variationNumFindings += alignmentRas.numFindings;
+		});
+		rasFinding.phdrRasVariation.numFindings = variationNumFindings;
+		
 	});
 	return rasFinding;
 }

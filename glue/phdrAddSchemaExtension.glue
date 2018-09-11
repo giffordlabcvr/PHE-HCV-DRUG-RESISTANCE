@@ -1,5 +1,6 @@
 create custom-table phdr_ras
-create custom-table phdr_display_ras
+create custom-table phdr_alignment_ras
+create custom-table phdr_alignment_ras_drug
 create custom-table phdr_drug
 create custom-table phdr_resistance_finding
 create custom-table phdr_in_vitro_result
@@ -24,9 +25,17 @@ table phdr_ras
   create field sort_key VARCHAR
   exit
 
-table phdr_display_ras
+table phdr_alignment_ras
+  # display_structure captures how a phdr_ras is displayed relative to the wildtype AA residues
   # example Q30R+Y93H
   create field display_structure VARCHAR
+  exit
+
+table phdr_alignment_ras_drug
+  # values: insignificant, category_III, category_II, category_I 
+  create field resistance_category VARCHAR
+  # values: "-", "III", "II", "I" 
+  create field display_resistance_category VARCHAR
   exit
 
 table phdr_regimen
@@ -42,7 +51,7 @@ table phdr_in_vitro_result
   create field ec50_min DOUBLE
   create field ec50_max DOUBLE
   create field ec50_midpoint DOUBLE
-  
+  create field ec50_range_string VARCHAR
   exit
   
 table phdr_in_vivo_result
@@ -67,19 +76,21 @@ table phdr_publication
 # resistance variations will have a phdr_ras object associated
 create link variation phdr_ras -m ONE_TO_ONE
 
-# phdr_display_ras objects capture how a phdr_ras is displayed relative to the wildtype AA residues
-# so each phdr_display_ras is associated with a phdr_ras and an alignment object.
-create link phdr_ras phdr_display_ras -m ONE_TO_MANY
-create link phdr_display_ras alignment -m MANY_TO_ONE
+# phdr_alignment_ras objects capture information relating to how a particular polymorphism
+# relates to a subtype / genotype so each phdr_alignment_ras is associated with a 
+# phdr_ras and an alignment object.
+create link phdr_ras phdr_alignment_ras -m ONE_TO_MANY
+create link phdr_alignment_ras alignment -m MANY_TO_ONE
 
-# phdr_ras objects will have multiple phdr_resistance_finding objects associated, corresponding to each line of the spreadshet.
-create link phdr_ras phdr_resistance_finding -m ONE_TO_MANY
+create link phdr_alignment_ras phdr_alignment_ras_drug -m ONE_TO_MANY
 
-# phdr_resistance_finding objects are each associated to a genotype / subtype in the alignment tree
-create link phdr_resistance_finding alignment -m MANY_TO_ONE
+# phdr_alignment_ras_drug objects will have multiple phdr_resistance_finding objects associated, 
+# corresponding to each line of the spreadshet.
+create link phdr_alignment_ras_drug phdr_resistance_finding -m ONE_TO_MANY
 
-# phdr_resistance_finding objects are each associated to a drug
-create link phdr_resistance_finding phdr_drug -m MANY_TO_ONE
+
+# phdr_alignment_ras_drug objects are each associated to a drug
+create link phdr_alignment_ras_drug phdr_drug -m MANY_TO_ONE
 
 # phdr_resistance_finding objects are each associated to a publication
 create link phdr_resistance_finding phdr_publication -m MANY_TO_ONE
