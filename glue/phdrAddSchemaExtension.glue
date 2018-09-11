@@ -41,6 +41,8 @@ table phdr_clinical_trial
 table phdr_in_vitro_result
   create field ec50_min DOUBLE
   create field ec50_max DOUBLE
+  create field ec50_midpoint DOUBLE
+  
   exit
   
 table phdr_in_vivo_result

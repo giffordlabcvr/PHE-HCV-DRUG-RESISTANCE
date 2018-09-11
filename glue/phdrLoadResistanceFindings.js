@@ -35,10 +35,11 @@ function loadResistanceFindings(shortname, longname, gene, pooledMap) {
 		glue.command(["create", "custom-table-row", "phdr_resistance_finding", rfId]);
 		var structure = rfObj.substitution.trim();
 		var genotype = rfObj.virusGenotype.trim();
+		var rasId = gene+":"+structure;
 		var almtName = "AL_"+genotype;
 		glue.inMode("custom-table-row/phdr_resistance_finding/"+rfId, function() {
 			glue.command(["set", "link-target", "phdr_drug", "custom-table-row/phdr_drug/"+longname]);
-			glue.command(["set", "link-target", "phdr_ras", "custom-table-row/phdr_ras/"+gene+":"+structure]);
+			glue.command(["set", "link-target", "phdr_ras", "custom-table-row/phdr_ras/"+rasId]);
 			glue.command(["set", "link-target", "alignment", "alignment/"+almtName]);
 			var pub_id = rfObj.pubmed.trim();
 			glue.command(["set", "link-target", "phdr_publication", "custom-table-row/phdr_publication/"+pub_id]);
@@ -46,7 +47,7 @@ function loadResistanceFindings(shortname, longname, gene, pooledMap) {
 		var displayRasId = gene+":"+structure+":"+almtName;
 		glue.command(["create", "custom-table-row", "--allowExisting", "phdr_display_ras", displayRasId]);
 		glue.inMode("custom-table-row/phdr_display_ras/"+displayRasId, function() {
-			glue.command(["set", "link-target", "phdr_ras", "custom-table-row/phdr_ras/"+gene+":"+structure]);
+			glue.command(["set", "link-target", "phdr_ras", "custom-table-row/phdr_ras/"+rasId]);
 			glue.command(["set", "link-target", "alignment", "alignment/"+almtName]);
 			glue.command(["set", "field", "display_structure", computeDisplayStructure(gene, structure, almtName)]);
 		});		
@@ -87,6 +88,17 @@ function loadResistanceFindings(shortname, longname, gene, pooledMap) {
 				}
 				if(ec50Max != null) {
 					glue.command(["set", "field", "ec50_max", parseFloat(ec50Max)]);
+				}
+				var ec50Midpoint = null;
+				if(ec50Min != null && ec50Max != null) {
+					ec50Midpoint = (ec50Min + ec50Max) / 2;
+				} else if(ec50Min == null && ec50Max != null) {
+					ec50Midpoint = ec50Max / 2;
+				} else if(ec50Min != null && ec50Max == null) {
+					ec50Midpoint = ec50Min;
+				}
+				if(ec50Midpoint != null) {
+					glue.command(["set", "field", "ec50_midpoint", parseFloat(ec50Midpoint)]);
 				}
 			});
 		}
