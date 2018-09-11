@@ -70,7 +70,7 @@ create link variation phdr_ras -m ONE_TO_ONE
 # phdr_display_ras objects capture how a phdr_ras is displayed relative to the wildtype AA residues
 # so each phdr_display_ras is associated with a phdr_ras and an alignment object.
 create link phdr_ras phdr_display_ras -m ONE_TO_MANY
-create link phdr_display_ras alignment -m ONE_TO_ONE
+create link phdr_display_ras alignment -m MANY_TO_ONE
 
 # phdr_ras objects will have multiple phdr_resistance_finding objects associated, corresponding to each line of the spreadshet.
 create link phdr_ras phdr_resistance_finding -m ONE_TO_MANY
