@@ -1,0 +1,19 @@
+<#include "/utils/glueDocUtils.ftlx">
+<phdrAlignmentRasDrug>
+	<drug>${phdr_drug.id}</drug>
+	<rasId>${phdr_alignment_ras.phdr_ras.id}</rasId>	
+	<rasGene>${phdr_alignment_ras.phdr_ras.gene}</rasGene>	
+    <displayStructure>${phdr_alignment_ras.display_structure}</displayStructure>
+	<clade>
+		<alignmentName>${phdr_alignment_ras.alignment.name}</alignmentName>
+		<displayName>${phdr_alignment_ras.alignment.displayName}</displayName>
+	</clade>
+	<resistanceCategory>${resistance_category}</resistanceCategory>
+	<displayResistanceCategory>${display_resistance_category}</displayResistanceCategory>
+	<numericResistanceCategory>${numeric_resistance_category}</numericResistanceCategory>
+	<@elem tag="inVitroEvidence" expr="any_in_vitro_evidence" type="Boolean"/>
+	<@elem tag="inVitroMaxEc50Midpoint" expr="in_vitro_max_ec50_midpoint" type="Double"/>
+	<@elem tag="inVivoEvidence" expr="any_in_vivo_evidence" type="Boolean"/>
+	<@elem tag="inVivoBaseline" expr="in_vivo_baseline" type="Boolean"/>
+	<@elem tag="inVivoTreatmentEmergent" expr="in_vivo_treatment_emergent" type="Boolean"/>
+</phdrAlignmentRasDrug>

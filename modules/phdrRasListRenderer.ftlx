@@ -3,21 +3,21 @@
 	<id>${id}</id>
 	<gene>${gene}</gene>
 	<#-- use this hash as a set -->
+	<#assign clades = {}>
+	<#-- use this hash as a set -->
 	<#assign displayStructures = {}>
+	<#-- use this hash as a set -->
+	<#assign drugs = {}>
 	<#list phdr_alignment_ras as alignmentRas>
 	<#assign displayStructures = displayStructures + { alignmentRas.display_structure : "yes" }>
+	<#assign clades = clades + { alignmentRas.alignment.name : { "alignmentName": alignmentRas.alignment.name, "alignmentDisplayName": alignmentRas.alignment.displayName} }>
+	<#list alignmentRas.phdr_alignment_ras_drug as alignmentRasDrug>
+		<#assign drugs = drugs + { alignmentRasDrug.phdr_drug.id : "yes" }>
+    </#list>
 	</#list>
 	<#list displayStructures?keys as displayStructure>
     <displayStructure glueType="String[]">${displayStructure}</displayStructure>
 	</#list>
-	<#-- use this hash as a set -->
-	<#assign clades = {}>
-	<#-- use this hash as a set -->
-	<#assign drugs = {}>
-	<#list phdr_resistance_finding as resistanceFinding>
-		<#assign drugs = drugs + { resistanceFinding.phdr_drug.id : "yes" }>
-		<#assign clades = clades + { resistanceFinding.alignment.name : { "alignmentName": resistanceFinding.alignment.name, "alignmentDisplayName": resistanceFinding.alignment.displayName} }>
-    </#list>
 	<#list drugs?keys?sort as drug>
     <drug glueType="String[]">${drug}</drug>
 	</#list>

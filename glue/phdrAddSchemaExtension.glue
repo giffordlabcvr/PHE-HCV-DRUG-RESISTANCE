@@ -36,6 +36,13 @@ table phdr_alignment_ras_drug
   create field resistance_category VARCHAR
   # values: "-", "III", "II", "I" 
   create field display_resistance_category VARCHAR
+  # values: 4, 3, 2, 1 
+  create field numeric_resistance_category INTEGER
+  create field any_in_vitro_evidence BOOLEAN
+  create field in_vitro_max_ec50_midpoint DOUBLE
+  create field any_in_vivo_evidence BOOLEAN
+  create field in_vivo_baseline BOOLEAN
+  create field in_vivo_treatment_emergent BOOLEAN
   exit
 
 table phdr_regimen

@@ -16,13 +16,33 @@
 	<#assign publications = {}>
 	<#assign nextPubIndex = 1>
 
-	<#list phdr_resistance_finding as resistanceFinding>
+	<#list phdr_alignment_ras as alignmentRas>
+	<#list alignmentRas.phdr_alignment_ras_drug as alignmentRasDrug>
+	<#list alignmentRasDrug.phdr_resistance_finding as resistanceFinding>
     <resistanceFinding glueType="Object[]">
-		<drug>${resistanceFinding.phdr_drug.id}</drug>
-		<clade>
-			<alignmentName>${resistanceFinding.alignment.name}</alignmentName>
-			<displayName>${resistanceFinding.alignment.displayName}</displayName>
-		</clade>
+		<#if alignmentRasDrug?is_first && resistanceFinding?is_first>
+		<alignmentRas glueType="Object">
+			<clade>
+				<alignmentName>${alignmentRas.alignment.name}</alignmentName>
+				<displayName>${alignmentRas.alignment.displayName}</displayName>
+			</clade>
+		    <displayStructure>${alignmentRas.display_structure}</displayStructure>
+			<#assign alignmentRasNumFindings = 0>
+			<#list alignmentRas.phdr_alignment_ras_drug as ard2> 
+			<#assign alignmentRasNumFindings = alignmentRasNumFindings+ard2.phdr_resistance_finding?size>
+			</#list>
+		    <numFindings>${alignmentRasNumFindings}</numFindings>
+	    </alignmentRas>
+		</#if>
+		<#if resistanceFinding?is_first>
+		<alignmentRasDrug glueType="Object">
+			<drug>${alignmentRasDrug.phdr_drug.id}</drug>
+			<resistanceCategory>${alignmentRasDrug.resistance_category}</resistanceCategory>
+			<displayResistanceCategory>${alignmentRasDrug.display_resistance_category}</displayResistanceCategory>
+			<numericResistanceCategory>${alignmentRasDrug.numeric_resistance_category}</numericResistanceCategory>
+		    <numFindings>${alignmentRasDrug.phdr_resistance_finding?size}</numFindings>
+	    </alignmentRasDrug>
+		</#if>
 		<#if resistanceFinding.phdr_in_vitro_result??>
 		<inVitroResult>
 			<@elem tag="minEC50FoldChange" expr="context.ec50_min" type="Double" context=resistanceFinding.phdr_in_vitro_result/>
@@ -64,6 +84,8 @@
 			<url>${resistanceFinding.phdr_publication.url}</url>
 		</publication>
     </resistanceFinding>
+	</#list>
+	</#list>
 	</#list>
     <#list publications?values?sort_by("index") as publication>
 	<reference glueType="Object[]">

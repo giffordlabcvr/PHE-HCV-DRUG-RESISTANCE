@@ -57,8 +57,10 @@ function loadResistanceFindings(shortname, drugId, gene, pooledMap) {
 				insignificantInVitro: false, // EC50 [0, 5) observed.
 				lowInVitro: false, // EC50 [5, 50).
 				highInVitro: false,// EC50 >= 50 observed.
-				inVivoBaseline: false, // observed at baseline in clinical trial.
-				inVivoTreatmentEmergent: false, // treatment emergent in clinical trial.
+				highestEc50Midpoint: null, // highest EC50 midpoint of any finding.
+				anyInVivo: false,
+				inVivoBaseline: null, // observed at baseline in clinical trial.
+				inVivoTreatmentEmergent: null, // treatment emergent in clinical trial.
 			};
 			almtRasDrugIdToCategoryFactors[alignmentRasDrugId] = categoryFactors;
 			glue.command(["create", "custom-table-row", "phdr_alignment_ras_drug", alignmentRasDrugId]);
@@ -120,6 +122,9 @@ function loadResistanceFindings(shortname, drugId, gene, pooledMap) {
 				} else if(ec50Min != null && ec50Max == null) {
 					ec50Midpoint = ec50Min;
 				}
+				if(categoryFactors.highestEc50Midpoint == null || ec50Midpoint > categoryFactors.highestEc50Midpoint) {
+					categoryFactors.highestEc50Midpoint = ec50Midpoint;
+				}
 				if(ec50Midpoint != null) {
 					glue.command(["set", "field", "ec50_midpoint", parseFloat(ec50Midpoint)]);
 				}
@@ -148,6 +153,13 @@ function loadResistanceFindings(shortname, drugId, gene, pooledMap) {
 			});
 		}
 		if(vitroOrVivo == "invivo" || vitroOrVivo == "both") {
+			categoryFactors.anyInVivo = true;
+			if(categoryFactors.inVivoBaseline == null) {
+				categoryFactors.inVivoBaseline = false;
+			}
+			if(categoryFactors.inVivoTreatmentEmergent == null) {
+				categoryFactors.inVivoTreatmentEmergent = false;
+			}
 			glue.command(["create", "custom-table-row", "phdr_in_vivo_result", rfId]);
 			glue.inMode("custom-table-row/phdr_in_vivo_result/"+rfId, function() {
 				glue.command(["set", "link-target", "phdr_resistance_finding", "custom-table-row/phdr_resistance_finding/"+rfId]);
@@ -212,26 +224,41 @@ function loadResistanceFindings(shortname, drugId, gene, pooledMap) {
 
 		var resistanceCategory = "insignificant";
 		var displayCategory = "-";
+		var numericCategory = 4;
 		if((categoryFactors.lowInVitro || categoryFactors.highInVitro) && (categoryFactors.inVivoBaseline || categoryFactors.inVivoTreatmentEmergent)) {
 			resistanceCategory = "category_I";
 			displayCategory = "I";
+			numericCategory = 1;
 		} else if(categoryFactors.inVivoBaseline && categoryFactors.inVivoTreatmentEmergent) {
 			resistanceCategory = "category_I";
 			displayCategory = "I";
+			numericCategory = 1;
 		} else if(categoryFactors.highInVitro || categoryFactors.inVivoBaseline || categoryFactors.inVivoTreatmentEmergent) {
 			resistanceCategory = "category_II";
 			displayCategory = "II";
+			numericCategory = 2;
 		} else if(categoryFactors.lowInVitro) {
 			resistanceCategory = "category_III";
 			displayCategory = "III";
+			numericCategory = 3;
 		}
 		
 		glue.inMode("custom-table-row/phdr_alignment_ras_drug/"+almtRasDrugId, function() {
 			glue.command(["set", "field", "resistance_category", resistanceCategory]);
 			glue.command(["set", "field", "display_resistance_category", displayCategory]);
+			glue.command(["set", "field", "numeric_resistance_category", numericCategory]);
+			glue.command(["set", "field", "any_in_vitro_evidence", categoryFactors.highestEc50Midpoint != null]);
+			if(categoryFactors.highestEc50Midpoint != null) {
+				glue.command(["set", "field", "in_vitro_max_ec50_midpoint", categoryFactors.highestEc50Midpoint]); 
+			}
+			glue.command(["set", "field", "any_in_vivo_evidence", categoryFactors.anyInVivo]);
+			if(categoryFactors.inVivoBaseline != null) {
+				glue.command(["set", "field", "in_vivo_baseline", categoryFactors.inVivoBaseline]);
+			}
+			if(categoryFactors.inVivoTreatmentEmergent != null) {
+				glue.command(["set", "field", "in_vivo_treatment_emergent", categoryFactors.inVivoTreatmentEmergent]);
+			}
 		});
-
-	
 	});
 }
 
