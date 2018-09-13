@@ -28,13 +28,17 @@ function reportFastaWeb(base64, filePath) {
 	glue.inMode("module/phdrFastaUtility", function() {
 		fastaDocument = glue.command(["base64-to-nucleotide-fasta", base64]);
 	});
+	var numSequencesInFile = fastaDocument.nucleotideFasta.sequences.length;
+	if(numSequencesInFile == 0) {
+		throw new Error("No sequences found in FASTA file");
+	}
 	// split fasta document into one document per sequence, and run reportFastaDocument on each.
-	var results = _.map(fastaDocument.nucleotideFasta.sequences, function(sequence) {
+	var phdrReports = _.map(fastaDocument.nucleotideFasta.sequences, function(sequence) {
 		return reportFastaDocument({nucleotideFasta : { sequences: [sequence] } }, filePath);
 	});
 	return {
 		phdrWebReport:  { 
-			results: results
+			results: phdrReports
 		}
 	}
 	/*
@@ -428,6 +432,9 @@ function reportFastaWeb(base64, filePath) {
 			}] } };*/
 }
 
+/**
+ * Entry point for generating a report for a fasta file containing a single sequence.
+ */
 function reportFasta(fastaFilePath) {
 	glue.log("FINE", "phdrReportingController.reportFasta invoked, input file:"+fastaFilePath);
 	// Load fasta and put in a fastaMap
@@ -435,6 +442,13 @@ function reportFasta(fastaFilePath) {
 	glue.inMode("module/phdrFastaUtility", function() {
 		fastaDocument = glue.command(["load-nucleotide-fasta", fastaFilePath]);
 	});
+	var numSequencesInFile = fastaDocument.nucleotideFasta.sequences.length;
+	if(numSequencesInFile == 0) {
+		throw new Error("No sequences found in FASTA file");
+	}
+	if(numSequencesInFile > 1) {
+		throw new Error("Please use only one sequence per FASTA file");
+	}
 	return reportFastaDocument(fastaDocument, fastaFilePath);
 }
 
@@ -444,14 +458,7 @@ function reportFastaDocument(fastaDocument, fastaFilePath) {
 	var fastaMap = {};
 	_.each(fastaDocument.nucleotideFasta.sequences, function(sequenceObj) {
 		fastaMap[sequenceObj.id] = sequenceObj;
-		numSequencesInFile++;
 	});
-	if(numSequencesInFile == 0) {
-		throw new Error("No sequences found in FASTA file");
-	}
-	if(numSequencesInFile > 1) {
-		throw new Error("Please use only one sequence per FASTA file");
-	}
 	// initialise result map.
 	var resultMap = {};
 	var sequenceObjs = _.values(fastaMap);
@@ -463,10 +470,8 @@ function reportFastaDocument(fastaDocument, fastaFilePath) {
 
 	glue.log("FINE", "phdrReportingController.reportFastaDocument, result map after recogniser", resultMap);
 
-	
-	var genotypingFastaMap = filterFastaMapForGenotyping(fastaMap, resultMap);
 	// apply genotyping
-	genotypeFasta(genotypingFastaMap, resultMap);
+	genotypeFasta(fastaMap, resultMap);
 
 	glue.log("FINE", "phdrReportingController.reportFastaDocument, result map after genotyping", resultMap);
 
@@ -493,7 +498,7 @@ function reportFastaDocument(fastaDocument, fastaFilePath) {
 							sequence: [
 							    { 
 							    	queryId: sequenceResult.id, 
-							    	nucleotides: genotypingFastaMap[sequenceResult.id].sequence
+							    	nucleotides: fastaMap[sequenceResult.id].sequence
 							    }
 							]
 						}
@@ -504,7 +509,7 @@ function reportFastaDocument(fastaDocument, fastaFilePath) {
 				
 				var variationWhereClause = getVariationWhereClause(genotypingResult);
 				sequenceResult.targetRefName = targetRefName;
-				var queryNucleotides = genotypingFastaMap[sequenceResult.id].sequence;
+				var queryNucleotides = fastaMap[sequenceResult.id].sequence;
 				var scanResults;
 				glue.inMode("module/phdrFastaSequenceReporter", function() {
 					scanResults = glue.command({
@@ -695,9 +700,8 @@ function reportBam(bamFilePath) {
 	});
 	
 	recogniseFasta(consensusFastaMap, resultMap);
-	var genotypingFastaMap = filterFastaMapForGenotyping(consensusFastaMap, resultMap);
 	// apply genotyping
-	genotypeFasta(genotypingFastaMap, resultMap);
+	genotypeFasta(consensusFastaMap, resultMap);
 	
 	var publicationIdToObj = {};
 	nextPubIndex = 1;
@@ -903,26 +907,6 @@ function getRasFinding(genotypingResult, referenceName, featureName, variationNa
 }
 
 /*
- * construct genotypingFastaMap from fastaMap:
- * if HCV forward, copy from fastaMap
- * if HCV reverse, add reverse complement
- */
-function filterFastaMapForGenotyping(fastaMap, resultMap) {	
-	var genotypingFastaMap = {};
-	_.each(_.values(resultMap), function(resultObj) {
-		if(resultObj.isForwardHcv && !resultObj.isReverseHcv) {
-			genotypingFastaMap[resultObj.id] = fastaMap[resultObj.id];
-		} else if(resultObj.isReverseHcv && !resultObj.isForwardHcv) {
-			genotypingFastaMap[resultObj.id] = {
-					id: resultObj.id,
-					sequence:reverseComplement(fastaMap[resultObj.id].sequence)
-			}
-		}
-	});
-	return genotypingFastaMap;
-}
-
-/*
  * Given a genotypingResult with a non-null genotypeFinalClade, return the name of the "target" reference
  */
 function genotypingResultToTargetRefName(genotypingResult) {
@@ -944,11 +928,17 @@ function genotypingResultToTargetRefName(genotypingResult) {
 
 /*
  * This function takes a fastaMap of id -> { id, nucleotideFasta }, and a result map of id -> ? 
- * and runs max likelihood genotyping on each sequence.
+ * and runs max likelihood genotyping on the subset of sequences that have been identified as forward HCV.
  * The the genotyping result object is recorded in the result map for each sequence.
  */
 function genotypeFasta(fastaMap, resultMap) {
-	if(!_.isEmpty(fastaMap)) {
+	var genotypingFastaMap = {};
+	_.each(_.values(resultMap), function(resultObj) {
+		if(resultObj.isForwardHcv && !resultObj.isReverseHcv) {
+			genotypingFastaMap[resultObj.id] = fastaMap[resultObj.id];
+		} 
+	});
+	if(!_.isEmpty(genotypingFastaMap)) {
 		var genotypingResults;
 		glue.inMode("module/maxLikelihoodGenotyper", function() {
 			genotypingResults = glue.command({
@@ -957,7 +947,7 @@ function genotypeFasta(fastaMap, resultMap) {
 					{
 						"fastaCommandDocument": {
 							"nucleotideFasta" : {
-								"sequences": _.values(fastaMap)
+								"sequences": _.values(genotypingFastaMap)
 							}
 						}, 
 						"documentResult" : true
@@ -965,7 +955,7 @@ function genotypeFasta(fastaMap, resultMap) {
 				}
 			}).genotypingDocumentResult.queryGenotypingResults;
 		});
-		glue.log("FINE", "phdrReportingController.reportFasta genotypingResults:", genotypingResults);
+		glue.log("FINE", "phdrReportingController.genotypeFasta genotypingResults:", genotypingResults);
 		_.each(genotypingResults, function(genotypingResult) {
 			genotypingResult.genotypeCladeCategoryResult = _.find(genotypingResult.queryCladeCategoryResult, 
 					function(cladeCategoryResult) { return cladeCategoryResult.categoryName == "genotype"; });
@@ -985,8 +975,8 @@ function genotypeFasta(fastaMap, resultMap) {
 			}
 				
 				
-			glue.log("FINE", "phdrReportingController, genotypeCladeCategoryResult", genotypingResult.genotypeCladeCategoryResult);
-			glue.log("FINE", "phdrReportingController, subtypeCladeCategoryResult", genotypingResult.subtypeCladeCategoryResult);
+			glue.log("FINE", "phdrReportingController.genotypeFasta genotypeCladeCategoryResult", genotypingResult.genotypeCladeCategoryResult);
+			glue.log("FINE", "phdrReportingController.genotypeFasta subtypeCladeCategoryResult", genotypingResult.subtypeCladeCategoryResult);
 			
 			
 			resultMap[genotypingResult.queryName].genotypingResult = genotypingResult;
