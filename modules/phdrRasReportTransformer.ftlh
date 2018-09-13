@@ -45,20 +45,21 @@ Deep sequencing (SAM/BAM)
 <tr>
 <td><b>Identified as hepatitis C?</b></td>
 <td>
-<#assign isHcv=true>
+<#assign isForwardHcv=true>
 <#if result.isForwardHcv>
 Yes
 <#elseif result.isReverseHcv>
-Yes (reverse complement).
+<#assign isForwardHcv=false>
+Yes (reverse complement)
 <#else>
-<#assign isHcv=false>
+<#assign isForwardHcv=false>
 No
 </#if>
 </td>
 <tr>
 
 <td><b>Genotype</b></td>
-<#if isHcv>
+<#if isForwardHcv>
 <td>${result.genotypingResult.genotypeCladeCategoryResult.shortRenderedName}</td>
 <#else>
 <td>N/A</td>
@@ -67,7 +68,7 @@ No
 <tr>
 
 <td><b>Subtype</b></td>
-<#if isHcv>
+<#if isForwardHcv>
 <td>${result.genotypingResult.subtypeCladeCategoryResult.shortRenderedName}</td>
 <#else>
 <td>N/A</td>
@@ -76,7 +77,7 @@ No
 
 <tr>
 <td><b>Closest reference sequence</b></td>
-<#if isHcv>
+<#if isForwardHcv>
 <td>${result.genotypingResult.genotypeCladeCategoryResult.closestMemberSequenceID}</td>
 <#else>
 <td>N/A</td>
@@ -86,7 +87,7 @@ No
 </div>
 <div id="antiviralResistance">
 <h3>Antiviral resistance summary</h3>
-<#if isHcv>
+<#if isForwardHcv>
 <table id="drugScores">
 <thead>
 <tr>
@@ -165,7 +166,7 @@ No resistance analysis was performed for the sequence.
 
 <div id="block3">
 <h3>Resistance-associated polymorphism details</h3>
-<#if isHcv>
+<#if isForwardHcv>
 <#if result.rasScanResults??>
 <#assign evenRow=true>
 <table id="resistanceFinding">
