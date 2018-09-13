@@ -32,9 +32,13 @@ function reportFastaWeb(base64, filePath) {
 	if(numSequencesInFile == 0) {
 		throw new Error("No sequences found in FASTA file");
 	}
-	// split fasta document into one document per sequence, and run reportFastaDocument on each.
+	var fastaMap = {};
+	var resultMap = {};
+	// apply blast recogniser / genotyping together on set, as this is more efficient.
+	initResultMap(fastaDocument, fastaMap, resultMap);
+	// apply report generation to each sequence in the set.
 	var phdrReports = _.map(fastaDocument.nucleotideFasta.sequences, function(sequence) {
-		return reportFastaDocument({nucleotideFasta : { sequences: [sequence] } }, filePath);
+		return generateSingleFastaReport(_.pick(fastaMap, sequence.id), _.pick(resultMap, sequence.id), filePath);
 	});
 	return {
 		phdrWebReport:  { 
@@ -449,18 +453,18 @@ function reportFasta(fastaFilePath) {
 	if(numSequencesInFile > 1) {
 		throw new Error("Please use only one sequence per FASTA file");
 	}
-	return reportFastaDocument(fastaDocument, fastaFilePath);
+	var fastaMap = {};
+	var resultMap = {};
+	initResultMap(fastaDocument, fastaMap, resultMap);
+	return generateSingleFastaReport(fastaMap, resultMap, fastaFilePath);
 }
 
-function reportFastaDocument(fastaDocument, fastaFilePath) {
-	glue.log("FINE", "phdrReportingController.reportFastaDocument fastaDocument:", fastaDocument);
-	var numSequencesInFile = 0;
-	var fastaMap = {};
+function initResultMap(fastaDocument, fastaMap, resultMap) {
+	glue.log("FINE", "phdrReportingController.initResultMap fastaDocument:", fastaDocument);
 	_.each(fastaDocument.nucleotideFasta.sequences, function(sequenceObj) {
 		fastaMap[sequenceObj.id] = sequenceObj;
 	});
 	// initialise result map.
-	var resultMap = {};
 	var sequenceObjs = _.values(fastaMap);
 	_.each(sequenceObjs, function(sequenceObj) {
 		resultMap[sequenceObj.id] = { id: sequenceObj.id };
@@ -468,13 +472,15 @@ function reportFastaDocument(fastaDocument, fastaFilePath) {
 	// apply recogniser to fastaMap
 	recogniseFasta(fastaMap, resultMap);
 
-	glue.log("FINE", "phdrReportingController.reportFastaDocument, result map after recogniser", resultMap);
+	glue.log("FINE", "phdrReportingController.initResultMap, result map after recogniser", resultMap);
 
 	// apply genotyping
 	genotypeFasta(fastaMap, resultMap);
 
-	glue.log("FINE", "phdrReportingController.reportFastaDocument, result map after genotyping", resultMap);
+	glue.log("FINE", "phdrReportingController.initResultMap, result map after genotyping", resultMap);
+}
 
+function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 	var publicationIdToObj = {};
 	nextPubIndex = 1;
 	
@@ -503,7 +509,7 @@ function reportFastaDocument(fastaDocument, fastaFilePath) {
 							]
 						}
 					});
-					glue.log("FINE", "phdrReportingController.reportFastaDocument, alignResult", alignResult);
+					glue.log("FINE", "phdrReportingController.generateSingleFastaReport, alignResult", alignResult);
 				});
 				var queryToTargetRefSegs = alignResult.compoundAlignerResult.sequence[0].alignedSegment;
 				
@@ -538,22 +544,22 @@ function reportFastaDocument(fastaDocument, fastaFilePath) {
 					}).variationScanMatchCommandResult.variations;
 				});
 				sequenceResult.rasScanResults = scanResults;
-				glue.log("FINE", "phdrReportingController.reportFastaDocument rasScanResults:", sequenceResult.rasScanResults);
+				glue.log("FINE", "phdrReportingController.generateSingleFastaReport rasScanResults:", sequenceResult.rasScanResults);
 				_.each(scanResults, function(scanResult) {
 					var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
 							scanResult.featureName, scanResult.variationName);
-					glue.log("FINE", "phdrReportingController.reportFastaDocument rasFinding:", rasFinding);
+					glue.log("FINE", "phdrReportingController.generateSingleFastaReport rasFinding:", rasFinding);
 					scanResult.rasDetails = rasFinding.phdrRasVariation;
 					addRasPublications(rasFinding, publicationIdToObj);
 					
 				});
 				sequenceResult.drugScores = assessResistance(scanResults);
-				glue.log("FINE", "phdrReportingController.reportFastaDocument sequenceResult.drugScores:", sequenceResult.drugScores);
+				glue.log("FINE", "phdrReportingController.generateSingleFastaReport sequenceResult.drugScores:", sequenceResult.drugScores);
 				sequenceResult.visualisationdHints = visualisationHints(queryNucleotides, targetRefName, genotypingResult, queryToTargetRefSegs);
 			}
 		}
 	});
-	glue.log("FINE", "phdrReportingController.reportFastaDocument publicationIdToObj:", publicationIdToObj);
+	glue.log("FINE", "phdrReportingController.generateSingleFastaReport publicationIdToObj:", publicationIdToObj);
 	
 	var results = _.values(resultMap);
 	var publications = _.values(publicationIdToObj);
@@ -570,7 +576,7 @@ function reportFastaDocument(fastaDocument, fastaFilePath) {
 	};
 	addOverview(phdrReport);
 
-	glue.log("FINE", "phdrReportingController.reportFastaDocument phdrReport:", phdrReport);
+	glue.log("FINE", "phdrReportingController.generateSingleFastaReport phdrReport:", phdrReport);
 	return phdrReport;
 }
 

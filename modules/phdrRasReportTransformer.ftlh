@@ -179,7 +179,7 @@ No resistance analysis was performed for the sequence.
 <th style="width:6%">Read depth</th>
 <th style="width:8%">Genotype / Subtype</th>
 <th style="width:7%">Resisted drug</th>
-<th style="width:6%">Resistance category</th>
+<th style="width:6%">Resistance category<sup>1</sup></th>
 <th style="width:7%"><em>In vitro</em> resistance level<br/>(EC50 log fold change)</th>
 
 <th style="width:15%">Clinical trials / study cohort</th>
