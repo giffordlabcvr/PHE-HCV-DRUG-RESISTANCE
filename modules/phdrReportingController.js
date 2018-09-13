@@ -28,7 +28,404 @@ function reportFastaWeb(base64, filePath) {
 	glue.inMode("module/phdrFastaUtility", function() {
 		fastaDocument = glue.command(["base64-to-nucleotide-fasta", base64]);
 	});
-	return reportFastaDocument(fastaDocument, filePath);
+	// split fasta document into one document per sequence, and run reportFastaDocument on each.
+	var results = _.map(fastaDocument.nucleotideFasta.sequences, function(sequence) {
+		return reportFastaDocument({nucleotideFasta : { sequences: [sequence] } }, filePath);
+	});
+	return {
+		phdrWebReport:  { 
+			results: results
+		}
+	}
+	/*
+	return {
+		phdrWebReport:  { 
+			results: [{
+		  "phdrReport": {
+			    "sequenceDataFormat": "FASTA",
+			    "filePath": "example_3a.fasta",
+			    "sequenceResult": {
+			      "id": "query1",
+			      "isForwardHcv": true,
+			      "isReverseHcv": false,
+			      "genotypingResult": {
+			        "queryName": "query1",
+			        "queryCladeCategoryResult": [
+			          {
+			            "categoryName": "genotype",
+			            "categoryDisplayName": "Genotype",
+			            "queryCladeResult": [
+			              {
+			                "cladeName": "AL_3",
+			                "cladeRenderedName": "HCV Genotype 3",
+			                "percentScore": 100
+			              }
+			            ],
+			            "finalClade": "AL_3",
+			            "finalCladeRenderedName": "HCV Genotype 3",
+			            "closestMemberAlignmentName": "AL_3a",
+			            "closestMemberSourceName": "ncbi-refseqs",
+			            "closestMemberSequenceID": "NC_009824",
+			            "closestTargetAlignmentName": "AL_3a",
+			            "closestTargetSourceName": "ncbi-refseqs",
+			            "closestTargetSequenceID": "NC_009824",
+			            "shortRenderedName": "3"
+			          },
+			          {
+			            "categoryName": "subtype",
+			            "categoryDisplayName": "Subtype",
+			            "queryCladeResult": [
+			              {
+			                "cladeName": "AL_3a",
+			                "cladeRenderedName": "HCV Subtype 3a",
+			                "percentScore": 100
+			              }
+			            ],
+			            "finalClade": "AL_3a",
+			            "finalCladeRenderedName": "HCV Subtype 3a",
+			            "closestMemberAlignmentName": "AL_3a",
+			            "closestMemberSourceName": "ncbi-refseqs",
+			            "closestMemberSequenceID": "NC_009824",
+			            "closestTargetAlignmentName": "AL_3a",
+			            "closestTargetSourceName": "ncbi-refseqs",
+			            "closestTargetSequenceID": "NC_009824",
+			            "shortRenderedName": "3a"
+			          }
+			        ],
+			        "genotypeCladeCategoryResult": {
+			          "categoryName": "genotype",
+			          "categoryDisplayName": "Genotype",
+			          "queryCladeResult": [
+			            {
+			              "cladeName": "AL_3",
+			              "cladeRenderedName": "HCV Genotype 3",
+			              "percentScore": 100
+			            }
+			          ],
+			          "finalClade": "AL_3",
+			          "finalCladeRenderedName": "HCV Genotype 3",
+			          "closestMemberAlignmentName": "AL_3a",
+			          "closestMemberSourceName": "ncbi-refseqs",
+			          "closestMemberSequenceID": "NC_009824",
+			          "closestTargetAlignmentName": "AL_3a",
+			          "closestTargetSourceName": "ncbi-refseqs",
+			          "closestTargetSequenceID": "NC_009824",
+			          "shortRenderedName": "3"
+			        },
+			        "subtypeCladeCategoryResult": {
+			          "categoryName": "subtype",
+			          "categoryDisplayName": "Subtype",
+			          "queryCladeResult": [
+			            {
+			              "cladeName": "AL_3a",
+			              "cladeRenderedName": "HCV Subtype 3a",
+			              "percentScore": 100
+			            }
+			          ],
+			          "finalClade": "AL_3a",
+			          "finalCladeRenderedName": "HCV Subtype 3a",
+			          "closestMemberAlignmentName": "AL_3a",
+			          "closestMemberSourceName": "ncbi-refseqs",
+			          "closestMemberSequenceID": "NC_009824",
+			          "closestTargetAlignmentName": "AL_3a",
+			          "closestTargetSourceName": "ncbi-refseqs",
+			          "closestTargetSequenceID": "NC_009824",
+			          "shortRenderedName": "3a"
+			        }
+			      },
+			      "targetRefName": "REF_3a_NC_009824",
+			      "rasScanResults": [
+			        {
+			          "referenceName": "REF_MASTER_NC_004102",
+			          "featureName": "NS3",
+			          "variationName": "phdr_ras:NS3:166T",
+			          "variationType": "aminoAcidSimplePolymorphism",
+			          "matches": [
+			            {
+			              "firstRefCodon": "166",
+			              "lastRefCodon": "166",
+			              "queryAAs": "T",
+			              "refNtStart": 3915,
+			              "refNtEnd": 3917,
+			              "queryNtStart": 3931,
+			              "queryNtEnd": 3933,
+			              "queryNts": "ACC",
+			              "combinedTripletFraction": 1
+			            }
+			          ],
+			          "rasDetails": {
+			            "referenceName": "REF_MASTER_NC_004102",
+			            "featureName": "NS3",
+			            "name": "phdr_ras:NS3:166T",
+			            "type": "aminoAcidSimplePolymorphism",
+			            "gene": "NS3",
+			            "structure": "166T",
+			            "displayName": null,
+			            "description": null,
+			            "metatag": [
+			              {
+			                "name": "SIMPLE_AA_PATTERN",
+			                "value": "T"
+			              }
+			            ],
+			            "alignmentRas": [
+			              {
+			                "displayStructure": "A166T",
+			                "clade": {
+			                  "alignmentName": "AL_3a",
+			                  "displayName": "HCV Subtype 3a"
+			                },
+			                "parentClade": {
+			                  "alignmentName": "AL_3",
+			                  "displayName": "HCV Genotype 3"
+			                },
+			                "alignmentRasDrug": [
+			                  {
+			                    "drug": "glecaprevir",
+			                    "resistanceCategory": "category_II",
+			                    "displayResistanceCategory": "II",
+			                    "resistanceFinding": [
+			                      {
+			                        "inVitroResult": {
+			                          "minEC50FoldChange": 4.7,
+			                          "maxEC50FoldChange": 4.7,
+			                          "midpointEC50FoldChange": 4.7,
+			                          "rangeEC50FoldChange": "4.7"
+			                        },
+			                        "publication": {
+			                          "id": "EASL_2017_FRI_205",
+			                          "displayName": "Krishnan et al., 2017",
+			                          "url": "https://doi.org/10.1016/S0168-8278(17)31399-5",
+			                          "index": 1
+			                        }
+			                      },
+			                      {
+			                        "inVivoResult": {
+			                          "foundAtBaseline": true,
+			                          "treatmentEmergent": false,
+			                          "clinicalTrial": [
+			                            {
+			                              "id": "Surveyor-1",
+			                              "displayName": "Surveyor-1",
+			                              "nctId": "NCT02243280"
+			                            },
+			                            {
+			                              "id": "Surveyor-2",
+			                              "displayName": "Surveyor-2",
+			                              "nctId": "NCT02243293"
+			                            }
+			                          ],
+			                          "cohortDescription": null,
+			                          "regimen": [
+			                            {
+			                              "id": "GLE_PIB",
+			                              "displayName": "GLE/PIB"
+			                            }
+			                          ]
+			                        },
+			                        "publication": {
+			                          "id": "28412293",
+			                          "displayName": "Kwo et al., 2017",
+			                          "url": "https://doi.org/10.1016/j.jhep.2017.03.039",
+			                          "index": 2
+			                        }
+			                      }
+			                    ],
+			                    "numFindings": 2
+			                  }
+			                ],
+			                "numFindings": 2
+			              }
+			            ],
+			            "numFindings": 2
+			          }
+			        }
+			      ],
+			      "drugScores": [
+			        {
+			          "category": "NS3/4A protease inhibitors",
+			          "drugAssessments": [
+			            {
+			              "drug": {
+			                "id": "glecaprevir",
+			                "category": "NS3/4A protease inhibitors"
+			              },
+			              "drugScore": "moderate_resistance",
+			              "drugScoreDisplay": "Moderate resistance",
+			              "drugScoreDisplayShort": "Moderate",
+			              "rasScores_category_I": [],
+			              "rasScores_category_II": [
+			                {
+			                  "gene": "NS3",
+			                  "structure": "166T",
+			                  "displayStructure": "A166T",
+			                  "category": "category_II"
+			                }
+			              ],
+			              "rasScores_category_III": []
+			            },
+			            {
+			              "drug": {
+			                "id": "voxilaprevir",
+			                "category": "NS3/4A protease inhibitors"
+			              },
+			              "drugScore": "susceptible",
+			              "drugScoreDisplay": "Susceptible",
+			              "drugScoreDisplayShort": "Susceptible",
+			              "rasScores_category_I": [],
+			              "rasScores_category_II": [],
+			              "rasScores_category_III": []
+			            }
+			          ]
+			        },
+			        {
+			          "category": "NS5A inhibitors",
+			          "drugAssessments": [
+			            {
+			              "drug": {
+			                "id": "pibrentasvir",
+			                "category": "NS5A inhibitors"
+			              },
+			              "drugScore": "susceptible",
+			              "drugScoreDisplay": "Susceptible",
+			              "drugScoreDisplayShort": "Susceptible",
+			              "rasScores_category_I": [],
+			              "rasScores_category_II": [],
+			              "rasScores_category_III": []
+			            },
+			            {
+			              "drug": {
+			                "id": "velpatasvir",
+			                "category": "NS5A inhibitors"
+			              },
+			              "drugScore": "susceptible",
+			              "drugScoreDisplay": "Susceptible",
+			              "drugScoreDisplayShort": "Susceptible",
+			              "rasScores_category_I": [],
+			              "rasScores_category_II": [],
+			              "rasScores_category_III": []
+			            }
+			          ]
+			        },
+			        {
+			          "category": "NS5B RNA polymerase inhibitors",
+			          "drugAssessments": [
+			            {
+			              "drug": {
+			                "id": "sofosbuvir",
+			                "category": "NS5B RNA polymerase inhibitors"
+			              },
+			              "drugScore": "susceptible",
+			              "drugScoreDisplay": "Susceptible",
+			              "drugScoreDisplayShort": "Susceptible",
+			              "rasScores_category_I": [],
+			              "rasScores_category_II": [],
+			              "rasScores_category_III": []
+			            }
+			          ]
+			        }
+			      ],
+			      "visualisationdHints": {
+			        "features": [
+			          "precursor_polyprotein",
+			          "Core",
+			          "E1",
+			          "E2",
+			          "p7",
+			          "NS2",
+			          "NS3",
+			          "NS4A",
+			          "NS4B",
+			          "NS5A",
+			          "NS5B"
+			        ],
+			        "comparisonRefs": [
+			          {
+			            "refName": "REF_MASTER_NC_004102",
+			            "refDisplayName": "Hepatitis C Virus Reference (NC_004102)"
+			          },
+			          {
+			            "refName": "REF_3_NC_009824",
+			            "refDisplayName": "Genotype 3 Reference (NC_009824)"
+			          }
+			        ],
+			        "visualisationUtilityModule": "phdrVisualisationUtility",
+			        "targetReferenceName": "REF_3a_NC_009824",
+			        "queryNucleotides": "ACCTGCCTCTTACGAGGCGACACTCCACCATGGATCACTCCCCTGTGAGGAACTTCTGTCTTCACGCGGAAAGCGCCTAGCCATGGCGTTAGTACGAGTGTCGTGCAGCCTCCAGGACCCCCCCTCCCGGGAGAGCCATAGTGGTCTGCGGAACCGGTGAGTACACCGGAATCGCTGGGGTGACCGGGTCCTTTCTTGGAACAACCCGCTCAATACCCAGAAATTTGGGCGTGCCCCCGCGAGATCACTAGCCGAGTAGTGTTGGGTCGCGAAAGGCCTTGTGGTACTGCCTGATAGGGTGCTTGCGAGTGCCCCGGGAGGTCTCGTAGACCGTGCAACATGAGCACACTTCCTAAACCCCAAAGAAAAACCAAAAGAAACACCATCCGTCGCCCACAGGACGTCAAGTTCCCGGGTGGCGGACAGATCGTTGGTGGAGTATACGTGTTGCCGCGCAGGGGCCCACGGTTGGGTGTGCGCGCGGCGCGTAAAACTTCTGAACGGTCACAGCCTCGTGGACGGCGGCAGCCTATCCCCACGGCGCGTCGGAGCGAAGGCCGGTCCTGGGCTCAGCCCGGGTACCCTTGGCCCCTCTATGGTAATGAGGGCTGCGGGTGGGCAGGGTGGCTCCTGTCCCCGCGCGGCTCCCGTCCATCTTGGGGCCCGAACGACCCCCGGCGAAGGTCCCGCAACTTGGGTAAAGTCATCGATACCCTCACGTGCGGGTTCGCCGACCTCATGGGGTACATCCCGCTCGTCGGCGCTCCCGTAGGGGGCGTCGCAAGAGCTCTCGCGCATGGCGTGAGGGCCCTTGAAGACGGGATAAATTTCGCAACAGGGAACTTGCCTGGTTGCTCCTTTTCTATCTTCCTTCTTGCTCTGCTTTCTTGCTTAGTCCATCCTGCAGCTAGTTTAGAGTGGCGGAATGCATCTGGCCTCTACATCCTTACCAACGACTGTCCCAACAGCAGTATTGTGTATGAGGCCGATGATGTTATTCTGCACACACCCGGCTGTATACCTTGTGTTCAGGACGGCAATAAATCCACGTGCTGGACCTCAGTGACACCTACAGTGGCAGTCAGGTACGTCGGAGCAACCACCGCTTCGATACGCAGTCATGTGGACCTATTAGTGGGCGCGGCCACGATGTGCTCTGCGCTCTACGTGGGTGATATGTGTGGGGCCGTCTTCCTTGTGGGACAAGCCTTCACGTTCAGACCTCGTCGCCATCAAACGGTCCAGACCTGTAACTGCTCACTGTACCCGGGCCATCTCTCAGGACACCGAATGGCTTGGGATATGATGATGAACTGGTCCCCCGCTATGGGTATGGTGGTAGCGCACATCCTACGTCTGCCTCAGACCTTGTTTGACATAATAGCCGGGGCCCATTGGGGCATCTTGGCGGGGCTAGCCTATTACTCCATGCAGGGCAACTGGGCCAAGGTCGCTATCATCATGGTTATGTTTTCAGGGGTCGATGCCACTACATATACCACCGGTGGCGCAGTAGCTCATGGCGCCAAGGGACTAACTAGTCTTTTTAGTCTGGGCGCCCAACAGAAACTGCAGTTGGTCAACACCAATGGCTCCTGGCACATCAACAGGACTGCCCTGAACTGCAATGAGTCCATACACACGGGGTTCGTAGCTGGGTTGTTTTACTATCATAAGTTCAACTCTACTGGATGCCCTCAAAGGCTCAGCAGCTGCAAGCCCATCACTTCCTTCAAGCAGGGGTGGGGCTCCCTGACAGATGCTAACATCACCGGGTCTTCTGAGGACAAACCGTACTGCTGGCACTACGCACCCAGACCTTGCACAACTGTTCAAGCATCAAGTGTCTGCGGCCCTGTGTACTGCTTCACACCATCGCCAGTGGTTGTGGGCACTACTGATGCTGAGGGCGTCCCAACCTATACCTGGGGTGGAAATAAGACAGACGTGTTCCTGCTGAAGTCCTTGCGGCCTCCCAACGGTCAGTGGTTTGGGTGCACGTGGATGAACTCCACGGGGTTTACCAAGACGTGCGGGGCTCCCCCTTGTAACATCTATGGGGGTAAAGGGAGTCATCACAATGATTCAGACCTCATCTGCCCTACCGACTGTTTCAGGAAACATCCCGAGGCCACATACAGCCGGTGCGGTGCGGGGCCCTGGTTGACACCTCGATGCATGGTCGACTATCCATACCGGCTTTGGCATTACCCGTGCACAGTCAATTTTTCATTGTTCAAGGTGAGGATGTTTGTGGGTGGGTTTGAGCACCGGTTCACCGCCGCTTGCAACTGGACCAGGGGGGAGCGCTGCGATATCGAGGATCGCGACCGCAGCGAGCAACACCCGCTGCTGCATTCAACGACCGAGCTCGCTATACTGCCTTGCTCCTTCACGCCCATGCCTGCGTTGTCAACAGGTTTAATACACCTCCACCAAAACATCGTGGATGTCCAGTACCTTTATGGCGTTGGATCTGGCATGGTGGGATGGGCGCTGAAATGGGAGTTCGTCGTCCTCGTTTTCCTCCTCCTAGCAGACGCACGCGTGTGCGTTGCTCTTTGGCTGATGCTGATGATATCACAAGCAGAAGCAGCCTTGGAGAACCTTGTCACGCTGAACGCCATCGCTGCTGCCGGGACACATGGTATTGGTTGGTACTTTGTAGCCTTTTGCGCGGCATGGTACGTGCGGGGTAAGCTTGTCCCGCTGGTGACCTACAGCCTGACGGGTCTCTGGTCTCTGGCGTTGCTCGTCCTCTTGCTCCCCCAGCGGGCGTACGCCTGGTCAGGTGAAGACAGCGCTACTCTTGGCGCTGGGATCTTGGTCCTCTTTGGCTTCTTTACCTTGTCACCCTGGTATAAGCATTGGATCGGCCGCCTCATGTGGTGGAACCAGTACACCATATGTAGATGCGAGGCCGCCCTCCAAGTGTGGGTCCCCCCCTTACTCGCACGCGGGAGTAGGGACGGTGTTATCCTGCTAACAAGTCTGCTTTATCCATCTTTAATTTTTGACATCACCAAGCTACTGATAGCAGTATTGGGCCCATTATACTTAATACAGGCTGCCATCACTGCCACCCCCTACTTTGTGCGTGCACATGTATTGGTTCGCCTTTGCATGCTCGTGCGCTCTGTAATGGGGGGAAAATACTTCCAGATGATCATACTGAGCATTGGCAGATGGTTTAACACCTATCTGTACGACCACCTAGCGCCAATGCAATATTGGGCTGCAGCTGGCCTCAAAGACCTAGCAGTGGCCACTGAACCTGTGATATTTAGTCCCATGGAAACCAAGGTCATCACCTGGGGCGCGGACACAGCGGCTTGCGGAGATATTCTTTGCGGGCTGCCCGTCTCCGCGCGACTAGGCCGTGAGGTGTTGTTGGGACCTGCTGATGATTACCGGGAGATGGGTTGGCGCCTGTTGGCCCCAATCACAGCATACGCCCAGCAAACCAGGGGCCTTCTTGGGACTATTGTGACCAGCTTGACTGGCAGGGATAAGAATGTGGTGACCGGCGAAGTGCAGGTGCTTTCTACGGCTACCCAGACCTTCCTAGGTACAACAATAGGGGGGGTTATGTGGACTGTTTACCATGGCGCAGGCTCAAGGACACTTGCGGGCGCTAAACATCCTGCGCTCCAAATGTACACAAATGTAGATCAGGACCTCGTTGGGTGGCCAGCCCCTCCAGGGGCTAAGTCTCTTGAACCGTGCACCTGCGGGTCTGCAGACTTATACTTGGTTACCCGCGATGCTGACGTCATCCCCGCTCGGCGCAGGGGGGACTCCACAGCGAGCTTGCTCAGCCCTAGGCCTCTCGCCTGTCTCAAGGGCTCCTCTGGAGGTCCCGTTATGTGCCCTTCGGGGCATGTCACGGGGATCTTTCGGGCTGCTGTGTGCACCAGAGGTGTAGCAAAGACCCTACAGTTCATACCAGTGGAAACCCTTAGTACACAGACTAGGTCCCCATCCTTCTCTGACAATTCAACTCCTCCCGCCGTCCCACAGAGCTACCAAGTAGGGTATCTTCATGCCCCGACCGGTAGTGGCAAGAGCACAAAGGTCCCGGCCGCTTACGTAGCACAAGGATACCATGTTCTCGTGTTGAATCCATCAGTGGCGGCCACACTAGGCTTCGGCTCTTACATGTCGAAAGCCTATGGGATCGACCCCAACGTCCGCACTGGGAACCGCACTGTCACAACTGGTGCTAAACTGACCTATTCCACCTACGGTAAGTTTCTCGCGGATGGGGGTTGCTCTGGGGGAGCGTATGATGTGATTATTTGTGATGAATGCCATGCCCAAGACGCTACTACCATATTGGGTATTGGCACGGTCTTAGATCAGGCTGAGACGGCTGGGGTGAGGCTGACGGTTCTGGCGACAGCAACTCCCCCAGGCAGCATCACTGTGCCACATTCTAACATCGAGGAGGTAGCCCTGGGCTCTGAAGGTGAGATCCCTTTCTACGGTAAGGCTATACCGATAGCCCAGCTCAAGGGGGGGAGGCACCTTATCTTTTGCCATTCCAAGAAAAAGTGTGATGAGATAGCATCCAAGCTCAGAGGCATGGGGCTCAACGCTGTAGCATTCTATAGGGGTCTTGATGTGTCCATCATACCAACAGCAGGAGACGTCGTGGTTTGCGCCACTGACGCCCTCATGACTGGGTACACCGGAGACTTTGATTCTGTCATAGATTGCAACGTGACTGTTGAACAGTACGTTGACTTCAGCTTGGACCCCACCTTTTCCATTGAGACTCACACTGCTCCCCAAGACGCGGTTTCCCGCAGCCAACGTCGTGGCCGTACGGGCCGGGGTAGACTCGGCATATACCGATATGTCACCCCGGGTGAAAGACCGTCTGGAATGTTTGACTCGGTTGTTCTCTGTGAGTGCTATGATGCGGGCTGCTCGTGGTACGATCTGCAGCCCGCTGAGACTACAGTCAGACTGAGAGCTTACTTGTCCACGCCGGGTTTACCTGTCTGTCAAGACCATCTTGACTTTTGGGAGAGCGTCTTTACTGGACTAACTCACATAGATGCCCACTTTCTGTCACAGACTAAGCAGCAGGGACTCAACTTCCCGTACCTGACTGCCTACCAAGCCACTGTGTGCGCCCGCGCGCAGGCTCCTCCCCCAAGTTGGGACGAGACGTGGAAATGTCTCGTACGGCTTAAACCAACACTACATGGACCCACGCCCCTTCTGTATCGGTTGGGGCCTATCCAAAATGAAACCTGCTTGACACACCCCGTCACAAAATACATCATGGCATGCATGTCAGCTGATCTGGAAGTGACCACCAGCGCCTGGGTGTTGCTTGGAGGGGTGCTCGCGGCCCTAGCGGCTTACTGCTTGTCAGTCGGCTGCGTTGTGATCGTGGGTCATATTGAGCTGGGGGGCAAGCCAGCACTCGTTCCAGACAAAGAGGTGTTGTATCAACAATTCGATGAGATGGAGGAGTGCTCGCAAGCTGCCCCATATATCGAACAAGCTCAGGTAATAGCCCACCAGTTCAAGGAGAAAGTCCTTGGATTGCTGCAGCGAGCCACCCAACAACAAGCTGTCATTGAGCCCATAGTAGCTACCAACTGGCAAAAGCTTGAGGCGTTCTGGCACAAGCATATGTGGAATTTTGTGAGTGGGATCCAGTACCTAGCAGGCCTTTCCACTTTGCCTGGCAACCCCGCTGTGGCGTCTCTTATGGCGTTCACCGCTTCTGTCACCAGTCCCCTGACGACCAACCAAACTATGTTCTTCAACATACTCGGGGGGTGGGTTGCTACCCATTTGGCAGGGCCCCAGAGCTCTTCCGCATTCGTGGTAAGCGGCTTGGCCGGCGCTGCCATAGGGGGTATAGGCCTGGGCAGGGTCTTGATTGACATCCTGGCAGGATACGGAGCTGGTGTCTCAGGCGCCTTGGTGGCTTTTAAGATCATGGGAGGAGAACTCCCCACTGCTGAGGACATGGTCAACATGCTGCCTGCCATACTATCTCCGGGCGCCCTCGTTGTCGGTGTGATATGTGCAGCCATACTGCGTCGACACGTAGGACCTGGGGAGGGGGCGGTGCAGTGGATGAACAGGCTCATCGCATTCGCATCCCGGGGTAACCACGTCTCACCGACGCACTATGTCCCCGAGAGCGATGCTGCAGCGAAGGTTACTGCATTGCTGAGTTCTCTAACTGTCACAAGTCTGCTCCGGCGACTGCACCAGTGGATCAATGAAGACTACCCAAGTCCTTGCTGCGGCGACTGGCTGCGTACCATCTGGGACTGGGTTTGCATGGTGTTGTCTGACTTCAAGACATGGCTCTCCGCTAAGATTATGCCAGCGCTCCCTGGGCTGCCTTTCCTTTCCTGTCAGAAGGGATACAAGGGCGTGTGGCGGGGAGACGGTGTGATGTCGACACGCTGTCCTTGCGGGGCGACAATAACCGGTCATGTGAAGAATGGGTCTATGCGGCTTGCAGGGCCACGCACATGTGCTAACATGTGGCACGGTACTTTCCCCATCAATGAGTACACCACCGGACCCGGCACACCTTGCCCAGCACCCAACTACACTCGCGCATTATTGCGCGTGGCTGCCAACAGCTACGTTGAGGTGCGCCGGGTGGGGGACTTCCACTACATTACGGGGGCTACAGAAGATGAGCTCAAGTGTCCGTGCCAAGTGCCGGCCGCAGAGTTTTTTACTGAGGTGGATGGGGTGAGACTCCACCGTTACGCCCCTCCATGCAAGCCCCTGTTGAGGGATGAAATCACTTTCATGGTAGGGTTGAACTCCTACGCAATAGGATCTCAACTCCCCTGTGAGCCCGAACCAGATGTTTCTGTGCTGACCTCGATGTTGAGAGACCCTTCCCATATTACCGCTGAGGCAGCAGCGCGCCGCCTTGCGCGTGGGTCCCCTCCATCAGAGGCAAGCTCATCCGCCAGCCAACTGTCGGCTCCGTCGTTGAAGGCCACTTGTCAGTCGTATGGGCCTCATCTGGACGCTGAGCTAGTGGATGCCAACCTGTTATGGCGGCAGGAGATGGGCAGCACTATCACACGGGTAGAGTCTGAAACAAAGGTTGTGATTCTTGATTCATTCGAACCTCTGAGAGCCGAAACTGATGACGCCGAGCTCTCGGTGGCTGCAGAGTGTTTCAAGAAGCCTCCCAAGTATCCTCCAGCCCTTCCTATCTGGGCTAGGCCAGACTACAACCCTCCATTGTTAGACCGCTGGAAAGCACCGGATTATGTTCCACCAACTGTTCATGGATGCGCCTTACCACCACGGGGCGCTCCACCGGTGCCTCCCCCTCGGAGGAAGAGAACAATTCAGCTGGATGGCTCCAATGTGTCCGCGGCGCTAGCTGCGCTAGCAGAAAAGTCATTCCCGTCCTCAAAGCCGCAGGAAGAGAATAGCTCATCCTCAGGGGTCGACACACAGTCCAGCACTACCTCTAAGGTGCCCCCCCCCCCAGGAGGGGAATCCGACTCAGAGTCGTGCTCGTCCATGCCTCCTCTCGAGGGAGAGCCGGGCGATCCGGATTTGAGCTGCGACTCTTGGTCCACTGTGAGTGACAATGAGGAGCAGAACGTAGTCTGCTGCTCCATGTCGTACTCTTGGACCGGCGCCTTGATAACACCATGTAGTGCTGAGGAGGAGAAACTACCCATCAGCCCACTCAGCAACTCCTTGTTGAGACACCATAATCTGGTTTATTCAACGTCGTCAAGAAGCGCTTCTCAGCGTCAGAAGAAGGTTACCTTCGACAGGCTGCAGGTGCTCGACGACCACTACAAAACTGCTTTAAAGGAGGTAAAGGAGCGAGCGTCTGGGGTGAAGGCTCGCATGCTCACCATCGAGGAAGCGTGCAAGCTTGTCCCCCCCCACTCTGCCCGTTCGAAGTTCGGGTATAGTGCGAAGGACGCTCGTTCCTTGTCCAGCAGGGCCGTTAACCAGATCCGCTCCGTCTGGGAGGACTTGCTGGAAGACACCACAACTCCAATTCCAACAACCATCATGGCGAAGAACGAGGTGTTTTGTGTGGACCCCGTTAAGGGGGGCCGCAAGCCCGCTCGCCTCATTGTGTACCCTGACCTGGGGGTGCGTGTCTGTGAGAAACGCGCCCTATATGACGTGATACAGAAGTTGTCAATCGCGACGATGGGTCCTGCTTATGGATTCCAGTACTCGCCTCAGCAGCGGGTCGAACGTCTGCTGAAGATGTGGACCTCAAAGAGAACCCCCCTGGGGTTCTCGTATGACACCCGCTGCTTTGACTCGACTGTCACTGAACAGGATATCAGGGTGGAAGAGGAGATATATCAATGCTGTAACCTTGAACCGGAGGCCAGGAAGGTGATCTCCTCCCTCACGGAGCGGCTTTACTGCGGGGGCCCCATGTTCAACAGCAAGGGGGCCCAGTGCGGTTATCGCCGTTGCCGTGCTAGTGGAGTTCTACCGACCAGCTTTGGCAACACAATCACTTGTTACATCAAGGCCACAGCGGCTGCAAGGGCCGCGGGTCTCCGGAACCCGGACTTTCTTGTCTGCGGAGATGATTTGGTCGTGGTGGCCGAGAGTGATGGCGTCGACGAGGATAGGGCAGCCCTGAGAGCCTTCACGGAGGCTATGACCAGGTACTCTGCTCCACCCGGAGATGCTCCACAGCCTACCTACGACCTTGAGCTCATCACATCTTGCTCCTCTAACGTCTCCGTAGCACATGACAACAAGGGGAGGAGGTATTACTACCTCACCCGTGATGCCACTACTCCCCTGGCCCGTGCGGCTTGGGAAACAGCTCGTCACACTCCAGTTAACTCCTGGTTGGGCAACATCATCATGTACGCGCCTACCATCTGGGTGCGCATGGTGATGATGACACACTTTTTCTCCATACTCCAATCCCAGGAGATACTTGATCGCCCCCTTGATTTTGAAATGTACGGGGCCACTTACTCTGTCACTCCGCTGGATTTACCAGCAATCATTGAAAGACTCCATGGTCTAAGCGCGTTCACACTCCACAGTTACTCTCCAGTAGAACTCAATAGGGTCGCGGGGACACTCAGGAAGCTTGGGTGCCCCCCCCTACGAGCTTGGAGACATCGGGCACGAGCAGTGCGCGCTAAGCTTATTGCCCAGGGAGGTAAGGCCAAAATATGTGGCCTTTATCTCTTTAACTGGGCAGTACGCACCAAGACCAAACTCACTCCACTGCCAGCCGCTAGCCAGTTGGACTTATCCAATTGGTTTTCGGTTGGCGTCGGCGGGAACGACATTTATCACAGCGTGTCACATGCCCGAACCCGCCATTTGCTGCTTTGCCTACTCCTACTAACTGTAGGGGTAGGCATCTTTCTCCTGCCAGCACGATAAGCTGGTAGGATAACACTCCATTCCTTTTCCCTTGTTTTTATTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTCTTTTTTTTTTTTTTTTTTTTTTTTTTGTTTTTCCTCTTTCCATTCTTTTCTAACCTTAAATTTTCCTTTCTTTAGGTGGCTCCATCTTAGCCCTAGTCACGGCTAGCTGTGAAAGGTCCGTGAGCCGCATGACTGCAGAGAGTGCCGTAACTGGTCTCTCTGCAGATCATGT",
+			        "queryToTargetRefSegments": [
+			          {
+			            "refStart": 1,
+			            "refEnd": 339,
+			            "queryStart": 1,
+			            "queryEnd": 339
+			          },
+			          {
+			            "refStart": 340,
+			            "refEnd": 9405,
+			            "queryStart": 340,
+			            "queryEnd": 9405
+			          },
+			          {
+			            "refStart": 9406,
+			            "refEnd": 9433,
+			            "queryStart": 9406,
+			            "queryEnd": 9433
+			          },
+			          {
+			            "refStart": 9434,
+			            "refEnd": 9441,
+			            "queryStart": 9437,
+			            "queryEnd": 9444
+			          },
+			          {
+			            "refStart": 9442,
+			            "refEnd": 9456,
+			            "queryStart": 9446,
+			            "queryEnd": 9460
+			          }
+			        ]
+			      }
+			    },
+			    "publications": [
+			      {
+			        "id": "EASL_2017_FRI_205",
+			        "authors_short": "Krishnan et al.",
+			        "authors_full": "P. Krishnan, G. Schnell, R. Tripathi, T. Ng, T. Reisch, J. Beyer, T. Dekhtyar, M. Irvin, W. Xie, L. Larsen, F. Mensa, T. Pilot-Matias and C. Collins",
+			        "title": "Pooled resistance analysis in HCV genotype 1–6-infected patients treated with glecaprevir/pibrentasvir in phase 2 and 3 clinical trials",
+			        "year": "2017",
+			        "journal": "J. Hepatol.",
+			        "volume": "66",
+			        "issue": "1",
+			        "pages": "S500",
+			        "url": "https://doi.org/10.1016/S0168-8278(17)31399-5",
+			        "index": 1
+			      },
+			      {
+			        "id": "28412293",
+			        "authors_short": "Kwo et al.",
+			        "authors_full": "P. Y. Kwo, F. Poordad, A. Asatryan, S. Wang, D. L. Wyles, T. Hassanein, F. Felizarta, M. S. Sulkowski, E. Gane, B. Maliakkal, J. S. Overcash, S. C. Gordon, A. J. Muir, H. Aguilar, K. Agarwal, G. J. Dore, C. W. Lin, R. Liu, S. S. Lovell, T. I. Ng, J. Kort and F. J. Mensa",
+			        "title": "Glecaprevir and pibrentasvir yield high response rates in patients with HCV genotype 1-6 without cirrhosis.",
+			        "year": "2017",
+			        "journal": "J. Hepatol.",
+			        "volume": "67",
+			        "issue": "2",
+			        "pages": "263-271",
+			        "url": "https://doi.org/10.1016/j.jhep.2017.03.039",
+			        "index": 2
+			      }
+			    ],
+			    "reportGenerationDate": "12/09/2018",
+			    "engineVersion": "1.0.16",
+			    "projectVersion": "0.1.30",
+			    "extensionVersion": "0.1.7",
+			    "phdrSamThresholds": {
+			      "minDepth": 10,
+			      "minMapQ": 5,
+			      "minQScore": 5,
+			      "minReadProportionPct": 15
+			    }
+			  }
+			}] } };*/
 }
 
 function reportFasta(fastaFilePath) {
@@ -429,21 +826,26 @@ function assessResistanceForDrug(scanResults, drug) {
 	if(numCategoryI > 0 || numCategoryII > 1) {
 		drugScore = 'strong_resistance';
 		drugScoreDisplay = 'Strong resistance';
+		drugScoreDisplayShort = 'Strong';
 	} else if(numCategoryII > 0 || numCategoryIII > 1) {
 		drugScore = 'moderate_resistance';
 		drugScoreDisplay = 'Moderate resistance';
+		drugScoreDisplayShort = 'Moderate';
 	} else if(numCategoryIII > 0) {
 		drugScore = 'weak_resistance';
 		drugScoreDisplay = 'Weak resistance';
+		drugScoreDisplayShort = 'Weak';
 	} else {
 		drugScore = 'susceptible';
 		drugScoreDisplay = 'Susceptible';
+		drugScoreDisplayShort = 'Susceptible';
 	}
 	
 	return {
 		drug: drug,
 		drugScore: drugScore, 
 		drugScoreDisplay: drugScoreDisplay,
+		drugScoreDisplayShort: drugScoreDisplayShort,
 		rasScores_category_I: rasScores_category_I,
 		rasScores_category_II: rasScores_category_II,
 		rasScores_category_III: rasScores_category_III

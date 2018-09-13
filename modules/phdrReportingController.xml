@@ -6,6 +6,9 @@
 		<parameter>
 			<name>base64</name>
 		</parameter>
+		<parameter>
+			<name>fastaFilePath</name>
+		</parameter>
 		<documentResultType/> 
 	</function>
 	
