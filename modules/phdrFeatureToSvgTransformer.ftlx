@@ -122,6 +122,12 @@
   <#assign y = y + ntIndexHeightPx + rowSpacingPx>
 
   <#list queryAaAnnotations as annotation>
+
+	  <#if annotation.multipleAas??>
+	  <g class="multipleAasBackground">
+	  <title>Multiple residues: ${annotation.multipleAas?join(', ')}</title>
+	  </#if>
+
 	  <#assign queryAaRectWidthPx = ( annotation.ntWidth * ntWidthPx ) + ( (annotation.ntWidth-1) * ntSpacingPx) >
 	  <#assign queryAaRectXPx = ( (annotation.displayNtPos - 1) * (ntWidthPx + ntSpacingPx))>
 	  <#assign queryAaRectHeightPx = aaHeightPx>
@@ -134,6 +140,14 @@
 		  <#assign rectClass = "queryAaDiffBackground">
 		  <#assign letterClass = "queryAaDiff">
 	  </#if>
+
+	  <#assign displayedAa = annotation.aa>
+	
+	  <#if annotation.multipleAas??>
+		  <#assign displayedAa = '?'>
+		  <#assign letterClass = letterClass+" multipleAas">
+		  <#assign rectClass = "">
+	  </#if>
 	  
 	  <rect class="${rectClass}" 
 	  	x="${queryAaRectXPx?c}" y="${queryAaRectYPx?c}" width="${queryAaRectWidthPx?c}" height="${queryAaRectHeightPx?c}"></rect>
@@ -142,7 +156,13 @@
 	  <#assign queryAaYPx = queryAaRectYPx + (aaHeightPx / 2)>
 	
 	  <text class="${letterClass}" 
-	  	x="${queryAaXPx?c}" y="${queryAaYPx?c}" dy=".35em">${annotation.aa}</text> 
+	  	x="${queryAaXPx?c}" y="${queryAaYPx?c}" dy=".35em">${displayedAa}
+	  </text>
+	  
+	  <#if annotation.multipleAas??>
+	  </g>
+	  </#if>
+ 
   </#list>
 
   <#assign y = y + aaHeightPx>

@@ -53,6 +53,22 @@ svg {
 	fill: #ffffff;
 }
 
+.multipleAas {
+	text-decoration: underline;
+}
+
+.multipleAas:hover {
+	fill: #ffffff;
+}
+
+.multipleAasBackground {
+	fill: #aaaaaa;
+}
+
+.multipleAasBackground:hover {
+	fill: #777777;
+}
+
 .queryAaDiffBackground {
 	fill: #aaaaaa;
 }

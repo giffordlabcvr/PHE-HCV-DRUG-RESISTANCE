@@ -46,6 +46,7 @@ _.each(_.pairs(varObjs), function(pair) {
 			// polymorphism
 			glue.inMode("variation/"+variationId, function() {
 				glue.command(["set", "metatag", "SIMPLE_AA_PATTERN", residue]);
+				glue.command(["set", "metatag", "MIN_COMBINED_TRIPLET_FRACTION", 0.15]);
 			});
 		}
 	});
