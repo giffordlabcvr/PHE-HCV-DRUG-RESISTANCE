@@ -88,6 +88,10 @@ svg {
 	font-size: 90%;
 }
 
-.resistanceBackground {
+.resistancePolymorphism {
 	fill: #c42929;
+}
+
+.resistancePolymorphism:hover {
+	fill: #e48181;
 }

@@ -200,6 +200,11 @@
 	  <#assign y = y + rowSpacingPx>
 
 	  <#list detailAnnotations as annotation>
+	  	  <#assign rapID = annotation.detailId?keep_after(':')>
+		  <a href="#project/rap/${rapID}" target="_blank">
+	  	    <g class="resistancePolymorphism">
+	  	  <#assign tooltipText = annotation.detailId?keep_after_last(':')>
+			  <title>${tooltipText}</title>
 	      <#if (annotation.segments?size > 1)>
 	          <#assign linkingRectWidthNts = ( annotation.maxRefEnd - annotation.minRefStart ) + 1>
 	      	  <#assign linkingRectWidthPx = (linkingRectWidthNts * ntWidthPx ) + ( (linkingRectWidthNts-1) * ntSpacingPx) >
@@ -207,10 +212,8 @@
 			  <#assign linkingRectHeightPx = linkingHeightPx>
 			  <#assign linkingRectYPx = y + ( (aaHeightPx - linkingHeightPx) / 2)>
 			  
-			  <#assign linkingRectClass = "resistanceBackground">
-
-  			  <rect class="${linkingRectClass}" 
-			  	x="${linkingRectXPx?c}" y="${linkingRectYPx?c}" width="${linkingRectWidthPx?c}" height="${linkingRectHeightPx?c}"></rect>
+  			    <rect x="${linkingRectXPx?c}" y="${linkingRectYPx?c}" 
+  			     	  width="${linkingRectWidthPx?c}" height="${linkingRectHeightPx?c}"></rect>
 	      </#if>
 	  
 	      <#list annotation.segments as segment>
@@ -221,12 +224,12 @@
 			  <#assign segmentRectHeightPx = aaHeightPx>
 			  <#assign segmentRectYPx = y>
 			  
-			  <#assign segmentRectClass = "resistanceBackground">
-
-  			  <rect class="${segmentRectClass}" 
-			  	x="${segmentRectXPx?c}" y="${segmentRectYPx?c}" width="${segmentRectWidthPx?c}" height="${segmentRectHeightPx?c}"></rect>
+  			    <rect x="${segmentRectXPx?c}" y="${segmentRectYPx?c}" 
+  			          width="${segmentRectWidthPx?c}" height="${segmentRectHeightPx?c}"></rect>
 	      
 	      </#list>
+	        </g>
+	      </a>
 	  </#list>
 
   	  <#assign y = y + aaHeightPx>
