@@ -3,6 +3,10 @@
 	<rasId>${variation.phdr_ras.id}</rasId>
 	<gene>${variation.phdr_ras.gene}</gene>
 	<structure>${variation.phdr_ras.structure}</structure>
+    <frequencyClade glueType="Object">
+    	<alignmentName>${alignment.name}</alignmentName>
+    	<alignmentDisplayName>${alignment.displayName}</alignmentDisplayName>
+    </frequencyClade>
 	<#-- use this hash as a set -->
 	<#assign clades = {}>
 	<#-- use this hash as a set -->
