@@ -1,0 +1,28 @@
+<#include "/utils/glueDocUtils.ftlx">
+<phdrRasFrequency>
+	<rasId>${variation.phdr_ras.id}</rasId>
+	<gene>${variation.phdr_ras.gene}</gene>
+	<structure>${variation.phdr_ras.structure}</structure>
+	<#-- use this hash as a set -->
+	<#assign clades = {}>
+	<#-- use this hash as a set -->
+	<#assign drugs = {}>
+	<#list variation.phdr_ras.phdr_alignment_ras as alignmentRas>
+	<#assign clades = clades + { alignmentRas.alignment.name : { "alignmentName": alignmentRas.alignment.name, "alignmentDisplayName": alignmentRas.alignment.displayName} }>
+	<#list alignmentRas.phdr_alignment_ras_drug as alignmentRasDrug>
+		<#assign drugs = drugs + { alignmentRasDrug.phdr_drug.id : "yes" }>
+    </#list>
+	</#list>
+	<#list drugs?keys?sort as drug>
+    <drug glueType="String[]">${drug}</drug>
+	</#list>
+	<#list clades?values?sort_by("alignmentName") as clade>
+    <resistedClade glueType="Object[]">
+    	<alignmentName>${clade.alignmentName}</alignmentName>
+    	<alignmentDisplayName>${clade.alignmentDisplayName}</alignmentDisplayName>
+    </resistedClade>
+	</#list>
+	<ncbiCuratedTotalPresent glueType="Integer">${ncbi_curated_total_present?c}</ncbiCuratedTotalPresent>
+	<ncbiCuratedTotalAbsent glueType="Integer">${ncbi_curated_total_absent?c}</ncbiCuratedTotalAbsent>
+	<ncbiCuratedFrequency glueType="Double">${ncbi_curated_frequency?c}</ncbiCuratedFrequency>
+</phdrRasFrequency>
