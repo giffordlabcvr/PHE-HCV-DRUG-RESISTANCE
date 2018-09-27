@@ -45,3 +45,18 @@ scmVersion {
     }
 }
 
+def glueConfigFile = System.getProperty("user.name").equals('joshsinger') ? 'local-gluetools-config.xml' : 'remote-gluetools-config.xml'
+
+task copyGluetoolsJar(type: Copy) {
+    from configurations.gluetoolsCore
+    into "$buildDir/runtimeJars"
+    rename('gluetools-core-'+project.glueVersion+'.jar', 'gluetools-core.jar')
+}
+
+task buildPhdrExtension(type: JavaExec, dependsOn: 'copyGluetoolsJar') {
+	classpath "build/runtimeJars/gluetools-core.jar"
+	main 'uk.ac.gla.cvr.gluetools.core.console.Console'
+	args '-c', glueConfigFile, '-i', 'run', 'file', 'phdrExtension.glue'
+}
+
+
