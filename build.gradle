@@ -2,7 +2,7 @@ apply plugin: 'pl.allegro.tech.build.axion-release'
 
 project.version = scmVersion.version
 
-project.ext.set("glueVersion", "1.0.8")
+project.ext.set("glueVersion", "1.1.0")
 
 repositories {
 	mavenLocal()
@@ -15,6 +15,8 @@ configurations {
 dependencies {
     gluetoolsCore group: 'cvr.ac.uk', name: 'gluetools-core', version: project.glueVersion, transitive: false
 }
+
+
 
 buildscript {
   repositories {
@@ -43,6 +45,7 @@ scmVersion {
 	        prefix = 'PHE-HCV-DRUG-RESISTANCE'
 	    }
     }
+    
 }
 
 def glueConfigFile = System.getProperty("user.name").equals('joshsinger') ? 'local-gluetools-config.xml' : 'remote-gluetools-config.xml'
@@ -58,5 +61,3 @@ task buildPhdrExtension(type: JavaExec, dependsOn: 'copyGluetoolsJar') {
 	main 'uk.ac.gla.cvr.gluetools.core.console.Console'
 	args '-c', glueConfigFile, '-i', 'run', 'file', 'phdrExtension.glue'
 }
-
-
