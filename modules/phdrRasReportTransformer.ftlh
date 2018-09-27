@@ -87,6 +87,17 @@ No
 </div>
 <div id="antiviralResistance">
 <h3>Antiviral resistance summary</h3>
+
+<p>
+	Please note that the HCV-GLUE drug resistance interpretation system has not yet been clinically validated. 
+	<br/>
+   <b>No clinical decisions should be made based on the outputs of HCV-GLUE drug resistance analysis.</b>
+	<br/>
+   Please subscribe to the <a target="_blank" 
+   href="https://www.researchgate.net/project/HCV-GLUE-an-online-database-and-sequence-analysis-tool-supporting-treatment-and-eradication-of-hepatitis-C-virus">
+   HCV-GLUE ResearchGate project</a> to be notified of updates.
+</p>
+
 <#if isForwardHcv>
 <table id="drugScores">
 <thead>
