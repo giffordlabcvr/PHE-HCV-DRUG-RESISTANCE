@@ -77,7 +77,7 @@ No
 
 <tr>
 <td><b>Closest reference sequence</b></td>
-<#if isForwardHcv>
+<#if isForwardHcv && result.genotypingResult.genotypeCladeCategoryResult.closestMemberSequenceID??>
 <td>${result.genotypingResult.genotypeCladeCategoryResult.closestMemberSequenceID}</td>
 <#else>
 <td>N/A</td>
@@ -87,6 +87,9 @@ No
 </div>
 <div id="antiviralResistance">
 <h3>Antiviral resistance summary</h3>
+
+
+<#if isForwardHcv && result.genotypingResult.genotypeCladeCategoryResult.finalClade??>
 
 <p>
 	Please note that the HCV-GLUE drug resistance interpretation system has not yet been clinically validated. 
@@ -98,7 +101,6 @@ No
    HCV-GLUE ResearchGate project</a> to be notified of updates.
 </p>
 
-<#if isForwardHcv>
 <table id="drugScores">
 <thead>
 <tr>
@@ -177,7 +179,7 @@ No resistance analysis was performed for the sequence.
 
 <div id="block3">
 <h3>Resistance-associated polymorphism details</h3>
-<#if isForwardHcv>
+<#if isForwardHcv && result.genotypingResult.genotypeCladeCategoryResult.finalClade??>
 <#if result.rasScanResults??>
 <#assign evenRow=true>
 <table id="resistanceFinding">
