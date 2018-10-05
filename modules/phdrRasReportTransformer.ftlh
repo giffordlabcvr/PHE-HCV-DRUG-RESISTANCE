@@ -94,6 +94,41 @@ No
 </tr>
 </table>
 </div>
+
+<div id="featureCoverage">
+
+<#if result.featuresWithCoverage??>
+
+<h3>Genome coding region coverage</h3>
+
+<#if result.featuresWithCoverage?size == 0>
+<p>No coverage of coding regions</p>
+<#else>
+<table id="featureCoverageTable">
+<colgroup>
+    <col class="tableHeader"/>
+    <col/>
+</colgroup>
+<#list result.featuresWithCoverage as feature>
+<#if feature.coveragePct gt 0>
+<tr>
+<td><b>${feature.displayName}</b></td>
+<td>${feature.coveragePct?string("##0.#")}%</td>
+</tr>
+</#if>
+</#list>
+</table>
+</#if>
+
+</#if>
+
+
+
+
+</div>
+
+<div class="pagebreak"> </div>
+
 <div id="antiviralResistance">
 <h3>Antiviral resistance summary</h3>
 
@@ -135,6 +170,11 @@ No
 <td rowspan = "${categoryDrugScores.drugAssessments?size}">${categoryDrugScores.category}</td>
 </#if>
 <td>${drugAssessment.drug.id}</td>
+<#if !drugAssessment.sufficientCoverage>
+<td colspan="5">
+Insufficient coverage of ${drugAssessment.featureRequiringCoverage.displayName} to assess resistance level
+</td>
+<#else>
 <td>
 <#if drugAssessment.rasScores_category_I?? && drugAssessment.rasScores_category_I?size gt 0>
 <#list drugAssessment.rasScores_category_I as rasScore>
@@ -161,6 +201,7 @@ No
 </td>
 <td>${drugAssessment.drugScoreDisplay}</td>
 <td class="resistanceBlock resistanceColourCode_${drugAssessment.drugScore}"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+</#if>
 </tr>
 </#list>
 </#list>
@@ -346,6 +387,9 @@ No resistance analysis was performed for the sequence.
 <tr><td><b>Minimum base quality</b></td><td>${phdrReport.phdrSamThresholds.minQScore}</td></tr>
 <tr><td><b>Minimum mapping quality</b></td><td>${phdrReport.phdrSamThresholds.minMapQ}</td></tr>
 </#if>
+<tr><td><b>Minimum coding region coverage for resistance analysis</b></td><td>${phdrReport.phdrFeatureCoverageThresholds.resistanceGeneMinCoveragePct}%</td></tr>
+
+
 </table>
 </div>
 

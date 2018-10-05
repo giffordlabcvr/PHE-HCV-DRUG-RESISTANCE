@@ -1,4 +1,40 @@
 
+var featuresList = [
+		             { name: "precursor_polyprotein", 
+		            	 displayName: "Precursor polyprotein"
+		             },
+		             { name: "Core",
+		            	 displayName: "Core"
+		             },
+		             { name: "E1",
+		            	 displayName: "E1"
+		             },
+		             { name: "E2",
+		            	 displayName: "E2"
+		             },
+		             { name: "p7",
+		            	 displayName: "p7"
+		             },
+		             { name: "NS2",
+		            	 displayName: "NS2"
+		             },
+		             { name: "NS3",
+		            	 displayName: "NS3"
+		             },
+		             { name: "NS4A",
+		            	 displayName: "NS4A"
+		             },
+		             { name: "NS4B",
+		            	 displayName: "NS4B"
+		             },
+		             { name: "NS5A",
+		            	 displayName: "NS5A"
+		             },
+		             { name: "NS5B",
+		            	 displayName: "NS5B"
+		             }
+		];
+
 var nextPubIndex = 1;
 
 function reportFastaAsHtml(fastaFilePath, htmlFilePath) {
@@ -100,14 +136,60 @@ function initResultMap(fastaDocument, fastaMap, resultMap) {
 	glue.log("FINE", "phdrReportingController.initResultMap, result map after genotyping", resultMap);
 }
 
-function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
-	var publicationIdToObj = {};
-	nextPubIndex = 1;
-	
+function generateQueryToTargetRefSegs(targetRefName, nucleotides) {
 	var alignerModule;
 	glue.inMode("module/phdrFastaSequenceReporter", function() {
 		alignerModule = glue.command(["show", "property", "alignerModuleName"]).moduleShowPropertyResult.propertyValue;
 	});
+	var alignResult;
+	glue.inMode("module/"+alignerModule, function() {
+		alignResult = glue.command({align: {
+				referenceName: targetRefName,
+				sequence: [
+				    { 
+				    	queryId: "query", 
+				    	nucleotides: nucleotides
+				    }
+				]
+			}
+		});
+		glue.log("FINE", "phdrReportingController.generateQueryToTargetRefSegs, alignResult", alignResult);
+	});
+	return alignResult.compoundAlignerResult.sequence[0].alignedSegment;
+	
+}
+
+function generateFeaturesWithCoverage(targetRefName, queryToTargetRefSegs) {
+	var featuresWithCoverage = []; 
+	
+	_.each(featuresList, function(feature) {
+		glue.inMode("module/phdrFastaSequenceReporter", function() {
+			var coveragePercentage = glue.command({
+				"alignment-feature-coverage" :{
+							"queryToTargetSegs": {
+								queryToTargetSegs: {
+									alignedSegment: queryToTargetRefSegs
+								}
+							},
+							"targetRefName":targetRefName,
+							"relRefName":"REF_MASTER_NC_004102",
+							"linkingAlmtName":"AL_UNCONSTRAINED",
+							"featureName":feature.name
+						}
+			}).fastaSequenceAlignmentFeatureCoverageResult.coveragePercentage;
+			
+			var featureCopy = _.clone(feature);
+			featureCopy.coveragePct = coveragePercentage;
+			featuresWithCoverage.push(featureCopy);
+		});
+	});
+	return featuresWithCoverage;
+}
+
+function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
+	var publicationIdToObj = {};
+	nextPubIndex = 1;
+	
 	
 	// apply variation scanning
 	_.each(_.values(resultMap), function(sequenceResult) {
@@ -115,23 +197,9 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 		if(genotypingResult != null) {
 			if(genotypingResult.genotypeCladeCategoryResult.finalClade != null) {
 				var targetRefName = genotypingResultToTargetRefName(genotypingResult);
-
-				// TODO -- these could all be done together.
-				var alignResult;
-				glue.inMode("module/"+alignerModule, function() {
-					alignResult = glue.command({align: {
-							referenceName: targetRefName,
-							sequence: [
-							    { 
-							    	queryId: sequenceResult.id, 
-							    	nucleotides: fastaMap[sequenceResult.id].sequence
-							    }
-							]
-						}
-					});
-					glue.log("FINE", "phdrReportingController.generateSingleFastaReport, alignResult", alignResult);
-				});
-				var queryToTargetRefSegs = alignResult.compoundAlignerResult.sequence[0].alignedSegment;
+				var nucleotides = fastaMap[sequenceResult.id].sequence;
+				var queryToTargetRefSegs = generateQueryToTargetRefSegs(targetRefName, nucleotides);
+				sequenceResult.featuresWithCoverage = generateFeaturesWithCoverage(targetRefName, queryToTargetRefSegs);
 				
 				var variationWhereClause = getVariationWhereClause(genotypingResult);
 				sequenceResult.targetRefName = targetRefName;
@@ -173,7 +241,7 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 					addRasPublications(rasFinding, publicationIdToObj);
 					
 				});
-				sequenceResult.drugScores = assessResistance(scanResults);
+				sequenceResult.drugScores = assessResistance(sequenceResult);
 				glue.log("FINE", "phdrReportingController.generateSingleFastaReport sequenceResult.drugScores:", sequenceResult.drugScores);
 				sequenceResult.visualisationHints = visualisationHints(queryNucleotides, targetRefName, genotypingResult, queryToTargetRefSegs, sequenceResult.rasScanResults);
 			}
@@ -283,41 +351,7 @@ function visualisationHints(queryNucleotides, targetRefName, genotypingResult, q
 	});
 	
 	return {
-		"features": [
-		             { name: "precursor_polyprotein", 
-		            	 displayName: "Precursor polyprotein"
-		             },
-		             { name: "Core",
-		            	 displayName: "Core"
-		             },
-		             { name: "E1",
-		            	 displayName: "E1"
-		             },
-		             { name: "E2",
-		            	 displayName: "E2"
-		             },
-		             { name: "p7",
-		            	 displayName: "p7"
-		             },
-		             { name: "NS2",
-		            	 displayName: "NS2"
-		             },
-		             { name: "NS3",
-		            	 displayName: "NS3"
-		             },
-		             { name: "NS4A",
-		            	 displayName: "NS4A"
-		             },
-		             { name: "NS4B",
-		            	 displayName: "NS4B"
-		             },
-		             { name: "NS5A",
-		            	 displayName: "NS5A"
-		             },
-		             { name: "NS5B",
-		            	 displayName: "NS5B"
-		             }
-		],
+		"features": featuresList,
 		"comparisonRefs": comparisonRefs,
 		"targetReferenceName":targetRefName,
 		"queryNucleotides":queryNucleotides,
@@ -422,10 +456,18 @@ function reportBam(bamFilePath) {
 			var targetRefName = genotypingResultToTargetRefName(genotypingResult);
 			var variationWhereClause = getVariationWhereClause(genotypingResult);
 			samRefResult.targetRefName = targetRefName;
+			
+			
 			var samRefSense = "FORWARD";
+			var nucleotides = consensusFastaMap[samRefResult.id].sequence;
 			if(samRefResult.isReverseHcv) {
-				var samRefSense = "REVERSE_COMPLEMENT";
+				nucleotides = reverseComplement(nucleotides);
+				samRefSense = "REVERSE_COMPLEMENT";
 			}
+			
+			var queryToTargetRefSegs = generateQueryToTargetRefSegs(targetRefName, nucleotides);
+			samRefResult.featuresWithCoverage = generateFeaturesWithCoverage(targetRefName, queryToTargetRefSegs);
+			
 			var scanResults;
 			glue.inMode("module/phdrSamReporter", function() {
 				scanResults = glue.tableToObjects(glue.command(["variation", "scan",
@@ -454,7 +496,7 @@ function reportBam(bamFilePath) {
 				addRasPublications(rasFinding, publicationIdToObj);
 				
 			});
-			samRefResult.drugScores = assessResistance(scanResults);
+			samRefResult.drugScores = assessResistance(samRefResult);
 			glue.log("FINE", "phdrReportingController.reportBam samRefResult.drugScores:", samRefResult.drugScores);
 
 		}
@@ -479,82 +521,100 @@ function reportBam(bamFilePath) {
 }
 
 
-function assessResistance(scanResults) {
+function assessResistance(result) {
 	var drugs = 
 		glue.tableToObjects(
-				glue.command(["list", "custom-table-row", "phdr_drug", "id", "category"]));
+				glue.command(["list", "custom-table-row", "phdr_drug", "id", "category", "feature_requiring_coverage"]));
 	var assessmentList = _.map(drugs, function(drug) { 
-		return assessResistanceForDrug(scanResults, drug); 
+		return assessResistanceForDrug(result, drug); 
 	});
 	var categoryToDrugs = _.groupBy(assessmentList, function(assessment) { return assessment.drug.category; });
 	return _.map(_.pairs(categoryToDrugs), function(pair) {return { category:pair[0], drugAssessments:pair[1]};});
 }
 
-function assessResistanceForDrug(scanResults, drug) {
+function assessResistanceForDrug(result, drug) {
 	
+	var drugScore = null;
+	var drugScoreDisplay = null;
+	var drugScoreDisplayShort = null;
+
 	var rasScores_category_I = [];
 	var rasScores_category_II = [];
 	var rasScores_category_III = [];
 	
-	_.each(scanResults, function(scanResult) {
-		_.each(scanResult.rasDetails.alignmentRas, function(alignmentRas) {
-			_.each(alignmentRas.alignmentRasDrug, function(alignmentRasDrug) {
-				if(alignmentRasDrug.drug == drug.id) {
-					if(alignmentRasDrug.resistanceCategory != "insignificant") {
-						var rasScoreDetails = {
-							gene: scanResult.rasDetails.gene,
-							structure: scanResult.rasDetails.structure,
-							displayStructure: alignmentRas.displayStructure,
-							category: alignmentRasDrug.resistanceCategory,
-							displayCategory: alignmentRasDrug.displayCategory
-						};
-						if(scanResult.pctPresent != null) {
-							rasScoreDetails.readsPctPresent = scanResult.pctPresent;
-						}
-						if(alignmentRasDrug.resistanceCategory == "category_I") {
-							rasScores_category_I.push(rasScoreDetails); 
-						} else if(alignmentRasDrug.resistanceCategory == "category_II") {
-							rasScores_category_II.push(rasScoreDetails); 
-						} else if(alignmentRasDrug.resistanceCategory == "category_III") {
-							rasScores_category_III.push(rasScoreDetails); 
+	var sufficientCoverage;
+	
+	var nameOfFeatureRequiringCoverage = drug.feature_requiring_coverage;
+	
+	var featureRequiringCoverage = _.find(result.featuresWithCoverage, function(featureObj) {
+		return featureObj.name == nameOfFeatureRequiringCoverage;
+	});
+
+	if(featureRequiringCoverage.coveragePct < phdrFeatureCoverageThresholds.resistanceGeneMinCoveragePct) {
+		sufficientCoverage = false;
+	} else {
+		sufficientCoverage = true;
+		_.each(result.rasScanResults, function(scanResult) {
+			_.each(scanResult.rasDetails.alignmentRas, function(alignmentRas) {
+				_.each(alignmentRas.alignmentRasDrug, function(alignmentRasDrug) {
+					if(alignmentRasDrug.drug == drug.id) {
+						if(alignmentRasDrug.resistanceCategory != "insignificant") {
+							var rasScoreDetails = {
+								gene: scanResult.rasDetails.gene,
+								structure: scanResult.rasDetails.structure,
+								displayStructure: alignmentRas.displayStructure,
+								category: alignmentRasDrug.resistanceCategory,
+								displayCategory: alignmentRasDrug.displayCategory
+							};
+							if(scanResult.pctPresent != null) {
+								rasScoreDetails.readsPctPresent = scanResult.pctPresent;
+							}
+							if(alignmentRasDrug.resistanceCategory == "category_I") {
+								rasScores_category_I.push(rasScoreDetails); 
+							} else if(alignmentRasDrug.resistanceCategory == "category_II") {
+								rasScores_category_II.push(rasScoreDetails); 
+							} else if(alignmentRasDrug.resistanceCategory == "category_III") {
+								rasScores_category_III.push(rasScoreDetails); 
+							}
 						}
 					}
-				}
+				});
 			});
 		});
-	});
-	
-	// drug score: 4 levels:
-	// strong_resistance:		Any category I RAS or multiple category II RASs.
-	// moderate_resistance:		Any category II RAS or multiple category III RAS.
-	// weak_resistance:			Any category III RAS.
-	// susceptible:				None of the above.
-	
-	var numCategoryI = rasScores_category_I.length;
-	var numCategoryII = rasScores_category_II.length;
-	var numCategoryIII = rasScores_category_III.length;
+		
+		// drug score: 4 levels:
+		// strong_resistance:		Any category I RAS or multiple category II RASs.
+		// moderate_resistance:		Any category II RAS or multiple category III RAS.
+		// weak_resistance:			Any category III RAS.
+		// susceptible:				None of the above.
+		
+		var numCategoryI = rasScores_category_I.length;
+		var numCategoryII = rasScores_category_II.length;
+		var numCategoryIII = rasScores_category_III.length;
 
-	var drugScore;
-	var drugScoreDisplay;
-	if(numCategoryI > 0 || numCategoryII > 1) {
-		drugScore = 'strong_resistance';
-		drugScoreDisplay = 'Strong resistance';
-		drugScoreDisplayShort = 'Strong';
-	} else if(numCategoryII > 0 || numCategoryIII > 1) {
-		drugScore = 'moderate_resistance';
-		drugScoreDisplay = 'Moderate resistance';
-		drugScoreDisplayShort = 'Moderate';
-	} else if(numCategoryIII > 0) {
-		drugScore = 'weak_resistance';
-		drugScoreDisplay = 'Weak resistance';
-		drugScoreDisplayShort = 'Weak';
-	} else {
-		drugScore = 'susceptible';
-		drugScoreDisplay = 'Susceptible';
-		drugScoreDisplayShort = 'Susceptible';
+		if(numCategoryI > 0 || numCategoryII > 1) {
+			drugScore = 'strong_resistance';
+			drugScoreDisplay = 'Strong resistance';
+			drugScoreDisplayShort = 'Strong';
+		} else if(numCategoryII > 0 || numCategoryIII > 1) {
+			drugScore = 'moderate_resistance';
+			drugScoreDisplay = 'Moderate resistance';
+			drugScoreDisplayShort = 'Moderate';
+		} else if(numCategoryIII > 0) {
+			drugScore = 'weak_resistance';
+			drugScoreDisplay = 'Weak resistance';
+			drugScoreDisplayShort = 'Weak';
+		} else {
+			drugScore = 'susceptible';
+			drugScoreDisplay = 'Susceptible';
+			drugScoreDisplayShort = 'Susceptible';
+		}
 	}
 	
+	
 	return {
+		featureRequiringCoverage: featureRequiringCoverage,
+		sufficientCoverage: sufficientCoverage,
 		drug: drug,
 		drugScore: drugScore, 
 		drugScoreDisplay: drugScoreDisplay,
@@ -765,6 +825,7 @@ function addOverview(phdrReport) {
 		glue.command(["show","extension-setting","phdr","extension-version"]).projectShowExtensionSettingResult.extSettingValue;
 	
 	phdrReport.phdrReport.phdrSamThresholds = phdrSamThresholds;
+	phdrReport.phdrReport.phdrFeatureCoverageThresholds = phdrFeatureCoverageThresholds;
 	
 }
 

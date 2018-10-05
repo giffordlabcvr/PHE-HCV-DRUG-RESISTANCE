@@ -58,5 +58,8 @@
 		<minQScore glueType="Integer">5</minQScore>
 		<minReadProportionPct glueType="Double">15.0</minReadProportionPct>
 	</configDocument>
+	<configDocument name="phdrFeatureCoverageThresholds">
+		<resistanceGeneMinCoveragePct glueType="Double">90</resistanceGeneMinCoveragePct>
+	</configDocument>
 
 </ecmaFunctionInvoker>

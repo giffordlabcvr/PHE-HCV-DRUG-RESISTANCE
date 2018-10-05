@@ -44,6 +44,10 @@ th + th {
     font-size: 10pt;
 }
 
+#featureCoverageTable {
+    font-size: 10pt;
+}
+
 #resistanceAlgorithmNotes {
     font-size: 10pt;
 }

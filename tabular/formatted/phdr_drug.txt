@@ -1,6 +1,6 @@
-id	abbreviation	category	producer	researchCode
-glecaprevir	GLE	NS3/4A protease inhibitors	Abbvie	ABT-493
-velpatasvir	VEL	NS5A inhibitors	Gilead Sciences	GS-5816
-pibrentasvir	PIB	NS5A inhibitors	Abbvie	ABT-530
-voxilaprevir	VOX	NS3/4A protease inhibitors	Gilead Sciences	GS-9857
-sofosbuvir	SOF	NS5B RNA polymerase inhibitors	Gilead Sciences	GS-7977
+id	abbreviation	category	producer	researchCode	featureRequiringCoverage
+glecaprevir	GLE	NS3/4A protease inhibitors	Abbvie	ABT-493	NS3
+velpatasvir	VEL	NS5A inhibitors	Gilead Sciences	GS-5816	NS5A
+pibrentasvir	PIB	NS5A inhibitors	Abbvie	ABT-530	NS5A
+voxilaprevir	VOX	NS3/4A protease inhibitors	Gilead Sciences	GS-9857	NS3
+sofosbuvir	SOF	NS5B RNA polymerase inhibitors	Gilead Sciences	GS-7977	NS5B
