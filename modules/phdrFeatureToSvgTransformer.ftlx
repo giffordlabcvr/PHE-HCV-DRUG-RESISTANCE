@@ -16,28 +16,30 @@
 <#list transformerInput.featureVisualisation.annotationRows as annotationRow>
 	<#switch annotationRow.annotationType>
 	  <#case "codonLabel">
-		<#assign codonLabelAnnotations = annotationRow.annotations>
+		<#assign codonLabelAnnotations = (annotationRow.annotations)![]>
 	    <#break>
 	  <#case "refAa">
-		<#assign refAaAnnotations = annotationRow.annotations>
+		<#assign refAaAnnotations = (annotationRow.annotations)![]>
 	    <#break>
 	  <#case "refNtContent">
-		<#assign refNtContentAnnotations = annotationRow.annotations>
+		<#assign refNtContentAnnotations = (annotationRow.annotations)![]>
 	    <#break>
 	  <#case "refNtIndex">
-		<#assign refNtIndexAnnotations = annotationRow.annotations>
+		<#assign refNtIndexAnnotations = (annotationRow.annotations)![]>
 	    <#break>
 	  <#case "queryAa">
-		<#assign queryAaAnnotations = annotationRow.annotations>
+		<#assign queryAaAnnotations = (annotationRow.annotations)![]>
 	    <#break>
 	  <#case "queryNtContent">
-		<#assign queryNtContentAnnotations = annotationRow.annotations>
+		<#assign queryNtContentAnnotations = (annotationRow.annotations)![]>
 	    <#break>
 	  <#case "queryNtIndex">
-		<#assign queryNtIndexAnnotations = annotationRow.annotations>
+		<#assign queryNtIndexAnnotations = (annotationRow.annotations)![]>
 	    <#break>
 	  <#case "detail">
+	    <#if annotationRow.annotations ??>
 		<#assign detailAnnotationsList = detailAnnotationsList + [ annotationRow.annotations ]>
+		</#if>
 	    <#break>
 	  <#default>
 	</#switch>
