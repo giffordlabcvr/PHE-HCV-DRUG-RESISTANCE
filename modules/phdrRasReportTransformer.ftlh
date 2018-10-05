@@ -26,6 +26,15 @@ Consensus (FASTA)
 Deep sequencing (SAM/BAM)
 </#if>
 </td></tr>
+
+<#if phdrReport.sequenceDataFormat = "FASTA"> 
+<tr>
+<td><b>Sequence ID</b></td>
+<td>${phdrReport.sequenceResult.id}</td>
+</tr>
+</#if>
+
+
 <tr><td><b>Report generation date</b></td><td>${phdrReport.reportGenerationDate}</td></tr>
 </table>
 </div>
