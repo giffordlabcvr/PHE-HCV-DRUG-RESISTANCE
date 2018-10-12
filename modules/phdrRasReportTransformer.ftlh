@@ -213,8 +213,8 @@ Category I polymorphisms have the strongest evidence: either (a) <em>in vitro</e
 (b) both found at baseline and treatment-emergent. Category II: <em>in vitro</em> level &ge; 50 or found at baseline or treatment-emergent.
 Category III: <em>in vitro</em> level &ge; 5</li>
 <li>Resistance level to a given drug is assigned to one of four categories. 
-Strong resistance: any category I polymorphism or multiple category II polymorphisms.
-Moderate resistance: any category II polymorphism or multiple category III polymorphisms. 
+Strong resistance: any category I polymorphisms.
+Moderate resistance: any category II polymorphisms. 
 Weak resistance: any category III polymorphisms. 
 Susceptible: none of the above.
 </li>
