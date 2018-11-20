@@ -708,17 +708,80 @@ function genotypeFasta(fastaMap, resultMap) {
 		} 
 	});
 	if(!_.isEmpty(genotypingFastaMap)) {
-		var genotypingResults;
-		glue.inMode("module/maxLikelihoodGenotyper", function() {
-			genotypingResults = glue.command({
-				"genotype": {
-					"fasta-document":
-					{
+
+		var placerResultDocument;
+
+		glue.inMode("module/maxLikelihoodPlacer", function() {
+			placerResultDocument = glue.command({
+				"place": {
+					"fasta-document": {
 						"fastaCommandDocument": {
 							"nucleotideFasta" : {
 								"sequences": _.values(genotypingFastaMap)
 							}
-						}, 
+						}
+					}
+				}
+			});
+		});
+		
+		var placementSummaries;
+		glue.inMode("module/maxLikelihoodPlacer", function() {
+			placementSummaries = glue.tableToObjects(glue.command({
+				"list": {
+					"query-from-document": {
+						"placerResultDocument": placerResultDocument
+					}
+				}
+			}));
+		});
+
+		_.each(placementSummaries, function(placementSummaryObj) {
+			var queryName = placementSummaryObj.queryName;
+			
+			var placements;
+			
+			glue.inMode("module/maxLikelihoodPlacer", function() {
+				placements = glue.tableToObjects(glue.command({
+					"list": {
+						"placement-from-document": {
+							"queryName": queryName,
+							"placerResultDocument": placerResultDocument
+						}
+					}
+				}));
+			});
+
+			_.each(placements, function(placement) {
+				var placementIndex = placement.placementIndex;
+				glue.inMode("module/maxLikelihoodPlacer", function() {
+					placement.tree = glue.command({
+							"export": {
+								"placement-from-document": {
+									"phylogeny": {
+										"placerResultDocument": placerResultDocument,
+										"placementIndex": placementIndex,
+										"queryName": queryName, 
+										"leafName": queryName,
+										"leafNodeProperty": ["treevisualiser-nonmember:true", "treevisualiser-highlighted:true"],
+										"branchProperty": ["treevisualiser-highlighted:true"]
+									}
+								}
+							}
+					});
+				});
+			});
+			glue.logInfo("placements", placements);
+			resultMap[queryName].placements = placements;
+		});
+		
+		
+		var genotypingResults;
+		glue.inMode("module/maxLikelihoodGenotyper", function() {
+			genotypingResults = glue.command({
+				"genotype": {
+					"placer-result-document": {
+						"placerResultDocument": placerResultDocument, 
 						"documentResult" : true
 					}
 				}

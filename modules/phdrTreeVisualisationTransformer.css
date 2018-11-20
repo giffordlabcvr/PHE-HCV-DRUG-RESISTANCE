@@ -1,0 +1,37 @@
+svg {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.branch {
+	stroke: DarkGrey;
+	stroke-width: 2px;
+	fill: none;
+}
+
+.highlightedBranch {
+	stroke: Red;
+	stroke-width: 2px;
+	fill: none;
+}
+
+.leafNode {
+	stroke: Black;
+	stroke-width: 1px;
+	fill: DarkGrey; 
+}
+
+.highlightedLeafNode {
+	stroke: Black;
+	stroke-width: 1px;
+	fill: Red; 
+}
+
+.leafText {
+	text-anchor: left;
+	fill: DarkGrey;
+}
+
+.highlightedLeafText {
+	text-anchor: left;
+	fill: Red;
+}

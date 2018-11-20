@@ -1,0 +1,4 @@
+<freemarkerDocTransformer>
+	<templateFileName>phdrTreeVisualisationTransformer.ftlh</templateFileName>
+	<resourceFileName>phdrTreeVisualisationTransformer.css</resourceFileName>
+</freemarkerDocTransformer>

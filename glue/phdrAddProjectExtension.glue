@@ -15,7 +15,10 @@ create module --fileName modules/phdrAlignmentRasDrugRenderer.xml --loadResource
 create module --fileName modules/phdrPublicationRenderer.xml --loadResources
 create module --fileName modules/phdrRasReportTransformer.xml --loadResources
 create module --fileName modules/phdrVisualisationUtility.xml  
+create module --fileName modules/phdrTreeVisualiser.xml  
 create module --fileName modules/phdrFeatureToSvgTransformer.xml --loadResources
+create module --fileName modules/phdrTreeVisualisationTransformer.xml --loadResources
+  
   
 multi-unset link-target variation -a phdr_ras
 multi-delete phdr_drug -a

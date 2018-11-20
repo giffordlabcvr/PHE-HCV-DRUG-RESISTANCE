@@ -1,0 +1,30 @@
+<treeVisualiser>
+	<freemarkerAnnotationGenerator>
+		<annotationName>sequenceID</annotationName>
+		<template>${renderNestedProperty('sequence.sequenceID')}</template>
+	</freemarkerAnnotationGenerator>
+	<freemarkerAnnotationGenerator>
+		<annotationName>isolate</annotationName>
+		<template>${renderNestedProperty('sequence.gb_isolate')}</template>
+	</freemarkerAnnotationGenerator>
+	<freemarkerAnnotationGenerator>
+		<annotationName>countryDisplayName</annotationName>
+		<template>${renderNestedProperty('sequence.who_country.display_name')}</template>
+	</freemarkerAnnotationGenerator>
+	<freemarkerAnnotationGenerator>
+		<annotationName>countryIso</annotationName>
+		<template>${renderNestedProperty('sequence.who_country.id')}</template>
+	</freemarkerAnnotationGenerator>
+	<freemarkerAnnotationGenerator>
+		<annotationName>collectionYear</annotationName>
+		<template>${renderNestedProperty('sequence.gb_collection_year')}</template>
+	</freemarkerAnnotationGenerator>
+	<freemarkerAnnotationGenerator>
+		<annotationName>cladeName</annotationName>
+		<template>${renderNestedProperty('alignment.name')}</template>
+	</freemarkerAnnotationGenerator>
+	<freemarkerAnnotationGenerator>
+		<annotationName>cladeDisplayName</annotationName>
+		<template>${renderNestedProperty('alignment.displayName')?replace('HCV ', '')}</template>
+	</freemarkerAnnotationGenerator>
+</treeVisualiser>
