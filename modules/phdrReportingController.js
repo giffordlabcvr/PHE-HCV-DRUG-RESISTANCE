@@ -709,8 +709,8 @@ function genotypeFasta(fastaMap, resultMap) {
 	});
 	if(!_.isEmpty(genotypingFastaMap)) {
 
+		// run the placer and generate a placer result document
 		var placerResultDocument;
-
 		glue.inMode("module/maxLikelihoodPlacer", function() {
 			placerResultDocument = glue.command({
 				"place": {
@@ -725,6 +725,7 @@ function genotypeFasta(fastaMap, resultMap) {
 			});
 		});
 		
+		// list the query summaries within the placer result document
 		var placementSummaries;
 		glue.inMode("module/maxLikelihoodPlacer", function() {
 			placementSummaries = glue.tableToObjects(glue.command({
@@ -736,11 +737,13 @@ function genotypeFasta(fastaMap, resultMap) {
 			}));
 		});
 
+		// for each query in the placer results.
 		_.each(placementSummaries, function(placementSummaryObj) {
 			var queryName = placementSummaryObj.queryName;
 			
 			var placements;
 			
+			// list the placements for that query.
 			glue.inMode("module/maxLikelihoodPlacer", function() {
 				placements = glue.tableToObjects(glue.command({
 					"list": {
@@ -752,8 +755,10 @@ function genotypeFasta(fastaMap, resultMap) {
 				}));
 			});
 
+			// for each of the query placements
 			_.each(placements, function(placement) {
 				var placementIndex = placement.placementIndex;
+				// generate a tree in GLUE_JSON format for the placement.
 				glue.inMode("module/maxLikelihoodPlacer", function() {
 					placement.tree = glue.command({
 							"export": {
@@ -771,7 +776,6 @@ function genotypeFasta(fastaMap, resultMap) {
 					});
 				});
 			});
-			glue.logInfo("placements", placements);
 			resultMap[queryName].placements = placements;
 		});
 		
