@@ -11,8 +11,8 @@ function visualisePhyloAsSvg(document) {
 							"placementIndex": document.inputDocument.placementIndex,
 							"queryName": document.inputDocument.queryName, 
 							"leafName": document.inputDocument.queryName,
-							"leafNodeProperty": ["treevisualiser-nonmember:true", "treevisualiser-highlighted:true"],
-							"branchProperty": ["treevisualiser-highlighted:true"]
+							"placementLeafProperty": ["treevisualiser-nonmember:true", "treevisualiser-highlighted:true"],
+							"placementBranchProperty": ["treevisualiser-highlighted:true"]
 						}
 					}
 				}
