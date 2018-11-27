@@ -1,25 +1,41 @@
 function visualisePhyloAsSvg(document) {
-	var visualiseTreeResult;
-	var outputFile = document.inputDocument.fileName;
-	delete document.inputDocument["fileName"];
-
-	/*
-	 	document.inputDocument is:
-	 			{
-					"treeDocument" : glueTree, 
-					"pxWidth" : 1200, 
-					"pxHeight" : 5000
+	var glueTree;
+	
+	// generate a tree for the placement, as a command document.
+	glue.inMode("module/maxLikelihoodPlacer", function() {
+		glueTree = glue.command({
+				"export": {
+					"placement-from-document": {
+						"phylogeny": {
+							"placerResultDocument": document.inputDocument.placerResult,
+							"placementIndex": document.inputDocument.placementIndex,
+							"queryName": document.inputDocument.queryName, 
+							"leafName": document.inputDocument.queryName,
+							"leafNodeProperty": ["treevisualiser-nonmember:true", "treevisualiser-highlighted:true"],
+							"branchProperty": ["treevisualiser-highlighted:true"]
+						}
+					}
 				}
+		});
+	});
 
-	 */
+	// generate a visualisation document for the tree, 
+	// with the visualisation maths etc. done
+	var visualiseTreeResult;
+
 	glue.inMode("module/phdrTreeVisualiser", function() {
 		visualiseTreeResult = glue.command({
 			"visualise" : {
-				"tree-document": document.inputDocument
+				"tree-document": {
+					"treeDocument" : glueTree, 
+					"pxWidth" : document.inputDocument.pxWidth, 
+					"pxHeight" : document.inputDocument.pxHeight
+				}
 			}
 		});
 	});
-	
+
+	// from the visualisation document, generate an SVG as a GLUE web file.
 	var transformResult;
 	glue.inMode("module/phdrTreeVisualisationTransformer", function() {
 		transformResult = glue.command({ "transform-to-web-file": 
@@ -31,7 +47,7 @@ function visualisePhyloAsSvg(document) {
 						ntWidth: 16
 					}
 				},
-				"outputFile": outputFile
+				"outputFile": document.inputDocument.fileName
 			}
 		});
 	});

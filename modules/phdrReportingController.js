@@ -73,15 +73,17 @@ function reportFastaWeb(base64, filePath) {
 	}
 	var fastaMap = {};
 	var resultMap = {};
+	var placerResultContainer = {};
 	// apply blast recogniser / genotyping together on set, as this is more efficient.
-	initResultMap(fastaDocument, fastaMap, resultMap);
+	initResultMap(fastaDocument, fastaMap, resultMap, placerResultContainer);
 	// apply report generation to each sequence in the set.
 	var phdrReports = _.map(fastaDocument.nucleotideFasta.sequences, function(sequence) {
 		return generateSingleFastaReport(_.pick(fastaMap, sequence.id), _.pick(resultMap, sequence.id), filePath);
 	});
 	var result = {
 		phdrWebReport:  { 
-			results: phdrReports
+			results: phdrReports, 
+			placerResult: placerResultContainer.placerResult
 		}
 	};
 
@@ -111,11 +113,14 @@ function reportFasta(fastaFilePath) {
 	}
 	var fastaMap = {};
 	var resultMap = {};
-	initResultMap(fastaDocument, fastaMap, resultMap);
-	return generateSingleFastaReport(fastaMap, resultMap, fastaFilePath);
+	var placerResultContainer = {};
+	initResultMap(fastaDocument, fastaMap, resultMap, placerResultContainer);
+	var singleFastaReport = generateSingleFastaReport(fastaMap, resultMap, fastaFilePath);
+	singleFastaReport["placerResult"] = placerResultContainer.placerResult;
+	return singleFastaReport;
 }
 
-function initResultMap(fastaDocument, fastaMap, resultMap) {
+function initResultMap(fastaDocument, fastaMap, resultMap, placerResultContainer) {
 	glue.log("FINE", "phdrReportingController.initResultMap fastaDocument:", fastaDocument);
 	_.each(fastaDocument.nucleotideFasta.sequences, function(sequenceObj) {
 		fastaMap[sequenceObj.id] = sequenceObj;
@@ -131,7 +136,7 @@ function initResultMap(fastaDocument, fastaMap, resultMap) {
 	glue.log("FINE", "phdrReportingController.initResultMap, result map after recogniser", resultMap);
 
 	// apply genotyping
-	genotypeFasta(fastaMap, resultMap);
+	genotypeFasta(fastaMap, resultMap, placerResultContainer);
 
 	glue.log("FINE", "phdrReportingController.initResultMap, result map after genotyping", resultMap);
 }
@@ -442,9 +447,11 @@ function reportBam(bamFilePath) {
 		consensusFastaMap[samReference.name] = consensusDocument.nucleotideFasta.sequences[0];
 	});
 	
+	var placerResultContainer = {};
+	
 	recogniseFasta(consensusFastaMap, resultMap);
 	// apply genotyping
-	genotypeFasta(consensusFastaMap, resultMap);
+	genotypeFasta(consensusFastaMap, resultMap, placerResultContainer);
 	
 	var publicationIdToObj = {};
 	nextPubIndex = 1;
@@ -511,7 +518,8 @@ function reportBam(bamFilePath) {
 				sequenceDataFormat: "SAM/BAM",
 				filePath: bamFilePath,
 				samReferenceResult: _.values(resultMap)[0],
-				publications: publications
+				publications: publications, 
+				placerResult: placerResultContainer.placerResult
 			}
 	};
 	addOverview(phdrReport);
@@ -700,7 +708,7 @@ function genotypingResultToTargetRefName(genotypingResult) {
  * and runs max likelihood genotyping on the subset of sequences that have been identified as forward HCV.
  * The the genotyping result object is recorded in the result map for each sequence.
  */
-function genotypeFasta(fastaMap, resultMap) {
+function genotypeFasta(fastaMap, resultMap, placerResultContainer) {
 	var genotypingFastaMap = {};
 	_.each(_.values(resultMap), function(resultObj) {
 		if(resultObj.isForwardHcv && !resultObj.isReverseHcv) {
@@ -724,6 +732,8 @@ function genotypeFasta(fastaMap, resultMap) {
 				}
 			});
 		});
+		placerResultContainer.placerResult = placerResultDocument;
+		
 		
 		// list the query summaries within the placer result document
 		var placementSummaries;
@@ -755,27 +765,6 @@ function genotypeFasta(fastaMap, resultMap) {
 				}));
 			});
 
-			// for each of the query placements
-			_.each(placements, function(placement) {
-				var placementIndex = placement.placementIndex;
-				// generate a tree in GLUE_JSON format for the placement.
-				glue.inMode("module/maxLikelihoodPlacer", function() {
-					placement.tree = glue.command({
-							"export": {
-								"placement-from-document": {
-									"phylogeny": {
-										"placerResultDocument": placerResultDocument,
-										"placementIndex": placementIndex,
-										"queryName": queryName, 
-										"leafName": queryName,
-										"leafNodeProperty": ["treevisualiser-nonmember:true", "treevisualiser-highlighted:true"],
-										"branchProperty": ["treevisualiser-highlighted:true"]
-									}
-								}
-							}
-					});
-				});
-			});
 			resultMap[queryName].placements = placements;
 		});
 		
