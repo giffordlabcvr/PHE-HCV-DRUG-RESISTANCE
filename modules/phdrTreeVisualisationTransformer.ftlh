@@ -2,9 +2,9 @@
 <#assign treeVisDoc = transformerInput.treeVisualisation>
 <#assign svgWidthPx = treeVisDoc.pxWidth>
 <#assign svgHeightPx = treeVisDoc.pxHeight>
-<#assign leafTextWidthPx = treeVisDoc.leafTextWidthPx>
-<#assign leafTextHeightPx = treeVisDoc.leafTextHeightPx>
+<#assign verticalLeafSpacePx = treeVisDoc.verticalLeafSpacePx>
 <#assign leafTextGapPx = treeVisDoc.leafTextGapPx>
+<#assign leafTextHeightPx = treeVisDoc.leafTextHeightPx>
 	
 <#assign leafNodeRadiusPx = 2>
 	
@@ -24,11 +24,29 @@
     	cx="${leafNode.x}" cy="${leafNode.y}" r="${leafNodeRadiusPx}"/>
   </#list>
   </g>
-  <g class="leafText" font-size="${leafTextHeightPx*0.9}">
+  <g class="leafText" font-size="${leafTextHeightPx}">
   <#list treeVisDoc.leafNodes as leafNode>
     <text <#if leafNode.highlighted!false>class="highlightedLeafText"</#if>
-	  	x="${leafNode.x+leafTextGapPx}" y="${leafNode.y}" width="${leafTextWidthPx}" height="${leafTextHeightPx}"
-	  	dy=".35em">${leafNode.properties.sequenceID}</text>
+	  	x="${leafNode.x+leafTextGapPx}" y="${leafNode.y}" width="${leafNode.properties.leafTextWidthPx}" height="${verticalLeafSpacePx}"
+	  	dy=".35em">${leafNode.properties.leafText}</text>
   </#list>
   </g>
+  <#if treeVisDoc.collapsedSubtrees??>
+  <g class="collapsedSubtree">
+  <#list treeVisDoc.collapsedSubtrees as collapsedSubtree>
+    <path
+		d="M ${collapsedSubtree.rootX} ${collapsedSubtree.rootY} L ${collapsedSubtree.leafX} ${collapsedSubtree.upperLeafY} L ${collapsedSubtree.leafX} ${collapsedSubtree.lowerLeafY} Z"/>
+  </#list>
+  </g>
+  <g class="collapsedSubtreeText" font-size="${leafTextHeightPx}">
+  <#list treeVisDoc.collapsedSubtrees as collapsedSubtree>
+    <text
+	  	x="${collapsedSubtree.leafX+leafTextGapPx}" y="${collapsedSubtree.rootY}" width="${collapsedSubtree.properties.collapsedTextWidthPx}" height="${verticalLeafSpacePx}"
+	  	dy=".35em">${collapsedSubtree.properties.collapsedText}</text>
+  </#list>
+  </g>
+  </#if>
+
+
+
 </svg>

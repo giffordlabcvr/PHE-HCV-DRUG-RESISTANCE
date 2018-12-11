@@ -29,7 +29,8 @@ function visualisePhyloAsSvg(document) {
 				"tree-document": {
 					"treeDocument" : glueTree, 
 					"pxWidth" : document.inputDocument.pxWidth, 
-					"pxHeight" : document.inputDocument.pxHeight
+					"pxHeight" : document.inputDocument.pxHeight,
+					"leafTextAnnotationName": "sequenceID"
 				}
 			}
 		});
