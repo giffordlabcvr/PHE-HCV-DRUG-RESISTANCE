@@ -37,12 +37,12 @@ svg {
 }
 
 .collapsedSubtree {
-	stroke: Black;
-	stroke-width: 1px;
-	fill: Blue; 
+	stroke: url(#collapsedGrad);
+	stroke-width: 2px;
+	fill: url(#collapsedGrad); 
 }
 
 .collapsedSubtreeText {
 	text-anchor: left;
-	fill: Blue;
+	fill: DarkGrey;
 }

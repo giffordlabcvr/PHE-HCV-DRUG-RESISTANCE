@@ -11,6 +11,11 @@
 <svg width="${svgWidthPx}" height="${svgHeightPx}"
      xmlns="http://www.w3.org/2000/svg">
   <style>${getResourceAsString('phdrTreeVisualisationTransformer.css')?no_esc}</style>
+  <linearGradient id="collapsedGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" style="stop-color:DarkGrey;stop-opacity:1" />
+    <stop offset="60%" style="stop-color:DarkGrey;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:White;stop-opacity:1" />
+  </linearGradient>  
   <g class="branch">
   <polyline points="${treeVisDoc.root.x1} ${treeVisDoc.root.y1}, ${treeVisDoc.root.x2} ${treeVisDoc.root.y2}"/>
   <#list treeVisDoc.branches as branch>
@@ -34,8 +39,17 @@
   <#if treeVisDoc.collapsedSubtrees??>
   <g class="collapsedSubtree">
   <#list treeVisDoc.collapsedSubtrees as collapsedSubtree>
+	<#assign bezierPointXOffsetPx = ((collapsedSubtree.leafX - collapsedSubtree.rootX) * 0.5)>
     <path
-		d="M ${collapsedSubtree.rootX} ${collapsedSubtree.rootY} L ${collapsedSubtree.leafX} ${collapsedSubtree.upperLeafY} L ${collapsedSubtree.leafX} ${collapsedSubtree.lowerLeafY} Z"/>
+		d="M ${collapsedSubtree.rootX} ${collapsedSubtree.rootY}
+		C ${collapsedSubtree.rootX + bezierPointXOffsetPx} ${collapsedSubtree.rootY}
+		  ${collapsedSubtree.leafX - bezierPointXOffsetPx} ${collapsedSubtree.upperLeafY} 
+		  ${collapsedSubtree.leafX} ${collapsedSubtree.upperLeafY} 
+		L ${collapsedSubtree.leafX} ${collapsedSubtree.lowerLeafY} 
+		C ${collapsedSubtree.leafX - bezierPointXOffsetPx} ${collapsedSubtree.lowerLeafY}
+		  ${collapsedSubtree.rootX + bezierPointXOffsetPx} ${collapsedSubtree.rootY}
+		  ${collapsedSubtree.rootX} ${collapsedSubtree.rootY} 
+		Z"/>
   </#list>
   </g>
   <g class="collapsedSubtreeText" font-size="${leafTextHeightPx}">

@@ -4,6 +4,10 @@
 		<template>${renderNestedProperty('sequence.sequenceID')}</template>
 	</freemarkerAnnotationGenerator>
 	<freemarkerAnnotationGenerator>
+		<annotationName>sequenceIDPlusClade</annotationName>
+		<template><![CDATA[${renderNestedProperty('sequence.sequenceID')?replace('REF_\\d[a-z]+_', '', 'r')} <#if sequence.subtype??>(Subtype ${sequence.genotype}${sequence.subtype})<#else>(Genotype ${sequence.genotype})</#if>]]></template>
+	</freemarkerAnnotationGenerator>
+	<freemarkerAnnotationGenerator>
 		<annotationName>isolate</annotationName>
 		<template>${renderNestedProperty('sequence.gb_isolate')}</template>
 	</freemarkerAnnotationGenerator>

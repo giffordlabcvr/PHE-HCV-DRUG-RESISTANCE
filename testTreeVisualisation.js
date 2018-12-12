@@ -129,7 +129,7 @@ glue.inMode("module/phdrTreeVisualiser", function() {
 			"tree-document": {
 				"treeDocument" : glueTree, 
 				"pxWidth" : 1200, 
-				"pxHeight" : 1500, 
+				"pxHeight" : 1200, 
 				"leafTextAnnotationName": "cladeDisplayName"
 			}
 		}
