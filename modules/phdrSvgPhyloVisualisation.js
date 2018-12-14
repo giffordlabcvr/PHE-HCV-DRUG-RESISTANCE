@@ -1,37 +1,43 @@
 // simple recursive function to set treevisualiser-collapse to true on subtrees if 
 // glueAlignmentName is set and the collapse flag is not already set.
-function collapseClades(subtree) {
+function collapseClades(subtree, foundAnyAlignment) {
 	var userData;
+	var subtreeType;
 	if(subtree.internal != null) { // internal node
 		userData = subtree.internal.userData;
+		subtreeType = "internal";
 	} else { // leaf node
 		userData = subtree.leaf.userData;
+		subtreeType = "leaf";
 	}
 	var alignmentNames = userData.glueAlignmentNames;
 	var recurse = true;
-	if(alignmentNames != null && alignmentNames.length > 0) {
-		var mainAlignmentName = alignmentNames[0];
-		var collapsed = userData["treevisualiser-collapsed"];
-		if(collapsed == null) {
-			var status;
+	var nextFoundAnyAlignment = foundAnyAlignment;
+	var collapsed = userData["treevisualiser-collapsed"];
+	if(collapsed == null) { // collapsed not already set to false
+		var collapsedLabel = "";
+		var almtStatus = null;
+		if(alignmentNames != null && alignmentNames.length > 0) {
+			var mainAlignmentName = alignmentNames[0];
 			glue.inMode("alignment/"+mainAlignmentName, function() {
-				status = glue.command(["show", "property", "status"]).propertyValueResult.value;
+				collapsedLabel = glue.command(["show", "property", "displayName"]).propertyValueResult.value;
+				collapsedLabel = collapsedLabel.replace("HCV ", "").replace(" (provisional)", "");
+				almtStatus = glue.command(["show", "property", "status"]).propertyValueResult.value;
 			});
-			if(status == null || status != "unassigned") { // don't collapse unassigned subtypes
-				userData["treevisualiser-collapsed"] = "true";
-				var cladeDisplayName;
-				glue.inMode("alignment/"+mainAlignmentName, function() {
-					cladeDisplayName = glue.command(["show", "property", "displayName"]).propertyValueResult.value;
-				});
-				userData["treevisualiser-collapsedLabel"] = cladeDisplayName.replace("HCV ", "").replace(" (provisional)", "");
-				recurse = false;
-			}
+			if(almtStatus != "unassigned") { nextFoundAnyAlignment = true; }
+		}
+		// don't collapse unassigned subtype leaf nodes
+		// don't collapse anything before you have found an alignment.
+		if(nextFoundAnyAlignment && (almtStatus == null || almtStatus != "unassigned" || subtreeType == "internal")) { 
+			userData["treevisualiser-collapsed"] = "true";
+			userData["treevisualiser-collapsedLabel"] = collapsedLabel;
+			recurse = false;
 		}
 	}
-	if(subtree.internal != null && recurse) { // internal node
+	if(subtreeType == "internal" && recurse) { // internal node
 		var branches = subtree.internal.branch;
 		_.each(branches, function(branch) {
-			collapseClades(branch);
+			collapseClades(branch, nextFoundAnyAlignment);
 		});
 	}
 }
@@ -41,7 +47,8 @@ function visualisePhyloAsSvg(document) {
 	
 	var queryName = document.inputDocument.queryName;
 	var placementIndex = document.inputDocument.placementIndex;
-	var minNeighboursToShow = 15;
+	var maxNeighbours = null;
+	var maxDistance = document.inputDocument.maxDistance;
 	var placerResult = document.inputDocument.placerResult;
 	
 	// generate a tree for the placement, as a command document.
@@ -69,7 +76,8 @@ function visualisePhyloAsSvg(document) {
 						"placerResultDocument": placerResult,
 						"placementIndex": placementIndex,
 						"queryName": queryName, 
-						"maxNeighbours": minNeighboursToShow
+						"maxNeighbours": maxNeighbours, 
+						"maxDistance": maxDistance
 					}
 				}
 		}));
@@ -120,7 +128,7 @@ function visualisePhyloAsSvg(document) {
 		});
 	});
 
-	collapseClades(glueTree.phyloTree.root);
+	collapseClades(glueTree.phyloTree.root, false);
 
 	
 	// generate a visualisation document for the tree, 
