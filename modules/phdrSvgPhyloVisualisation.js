@@ -14,11 +14,16 @@ function collapseClades(subtree, foundAnyAlignment) {
 	var recurse = true;
 	var nextFoundAnyAlignment = foundAnyAlignment;
 	var collapsed = userData["treevisualiser-collapsed"];
+	if(subtreeType == "leaf" && userData["name"].indexOf("ncbi-refseqs/") > 0) {
+		userData["treevisualiser-leafSourceName"] = "ncbi-curated";
+		userData["treevisualiser-leafSequenceID"] = userData["name"].substring(userData["name"].lastIndexOf("/")+1);
+	}
+	var mainAlignmentName;
 	if(collapsed == null) { // collapsed not already set to false
 		var collapsedLabel = "";
 		var almtStatus = null;
 		if(alignmentNames != null && alignmentNames.length > 0) {
-			var mainAlignmentName = alignmentNames[0];
+			mainAlignmentName = alignmentNames[0];
 			glue.inMode("alignment/"+mainAlignmentName, function() {
 				collapsedLabel = glue.command(["show", "property", "displayName"]).propertyValueResult.value;
 				collapsedLabel = collapsedLabel.replace("HCV ", "").replace(" (provisional)", "");
@@ -31,6 +36,9 @@ function collapseClades(subtree, foundAnyAlignment) {
 		if(nextFoundAnyAlignment && (almtStatus == null || almtStatus != "unassigned" || subtreeType == "internal")) { 
 			userData["treevisualiser-collapsed"] = "true";
 			userData["treevisualiser-collapsedLabel"] = collapsedLabel;
+			if(mainAlignmentName != null) {
+				userData["treevisualiser-collapsedAlignment"] = mainAlignmentName;
+			}
 			recurse = false;
 		}
 	}
@@ -142,26 +150,51 @@ function visualisePhyloAsSvg(document) {
 					"treeDocument" : glueTree, 
 					"pxWidth" : document.inputDocument.pxWidth, 
 					"pxHeight" : document.inputDocument.pxHeight,
+					"legendPxWidth" : document.inputDocument.legendPxWidth, 
+					"legendPxHeight" : document.inputDocument.legendPxHeight,
 					"leafTextAnnotationName": "sequenceIDPlusClade"
 				}
 			}
 		});
 	});
 
-	// from the visualisation document, generate an SVG as a GLUE web file.
-	var transformResult;
+	// from the visualisation documents, generate SVGs as GLUE web files.
+	var treeTransformResult;
 	glue.inMode("module/phdrTreeVisualisationTransformer", function() {
-		transformResult = glue.command({ "transform-to-web-file": 
+		treeTransformResult = glue.command({ "transform-to-web-file": 
 			{
 				"webFileType": "WEB_PAGE",
 				"commandDocument":{
 					transformerInput: {
-						treeVisualisation: visualiseTreeResult.treeVisualisation
+						treeVisualisation: visualiseTreeResult.visDocument.treeVisualisation
 					}
 				},
 				"outputFile": document.inputDocument.fileName
 			}
 		});
 	});
-	return transformResult
+
+	var legendTransformResult;
+	glue.inMode("module/phdrTreeVisualisationLegendTransformer", function() {
+		legendTransformResult = glue.command({ "transform-to-web-file": 
+			{
+				"webFileType": "WEB_PAGE",
+				"commandDocument":{
+					transformerInput: {
+						treeVisualisationLegend: visualiseTreeResult.visDocument.treeVisualisationLegend
+					}
+				},
+				"outputFile": document.inputDocument.legendFileName
+			}
+		});
+	});
+
+	glue.logInfo("legendTransformResult", legendTransformResult);
+	
+	return {
+		visualisePhyloAsSvgResult: {
+			treeTransformResult: treeTransformResult,
+			legendTransformResult: legendTransformResult
+		}
+	}
 }

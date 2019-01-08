@@ -18,6 +18,7 @@ create module --fileName modules/phdrVisualisationUtility.xml
 create module --fileName modules/phdrTreeVisualiser.xml  
 create module --fileName modules/phdrFeatureToSvgTransformer.xml --loadResources
 create module --fileName modules/phdrTreeVisualisationTransformer.xml --loadResources
+create module --fileName modules/phdrTreeVisualisationLegendTransformer.xml --loadResources
 create module --fileName modules/phdrSvgFeatureVisualisation.xml --loadResources
 create module --fileName modules/phdrSvgPhyloVisualisation.xml --loadResources
   
