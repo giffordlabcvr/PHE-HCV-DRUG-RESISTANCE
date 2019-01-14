@@ -247,7 +247,7 @@ No resistance analysis was performed for the sequence.
 
 <th style="width:15%">Clinical trials / study cohort</th>
 <th style="width:7%">Associated drug regimens</th>
-<th style="width:7%">Fount at baseline?</th>
+<th style="width:7%">Found at baseline?</th>
 <th style="width:7%">Treatment-emergent?</th>
 <th style="width:11%">Reference</th>
 <#else>
@@ -260,7 +260,7 @@ No resistance analysis was performed for the sequence.
 
 <th style="width:19%">Clinical trials / study cohort</th>
 <th style="width:8%">Associated drug regimens</th>
-<th style="width:8%">Fount at baseline?</th>
+<th style="width:8%">Found at baseline?</th>
 <th style="width:8%">Treatment-emergent?</th>
 <th style="width:13%">Reference</th>
 </#if>
