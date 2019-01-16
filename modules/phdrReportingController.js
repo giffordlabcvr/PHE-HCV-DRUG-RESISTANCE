@@ -39,6 +39,7 @@ var nextPubIndex = 1;
 
 function reportFastaAsHtml(fastaFilePath, htmlFilePath) {
 	var reportDoc = reportFasta(fastaFilePath);
+	glue.command(["file-util", "save-string", JSON.stringify(reportDoc, null, 2), "reportDoc.json"]);
 	glue.inMode("module/phdrRasReportTransformer", function() {
 		glue.command({"transform-to-file" : {
 			commandDocument: reportDoc,
@@ -209,9 +210,9 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 				var variationWhereClause = getVariationWhereClause(genotypingResult);
 				sequenceResult.targetRefName = targetRefName;
 				var queryNucleotides = fastaMap[sequenceResult.id].sequence;
-				var scanResults;
+				var thisCladeRasScanResults;
 				glue.inMode("module/phdrFastaSequenceReporter", function() {
-					scanResults = glue.command({
+					thisCladeRasScanResults = glue.command({
 						"string-plus-alignment" :{
 							"variation":{
 								"scan":{
@@ -236,9 +237,9 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 						}
 					}).variationScanMatchCommandResult.variations;
 				});
-				sequenceResult.rasScanResults = scanResults;
+				sequenceResult.rasScanResults = thisCladeRasScanResults;
 				glue.log("FINE", "phdrReportingController.generateSingleFastaReport rasScanResults:", sequenceResult.rasScanResults);
-				_.each(scanResults, function(scanResult) {
+				_.each(sequenceResult.rasScanResults, function(scanResult) {
 					var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
 							scanResult.featureName, scanResult.variationName);
 					glue.log("FINE", "phdrReportingController.generateSingleFastaReport rasFinding:", rasFinding);

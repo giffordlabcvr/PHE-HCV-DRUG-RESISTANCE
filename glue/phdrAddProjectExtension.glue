@@ -29,3 +29,5 @@ multi-delete phdr_resistance_finding -a
 multi-delete phdr_ras -a
 
 run file glue/phdrLoadData.glue
+
+run script glue/phdrCreateRasPositionColumnsSelector.js

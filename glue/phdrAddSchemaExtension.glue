@@ -10,6 +10,7 @@ create custom-table phdr_clinical_trial
 create custom-table phdr_result_trial
 create custom-table phdr_regimen
 create custom-table phdr_result_regimen
+create custom-table phdr_alignment_typical_aa
 
 table phdr_drug
   create field abbreviation VARCHAR
@@ -81,6 +82,13 @@ table phdr_publication
   create field url VARCHAR 500
   exit
 
+table phdr_alignment_typical_aa
+  create field codon_label VARCHAR 10
+  create field aa_residue VARCHAR 10
+  create field num_members INTEGER
+  create field pct_members DOUBLE
+  exit
+
 # resistance variations will have a phdr_ras object associated
 create link variation phdr_ras -m ONE_TO_ONE
 
@@ -95,7 +103,6 @@ create link phdr_alignment_ras phdr_alignment_ras_drug -m ONE_TO_MANY
 # phdr_alignment_ras_drug objects will have multiple phdr_resistance_finding objects associated, 
 # corresponding to each line of the spreadshet.
 create link phdr_alignment_ras_drug phdr_resistance_finding -m ONE_TO_MANY
-
 
 # phdr_alignment_ras_drug objects are each associated to a drug
 create link phdr_alignment_ras_drug phdr_drug -m MANY_TO_ONE
@@ -119,3 +126,5 @@ create link phdr_result_trial phdr_clinical_trial -m MANY_TO_ONE
 create link phdr_in_vivo_result phdr_result_regimen -m ONE_TO_MANY
 create link phdr_result_regimen phdr_regimen -m MANY_TO_ONE
 
+create link alignment phdr_alignment_typical_aa -m ONE_TO_MANY
+create link feature phdr_alignment_typical_aa -m ONE_TO_MANY
