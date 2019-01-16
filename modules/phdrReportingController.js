@@ -116,7 +116,7 @@ function reportFasta(fastaFilePath) {
 	var placerResultContainer = {};
 	initResultMap(fastaDocument, fastaMap, resultMap, placerResultContainer);
 	var singleFastaReport = generateSingleFastaReport(fastaMap, resultMap, fastaFilePath);
-	singleFastaReport["placerResult"] = placerResultContainer.placerResult;
+	singleFastaReport.phdrReport["placerResult"] = placerResultContainer.placerResult;
 	return singleFastaReport;
 }
 
