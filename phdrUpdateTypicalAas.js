@@ -2,8 +2,8 @@
 // uses the module created by phdrCreateRasPositionColumnsSelector.js to create a JSON file
 // storing residue frequencies for RAS-associated AA locations, on a per-clade basis.
 
-//var almtNames = glue.getTableColumn(glue.command(["list", "alignment", "-w", "refSequence.name != null"]), "name");
-var almtNames = ["AL_4d"];
+var almtNames = glue.getTableColumn(glue.command(["list", "alignment", "-w", "refSequence.name != null"]), "name");
+// var almtNames = ["AL_4d"];
 
 var almtNameToFreqs = {};
 
