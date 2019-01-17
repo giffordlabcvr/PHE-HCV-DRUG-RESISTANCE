@@ -1,3 +1,5 @@
+run script glue/phdrLoadTypicalAas.js
+
 run script glue/phdrLoadDrugs.js
 
 run script glue/phdrLoadRegimens.js

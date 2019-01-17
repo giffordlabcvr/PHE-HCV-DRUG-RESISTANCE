@@ -41,11 +41,12 @@ function loadResistanceFindings(shortname, drugId, gene, pooledMap) {
 		var almtName = "AL_"+genotype;
 
 		var alignmentRasId = gene+":"+structure+":"+almtName;
+		var displayStructure = computeDisplayStructure(gene, structure, almtName);
 		glue.command(["create", "custom-table-row", "--allowExisting", "phdr_alignment_ras", alignmentRasId]);
 		glue.inMode("custom-table-row/phdr_alignment_ras/"+alignmentRasId, function() {
 			glue.command(["set", "link-target", "phdr_ras", "custom-table-row/phdr_ras/"+rasId]);
 			glue.command(["set", "link-target", "alignment", "alignment/"+almtName]);
-			glue.command(["set", "field", "display_structure", computeDisplayStructure(gene, structure, almtName)]);
+			glue.command(["set", "field", "display_structure", displayStructure]);
 		});		
 
 		var alignmentRasDrugId = gene+":"+structure+":"+almtName+":"+drugId;
@@ -274,37 +275,15 @@ function computeDisplayStructure(gene, structure, almtName) {
 			displayStructure += structureBit;
 		} else {
 			var codon = structureBit.substring(0, structureBit.length-1);
-			var key = gene+":"+codon+":"+almtName;
-			var freqObjs = locStringToFreqObjs[key];
-			var typicalAAs = [];
-			_.each(freqObjs, function(freqObj) {
-				if(freqObj.pctMembers > 10.0) {
-					typicalAAs.push(freqObj.aminoAcid);
-				}
-			});
+			var typicalAAs = glue.getTableColumn(glue.command(["list", "custom-table-row", "phdr_alignment_typical_aa", 
+				"-w", "alignment.name = '"+almtName+"' and feature.name = '"+gene+"' and codon_label = '"+codon+"'", "aa_residue"]), "aa_residue");
+			//glue.log("FINEST", "typicalAAs for "+almtName+", "+gene+", "+codon, typicalAAs);
 			displayStructure += typicalAAs.join("/")+structureBit;
 		}
 	}
 	return displayStructure;
 }
 
-var locStringToFreqObjs = {};
-
-function loadTypicalAas() {
-	var freqObjs = JSON.parse(glue.command(["file-util", "load-string", "tabular/formatted/typicalAas.json"]).fileUtilLoadStringResult.loadedString);
-	_.each(freqObjs, function(freqObj) {
-		var key = freqObj.gene+":"+freqObj.codon+":"+freqObj.almtName;
-		var currentObjs = locStringToFreqObjs[key];
-		if(currentObjs == null) {
-			currentObjs = [];
-			locStringToFreqObjs[key] = currentObjs;
-		}
-		currentObjs.push(freqObj);
-	});
-}
-
-
-loadTypicalAas();
 
 loadResistanceFindings("GLE", "glecaprevir", "NS3", {"Surveyor-1_and_2":["Surveyor-1", "Surveyor-2"], "Pooled analysis": ["Surveyor-1", "Surveyor-2", "Endurance-1", "Endurance-2", "Endurance-3", "Endurance-4", "Expedition-1", "Expedition-2"]});
 loadResistanceFindings("PIB", "pibrentasvir", "NS5A", {"Surveyor-1_and_2":["Surveyor-1", "Surveyor-2"], "Pooled": ["Surveyor-1", "Surveyor-2", "Endurance-1", "Endurance-2", "Endurance-3", "Endurance-4", "Expedition-1", "Expedition-2"]});

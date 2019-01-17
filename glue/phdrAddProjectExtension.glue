@@ -27,7 +27,9 @@ multi-unset link-target variation -a phdr_ras
 multi-delete phdr_drug -a
 multi-delete phdr_resistance_finding -a
 multi-delete phdr_ras -a
+multi-delete phdr_alignment_typical_aa -a
 
 run file glue/phdrLoadData.glue
 
 run script glue/phdrCreateRasPositionColumnsSelector.js
+
