@@ -1,0 +1,3 @@
+project hcv
+  run script phdrUpdateTypicalAas.js
+  exit

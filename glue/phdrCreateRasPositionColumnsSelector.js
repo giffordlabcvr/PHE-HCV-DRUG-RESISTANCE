@@ -1,4 +1,4 @@
-
+// Creates an alignment columns selector consisting of all AA locations mentioned in the the RAS part of the database.
 
 var phdrRasIds = glue.getTableColumn(glue.command(["list", "custom-table-row", "phdr_ras"]), "id");
 
