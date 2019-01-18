@@ -10,6 +10,7 @@ var almtNameToFreqs = {};
 _.each(almtNames, function(almtName) {
 	glue.inMode("/alignment/"+almtName, function() {
 		var freqObjs = glue.tableToObjects(glue.command(["amino-acid", "frequency", 
+			"--recursive", 
 			"--whereClause", "sequence.source.name = 'ncbi-curated'", 
 			"--almtColsSelector", "phdrRasPositionColumnsSelector"]));
 		almtNameToFreqs[almtName] = freqObjs;
