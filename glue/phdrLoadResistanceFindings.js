@@ -40,17 +40,11 @@ function loadResistanceFindings(shortname, drugId, gene, pooledMap) {
 		var rasId = gene+":"+structure;
 		var almtName = "AL_"+genotype;
 
-		var alignmentRasId = gene+":"+structure+":"+almtName;
-		var displayStructure = computeDisplayStructure(gene, structure, almtName);
-		glue.command(["create", "custom-table-row", "--allowExisting", "phdr_alignment_ras", alignmentRasId]);
-		glue.inMode("custom-table-row/phdr_alignment_ras/"+alignmentRasId, function() {
-			glue.command(["set", "link-target", "phdr_ras", "custom-table-row/phdr_ras/"+rasId]);
-			glue.command(["set", "link-target", "alignment", "alignment/"+almtName]);
-			glue.command(["set", "field", "display_structure", displayStructure]);
-		});		
+		ensureAlmtRasObject(rasId, gene, structure, almtName);
 
+		var alignmentRasId = gene+":"+structure+":"+almtName;
 		var alignmentRasDrugId = gene+":"+structure+":"+almtName+":"+drugId;
-		
+
 		var categoryFactors = almtRasDrugIdToCategoryFactors[alignmentRasDrugId];
 		
 		if(categoryFactors == null) {
@@ -282,6 +276,21 @@ function computeDisplayStructure(gene, structure, almtName) {
 		}
 	}
 	return displayStructure;
+}
+
+function ensureAlmtRasObject(rasId, gene, structure, almtName) {
+	var existing = glue.tableToObjects(glue.command(["list", "custom-table-row", "phdr_alignment_ras", "-w", "phdr_ras.gene = '"+
+		gene+"' and phdr_ras.structure = '"+structure+"' and alignment.name = '"+almtName+"'"]));
+	if(existing.length == 0) {
+		var alignmentRasId = gene+":"+structure+":"+almtName;
+		var displayStructure = computeDisplayStructure(gene, structure, almtName);
+		glue.command(["create", "custom-table-row", "phdr_alignment_ras", alignmentRasId]);
+		glue.inMode("custom-table-row/phdr_alignment_ras/"+alignmentRasId, function() {
+			glue.command(["set", "link-target", "phdr_ras", "custom-table-row/phdr_ras/"+rasId]);
+			glue.command(["set", "link-target", "alignment", "alignment/"+almtName]);
+			glue.command(["set", "field", "display_structure", displayStructure]);
+		});
+	}
 }
 
 

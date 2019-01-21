@@ -274,7 +274,11 @@ No resistance analysis was performed for the sequence.
 <#if resistanceFinding?index == 0 && alignmentRasDrug?index == 0>
 <tr class="firstRow">
 <td rowspan = "${alignmentRas.numFindings}">${rasScanResult.rasDetails.gene}</td>
-<td rowspan = "${alignmentRas.numFindings}">${alignmentRas.displayStructure}</td>
+<td rowspan = "${alignmentRas.numFindings}">
+	<a href="http://hcv.glue.cvr.ac.uk/#/project/rap/${rasScanResult.rasDetails.gene}:${rasScanResult.rasDetails.structure}" target="_blank">
+	${alignmentRas.displayStructure}
+	</a>
+</td>
 <#if phdrReport.sequenceDataFormat = "SAM/BAM">
 <td rowspan = "${alignmentRas.numFindings}">${rasScanResult.pctPresent?string("##0.#")}%</td>
 <td rowspan = "${alignmentRas.numFindings}">${(rasScanResult.readsPresent+rasScanResult.readsAbsent)?c}</td>
@@ -369,6 +373,42 @@ No resistance analysis was performed for the sequence.
 
 <div class="pagebreak"> </div>
 
+<#if result.substitutionsOfInterest ?? && (result.substitutionsOfInterest?size gt 0)>
+
+<div id="substitutionsOfInterestDiv">
+<h3>Other polymorphisms of interest</h3>
+<table id="substitutionsOfInterest">
+<thead>
+<tr>
+<th style="width:15%">Virus protein</th>
+<th style="width:15%">Polymorphism</th>
+<th style="width:70%">Notes</th>
+</thead>
+<tbody>
+<#list result.substitutionsOfInterest as substitutionOfInterest>
+<tr>
+	<td>${substitutionOfInterest.virusProtein}</td>
+	<td>
+<#if substitutionOfInterest.rapUrl ??>
+	<a href="${substitutionOfInterest.rapUrl}" target="_blank">
+</#if>
+	${substitutionOfInterest.displayStructure}
+<#if substitutionOfInterest.rapUrl ??>
+	</a>
+</#if>
+</td>
+	<td>${substitutionOfInterest.displayReasonForInterest}</td>
+</tr>
+</#list>
+</tbody>
+</table>
+</div>
+
+
+<div class="pagebreak"> </div>
+
+</#if>
+
 <div id="configuration">
 <h3>System configuration</h3>
 <table id="systemConfigTable">
@@ -376,7 +416,7 @@ No resistance analysis was performed for the sequence.
     <col class="tableHeader"/>
 </colgroup>
 <colgroup style="width:50%">
-    <col>
+    <col/>
 </colgroup>
 <tr><td><b>GLUE engine version</b></td><td>${phdrReport.engineVersion}</td></tr>
 <tr><td><b>HCV project version</b></td><td>${phdrReport.projectVersion}</td></tr>

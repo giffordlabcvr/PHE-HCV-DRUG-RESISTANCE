@@ -1,5 +1,5 @@
 create custom-table phdr_ras
-create custom-table phdr_alignment_ras
+create custom-table phdr_alignment_ras --idFieldLength 150
 create custom-table phdr_alignment_ras_drug
 create custom-table phdr_drug
 create custom-table phdr_resistance_finding
