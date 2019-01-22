@@ -213,102 +213,18 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 				var differentGenotypeWhereClause = variationWhereClauses.differentGenotypeWhereClause;
 				sequenceResult.targetRefName = targetRefName;
 				var queryNucleotides = fastaMap[sequenceResult.id].sequence;
-				var thisCladeRasScanResults;
-				var sameGenotypeRasScanResults;
-				var differentGenotypeRasScanResults;
-				var residuesAtRasAssociatedLocations;
-				glue.inMode("module/phdrFastaSequenceReporter", function() {
-					thisCladeRasScanResults = glue.command({
-						"string-plus-alignment" :{
-							"variation":{
-								"scan":{
-									"fastaString":queryNucleotides,
-									"queryToTargetSegs": {
-										queryToTargetSegs: {
-											alignedSegment: queryToTargetRefSegs
-										}
-									},
-									"whereClause": thisCladeWhereClause,
-									"targetRefName":targetRefName,
-									"relRefName":"REF_MASTER_NC_004102",
-									"linkingAlmtName":"AL_UNCONSTRAINED",
-									"featureName":"precursor_polyprotein",
-									"descendentFeatures":"true",
-									"excludeAbsent":"true",
-									"excludeInsufficientCoverage":"true",
-									"showMatchesAsDocument":"true",
-									"showMatchesAsTable":"false"
-								}
-							}
-						}
-					}).variationScanMatchCommandResult.variations;
-					sameGenotypeRasScanResults = glue.command({
-						"string-plus-alignment" :{
-							"variation":{
-								"scan":{
-									"fastaString":queryNucleotides,
-									"queryToTargetSegs": {
-										queryToTargetSegs: {
-											alignedSegment: queryToTargetRefSegs
-										}
-									},
-									"whereClause": sameGenotypeWhereClause,
-									"targetRefName":targetRefName,
-									"relRefName":"REF_MASTER_NC_004102",
-									"linkingAlmtName":"AL_UNCONSTRAINED",
-									"featureName":"precursor_polyprotein",
-									"descendentFeatures":"true",
-									"excludeAbsent":"true",
-									"excludeInsufficientCoverage":"true",
-									"showMatchesAsDocument":"true",
-									"showMatchesAsTable":"false"
-								}
-							}
-						}
-					}).variationScanMatchCommandResult.variations;
-					differentGenotypeRasScanResults = glue.command({
-						"string-plus-alignment" :{
-							"variation":{
-								"scan":{
-									"fastaString":queryNucleotides,
-									"queryToTargetSegs": {
-										queryToTargetSegs: {
-											alignedSegment: queryToTargetRefSegs
-										}
-									},
-									"whereClause": differentGenotypeWhereClause,
-									"targetRefName":targetRefName,
-									"relRefName":"REF_MASTER_NC_004102",
-									"linkingAlmtName":"AL_UNCONSTRAINED",
-									"featureName":"precursor_polyprotein",
-									"descendentFeatures":"true",
-									"excludeAbsent":"true",
-									"excludeInsufficientCoverage":"true",
-									"showMatchesAsDocument":"true",
-									"showMatchesAsTable":"false"
-								}
-							}
-						}
-					}).variationScanMatchCommandResult.variations;
-					residuesAtRasAssociatedLocations = glue.tableToObjects(
-						glue.command({ 
-							"string-plus-alignment" : {
-								"amino-acid" : {
-									"fastaString" : queryNucleotides,
-									"queryToTargetSegs": {
-										queryToTargetSegs: {
-											alignedSegment: queryToTargetRefSegs
-										}
-									},
-									"targetRefName" : targetRefName,
-									"linkingAlmtName" : "AL_UNCONSTRAINED",
-									"selectorName" : "phdrRasPositionColumnsSelector"
-								}
-							}
-						})
-					);
-				});
-				sequenceResult.rasScanResults = thisCladeRasScanResults;
+				var thisCladeRasScanResults = 
+					fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefName, 
+							thisCladeWhereClause);
+				var sameGenotypeRasScanResults = 
+					fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefName, 
+							sameGenotypeWhereClause);
+				var differentGenotypeRasScanResults = 
+					fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefName, 
+							differentGenotypeWhereClause);
+				var residuesAtRasAssociatedLocations = 
+					fastaResiduesAtRasAssociatedLocations(queryNucleotides, queryToTargetRefSegs, 
+							targetRefName);
 				sequenceResult.rasScanResults = thisCladeRasScanResults;
 				// map for recording polymorphisms reported at a higher significance (e.g. confirmed RAS), so that they don't 
 				// get reported again at a lower significance (e.g. atypical for subtype).
@@ -320,6 +236,8 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 							scanResult.featureName, scanResult.variationName);
 					glue.log("FINE", "phdrReportingController.generateSingleFastaReport rasFinding:", rasFinding);
 					scanResult.rasDetails = rasFinding.phdrRasVariation;
+					scanResult.rapUrl = "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
+
 					reportedPolymorphismKeys[scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure.replace(/[A-Z]/g, "")] = "thisCladeRAS";
 					addRasPublications(rasFinding, publicationIdToObj);
 					
@@ -382,6 +300,61 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 	return phdrReport;
 }
 
+function fastaResiduesAtRasAssociatedLocations(queryNucleotides, queryToTargetRefSegs, targetRefName) {
+	var results;
+	glue.inMode("module/phdrFastaSequenceReporter", function() {
+		results = glue.tableToObjects(
+			glue.command({ 
+				"string-plus-alignment" : {
+					"amino-acid" : {
+						"fastaString" : queryNucleotides,
+						"queryToTargetSegs": {
+							queryToTargetSegs: {
+								alignedSegment: queryToTargetRefSegs
+							}
+						},
+						"targetRefName" : targetRefName,
+						"linkingAlmtName" : "AL_UNCONSTRAINED",
+						"selectorName" : "phdrRasPositionColumnsSelector"
+					}
+				}
+			})
+		);
+	});
+	return results;
+}
+
+
+function fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefName, whereClause) {
+	var results;
+	glue.inMode("module/phdrFastaSequenceReporter", function() {
+		results = glue.command({
+			"string-plus-alignment" :{
+				"variation":{
+					"scan":{
+						"fastaString":queryNucleotides,
+						"queryToTargetSegs": {
+							queryToTargetSegs: {
+								alignedSegment: queryToTargetRefSegs
+							}
+						},
+						"whereClause": whereClause,
+						"targetRefName":targetRefName,
+						"relRefName":"REF_MASTER_NC_004102",
+						"linkingAlmtName":"AL_UNCONSTRAINED",
+						"featureName":"precursor_polyprotein",
+						"descendentFeatures":"true",
+						"excludeAbsent":"true",
+						"excludeInsufficientCoverage":"true",
+						"showMatchesAsDocument":"true",
+						"showMatchesAsTable":"false"
+					}
+				}
+			}
+		}).variationScanMatchCommandResult.variations;
+	});
+	return results;
+}
 
 function checkForSameGenotypeRas(genotypingResult, scanResult, reportedPolymorphismKeys, substitutionsOfInterest) {
 	var almtName;
@@ -809,6 +782,7 @@ function assessResistanceForDrug(result, drug) {
 								gene: scanResult.rasDetails.gene,
 								structure: scanResult.rasDetails.structure,
 								displayStructure: alignmentRas.displayStructure,
+								rapUrl: "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure,
 								category: alignmentRasDrug.resistanceCategory,
 								displayCategory: alignmentRasDrug.displayCategory
 							};

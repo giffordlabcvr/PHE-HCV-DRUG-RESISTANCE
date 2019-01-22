@@ -178,7 +178,7 @@ Insufficient coverage of ${drugAssessment.featureRequiringCoverage.displayName} 
 <td>
 <#if drugAssessment.rasScores_category_I?? && drugAssessment.rasScores_category_I?size gt 0>
 <#list drugAssessment.rasScores_category_I as rasScore>
-	${rasScore.displayStructure}<#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if><#if !rasScore?is_last>,</#if></#list>
+	<a href="${rasScore.rapUrl}" target="_blank">${rasScore.displayStructure}</a><#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if><#if !rasScore?is_last>,</#if></#list>
 <#else>
 	-
 </#if>
@@ -186,7 +186,7 @@ Insufficient coverage of ${drugAssessment.featureRequiringCoverage.displayName} 
 <td>
 <#if drugAssessment.rasScores_category_II?? && drugAssessment.rasScores_category_II?size gt 0>
 <#list drugAssessment.rasScores_category_II as rasScore>
-	${rasScore.displayStructure}<#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if><#if !rasScore?is_last>,</#if></#list>
+	<a href="${rasScore.rapUrl}" target="_blank">${rasScore.displayStructure}</a><#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if><#if !rasScore?is_last>,</#if></#list>
 <#else>
 	- 
 </#if>
@@ -194,7 +194,7 @@ Insufficient coverage of ${drugAssessment.featureRequiringCoverage.displayName} 
 <td>
 <#if drugAssessment.rasScores_category_III?? && drugAssessment.rasScores_category_III?size gt 0>
 <#list drugAssessment.rasScores_category_III as rasScore>
-	${rasScore.displayStructure}<#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if><#if !rasScore?is_last>,</#if></#list>
+	<a href="${rasScore.rapUrl}" target="_blank">${rasScore.displayStructure}</a><#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if><#if !rasScore?is_last>,</#if></#list>
 <#else>
 	- 
 </#if>
@@ -275,7 +275,7 @@ No resistance analysis was performed for the sequence.
 <tr class="firstRow">
 <td rowspan = "${alignmentRas.numFindings}">${rasScanResult.rasDetails.gene}</td>
 <td rowspan = "${alignmentRas.numFindings}">
-	<a href="http://hcv.glue.cvr.ac.uk/#/project/rap/${rasScanResult.rasDetails.gene}:${rasScanResult.rasDetails.structure}" target="_blank">
+	<a href="${rasScanResult.rapUrl}" target="_blank">
 	${alignmentRas.displayStructure}
 	</a>
 </td>
