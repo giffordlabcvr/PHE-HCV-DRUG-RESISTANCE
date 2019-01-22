@@ -205,14 +205,15 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 				var targetRefName = genotypingResultToTargetRefName(genotypingResult);
 				var nucleotides = fastaMap[sequenceResult.id].sequence;
 				var queryToTargetRefSegs = generateQueryToTargetRefSegs(targetRefName, nucleotides);
+				var queryNucleotides = fastaMap[sequenceResult.id].sequence;
 				sequenceResult.featuresWithCoverage = generateFeaturesWithCoverage(targetRefName, queryToTargetRefSegs);
 				
 				var variationWhereClauses = getVariationWhereClauses(genotypingResult);
 				var thisCladeWhereClause = variationWhereClauses.thisCladeWhereClause;
 				var sameGenotypeWhereClause = variationWhereClauses.sameGenotypeWhereClause;
 				var differentGenotypeWhereClause = variationWhereClauses.differentGenotypeWhereClause;
+
 				sequenceResult.targetRefName = targetRefName;
-				var queryNucleotides = fastaMap[sequenceResult.id].sequence;
 				var thisCladeRasScanResults = 
 					fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefName, 
 							thisCladeWhereClause);
@@ -237,7 +238,6 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 					glue.log("FINE", "phdrReportingController.generateSingleFastaReport rasFinding:", rasFinding);
 					scanResult.rasDetails = rasFinding.phdrRasVariation;
 					scanResult.rapUrl = "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
-
 					reportedPolymorphismKeys[scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure.replace(/[A-Z]/g, "")] = "thisCladeRAS";
 					addRasPublications(rasFinding, publicationIdToObj);
 					
@@ -672,51 +672,72 @@ function reportBam(bamFilePath) {
 			var genotypingResult = samRefResult.genotypingResult;
 			if(genotypingResult != null) {
 				var targetRefName = genotypingResultToTargetRefName(genotypingResult);
-				var variationWhereClauses = getVariationWhereClauses(genotypingResult);
-				var thisCladeWhereClause = variationWhereClauses.thisCladeWhereClause;
-				
-				samRefResult.targetRefName = targetRefName;
-				
-				
 				var samRefSense = "FORWARD";
 				var nucleotides = consensusFastaMap[samRefResult.id].sequence;
 				if(samRefResult.isReverseHcv) {
 					nucleotides = reverseComplement(nucleotides);
 					samRefSense = "REVERSE_COMPLEMENT";
 				}
-				
 				var queryToTargetRefSegs = generateQueryToTargetRefSegs(targetRefName, nucleotides);
 				samRefResult.featuresWithCoverage = generateFeaturesWithCoverage(targetRefName, queryToTargetRefSegs);
 				
-				var scanResults;
-				glue.inMode("module/phdrSamReporter", function() {
-					scanResults = glue.tableToObjects(glue.command(["variation", "scan",
-					   				              "--fileName", bamFilePath, 
-					   				              "--samRefSense", samRefSense, 
-					   				              "--samRefName", samRefResult.samReference.name,
-					   				              "--relRefName", "REF_MASTER_NC_004102",
-					   				              "--featureName", "precursor_polyprotein",
-					   				              "--descendentFeatures",
-					   				              "--autoAlign",
-					   				              "--targetRefName", targetRefName,
-					   				              "--linkingAlmtName", "AL_UNCONSTRAINED",
-					   				              "--whereClause", thisCladeWhereClause,
-					   				              "--minQScore", phdrSamThresholds.minQScore,
-					   				              "--minMapQ", phdrSamThresholds.minMapQ,
-					   				              "--minDepth", phdrSamThresholds.minDepth,
-					   				              "--minPresentPct", phdrSamThresholds.minReadProportionPct]));					
-				});
-				samRefResult.rasScanResults = scanResults;
+				var variationWhereClauses = getVariationWhereClauses(genotypingResult);
+				var thisCladeWhereClause = variationWhereClauses.thisCladeWhereClause;
+				var sameGenotypeWhereClause = variationWhereClauses.sameGenotypeWhereClause;
+				var differentGenotypeWhereClause = variationWhereClauses.differentGenotypeWhereClause;				
+
+				samRefResult.targetRefName = targetRefName;
+				
+				var thisCladeRasScanResults = 
+					bamVariationScan(bamFilePath, samRefSense, samRefResult.samReference.name, targetRefName, 
+							thisCladeWhereClause);
+
+				var sameGenotypeRasScanResults = 
+					bamVariationScan(bamFilePath, samRefSense, samRefResult.samReference.name, targetRefName, 
+							sameGenotypeWhereClause);
+
+				var differentGenotypeRasScanResults = 
+					bamVariationScan(bamFilePath, samRefSense, samRefResult.samReference.name, targetRefName, 
+							differentGenotypeWhereClause);
+
+				samRefResult.rasScanResults = thisCladeRasScanResults;
+				// map for recording polymorphisms reported at a higher significance (e.g. confirmed RAS), so that they don't 
+				// get reported again at a lower significance (e.g. atypical for subtype).
+				var reportedPolymorphismKeys = {};
 				glue.log("FINE", "phdrReportingController.reportBam rasScanResults:", samRefResult.rasScanResults);
-				_.each(scanResults, function(scanResult) {
+				_.each(samRefResult.rasScanResults, function(scanResult) {
 					var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
 							scanResult.featureName, scanResult.variationName);
 					glue.log("FINE", "phdrReportingController.reportBam rasFinding:", rasFinding);
 					scanResult.rasDetails = rasFinding.phdrRasVariation;
 					scanResult.rapUrl = "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
+					reportedPolymorphismKeys[scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure.replace(/[A-Z]/g, "")] = "thisCladeRAS";
 					addRasPublications(rasFinding, publicationIdToObj);
 					
 				});
+				samRefResult.substitutionsOfInterest = [];
+				samRefResult.sameGenotypeRasScanResults = sameGenotypeRasScanResults;
+				glue.log("FINE", "phdrReportingController.reportBam sameGenotypeRasScanResults:", 
+						samRefResult.sameGenotypeRasScanResults);
+				_.each(samRefResult.sameGenotypeRasScanResults, function(scanResult) {
+					var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
+							scanResult.featureName, scanResult.variationName);
+					glue.log("FINE", "phdrReportingController.reportBam rasFinding:", rasFinding);
+					scanResult.rasDetails = rasFinding.phdrRasVariation;
+					checkForSameGenotypeRas(genotypingResult, scanResult, reportedPolymorphismKeys, samRefResult.substitutionsOfInterest);
+				});
+
+				samRefResult.differentGenotypeRasScanResults = differentGenotypeRasScanResults;
+				glue.log("FINE", "phdrReportingController.reportBam differentGenotypeRasScanResults:", 
+						samRefResult.differentGenotypeRasScanResults);
+				_.each(samRefResult.differentGenotypeRasScanResults, function(scanResult) {
+					var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
+							scanResult.featureName, scanResult.variationName);
+					glue.log("FINE", "phdrReportingController.reportBam rasFinding:", rasFinding);
+					scanResult.rasDetails = rasFinding.phdrRasVariation;
+					checkForDifferentGenotypeRas(genotypingResult, scanResult, reportedPolymorphismKeys, samRefResult.substitutionsOfInterest);
+				});
+
 				samRefResult.drugScores = assessResistance(samRefResult);
 				glue.log("FINE", "phdrReportingController.reportBam samRefResult.drugScores:", samRefResult.drugScores);
 	
@@ -744,6 +765,27 @@ function reportBam(bamFilePath) {
 	return phdrReport;
 }
 
+function bamVariationScan(bamFilePath, samRefSense, samRefName, targetRefName, whereClause) {
+	var scanResults;
+	glue.inMode("module/phdrSamReporter", function() {
+		scanResults = glue.tableToObjects(glue.command(["variation", "scan",
+		   				              "--fileName", bamFilePath, 
+		   				              "--samRefSense", samRefSense, 
+		   				              "--samRefName", samRefName,
+		   				              "--relRefName", "REF_MASTER_NC_004102",
+		   				              "--featureName", "precursor_polyprotein",
+		   				              "--descendentFeatures",
+		   				              "--autoAlign",
+		   				              "--targetRefName", targetRefName,
+		   				              "--linkingAlmtName", "AL_UNCONSTRAINED",
+		   				              "--whereClause", whereClause,
+		   				              "--minQScore", phdrSamThresholds.minQScore,
+		   				              "--minMapQ", phdrSamThresholds.minMapQ,
+		   				              "--minDepth", phdrSamThresholds.minDepth,
+		   				              "--minPresentPct", phdrSamThresholds.minReadProportionPct]));					
+	});
+	return scanResults;
+}
 
 function assessResistance(result) {
 	var drugs = 
