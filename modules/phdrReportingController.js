@@ -443,7 +443,14 @@ function checkForWildTypeSubstitution(genotypingResult, residueObj, reportedPoly
 	}
 	var gene = residueObj.feature;
 	var codon = residueObj.codonLabel;
-	var residues = residueObj.possibleAas.split("").sort();
+	var residues;
+	if(residueObj.possibleAas != null) {
+		// FASTA consensus case
+		residues = residueObj.possibleAas.split("").sort();
+	} else {
+		// SAM/BAM case
+		residues = [residueObj.aminoAcid];
+	}
 	
 	var typicalAAs = glue.getTableColumn(glue.command([
 		"list", "custom-table-row", "phdr_alignment_typical_aa", 
@@ -461,15 +468,19 @@ function checkForWildTypeSubstitution(genotypingResult, residueObj, reportedPoly
 		}
 	}
 	if(wildTypeSubstitution) {
-		var wtSubObj = _.clone(residueObj);
-		var wtSubDisplayStructure = typicalAAs.join("/")+codon+residues.join("/");
-		wtSubObj.virusProtein = gene;
-		wtSubObj.displayStructure = wtSubDisplayStructure;
-		wtSubObj.reasonForInterest = "clade_atypical";
-		wtSubObj.atypicalForClade = almtName;
-		wtSubObj.displayReasonForInterest = "Atypical substitution for "+displayClade+" at a location associated with resistance";
 		var reportedKey = gene+":"+codon;
 		if(reportedPolymorphismKeys[reportedKey] == null) {
+			var wtSubObj = {};
+			wtSubObj.virusProtein = gene;
+			wtSubObj.displayStructure = typicalAAs.join("/")+codon+residues.join("/");
+			wtSubObj.reasonForInterest = "clade_atypical";
+			wtSubObj.atypicalForClade = almtName;
+			wtSubObj.displayReasonForInterest = "Atypical substitution for "+displayClade+" at a location associated with resistance";
+			if(residueObj.pctAaReads != null) {
+				// SAM/BAM case
+				wtSubObj.pctPresent = residueObj.pctAaReads;
+				wtSubObj.depth = residueObj.readsWithAA + residueObj.readsWithDifferentAA;
+			}
 			substitutionsOfInterest.push(wtSubObj);
 			reportedPolymorphismKeys[reportedKey] = "atypical";
 		}
@@ -710,6 +721,10 @@ function reportBam(bamFilePath) {
 					bamVariationScan(bamFilePath, samRefSense, samRefResult.samReference.name, targetRefName, 
 							differentGenotypeWhereClause);
 
+				var residuesAtRasAssociatedLocations = 
+					bamResiduesAtRasAssociatedLocations(bamFilePath, samRefSense, 
+							samRefResult.samReference.name, targetRefName);
+				
 				samRefResult.rasScanResults = thisCladeRasScanResults;
 				// map for recording polymorphisms reported at a higher significance (e.g. confirmed RAS), so that they don't 
 				// get reported again at a lower significance (e.g. atypical for subtype).
@@ -748,6 +763,15 @@ function reportBam(bamFilePath) {
 					checkForDifferentGenotypeRas(genotypingResult, scanResult, reportedPolymorphismKeys, samRefResult.substitutionsOfInterest);
 				});
 
+				samRefResult.residuesAtRasAssociatedLocations = residuesAtRasAssociatedLocations;
+				glue.log("FINE", "phdrReportingController.reportBam residuesAtRasAssociatedLocations", 
+						samRefResult.residuesAtRasAssociatedLocations);
+				_.each(samRefResult.residuesAtRasAssociatedLocations, function(residueObj) {
+					checkForWildTypeSubstitution(genotypingResult, residueObj, reportedPolymorphismKeys, 
+							samRefResult.substitutionsOfInterest);
+				});
+
+				
 				samRefResult.drugScores = assessResistance(samRefResult);
 				glue.log("FINE", "phdrReportingController.reportBam samRefResult.drugScores:", samRefResult.drugScores);
 	
@@ -775,6 +799,8 @@ function reportBam(bamFilePath) {
 	return phdrReport;
 }
 
+
+
 function bamVariationScan(bamFilePath, samRefSense, samRefName, targetRefName, whereClause) {
 	var scanResults;
 	glue.inMode("module/phdrSamReporter", function() {
@@ -796,6 +822,26 @@ function bamVariationScan(bamFilePath, samRefSense, samRefName, targetRefName, w
 	});
 	return scanResults;
 }
+
+function bamResiduesAtRasAssociatedLocations(bamFilePath, samRefSense, samRefName, targetRefName) {
+	var residueObjs;
+	glue.inMode("module/phdrSamReporter", function() {
+		residueObjs = glue.tableToObjects(glue.command(["amino-acid",
+		   				              "--fileName", bamFilePath, 
+		   				              "--samRefSense", samRefSense, 
+		   				              "--samRefName", samRefName,
+		   				              "--selectorName", "phdrRasPositionColumnsSelector",
+		   				              "--autoAlign",
+		   				              "--targetRefName", targetRefName,
+		   				              "--linkingAlmtName", "AL_UNCONSTRAINED",
+		   				              "--minQScore", phdrSamThresholds.minQScore,
+		   				              "--minMapQ", phdrSamThresholds.minMapQ,
+		   				              "--minDepth", phdrSamThresholds.minDepth,
+		   				              "--minAAPct", phdrSamThresholds.minReadProportionPct]));					
+	});
+	return residueObjs;
+}
+
 
 function assessResistance(result) {
 	var drugs = 
