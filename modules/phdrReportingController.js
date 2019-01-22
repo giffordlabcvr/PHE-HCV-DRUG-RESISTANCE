@@ -616,125 +616,130 @@ function addRasPublications(rasFinding, publicationIdToObj) {
 
 function reportBam(bamFilePath) {
 	glue.log("FINE", "phdrReportingController.reportBam invoked, input file:"+bamFilePath);
-	
-	var samReferences;
-	glue.inMode("module/phdrSamReporter", function() {
-		samReferences = glue.tableToObjects(glue.command(["list", "sam-reference", "--fileName", bamFilePath]));
-	});
-	
-	var resultMap = {};
+	var phdrReport;
+	glue.inSession("samFileSession", ["phdrSamReporter", bamFilePath], function() {
 
-	var numSamReferencesInFile = 0;
-	_.each(samReferences, function(samReference) {
-		resultMap[samReference.name] = {
-			id: samReference.name,
-			samReference: samReference
-		};
-		numSamReferencesInFile++;
-	});
-	if(numSamReferencesInFile == 0) {
-		throw new Error("No SAM reference sequences found in SAM/BAM file");
-	}
-	if(numSamReferencesInFile > 1) {
-		throw new Error("Multiple reference sequences found in SAM/BAM file");
-	}
-
-	
-	
-	var consensusFastaMap = {};
-	_.each(samReferences, function(samReference) {
+		var samReferences;
 		glue.inMode("module/phdrSamReporter", function() {
-			consensusDocument = glue.command(["nucleotide-consensus", 
-			                                  "--fileName", bamFilePath, 
-			                                  "--samRefName", samReference.name, 
-			                                  "--consensusID", samReference.name,
-			                                  "--preview",
-				   				              "--minQScore", phdrSamThresholds.minQScore,
-				   				              "--minMapQ", phdrSamThresholds.minMapQ,
-				   				              "--minDepth", phdrSamThresholds.minDepth]);
+			samReferences = glue.tableToObjects(glue.command(["list", "sam-reference", "--fileName", bamFilePath]));
 		});
-		consensusFastaMap[samReference.name] = consensusDocument.nucleotideFasta.sequences[0];
-	});
+		
+		var resultMap = {};
 	
-	var placerResultContainer = {};
-	
-	recogniseFasta(consensusFastaMap, resultMap);
-	// apply genotyping
-	genotypeFasta(consensusFastaMap, resultMap, placerResultContainer);
-	
-	var publicationIdToObj = {};
-	nextPubIndex = 1;
-
-	// scan variations for each sam reference
-	_.each(_.values(resultMap), function(samRefResult) {
-		var genotypingResult = samRefResult.genotypingResult;
-		if(genotypingResult != null) {
-			var targetRefName = genotypingResultToTargetRefName(genotypingResult);
-			var variationWhereClauses = getVariationWhereClauses(genotypingResult);
-			var thisCladeWhereClause = variationWhereClauses.thisCladeWhereClause;
-			
-			samRefResult.targetRefName = targetRefName;
-			
-			
-			var samRefSense = "FORWARD";
-			var nucleotides = consensusFastaMap[samRefResult.id].sequence;
-			if(samRefResult.isReverseHcv) {
-				nucleotides = reverseComplement(nucleotides);
-				samRefSense = "REVERSE_COMPLEMENT";
-			}
-			
-			var queryToTargetRefSegs = generateQueryToTargetRefSegs(targetRefName, nucleotides);
-			samRefResult.featuresWithCoverage = generateFeaturesWithCoverage(targetRefName, queryToTargetRefSegs);
-			
-			var scanResults;
-			glue.inMode("module/phdrSamReporter", function() {
-				scanResults = glue.tableToObjects(glue.command(["variation", "scan",
-				   				              "--fileName", bamFilePath, 
-				   				              "--samRefSense", samRefSense, 
-				   				              "--samRefName", samRefResult.samReference.name,
-				   				              "--relRefName", "REF_MASTER_NC_004102",
-				   				              "--featureName", "precursor_polyprotein",
-				   				              "--descendentFeatures",
-				   				              "--autoAlign",
-				   				              "--targetRefName", targetRefName,
-				   				              "--linkingAlmtName", "AL_UNCONSTRAINED",
-				   				              "--whereClause", thisCladeWhereClause,
-				   				              "--minQScore", phdrSamThresholds.minQScore,
-				   				              "--minMapQ", phdrSamThresholds.minMapQ,
-				   				              "--minDepth", phdrSamThresholds.minDepth,
-				   				              "--minPresentPct", phdrSamThresholds.minReadProportionPct]));					
-			});
-			samRefResult.rasScanResults = scanResults;
-			glue.log("FINE", "phdrReportingController.reportBam rasScanResults:", samRefResult.rasScanResults);
-			_.each(scanResults, function(scanResult) {
-				var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
-						scanResult.featureName, scanResult.variationName);
-				glue.log("FINE", "phdrReportingController.reportBam rasFinding:", rasFinding);
-				scanResult.rasDetails = rasFinding.phdrRasVariation;
-				addRasPublications(rasFinding, publicationIdToObj);
-				
-			});
-			samRefResult.drugScores = assessResistance(samRefResult);
-			glue.log("FINE", "phdrReportingController.reportBam samRefResult.drugScores:", samRefResult.drugScores);
-
+		var numSamReferencesInFile = 0;
+		_.each(samReferences, function(samReference) {
+			resultMap[samReference.name] = {
+				id: samReference.name,
+				samReference: samReference
+			};
+			numSamReferencesInFile++;
+		});
+		if(numSamReferencesInFile == 0) {
+			throw new Error("No SAM reference sequences found in SAM/BAM file");
 		}
-	});
-	glue.log("FINE", "phdrReportingController.reportBam publicationIdToObj:", publicationIdToObj);
-
-	var publications = _.values(publicationIdToObj);
-	publications = _.sortBy(publications, "index");
+		if(numSamReferencesInFile > 1) {
+			throw new Error("Multiple reference sequences found in SAM/BAM file");
+		}
 	
-	var phdrReport = { 
-			phdrReport: {
-				sequenceDataFormat: "SAM/BAM",
-				filePath: bamFilePath,
-				samReferenceResult: _.values(resultMap)[0],
-				publications: publications, 
-				placerResult: placerResultContainer.placerResult
+		
+		
+		var consensusFastaMap = {};
+		_.each(samReferences, function(samReference) {
+			glue.inMode("module/phdrSamReporter", function() {
+				consensusDocument = glue.command(["nucleotide-consensus", 
+				                                  "--fileName", bamFilePath, 
+				                                  "--samRefName", samReference.name, 
+				                                  "--consensusID", samReference.name,
+				                                  "--preview",
+					   				              "--minQScore", phdrSamThresholds.minQScore,
+					   				              "--minMapQ", phdrSamThresholds.minMapQ,
+					   				              "--minDepth", phdrSamThresholds.minDepth]);
+			});
+			consensusFastaMap[samReference.name] = consensusDocument.nucleotideFasta.sequences[0];
+		});
+		
+		var placerResultContainer = {};
+		
+		recogniseFasta(consensusFastaMap, resultMap);
+		// apply genotyping
+		genotypeFasta(consensusFastaMap, resultMap, placerResultContainer);
+		
+		var publicationIdToObj = {};
+		nextPubIndex = 1;
+	
+		// scan variations for each sam reference
+		_.each(_.values(resultMap), function(samRefResult) {
+			var genotypingResult = samRefResult.genotypingResult;
+			if(genotypingResult != null) {
+				var targetRefName = genotypingResultToTargetRefName(genotypingResult);
+				var variationWhereClauses = getVariationWhereClauses(genotypingResult);
+				var thisCladeWhereClause = variationWhereClauses.thisCladeWhereClause;
+				
+				samRefResult.targetRefName = targetRefName;
+				
+				
+				var samRefSense = "FORWARD";
+				var nucleotides = consensusFastaMap[samRefResult.id].sequence;
+				if(samRefResult.isReverseHcv) {
+					nucleotides = reverseComplement(nucleotides);
+					samRefSense = "REVERSE_COMPLEMENT";
+				}
+				
+				var queryToTargetRefSegs = generateQueryToTargetRefSegs(targetRefName, nucleotides);
+				samRefResult.featuresWithCoverage = generateFeaturesWithCoverage(targetRefName, queryToTargetRefSegs);
+				
+				var scanResults;
+				glue.inMode("module/phdrSamReporter", function() {
+					scanResults = glue.tableToObjects(glue.command(["variation", "scan",
+					   				              "--fileName", bamFilePath, 
+					   				              "--samRefSense", samRefSense, 
+					   				              "--samRefName", samRefResult.samReference.name,
+					   				              "--relRefName", "REF_MASTER_NC_004102",
+					   				              "--featureName", "precursor_polyprotein",
+					   				              "--descendentFeatures",
+					   				              "--autoAlign",
+					   				              "--targetRefName", targetRefName,
+					   				              "--linkingAlmtName", "AL_UNCONSTRAINED",
+					   				              "--whereClause", thisCladeWhereClause,
+					   				              "--minQScore", phdrSamThresholds.minQScore,
+					   				              "--minMapQ", phdrSamThresholds.minMapQ,
+					   				              "--minDepth", phdrSamThresholds.minDepth,
+					   				              "--minPresentPct", phdrSamThresholds.minReadProportionPct]));					
+				});
+				samRefResult.rasScanResults = scanResults;
+				glue.log("FINE", "phdrReportingController.reportBam rasScanResults:", samRefResult.rasScanResults);
+				_.each(scanResults, function(scanResult) {
+					var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
+							scanResult.featureName, scanResult.variationName);
+					glue.log("FINE", "phdrReportingController.reportBam rasFinding:", rasFinding);
+					scanResult.rasDetails = rasFinding.phdrRasVariation;
+					scanResult.rapUrl = "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
+					addRasPublications(rasFinding, publicationIdToObj);
+					
+				});
+				samRefResult.drugScores = assessResistance(samRefResult);
+				glue.log("FINE", "phdrReportingController.reportBam samRefResult.drugScores:", samRefResult.drugScores);
+	
 			}
-	};
-	addOverview(phdrReport);
-	glue.log("FINE", "phdrReportingController.reportBam phdrReport:", phdrReport);
+		});
+		glue.log("FINE", "phdrReportingController.reportBam publicationIdToObj:", publicationIdToObj);
+	
+		var publications = _.values(publicationIdToObj);
+		publications = _.sortBy(publications, "index");
+		
+		phdrReport = { 
+				phdrReport: {
+					sequenceDataFormat: "SAM/BAM",
+					filePath: bamFilePath,
+					samReferenceResult: _.values(resultMap)[0],
+					publications: publications, 
+					placerResult: placerResultContainer.placerResult
+				}
+		};
+		addOverview(phdrReport);
+		glue.log("FINE", "phdrReportingController.reportBam phdrReport:", phdrReport);
+		
+	});
 	
 	return phdrReport;
 }
