@@ -372,6 +372,11 @@ function checkForSameGenotypeRas(genotypingResult, scanResult, reportedPolymorph
 		rsgObj.displayStructure = computeDisplayStructure(scanResult.rasDetails.gene, scanResult.rasDetails.structure, almtName);
 		rsgObj.reasonForInterest = "rap_same_genotype";
 		rsgObj.displayReasonForInterest = "Associated with resistance in other subtypes of "+gtDisplayClade;
+		// minority percentage / depth data if appropriate
+		if(scanResult.pctPresent != null) {
+			rsgObj.pctPresent = scanResult.pctPresent;
+			rsgObj.depth = scanResult.readsPresent + scanResult.readsAbsent;
+		}
 		substitutionsOfInterest.push(rsgObj);
 		reportedPolymorphismKeys[polyKey] = "rap_same_genotype";
 	}
@@ -394,6 +399,11 @@ function checkForDifferentGenotypeRas(genotypingResult, scanResult, reportedPoly
 		rdgObj.displayStructure = computeDisplayStructure(scanResult.rasDetails.gene, scanResult.rasDetails.structure, almtName);
 		rdgObj.reasonForInterest = "rap_different_genotype";
 		rdgObj.displayReasonForInterest = "Associated with resistance in genotypes other than "+gtDisplayClade;
+		// minority percentage / depth data if appropriate
+		if(scanResult.pctPresent != null) {
+			rdgObj.pctPresent = scanResult.pctPresent;
+			rdgObj.depth = scanResult.readsPresent + scanResult.readsAbsent;
+		}
 		substitutionsOfInterest.push(rdgObj);
 		reportedPolymorphismKeys[polyKey] = "rap_different_genotype";
 	}

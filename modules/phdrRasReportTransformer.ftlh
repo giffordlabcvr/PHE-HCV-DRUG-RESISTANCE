@@ -380,9 +380,17 @@ No resistance analysis was performed for the sequence.
 <table id="substitutionsOfInterest">
 <thead>
 <tr>
+<#if phdrReport.sequenceDataFormat = "SAM/BAM">
+<th style="width:10%">Virus protein</th>
+<th style="width:10%">Polymorphism</th>
+<th style="width:10%">Read proportion</th>
+<th style="width:10%">Read depth</th>
+<th style="width:60%">Notes</th>
+<#else>
 <th style="width:15%">Virus protein</th>
 <th style="width:15%">Polymorphism</th>
 <th style="width:70%">Notes</th>
+</#if>
 </thead>
 <tbody>
 <#list result.substitutionsOfInterest as substitutionOfInterest>
@@ -397,6 +405,10 @@ No resistance analysis was performed for the sequence.
 	</a>
 </#if>
 </td>
+<#if phdrReport.sequenceDataFormat = "SAM/BAM">
+<td>${substitutionOfInterest.pctPresent?string("##0.#")}%</td>
+<td>${(substitutionOfInterest.depth)?c}</td>
+</#if>
 	<td>${substitutionOfInterest.displayReasonForInterest}</td>
 </tr>
 </#list>
