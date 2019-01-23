@@ -17,7 +17,6 @@ table phdr_drug
   create field category VARCHAR
   create field producer VARCHAR
   create field research_code VARCHAR
-  create field feature_requiring_coverage VARCHAR
   exit
 
 table phdr_ras

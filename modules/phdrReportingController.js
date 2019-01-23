@@ -216,13 +216,13 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 				sequenceResult.targetRefName = targetRefName;
 				var thisCladeRasScanResults = 
 					fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefName, 
-							thisCladeWhereClause);
+							thisCladeWhereClause, false, false);
 				var sameGenotypeRasScanResults = 
 					fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefName, 
-							sameGenotypeWhereClause);
+							sameGenotypeWhereClause, true, true);
 				var differentGenotypeRasScanResults = 
 					fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefName, 
-							differentGenotypeWhereClause);
+							differentGenotypeWhereClause, true, true);
 				var residuesAtRasAssociatedLocations = 
 					fastaResiduesAtRasAssociatedLocations(queryNucleotides, queryToTargetRefSegs, 
 							targetRefName);
@@ -237,11 +237,28 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 							scanResult.featureName, scanResult.variationName);
 					glue.log("FINE", "phdrReportingController.generateSingleFastaReport rasFinding:", rasFinding);
 					scanResult.rasDetails = rasFinding.phdrRasVariation;
+					addRasPublications(rasFinding, publicationIdToObj);
+				});
+				// at this stage sequenceResult.rasScanResults contains absent / insufficient coverage variation scan results, 
+				// which is important for assessing whether the sequence has insufficient coverage overall to assess resistnce
+				// for a given drug.
+				sequenceResult.drugScores = assessResistance(sequenceResult);
+
+				// now remove non-present variation scan results.
+				sequenceResult.rasScanResults = _.filter(sequenceResult.rasScanResults, function(scanResult) {
+					return scanResult.present;
+				});
+
+				glue.log("FINE", "phdrReportingController.generateSingleFastaReport sequenceResult.drugScores:", sequenceResult.drugScores);
+
+				
+				_.each(sequenceResult.rasScanResults, function(scanResult) {
 					scanResult.rapUrl = "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
 					reportedPolymorphismKeys[scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure.replace(/[A-Z]/g, "")] = "thisCladeRAS";
-					addRasPublications(rasFinding, publicationIdToObj);
-					
 				});
+
+				
+				
 				sequenceResult.substitutionsOfInterest = [];
 				sequenceResult.sameGenotypeRasScanResults = sameGenotypeRasScanResults;
 				glue.log("FINE", "phdrReportingController.generateSingleFastaReport sameGenotypeRasScanResults:", 
@@ -273,8 +290,6 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 					checkForWildTypeSubstitution(genotypingResult, residueObj, reportedPolymorphismKeys, sequenceResult.substitutionsOfInterest);
 				});
 				
-				sequenceResult.drugScores = assessResistance(sequenceResult);
-				glue.log("FINE", "phdrReportingController.generateSingleFastaReport sequenceResult.drugScores:", sequenceResult.drugScores);
 				sequenceResult.visualisationHints = visualisationHints(queryNucleotides, targetRefName, genotypingResult, queryToTargetRefSegs, sequenceResult.rasScanResults);
 			}
 		}
@@ -325,7 +340,7 @@ function fastaResiduesAtRasAssociatedLocations(queryNucleotides, queryToTargetRe
 }
 
 
-function fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefName, whereClause) {
+function fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefName, whereClause, excludeAbsent, excludeInsufficientCoverage) {
 	var results;
 	glue.inMode("module/phdrFastaSequenceReporter", function() {
 		results = glue.command({
@@ -344,8 +359,8 @@ function fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefNam
 						"linkingAlmtName":"AL_UNCONSTRAINED",
 						"featureName":"precursor_polyprotein",
 						"descendentFeatures":"true",
-						"excludeAbsent":"true",
-						"excludeInsufficientCoverage":"true",
+						"excludeAbsent":excludeAbsent,
+						"excludeInsufficientCoverage":excludeInsufficientCoverage,
 						"showMatchesAsDocument":"true",
 						"showMatchesAsTable":"false"
 					}
@@ -846,7 +861,7 @@ function bamResiduesAtRasAssociatedLocations(bamFilePath, samRefSense, samRefNam
 function assessResistance(result) {
 	var drugs = 
 		glue.tableToObjects(
-				glue.command(["list", "custom-table-row", "phdr_drug", "id", "category", "feature_requiring_coverage"]));
+				glue.command(["list", "custom-table-row", "phdr_drug", "id", "category"]));
 	var assessmentList = _.map(drugs, function(drug) { 
 		return assessResistanceForDrug(result, drug); 
 	});
@@ -866,80 +881,95 @@ function assessResistanceForDrug(result, drug) {
 	var rasScores_category_II = [];
 	var rasScores_category_III = [];
 	
-	var sufficientCoverage;
-	
-	var nameOfFeatureRequiringCoverage = drug.feature_requiring_coverage;
-	
-	var featureRequiringCoverage = _.find(result.featuresWithCoverage, function(featureObj) {
-		return featureObj.name == nameOfFeatureRequiringCoverage;
-	});
+	var overallSufficientCoverage = true;
 
-	if(featureRequiringCoverage.coveragePct < phdrFeatureCoverageThresholds.resistanceGeneMinCoveragePct) {
-		sufficientCoverage = false;
-	} else {
-		sufficientCoverage = true;
-		_.each(result.rasScanResults, function(scanResult) {
-			_.each(scanResult.rasDetails.alignmentRas, function(alignmentRas) {
-				_.each(alignmentRas.alignmentRasDrug, function(alignmentRasDrug) {
-					if(alignmentRasDrug.drug == drug.id) {
-						if(alignmentRasDrug.resistanceCategory != "insignificant") {
-							var rasScoreDetails = {
-								gene: scanResult.rasDetails.gene,
-								structure: scanResult.rasDetails.structure,
-								displayStructure: alignmentRas.displayStructure,
-								rapUrl: "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure,
-								category: alignmentRasDrug.resistanceCategory,
-								displayCategory: alignmentRasDrug.displayCategory
-							};
-							if(scanResult.pctPresent != null) {
-								rasScoreDetails.readsPctPresent = scanResult.pctPresent;
-							}
-							if(alignmentRasDrug.resistanceCategory == "category_I") {
+	var sufficientCoverage_I = true;
+	var sufficientCoverage_II = true;
+	var sufficientCoverage_III = true;
+
+	_.each(result.rasScanResults, function(scanResult) {
+		_.each(scanResult.rasDetails.alignmentRas, function(alignmentRas) {
+			_.each(alignmentRas.alignmentRasDrug, function(alignmentRasDrug) {
+				if(alignmentRasDrug.drug == drug.id) {
+					if(alignmentRasDrug.resistanceCategory != "insignificant") {
+						var rasScoreDetails = {
+							gene: scanResult.rasDetails.gene,
+							structure: scanResult.rasDetails.structure,
+							displayStructure: alignmentRas.displayStructure,
+							rapUrl: "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure,
+							category: alignmentRasDrug.resistanceCategory,
+							displayCategory: alignmentRasDrug.displayCategory
+						};
+						if(scanResult.pctPresent != null) {
+							rasScoreDetails.readsPctPresent = scanResult.pctPresent;
+						}
+						if(alignmentRasDrug.resistanceCategory == "category_I") {
+							if(scanResult.present) {
 								rasScores_category_I.push(rasScoreDetails); 
-							} else if(alignmentRasDrug.resistanceCategory == "category_II") {
+							} else if(!scanResult.sufficientCoverage) {
+								sufficientCoverage_I = false;
+							}
+						} else if(alignmentRasDrug.resistanceCategory == "category_II") {
+							if(scanResult.present) {
 								rasScores_category_II.push(rasScoreDetails); 
-							} else if(alignmentRasDrug.resistanceCategory == "category_III") {
+							} else if(!scanResult.sufficientCoverage) {
+								sufficientCoverage_II = false;
+							}
+						} else if(alignmentRasDrug.resistanceCategory == "category_III") {
+							if(scanResult.present) {
 								rasScores_category_III.push(rasScoreDetails); 
+							} else if(!scanResult.sufficientCoverage) {
+								sufficientCoverage_III = false;
 							}
 						}
 					}
-				});
+				}
 			});
 		});
-		
-		// drug score: 4 levels:
-		// strong_resistance:		Any category I RASs.
-		// moderate_resistance:		Any category II RAS.
-		// weak_resistance:			Any category III RAS.
-		// susceptible:				None of the above.
-		
-		var numCategoryI = rasScores_category_I.length;
-		var numCategoryII = rasScores_category_II.length;
-		var numCategoryIII = rasScores_category_III.length;
+	});
 
-		if(numCategoryI > 0) {
-			drugScore = 'strong_resistance';
-			drugScoreDisplay = 'Strong resistance';
-			drugScoreDisplayShort = 'Strong';
-		} else if(numCategoryII > 0) {
-			drugScore = 'moderate_resistance';
-			drugScoreDisplay = 'Moderate resistance';
-			drugScoreDisplayShort = 'Moderate';
-		} else if(numCategoryIII > 0) {
-			drugScore = 'weak_resistance';
-			drugScoreDisplay = 'Weak resistance';
-			drugScoreDisplayShort = 'Weak';
-		} else {
-			drugScore = 'susceptible';
-			drugScoreDisplay = 'Susceptible';
-			drugScoreDisplayShort = 'Susceptible';
-		}
+	// overall sufficient coverage = false if:
+    // No category I RAS detected and sufficientCoverage_I is false or
+	// No category I, II RAS detected and sufficientCoverage_II is false or
+	// No category I, II or III RAS detected and sufficientCoverage_III is false
+	
+	// drug score: 4 levels:
+	// strong_resistance:		Any category I RASs.
+	// moderate_resistance:		Any category II RAS.
+	// weak_resistance:			Any category III RAS.
+	// susceptible:				None of the above.
+	
+	
+	var numCategoryI = rasScores_category_I.length;
+	var numCategoryII = rasScores_category_II.length;
+	var numCategoryIII = rasScores_category_III.length;
+
+	if(numCategoryI > 0) {
+		drugScore = 'strong_resistance';
+		drugScoreDisplay = 'Strong resistance';
+		drugScoreDisplayShort = 'Strong';
+	} else if(!sufficientCoverage_I) {
+		overallSufficientCoverage = false;
+	} else if(numCategoryII > 0) {
+		drugScore = 'moderate_resistance';
+		drugScoreDisplay = 'Moderate resistance';
+		drugScoreDisplayShort = 'Moderate';
+	} else if(!sufficientCoverage_II) {
+		overallSufficientCoverage = false;
+	} else if(numCategoryIII > 0) {
+		drugScore = 'weak_resistance';
+		drugScoreDisplay = 'Weak resistance';
+		drugScoreDisplayShort = 'Weak';
+	} else if(!sufficientCoverage_III) {
+		overallSufficientCoverage = false;
+	} else {
+		drugScore = 'susceptible';
+		drugScoreDisplay = 'Susceptible';
+		drugScoreDisplayShort = 'Susceptible';
 	}
 	
-	
 	return {
-		featureRequiringCoverage: featureRequiringCoverage,
-		sufficientCoverage: sufficientCoverage,
+		sufficientCoverage: overallSufficientCoverage,
 		drug: drug,
 		drugScore: drugScore, 
 		drugScoreDisplay: drugScoreDisplay,

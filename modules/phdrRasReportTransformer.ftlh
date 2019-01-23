@@ -172,7 +172,7 @@ No
 <td>${drugAssessment.drug.id}</td>
 <#if !drugAssessment.sufficientCoverage>
 <td colspan="5">
-Insufficient coverage of ${drugAssessment.featureRequiringCoverage.displayName} to assess resistance level
+Insufficient coverage of known resistance locations to assess resistance level
 </td>
 <#else>
 <td>
