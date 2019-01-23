@@ -1,0 +1,194 @@
+gene	virusGenotype	substitution	baselineRas	rxEmergentRas	rasContext	drug	vitroOrVivo	ec50	clinicalTrialName	trialRegimen	regimenNumbers	trialCohort	trialNotes / no of patients	pubmed	Weight of evidence		
+NS5A	1a	28V	yes	no	none	EBR	in vivo	NA	C-WORTHY  	EBR/GZR/RBV; EBR/GZR		non cirrhotic; TN		25467560			
+NS5A	1a	28G	no	yes	none	EBR	in vivo	NA	C-WORTHY  	EBR/GZR/RBV; EBR/GZR		non cirrhotic; TN		25467560			
+NS5A	1a	28T+30H+58D	no	yes	none	EBR	in vivo	NA	C-WORTHY  	EBR/GZR/RBV; EBR/GZR		non cirrhotic; TN		25467560			
+NS5A	1a	93N	yes	no	none	EBR	in vivo	NA	C-WORTHY  	EBR/GZR/RBV; EBR/GZR		non cirrhotic; TN		25467560			
+NS5A	1a	93N	yes	no	none	EBR	in vivo	NA	C-WORTHY  	EBR/GZR/RBV; EBR/GZR		non cirrhotic; TN		25467560			
+NS5A	1b	31M+93H	no	yes	none	EBR	in vivo	NA	C-WORTHY  	EBR/GZR/RBV; EBR/GZR		non cirrhotic; TN		25467560			
+NS5A	1a	30H+93H	yes	no	none	EBR	in vivo	NA	C-WORTHY  	EBR/GZR/RBV; EBR/GZR		non cirrhotic; TN		25467560			
+NS5A	1a	93N	no	yes	none	EBR	in vivo	NA	C-WORTHY  	EBR/GZR/RBV; EBR/GZR		non cirrhotic; TN		25467560			
+NS5A	1a	31M+37M+93H	no	yes	none	EBR	in vivo	NA	C-WORTHY  	EBR/GZR/RBV; EBR/GZR		non cirrhotic; TN		25467560			
+NS5A	1a	31M	yes	no	none	EBR	in vivo	NA	C-WORTHY  	EBR/GZR/RBV; EBR/GZR		non cirrhotic; TN		25467560			
+NS5A	1a	30R	no	yes	L31M	EBR	in vivo	NA	C-WORTHY  	EBR/GZR/RBV; EBR/GZR		non cirrhotic; TN		25467560			
+NS5A	1a	28T 	NA	NA	NA	EBR	in vitro	15	NA	NA		NA		26303801			
+NS5A	1a	28A	NA	NA	NA	EBR	in vitro	61	NA	NA		NA		26303801			
+NS5A	1a	30D	NA	NA	NA	EBR	in vitro	925	NA	NA		NA		26303801			
+NS5A	1a	30H 	NA	NA	NA	EBR	in vitro	6	NA	NA		NA		26303801			
+NS5A	1a	30R	NA	NA	NA	EBR	in vitro	16	NA	NA		NA		26303801			
+NS5A	1a	31V	NA	NA	NA	EBR	in vitro	61	NA	NA		NA		26303801			
+NS5A	1a	31M	NA	NA	NA	EBR	in vitro	10	NA	NA		NA		26303801			
+NS5A	1a	31F	NA	NA	NA	EBR	in vitro	96	NA	NA		NA		26303801			
+NS5A	1a	58D	NA	NA	NA	EBR	in vitro	6	NA	NA		NA		26303801			
+NS5A	1a	93H	NA	NA	NA	EBR	in vitro	220	NA	NA		NA		26303801			
+NS5A	1a	93N	NA	NA	NA	EBR	in vitro	929	NA	NA		NA		26303801			
+NS5A	1a	93C	NA	NA	NA	EBR	in vitro	11	NA	NA		NA		26303801			
+NS5A	1a	30D+93N	NA	NA	NA	EBR	in vitro	21600	NA	NA		NA		26303801			
+NS5A	1b	28M	NA	NA	NA	EBR	in vitro	2	NA	NA		NA		26303801			
+NS5A	1b	31F	NA	NA	NA	EBR	in vitro	15	NA	NA		NA		26303801			
+NS5A	1b	31V	NA	NA	NA	EBR	in vitro	4	NA	NA		NA		26303801			
+NS5A	1b	93H	NA	NA	NA	EBR	in vitro	17	NA	NA		NA		26303801			
+NS5A	3a	30K	NA	NA	NA	EBR	in vitro	50	NA	NA		NA		26303801			
+NS5A	3a	31F	NA	NA	NA	EBR	in vitro	143	NA	NA		NA		26303801			
+NS5A	3a	93H	NA	NA	NA	EBR	in vitro	485	NA	NA		NA		26303801			
+NS5A	1a	28T+30H+93H	no	yes	na	EBR	in vivo	NA	C-SALVAGE	EBR/GZR/RBV		PI failure; NC		26371152			
+NS5A	1a	58D	yes	no	na	EBR	in vivo	NA	C-SALVAGE	EBR/GZR/RBV		PI failure; Cirrh		26371152			
+NS5A	1a	30R	no	yes	H58D	EBR	in vivo	NA	C-SALVAGE	EBR/GZR/RBV		PI failure; Cirrh		26371152			
+NS5A	1b	31M	yes	no	na	EBR	in vivo	NA	C-SALVAGE	EBR/GZR/RBV		PI failure; Cirrh		26371152			
+NS5A	1b	93H	no	yes	L31M	EBR	in vivo	NA	C-SALVAGE	EBR/GZR/RBV		PI failure; Cirrh		26371152			
+NS5A	1a	28T	NA	NA	NA	EBR	in vitro	15	NA	NA		NA		26926625			
+NS5A	1a	30E	NA	NA	NA	EBR	in vitro	56	NA	NA		NA		26926625			
+NS5A	1a	30G	NA	NA	NA	EBR	in vitro	84	NA	NA		NA		26926625			
+NS5A	1a	30H	NA	NA	NA	EBR	in vitro	6	NA	NA		NA		26926625			
+NS5A	1a	30R	NA	NA	NA	EBR	in vitro	16	NA	NA		NA		26926625			
+NS5A	1a	31M	NA	NA	NA	EBR	in vitro	10	NA	NA		NA		26926625			
+NS5A	1a	31V	NA	NA	NA	EBR	in vitro	61	NA	NA		NA		26926625			
+NS5A	1a	93C	NA	NA	NA	EBR	in vitro	11	NA	NA		NA		26926625			
+NS5A	1a	93H	NA	NA	NA	EBR	in vitro	220	NA	NA		NA		26926625			
+NS5A	1a	93N	NA	NA	NA	EBR	in vitro	929	NA	NA		NA		26926625			
+NS5A	1a	28T+30H	NA	NA	NA	EBR	in vitro	2286	NA	NA		NA		26926625			
+NS5A	1a	30H+31V	NA	NA	NA	EBR	in vitro	1429	NA	NA		NA		26926625			
+NS5A	1a	30R+31V	NA	NA	NA	EBR	in vitro	7143	NA	NA		NA		26926625			
+NS5A	1a	31V+93H	NA	NA	NA	EBR	in vitro	38857	NA	NA		NA		26926625			
+NS5A	1a	31V+93N	NA	NA	NA	EBR	in vitro	53571	NA	NA		NA		26926625			
+NS5A	1a	24T+28T+30R	NA	NA	NA	EBR	in vitro	7000	NA	NA		NA		26926625			
+NS5A	1a	24Q+28T+31M	NA	NA	NA	EBR	in vitro	9	NA	NA		NA		26926625			
+NS5A	1a	24M+30R+81M	NA	NA	NA	EBR	in vitro	69	NA	NA		NA		26926625			
+NS5A	1a	28T+30H+31V	NA	NA	NA	EBR	in vitro	56000	NA	NA		NA		26926625			
+NS5A	1a	28T+30R+31V	NA	NA	NA	EBR	in vitro	89143	NA	NA		NA		26926625			
+NS5A	1a	28V+30H+31V	NA	NA	NA	EBR	in vitro	2429	NA	NA		NA		26926625			
+NS5A	1a	28T+30R+31V+93H	NA	NA	NA	EBR	in vitro	714286	NA	NA		NA		26926625			
+NS5A	1a	28V	yes	no	NA	EBR	in vivo	NA	Pooled1	EBR/GZR/RBV; EBR/GZR		pooled		27773808			
+NS5A	1a	28V	NA	NA	NA	EBR	in vitro	1-2	Pooled1	NA		pooled		27773808			
+NS5A	1a	30H	yes	no	NA	EBR	in vivo	NA	Pooled1	EBR/GZR/RBV; EBR/GZR		pooled		27773808			
+NS5A	1a	30H	NA	NA	NA	EBR	in vitro	6-8	Pooled1	NA		pooled		27773808			
+NS5A	1a	30L	yes	no	NA	EBR	in vivo	NA	Pooled1	EBR/GZR/RBV; EBR/GZR		pooled		27773808			
+NS5A	1a	30R	yes	no	NA	EBR	in vivo	NA	Pooled1	EBR/GZR/RBV; EBR/GZR		pooled		27773808			
+NS5A	1a	30R	NA	NA	NA	EBR	in vitro	16-125	Pooled1	NA		pooled		27773808			
+NS5A	1a	31M	yes	no	NA	EBR	in vivo	NA	Pooled1	EBR/GZR/RBV; EBR/GZR		pooled		27773808			
+NS5A	1a	31M	NA	NA	NA	EBR	in vitro	0.5-10	Pooled1	NA		pooled		27773808			
+NS5A	1a	58D	yes	no	NA	EBR	in vivo	NA	Pooled1	EBR/GZR/RBV; EBR/GZR		pooled		27773808			
+NS5A	1a	58D	NA	NA	NA	EBR	in vitro	6	Pooled1	NA		pooled		27773808			
+NS5A	1a	93C	NA	NA	NA	EBR	in vitro	11-50	Pooled1	NA		pooled		27773808			
+NS5A	1a	93N	NA	NA	NA	EBR	in vitro	929-2000	Pooled1	NA		pooled		27773808			
+NS5A	1a	93S	yes	no	NA	EBR	in vivo	NA	Pooled1	EBR/GZR/RBV; EBR/GZR		pooled		27773808			
+NS5A	1a	30R	no	yes	NA	EBR	in vivo	NA	C-EDGE CO-INFECTION	EBR/GZR 		Cirr and NC; TN		26423374			
+NS5A	1a	30K	no	yes	NA	EBR	in vivo	NA	C-EDGE CO-INFECTION	EBR/GZR 		Cirr and NC; TN		26423374			
+NS5A	4d	28S	no	yes	NA	EBR	in vivo	NA	C-EDGE CO-INFECTION	EBR/GZR 		Cirr and NC; TN		26423374			
+NS5A	1a	93N	yes	no	NA	EBR	in vivo	NA	C-EDGE TE	EBR/GZR/RBV; EBR/GZR		Cirr and NC; PR exp		27720838			
+NS5A	1a	30R	no	yes	L31M	EBR	in vivo	NA	C-EDGE TE	EBR/GZR/RBV; EBR/GZR		Cirr and NC; PR exp		27720838			
+NS5A	1a	30H+93H	no	yes	NA	EBR	in vivo	NA	C-EDGE TE	EBR/GZR/RBV; EBR/GZR		Cirr and NC; PR exp		27720838			
+NS5A	1a	30R+93H	no	yes	NA	EBR	in vivo	NA	C-EDGE TE	EBR/GZR/RBV; EBR/GZR		Cirr and NC; PR exp		27720838			
+NS5A	1a	28T+93S	no	yes	Y93N	EBR	in vivo	NA	C-EDGE TE	EBR/GZR/RBV; EBR/GZR		Cirr and NC; PR exp		27720838			
+NS5A	1a	28T	no	yes	Q30H	EBR	in vivo	NA	C-EDGE TE	EBR/GZR/RBV; EBR/GZR		Cirr and NC; PR exp		27720838			
+NS5A	1b	28M	no	yes	Y93H	EBR	in vivo	NA	C-EDGE TE	EBR/GZR/RBV; EBR/GZR		Cirr and NC; PR exp		27720838			
+NS5A	1b	31I	yes	no	NA	EBR	in vivo	NA	C-EDGE TE	EBR/GZR/RBV; EBR/GZR		Cirr and NC; PR exp		27720838			
+NS5A	1b	31M	yes	no	NA	EBR	in vivo	NA	C-EDGE TE	EBR/GZR/RBV; EBR/GZR		Cirr and NC; PR exp		27720838			
+NS5A	1b	93H	no	yes	L31I/M	EBR	in vivo	NA	C-EDGE TE	EBR/GZR/RBV; EBR/GZR		Cirr and NC; PR exp		27720838			
+NS5A	1b	93H	yes	no	NA	EBR	in vivo	NA	NCT02203149	EBR/GZR 		Cirr and NC		27873094			
+NS5A	1b	31M	no	yes	Y93H	EBR	in vivo	NA	NCT02203149	EBR/GZR 		Cirr and NC		27873094			
+NS5A	1b	31M	yes	no	na	EBR	in vivo	NA	NCT02203149	EBR/GZR 		Cirr and NC		27873094			
+NS5A	1b	31M+93H	no	yes	na	EBR	in vivo	NA	NCT02203149	EBR/GZR 		Cirr and NC		27873094			
+NS5A	1a	31M+30R	no	yes	na	EBR	in vivo	C WORTHY	Pooled2	EBR/GZR/RBV; EBR/GZR		cirr; TN / TE		28193518			
+NS5A	1a	31M	yes	no	na	EBR	in vivo	C EDGE TN	Pooled2	EBR/GZR/RBV; EBR/GZR		cirr; TN / TE		28193518			
+NS5A	1a	30R	no	yes	L31M	EBR	in vivo	C EDGE TN	Pooled2	EBR/GZR/RBV; EBR/GZR		cirr; TN / TE		28193518			
+NS5A	1a	58D+30R	no	yes	na	EBR	in vivo	C WORTHY	Pooled2	EBR/GZR/RBV; EBR/GZR		cirr; TN / TE		28193518			
+NS5A	1a	30H	yes	no	NA	EBR	in vivo	C EDGE TE	Pooled2	EBR/GZR/RBV; EBR/GZR		cirr; TN / TE		28193518			
+NS5A	1a	58D	no	yes	Q30H	EBR	in vivo	C EDGE TE	Pooled2	EBR/GZR/RBV; EBR/GZR		cirr; TN / TE		28193518			
+NS5A	1a	30L+93H	yes	no	NA	EBR	in vivo	C WORTHY	Pooled2	EBR/GZR/RBV; EBR/GZR		cirr; TN / TE		28193518			
+NS5A	1a	31M	no	yes	Q30L+Y93H	EBR	in vivo	C WORTHY	Pooled2	EBR/GZR/RBV; EBR/GZR		cirr; TN / TE		28193518			
+NS5A	1a	31V+93N	yes	no	NA	EBR	in vivo	C WORTHY	Pooled2	EBR/GZR/RBV; EBR/GZR		cirr; TN / TE		28193518			
+NS5A	1a	30R	no	yes	NA	EBR	in vivo	C SALVAGE	Pooled2	EBR/GZR/RBV; EBR/GZR		cirr; TN / TE		28193518			
+NS5A	1a	93N	yes	no	NA	EBR	in vivo	C EDGE TE	Pooled2	EBR/GZR/RBV; EBR/GZR		cirr; TN / TE		28193518			
+NS5A	1b	93H	no	yes	L31M	EBR	in vivo	C SALVAGE/EDGE TE	Pooled2	EBR/GZR/RBV; EBR/GZR		cirr; TN / TE		28193518			
+NS5A	1b	31M	yes	no	NA	EBR	in vivo	C SALVAGE/EDGE TE	Pooled2	EBR/GZR/RBV; EBR/GZR		cirr; TN / TE		28193518			
+NS5A	4d	28S+31I	no	yes	NA	EBR	in vivo	C EDGE TE	Pooled2	EBR/GZR/RBV; EBR/GZR		cirr; TN / TE		28193518			
+NS5A	4d	58T	yes	no	NA	EBR	in vivo	C EDGE TE	Pooled2	EBR/GZR/RBV; EBR/GZR		cirr; TN / TE		28193518			
+NS5A	4d	31V+93H	no	yes	P58T	EBR	in vivo	C EDGE TE	Pooled2	EBR/GZR/RBV; EBR/GZR		cirr; TN / TE		28193518			
+NS5A	4a	28M+58Y	yes	no	NA	EBR	in vivo	C EDGE TE	Pooled2	EBR/GZR/RBV; EBR/GZR		cirr; TN / TE		28193518			
+NS5A	4a	58D	no	yes	L28M+P58Y	EBR	in vivo	C EDGE TE	Pooled2	EBR/GZR/RBV; EBR/GZR		cirr; TN / TE		28193518			
+NS5A	1a	30L+93H	yes	no	NA	EBR	in vivo	NA	C-WORTHY	EBR/GZR/RBV; EBR/GZR		Cirr and NC; naïve and PR exp		25467591			
+NS5A	1a	31M	no	yes	Q30L+Y93H	EBR	in vivo	NA	C-WORTHY	EBR/GZR/RBV; EBR/GZR		Cirr and NC; naïve and PR exp		25467591			
+NS5A	1a	31V+93N	yes	no	NA	EBR	in vivo	NA	C-WORTHY	EBR/GZR/RBV; EBR/GZR		Cirr and NC; naïve and PR exp		25467591			
+NS5A	1a	30R+31M	no	yes	NA	EBR	in vivo	NA	C-WORTHY	EBR/GZR/RBV; EBR/GZR		Cirr and NC; naïve and PR exp		25467591			
+NS5A	1a	31M+58D	no	yes	NA	EBR	in vivo	NA	C-WORTHY	EBR/GZR/RBV; EBR/GZR		Cirr and NC; naïve and PR exp		25467591			
+NS5A	1a	28T+30R	no	yes	NA	EBR	in vivo	NA	C-WORTHY	EBR/GZR/RBV; EBR/GZR		Cirr and NC; naïve and PR exp		25467591			
+NS5A	1a	30R+58D	no	yes	NA	EBR	in vivo	NA	C-WORTHY	EBR/GZR/RBV; EBR/GZR		Cirr and NC; naïve and PR exp		25467591			
+NS5A	1a	31M	yes	no	NA	EBR	in vivo	NA	C-WORTHY	EBR/GZR/RBV; EBR/GZR		Cirr and NC; naïve and PR exp		25467591			
+NS5A	1a	30R	no	yes	L31M	EBR	in vivo	NA	C-WORTHY	EBR/GZR/RBV; EBR/GZR		Cirr and NC; naïve and PR exp		25467591			
+NS5A	1b	93H	no	yes	L31M	EBR	in vivo	NA	C-WORTHY	EBR/GZR/RBV; EBR/GZR		Cirr and NC; naïve and PR exp		25467591			
+NS5A	1b	31M	yes	No	NA	EBR	in vivo	NA	C-WORTHY	EBR/GZR/RBV; EBR/GZR		Cirr and NC; naïve and PR exp		25467591			
+NS5A	4	30F	NA	NA	NA	EBR	in vitro	15	NA	NA		NA		28416549			
+NS5A	4	30S	NA	NA	NA	EBR	in vitro	4	NA	NA		NA		28416549			
+NS5A	4	31V 	NA	NA	NA	EBR	in vitro	2.5	NA	NA		NA		28416549			
+NS5A	4	93H	NA	NA	NA	EBR	in vitro	7.5	NA	NA		NA		28416549			
+NS5A	1a	28T	yes	no	NA	EBR	in vivo	NA	C-SURFER	EBR/GZR		Cirr and NC; naïve and PR exp		28576451			
+NS5A	1a	28S	no	yes	NA	EBR	in vivo	NA	C-SURFER	EBR/GZR		Cirr and NC; naïve and PR exp		28576451			
+NS5A	1a	93H	yes	no	NA	EBR	in vivo	NA	C-SURFER	EBR/GZR		Cirr and NC; naïve and PR exp		28576451			
+NS5A	1a	93N	no	yes	NA	EBR	in vivo	NA	C-SURFER	EBR/GZR		Cirr and NC; naïve and PR exp		28576451			
+NS5A	1b	31M	yes	no	NA	EBR	in vivo	NA	C-SURFER	EBR/GZR		Cirr and NC; naïve and PR exp		28576451			
+NS5A	3	30L	yes	no	NA	EBR	in vivo	NA	C-WORTHY Part D	EBR/GZR/RBV		NC; naïve		28470815			
+NS5A	3	30S+31I+93H	no	yes	NA	EBR	in vivo	NA	C-WORTHY Part D	EBR/GZR/RBV		NC; naïve		28470815			
+NS5A	3	30G+93H	no	yes	NA	EBR	in vivo	NA	C-WORTHY Part D	EBR/GZR/RBV		NC; naïve		28470815			
+NS5A	3	93H	no	yes	NA	EBR	in vivo	NA	C-WORTHY Part D	EBR/GZR/RBV		NC; naïve		28470815			
+NS5A	3	30K+93H	yes	no	NA	EBR	in vivo	NA	C-WORTHY Part D	EBR/GZR/RBV		NC; naïve		28470815			
+NS5A	3	31F	no	yes	NA	EBR	in vivo	NA	C-WORTHY Part D	EBR/GZR/RBV		NC; naïve		28470815			
+NS5A	3	30K	yes	no	NA	EBR	in vivo	NA	C-WORTHY Part D	EBR/GZR/RBV		NC; naïve		28470815			
+NS5A	3	30K+58S	no	yes	A30K	EBR	in vivo	NA	C-WORTHY Part D	EBR/GZR/RBV		NC; naïve		28470815			
+NS5A	3a	30K+31M	yes	no	NA	EBR	in vitro	>100000000	NA	NA		NA		29425396			
+NS5A	3a	30K+93H	yes	no	NA	EBR	in vitro	>100000000	NA	NA		NA		29425396			
+NS5A	3a	30K+31M+93H	yes	no	NA	EBR	in vitro	>100000000	NA	NA		NA		29425396			
+NS5A	1a	30H	no	no	NA	EBR	in vitro	4-79	NA	NA		NA		29274866			
+NS5A	1a	30R	no	no	NA	EBR	in vitro	4-79	NA	NA		NA		29274866			
+NS5A	1a	30K	no	no	NA	EBR	in vitro	4-79	NA	NA		NA		29274866			
+NS5A	1a	93H	no	no	NA	EBR	in vitro	>1000	NA	NA		NA		29274866			
+NS5A	1a	93C	no	no	NA	EBR	in vitro	>1000	NA	NA		NA		29274866			
+NS5A	1a	93N	no	no	NA	EBR	in vitro	>1000	NA	NA		NA		29274866			
+NS5A	1a	31V	no	no	NA	EBR	in vitro	>1000	NA	NA		NA		29274866			
+NS5A	1a	32del	no	no	NA	EBR	in vitro	>1000	NA	NA		NA		29274866			
+NS5A	1b	93H	no	no	NA	EBR	in vitro	4-79	NA	NA		NA		29274866			
+NS5A	1b	93N	no	no	NA	EBR	in vitro	4-79	NA	NA		NA		29274866			
+NS5A	1b	28M+93N	no	no	NA	EBR	in vitro	>1000	NA	NA		NA		29274866			
+NS5A	1b	32del	no	no	NA	EBR	in vitro	>1000	NA	NA		NA		29274866			
+NS5A	1b	31M+93H	no	no	NA	EBR	in vitro	>1000	NA	NA		NA		29274866			
+NS5A	2a	28S	no	no	NA	EBR	in vitro	>1000	NA	NA		NA		29274866			
+NS5A	2a	93H	no	no	NA	EBR	in vitro	4-79	NA	NA		NA		29274866			
+NS5A	2a	28S+93H	no	no	NA	EBR	in vitro	>1000	NA	NA		NA		29274866			
+NS5A	2a	62D+93H	no	no	NA	EBR	in vitro	4-79	NA	NA		NA		29274866			
+NS5A	2a	31V	no	no	NA	EBR	in vitro	80-999	NA	NA		NA		29274866			
+NS5A	2a	31M	no	no	NA	EBR	in vitro	80-999	NA	NA		NA		29274866			
+NS5A	2b	93H	no	no	NA	EBR	in vitro	4-79	NA	NA		NA		29274866			
+NS5A	2b	24F+93H	no	no	NA	EBR	in vitro	80-999	NA	NA		NA		29274866			
+NS5A	2b	24T+93H	no	no	NA	EBR	in vitro	80-999	NA	NA		NA		29274866			
+NS5A	3a	31F	no	no	NA	EBR	in vitro	80-999	NA	NA		NA		29274866			
+NS5A	3a	93H	no	no	NA	EBR	in vitro	>1000	NA	NA		NA		29274866			
+NS5A	3a	31F+93H	no	no	NA	EBR	in vitro	>1000	NA	NA		NA		29274866			
+NS5A	3a	93H+99A	no	no	NA	EBR	in vitro	80-999	NA	NA		NA		29274866			
+NS5A	3a	31V	no	no	NA	EBR	in vitro	>1000	NA	NA		NA		29274866			
+NS5A	4a	30H	no	no	NA	EBR	in vitro	4-79	NA	NA		NA		29274866			
+NS5A	4a	8A+58L	no	no	NA	EBR	in vitro	4-79	NA	NA		NA		29274866			
+NS5A	5a	31F	no	no	NA	EBR	in vitro	>1000	NA	NA		NA		29274866			
+NS5A	5a	31V	no	no	NA	EBR	in vitro	4-79	NA	NA		NA		29274866			
+NS5A	5a	31F+129H	no	no	NA	EBR	in vitro	>1000	NA	NA		NA		29274866			
+NS5A	6a	31V	no	no	NA	EBR	in vitro	80-999	NA	NA		NA		29274866			
+NS5A	6a	31M	no	no	NA	EBR	in vitro	4-79	NA	NA		NA		29274866			
+NS5A	7a	31F	no	no	NA	EBR	in vitro	80-999	NA	NA		NA		29274866			
+NS5A	7a	24R+30G	no	no	NA	EBR	in vitro	80-999	NA	NA		NA		29274866			
+NS5A	7a	24R+31F	no	no	NA	EBR	in vitro	80-999	NA	NA		NA		29274866			
+NS5A	3	58S+62T+93H	yes	no	NA	EBR	in vivo	NA	C-ISLE	EBR/GZR/SOF		cirrhotics		29473975			
+NS5A	4	58P	yes	no	NA	EBR	in vivo	NA	Swiss HCVree	EBR/GZR		HIV; non cirrhotic		30107485			
+NS5A	4	28S+31I	no	yes	T58P	EBR	in vivo	NA	Swiss HCVree	EBR/GZR		HIV; non cirrhotic		30107485			
+NS5A	4a	28M+93H	yes	no	NA	EBR	in vivo	NA	Pooled3	EBR/GZR		NC 		29461687			
+NS5A	4a	28T	no	yes	L28M+Y93H	EBR	in vivo	NA	Pooled3	EBR/GZR		NC 		29461687			
+NS5A	4g	28M+30H	yes	no	NA	EBR	in vivo	NA	Pooled3	EBR/GZR		cirrhotic 		29461687			
+NS5A	4g	93C	no	yes	L28M+L30H	EBR	in vivo	NA	Pooled3	EBR/GZR		cirrhotic 		29461687			
+NS5A	1a	28V	yes	no	NA	EBR	in vivo	NA	C-EDGE CO-STAR	EBR/GZR		NC and C		27537841			
+NS5A	1a	30H	NA	NA	NA	EBR	in vitro	7.5	NA	NA		NA		24127258			
+NS5A	1a	30R	NA	NA	NA	EBR	in vitro	125	NA	NA		NA		24127258			
+NS5A	1a	31F	NA	NA	NA	EBR	in vitro	20	NA	NA		NA		24127258			
+NS5A	1a	31V	NA	NA	NA	EBR	in vitro	125	NA	NA		NA		24127258			
+NS5A	1a	93C	NA	NA	NA	EBR	in vitro	50	NA	NA		NA		24127258			
+NS5A	1a	93H	NA	NA	NA	EBR	in vitro	600	NA	NA		NA		24127258			
+NS5A	1b	30Q	NA	NA	NA	EBR	in vitro	3.0	NA	NA		NA		24127258			
+NS5A	1b	31F	NA	NA	NA	EBR	in vitro	16.7	NA	NA		NA		24127258			
+NS5A	1b	31V	NA	NA	NA	EBR	in vitro	3.3	NA	NA		NA		24127258			
+NS5A	1b	93H	NA	NA	NA	EBR	in vitro	16.7	NA	NA		NA		24127258			

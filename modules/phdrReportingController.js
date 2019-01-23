@@ -851,7 +851,9 @@ function assessResistance(result) {
 		return assessResistanceForDrug(result, drug); 
 	});
 	var categoryToDrugs = _.groupBy(assessmentList, function(assessment) { return assessment.drug.category; });
-	return _.map(_.pairs(categoryToDrugs), function(pair) {return { category:pair[0], drugAssessments:pair[1]};});
+	var categoryAssessments = _.map(_.pairs(categoryToDrugs), function(pair) {return { category:pair[0], drugAssessments:pair[1]};});
+	categoryAssessments = _.sortBy(categoryAssessments, "category");
+	return categoryAssessments;
 }
 
 function assessResistanceForDrug(result, drug) {

@@ -158,26 +158,26 @@ function loadResistanceFindings(shortname, drugId, gene, pooledMap) {
 			glue.command(["create", "custom-table-row", "phdr_in_vivo_result", rfId]);
 			glue.inMode("custom-table-row/phdr_in_vivo_result/"+rfId, function() {
 				glue.command(["set", "link-target", "phdr_resistance_finding", "custom-table-row/phdr_resistance_finding/"+rfId]);
-				var baselineRas = rfObj.baselineRas.trim();
-				if(baselineRas == "Yes") {
+				var baselineRas = rfObj.baselineRas.trim().toLowerCase();
+				if(baselineRas == "yes") {
 					glue.command(["set", "field", "baseline", "true"]);
 					categoryFactors.inVivoBaseline = true;
-				} else if(baselineRas == "No") {
+				} else if(baselineRas == "no") {
 					glue.command(["set", "field", "baseline", "false"]);
-				} else if(baselineRas == "NA") {
+				} else if(baselineRas == "na") {
 					// leave null
 				} else {
 					error(rfObj, "Unknown value for baselineRas: "+baselineRas);
 				}
 				
 				
-				var rxEmergentRas = rfObj.rxEmergentRas.trim();
-				if(rxEmergentRas == "Yes") {
+				var rxEmergentRas = rfObj.rxEmergentRas.trim().toLowerCase();
+				if(rxEmergentRas == "yes") {
 					glue.command(["set", "field", "treatment_emergent", "true"]);
 					categoryFactors.inVivoTreatmentEmergent = true;
-				} else if(rxEmergentRas == "No") {
+				} else if(rxEmergentRas == "no") {
 					glue.command(["set", "field", "treatment_emergent", "false"]);
-				} else if(rxEmergentRas == "NA") {
+				} else if(rxEmergentRas == "na") {
 					// leave null
 				} else {
 					error(rfObj, "Unknown value for rxEmergentRas: "+rxEmergentRas);
@@ -294,6 +294,10 @@ function ensureAlmtRasObject(rasId, gene, structure, almtName) {
 }
 
 
+loadResistanceFindings("EBR", "elbasvir", "NS5A", 
+		{"Pooled1": ["C-SURFER", "C-EDGE TN", "C-EDGE CO-INFECTION", "C-EDGE TE", "C-WORTHY", "C-SALVAGE"], 
+	 "Pooled2": ["C-SURFER", "C-EDGE CO-INFECTION", "C-EDGE TN", "C-EDGE TE", "C-WORTHY", "C-SALVAGE"], 
+	 "Pooled3": ["C‐SCAPE ", "C-EDGE TN", "C-EDGE CO-INFECTION", "C-EDGE CO-STAR", "C‐EDGE IBLD", "C-CORAL", "C-EDGE TE", "C‐EDGE Head‐2‐head"]});
 loadResistanceFindings("GLE", "glecaprevir", "NS3", {"Surveyor-1_and_2":["Surveyor-1", "Surveyor-2"], "Pooled analysis": ["Surveyor-1", "Surveyor-2", "Endurance-1", "Endurance-2", "Endurance-3", "Endurance-4", "Expedition-1", "Expedition-2"]});
 loadResistanceFindings("PIB", "pibrentasvir", "NS5A", {"Surveyor-1_and_2":["Surveyor-1", "Surveyor-2"], "Pooled": ["Surveyor-1", "Surveyor-2", "Endurance-1", "Endurance-2", "Endurance-3", "Endurance-4", "Expedition-1", "Expedition-2"]});
 loadResistanceFindings("VEL", "velpatasvir", "NS5A", {"Pooled analysis": ["ASTRAL-1", "ASTRAL-2", "ASTRAL-3", "ASTRAL-5", "POLARIS-2", "POLARIS-3"]});
