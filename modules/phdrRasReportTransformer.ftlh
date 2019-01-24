@@ -434,12 +434,11 @@ No resistance analysis was performed for the sequence.
 <tr><td><b>HCV project version</b></td><td>${phdrReport.projectVersion}</td></tr>
 <tr><td><b>PHE extension version</b></td><td>${phdrReport.extensionVersion}</td></tr>
 <#if phdrReport.sequenceDataFormat = "SAM/BAM">
-<tr><td><b>Minimum read proportion</b></td><td>${phdrReport.phdrSamThresholds.minReadProportionPct?string("##0.#")}%</td></tr>
+<tr><td><b>Minimum read proportion</b></td><td>${phdrReport.minReadProportionPct?string("##0.#")}%</td></tr>
 <tr><td><b>Minimum read depth</b></td><td>${phdrReport.phdrSamThresholds.minDepth?c}</td></tr>
 <tr><td><b>Minimum base quality</b></td><td>${phdrReport.phdrSamThresholds.minQScore}</td></tr>
 <tr><td><b>Minimum mapping quality</b></td><td>${phdrReport.phdrSamThresholds.minMapQ}</td></tr>
 </#if>
-<tr><td><b>Minimum coding region coverage for resistance analysis</b></td><td>${phdrReport.phdrFeatureCoverageThresholds.resistanceGeneMinCoveragePct}%</td></tr>
 
 
 </table>

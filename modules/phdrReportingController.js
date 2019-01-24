@@ -49,8 +49,8 @@ function reportFastaAsHtml(fastaFilePath, htmlFilePath) {
 }
 
 
-function reportBamAsHtml(bamFilePath, htmlFilePath) {
-	var reportDoc = reportBam(bamFilePath);
+function reportBamAsHtml(bamFilePath, minReadProportionPct, htmlFilePath) {
+	var reportDoc = reportBam(bamFilePath, minReadProportionPct);
 	glue.inMode("module/phdrRasReportTransformer", function() {
 		glue.command({"transform-to-file" : {
 			commandDocument: reportDoc,
@@ -255,7 +255,7 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 				
 				_.each(sequenceResult.rasScanResults, function(scanResult) {
 					scanResult.rapUrl = "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
-					reportedPolymorphismKeys[scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure.replace(/[A-Z]/g, "")] = "thisCladeRAS";
+					reportedPolymorphismKeys[scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure] = "thisCladeRAS";
 				});
 
 				
@@ -380,13 +380,13 @@ function checkForSameGenotypeRas(genotypingResult, scanResult, reportedPolymorph
 		almtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
 	}
 	var gtDisplayClade = genotypingResult.genotypeCladeCategoryResult.finalCladeRenderedName.replace("HCV ", "").toLowerCase();
-	var polyKey = scanResult.rasDetails.gene+":"+ scanResult.rasDetails.structure.replace(/[A-Z]/g, "");
+	var polyKey = scanResult.rasDetails.gene+":"+ scanResult.rasDetails.structure;
 	if(reportedPolymorphismKeys[polyKey] == null) {
 		var rsgObj = {};
 		rsgObj.virusProtein = scanResult.rasDetails.gene;
 		rsgObj.rapUrl = "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
 		rsgObj.displayStructure = computeDisplayStructure(scanResult.rasDetails.gene, scanResult.rasDetails.structure, almtName);
-		rsgObj.reasonForInterest = "rap_same_genotype";
+		rsgObj.reasonForInterest = "rap_in_same_gt";
 		rsgObj.displayReasonForInterest = "Associated with resistance in other subtypes of "+gtDisplayClade;
 		// minority percentage / depth data if appropriate
 		if(scanResult.pctPresent != null) {
@@ -394,7 +394,7 @@ function checkForSameGenotypeRas(genotypingResult, scanResult, reportedPolymorph
 			rsgObj.depth = scanResult.readsPresent + scanResult.readsAbsent;
 		}
 		substitutionsOfInterest.push(rsgObj);
-		reportedPolymorphismKeys[polyKey] = "rap_same_genotype";
+		reportedPolymorphismKeys[polyKey] = "rap_in_same_gt";
 	}
 }
 
@@ -407,13 +407,13 @@ function checkForDifferentGenotypeRas(genotypingResult, scanResult, reportedPoly
 		almtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
 	}
 	var gtDisplayClade = genotypingResult.genotypeCladeCategoryResult.finalCladeRenderedName.replace("HCV ", "").toLowerCase();
-	var polyKey = scanResult.rasDetails.gene+":"+ scanResult.rasDetails.structure.replace(/[A-Z]/g, "");
+	var polyKey = scanResult.rasDetails.gene+":"+ scanResult.rasDetails.structure;
 	if(reportedPolymorphismKeys[polyKey] == null) {
 		var rdgObj = {};
 		rdgObj.virusProtein = scanResult.rasDetails.gene;
 		rdgObj.rapUrl = "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
 		rdgObj.displayStructure = computeDisplayStructure(scanResult.rasDetails.gene, scanResult.rasDetails.structure, almtName);
-		rdgObj.reasonForInterest = "rap_different_genotype";
+		rdgObj.reasonForInterest = "rap_in_different_gt";
 		rdgObj.displayReasonForInterest = "Associated with resistance in genotypes other than "+gtDisplayClade;
 		// minority percentage / depth data if appropriate
 		if(scanResult.pctPresent != null) {
@@ -421,7 +421,7 @@ function checkForDifferentGenotypeRas(genotypingResult, scanResult, reportedPoly
 			rdgObj.depth = scanResult.readsPresent + scanResult.readsAbsent;
 		}
 		substitutionsOfInterest.push(rdgObj);
-		reportedPolymorphismKeys[polyKey] = "rap_different_genotype";
+		reportedPolymorphismKeys[polyKey] = "rap_in_different_gt";
 	}
 }
 
@@ -474,35 +474,28 @@ function checkForWildTypeSubstitution(genotypingResult, residueObj, reportedPoly
 		"aa_residue"]), "aa_residue")
 		.sort();
 
-	var wildTypeSubstitution = false;
 	// check whether detected possible residue is typical or not.
 	for(var i = 0; i < residues.length; i++) {
 		var residueAA = residues[i];
 		if(typicalAAs.indexOf(residueAA) < 0) {
-			wildTypeSubstitution = true;
-			break;
-		}
-	}
-	if(wildTypeSubstitution) {
-		var reportedKey = gene+":"+codon;
-		if(reportedPolymorphismKeys[reportedKey] == null) {
-			var wtSubObj = {};
-			wtSubObj.virusProtein = gene;
-			wtSubObj.displayStructure = typicalAAs.join("/")+codon+residues.join("/");
-			wtSubObj.reasonForInterest = "clade_atypical";
-			wtSubObj.atypicalForClade = almtName;
-			wtSubObj.displayReasonForInterest = "Atypical substitution for "+displayClade+" at a location associated with resistance";
-			if(residueObj.pctAaReads != null) {
-				// SAM/BAM case
-				wtSubObj.pctPresent = residueObj.pctAaReads;
-				wtSubObj.depth = residueObj.readsWithAA + residueObj.readsWithDifferentAA;
+			var reportedKey = gene+":"+codon+residueAA;
+			if(reportedPolymorphismKeys[reportedKey] == null) {
+				var wtSubObj = {};
+				wtSubObj.virusProtein = gene;
+				wtSubObj.displayStructure = typicalAAs.join("/")+codon+residueAA;
+				wtSubObj.reasonForInterest = "sub_at_rap_location";
+				wtSubObj.atypicalForClade = almtName;
+				wtSubObj.displayReasonForInterest = "Atypical substitution for "+displayClade+" at a location associated with resistance";
+				if(residueObj.pctAaReads != null) {
+					// SAM/BAM case
+					wtSubObj.pctPresent = residueObj.pctAaReads;
+					wtSubObj.depth = residueObj.readsWithAA + residueObj.readsWithDifferentAA;
+				}
+				substitutionsOfInterest.push(wtSubObj);
+				reportedPolymorphismKeys[reportedKey] = "sub_at_rap_location";
 			}
-			substitutionsOfInterest.push(wtSubObj);
-			reportedPolymorphismKeys[reportedKey] = "atypical";
 		}
 	}
-	
-	
 }
 
 function visualisationHints(queryNucleotides, targetRefName, genotypingResult, queryToTargetRefSegs, rasScanResults) {
@@ -651,7 +644,7 @@ function addRasPublications(rasFinding, publicationIdToObj) {
 	});
 }
 
-function reportBam(bamFilePath) {
+function reportBam(bamFilePath, minReadProportionPct) {
 	glue.log("FINE", "phdrReportingController.reportBam invoked, input file:"+bamFilePath);
 	var phdrReport;
 	glue.inSession("samFileSession", ["phdrSamReporter", bamFilePath], function() {
@@ -733,40 +726,42 @@ function reportBam(bamFilePath) {
 
 				var sameGenotypeRasScanResults = 
 					bamVariationScan(bamFilePath, samRefSense, samRefResult.samReference.name, targetRefName, 
-							sameGenotypeWhereClause, phdrSamThresholds.minDepth, phdrSamThresholds.minReadProportionPct);
+							sameGenotypeWhereClause, phdrSamThresholds.minDepth, minReadProportionPct);
 
 				var differentGenotypeRasScanResults = 
 					bamVariationScan(bamFilePath, samRefSense, samRefResult.samReference.name, targetRefName, 
-							differentGenotypeWhereClause, phdrSamThresholds.minDepth, phdrSamThresholds.minReadProportionPct);
+							differentGenotypeWhereClause, phdrSamThresholds.minDepth, minReadProportionPct);
 
 				var residuesAtRasAssociatedLocations = 
 					bamResiduesAtRasAssociatedLocations(bamFilePath, samRefSense, 
-							samRefResult.samReference.name, targetRefName);
+							samRefResult.samReference.name, targetRefName, minReadProportionPct);
 				
 				samRefResult.rasScanResults = thisCladeRasScanResults;
 				// map for recording polymorphisms reported at a higher significance (e.g. confirmed RAS), so that they don't 
 				// get reported again at a lower significance (e.g. atypical for subtype).
 				var reportedPolymorphismKeys = {};
-				glue.log("FINE", "phdrReportingController.reportBam rasScanResults:", samRefResult.rasScanResults);
 				_.each(samRefResult.rasScanResults, function(scanResult) {
-					var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
-							scanResult.featureName, scanResult.variationName);
-					glue.log("FINE", "phdrReportingController.reportBam rasFinding:", rasFinding);
-					scanResult.rasDetails = rasFinding.phdrRasVariation;
-					if(scanResult.readsPresent + scanResult.readsAbsent > phdrSamThresholds.minDepth) {
+
+					if(scanResult.readsPresent + scanResult.readsAbsent >= phdrSamThresholds.minDepth) {
 						scanResult.sufficientCoverage = true;
 					} else {
 						scanResult.sufficientCoverage = false;
 					}
-					if(scanResult.sufficientCoverage && scanResult.pctPresent > phdrSamThresholds.minReadProportionPct) {
+					if(scanResult.sufficientCoverage && scanResult.pctPresent >= minReadProportionPct) {
 						scanResult.present = true;
 					} else {
 						scanResult.present = false;
 					}
+					
+					var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
+							scanResult.featureName, scanResult.variationName);
+					glue.log("FINE", "phdrReportingController.reportBam rasFinding:", rasFinding);
+					scanResult.rasDetails = rasFinding.phdrRasVariation;
 					if(scanResult.present) {
 						addRasPublications(rasFinding, publicationIdToObj);
 					}
 				});
+				glue.log("FINE", "phdrReportingController.reportBam rasScanResults including absent:", samRefResult.rasScanResults);
 				// at this stage sequenceResult.rasScanResults contains absent / insufficient coverage variation scan results, 
 				// which is important for assessing whether the sequence has insufficient coverage overall for a given drug.
 				samRefResult.drugScores = assessResistance(samRefResult, true);
@@ -776,12 +771,12 @@ function reportBam(bamFilePath) {
 					return scanResult.present;
 				});
 				
-				glue.log("FINE", "phdrReportingController.reportBam rasScanResults:", samRefResult.rasScanResults);
+				glue.log("FINE", "phdrReportingController.reportBam rasScanResults excluding absent:", samRefResult.rasScanResults);
 
 				
 				_.each(samRefResult.rasScanResults, function(scanResult) {
 					scanResult.rapUrl = "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
-					reportedPolymorphismKeys[scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure.replace(/[A-Z]/g, "")] = "thisCladeRAS";
+					reportedPolymorphismKeys[scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure] = "confirmed_rap";
 					
 				});
 
@@ -834,7 +829,8 @@ function reportBam(bamFilePath) {
 					filePath: bamFilePath,
 					samReferenceResult: _.values(resultMap)[0],
 					publications: publications, 
-					placerResult: placerResultContainer.placerResult
+					placerResult: placerResultContainer.placerResult,
+					minReadProportionPct: parseFloat(minReadProportionPct)
 				}
 		};
 		addOverview(phdrReport);
@@ -869,7 +865,7 @@ function bamVariationScan(bamFilePath, samRefSense, samRefName, targetRefName, w
 	return scanResults;
 }
 
-function bamResiduesAtRasAssociatedLocations(bamFilePath, samRefSense, samRefName, targetRefName) {
+function bamResiduesAtRasAssociatedLocations(bamFilePath, samRefSense, samRefName, targetRefName, minReadProportionPct) {
 	var residueObjs;
 	glue.inMode("module/phdrSamReporter", function() {
 		residueObjs = glue.tableToObjects(glue.command(["amino-acid",
@@ -883,7 +879,7 @@ function bamResiduesAtRasAssociatedLocations(bamFilePath, samRefSense, samRefNam
 		   				              "--minQScore", phdrSamThresholds.minQScore,
 		   				              "--minMapQ", phdrSamThresholds.minMapQ,
 		   				              "--minDepth", phdrSamThresholds.minDepth,
-		   				              "--minAAPct", phdrSamThresholds.minReadProportionPct]));					
+		   				              "--minAAPct", minReadProportionPct]));					
 	});
 	return residueObjs;
 }
@@ -1275,7 +1271,6 @@ function addOverview(phdrReport) {
 		glue.command(["show","extension-setting","phdr","extension-version"]).projectShowExtensionSettingResult.extSettingValue;
 	
 	phdrReport.phdrReport.phdrSamThresholds = phdrSamThresholds;
-	phdrReport.phdrReport.phdrFeatureCoverageThresholds = phdrFeatureCoverageThresholds;
 	
 }
 

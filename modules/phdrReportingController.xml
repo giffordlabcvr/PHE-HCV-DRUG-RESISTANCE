@@ -26,6 +26,9 @@
 			<name>bamFilePath</name>
 			<pathCompleter/>
 		</parameter>
+		<parameter>
+			<name>minReadProportionPct</name>
+		</parameter>
 		<documentResultType/> 
 	</function>
 	<function>
@@ -47,6 +50,9 @@
 			<pathCompleter/>
 		</parameter>
 		<parameter>
+			<name>minReadProportionPct</name>
+		</parameter>
+		<parameter>
 			<name>htmlFilePath</name>
 			<pathCompleter/>
 		</parameter>
@@ -56,10 +62,5 @@
 		<minDepth glueType="Integer">10</minDepth>
 		<minMapQ glueType="Integer">5</minMapQ>
 		<minQScore glueType="Integer">5</minQScore>
-		<minReadProportionPct glueType="Double">15.0</minReadProportionPct>
 	</configDocument>
-	<configDocument name="phdrFeatureCoverageThresholds">
-		<resistanceGeneMinCoveragePct glueType="Double">90</resistanceGeneMinCoveragePct>
-	</configDocument>
-
 </ecmaFunctionInvoker>
