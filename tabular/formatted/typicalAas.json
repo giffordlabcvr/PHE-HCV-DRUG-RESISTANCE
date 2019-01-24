@@ -989,6 +989,48 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "F",
+      "numMembers": 1,
+      "pctMembers": 0.02002803925495694
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 4737,
+      "pctMembers": 94.87282195073102
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "L",
+      "numMembers": 2,
+      "pctMembers": 0.04005607850991388
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 0.02002803925495694
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 0.02002803925495694
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 251,
+      "pctMembers": 5.027037852994192
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "*",
       "numMembers": 1,
@@ -1234,6 +1276,41 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "A",
+      "numMembers": 6,
+      "pctMembers": 0.10828370330265295
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 12,
+      "pctMembers": 0.2165674066053059
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 112,
+      "pctMembers": 2.021295794982855
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "M",
+      "numMembers": 132,
+      "pctMembers": 2.382241472658365
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 5279,
+      "pctMembers": 95.27161162245082
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "E",
       "numMembers": 2,
@@ -1444,6 +1521,55 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "G",
+      "numMembers": 8,
+      "pctMembers": 0.1443001443001443
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "K",
+      "numMembers": 162,
+      "pctMembers": 2.9220779220779223
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 0.018037518037518036
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "R",
+      "numMembers": 5347,
+      "pctMembers": 96.44660894660895
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 4,
+      "pctMembers": 0.07215007215007214
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "W",
+      "numMembers": 21,
+      "pctMembers": 0.3787878787878788
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "Y",
+      "numMembers": 1,
+      "pctMembers": 0.018037518037518036
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "A",
       "numMembers": 1,
@@ -1574,6 +1700,27 @@
       "aminoAcid": "V",
       "numMembers": 145,
       "pctMembers": 2.601363473268748
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "C",
+      "numMembers": 5,
+      "pctMembers": 0.09009009009009009
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "H",
+      "numMembers": 2,
+      "pctMembers": 0.036036036036036036
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 5543,
+      "pctMembers": 99.87387387387388
     },
     {
       "feature": "NS5B",
@@ -2713,6 +2860,41 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "A",
+      "numMembers": 3,
+      "pctMembers": 0.06067961165048544
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "D",
+      "numMembers": 1,
+      "pctMembers": 0.020226537216828478
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 430,
+      "pctMembers": 8.697411003236246
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 0.020226537216828478
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 4509,
+      "pctMembers": 91.20145631067962
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "H",
       "numMembers": 1,
@@ -2979,6 +3161,76 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "A",
+      "numMembers": 1,
+      "pctMembers": 0.020060180541624874
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 2522,
+      "pctMembers": 50.591775325977935
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "G",
+      "numMembers": 1,
+      "pctMembers": 0.020060180541624874
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 224,
+      "pctMembers": 4.493480441323972
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 2126,
+      "pctMembers": 42.64794383149448
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 0.020060180541624874
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "P",
+      "numMembers": 6,
+      "pctMembers": 0.12036108324974924
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "S",
+      "numMembers": 6,
+      "pctMembers": 0.12036108324974924
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 78,
+      "pctMembers": 1.5646940822467401
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "Y",
+      "numMembers": 20,
+      "pctMembers": 0.4012036108324975
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "E",
       "numMembers": 14,
@@ -3140,6 +3392,55 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "A",
+      "numMembers": 1,
+      "pctMembers": 0.019293845263360986
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "C",
+      "numMembers": 6,
+      "pctMembers": 0.11576307158016592
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "G",
+      "numMembers": 13,
+      "pctMembers": 0.25081998842369285
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 0.019293845263360986
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "N",
+      "numMembers": 7,
+      "pctMembers": 0.13505691684352691
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "R",
+      "numMembers": 3,
+      "pctMembers": 0.05788153579008296
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 5152,
+      "pctMembers": 99.40189079683581
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "C",
       "numMembers": 5,
@@ -3214,6 +3515,48 @@
       "aminoAcid": "V",
       "numMembers": 31,
       "pctMembers": 0.5968425105891413
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "C",
+      "numMembers": 3,
+      "pctMembers": 0.05857087075361187
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
+      "numMembers": 39,
+      "pctMembers": 0.7614213197969543
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "H",
+      "numMembers": 6,
+      "pctMembers": 0.11714174150722374
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "N",
+      "numMembers": 1,
+      "pctMembers": 0.01952362358453729
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 0.01952362358453729
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 5072,
+      "pctMembers": 99.02381882077313
     },
     {
       "feature": "NS5B",
@@ -3611,6 +3954,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 5,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 5,
@@ -3660,6 +4010,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 20
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 4,
+      "pctMembers": 80
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 5,
@@ -3695,6 +4059,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 5,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "H",
       "numMembers": 1,
@@ -3718,6 +4089,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "T",
+      "numMembers": 5,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 5,
       "pctMembers": 100
     },
@@ -4068,6 +4446,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -4110,6 +4495,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -4131,6 +4523,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 2,
@@ -4140,6 +4539,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "T",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -4413,6 +4819,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -4476,6 +4889,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 3,
@@ -4504,6 +4924,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 3,
@@ -4513,6 +4940,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "T",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 3,
       "pctMembers": 100
     },
@@ -4745,6 +5179,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -4801,6 +5242,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 2,
@@ -4822,6 +5270,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "F",
       "numMembers": 2,
@@ -4831,6 +5286,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "T",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -5069,6 +5531,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 3,
+      "pctMembers": 75
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 25
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "Q",
       "numMembers": 3,
@@ -5111,6 +5587,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 4,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 4,
@@ -5132,6 +5615,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 4,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 4,
@@ -5141,6 +5631,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "T",
+      "numMembers": 4,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 4,
       "pctMembers": 100
     },
@@ -5358,6 +5855,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "Q",
       "numMembers": 2,
@@ -5400,6 +5911,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -5428,6 +5946,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 2,
@@ -5437,6 +5962,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "T",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -5654,6 +6186,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -5696,6 +6235,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -5717,6 +6263,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "R",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -5726,6 +6279,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -5936,6 +6496,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -5978,6 +6545,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -5999,6 +6573,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "R",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -6008,6 +6589,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -6232,6 +6820,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "G",
       "numMembers": 2,
@@ -6288,6 +6883,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 2,
+      "pctMembers": 66.66666666666667
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 33.333333333333336
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -6316,6 +6925,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 3,
@@ -6334,6 +6950,13 @@
       "aminoAcid": "V",
       "numMembers": 2,
       "pctMembers": 66.66666666666667
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 3,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -6556,6 +7179,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -6612,6 +7242,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 1,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 2,
@@ -6640,6 +7284,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "R",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "C",
       "numMembers": 1,
@@ -6656,6 +7307,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "T",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -6894,6 +7552,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -6936,6 +7601,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 2,
@@ -6957,6 +7636,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "R",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 2,
@@ -6966,6 +7652,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "T",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -8226,6 +8919,62 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "A",
+      "numMembers": 3,
+      "pctMembers": 0.030069159065851458
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "D",
+      "numMembers": 1,
+      "pctMembers": 0.010023053021950485
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "F",
+      "numMembers": 1,
+      "pctMembers": 0.010023053021950485
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 5198,
+      "pctMembers": 52.099829608098624
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "L",
+      "numMembers": 2,
+      "pctMembers": 0.02004610604390097
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 0.010023053021950485
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "T",
+      "numMembers": 2,
+      "pctMembers": 0.02004610604390097
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 4769,
+      "pctMembers": 47.79993986168187
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "*",
       "numMembers": 1,
@@ -8604,6 +9353,76 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "A",
+      "numMembers": 7,
+      "pctMembers": 0.06625650733554188
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 2526,
+      "pctMembers": 23.909133932796973
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "G",
+      "numMembers": 1,
+      "pctMembers": 0.00946521533364884
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 245,
+      "pctMembers": 2.318977756743966
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 2254,
+      "pctMembers": 21.334595362044485
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "M",
+      "numMembers": 133,
+      "pctMembers": 1.2588736393752957
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "P",
+      "numMembers": 6,
+      "pctMembers": 0.05679129200189304
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "S",
+      "numMembers": 6,
+      "pctMembers": 0.05679129200189304
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 5367,
+      "pctMembers": 50.799810695693324
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "Y",
+      "numMembers": 20,
+      "pctMembers": 0.18930430667297682
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "E",
       "numMembers": 16,
@@ -8856,6 +9675,83 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "A",
+      "numMembers": 1,
+      "pctMembers": 0.009287638153617534
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "C",
+      "numMembers": 6,
+      "pctMembers": 0.05572582892170521
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "G",
+      "numMembers": 21,
+      "pctMembers": 0.19504040122596825
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 0.009287638153617534
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "K",
+      "numMembers": 162,
+      "pctMembers": 1.5045973808860407
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 0.009287638153617534
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "N",
+      "numMembers": 7,
+      "pctMembers": 0.06501346707532274
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "R",
+      "numMembers": 5357,
+      "pctMembers": 49.753877588929136
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 5189,
+      "pctMembers": 48.19355437912139
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "W",
+      "numMembers": 21,
+      "pctMembers": 0.19504040122596825
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "Y",
+      "numMembers": 1,
+      "pctMembers": 0.009287638153617534
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "A",
       "numMembers": 1,
@@ -8986,6 +9882,48 @@
       "aminoAcid": "V",
       "numMembers": 180,
       "pctMembers": 1.6654330125832717
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "C",
+      "numMembers": 8,
+      "pctMembers": 0.07468259895444361
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
+      "numMembers": 39,
+      "pctMembers": 0.3640776699029126
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "H",
+      "numMembers": 8,
+      "pctMembers": 0.07468259895444361
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "N",
+      "numMembers": 1,
+      "pctMembers": 0.009335324869305451
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 0.009335324869305451
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 10655,
+      "pctMembers": 99.46788648244959
     },
     {
       "feature": "NS5B",
@@ -9502,6 +10440,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -9544,6 +10489,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -9565,6 +10517,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "H",
       "numMembers": 1,
@@ -9574,6 +10533,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -9791,6 +10757,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -9833,6 +10806,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -9854,6 +10834,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -9863,6 +10850,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -10073,6 +11067,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "G",
       "numMembers": 1,
@@ -10115,6 +11116,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -10136,6 +11144,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -10145,6 +11160,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -10355,6 +11377,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "A",
       "numMembers": 1,
@@ -10397,6 +11426,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -10418,6 +11454,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -10427,6 +11470,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -10637,6 +11687,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -10679,6 +11736,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -10700,6 +11764,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "R",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -10709,6 +11780,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -10954,6 +12032,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -10996,6 +12081,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -11017,6 +12109,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -11026,6 +12125,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -11243,6 +12349,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -11285,6 +12398,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -11306,6 +12426,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -11315,6 +12442,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -11588,6 +12722,34 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "A",
+      "numMembers": 1,
+      "pctMembers": 0.6993006993006993
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 1.3986013986013985
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 0.6993006993006993
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 139,
+      "pctMembers": 97.2027972027972
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "A",
       "numMembers": 7,
@@ -11707,6 +12869,34 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 121,
+      "pctMembers": 86.42857142857143
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 3,
+      "pctMembers": 2.142857142857143
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 0.7142857142857143
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 15,
+      "pctMembers": 10.714285714285714
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 117,
@@ -11798,6 +12988,34 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "L",
+      "numMembers": 3,
+      "pctMembers": 2.0689655172413794
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 140,
+      "pctMembers": 96.55172413793103
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 0.6896551724137931
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 0.6896551724137931
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "F",
       "numMembers": 1,
@@ -11858,6 +13076,13 @@
       "aminoAcid": "V",
       "numMembers": 96,
       "pctMembers": 68.08510638297872
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 145,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -12304,6 +13529,27 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "F",
+      "numMembers": 1,
+      "pctMembers": 0.23980815347721823
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 377,
+      "pctMembers": 90.40767386091127
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 39,
+      "pctMembers": 9.352517985611511
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "A",
       "numMembers": 1,
@@ -12392,6 +13638,34 @@
       "aminoAcid": "P",
       "numMembers": 438,
       "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 2,
+      "pctMembers": 0.4716981132075472
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 344,
+      "pctMembers": 81.13207547169812
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 3,
+      "pctMembers": 0.7075471698113207
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 75,
+      "pctMembers": 17.68867924528302
     },
     {
       "feature": "NS5A",
@@ -12486,6 +13760,41 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "F",
+      "numMembers": 13,
+      "pctMembers": 3.0660377358490565
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "L",
+      "numMembers": 390,
+      "pctMembers": 91.98113207547169
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 5,
+      "pctMembers": 1.179245283018868
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 0.2358490566037736
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "W",
+      "numMembers": 15,
+      "pctMembers": 3.5377358490566038
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "H",
       "numMembers": 2,
@@ -12525,6 +13834,13 @@
       "aminoAcid": "V",
       "numMembers": 409,
       "pctMembers": 94.89559164733178
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 438,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -12810,6 +14126,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 42,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 38,
@@ -12894,6 +14217,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 32,
+      "pctMembers": 76.19047619047619
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 10,
+      "pctMembers": 23.80952380952381
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 7,
@@ -12943,6 +14280,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "F",
+      "numMembers": 4,
+      "pctMembers": 8.51063829787234
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "L",
+      "numMembers": 43,
+      "pctMembers": 91.48936170212765
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 47,
@@ -12961,6 +14312,13 @@
       "aminoAcid": "V",
       "numMembers": 45,
       "pctMembers": 95.74468085106383
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 47,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -13218,6 +14576,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 2,
@@ -13267,6 +14632,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 2,
@@ -13288,6 +14660,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 2,
@@ -13297,6 +14676,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -13514,6 +14900,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 1,
@@ -13556,6 +14949,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -13577,6 +14977,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -13586,6 +14993,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -13845,6 +15259,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "F",
       "numMembers": 1,
@@ -13901,6 +15322,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 2,
@@ -13922,6 +15350,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 2,
@@ -13933,6 +15368,20 @@
       "aminoAcid": "V",
       "numMembers": 2,
       "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
+      "numMembers": 1,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 1,
+      "pctMembers": 50
     },
     {
       "feature": "NS5B",
@@ -14185,6 +15634,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 12,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 12,
@@ -14227,6 +15683,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 9.090909090909092
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 10,
+      "pctMembers": 90.9090909090909
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 10,
@@ -14255,6 +15725,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 12,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 12,
@@ -14273,6 +15750,13 @@
       "aminoAcid": "V",
       "numMembers": 7,
       "pctMembers": 63.63636363636363
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 12,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -14523,6 +16007,34 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "A",
+      "numMembers": 1,
+      "pctMembers": 16.666666666666668
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 3,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 16.666666666666668
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 16.666666666666668
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 6,
@@ -14579,6 +16091,27 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 3,
+      "pctMembers": 60
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 20
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 20
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -14621,6 +16154,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 6,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 6,
@@ -14630,6 +16170,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 6,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 6,
       "pctMembers": 100
     },
@@ -14875,6 +16422,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 8,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 8,
@@ -14938,6 +16492,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 7,
+      "pctMembers": 87.5
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 12.5
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 7,
@@ -14980,6 +16548,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 8,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 8,
@@ -14998,6 +16573,13 @@
       "aminoAcid": "V",
       "numMembers": 5,
       "pctMembers": 83.33333333333333
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 8,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -15242,6 +16824,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 4,
+      "pctMembers": 80
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 20
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 5,
@@ -15291,6 +16887,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 5,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 5,
@@ -15312,6 +16915,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 5,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 5,
@@ -15321,6 +16931,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 5,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 5,
       "pctMembers": 100
     },
@@ -15605,6 +17222,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 2,
@@ -15654,6 +17285,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 2,
@@ -15675,6 +17313,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 2,
@@ -15684,6 +17329,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -15915,6 +17567,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 1,
@@ -15957,6 +17616,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -15978,6 +17644,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -15987,6 +17660,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -16247,6 +17927,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 2,
@@ -16284,6 +17971,13 @@
       "feature": "NS5A",
       "codon": "32",
       "aminoAcid": "P",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -16331,6 +18025,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 2,
@@ -16340,6 +18041,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -16571,6 +18279,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 2,
@@ -16613,6 +18328,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -16641,6 +18370,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 2,
@@ -16650,6 +18386,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -17070,6 +18813,48 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "A",
+      "numMembers": 2,
+      "pctMembers": 0.29985007496251875
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "F",
+      "numMembers": 1,
+      "pctMembers": 0.14992503748125938
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 409,
+      "pctMembers": 61.319340329835086
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "L",
+      "numMembers": 6,
+      "pctMembers": 0.8995502248875562
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 0.14992503748125938
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 248,
+      "pctMembers": 37.181409295352324
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "A",
       "numMembers": 8,
@@ -17252,6 +19037,48 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 2,
+      "pctMembers": 0.2976190476190476
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 535,
+      "pctMembers": 79.61309523809524
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 9,
+      "pctMembers": 1.3392857142857142
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 0.1488095238095238
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 0.1488095238095238
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 124,
+      "pctMembers": 18.452380952380953
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 411,
@@ -17385,6 +19212,55 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "F",
+      "numMembers": 18,
+      "pctMembers": 2.6315789473684212
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 0.14619883040935672
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "L",
+      "numMembers": 436,
+      "pctMembers": 63.74269005847953
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 211,
+      "pctMembers": 30.84795321637427
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 0.29239766081871343
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 0.14619883040935672
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "W",
+      "numMembers": 15,
+      "pctMembers": 2.192982456140351
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "F",
       "numMembers": 1,
@@ -17452,6 +19328,20 @@
       "aminoAcid": "V",
       "numMembers": 604,
       "pctMembers": 88.17518248175182
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
+      "numMembers": 2,
+      "pctMembers": 0.2861230329041488
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 697,
+      "pctMembers": 99.71387696709586
     },
     {
       "feature": "NS5B",
@@ -17898,6 +19788,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 1,
@@ -17940,6 +19837,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -17961,6 +19865,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -17970,6 +19881,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -18180,6 +20098,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 2,
@@ -18236,6 +20161,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -18264,6 +20196,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -18282,6 +20221,13 @@
       "aminoAcid": "V",
       "numMembers": 1,
       "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 2,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -18560,6 +20506,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 1,
@@ -18602,6 +20555,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -18623,6 +20583,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -18632,6 +20599,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -18856,6 +20830,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 1,
@@ -18898,6 +20879,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -18919,6 +20907,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -18928,6 +20923,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -19131,6 +21133,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 1,
@@ -19173,6 +21182,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -19194,6 +21210,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -19203,6 +21226,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -19413,6 +21443,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 1,
@@ -19455,6 +21492,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -19476,6 +21520,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -19485,6 +21536,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -19695,6 +21753,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 1,
@@ -19737,6 +21802,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -19758,6 +21830,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -19767,6 +21846,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -19977,6 +22063,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 1,
@@ -20019,6 +22112,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -20040,6 +22140,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -20049,6 +22156,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -20532,6 +22646,27 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2657,
+      "pctMembers": 99.40142162364384
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "T",
+      "numMembers": 3,
+      "pctMembers": 0.1122334455667789
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 13,
+      "pctMembers": 0.48634493078937524
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "A",
       "numMembers": 49,
@@ -20711,6 +22846,55 @@
       "aminoAcid": "R",
       "numMembers": 3,
       "pctMembers": 0.11206574523720583
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 21,
+      "pctMembers": 0.7853403141361257
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 2618,
+      "pctMembers": 97.90575916230367
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "K",
+      "numMembers": 1,
+      "pctMembers": 0.037397157816005985
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 25,
+      "pctMembers": 0.9349289454001496
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 0.07479431563201197
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "T",
+      "numMembers": 2,
+      "pctMembers": 0.07479431563201197
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 5,
+      "pctMembers": 0.1869857890800299
     },
     {
       "feature": "NS5A",
@@ -20924,6 +23108,41 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "A",
+      "numMembers": 2667,
+      "pctMembers": 99.70093457943925
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 0.037383177570093455
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 5,
+      "pctMembers": 0.18691588785046728
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 0.037383177570093455
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 0.037383177570093455
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "C",
       "numMembers": 4,
@@ -20998,6 +23217,55 @@
       "aminoAcid": "V",
       "numMembers": 2,
       "pctMembers": 0.07513148009015777
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "C",
+      "numMembers": 3,
+      "pctMembers": 0.11202389843166542
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
+      "numMembers": 6,
+      "pctMembers": 0.22404779686333084
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "H",
+      "numMembers": 1,
+      "pctMembers": 0.037341299477221805
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "N",
+      "numMembers": 1,
+      "pctMembers": 0.037341299477221805
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 0.037341299477221805
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 0.037341299477221805
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 2665,
+      "pctMembers": 99.51456310679612
     },
     {
       "feature": "NS5B",
@@ -21451,6 +23719,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 30,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 30,
@@ -21521,6 +23796,27 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 18,
+      "pctMembers": 62.06896551724138
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 6.896551724137931
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 9,
+      "pctMembers": 31.03448275862069
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 30,
@@ -21570,6 +23866,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "A",
+      "numMembers": 30,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 30,
@@ -21588,6 +23891,20 @@
       "aminoAcid": "T",
       "numMembers": 29,
       "pctMembers": 96.66666666666667
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
+      "numMembers": 28,
+      "pctMembers": 93.33333333333333
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 2,
+      "pctMembers": 6.666666666666667
     },
     {
       "feature": "NS5B",
@@ -21868,6 +24185,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 1,
@@ -21910,6 +24234,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -21931,6 +24262,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "A",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -21940,6 +24278,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -22150,6 +24495,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 1,
@@ -22192,6 +24544,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -22213,6 +24572,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "A",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -22222,6 +24588,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -22455,6 +24828,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 4,
+      "pctMembers": 66.66666666666667
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 33.333333333333336
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "A",
       "numMembers": 1,
@@ -22518,6 +24905,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 5,
+      "pctMembers": 83.33333333333333
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 16.666666666666668
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 4,
@@ -22553,6 +24954,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "A",
+      "numMembers": 6,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 6,
@@ -22562,6 +24970,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "T",
+      "numMembers": 6,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 6,
       "pctMembers": 100
     },
@@ -22786,6 +25201,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 2,
@@ -22828,6 +25257,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -22856,6 +25292,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "A",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 2,
@@ -22865,6 +25308,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -23089,6 +25539,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 7,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 7,
@@ -23138,6 +25595,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 7,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 7,
@@ -23159,6 +25623,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "A",
+      "numMembers": 7,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 7,
@@ -23168,6 +25639,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 7,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 7,
       "pctMembers": 100
     },
@@ -23399,6 +25877,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "G",
       "numMembers": 2,
@@ -23448,6 +25933,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -23476,6 +25968,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "A",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 2,
@@ -23485,6 +25984,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "T",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -24059,6 +26565,27 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2703,
+      "pctMembers": 99.26551597502754
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "T",
+      "numMembers": 3,
+      "pctMembers": 0.11017260374586853
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 17,
+      "pctMembers": 0.6243114212265883
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "A",
       "numMembers": 50,
@@ -24259,6 +26786,55 @@
       "aminoAcid": "R",
       "numMembers": 3,
       "pctMembers": 0.11001100110011001
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 39,
+      "pctMembers": 1.432243848696291
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 2625,
+      "pctMembers": 96.40102827763496
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "K",
+      "numMembers": 1,
+      "pctMembers": 0.03672420124862284
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 48,
+      "pctMembers": 1.7627616599338964
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 0.07344840249724569
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "T",
+      "numMembers": 2,
+      "pctMembers": 0.07344840249724569
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 6,
+      "pctMembers": 0.22034520749173706
     },
     {
       "feature": "NS5A",
@@ -24486,6 +27062,41 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "A",
+      "numMembers": 2717,
+      "pctMembers": 99.70642201834862
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 0.03669724770642202
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 5,
+      "pctMembers": 0.1834862385321101
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 0.03669724770642202
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 0.03669724770642202
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "C",
       "numMembers": 4,
@@ -24560,6 +27171,55 @@
       "aminoAcid": "V",
       "numMembers": 11,
       "pctMembers": 0.4056047197640118
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "C",
+      "numMembers": 3,
+      "pctMembers": 0.10997067448680352
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
+      "numMembers": 34,
+      "pctMembers": 1.2463343108504399
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "H",
+      "numMembers": 1,
+      "pctMembers": 0.036656891495601175
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "N",
+      "numMembers": 1,
+      "pctMembers": 0.036656891495601175
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 0.036656891495601175
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 0.036656891495601175
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 2687,
+      "pctMembers": 98.49706744868035
     },
     {
       "feature": "NS5B",
@@ -24992,6 +27652,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "S",
       "numMembers": 1,
@@ -25034,6 +27701,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -25055,6 +27729,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "A",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -25064,6 +27745,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -25330,6 +28018,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 7,
+      "pctMembers": 3.3175355450236967
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 204,
+      "pctMembers": 96.6824644549763
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "G",
       "numMembers": 1,
@@ -25442,6 +28144,27 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 6,
+      "pctMembers": 2.830188679245283
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 0.4716981132075472
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 205,
+      "pctMembers": 96.69811320754717
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 102,
@@ -25512,6 +28235,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 212,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "C",
       "numMembers": 1,
@@ -25551,6 +28281,13 @@
       "aminoAcid": "V",
       "numMembers": 182,
       "pctMembers": 87.08133971291866
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 211,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -25829,6 +28566,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 3,
@@ -25871,6 +28615,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 3,
@@ -25899,6 +28650,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "H",
       "numMembers": 3,
@@ -25908,6 +28666,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 3,
       "pctMembers": 100
     },
@@ -26118,6 +28883,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 66.66666666666667
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 33.333333333333336
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 3,
@@ -26160,6 +28939,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 3,
@@ -26176,6 +28962,13 @@
       "feature": "NS5A",
       "codon": "62",
       "aminoAcid": "Q",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
       "numMembers": 3,
       "pctMembers": 100
     },
@@ -26199,6 +28992,13 @@
       "aminoAcid": "V",
       "numMembers": 1,
       "pctMembers": 33.333333333333336
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 3,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -26484,6 +29284,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 60,
+      "pctMembers": 95.23809523809524
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 3,
+      "pctMembers": 4.761904761904762
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 67,
@@ -26561,6 +29375,27 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 40,
+      "pctMembers": 66.66666666666667
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 19,
+      "pctMembers": 31.666666666666668
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 1.6666666666666667
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 7,
@@ -26624,6 +29459,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 67,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "H",
       "numMembers": 1,
@@ -26649,6 +29491,13 @@
       "aminoAcid": "V",
       "numMembers": 65,
       "pctMembers": 98.48484848484848
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 67,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -26943,6 +29792,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 9,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 9,
@@ -26992,6 +29848,27 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 3,
+      "pctMembers": 33.333333333333336
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 11.11111111111111
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "Y",
+      "numMembers": 5,
+      "pctMembers": 55.55555555555556
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 7,
@@ -27027,6 +29904,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 9,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 9,
@@ -27045,6 +29929,13 @@
       "aminoAcid": "V",
       "numMembers": 8,
       "pctMembers": 88.88888888888889
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 9,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -27267,6 +30158,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 66.66666666666667
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 33.333333333333336
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 3,
@@ -27316,6 +30221,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -27351,6 +30263,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "H",
       "numMembers": 1,
@@ -27374,6 +30293,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 3,
       "pctMembers": 100
     },
@@ -27679,6 +30605,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 14.285714285714286
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 12,
+      "pctMembers": 85.71428571428571
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 15,
@@ -27742,6 +30682,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 15,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 10,
@@ -27777,6 +30724,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 15,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 15,
@@ -27795,6 +30749,13 @@
       "aminoAcid": "V",
       "numMembers": 10,
       "pctMembers": 71.42857142857143
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 15,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -28017,6 +30978,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 3,
@@ -28059,6 +31027,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 3,
@@ -28087,6 +31062,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 3,
@@ -28105,6 +31087,13 @@
       "aminoAcid": "V",
       "numMembers": 2,
       "pctMembers": 66.66666666666667
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 3,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -28320,6 +31309,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 4,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 4,
@@ -28362,6 +31358,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 1,
+      "pctMembers": 25
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 3,
+      "pctMembers": 75
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 4,
@@ -28397,6 +31407,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 4,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 4,
@@ -28406,6 +31423,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 4,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 4,
       "pctMembers": 100
     },
@@ -28623,6 +31647,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 3,
+      "pctMembers": 30
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 7,
+      "pctMembers": 70
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 10,
@@ -28672,6 +31710,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 10,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 9,
@@ -28707,6 +31752,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 10,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 10,
@@ -28716,6 +31768,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 10,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 10,
       "pctMembers": 100
     },
@@ -28926,6 +31985,27 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 6,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "L",
+      "numMembers": 3,
+      "pctMembers": 25
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 3,
+      "pctMembers": 25
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 12,
@@ -28989,6 +32069,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 11,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 12,
@@ -29038,6 +32125,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 12,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "C",
       "numMembers": 1,
@@ -29063,6 +32157,13 @@
       "aminoAcid": "V",
       "numMembers": 11,
       "pctMembers": 91.66666666666667
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 12,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -29271,6 +32372,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -29313,6 +32421,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -29334,6 +32449,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -29343,6 +32465,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -29553,6 +32682,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -29595,6 +32731,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -29616,6 +32759,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -29625,6 +32775,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -29842,6 +32999,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 8,
+      "pctMembers": 61.53846153846154
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 5,
+      "pctMembers": 38.46153846153846
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 13,
@@ -29912,6 +33083,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 13,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 11,
@@ -29940,6 +33118,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 13,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 12,
@@ -29949,6 +33134,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 13,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 13,
       "pctMembers": 100
     },
@@ -30215,6 +33407,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -30257,6 +33456,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -30273,6 +33479,13 @@
       "feature": "NS5A",
       "codon": "62",
       "aminoAcid": "E",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -30296,6 +33509,13 @@
       "aminoAcid": "T",
       "numMembers": 1,
       "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 2,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -30511,6 +33731,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 3,
@@ -30553,6 +33780,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -30581,6 +33815,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 3,
@@ -30599,6 +33840,13 @@
       "aminoAcid": "V",
       "numMembers": 2,
       "pctMembers": 66.66666666666667
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 3,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -30821,6 +34069,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 10
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 9,
+      "pctMembers": 90
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 10,
@@ -30863,6 +34125,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 10,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -30898,6 +34167,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 10,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 10,
@@ -30907,6 +34183,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 10,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 10,
       "pctMembers": 100
     },
@@ -31145,6 +34428,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -31187,6 +34477,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -31215,6 +34512,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "S",
       "numMembers": 2,
@@ -31224,6 +34528,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -31602,6 +34913,27 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 123,
+      "pctMembers": 32.03125
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "L",
+      "numMembers": 3,
+      "pctMembers": 0.78125
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 258,
+      "pctMembers": 67.1875
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "G",
       "numMembers": 1,
@@ -31756,6 +35088,41 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 50,
+      "pctMembers": 13.054830287206267
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 4,
+      "pctMembers": 1.0443864229765014
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 322,
+      "pctMembers": 84.07310704960835
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 0.5221932114882507
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "Y",
+      "numMembers": 5,
+      "pctMembers": 1.3054830287206267
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 176,
@@ -31882,6 +35249,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 390,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "C",
       "numMembers": 2,
@@ -31949,6 +35323,13 @@
       "aminoAcid": "V",
       "numMembers": 342,
       "pctMembers": 88.60103626943005
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 390,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -32269,6 +35650,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -32311,6 +35699,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -32332,6 +35727,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 1,
@@ -32341,6 +35743,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -32551,6 +35960,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -32593,6 +36009,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -32614,6 +36037,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "H",
       "numMembers": 1,
@@ -32623,6 +36053,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -32833,6 +36270,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -32875,6 +36319,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -32896,6 +36347,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -32905,6 +36363,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -33115,6 +36580,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -33157,6 +36629,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -33178,6 +36657,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "S",
       "numMembers": 1,
@@ -33187,6 +36673,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -33397,6 +36890,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -33439,6 +36939,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -33460,6 +36967,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -33469,6 +36983,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -33679,6 +37200,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -33721,6 +37249,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -33742,6 +37277,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -33751,6 +37293,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -33961,6 +37510,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -34003,6 +37559,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -34024,6 +37587,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -34033,6 +37603,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -34243,6 +37820,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -34285,6 +37869,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -34306,6 +37897,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -34315,6 +37913,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -34525,6 +38130,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -34567,6 +38179,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -34588,6 +38207,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "H",
       "numMembers": 1,
@@ -34597,6 +38223,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -34807,6 +38440,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -34849,6 +38489,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -34870,6 +38517,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "Y",
       "numMembers": 1,
@@ -34879,6 +38533,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -35173,6 +38834,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 62,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "Q",
       "numMembers": 64,
@@ -35212,6 +38880,20 @@
       "aminoAcid": "P",
       "numMembers": 64,
       "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 14,
+      "pctMembers": 25
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 42,
+      "pctMembers": 75
     },
     {
       "feature": "NS5A",
@@ -35271,6 +38953,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 63,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 64,
@@ -35303,6 +38992,13 @@
       "aminoAcid": "V",
       "numMembers": 48,
       "pctMembers": 78.68852459016394
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 64,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -35630,6 +39326,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 62,
+      "pctMembers": 98.41269841269842
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 1.5873015873015872
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "Q",
       "numMembers": 65,
@@ -35669,6 +39379,20 @@
       "aminoAcid": "P",
       "numMembers": 65,
       "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 14,
+      "pctMembers": 24.56140350877193
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 43,
+      "pctMembers": 75.43859649122807
     },
     {
       "feature": "NS5A",
@@ -35728,6 +39452,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 64,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 65,
@@ -35760,6 +39491,13 @@
       "aminoAcid": "V",
       "numMembers": 48,
       "pctMembers": 77.41935483870968
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 65,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -36136,6 +39874,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 154,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 9,
@@ -36213,6 +39958,27 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 68,
+      "pctMembers": 44.44444444444444
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 3,
+      "pctMembers": 1.9607843137254901
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 82,
+      "pctMembers": 53.59477124183007
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 3,
@@ -36276,6 +40042,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 153,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "I",
       "numMembers": 1,
@@ -36329,6 +40102,20 @@
       "aminoAcid": "V",
       "numMembers": 28,
       "pctMembers": 18.30065359477124
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
+      "numMembers": 1,
+      "pctMembers": 0.6493506493506493
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 153,
+      "pctMembers": 99.35064935064935
     },
     {
       "feature": "NS5B",
@@ -36607,6 +40394,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -36649,6 +40443,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 2,
@@ -36670,6 +40471,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 2,
@@ -36679,6 +40487,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -36889,6 +40704,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -36938,6 +40760,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 2,
@@ -36959,6 +40788,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 2,
@@ -36968,6 +40804,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -37178,6 +41021,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -37234,6 +41084,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 2,
@@ -37269,6 +41126,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "I",
       "numMembers": 1,
@@ -37285,6 +41149,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -37502,6 +41373,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 28,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 25,
@@ -37555,6 +41433,20 @@
       "aminoAcid": "P",
       "numMembers": 28,
       "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 18,
+      "pctMembers": 69.23076923076923
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 8,
+      "pctMembers": 30.76923076923077
     },
     {
       "feature": "NS5A",
@@ -37642,6 +41534,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 28,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "S",
       "numMembers": 2,
@@ -37667,6 +41566,20 @@
       "aminoAcid": "V",
       "numMembers": 18,
       "pctMembers": 69.23076923076923
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
+      "numMembers": 1,
+      "pctMembers": 3.5714285714285716
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 27,
+      "pctMembers": 96.42857142857143
     },
     {
       "feature": "NS5B",
@@ -37896,6 +41809,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 20,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 20,
@@ -37940,6 +41860,13 @@
       "feature": "NS5A",
       "codon": "32",
       "aminoAcid": "P",
+      "numMembers": 20,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
       "numMembers": 20,
       "pctMembers": 100
     },
@@ -38008,6 +41935,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 20,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 20,
@@ -38026,6 +41960,13 @@
       "aminoAcid": "V",
       "numMembers": 19,
       "pctMembers": 95
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 20,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -38262,6 +42203,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -38311,6 +42259,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 2,
@@ -38332,6 +42287,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 2,
@@ -38341,6 +42303,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -38586,6 +42555,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 8,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 8,
@@ -38628,6 +42604,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 8,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 8,
@@ -38656,6 +42639,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 8,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 8,
@@ -38665,6 +42655,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 8,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
       "numMembers": 8,
       "pctMembers": 100
     },
@@ -38896,6 +42893,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 66.66666666666667
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 33.333333333333336
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 3,
@@ -38938,6 +42949,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 3,
@@ -38966,6 +42984,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 3,
@@ -38975,6 +43000,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
       "numMembers": 3,
       "pctMembers": 100
     },
@@ -39213,6 +43245,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -39255,6 +43294,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 2,
@@ -39276,6 +43322,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 1,
@@ -39285,6 +43338,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -39523,6 +43583,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -39565,6 +43632,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -39586,6 +43660,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 1,
@@ -39595,6 +43676,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -39847,6 +43935,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 11,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 11,
@@ -39889,6 +43984,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 11,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 11,
@@ -39905,6 +44007,13 @@
       "feature": "NS5A",
       "codon": "62",
       "aminoAcid": "D",
+      "numMembers": 11,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
       "numMembers": 11,
       "pctMembers": 100
     },
@@ -39928,6 +44037,13 @@
       "aminoAcid": "V",
       "numMembers": 10,
       "pctMembers": 90.9090909090909
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
+      "numMembers": 11,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -40157,6 +44273,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 5,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 5,
@@ -40199,6 +44322,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 5,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 5,
@@ -40220,6 +44350,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 5,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "S",
       "numMembers": 5,
@@ -40229,6 +44366,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 5,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
       "numMembers": 5,
       "pctMembers": 100
     },
@@ -40460,6 +44604,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 14,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 14,
@@ -40509,6 +44660,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 14,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 14,
@@ -40551,6 +44709,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 14,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "S",
       "numMembers": 14,
@@ -40560,6 +44725,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 14,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
       "numMembers": 14,
       "pctMembers": 100
     },
@@ -40826,6 +44998,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 4,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 4,
@@ -40868,6 +45047,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 4,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -40896,6 +45082,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 4,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "S",
       "numMembers": 2,
@@ -40912,6 +45105,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 4,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 4,
       "pctMembers": 100
     },
@@ -41129,6 +45329,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 3,
@@ -41178,6 +45385,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 3,
@@ -41199,6 +45413,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 3,
@@ -41208,6 +45429,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 3,
       "pctMembers": 100
     },
@@ -41453,6 +45681,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 8,
+      "pctMembers": 88.88888888888889
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 11.11111111111111
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 9,
@@ -41516,6 +45758,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 1,
+      "pctMembers": 11.11111111111111
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 8,
+      "pctMembers": 88.88888888888889
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 9,
@@ -41558,6 +45814,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 9,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 9,
@@ -41569,6 +45832,20 @@
       "aminoAcid": "V",
       "numMembers": 8,
       "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
+      "numMembers": 1,
+      "pctMembers": 11.11111111111111
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 8,
+      "pctMembers": 88.88888888888889
     },
     {
       "feature": "NS5B",
@@ -41819,6 +46096,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 66.66666666666667
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 33.333333333333336
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 3,
@@ -41875,6 +46166,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "Q",
       "numMembers": 3,
@@ -41910,6 +46208,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 3,
@@ -41919,6 +46224,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 3,
       "pctMembers": 100
     },
@@ -42143,6 +46455,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -42199,6 +46518,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 3,
@@ -42220,6 +46546,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 3,
@@ -42229,6 +46562,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 3,
       "pctMembers": 100
     },
@@ -42446,6 +46786,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 3,
+      "pctMembers": 75
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 25
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 4,
@@ -42488,6 +46842,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 1,
+      "pctMembers": 25
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 3,
+      "pctMembers": 75
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 4,
@@ -42509,6 +46877,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 4,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 4,
@@ -42518,6 +46893,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 4,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 4,
       "pctMembers": 100
     },
@@ -42728,6 +47110,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -42770,6 +47159,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 1,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 2,
@@ -42800,6 +47203,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -43017,6 +47427,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 4,
+      "pctMembers": 80
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 20
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 5,
@@ -43059,6 +47483,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 3,
+      "pctMembers": 60
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 2,
+      "pctMembers": 40
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 5,
@@ -43080,6 +47518,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 5,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "S",
       "numMembers": 5,
@@ -43089,6 +47534,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 5,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
       "numMembers": 5,
       "pctMembers": 100
     },
@@ -43313,6 +47765,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -43355,6 +47814,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "Y",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -43376,6 +47842,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 1,
@@ -43385,6 +47858,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -43602,6 +48082,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 3,
@@ -43644,6 +48131,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 3,
@@ -43665,6 +48159,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 3,
@@ -43674,6 +48175,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 3,
       "pctMembers": 100
     },
@@ -43926,6 +48434,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -43968,6 +48483,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 1,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 2,
@@ -43989,6 +48518,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 2,
@@ -43998,6 +48534,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -44208,6 +48751,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 4,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 4,
@@ -44257,6 +48807,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 2,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 2,
+      "pctMembers": 50
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -44285,6 +48849,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 4,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 4,
@@ -44303,6 +48874,13 @@
       "aminoAcid": "V",
       "numMembers": 3,
       "pctMembers": 75
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 4,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -44532,6 +49110,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 3,
@@ -44581,6 +49166,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 66.66666666666667
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 33.333333333333336
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "G",
       "numMembers": 1,
@@ -44616,6 +49215,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 3,
@@ -44632,6 +49238,20 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 66.66666666666667
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
+      "numMembers": 1,
+      "pctMembers": 33.333333333333336
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 66.66666666666667
     },
@@ -44849,6 +49469,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -44891,6 +49518,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 2,
@@ -44912,6 +49546,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "S",
       "numMembers": 2,
@@ -44921,6 +49562,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -45376,6 +50024,20 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 126,
+      "pctMembers": 37.388724035608305
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 211,
+      "pctMembers": 62.611275964391695
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 185,
@@ -45558,6 +50220,41 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 114,
+      "pctMembers": 34.131736526946106
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 12,
+      "pctMembers": 3.592814371257485
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 206,
+      "pctMembers": 61.67664670658683
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "W",
+      "numMembers": 1,
+      "pctMembers": 0.2994011976047904
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "Y",
+      "numMembers": 1,
+      "pctMembers": 0.2994011976047904
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "G",
       "numMembers": 1,
@@ -45733,6 +50430,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 333,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "I",
       "numMembers": 2,
@@ -45786,6 +50490,20 @@
       "aminoAcid": "V",
       "numMembers": 190,
       "pctMembers": 57.40181268882175
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
+      "numMembers": 70,
+      "pctMembers": 20.771513353115726
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 267,
+      "pctMembers": 79.22848664688428
     },
     {
       "feature": "NS5B",
@@ -46183,6 +50901,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "R",
       "numMembers": 2,
@@ -46225,6 +50950,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 2,
@@ -46246,6 +50978,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 2,
@@ -46255,6 +50994,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -46465,6 +51211,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -46507,6 +51260,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 2,
@@ -46528,6 +51288,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 2,
@@ -46537,6 +51304,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -46747,6 +51521,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -46789,6 +51570,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -46810,6 +51598,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 1,
@@ -46819,6 +51614,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -47029,6 +51831,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -47071,6 +51880,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 2,
@@ -47092,6 +51908,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 2,
@@ -47101,6 +51924,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -47311,6 +52141,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -47360,6 +52197,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 2,
@@ -47381,6 +52225,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 2,
@@ -47390,6 +52241,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -47607,6 +52465,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -47649,6 +52514,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -47670,6 +52542,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 1,
@@ -47679,6 +52558,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -47889,6 +52775,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -47931,6 +52824,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -47952,6 +52852,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 1,
@@ -47961,6 +52868,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -48171,6 +53085,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -48213,6 +53134,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -48234,6 +53162,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 1,
@@ -48243,6 +53178,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -48453,6 +53395,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -48495,6 +53444,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -48516,6 +53472,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "S",
       "numMembers": 1,
@@ -48525,6 +53488,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -48735,6 +53705,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -48777,6 +53754,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "W",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -48798,6 +53782,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "S",
       "numMembers": 1,
@@ -48807,6 +53798,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -49017,6 +54015,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -49059,6 +54064,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -49080,6 +54092,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 1,
@@ -49089,6 +54108,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -49299,6 +54325,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -49341,6 +54374,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -49362,6 +54402,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "S",
       "numMembers": 1,
@@ -49371,6 +54418,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -49581,6 +54635,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -49623,6 +54684,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -49644,6 +54712,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "S",
       "numMembers": 1,
@@ -49653,6 +54728,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -49863,6 +54945,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -49905,6 +54994,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "R",
       "numMembers": 1,
@@ -49926,6 +55022,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 1,
@@ -49935,6 +55038,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -50145,6 +55255,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -50187,6 +55304,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -50208,6 +55332,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 1,
@@ -50217,6 +55348,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -50427,6 +55565,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -50469,6 +55614,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 1,
@@ -50490,6 +55642,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "T",
       "numMembers": 1,
@@ -50499,6 +55658,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 1,
       "pctMembers": 100
     },
@@ -50709,6 +55875,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -50751,6 +55924,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 2,
@@ -50772,6 +55952,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "R",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "H",
       "numMembers": 2,
@@ -50781,6 +55968,13 @@
       "feature": "NS5A",
       "codon": "99",
       "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
       "numMembers": 2,
       "pctMembers": 100
     },
@@ -51012,6 +56206,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "K",
       "numMembers": 3,
@@ -51061,6 +56262,13 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "K",
       "numMembers": 3,
@@ -51077,6 +56285,13 @@
       "feature": "NS5A",
       "codon": "62",
       "aminoAcid": "L",
+      "numMembers": 3,
+      "pctMembers": 100
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "R",
       "numMembers": 3,
       "pctMembers": 100
     },
@@ -51107,6 +56322,13 @@
       "aminoAcid": "T",
       "numMembers": 1,
       "pctMembers": 33.333333333333336
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 3,
+      "pctMembers": 100
     },
     {
       "feature": "NS5B",
@@ -52491,6 +57713,69 @@
     },
     {
       "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "A",
+      "numMembers": 5,
+      "pctMembers": 0.035325702981489335
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "D",
+      "numMembers": 1,
+      "pctMembers": 0.007065140596297866
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "F",
+      "numMembers": 2,
+      "pctMembers": 0.014130281192595733
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "I",
+      "numMembers": 8621,
+      "pctMembers": 60.908577080683905
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "L",
+      "numMembers": 11,
+      "pctMembers": 0.07771654655927653
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "M",
+      "numMembers": 1,
+      "pctMembers": 0.007065140596297866
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "S",
+      "numMembers": 1,
+      "pctMembers": 0.007065140596297866
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "T",
+      "numMembers": 5,
+      "pctMembers": 0.035325702981489335
+    },
+    {
+      "feature": "NS5A",
+      "codon": "8",
+      "aminoAcid": "V",
+      "numMembers": 5507,
+      "pctMembers": 38.90772926381235
+    },
+    {
+      "feature": "NS5A",
       "codon": "24",
       "aminoAcid": "*",
       "numMembers": 1,
@@ -52953,6 +58238,97 @@
     },
     {
       "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "A",
+      "numMembers": 7,
+      "pctMembers": 0.04749949107688132
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "F",
+      "numMembers": 2745,
+      "pctMembers": 18.626586143719887
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "G",
+      "numMembers": 1,
+      "pctMembers": 0.0067856415824116174
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "I",
+      "numMembers": 3421,
+      "pctMembers": 23.213679853430143
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "K",
+      "numMembers": 1,
+      "pctMembers": 0.0067856415824116174
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "L",
+      "numMembers": 2885,
+      "pctMembers": 19.576575965257515
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "M",
+      "numMembers": 134,
+      "pctMembers": 0.9092759720431567
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "P",
+      "numMembers": 6,
+      "pctMembers": 0.040713849494469705
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "S",
+      "numMembers": 8,
+      "pctMembers": 0.05428513265929294
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "T",
+      "numMembers": 3,
+      "pctMembers": 0.020356924747234852
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "V",
+      "numMembers": 5499,
+      "pctMembers": 37.31424306168148
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "W",
+      "numMembers": 1,
+      "pctMembers": 0.0067856415824116174
+    },
+    {
+      "feature": "NS5A",
+      "codon": "37",
+      "aminoAcid": "Y",
+      "numMembers": 26,
+      "pctMembers": 0.17642668114270205
+    },
+    {
+      "feature": "NS5A",
       "codon": "44",
       "aminoAcid": "E",
       "numMembers": 21,
@@ -53254,6 +58630,111 @@
     },
     {
       "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "A",
+      "numMembers": 2718,
+      "pctMembers": 18.16116530803154
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "C",
+      "numMembers": 6,
+      "pctMembers": 0.040090872644661234
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "F",
+      "numMembers": 18,
+      "pctMembers": 0.1202726179339837
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "G",
+      "numMembers": 21,
+      "pctMembers": 0.1403180542563143
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "I",
+      "numMembers": 2,
+      "pctMembers": 0.013363624214887078
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "K",
+      "numMembers": 162,
+      "pctMembers": 1.0824535614058532
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "L",
+      "numMembers": 436,
+      "pctMembers": 2.913270078845383
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "M",
+      "numMembers": 213,
+      "pctMembers": 1.4232259788854738
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "N",
+      "numMembers": 7,
+      "pctMembers": 0.04677268475210477
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "R",
+      "numMembers": 5360,
+      "pctMembers": 35.814512895897366
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "S",
+      "numMembers": 5983,
+      "pctMembers": 39.97728183883469
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "T",
+      "numMembers": 2,
+      "pctMembers": 0.013363624214887078
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "V",
+      "numMembers": 1,
+      "pctMembers": 0.006681812107443539
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "W",
+      "numMembers": 36,
+      "pctMembers": 0.2405452358679674
+    },
+    {
+      "feature": "NS5A",
+      "codon": "81",
+      "aminoAcid": "Y",
+      "numMembers": 1,
+      "pctMembers": 0.006681812107443539
+    },
+    {
+      "feature": "NS5A",
       "codon": "93",
       "aminoAcid": "A",
       "numMembers": 1,
@@ -53405,6 +58886,55 @@
       "aminoAcid": "V",
       "numMembers": 1375,
       "pctMembers": 9.174618002268632
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "C",
+      "numMembers": 11,
+      "pctMembers": 0.0736574260077675
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "F",
+      "numMembers": 145,
+      "pctMembers": 0.9709387973751172
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "H",
+      "numMembers": 9,
+      "pctMembers": 0.060265166733627966
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "N",
+      "numMembers": 2,
+      "pctMembers": 0.013392259274139548
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "S",
+      "numMembers": 2,
+      "pctMembers": 0.013392259274139548
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "T",
+      "numMembers": 1,
+      "pctMembers": 0.006696129637069774
+    },
+    {
+      "feature": "NS5A",
+      "codon": "129",
+      "aminoAcid": "Y",
+      "numMembers": 14764,
+      "pctMembers": 98.86165796169814
     },
     {
       "feature": "NS5B",
