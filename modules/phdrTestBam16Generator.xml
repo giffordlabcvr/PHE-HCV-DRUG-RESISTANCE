@@ -1,0 +1,13 @@
+<samFileGenerator>
+	<mainReference>REF_MASTER_NC_004102</mainReference>
+	<!-- This starts at 5320, in NS4A, so will miss NS3. 
+		It will produce a depth of 20 across most of the rest of the genome --> 
+	<steppedReadSet>
+		<read1Length>100</read1Length>
+		<gapSize>50</gapSize>
+		<read2Length>100</read2Length>
+		<stepSize>10</stepSize>
+		<readNamePrefix>steppedReads</readNamePrefix>
+		<refStartNt>5320</refStartNt>
+	</steppedReadSet>
+</samFileGenerator>

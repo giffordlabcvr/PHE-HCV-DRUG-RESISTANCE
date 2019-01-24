@@ -24,6 +24,8 @@ table phdr_ras
   # example 30R+93H
   create field structure VARCHAR
   create field sort_key VARCHAR
+  # number of AAs between first and last element inclusive, so for "30R+93H" this would be 64, for "80K" this would be 1
+  create field aa_span INTEGER
   exit
 
 table phdr_alignment_ras

@@ -237,12 +237,13 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 							scanResult.featureName, scanResult.variationName);
 					glue.log("FINE", "phdrReportingController.generateSingleFastaReport rasFinding:", rasFinding);
 					scanResult.rasDetails = rasFinding.phdrRasVariation;
-					addRasPublications(rasFinding, publicationIdToObj);
+					if(scanResult.present) {
+						addRasPublications(rasFinding, publicationIdToObj);
+					}
 				});
 				// at this stage sequenceResult.rasScanResults contains absent / insufficient coverage variation scan results, 
-				// which is important for assessing whether the sequence has insufficient coverage overall to assess resistnce
-				// for a given drug.
-				sequenceResult.drugScores = assessResistance(sequenceResult);
+				// which is important for assessing whether the sequence has insufficient coverage overall for a given drug.
+				sequenceResult.drugScores = assessResistance(sequenceResult, false);
 
 				// now remove non-present variation scan results.
 				sequenceResult.rasScanResults = _.filter(sequenceResult.rasScanResults, function(scanResult) {
@@ -724,17 +725,19 @@ function reportBam(bamFilePath) {
 
 				samRefResult.targetRefName = targetRefName;
 				
+				// run the main scan with no min depth / min read pct.
+				// this is to find important variations for which there is insufficient coverage.
 				var thisCladeRasScanResults = 
 					bamVariationScan(bamFilePath, samRefSense, samRefResult.samReference.name, targetRefName, 
-							thisCladeWhereClause);
+							thisCladeWhereClause, 0, 0);
 
 				var sameGenotypeRasScanResults = 
 					bamVariationScan(bamFilePath, samRefSense, samRefResult.samReference.name, targetRefName, 
-							sameGenotypeWhereClause);
+							sameGenotypeWhereClause, phdrSamThresholds.minDepth, phdrSamThresholds.minReadProportionPct);
 
 				var differentGenotypeRasScanResults = 
 					bamVariationScan(bamFilePath, samRefSense, samRefResult.samReference.name, targetRefName, 
-							differentGenotypeWhereClause);
+							differentGenotypeWhereClause, phdrSamThresholds.minDepth, phdrSamThresholds.minReadProportionPct);
 
 				var residuesAtRasAssociatedLocations = 
 					bamResiduesAtRasAssociatedLocations(bamFilePath, samRefSense, 
@@ -750,11 +753,40 @@ function reportBam(bamFilePath) {
 							scanResult.featureName, scanResult.variationName);
 					glue.log("FINE", "phdrReportingController.reportBam rasFinding:", rasFinding);
 					scanResult.rasDetails = rasFinding.phdrRasVariation;
+					if(scanResult.readsPresent + scanResult.readsAbsent > phdrSamThresholds.minDepth) {
+						scanResult.sufficientCoverage = true;
+					} else {
+						scanResult.sufficientCoverage = false;
+					}
+					if(scanResult.sufficientCoverage && scanResult.pctPresent > phdrSamThresholds.minReadProportionPct) {
+						scanResult.present = true;
+					} else {
+						scanResult.present = false;
+					}
+					if(scanResult.present) {
+						addRasPublications(rasFinding, publicationIdToObj);
+					}
+				});
+				// at this stage sequenceResult.rasScanResults contains absent / insufficient coverage variation scan results, 
+				// which is important for assessing whether the sequence has insufficient coverage overall for a given drug.
+				samRefResult.drugScores = assessResistance(samRefResult, true);
+
+				// now remove non-present variation scan results.
+				samRefResult.rasScanResults = _.filter(samRefResult.rasScanResults, function(scanResult) {
+					return scanResult.present;
+				});
+				
+				glue.log("FINE", "phdrReportingController.reportBam rasScanResults:", samRefResult.rasScanResults);
+
+				
+				_.each(samRefResult.rasScanResults, function(scanResult) {
 					scanResult.rapUrl = "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
 					reportedPolymorphismKeys[scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure.replace(/[A-Z]/g, "")] = "thisCladeRAS";
-					addRasPublications(rasFinding, publicationIdToObj);
 					
 				});
+
+				
+				
 				samRefResult.substitutionsOfInterest = [];
 				samRefResult.sameGenotypeRasScanResults = sameGenotypeRasScanResults;
 				glue.log("FINE", "phdrReportingController.reportBam sameGenotypeRasScanResults:", 
@@ -787,7 +819,6 @@ function reportBam(bamFilePath) {
 				});
 
 				
-				samRefResult.drugScores = assessResistance(samRefResult);
 				glue.log("FINE", "phdrReportingController.reportBam samRefResult.drugScores:", samRefResult.drugScores);
 	
 			}
@@ -816,7 +847,7 @@ function reportBam(bamFilePath) {
 
 
 
-function bamVariationScan(bamFilePath, samRefSense, samRefName, targetRefName, whereClause) {
+function bamVariationScan(bamFilePath, samRefSense, samRefName, targetRefName, whereClause, minDepth, minReadProportionPct) {
 	var scanResults;
 	glue.inMode("module/phdrSamReporter", function() {
 		scanResults = glue.tableToObjects(glue.command(["variation", "scan",
@@ -832,8 +863,8 @@ function bamVariationScan(bamFilePath, samRefSense, samRefName, targetRefName, w
 		   				              "--whereClause", whereClause,
 		   				              "--minQScore", phdrSamThresholds.minQScore,
 		   				              "--minMapQ", phdrSamThresholds.minMapQ,
-		   				              "--minDepth", phdrSamThresholds.minDepth,
-		   				              "--minPresentPct", phdrSamThresholds.minReadProportionPct]));					
+		   				              "--minDepth", minDepth,
+		   				              "--minPresentPct", minReadProportionPct]));					
 	});
 	return scanResults;
 }
@@ -858,12 +889,12 @@ function bamResiduesAtRasAssociatedLocations(bamFilePath, samRefSense, samRefNam
 }
 
 
-function assessResistance(result) {
+function assessResistance(result, useAaSpan) {
 	var drugs = 
 		glue.tableToObjects(
 				glue.command(["list", "custom-table-row", "phdr_drug", "id", "category"]));
 	var assessmentList = _.map(drugs, function(drug) { 
-		return assessResistanceForDrug(result, drug); 
+		return assessResistanceForDrug(result, drug, useAaSpan); 
 	});
 	var categoryToDrugs = _.groupBy(assessmentList, function(assessment) { return assessment.drug.category; });
 	var categoryAssessments = _.map(_.pairs(categoryToDrugs), function(pair) {return { category:pair[0], drugAssessments:pair[1]};});
@@ -871,7 +902,16 @@ function assessResistance(result) {
 	return categoryAssessments;
 }
 
-function assessResistanceForDrug(result, drug) {
+// the aaSpan property of each RAS is used in the SAM/BAM case.
+// Some RASs have long AA spans, e.g. L31F+Y129H has an AA span of 99.
+// These RASs are unlikely to be found to be present / absent in BAM reads
+// because it is unlikely that reads will cover all locations.
+// However, this must not be taken as evidence that coverage is insufficient.
+function assessResistanceForDrug(result, drug, useAaSpan) {
+	
+	// if AA span is higher than this, negative sufficientCoverage for the variation
+	// scan result does not count as insufficient coverage for the drug.
+	var aaSpanThreshold = 1;
 	
 	var drugScore = null;
 	var drugScoreDisplay = null;
@@ -888,6 +928,7 @@ function assessResistanceForDrug(result, drug) {
 	var sufficientCoverage_III = true;
 
 	_.each(result.rasScanResults, function(scanResult) {
+		var aaSpan = scanResult.rasDetails.aaSpan;
 		_.each(scanResult.rasDetails.alignmentRas, function(alignmentRas) {
 			_.each(alignmentRas.alignmentRasDrug, function(alignmentRasDrug) {
 				if(alignmentRasDrug.drug == drug.id) {
@@ -907,19 +948,25 @@ function assessResistanceForDrug(result, drug) {
 							if(scanResult.present) {
 								rasScores_category_I.push(rasScoreDetails); 
 							} else if(!scanResult.sufficientCoverage) {
-								sufficientCoverage_I = false;
+								if(aaSpan <= aaSpanThreshold || !useAaSpan) {
+									sufficientCoverage_I = false;
+								}
 							}
 						} else if(alignmentRasDrug.resistanceCategory == "category_II") {
 							if(scanResult.present) {
 								rasScores_category_II.push(rasScoreDetails); 
 							} else if(!scanResult.sufficientCoverage) {
-								sufficientCoverage_II = false;
+								if(aaSpan <= aaSpanThreshold || !useAaSpan) {
+									sufficientCoverage_II = false;
+								}
 							}
 						} else if(alignmentRasDrug.resistanceCategory == "category_III") {
 							if(scanResult.present) {
 								rasScores_category_III.push(rasScoreDetails); 
 							} else if(!scanResult.sufficientCoverage) {
-								sufficientCoverage_III = false;
+								if(aaSpan <= aaSpanThreshold || !useAaSpan) {
+									sufficientCoverage_III = false;
+								}	
 							}
 						}
 					}

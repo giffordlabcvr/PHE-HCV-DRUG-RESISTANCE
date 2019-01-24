@@ -94,6 +94,7 @@ _.each(rasObjs, function(rasObj) {
 		glue.command(["set", "field", "gene", rasObj.gene]);
 		glue.command(["set", "field", "structure", rasObj.structure]);
 		glue.command(["set", "field", "sort_key", generateSortKey(rasObj.structure)]);
+		glue.command(["set", "field", "aa_span", getAaSpan(rasObj.structure)]);
 	});
 	glue.inMode("reference/REF_MASTER_NC_004102/feature-location/"+rasObj.gene, function() {
 		if(rasObj.structure.indexOf("+") > 0) {
@@ -112,5 +113,17 @@ _.each(rasObjs, function(rasObj) {
 	});
 });
 
+function getAaSpan(structure) {
+	var structureBits = structure.split("+");
+	var locs = [];
+	_.each(structureBits, function(structureBit) {
+		var numString = structureBit.replace(/[a-zA-Z]*/g, "");
+		locs.push(parseInt(numString, 10));
+	});
+	var minLoc = _.min(locs);
+	var maxLoc = _.max(locs);
+	return (maxLoc-minLoc) + 1;
+	
+}
 
 
