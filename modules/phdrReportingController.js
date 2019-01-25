@@ -461,7 +461,7 @@ function checkForWildTypeSubstitution(genotypingResult, residueObj, reportedPoly
 	var codon = residueObj.codonLabel;
 	var residues;
 	if(residueObj.possibleAas != null) {
-		// FASTA consensus case
+		// FASTA consensus case, use the set of possible AAs given any ambiguity codes in the triplet.
 		residues = residueObj.possibleAas.split("").sort();
 	} else {
 		// SAM/BAM case
@@ -477,7 +477,9 @@ function checkForWildTypeSubstitution(genotypingResult, residueObj, reportedPoly
 	// check whether detected possible residue is typical or not.
 	for(var i = 0; i < residues.length; i++) {
 		var residueAA = residues[i];
-		if(typicalAAs.indexOf(residueAA) < 0) {
+		// for some triplets with ambiguity codes, the set of possible AAs is very large. We only
+		// report possible AAs when there is a set of 6 or less.
+		if(typicalAAs.indexOf(residueAA) < 0 && residues.length <= 6) {
 			var reportedKey = gene+":"+codon+residueAA;
 			if(reportedPolymorphismKeys[reportedKey] == null) {
 				var wtSubObj = {};
