@@ -39,7 +39,6 @@ var nextPubIndex = 1;
 
 function reportFastaAsHtml(fastaFilePath, htmlFilePath) {
 	var reportDoc = reportFasta(fastaFilePath);
-	glue.command(["file-util", "save-string", JSON.stringify(reportDoc, null, 2), "reportDoc.json"]);
 	glue.inMode("module/phdrRasReportTransformer", function() {
 		glue.command({"transform-to-file" : {
 			commandDocument: reportDoc,
