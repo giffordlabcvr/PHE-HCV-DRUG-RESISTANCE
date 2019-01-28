@@ -306,8 +306,9 @@ loadResistanceFindings("VOX", "voxilaprevir", "NS3", {"Pooled1": ["GS-US-367-116
 loadResistanceFindings("SOF", "sofosbuvir", "NS5B", 
 		{"Pooled1": ["ASTRAL-1", "ASTRAL-2", "ASTRAL-3", "ASTRAL-5", "POLARIS-2", "POLARIS-3"], 
 		 "Pooled2": ["QUANTUM", "P7977-0221", "PROTON", "ELECTRON", "ATOMIC", "POSITRON", "FUSION", "NEUTRINO", "FISSION"], 
-		 "Pooled3": ["GS-US-337-1119", "GS-US-342-1138"], 
-		 "Pooled4": [], 
+		 // not sure why I have both Pooled3 and Pooled4, it's the same paper.
+		 "Pooled3": ["GS-US-337-1119", "GS-US-342-1138"],
+		 "Pooled4": ["GS-US-337-1119", "GS-US-342-1138"], 
 		 "Pooled5": ["LONESTAR", "ELECTRON", "ION-1", "ION-2", "ION-3"], 
 		 "Pooled6": ["GS-US-248-0120", "GS-US-248-0121", "GS-US-196-0123", "GS-US-256-0124", "GS-US-196-0140", "GS-US-256-0148"], 
 		 "Pooled7": ["NEUTRINO", "FISSION", "POSITRON", "FUSION", "VALENCE", "PHOTON-1", "PHOTON-2", "P7977-2025", "LONESTAR", "ELECTRON", "ION-1", "ION-2", "ION-3"]});
