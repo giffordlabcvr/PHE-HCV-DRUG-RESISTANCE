@@ -101,6 +101,40 @@ No
 
 <h3>Genome coding region coverage</h3>
 
+<#if phdrReport.sequenceDataFormat = "SAM/BAM">
+
+<table id="featureCoverageTable">
+<colgroup>
+    <col class="tableHeader"/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th rowspan="2">Genome region</th>
+	<th colspan="4">Proportion of nucleatide sites with depth</th>
+</tr>
+<tr>
+	<th>&ge; 1</th>
+	<th>&ge; 10</th>
+	<th>&ge; 100</th>
+	<th>&ge; 1000</th>
+</tr>
+<#list result.featuresWithCoverage as feature>
+<tr>
+<td><b>${feature.displayName}</b></td>
+<#list feature.depthCoveragePcts as depthCoveragePct>
+<td>${depthCoveragePct.pctPositions?string("##0.#")}%</td>
+</#list>
+</tr>
+</#list>
+</table>
+
+<#else>
+
 <#if result.featuresWithCoverage?size == 0>
 <p>No coverage of coding regions</p>
 <#else>
@@ -121,6 +155,10 @@ No
 </#if>
 
 </#if>
+
+
+</#if>
+
 
 
 

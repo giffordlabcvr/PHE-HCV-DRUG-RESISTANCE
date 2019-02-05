@@ -191,6 +191,47 @@ function generateFeaturesWithCoverage(targetRefName, queryToTargetRefSegs) {
 	return featuresWithCoverage;
 }
 
+function generateFeaturesWithDepthCoverage(targetRefName, bamFile) {
+	var featuresWithDepthCoverage = [];
+	var depthThresholds = [1, 10, 100, 1000];
+	_.each(featuresList, function(feature) {
+		var featureSiteDepths;
+		
+		glue.inMode("module/phdrSamReporter", function() {
+			featureSiteDepths = glue.tableToObjects(glue.command(["depth", 
+				"--fileName", bamFile, 
+				"--relRefName", "REF_MASTER_NC_004102",
+				"--featureName", feature.name, 
+				"--autoAlign",
+				"--targetRefName", targetRefName,
+				"--linkingAlmtName", "AL_UNCONSTRAINED"]));						
+		});
+		var totalNumPositions = featureSiteDepths.length;
+		var numPositionsWithMinDepth = [];
+		for(var i = 0; i < depthThresholds.length; i++) { 
+			numPositionsWithMinDepth.push(0); 
+		}
+		_.each(featureSiteDepths, function(depthObj) {
+			for(var i = 0; i < depthThresholds.length; i++) { 
+				if(depthObj.depth >= depthThresholds[i]) {
+					numPositionsWithMinDepth[i]++;
+				}
+			}
+		});
+		var featureCopy = _.clone(feature);
+		featureCopy.depthCoveragePcts = [];
+		for(var i = 0; i < depthThresholds.length; i++) { 
+			featureCopy.depthCoveragePcts.push({ 
+				minDepth: depthThresholds[i],
+				pctPositions: (numPositionsWithMinDepth[i] / totalNumPositions) * 100.0
+			});
+		}
+		featuresWithDepthCoverage.push(featureCopy);
+	});
+	return featuresWithDepthCoverage;
+	
+} 
+
 function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 	var publicationIdToObj = {};
 	nextPubIndex = 1;
@@ -604,17 +645,21 @@ function getVariationWhereClauses(genotypingResult) {
 			" and phdr_ras.phdr_alignment_ras.alignment.name = '"+genotypeAlmtName+"'";
 		differentGenotypeWhereClause = "phdr_ras != null and "+
 			"phdr_ras.phdr_alignment_ras.alignment.parent.name !='"+genotypeAlmtName+"' and "+
-			"phdr_ras.phdr_alignment_ras.alignment.name !='"+genotypeAlmtName+"'";
+			"phdr_ras.phdr_alignment_ras.alignment.name !='"+genotypeAlmtName+"' and "+
+			"phdr_ras.phdr_alignment_ras.phdr_alignment_ras_drug.numeric_resistance_category <= 3";
 	}
 	if(genotypeAlmtName != null && subtypeAlmtName != null) {
 		// genotype known, subtype known, include RASs for specific subtype or genotype.
 		thisCladeWhereClause = thisCladeWhereClause + 
 			" and (phdr_ras.phdr_alignment_ras.alignment.name ='"+subtypeAlmtName+"' or "+
 			"phdr_ras.phdr_alignment_ras.alignment.name ='"+genotypeAlmtName+"')";
-		sameGenotypeWhereClause = "phdr_ras != null and phdr_ras.phdr_alignment_ras.alignment.parent.name = '"+genotypeAlmtName+"'";
+		sameGenotypeWhereClause = "phdr_ras != null and "+
+			"phdr_ras.phdr_alignment_ras.alignment.parent.name = '"+genotypeAlmtName+"' and "+
+			"phdr_ras.phdr_alignment_ras.phdr_alignment_ras_drug.numeric_resistance_category <= 3";
 		differentGenotypeWhereClause = "phdr_ras != null and "+
 			"phdr_ras.phdr_alignment_ras.alignment.parent.name !='"+genotypeAlmtName+"' and "+
-			"phdr_ras.phdr_alignment_ras.alignment.name !='"+genotypeAlmtName+"'";
+			"phdr_ras.phdr_alignment_ras.alignment.name !='"+genotypeAlmtName+"' and "+
+			"phdr_ras.phdr_alignment_ras.phdr_alignment_ras_drug.numeric_resistance_category <= 3";
 	}
 	var variationWhereClauses = {
 		thisCladeWhereClause: thisCladeWhereClause,
@@ -681,10 +726,7 @@ function reportBam(bamFilePath, minReadProportionPct) {
 				                                  "--fileName", bamFilePath, 
 				                                  "--samRefName", samReference.name, 
 				                                  "--consensusID", samReference.name,
-				                                  "--preview",
-					   				              "--minQScore", phdrSamThresholds.minQScore,
-					   				              "--minMapQ", phdrSamThresholds.minMapQ,
-					   				              "--minDepth", phdrSamThresholds.minDepth]);
+				                                  "--preview"]);
 			});
 			consensusFastaMap[samReference.name] = consensusDocument.nucleotideFasta.sequences[0];
 		});
@@ -710,7 +752,7 @@ function reportBam(bamFilePath, minReadProportionPct) {
 					samRefSense = "REVERSE_COMPLEMENT";
 				}
 				var queryToTargetRefSegs = generateQueryToTargetRefSegs(targetRefName, nucleotides);
-				samRefResult.featuresWithCoverage = generateFeaturesWithCoverage(targetRefName, queryToTargetRefSegs);
+				samRefResult.featuresWithCoverage = generateFeaturesWithDepthCoverage(targetRefName, bamFilePath);
 				
 				var variationWhereClauses = getVariationWhereClauses(genotypingResult);
 				var thisCladeWhereClause = variationWhereClauses.thisCladeWhereClause;
