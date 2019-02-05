@@ -115,7 +115,7 @@ No
 <thead>
 <tr>
 	<th rowspan="2">Genome region</th>
-	<th colspan="4">Proportion of nucleatide sites with depth</th>
+	<th colspan="4">Proportion of nucleotide sites with depth</th>
 </tr>
 <tr>
 	<th>&ge; 1</th>
