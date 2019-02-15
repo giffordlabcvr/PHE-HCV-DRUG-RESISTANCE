@@ -1,6 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <samReporter>
     <alignerModuleName>hcvCompoundAligner</alignerModuleName>
     <readLogInterval>30000</readLogInterval>
     <maxLikelihoodPlacerModuleName>maxLikelihoodPlacer</maxLikelihoodPlacerModuleName>
     <samReaderValidationStringency>SILENT</samReaderValidationStringency>
+    <consensusAmbiguityMinReads>2</consensusAmbiguityMinReads>
+    <consensusAmbiguityMinProportion>0.10</consensusAmbiguityMinProportion>
+    <consensusProduceAmbiguityCodes>true</consensusProduceAmbiguityCodes>
 </samReporter>
