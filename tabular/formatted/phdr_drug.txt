@@ -5,3 +5,5 @@ velpatasvir	VEL	NS5A inhibitors	Gilead Sciences	GS-5816
 pibrentasvir	PIB	NS5A inhibitors	Abbvie	ABT-530
 voxilaprevir	VOX	NS3/4A protease inhibitors	Gilead Sciences	GS-9857
 sofosbuvir	SOF	NS5B RNA polymerase inhibitors	Gilead Sciences	GS-7977
+ledipasvir	LDV	NS5A inhibitors	Gilead Sciences	GS-5885
+daclatasvir	DCV	NS5A inhibitors	Bristol-Myers Squibb 	BMS-790052

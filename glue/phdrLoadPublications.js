@@ -1,3 +1,5 @@
+glue.command(["multi-delete", "phdr_publication", "-a"]);
+
 var pubObjs;
 
 glue.inMode("module/phdrTabularUtility", function() {
