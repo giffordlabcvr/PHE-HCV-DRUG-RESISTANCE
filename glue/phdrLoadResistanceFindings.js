@@ -82,6 +82,20 @@ function loadResistanceFindings(shortname, drugId, gene, pooledMap) {
 				var ec50Max;
 				if(ec50 == "NA") {
 					error(rfObj, "Resistance finding with in vitro result does not report EC50 log FC");
+				} else if(ec50.indexOf("±") > 0) {
+					var midpoint = parseFloat(ec50.substring(0, ec50.indexOf("±")));
+					var radius = parseFloat(ec50.substring(ec50.indexOf("±")+1));
+					ec50Min = Math.max(0.0, midpoint - radius);
+					ec50Max = midpoint + radius;
+					
+					/*glue.logInfo("Plus/minus style EC50", {
+						ec50: ec50,
+						midpoint: midpoint,
+						radius: radius,
+						ec50Min : ec50Min,
+						ec50Max: ec50Max
+					});*/
+					
 				} else if(ec50.indexOf("<") == 0) {
 					ec50Max = parseFloat(ec50.substring(1));
 				} else if(ec50.indexOf(">") == 0) {
@@ -293,7 +307,6 @@ function ensureAlmtRasObject(rasId, gene, structure, almtName) {
 	}
 }
 
-
 loadResistanceFindings("EBR", "elbasvir", "NS5A", 
 		{"Pooled1": ["C-SURFER", "C-EDGE TN", "C-EDGE CO-INFECTION", "C-EDGE TE", "C-WORTHY", "C-SALVAGE"], 
 	 "Pooled2": ["C-SURFER", "C-EDGE CO-INFECTION", "C-EDGE TN", "C-EDGE TE", "C-WORTHY", "C-SALVAGE"], 
@@ -313,7 +326,11 @@ loadResistanceFindings("SOF", "sofosbuvir", "NS5B",
 		 "Pooled6": ["GS-US-248-0120", "GS-US-248-0121", "GS-US-196-0123", "GS-US-256-0124", "GS-US-196-0140", "GS-US-256-0148"], 
 		 "Pooled7": ["NEUTRINO", "FISSION", "POSITRON", "FUSION", "VALENCE", "PHOTON-1", "PHOTON-2", "P7977-2025", "LONESTAR", "ELECTRON", "ION-1", "ION-2", "ION-3"]});
 
+loadResistanceFindings("DCV", "daclatasvir", "NS5A", {
+	"Pooled1": ["NCT01497834", "Hallmark DUAL", "NCT01995266", "NCT01718145", "NCT01051414", "NCT01012895", "UMIN000015627"],
+	"Pooled3": ["NCT01257204", "NCT01359644", "NCT02032875", "NCT02032888", "NCT01616524"]});
 
+loadResistanceFindings("LDV", "ledipasvir", "NS5A", {"Pooled1": ["ION-1", "ION-2", "ION-3", "ELECTRON", "LONESTAR"]});
 
 
 

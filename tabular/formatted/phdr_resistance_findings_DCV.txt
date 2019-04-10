@@ -1,0 +1,385 @@
+virusGenotype	gene	substitution	baselineRas	rxEmergentRas	rasContext	drug	vitroOrVivo	ec50	clinicalTrialName	trialRegimen	regimenNumbers	pubmed	Weight of evidence
+1b	NS5A	28M				DCV	in vitro	2				20585111	
+1b	NS5A	28T				DCV	in vitro	20				20585111	
+1b	NS5A	30E				DCV	in vitro	6				20585111	
+1b	NS5A	31F				DCV	in vitro	5				20585111	
+1b	NS5A	31M				DCV	in vitro	3				20585111	
+1b	NS5A	31V				DCV	in vitro	23				20410884	
+1b	NS5A	32L				DCV	in vitro	17				20585111	
+1b	NS5A	93H				DCV	in vitro	19				20410884	
+1b	NS5A	93N				DCV	in vitro	28				20585111	
+1b	NS5A	23F+31F				DCV	in vitro	13				20585111	
+1b	NS5A	23F+93H				DCV	in vitro	80				20585111	
+1b	NS5A	30del+32L				DCV	in vitro	>384615				20585111	
+1b	NS5A	30Q+31F				DCV	in vitro	90				20585111	
+1b	NS5A	31F+93H				DCV	in vitro	5721				20585111	
+1b	NS5A	31M+93H				DCV	in vitro	4227				20585111	
+1b	NS5A	31V+58S				DCV	in vitro	162				20585111	
+1b	NS5A	31V+93H				DCV	in vitro	8336				20585111	
+1b	NS5A	37L+93H				DCV	in vitro	19				20585111	
+1b	NS5A	54H+93H				DCV	in vitro	10				20585111	
+1a	NS5A	28T				DCV	in vitro	683				20410884	
+1a	NS5A	30E				DCV	in vitro	24993				20585111	
+1a	NS5A	30K				DCV	in vitro	24317				20585111	
+1a	NS5A	30H				DCV	in vitro	1450				20410884	
+1a	NS5A	30R				DCV	in vitro	1217				20410884	
+1a	NS5A	31M				DCV	in vitro	350				20410884	
+1a	NS5A	31V				DCV	in vitro	3350				20410884	
+1a	NS5A	32L				DCV	in vitro	233				20585111	
+1a	NS5A	93C				DCV	in vitro	1850				20410884	
+1a	NS5A	93H				DCV	in vitro	5367				20585111	
+1a	NS5A	93N				DCV	in vitro	47017				20585111	
+1a	NS5A	28T+30H				DCV	in vitro	103767				20585111	
+1a	NS5A	30H+93H				DCV	in vitro	92217				20585111	
+1a	NS5A	31V+93H				DCV	in vitro	>166667				20585111	
+2a	NS5A	28S				DCV	in vitro	7735-9133				21593143	
+2a	NS5A	31M				DCV	in vitro	106-141				21593143	
+2a	NS5A	92R				DCV	in vitro	98-133				21593143	
+2a	NS5A	93H				DCV	in vitro	749-1000				21593143	
+2a	NS5A	30E+92R				DCV	in vitro	440				21593143	
+2a	NS5A	30Q+92R				DCV	in vitro	0.4				21593143	
+1b	NS5A	31M				DCV	in vitro	3				21809362	
+1b	NS5A	31V				DCV	in vitro	28				21809362	
+1b	NS5A	93H				DCV	in vitro	24				21809362	
+1b	NS5A	31M+93H				DCV	in vitro	7105				21809362	
+1b	NS5A	31V+93H				DCV	in vitro	14789				21809362	
+1b	NS5A	54H+93H				DCV	in vitro	9				21809362	
+1b	NS5A	31V+54H+93H				DCV	in vitro	19000				21809362	
+1a	NS5A	28A				DCV	in vitro	4591				21809362	
+1a	NS5A	28T				DCV	in vitro	682				21809362	
+1a	NS5A	30E				DCV	in vitro	25205				21809362	
+1a	NS5A	30H				DCV	in vitro	1477				21809362	
+1a	NS5A	30R				DCV	in vitro	1227				21809362	
+1a	NS5A	30K				DCV	in vitro	24545				21809362	
+1a	NS5A	31M				DCV	in vitro	341				21809362	
+1a	NS5A	31V				DCV	in vitro	3386				21809362	
+1a	NS5A	58D				DCV	in vitro	500				21809362	
+1a	NS5A	93C				DCV	in vitro	1864				21809362	
+1a	NS5A	93H				DCV	in vitro	5432				21809362	
+1a	NS5A	93N				DCV	in vitro	47477				21809362	
+1a	NS5A	28V+30R				DCV	in vitro	350				21809362	
+1a	NS5A	30H+93H				DCV	in vitro	93136				21809362	
+1a	NS5A	30R+58D				DCV	in vitro	424318				21809362	
+1a	NS5A	28T	no	yes	None	DCV	in vivo	NA	Phase I monotherapy*	DCV mono		21809362	
+1a	NS5A	30R	no	yes	None	DCV	in vivo	NA	Phase I monotherapy*	DCV mono		21809362	
+1a	NS5A	30E	no	yes	None	DCV	in vivo	NA	Phase I monotherapy*	DCV mono		21809362	
+1a	NS5A	31M	no	yes	None	DCV	in vivo	NA	Phase I monotherapy*	DCV mono		21809362	
+1a	NS5A	31V	no	yes	None	DCV	in vivo	NA	Phase I monotherapy*	DCV mono		21809362	
+1a	NS5A	93C	no	yes	None	DCV	in vivo	NA	Phase I monotherapy*	DCV mono		21809362	
+1a	NS5A	93H	no	yes	None	DCV	in vivo	NA	Phase I monotherapy*	DCV mono		21809362	
+1a	NS5A	30H	no	yes	None	DCV	in vivo	NA	Phase I monotherapy*	DCV mono		21809362	
+1a	NS5A	28A	no	yes	None	DCV	in vivo	NA	Phase I monotherapy*	DCV mono		21809362	
+1a	NS5A	93N	no	yes	None	DCV	in vivo	NA	Phase I monotherapy*	DCV mono		21809362	
+4a	NS5A	30G				DCV	in vitro	2017				22203595	
+4a	NS5A	30H				DCV	in vitro	155				22203595	
+4a	NS5A	30S				DCV	in vitro	167				22203595	
+4a	NS5A	30H				DCV	in vitro	1215				22203595	
+4a	NS5A	93H				DCV	in vitro	169				22203595	
+4a	NS5A	93R				DCV	in vitro	454				22203595	
+4a	NS5A	28L+30H				DCV	in vitro	64				22203595	
+4a	NS5A	30I+93R				DCV	in vitro	9100				22203595	
+1a	NS5A	30D				DCV	in vitro	>33333				22214777	
+1a	NS5A	30G				DCV	in vitro	8500				22214777	
+1a	NS5A	30L				DCV	in vitro	3.7				22214777	
+1a	NS5A	28T+30R				DCV	in vitro	59400				22214777	
+1a	NS5A	30E+93H				DCV	in vitro	67267				22214777	
+1a	NS5A	30R+93H				DCV	in vitro	56817				22214777	
+1a	NS5A	30R+62D				DCV	in vitro	10928				22234905	
+1a	NS5A	30R+75A				DCV	in vitro	850				22234905	
+1a	NS5A	30R	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV; DCV/ASV/PR	20 patients (7 with RAS); PR exp; no cirrhosis	22256805	
+1a	NS5A	31M	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV; DCV/ASV/PR	20 patients (7 with RAS); PR exp; no cirrhosis	22256805	
+1a	NS5A	31V	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV; DCV/ASV/PR	20 patients (7 with RAS); PR exp; no cirrhosis	22256805	
+1a	NS5A	93C	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV; DCV/ASV/PR	20 patients (7 with RAS); PR exp; no cirrhosis	22256805	
+1a	NS5A	93N	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV; DCV/ASV/PR	20 patients (7 with RAS); PR exp; no cirrhosis	22256805	
+1a	NS5A	30E	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV; DCV/ASV/PR	20 patients (7 with RAS); PR exp; no cirrhosis	22256805	
+1b	NS5A	30Q+31M				DCV	in vitro	6-16				22850513	
+1b	NS5A	30Q+31M+93H				DCV	in vitro	31000-37000				22850513	
+1b	NS5A	30H+31M				DCV	in vitro	150-330				22850513	
+1b	NS5A	30Q+31F				DCV	in vitro	46-62				22850513	
+1a	NS5A	30H+68R				DCV	in vitro	111-2200				22850513	
+1a	NS5A	28T+68R				DCV	in vitro	1125-13333				22850513	
+3a	NS5A	30K				DCV	in vitro	55.8-61.6				23089758	
+3a	NS5A	31F				DCV	in vitro	320-604				23089758	
+3a	NS5A	62L				DCV	in vitro	1.8-2.1				23089758	
+3a	NS5A	93H				DCV	in vitro	2752-2738				23089758	
+3a	NS5A	30K				DCV	in vitro	44				23384816	
+3a	NS5A	31V				DCV	in vitro	1181				23384816	
+3a	NS5A	31M				DCV	in vitro	537				23384816	
+3a	NS5A	62L				DCV	in vitro	2				23384816	
+3a	NS5A	93H				DCV	in vitro	2154				23384816	
+3a	NS5A	28V+93H				DCV	in vitro	279				23384816	
+3a	NS5A	30V+93H				DCV	in vitro	8				23384816	
+3a	NS5A	30K+31M				DCV	in vitro	7000				23384816	
+3a	NS5A	58S+93H				DCV	in vitro	3430				23384816	
+3a	NS5A	62A+93H				DCV	in vitro	2783				23384816	
+3a	NS5A	62T+93H				DCV	in vitro	2606				23384816	
+3a	NS5A	92A+93H				DCV	in vitro	292				23384816	
+1b	NS5A	31V+93H	yes	no		DCV	in vivo	NA	AI444021 and AI444022*	DCV/PR	71 (24 with RAS); TN or PR exp; cirrhosis status NK	24448487	
+1b	NS5A	31M+93H	yes	no		DCV	in vivo	NA	AI444021 and AI444022*	DCV/PR	71 (24 with RAS); TN or PR exp; cirrhosis status NK	24448487	
+1b	NS5A	31I+93H	yes	no		DCV	in vivo	NA	AI444021 and AI444022*	DCV/PR	71 (24 with RAS); TN or PR exp; cirrhosis status NK	24448487	
+1b	NS5A	31F+32del	no	yes		DCV	in vivo	NA	AI444021 and AI444022*	DCV/PR	71 (24 with RAS); TN or PR exp; cirrhosis status NK	24448487	
+1b	NS5A	28M+30Q+92K	no	yes		DCV	in vivo	NA	AI444021 and AI444022*	DCV/PR	71 (24 with RAS); TN or PR exp; cirrhosis status NK	24448487	
+5a	NS5A	31F				DCV	in vitro	1438				24936600	
+5a	NS5A	31V				DCV	in vitro	458-710				24936600	
+5a	NS5A	56R				DCV	in vitro	3				24936600	
+5a	NS5A	31F+56R				DCV	in vitro	8188				24936600	
+5a	NS5A	31V+56R				DCV	in vitro	6125				24936600	
+6a	NS5A	24H				DCV	in vitro	41				24936600	
+6a	NS5A	31M				DCV	in vitro	878				24936600	
+6a	NS5A	32L				DCV	in vitro	5000				24936600	
+6a	NS5A	32S				DCV	in vitro	382				24936600	
+6a	NS5A	58A				DCV	in vitro	47				24936600	
+6a	NS5A	58N				DCV	in vitro	532				24936600	
+6a	NS5A	58S				DCV	in vitro	48				24936600	
+2a	NS5A	28S+31M				DCV	in vitro	>154				24936600	
+4a	NS5A	30A				DCV	in vitro	10-1000				26170396	
+4a	NS5A	30H				DCV	in vitro	10-1000				26170396	
+4a	NS5A	30S				DCV	in vitro	10-1000				26170396	
+4a	NS5A	31V				DCV	in vitro	10-1000				26170396	
+4a	NS5A	93H				DCV	in vitro	10-1000				26170396	
+4a	NS5A	93S				DCV	in vitro	10-1000				26170396	
+4a	NS5A	93W				DCV	in vitro	>1000				26170396	
+2	NS5A	31M	yes	no		DCV	in vivo	NA	ALLY-2	SOF/DCV	151 (8 with RAS); TN or PR exp; HIV; 14% comp cirrhosis	26196502	
+3	NS5A	30S	yes	no		DCV	in vivo	NA	ALLY-2	SOF/DCV	151 (8 with RAS); TN or PR exp; HIV; 14% comp cirrhosis	26196502	
+1a	NS5A	93N	yes	no		DCV	in vivo	NA	ALLY-2	SOF/DCV	151 (8 with RAS); TN or PR exp; HIV; 14% comp cirrhosis	26196502	
+1a	NS5A	30R	yes	no		DCV	in vivo	NA	ALLY-2	SOF/DCV	151 (8 with RAS); TN or PR exp; HIV; 14% comp cirrhosis	26196502	
+1a	NS5A	30E	yes	no		DCV	in vivo	NA	ALLY-2	SOF/DCV	151 (8 with RAS); TN or PR exp; HIV; 14% comp cirrhosis	26196502	
+1a	NS5A	30R	no	yes		DCV	in vivo	NA	ALLY-2	SOF/DCV	151 (8 with RAS); TN or PR exp; HIV; 14% comp cirrhosis	26196502	
+1b	NS5A	28M	yes	yes		DCV	in vivo	NA	NCT01628692	DCV/SIM/RBV;DCV/SIM	147 with GT1b; 18% with cirrhosis; TN or PE exp	26453968	
+1b	NS5A	30L	yes	no		DCV	in vivo	NA	NCT01628692	DCV/SIM/RBV;DCV/SIM	147 with GT1b; 18% with cirrhosis; TN or PE exp	26453968	
+1b	NS5A	30Q	yes	yes		DCV	in vivo	NA	NCT01628692	DCV/SIM/RBV;DCV/SIM	147 with GT1b; 18% with cirrhosis; TN or PE exp	26453968	
+1b	NS5A	30S	yes	no		DCV	in vivo	NA	NCT01628692	DCV/SIM/RBV;DCV/SIM	147 with GT1b; 18% with cirrhosis; TN or PE exp	26453968	
+1b	NS5A	31M	yes	yes		DCV	in vivo	NA	NCT01628692	DCV/SIM/RBV;DCV/SIM	147 with GT1b; 18% with cirrhosis; TN or PE exp	26453968	
+1b	NS5A	31V	yes	yes		DCV	in vivo	NA	NCT01628692	DCV/SIM/RBV;DCV/SIM	147 with GT1b; 18% with cirrhosis; TN or PE exp	26453968	
+1b	NS5A	93H	yes	yes		DCV	in vivo	NA	NCT01628692	DCV/SIM/RBV;DCV/SIM	147 with GT1b; 18% with cirrhosis; TN or PE exp	26453968	
+1b	NS5A	30W	no	yes		DCV	in vivo	NA	NCT01628692	DCV/SIM/RBV;DCV/SIM	147 with GT1b; 18% with cirrhosis; TN or PE exp	26453968	
+1b	NS5A	31F	no	yes		DCV	in vivo	NA	NCT01628692	DCV/SIM/RBV;DCV/SIM	147 with GT1b; 18% with cirrhosis; TN or PE exp	26453968	
+1b	NS5A	32del	no	yes		DCV	in vivo	NA	NCT01628692	DCV/SIM/RBV;DCV/SIM	147 with GT1b; 18% with cirrhosis; TN or PE exp	26453968	
+3	NS5A	93H	yes	yes		DCV	in vivo	NA	ALLY-3	SOF/DCV/RBV	 50 patients; 4 with failure and RAS; comp cirrhosis	26822022	
+1b	NS5A	93H	yes	yes		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	206 patients; TN, TE with PR, TPV or SIM; 25% with cirrhosis; 26 failures	26878268	
+1b	NS5A	30Q	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	206 patients; TN, TE with PR, TPV or SIM; 25% with cirrhosis; 26 failures	26878268	
+1b	NS5A	30H	yes	yes		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	206 patients; TN, TE with PR, TPV or SIM; 25% with cirrhosis; 26 failures	26878268	
+1b	NS5A	30L	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	206 patients; TN, TE with PR, TPV or SIM; 25% with cirrhosis; 26 failures	26878268	
+1b	NS5A	31M	yes	yes		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	206 patients; TN, TE with PR, TPV or SIM; 25% with cirrhosis; 26 failures	26878268	
+1b	NS5A	31I	no	yes	R30Q+Y93H	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	206 patients; TN, TE with PR, TPV or SIM; 25% with cirrhosis; 26 failures	26878268	
+1b	NS5A	31M+93H	no	yes		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	206 patients; TN, TE with PR, TPV or SIM; 25% with cirrhosis; 26 failures	26878268	
+1b	NS5A	30Q+93H	no	yes		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	206 patients; TN, TE with PR, TPV or SIM; 25% with cirrhosis; 26 failures	26878268	
+1b	NS5A	54H 	yes	Yes	Y93H	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	206 patients; TN, TE with PR, TPV or SIM; 25% with cirrhosis; 26 failures	26878268	
+1b	NS5A	54L	yes	yes	Y93H	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	206 patients; TN, TE with PR, TPV or SIM; 25% with cirrhosis; 26 failures	26878268	
+1b	NS5A	92K	no	yes	R30Q	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	206 patients; TN, TE with PR, TPV or SIM; 25% with cirrhosis; 26 failures	26878268	
+1b	NS5A	32del	no	yes		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	prior SIM-therapy	26878268	
+1b	NS5A	29del	no	yes		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	prior SIM-therapy	26878268	
+1b	NS5A	31M	yes	no		DCV	in vivo	NA	NCT01995266	DCV/ASV  	159patients; 30% cirrhosis	27003037	
+1b	NS5A	93H	yes	no		DCV	in vivo	NA	NCT01995266	DCV/ASV  	159patients; 30% cirrhosis	27003037	
+1b	NS5A	31M+93H	yes	no		DCV	in vivo	NA	NCT01995266	DCV/ASV  	159patients; 30% cirrhosis	27003037	
+1b	NS5A	31F	no	yes		DCV	in vivo	NA	NCT01995266	DCV/ASV  	159patients; 30% cirrhosis	27003037	
+1b	NS5A	31V	no	yes		DCV	in vivo	NA	NCT01995266	DCV/ASV  	159patients; 30% cirrhosis	27003037	
+1b	NS5A	28T+93H	no	yes	R30Q	DCV	in vivo	NA	Hallmark DUAL	DCV/ASV  	186 TN; PR exp; 30% cirrhosis	27009831	
+1b	NS5A	32del	no	yes		DCV	in vivo	NA	Hallmark DUAL	DCV/ASV  	186 TN; PR exp; 30% cirrhosis	27009831	
+1b	NS5A	31V+93H	no	yes		DCV	in vivo	NA	Hallmark DUAL	DCV/ASV  	186 TN; PR exp; 30% cirrhosis	27009831	
+1b	NS5A	30H+93H	no	yes	L28M	DCV	in vivo	NA	Hallmark DUAL	DCV/ASV  	186 TN; PR exp; 30% cirrhosis	27009831	
+1b	NS5A	31M+93H	no	yes		DCV	in vivo	NA	Hallmark DUAL	DCV/ASV  	186 TN; PR exp; 30% cirrhosis	27009831	
+1b	NS5A	93H	yes	yes		DCV	in vivo	NA	Hallmark DUAL	DCV/ASV  	186 TN; PR exp; 30% cirrhosis	27009831	
+1b	NS5A	28V+30Q	yes	no		DCV	in vivo	NA	Hallmark DUAL	DCV/ASV  	186 TN; PR exp; 30% cirrhosis	27009831	
+1b	NS5A	30Q	yes	no		DCV	in vivo	NA	Hallmark DUAL	DCV/ASV  	186 TN; PR exp; 30% cirrhosis	27009831	
+1b	NS5A	30G	yes	no		DCV	in vivo	NA	Hallmark DUAL	DCV/ASV  	186 TN; PR exp; 30% cirrhosis	27009831	
+1b	NS5A	58S 	yes	no		DCV	in vivo	NA	Hallmark DUAL	DCV/ASV  	186 TN; PR exp; 30% cirrhosis	27009831	
+1b	NS5A	32L	no	yes	L28I+R30Q	DCV	in vivo	NA	Hallmark DUAL	DCV/ASV  	186 TN; PR exp; 30% cirrhosis	27009831	
+1b	NS5A	29S	no	yes	R30Q	DCV	in vivo	NA	Hallmark DUAL	DCV/ASV  	186 TN; PR exp; 30% cirrhosis	27009831	
+1b	NS5A	28I+30Q	yes	no		DCV	in vivo	NA	Hallmark DUAL	DCV/ASV  	186 TN; PR exp; 30% cirrhosis	27009831	
+1b	NS5A	31M	yes	yes		DCV	in vivo	NA	Pooled1	DCV/ASV  	9 trials; 1690 patients; cirr and noncirrh 	27597318	
+1b	NS5A	93H	yes	yes		DCV	in vivo	NA	Pooled1	DCV/ASV  	9 trials; 1690 patients; cirr and noncirrh 	27597318	
+1b	NS5A	31I+92K	no	yes		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	641 patients; 30% cirrhosis	27236547	
+2b	NS5A	31M	yes	no		DCV	in vivo	NA	Pooled3	SOF/DCV;DCV/PR	283 patients; cirrhosis status not reported	27605597	
+2a	NS5A	31M	yes	no		DCV	in vivo	NA	Pooled3	SOF/DCV;DCV/PR	283 patients; cirrhosis status not reported	27605597	
+2a	NS5A	28C	no	yes		DCV	in vivo	NA	Pooled3	SOF/DCV;DCV/PR	283 patients; cirrhosis status not reported	27605597	
+2a	NS5A	31M	yes	no		DCV	in vivo	NA	Pooled3	SOF/DCV;DCV/PR	283 patients; cirrhosis status not reported	27605597	
+2a	NS5A	24S+28G	no	yes		DCV	in vivo	NA	Pooled3	SOF/DCV;DCV/PR	283 patients; cirrhosis status not reported	27605597	
+2a	NS5A	28C+31M	yes	no		DCV	in vivo	NA	Pooled3	SOF/DCV;DCV/PR	283 patients; cirrhosis status not reported	27605597	
+2a	NS5A	28S	no	yes	L31M	DCV	in vivo	NA	Pooled3	SOF/DCV;DCV/PR	283 patients; cirrhosis status not reported	27605597	
+2b	NS5A	24S+92S	no	yes	L31M	DCV	in vivo	NA	Pooled3	SOF/DCV;DCV/PR	283 patients; cirrhosis status not reported	27605597	
+2b	NS5A	28L	yes	no		DCV	in vivo	NA	Pooled3	SOF/DCV;DCV/PR	283 patients; cirrhosis status not reported	27605597	
+2b	NS5A	28L+31M	yes	no		DCV	in vivo	NA	Pooled3	SOF/DCV;DCV/PR	283 patients; cirrhosis status not reported	27605597	
+2i	NS5A	24S+31M	yes	no		DCV	in vivo	NA	Pooled3	SOF/DCV;DCV/PR	283 patients; cirrhosis status not reported	27605597	
+2b	NS5A	31M	no	yes	F28L	DCV	in vivo	NA	Pooled3	SOF/DCV;DCV/PR	283 patients; cirrhosis status not reported	27605597	
+2a	NS5A	28C				DCV	in vitro	400	Pooled3	SOF/DCV;DCV/PR	283 patients; cirrhosis status not reported	27605597	
+2a	NS5A	31M				DCV	in vitro	335	Pooled3	SOF/DCV;DCV/PR	283 patients; cirrhosis status not reported	27605597	
+2a	NS5A	93H				DCV	in vitro	1750	Pooled3	SOF/DCV;DCV/PR	283 patients; cirrhosis status not reported	27605597	
+2b	NS5A	31M				DCV	in vitro	3200	Pooled3	SOF/DCV;DCV/PR	283 patients; cirrhosis status not reported	27605597	
+2b	NS5A	28L+31M				DCV	in vitro	650	Pooled3	SOF/DCV;DCV/PR	283 patients; cirrhosis status not reported	27605597	
+2b	NS5A	28L+93H				DCV	in vitro	1000	Pooled3	SOF/DCV;DCV/PR	283 patients; cirrhosis status not reported	27605597	
+2b	NS5A	28L+31M+92S				DCV	in vitro	9300	Pooled3	SOF/DCV;DCV/PR	283 patients; cirrhosis status not reported	27605597	
+1a	NS5A	28A+30K	no	yes		DCV	in vivo	NA	HEPATHER	SOF/DCV/SIM/RBV	prior SIM/SOF; cirrhosis	28369411	
+1a	NS5A	28T	no	yes		DCV	in vivo	NA	HEPATHER	SOF/DCV/SIM/RBV	prior SOF/DCV; cirrhosis	28369411	
+1a	NS5A	30E	no	yes		DCV	in vivo	NA	HEPATHER	SOF/DCV/SIM/RBV	prior SOF/DCV; cirrhosis	28369411	
+1a	NS5A	30K	yes	no		DCV	in vivo	NA	HEPATHER	SOF/DCV/SIM/RBV	prior SOF/DCV; cirrhosis	28369411	
+1a	NS5A	28T	no	yes	Q30K	DCV	in vivo	NA	HEPATHER	SOF/DCV/SIM/RBV	prior SOF/DCV; cirrhosis	28369411	
+1a	NS5A	28T	no	yes		DCV	in vivo	NA	NCT01492504	SOF/DCV; DCV/ASV; DCV/ASV/BCV;DCV/ASV/PR;DCV/PR	1503 patients; 18% cirrhosis	28941023	
+1a	NS5A	30E	no	yes		DCV	in vivo	NA	NCT01492504	SOF/DCV; DCV/ASV; DCV/ASV/BCV;DCV/ASV/PR;DCV/PR	1503 patients; 18% cirrhosis	28941023	
+1a	NS5A	30H	no	yes		DCV	in vivo	NA	NCT01492504	SOF/DCV; DCV/ASV; DCV/ASV/BCV;DCV/ASV/PR;DCV/PR	1503 patients; 18% cirrhosis	28941023	
+1a	NS5A	30R	no	yes		DCV	in vivo	NA	NCT01492504	SOF/DCV; DCV/ASV; DCV/ASV/BCV;DCV/ASV/PR;DCV/PR	1503 patients; 18% cirrhosis	28941023	
+1a	NS5A	93C	no	yes		DCV	in vivo	NA	NCT01492504	SOF/DCV; DCV/ASV; DCV/ASV/BCV;DCV/ASV/PR;DCV/PR	1503 patients; 18% cirrhosis	28941023	
+1a	NS5A	93H	no	yes		DCV	in vivo	NA	NCT01492504	SOF/DCV; DCV/ASV; DCV/ASV/BCV;DCV/ASV/PR;DCV/PR	1503 patients; 18% cirrhosis	28941023	
+1a	NS5A	93N	no	yes		DCV	in vivo	NA	NCT01492504	SOF/DCV; DCV/ASV; DCV/ASV/BCV;DCV/ASV/PR;DCV/PR	1503 patients; 18% cirrhosis	28941023	
+1b	NS5A	31M	no	yes		DCV	in vivo	NA	NCT01492504	SOF/DCV; DCV/ASV; DCV/ASV/BCV;DCV/ASV/PR;DCV/PR	1503 patients; 18% cirrhosis	28941023	
+1b	NS5A	31V	no	yes		DCV	in vivo	NA	NCT01492504	SOF/DCV; DCV/ASV; DCV/ASV/BCV;DCV/ASV/PR;DCV/PR	1503 patients; 18% cirrhosis	28941023	
+1b	NS5A	93H	no	yes		DCV	in vivo	NA	NCT01492504	SOF/DCV; DCV/ASV; DCV/ASV/BCV;DCV/ASV/PR;DCV/PR	1503 patients; 18% cirrhosis	28941023	
+1b	NS5A	93N	no	yes		DCV	in vivo	NA	NCT01492504	SOF/DCV; DCV/ASV; DCV/ASV/BCV;DCV/ASV/PR;DCV/PR	1503 patients; 18% cirrhosis	28941023	
+3	NS5A	93H	no	yes		DCV	in vivo	NA	NCT01492504	SOF/DCV; DCV/ASV; DCV/ASV/BCV;DCV/ASV/PR;DCV/PR	1503 patients; 18% cirrhosis	28941023	
+4	NS5A	28S	no	yes		DCV	in vivo	NA	NCT01492504	SOF/DCV; DCV/ASV; DCV/ASV/BCV;DCV/ASV/PR;DCV/PR	1503 patients; 18% cirrhosis	28941023	
+4	NS5A	93H	no	yes		DCV	in vivo	NA	NCT01492504	SOF/DCV; DCV/ASV; DCV/ASV/BCV;DCV/ASV/PR;DCV/PR	1503 patients; 18% cirrhosis	28941023	
+3	NS5A	93H	yes	yes		DCV	in vivo	NA	Real world (France)*	SOF/DCV	TN and prior PR; cirrhosis	29271114	
+4	NS5A	28M	yes	no		DCV	in vivo	NA	Real world (France)*	SOF/DCV	TN and prior PR; cirrhosis	29271114	
+1b	NS5A	31M	yes	no		DCV	in vivo	NA	Real world (France)*	SOF/DCV	TN and prior PR; cirrhosis	29271114	
+1b	NS5A	28I 	no	yes	L31M	DCV	in vivo	NA	Real world (France)*	SOF/DCV	TN and prior PR; cirrhosis	29271114	
+2	NS5A	31M	yes	no		DCV	in vivo	NA	Real world (France)*	SOF/DCV	TN and prior PR; cirrhosis	29271114	
+1b	NS5A	93H	yes	no		DCV	in vivo	NA	Real world (France)*	SOF/DCV	TN and prior PR; cirrhosis	29271114	
+1b	NS5A	31M	no	yes	Y93H	DCV	in vivo	NA	Real world (France)*	SOF/DCV	TN and prior PR; cirrhosis	29271114	
+1a	NS5A	28T	yes	no		DCV	in vivo	NA	Real world (France)*	SOF/DCV	TN and prior PR; cirrhosis	29271114	
+1a	NS5A	30E	no	yes		DCV	in vivo	NA	Real world (France)*	SOF/DCV	TN and prior PR; cirrhosis	29271114	
+4	NS5A	28V+30Q	yes	no		DCV	in vivo	NA	Real world (France)*	SOF/DCV	TN and prior PR; cirrhosis	29271114	
+4	NS5A	30S	no	yes	L28V	DCV	in vivo	NA	Real world (France)*	SOF/DCV	TN and prior PR; cirrhosis	29271114	
+1a	NS5A	30H				DCV	in vitro	>80				29274866	
+1a	NS5A	30R				DCV	in vitro	>80				29274866	
+1a	NS5A	93C				DCV	in vitro	>80				29274866	
+1a	NS5A	93H				DCV	in vitro	>1000				29274866	
+1b	NS5A	93H				DCV	in vitro	80-999				29274866	
+1b	NS5A	93N				DCV	in vitro	80-999				29274866	
+1b	NS5A	28M+93N				DCV	in vitro	>1000				29274866	
+1b	NS5A	28M				DCV	in vitro	4-79				29274866	
+1a	NS5A	30K				DCV	in vitro	>1000				29274866	
+2a	NS5A	24A				DCV	in vitro	4-79				29274866	
+2a	NS5A	24S				DCV	in vitro	4-79				29274866	
+2a	NS5A	28S				DCV	in vitro	>80				29274866	
+2a	NS5A	92S				DCV	in vitro	4-79				29274866	
+2a	NS5A	93H				DCV	in vitro	>80				29274866	
+2a	NS5A	93N				DCV	in vitro	4-79				29274866	
+2a	NS5A	28S+93H				DCV	in vitro	>1000				29274866	
+2a	NS5A	62D+93H				DCV	in vitro	80-999				29274866	
+2a	NS5A	31M				DCV	in vitro	80-999				29274866	
+2b	NS5A	92R				DCV	in vitro	4-79				29274866	
+2b	NS5A	93H				DCV	in vitro	80-999				29274866	
+2b	NS5A	24F+93H				DCV	in vitro	80-999				29274866	
+2b	NS5A	24T+93H				DCV	in vitro	80-999				29274866	
+3a	NS5A	31F				DCV	in vitro	80-999				29274866	
+3a	NS5A	93H				DCV	in vitro	>1000				29274866	
+3a	NS5A	31F+93H				DCV	in vitro	>1000				29274866	
+3a	NS5A	93H+99A				DCV	in vitro	>1000				29274866	
+4a	NS5A	30H				DCV	in vitro	80-999				29274866	
+4a	NS5A	30S				DCV	in vitro	80-999				29274866	
+4a	NS5A	58L				DCV	in vitro	4-79				29274866	
+4a	NS5A	93H				DCV	in vitro	4-79				29274866	
+4a	NS5A	8A+30H				DCV	in vitro	80-999				29274866	
+4a	NS5A	8A+58L				DCV	in vitro	4-79				29274866	
+5a	NS5A	31F				DCV	in vitro	80-999				29274866	
+5a	NS5A	31V				DCV	in vitro	80-999				29274866	
+5a	NS5A	31F+129H				DCV	in vitro	80-999				29274866	
+6a	NS5A	28F				DCV	in vitro	4-79				29274866	
+6a	NS5A	30H				DCV	in vitro	4-79				29274866	
+6a	NS5A	31M				DCV	in vitro	80-999				29274866	
+6a	NS5A	58A				DCV	in vitro	4-79				29274866	
+6a	NS5A	58N				DCV	in vitro	4-79				29274866	
+7a	NS5A	30G				DCV	in vitro	4-79				29274866	
+7a	NS5A	31F				DCV	in vitro	80-999				29274866	
+7a	NS5A	24R+30G				DCV	in vitro	80-999				29274866	
+7a	NS5A	24R+31F				DCV	in vitro	80-999				29274866	
+1a	NS5A	31V				DCV	in vitro	>1000				29274866	
+1a	NS5A	32del				DCV	in vitro	>1000				29274866	
+1a	NS5A	93N				DCV	in vitro	>1000				29274866	
+1b	NS5A	31V				DCV	in vitro	4-79				29274866	
+1b	NS5A	32del				DCV	in vitro	>1000				29274866	
+1b	NS5A	31M+93H				DCV	in vitro	>1000				29274866	
+2a	NS5A	31V				DCV	in vitro	80-999				29274866	
+3a	NS5A	31V				DCV	in vitro	80-999				29274866	
+4a	NS5A	31V				DCV	in vitro	4-79				29274866	
+5a	NS5A	31V				DCV	in vitro	80-999				29274866	
+6a	NS5A	31V				DCV	in vitro	>1000				29274866	
+3	NS5A	30K+31M				DCV	in vitro	>10000				29425396	
+3	NS5A	30K+93H				DCV	in vitro	>10000				29425396	
+3	NS5A	30K+31M+93H				DCV	in vitro	>10000				29425396	
+1b	NS5A	31M	yes	no		DCV	in vivo	NA	DUAL	DCV/ASV	207 patients; 13% cirrhosis 	29599611	
+1b	NS5A	31V	yes	no		DCV	in vivo	NA	DUAL	DCV/ASV	207 patients; 13% cirrhosis 	29599611	
+1b	NS5A	93H	yes	no		DCV	in vivo	NA	DUAL	DCV/ASV	207 patients; 13% cirrhosis 	29599611	
+4r	NS5A	30S	no	yes	L28V+L31M	DCV	in vivo	NA	Real world (France)*	SOF/DCV 	1 patient	30125371	
+4r	NS5A	28V+30R+31M	yes	no		DCV	in vivo	NA	Real world (France)*	SOF/DCV 	1 patient	30125371	
+1b	NS5A	31I+54H+92T	no	yes	Q24K+L28M+R30H	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	31I+54H+92K	no	yes	Q24K+L28M+R30H	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	24K+28M+30H+92T	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	24K+28M+30Q+92T	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	24K+28M+92T	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	30G+31I	no	yes	Q24K+L28M	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	24K+28V+92T	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	24K+28M+30Q+37V+54H	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	30E+93N	no	yes	Q24K+L28M+Q54H	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	37L	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	31V+54H+58S+93H	no	yes	F37L	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	37L	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	31M+93H	no	yes	F37L	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	24K+28I+30Q+31I+32L+54Y	no	yes		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	28M+37L+58R	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	58Q+93N	no	yes	L28M+F37L	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	37I	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	31F+93H	no	yes	F37I	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	37L+54H	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	31V+93H	no	yes	F37L+Q54H	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	24K+28M	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	30G 	no	yes	Q24K+L28M	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	54H	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	31M+93H	no	yes	Q54H	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	24K+28M+30Q+92T	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	92K	no	yes	Q24K+L28M+R30Q	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	37L+54L+92T	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	31M+93H	no	yes	Q54L	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	31I+93H	no	yes	F37L	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	37L+54Y	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	31V+54H+93H	no	yes	F37L	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	24K+28V+30Q	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	32L	no	yes	Q24K+L28V+R30Q	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	24K+28M+30Q	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	24K+28M+30L	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	30H+93H	no	yes	Q24K+L28M	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	37L	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	31M+93H	no	yes	F37L	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	37Y+54H	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	24R+30Q+31M+37L+93H	no	yes		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	31V+37L+93H	no	yes		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
+1b	NS5A	30Q+93H	no	yes	L31M	DCV	in vivo	NA	NCT01012895	DCV/ASV	101 patients; non cirrhotic	24444658	
+1b	NS5A	31V+58S	no	yes	Y93H	DCV	in vivo	NA	NCT01012895	DCV/ASV	101 patients; non cirrhotic	24444658	
+1b	NS5A	32del	no	yes	Y93H	DCV	in vivo	NA	NCT01012895	DCV/ASV	101 patients; non cirrhotic	24444658	
+1b	NS5A	31V	no	yes	Y93H	DCV	in vivo	NA	NCT01012895	DCV/ASV	101 patients; non cirrhotic	24444658	
+1b	NS5A	30R+31M	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV	101 patients; non cirrhotic	24444658	
+1b	NS5A	30R+93H	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/PR	101 patients; non cirrhotic	24444658	
+1a	NS5A	30R+31M	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/PR	101 patients; non cirrhotic	24444658	
+1a	NS5A	30R+93H	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/PR	101 patients; non cirrhotic	24444658	
+1a	NS5A	28V	yes	no		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
+1b	NS5A	28V	yes	no		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
+1a	NS5A	28A+30R	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
+1b	NS5A	28A+30R	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
+1a	NS5A	30E	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
+1b	NS5A	30E	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
+1a	NS5A	30E+62Q	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
+1b	NS5A	30E+62Q	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
+1a	NS5A	30R+58D	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
+1b	NS5A	30R+58D	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
+1a	NS5A	31M+93C	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
+1b	NS5A	31M+93C	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
+1a	NS5A	93N	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
+1b	NS5A	93N	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
+3a	NS5A	93H	yes	yes		DCV	in vivo		ALLY-3	SOF/DCV		26822022	
+1a	NS5A	93N	yes	yes	20% cutoff	DCV	in vivo		ALLY-2	SOF/DCV		27025835	
+1a	NS5A	30R	no	yes	20% cutoff	DCV	in vivo		ALLY-2	SOF/DCV		27025835	
+3a	NS5A	30T+93H	no	yes		DCV	in vivo		ALLY-3	SOF/DCV		25614962	
+3a	NS5A	30K+93H	no	yes		DCV	in vivo		ALLY-3	SOF/DCV		25614962	
+3a	NS5A	30K 	yes	yes		DCV	in vivo		ALLY-3	SOF/DCV		25614962	
+1a	NS5A	30H	no	yes		DCV	in vivo		Retrospective epidemiological study (Europe)*	SOF/DCV		29146520	
+1a	NS5A	30R	no	yes		DCV	in vivo		Retrospective epidemiological study (Europe)*	SOF/DCV		29146520	
+1a	NS5A	31M	no	yes		DCV	in vivo		Retrospective epidemiological study (Europe)*	SOF/DCV		29146520	
+1b	NS5A	31M	no	yes		DCV	in vivo		Retrospective epidemiological study (Europe)*	SOF/DCV		29146520	
+1b	NS5A	93H	no	yes		DCV	in vivo		Retrospective epidemiological study (Europe)*	SOF/DCV		29146520	
+4	NS5A	28M	no	yes		DCV	in vivo		Retrospective epidemiological study (Europe)*	SOF/DCV		29146520	
+4	NS5A	93C	no	yes		DCV	in vivo		Retrospective epidemiological study (Europe)*	SOF/DCV		29146520	
+4	NS5A	93H	no	yes		DCV	in vivo		Retrospective epidemiological study (Europe)*	SOF/DCV		29146520	
+4r	NS5A	28V+30R+31M	yes	no		DCV	in vivo		Real world (France)*	SOF/DCV		30125371	
+4r	NS5A	28V+30S+31M	no	yes		DCV	in vivo		Real world (France)*	SOF/DCV		30125371	
+4r	NS5A	28M+30R+31M	no	yes		DCV	in vivo		Real world (France)*	SOF/DCV		30125371	
+1l	NS5A	28M+30Q+31M	yes	no		DCV	in vivo		NHS England Early Access Programme*	SOF/DCV		28789880	

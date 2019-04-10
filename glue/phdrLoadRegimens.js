@@ -1,5 +1,7 @@
 var regimenObjs;
 
+glue.command(["multi-delete", "phdr_regimen", "-a"]);
+
 glue.inMode("module/phdrTabularUtility", function() {
 	regimenObjs = glue.tableToObjects(glue.command(["load-tabular", "tabular/formatted/phdr_regimens.txt"]));
 });

@@ -1,0 +1,122 @@
+virusGenotype	gene	substitution	substitutionNotes	baselineRas	rxEmergentRas	rasContext	drug	vitroOrVivo	ec50	clinicalTrialName	trialRegimen	regimenNumbers	trialCohort	trialNotes / no of patients	pubmed	Weight of evidence		
+1a	NS5A	24R		yes	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV/RBV;SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	28A		yes	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	28T		yes	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV/RBV;SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	30E		no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	30H		yes	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV/RBV;SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	30K		no	yes	1% cutoff	LDV	in vivo	 	Pooled1	SOF/LDV/RBV 		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	30L		no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV/RBV;SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	30R		yes	yes	1% cutoff	LDV	in vivo	 	Pooled1	SOF/LDV/RBV;SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	30Y		yes	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1b	NS5A	31I		no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	31M		yes	yes	1% cutoff	LDV	in vivo	 	Pooled1	SOF/LDV/RBV;SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1b	NS5A	31M		no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV/RBV;SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	31P		no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV/RBV 		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1b	NS5A	31V		no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	38F		no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV/RBV 		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	93C		yes	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV/RBV;SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	93F		yes	no	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	93H		yes	yes	1% cutoff	LDV	in vivo	 	Pooled1	SOF/LDV/RBV;SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1b	NS5A	93H		yes	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV/RBV;SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	93N		yes	yes	1% cutoff	LDV	in vivo	 	Pooled1	SOF/LDV/RBV;SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	28A+30H		no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	30H+93H		yes	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	30H+31M		no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV/RBV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	28T+30R		no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV/RBV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	30R+31M		no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	30R+31P		no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV/RBV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	30Y+93H		yes	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	38F+93H		no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV/RBV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	24R+93H		no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	30L+31M+93H		no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	30L+93H	expanded from 30R+30L+93H	no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	30R+93H	expanded from 30R+30L+93H	no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	30L+93H		yes	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	30E+93C	expanded from 30E+30R+93H+93C	no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	30R+93C	expanded from 30E+30R+93H+93C	no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	30E+93H	expanded from 30E+30R+93H+93C	no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	30R+93H	expanded from 30E+30R+93H+93C	no	yes	1% cutoff	LDV	in vivo		Pooled1	SOF/LDV		25% cirrhosis	2144 patients (51 with resistance)	27923693			
+1a	NS5A	24G		NA	NA	NA	LDV	in vitro	43.3 ± 3.0					 	27923693			
+1a	NS5A	24N		NA	NA	NA	LDV	in vitro	27.6 ± 8.1					 	27923693			
+1a	NS5A	24R		NA	NA	NA	LDV	in vitro	3.7 ± 0.6						27923693			
+1a	NS5A	28A		NA	NA	NA	LDV	in vitro	1195.6 ± 24.9						27923693			
+1a	NS5A	28G		NA	NA	NA	LDV	in vitro	>10368						27923693			
+1a	NS5A	28I		NA	NA	NA	LDV	in vitro	0.3 ± 0.1						27923693			
+1a	NS5A	28T		NA	NA	NA	LDV	in vitro	60.8 ± 8.2						27923693			
+1a	NS5A	30E		NA	NA	NA	LDV	in vitro	5457.6 ± 1166.4						27923693			
+1a	NS5A	30G		NA	NA	NA	LDV	in vitro	1567.5 ± 273.9						27923693			
+1a	NS5A	30H		NA	NA	NA	LDV	in vitro	183.2 ± 51.3						27923693			
+1a	NS5A	30K		NA	NA	NA	LDV	in vitro	1550.7 ± 482.6						27923693			
+1a	NS5A	30L		NA	NA	NA	LDV	in vitro	4.3 ± 1.0						27923693			
+1a	NS5A	30R		NA	NA	NA	LDV	in vitro	631.9 ± 176.2						27923693			
+1a	NS5A	30T		NA	NA	NA	LDV	in vitro	4.4 ± 3.2						27923693			
+1a	NS5A	31F		NA	NA	NA	LDV	in vitro	60.2 ± 4.9						27923693			
+1a	NS5A	31I		NA	NA	NA	LDV	in vitro	>370						27923693			
+1a	NS5A	31M		NA	NA	NA	LDV	in vitro	554.4 ± 64.7						27923693			
+1a	NS5A	31V		NA	NA	NA	LDV	in vitro	683.0 ± 90.6						27923693			
+1a	NS5A	32L		NA	NA	NA	LDV	in vitro	348.6 ± 76.7						27923693			
+1a	NS5A	38F		NA	NA	NA	LDV	in vitro	54.4 ± 11.0						27923693			
+1a	NS5A	58D		NA	NA	NA	LDV	in vitro	1127.4 ± 100.9						27923693			
+1a	NS5A	92K		NA	NA	NA	LDV	in vitro	>8333						27923693			
+1a	NS5A	92T		NA	NA	NA	LDV	in vitro	15.2 ± 3.9						27923693			
+1a	NS5A	93C		NA	NA	NA	LDV	in vitro	1601.5 ± 372.2						27923693			
+1a	NS5A	93F		NA	NA	NA	LDV	in vitro	6.9 ± 7.3						27923693			
+1a	NS5A	93H		NA	NA	NA	LDV	in vitro	1676.7 ± 603.1						27923693			
+1a	NS5A	93N		NA	NA	NA	LDV	in vitro	6677.4 ± 756.5						27923693			
+1a	NS5A	93S		NA	NA	NA	LDV	in vitro	1626.1 ± 526.4						27923693			
+1a	NS5A	24R+30R		NA	NA	NA	LDV	in vitro	2859.5 ± 140.8						27923693			
+1a	NS5A	28T+30R		NA	NA	NA	LDV	in vitro	17764.1 ± 5239.2						27923693			
+1a	NS5A	30H+31M		NA	NA	NA	LDV	in vitro	14869.5 ± 1852.8						27923693			
+1a	NS5A	30H+93H		NA	NA	NA	LDV	in vitro	34960.9 ± 11810.9						27923693			
+1a	NS5A	30R+31M		NA	NA	NA	LDV	in vitro	>23400						27923693			
+1a	NS5A	30R+93H		NA	NA	NA	LDV	in vitro	33691 ± 2739.8						27923693			
+1a	NS5A	30Y+93H		NA	NA	NA	LDV	in vitro	47335.9 ± 11413.1						27923693			
+1b	NS5A	31F		NA	NA	NA	LDV	in vitro	7.8 ± 6.0						27923693			
+1b	NS5A	31I		NA	NA	NA	LDV	in vitro	29.4 ± 17.0						27923693			
+1b	NS5A	31M		NA	NA	NA	LDV	in vitro	3.4 ± 1.1						27923693			
+1b	NS5A	31V		NA	NA	NA	LDV	in vitro	42.9 ± 15.3						27923693			
+1b	NS5A	32L		NA	NA	NA	LDV	in vitro	8.0 ± 2.0						27923693			
+1b	NS5A	58D		NA	NA	NA	LDV	in vitro	238.3 ± 17.2						27923693			
+1b	NS5A	92E		NA	NA	NA	LDV	in vitro	0.3 ± 0.03						27923693			
+1b	NS5A	92K		NA	NA	NA	LDV	in vitro	>10000						27923693			
+1b	NS5A	93C		NA	NA	NA	LDV	in vitro	5.3 ± 0.1						27923693			
+1b	NS5A	93H		NA	NA	NA	LDV	in vitro	1807.3 ± 1307.9						27923693			
+1b	NS5A	93N		NA	NA	NA	LDV	in vitro	110.4 ± 54.2						27923693			
+1b	NS5A	93S		NA	NA	NA	LDV	in vitro	141.6 ± 3.1						27923693			
+1b	NS5A	31I+93H		NA	NA	NA	LDV	in vitro	94862.5 ± 524.4						27923693			
+1b	NS5A	31M+93H		NA	NA	NA	LDV	in vitro	20270.4 ± 8291.4						27923693			
+4r	NS5A	28V+30R+31M		yes	yes		LDV	in vivo		Real world (France)*	SOF/LDV				30125371			
+4r	NS5A	28V+30R+31M+93H		no	yes		LDV	in vivo		Real world (France)*	SOF/LDV/RBV				30125371			
+4r	NS5A	28T+30H		no	yes		LDV	in vivo		Real world (France)*	SOF/LDV				30125371			
+4r	NS5A	28V+30R		yes	yes		LDV	in vivo		Real world (France)*	SOF/LDV				30125371			
+4r	NS5A	28M+30R+31M		no	yes		LDV	in vivo		Real world (France)*	SOF/LDV				30125371			
+4r	NS5A	28V+30R+31M		no	yes		LDV	in vivo		Real world (France)*	SOF/LDV				30125371			
+4r	NS5A	28I+30R+31V		no	yes	 	LDV	in vivo		Real world (France)*	SOF/LDV				30125371			
+4r	NS5A	28V+30R+31V		no	yes		LDV	in vivo		Real world (France)*	SOF/LDV				30125371			
+4r	NS5A	28M+30R+31M		yes	yes		LDV	in vivo		NHS England Early Access Programme*	SOF/LDV				28789880			
+4r	NS5A	28M+30R+31L		yes	yes		LDV	in vivo		NHS England Early Access Programme*	SOF/LDV/RBV				28789880			
+1l	NS5A	28M+30R+31M		yes	yes		LDV	in vivo		NHS England Early Access Programme*	SOF/LDV				28789880			
+4r	NS5A	28M+30R+31L+93H		no	yes		LDV	in vivo		NHS England Early Access Programme*	SOF/LDV/RBV				28789880			
+1a	NS5A	30E		no	yes		LDV	in vivo		RESCUE	SOF/LDV/RBV;SOF/LDV				29091342			
+1a	NS5A	31M		yes	no		LDV	in vivo		RESCUE	SOF/LDV/RBV;SOF/LDV				29091342			
+1a	NS5A	30R+31M		no	yes		LDV	in vivo		RESCUE	SOF/LDV/RBV;SOF/LDV				29091342			
+1a	NS5A	30H+93H		no	yes		LDV	in vivo		RESCUE	SOF/LDV/RBV;SOF/LDV				29091342			
+1a	NS5A	30K		no	yes		LDV	in vivo		RESCUE	SOF/LDV/RBV;SOF/LDV				29091342			
+1a	NS5A	30R		no	yes		LDV	in vivo		RESCUE	SOF/LDV/RBV;SOF/LDV				29091342			
+1a	NS5A	93C		no	yes		LDV	in vivo		RESCUE	SOF/LDV/RBV;SOF/LDV				29091342			
+1b	NS5A	31M+93H		no	yes		LDV	in vivo		RESCUE	SOF/LDV/RBV;SOF/LDV				29091342			
+1b	NS5A	31M+54H+62E		yes	no		LDV	in vivo		Real world (Japan)*	SOF/LDV				29274188			
+1b	NS5A	31M+54H		yes	no		LDV	in vivo		Real world (Japan)*	SOF/LDV				29274188			
+1b	NS5A	54H+58A+62E+93H		yes	no		LDV	in vivo		Real world (Japan)*	SOF/LDV				29274188			
+1b	NS5A	31M+54H+93H		yes	no		LDV	in vivo		Real world (Japan)*	SOF/LDV				29274188			
+1b	NS5A	30Q+54H+93H		yes	no		LDV	in vivo		Real world (Japan)*	SOF/LDV				29274188			
+1a	NS5A	30H		no	yes		LDV	in vivo		Retrospective epidemiological study (Europe)*	SOF/LDV				29146520			
+1a	NS5A	30R		no	yes		LDV	in vivo		Retrospective epidemiological study (Europe)*	SOF/LDV				29146520			
+1a	NS5A	31M		no	yes		LDV	in vivo		Retrospective epidemiological study (Europe)*	SOF/LDV				29146520			
+1a	NS5A	93H		no	yes		LDV	in vivo		Retrospective epidemiological study (Europe)*	SOF/LDV				29146520			
+1b	NS5A	31M		no	yes		LDV	in vivo		Retrospective epidemiological study (Europe)*	SOF/LDV				29146520			
+1b	NS5A	93H		no	yes		LDV	in vivo		Retrospective epidemiological study (Europe)*	SOF/LDV				29146520			
+4	NS5A	28M		no	yes		LDV	in vivo		Retrospective epidemiological study (Europe)*	SOF/LDV				29146520			
+4	NS5A	93C		no	yes		LDV	in vivo		Retrospective epidemiological study (Europe)*	SOF/LDV				29146520			
+4	NS5A	93H		no	yes		LDV	in vivo		Retrospective epidemiological study (Europe)*	SOF/LDV				29146520			
+1b	NS5A	32del		no	yes		LDV	in vivo		Japan Real World*	SOF/LDV				29425404			
