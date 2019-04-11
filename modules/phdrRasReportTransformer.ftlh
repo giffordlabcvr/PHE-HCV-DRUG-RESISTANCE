@@ -339,8 +339,9 @@ ${(resistanceFinding.inVitroResult.rangeEC50FoldChange)}
 <td <#if evenRow>id="resistanceFindingEven"</#if>>
 <#if resistanceFinding.inVivoResult??>
 <#if resistanceFinding.inVivoResult.clinicalTrial??>
+<#if resistanceFinding.inVivoResult.clinicalTrial?size gt 1>Pooled study of multiple trials:</#if>
 <#list resistanceFinding.inVivoResult.clinicalTrial as clinicalTrial>
-<a target="_blank" href="https://clinicaltrials.gov/ct2/show/${clinicalTrial.nctId}">${clinicalTrial.displayName}</a><#if !clinicalTrial?is_last>;</#if>
+<#if clinicalTrial.nctId??><a target="_blank" href="https://clinicaltrials.gov/ct2/show/${clinicalTrial.nctId}">${clinicalTrial.displayName}</a><#else>${clinicalTrial.displayName}</#if><#if !clinicalTrial?is_last>;</#if>
 </#list>
 <#else>
 ${resistanceFinding.inVivoResult.cohortDescription}

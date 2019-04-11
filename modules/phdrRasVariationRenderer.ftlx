@@ -49,7 +49,7 @@
 					<clinicalTrial glueType="Object[]">
 						<id>${resultTrial.phdr_clinical_trial.id}</id>
 						<displayName>${resultTrial.phdr_clinical_trial.display_name}</displayName>
-						<nctId>${resultTrial.phdr_clinical_trial.nct_id}</nctId>
+						<@elem tag="nctId" expr="context.nct_id" context=resultTrial.phdr_clinical_trial/>
 					</clinicalTrial>
 					</#list>
 					<@elem tag="cohortDescription" expr="context.cohort_description" context=resistanceFinding.phdr_in_vivo_result/>
