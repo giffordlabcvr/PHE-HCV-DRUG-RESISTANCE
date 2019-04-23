@@ -383,3 +383,6 @@ virusGenotype	gene	substitution	baselineRas	rxEmergentRas	rasContext	drug	vitroO
 4r	NS5A	28V+30S+31M	no	yes		DCV	in vivo		Real world (France)*	SOF/DCV		30125371	
 4r	NS5A	28M+30R+31M	no	yes		DCV	in vivo		Real world (France)*	SOF/DCV		30125371	
 1l	NS5A	28M+30Q+31M	yes	no		DCV	in vivo		NHS England Early Access Programme*	SOF/DCV		28789880	
+3a	NS5A	30K+93H	NA	NA	NA	DCV	in vitro	>10000				29425396	
+3a	NS5A	30K+31M	NA	NA	NA	DCV	in vitro	>10000				29425396	
+3a	NS5A	30K+31M+93H	NA	NA	NA	DCV	in vitro	>10000				29425396	
