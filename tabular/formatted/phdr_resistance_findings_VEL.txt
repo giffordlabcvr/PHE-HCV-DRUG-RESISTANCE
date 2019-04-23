@@ -118,3 +118,6 @@ virusGenotype	gene	substitution	baselineRas	rxEmergentRas	rasContext	drug	vitroO
 1a	NS5A	93S	NA	NA	NA	VEL	in vitro	63.9	NA	NA	NA	NA	27353271		
 1a	NS5A	93W	NA	NA	NA	VEL	in vitro	998.9	NA	NA	NA	NA	27353271		
 4r	NS5A	28V+30R+31M+93H	no	yes		VEL	in vivo		Real world (France)*	SOF/VEL/RBV			30125371		
+3a	NS5A	30K+93H	NA	NA	NA	VEL	in vitro	>10000					29425396		
+3a	NS5A	30K+31M	NA	NA	NA	VEL	in vitro	>10000					29425396		
+3a	NS5A	30K+31M+93H	NA	NA	NA	VEL	in vitro	>10000					29425396		

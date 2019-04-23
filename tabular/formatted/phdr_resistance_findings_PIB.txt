@@ -67,3 +67,6 @@ NS5A	93H	Yes	No	NA	3a	Pibrentasvir	in vivo	NA	Surveyor-1_and_2	GLE/PIB	NA	NA	284
 NS5A	93H	No	Yes	30K	3a	Pibrentasvir	in vivo	NA	Surveyor-1_and_2	GLE/PIB	NA	NA	28412293	
 NS5A	93N	NA	NA	NA	1a	Pibrentasvir	in vitro	7.1	NA	NA	NA	NA	28193664	
 NS5A	93N	Yes  	No	NA	1a	Pibrentasvir	in vivo	NA	Pooled	GLE/PIB	NA	NA	EASL_2017_FRI_205	
+NS5A	30K+93H		NA	NA	3a	Pibrentasvir	in vitro	>20					29425396	
+NS5A	30K+31M		NA	NA	3a	Pibrentasvir	in vitro	>20					29425396	
+NS5A	30K+31M+93H		NA	NA	3a	Pibrentasvir	in vitro	>20					29425396	
