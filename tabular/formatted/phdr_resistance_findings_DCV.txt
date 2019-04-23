@@ -294,9 +294,6 @@ virusGenotype	gene	substitution	baselineRas	rxEmergentRas	rasContext	drug	vitroO
 4a	NS5A	31V				DCV	in vitro	4-79				29274866	
 5a	NS5A	31V				DCV	in vitro	80-999				29274866	
 6a	NS5A	31V				DCV	in vitro	>1000				29274866	
-3	NS5A	30K+31M				DCV	in vitro	>10000				29425396	
-3	NS5A	30K+93H				DCV	in vitro	>10000				29425396	
-3	NS5A	30K+31M+93H				DCV	in vitro	>10000				29425396	
 1b	NS5A	31M	yes	no		DCV	in vivo	NA	DUAL	DCV/ASV	207 patients; 13% cirrhosis 	29599611	
 1b	NS5A	31V	yes	no		DCV	in vivo	NA	DUAL	DCV/ASV	207 patients; 13% cirrhosis 	29599611	
 1b	NS5A	93H	yes	no		DCV	in vivo	NA	DUAL	DCV/ASV	207 patients; 13% cirrhosis 	29599611	
