@@ -38673,4 +38673,1540 @@
         </ReferenceList>
     </PubmedData>
 </PubmedArticle>
+<PubmedArticle>
+    <MedlineCitation Status="Publisher" Owner="NLM">
+        <PMID Version="1">30957170</PMID>
+        <DateRevised>
+            <Year>2019</Year>
+            <Month>04</Month>
+            <Day>08</Day>
+        </DateRevised>
+        <Article PubModel="Print-Electronic">
+            <Journal>
+                <ISSN IssnType="Electronic">1537-6613</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <PubDate>
+                        <Year>2019</Year>
+                        <Month>Apr</Month>
+                        <Day>08</Day>
+                    </PubDate>
+                </JournalIssue>
+                <Title>The Journal of infectious diseases</Title>
+                <ISOAbbreviation>J. Infect. Dis.</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>An open-label, randomized, active control trial of 8 versus 12 weeks of elbasvir/grazoprevir for treatment-naïve chronic hepatitis C genotype 1b patients with mild fibrosis (EGALITE): Impact of baseline viral loads and NS5A resistance-associated substitution.</ArticleTitle>
+            <ELocationID EIdType="pii" ValidYN="Y">jiz154</ELocationID>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1093/infdis/jiz154</ELocationID>
+            <Abstract>
+                <AbstractText Label="BACKGROUND" NlmCategory="BACKGROUND">12-week grazoprevir/elbasvir is highly effective in hepatitis C virus genotype 1 (HCV-1) infection. The efficacy of 8-week regimen for naïve patients with mild fibrosis is elusive.</AbstractText>
+                <AbstractText Label="METHODS" NlmCategory="METHODS">HCV-1b naïve patients with mild fibrosis were randomized to 8 (n=41) or 12 (n=41) weeks of elbasvir/grazoprevir. The primary endpoint was SVR12 (HCV RNA &lt; 12 IU/ml at post-treatment week-12).</AbstractText>
+                <AbstractText Label="RESULTS" NlmCategory="RESULTS">SVR12 was achieved by 87.8% (36/41) and 100% (41/41) in the full-analysis population and 90.0% (36/40) and 100% (41/41) in the per-protocol population in the 8-week and 12-week arms, respectively (all p=0.055). In the 8-week arm, a significantly lower SVR12 rate was observed among patients with a high viral loads (HVL,&gt;1,500,000 IU/mL, 79% vs. 100%, p=0.042) and those with baseline NS5A-Y93H RAS &gt;15% (40.0% vs. 97.1%, p=0.004). Between-group analysis demonstrated that patients with HVL and Y93H&gt;15% had a substantially lower SVR12 rate in the 8-week arm (40.0%) than the 12-week arm (100.0%). All four HCV-1b relapses had NS5A RAS Y93H&gt; 99% at post-treatment week-12.</AbstractText>
+                <AbstractText Label="CONCLUSIONS" NlmCategory="CONCLUSIONS">Twelve weeks of grazoprevir/elbasvir is highly effective for HCV-1b naïve patients with mild fibrosis. A truncated 8-week grazoprevir/elbasvir regimen might be applied for those with low viral loads or without significant NS5A RAS.</AbstractText>
+                <CopyrightInformation>© The Author(s) 2019. Published by Oxford University Press for the Infectious Diseases Society of America. All rights reserved. For permissions, e-mail: journals.permissions@oup.com.</CopyrightInformation>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Huang</LastName>
+                    <ForeName>Chung-Feng</ForeName>
+                    <Initials>CF</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Hepatobiliary Division, Department of Internal Medicine and Hepatitis Center, Kaohsiung Medical University Hospital and Hepatitis Research Center and Center for Liquid Biopsy, Kaohsiung Medical University, Kaohsiung, Taiwan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Hung</LastName>
+                    <ForeName>Chao-Hung</ForeName>
+                    <Initials>CH</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Division of Hepatogastroenterology, Department of Internal Medicine, ChiaYi Chang Gung Memorial Hospital, ChiaYi, Taiwan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Cheng</LastName>
+                    <ForeName>Pin-Nan</ForeName>
+                    <Initials>PN</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>ational Cheng Kung University Hospital, Tainan, Taiwan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Bair</LastName>
+                    <ForeName>Ming-Jong</ForeName>
+                    <Initials>MJ</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Division of Gastroenterology, Department of Internal Medicine, Taitung Mackay Memorial Hospital, Taitung City, Taiwan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Huang</LastName>
+                    <ForeName>Yi-Hsiang</ForeName>
+                    <Initials>YH</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Division of Gastroenterology and Hepatology, Department of Medicine, Taipei Veterans General Hospital; Institute of Clinical Medicine, National Yang-Ming University, Taipei, Taiwan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Kao</LastName>
+                    <ForeName>Jia-Horng</ForeName>
+                    <Initials>JH</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Internal Medicine, National Taiwan University Hospital and National Taiwan University College of Medicine, Taipei, Taiwan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Hsu</LastName>
+                    <ForeName>Shih-Jer</ForeName>
+                    <Initials>SJ</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Internal Medicine, National Taiwan University Hospital Yunlin Branch, Yunlin, Taiwan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Lee</LastName>
+                    <ForeName>Pei-Lun</ForeName>
+                    <Initials>PL</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Division of Gastroenterology and Hepatology, Chi-Mei Medical Center, Liouying, Tainan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Chen</LastName>
+                    <ForeName>Jyh-Jou</ForeName>
+                    <Initials>JJ</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Division of Gastroenterology and Hepatology, Chi-Mei Medical Center, Liouying, Tainan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Chien</LastName>
+                    <ForeName>Rong-Nan</ForeName>
+                    <Initials>RN</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Division of Hepatology, Department of Gastroenterology and Hepatology, Linkou Medical Center, Chang Gung Memorial Hospital, Taiwan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Peng</LastName>
+                    <ForeName>Cheng-Yuan</ForeName>
+                    <Initials>CY</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Division of Hepatology and Gastroenterology, Department of Internal Medicine, China Medical University Hospital, Taichung, Taiwan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Lin</LastName>
+                    <ForeName>Chun-Yen</ForeName>
+                    <Initials>CY</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Division of Hepatology, Department of Gastroenterology and Hepatology, Linkou Medical Center, Chang Gung Memorial Hospital, Taiwan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Hsieh</LastName>
+                    <ForeName>Tsai-Yuan</ForeName>
+                    <Initials>TY</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Gastroenterology, Tri-service General Hospital, Taipei, Taiwan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Cheng</LastName>
+                    <ForeName>Chun-Han</ForeName>
+                    <Initials>CH</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Division of Gastroenterology, Department of Internal Medicine, Taitung Mackay Memorial Hospital, Taitung City, Taiwan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Dai</LastName>
+                    <ForeName>Chia-Yen</ForeName>
+                    <Initials>CY</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Hepatobiliary Division, Department of Internal Medicine and Hepatitis Center, Kaohsiung Medical University Hospital and Hepatitis Research Center and Center for Liquid Biopsy, Kaohsiung Medical University, Kaohsiung, Taiwan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Huang</LastName>
+                    <ForeName>Jee-Fu</ForeName>
+                    <Initials>JF</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Hepatobiliary Division, Department of Internal Medicine and Hepatitis Center, Kaohsiung Medical University Hospital and Hepatitis Research Center and Center for Liquid Biopsy, Kaohsiung Medical University, Kaohsiung, Taiwan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Chuang</LastName>
+                    <ForeName>Wan-Long</ForeName>
+                    <Initials>WL</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Hepatobiliary Division, Department of Internal Medicine and Hepatitis Center, Kaohsiung Medical University Hospital and Hepatitis Research Center and Center for Liquid Biopsy, Kaohsiung Medical University, Kaohsiung, Taiwan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Yu</LastName>
+                    <ForeName>Ming-Lung</ForeName>
+                    <Initials>ML</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Hepatobiliary Division, Department of Internal Medicine and Hepatitis Center, Kaohsiung Medical University Hospital and Hepatitis Research Center and Center for Liquid Biopsy, Kaohsiung Medical University, Kaohsiung, Taiwan.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>Institute of Biomedical Sciences, National Sun Yat-Sen University, Kaohsiung, Taiwan.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>Center For Intelligent Drug Systems and Smart Bio-devices (IDS2B) and Department of Biological Science and Technology, College of Biological Science and Technology, National Chiao Tung University, Hsin-Chu, Taiwan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2019</Year>
+                <Month>04</Month>
+                <Day>08</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>United States</Country>
+            <MedlineTA>J Infect Dis</MedlineTA>
+            <NlmUniqueID>0413675</NlmUniqueID>
+            <ISSNLinking>0022-1899</ISSNLinking>
+        </MedlineJournalInfo>
+        <KeywordList Owner="NOTNLM">
+            <Keyword MajorTopicYN="N">CHC</Keyword>
+            <Keyword MajorTopicYN="N">DAA</Keyword>
+            <Keyword MajorTopicYN="N">abbreviated</Keyword>
+            <Keyword MajorTopicYN="N">elbasvir</Keyword>
+            <Keyword MajorTopicYN="N">grazoprevir</Keyword>
+            <Keyword MajorTopicYN="N">treatment</Keyword>
+        </KeywordList>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="received">
+                <Year>2019</Year>
+                <Month>02</Month>
+                <Day>13</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2019</Year>
+                <Month>4</Month>
+                <Day>9</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2019</Year>
+                <Month>4</Month>
+                <Day>9</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2019</Year>
+                <Month>4</Month>
+                <Day>9</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>aheadofprint</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">30957170</ArticleId>
+            <ArticleId IdType="pii">5430846</ArticleId>
+            <ArticleId IdType="doi">10.1093/infdis/jiz154</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
+
+
+<PubmedArticle>
+    <MedlineCitation Status="PubMed-not-MEDLINE" Owner="NLM">
+        <PMID Version="1">30127629</PMID>
+        <DateRevised>
+            <Year>2019</Year>
+            <Month>02</Month>
+            <Day>16</Day>
+        </DateRevised>
+        <Article PubModel="Electronic-eCollection">
+            <Journal>
+                <ISSN IssnType="Print">1178-6973</ISSN>
+                <JournalIssue CitedMedium="Print">
+                    <Volume>11</Volume>
+                    <PubDate>
+                        <Year>2018</Year>
+                    </PubDate>
+                </JournalIssue>
+                <Title>Infection and drug resistance</Title>
+                <ISOAbbreviation>Infect Drug Resist</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>Characterization of hepatitis C virus resistance to grazoprevir reveals complex patterns of mutations following on-treatment breakthrough that are not observed at relapse.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>1119-1135</MedlinePgn>
+            </Pagination>
+            <ELocationID EIdType="doi" ValidYN="Y">10.2147/IDR.S156581</ELocationID>
+            <Abstract>
+                <AbstractText Label="Purpose" NlmCategory="UNASSIGNED">A detailed analysis of hepatitis C virus (HCV) resistance-associated substitutions (RASs) is required to understand why people fail direct-acting antiviral therapies. This study was conducted to assess RASs in an analysis of 2 trials evaluating the second-generation NS3/4A protease inhibitor grazoprevir (GZR) in combination with peginterferon/ribavirin.</AbstractText>
+                <AbstractText Label="Patients and methods" NlmCategory="UNASSIGNED">From a total of 113 participants with HCV genotype 1 infection, RASs were evaluated in 25 patients who relapsed and 6 patients with on-treatment virologic breakthrough using consensus Sanger and clonal sequence analysis of NS3/NS4a genes, with in vitro testing of replicon mutants. Next-generation sequencing (NGS) was used in a subset of participants to assess minority variants and the evolution of the whole viral genome.</AbstractText>
+                <AbstractText Label="Results" NlmCategory="UNASSIGNED">Baseline RASs did not predict treatment failure. Relapse was most commonly associated with RASs at D168, although additional RASs (Y56, R155 and A156) were also detected, particularly in participants with on-treatment breakthrough. Treatment-emergent RASs usually reverted to wild-type (WT), suggesting these mutations were associated with a negative fitness cost (confirmed using in vitro assays). NGS was the most sensitive assay for the detection of minor variants. Significant viral sequence divergence (up to 5.9% codons) was observed across whole genomes in association with the acquisition and reversion of RASs.</AbstractText>
+                <AbstractText Label="Conclusion" NlmCategory="UNASSIGNED">Relapse with GZR and peginterferon/ribavirin is commonly associated with single RASs in NS3 that generally revert to WT, while breakthrough follows more complex patterns of viral resistance. NGS suggests that large diverse pools of viral quasispecies that emerge with RASs facilitate rapid viral evolution.</AbstractText>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Bonsall</LastName>
+                    <ForeName>David</ForeName>
+                    <Initials>D</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Translational Gastroenterology Unit, University of Oxford, Oxford, UK, david.bonsall@ndm.ox.ac.uk.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Black</LastName>
+                    <ForeName>Stuart</ForeName>
+                    <Initials>S</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Infectious Diseases, Merck &amp; Co., Inc., Kenilworth, NJ, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Howe</LastName>
+                    <ForeName>Anita Ym</ForeName>
+                    <Initials>AY</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Infectious Diseases, Merck &amp; Co., Inc., Kenilworth, NJ, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Chase</LastName>
+                    <ForeName>Robert</ForeName>
+                    <Initials>R</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Infectious Diseases, Merck &amp; Co., Inc., Kenilworth, NJ, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Ingravallo</LastName>
+                    <ForeName>Paul</ForeName>
+                    <Initials>P</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Infectious Diseases, Merck &amp; Co., Inc., Kenilworth, NJ, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Pak</LastName>
+                    <ForeName>Irene</ForeName>
+                    <Initials>I</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Infectious Diseases, Merck &amp; Co., Inc., Kenilworth, NJ, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Brown</LastName>
+                    <ForeName>Anthony</ForeName>
+                    <Initials>A</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Translational Gastroenterology Unit, University of Oxford, Oxford, UK, david.bonsall@ndm.ox.ac.uk.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Smith</LastName>
+                    <ForeName>David A</ForeName>
+                    <Initials>DA</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Translational Gastroenterology Unit, University of Oxford, Oxford, UK, david.bonsall@ndm.ox.ac.uk.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Bowden</LastName>
+                    <ForeName>Rory</ForeName>
+                    <Initials>R</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Translational Gastroenterology Unit, University of Oxford, Oxford, UK, david.bonsall@ndm.ox.ac.uk.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Barnes</LastName>
+                    <ForeName>Eleanor</ForeName>
+                    <Initials>E</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Translational Gastroenterology Unit, University of Oxford, Oxford, UK, david.bonsall@ndm.ox.ac.uk.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <GrantList CompleteYN="Y">
+                <Grant>
+                    <GrantID>MR/K01532X/1</GrantID>
+                    <Agency>Medical Research Council</Agency>
+                    <Country>United Kingdom</Country>
+                </Grant>
+            </GrantList>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2018</Year>
+                <Month>08</Month>
+                <Day>08</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>New Zealand</Country>
+            <MedlineTA>Infect Drug Resist</MedlineTA>
+            <NlmUniqueID>101550216</NlmUniqueID>
+            <ISSNLinking>1178-6973</ISSNLinking>
+        </MedlineJournalInfo>
+        <KeywordList Owner="NOTNLM">
+            <Keyword MajorTopicYN="N">NS3/4A protease inhibitor</Keyword>
+            <Keyword MajorTopicYN="N">next-generation sequencing</Keyword>
+            <Keyword MajorTopicYN="N">resistance-associated substitution</Keyword>
+            <Keyword MajorTopicYN="N">virologic failure</Keyword>
+        </KeywordList>
+        <CoiStatement>Disclosure Paul Ingravallo is an employee of Merck &amp; Co., Inc. Stuart Black, Anita YM Howe, Robert Chase and Irene Pak are former employees of Merck &amp; Co., Inc. The authors report no other conflicts of interest in this work.</CoiStatement>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2018</Year>
+                <Month>8</Month>
+                <Day>22</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2018</Year>
+                <Month>8</Month>
+                <Day>22</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2018</Year>
+                <Month>8</Month>
+                <Day>22</Day>
+                <Hour>6</Hour>
+                <Minute>1</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>epublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">30127629</ArticleId>
+            <ArticleId IdType="doi">10.2147/IDR.S156581</ArticleId>
+            <ArticleId IdType="pii">idr-11-1119</ArticleId>
+            <ArticleId IdType="pmc">PMC6089106</ArticleId>
+        </ArticleIdList>
+        <ReferenceList>
+            <Reference>
+                <Citation>J Viral Hepat. 2016 Feb;23(2):80-8</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">26353843</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Antimicrob Agents Chemother. 2013 May;57(5):2054-65</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">23403428</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Virol. 2000 Feb;74(4):2046-51</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">10644379</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>BMC Genomics. 2012 Sep 13;13:475</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">22974120</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Virology. 2013 Sep;444(1-2):329-36</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">23876458</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Lancet HIV. 2015 Aug;2(8):e319-27</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">26423374</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Ann Intern Med. 2015 Jul 7;163(1):1-13</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">25909356</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS One. 2013 Jun 10;8(6):e66129</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">23762474</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Hepatology. 2015 Nov;62(5):1623-32</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">26095927</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Antivir Ther. 2018;23(1):53-66</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">28594332</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Lancet. 2015 Mar 21;385(9973):1087-97</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">25467560</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Gastroenterology. 2017 Jan;152(1):164-175.e4</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">27720838</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Antimicrob Agents Chemother. 2010 May;54(5):1878-87</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20176898</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>F1000Res. 2015 Oct 13;4:1062</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">27092241</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Hepatology. 2015 Sep;62(3):932-54</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">26111063</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS Pathog. 2012;8(3):e1002529</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">22412369</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Science. 1998 Oct 2;282(5386):103-7</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">9756471</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Proc Natl Acad Sci U S A. 2005 Feb 22;102(8):2992-7</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15710891</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Antimicrob Agents Chemother. 2016 Apr 22;60(5):2954-64</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">26926625</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Viral Hepat. 2016 Oct;23(10):789-97</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">27291249</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Hepatol. 2015 Sep;63(3):564-72</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">25895428</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS Pathog. 2016 Sep 15;12(9):e1005894</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">27631086</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS One. 2012;7(4):e34372</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">22511937</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Clin Microbiol. 2016 Oct;54(10):2470-84</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">27385709</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Antimicrob Agents Chemother. 2012 Aug;56(8):4161-7</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">22615282</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Lancet. 2015 Mar 21;385(9973):1075-86</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">25467591</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Lancet. 2015 Oct 17;386(10003):1537-45</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">26456905</ArticleId>
+                </ArticleIdList>
+            </Reference>
+        </ReferenceList>
+    </PubmedData>
+</PubmedArticle>
+
+
+<PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+        <PMID Version="1">28228479</PMID>
+        <DateCompleted>
+            <Year>2017</Year>
+            <Month>04</Month>
+            <Day>28</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2018</Year>
+            <Month>11</Month>
+            <Day>13</Day>
+        </DateRevised>
+        <Article PubModel="Print-Electronic">
+            <Journal>
+                <ISSN IssnType="Electronic">1083-351X</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <Volume>292</Volume>
+                    <Issue>15</Issue>
+                    <PubDate>
+                        <Year>2017</Year>
+                        <Month>04</Month>
+                        <Day>14</Day>
+                    </PubDate>
+                </JournalIssue>
+                <Title>The Journal of biological chemistry</Title>
+                <ISOAbbreviation>J. Biol. Chem.</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>Unraveling the structural basis of grazoprevir potency against clinically relevant substitutions in hepatitis C virus NS3/4A protease from genotype 1a.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>6202-6212</MedlinePgn>
+            </Pagination>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1074/jbc.M116.772996</ELocationID>
+            <Abstract>
+                <AbstractText>Grazoprevir is a potent pan-genotype and macrocyclic inhibitor of hepatitis C virus (HCV) NS3/4A protease and was developed for treating chronic HCV infection. In HCV genotype (GT) 1a, grazoprevir maintains potent activity against a majority of NS3 resistance-associated amino acid substitutions, including the highly prevalent and naturally occurring Q80K polymorphism that impacts simeprevir, another NS3/4A protease inhibitor. The basis for an unexpected difference in the clinical impact of some NS3 substitutions was investigated. Phenotypic analysis of resistance-associated substitutions identified in NS3 from GT1a-infected patients who failed therapy with grazoprevir (in combination with elbasvir, an inhibitor of HCV NS5A protein) showed that positions 56, 156, and 168 in NS3 were most impactful because they diminished protein-inhibitor interactions. Although an amino acid substitution from aspartic acid to alanine at position 168 (D168A) reduced the potency of grazoprevir, its combination with R155K unexpectedly nullified this effect. Molecular dynamics and free-energy surface studies indicated that Asp-168 is important in anchoring Arg-155 for ligand binding but is not critical for Lys-155 because of the inherent flexibility of its side chain. Moreover, modeling studies supported a strong direct cation-heterocycle interaction between the Lys-155 side chain of the double substitution, R155K/D168A, and the lone pair on the quinoxaline in grazoprevir. This unique interaction provides a structural basis for grazoprevir's higher potency than simeprevir, an inhibitor to which the double substitution confers a significant reduction in potency. Our findings are consistent with the detection of R155K/D168A in NS3 from virologic failures treated with simeprevir but not grazoprevir.</AbstractText>
+                <CopyrightInformation>© 2017 by The American Society for Biochemistry and Molecular Biology, Inc.</CopyrightInformation>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Guo</LastName>
+                    <ForeName>Zhuyan</ForeName>
+                    <Initials>Z</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>From the Departments of Chemistry, Modeling and Informatics and.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Black</LastName>
+                    <ForeName>Stuart</ForeName>
+                    <Initials>S</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Infectious Diseases, Merck Research Laboratories, Kenilworth, New Jersey 07033.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Hu</LastName>
+                    <ForeName>Yuan</ForeName>
+                    <Initials>Y</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>From the Departments of Chemistry, Modeling and Informatics and.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>McMonagle</LastName>
+                    <ForeName>Patricia</ForeName>
+                    <Initials>P</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Infectious Diseases, Merck Research Laboratories, Kenilworth, New Jersey 07033.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Ingravallo</LastName>
+                    <ForeName>Paul</ForeName>
+                    <Initials>P</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Infectious Diseases, Merck Research Laboratories, Kenilworth, New Jersey 07033.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Chase</LastName>
+                    <ForeName>Robert</ForeName>
+                    <Initials>R</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Infectious Diseases, Merck Research Laboratories, Kenilworth, New Jersey 07033.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Curry</LastName>
+                    <ForeName>Stephanie</ForeName>
+                    <Initials>S</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Infectious Diseases, Merck Research Laboratories, Kenilworth, New Jersey 07033.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Asante-Appiah</LastName>
+                    <ForeName>Ernest</ForeName>
+                    <Initials>E</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Infectious Diseases, Merck Research Laboratories, Kenilworth, New Jersey 07033 Ernest_asanteappiah@merck.com.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <DataBankList CompleteYN="Y">
+                <DataBank>
+                    <DataBankName>PDB</DataBankName>
+                    <AccessionNumberList>
+                        <AccessionNumber>3SUD</AccessionNumber>
+                        <AccessionNumber>3KEE</AccessionNumber>
+                        <AccessionNumber>3SUE</AccessionNumber>
+                    </AccessionNumberList>
+                </DataBank>
+            </DataBankList>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2017</Year>
+                <Month>02</Month>
+                <Day>21</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>United States</Country>
+            <MedlineTA>J Biol Chem</MedlineTA>
+            <NlmUniqueID>2985121R</NlmUniqueID>
+            <ISSNLinking>0021-9258</ISSNLinking>
+        </MedlineJournalInfo>
+        <ChemicalList>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance UI="C084422">NS3 protein, hepatitis C virus</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance UI="D011810">Quinoxalines</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance UI="D017361">Viral Nonstructural Proteins</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>8YE81R1X1J</RegistryNumber>
+                <NameOfSubstance UI="C578009">MK-5172</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>9WS5RD66HZ</RegistryNumber>
+                <NameOfSubstance UI="D000069616">Simeprevir</NameOfSubstance>
+            </Chemical>
+        </ChemicalList>
+        <CitationSubset>IM</CitationSubset>
+        <MeshHeadingList>
+            <MeshHeading>
+                <DescriptorName UI="D019943" MajorTopicYN="N">Amino Acid Substitution</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D045744" MajorTopicYN="N">Cell Line, Tumor</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D016174" MajorTopicYN="N">Hepacivirus</DescriptorName>
+                <QualifierName UI="Q000201" MajorTopicYN="Y">enzymology</QualifierName>
+                <QualifierName UI="Q000235" MajorTopicYN="N">genetics</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D006526" MajorTopicYN="N">Hepatitis C</DescriptorName>
+                <QualifierName UI="Q000188" MajorTopicYN="N">drug therapy</QualifierName>
+                <QualifierName UI="Q000201" MajorTopicYN="N">enzymology</QualifierName>
+                <QualifierName UI="Q000235" MajorTopicYN="N">genetics</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D056004" MajorTopicYN="Y">Molecular Dynamics Simulation</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D020125" MajorTopicYN="Y">Mutation, Missense</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D011810" MajorTopicYN="N">Quinoxalines</DescriptorName>
+                <QualifierName UI="Q000737" MajorTopicYN="Y">chemistry</QualifierName>
+                <QualifierName UI="Q000627" MajorTopicYN="N">therapeutic use</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D000069616" MajorTopicYN="N">Simeprevir</DescriptorName>
+                <QualifierName UI="Q000737" MajorTopicYN="N">chemistry</QualifierName>
+                <QualifierName UI="Q000627" MajorTopicYN="N">therapeutic use</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D017361" MajorTopicYN="N">Viral Nonstructural Proteins</DescriptorName>
+                <QualifierName UI="Q000037" MajorTopicYN="Y">antagonists &amp; inhibitors</QualifierName>
+                <QualifierName UI="Q000737" MajorTopicYN="Y">chemistry</QualifierName>
+                <QualifierName UI="Q000235" MajorTopicYN="N">genetics</QualifierName>
+                <QualifierName UI="Q000378" MajorTopicYN="N">metabolism</QualifierName>
+            </MeshHeading>
+        </MeshHeadingList>
+        <KeywordList Owner="NOTNLM">
+            <Keyword MajorTopicYN="Y">crystal structure</Keyword>
+            <Keyword MajorTopicYN="Y">drug resistance</Keyword>
+            <Keyword MajorTopicYN="Y">hepatitis C virus (HCV)</Keyword>
+            <Keyword MajorTopicYN="Y">molecular dynamics</Keyword>
+            <Keyword MajorTopicYN="Y">protease inhibitor</Keyword>
+        </KeywordList>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="received">
+                <Year>2016</Year>
+                <Month>12</Month>
+                <Day>16</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="revised">
+                <Year>2017</Year>
+                <Month>02</Month>
+                <Day>03</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2017</Year>
+                <Month>2</Month>
+                <Day>24</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2017</Year>
+                <Month>4</Month>
+                <Day>30</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2017</Year>
+                <Month>2</Month>
+                <Day>24</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">28228479</ArticleId>
+            <ArticleId IdType="pii">M116.772996</ArticleId>
+            <ArticleId IdType="doi">10.1074/jbc.M116.772996</ArticleId>
+            <ArticleId IdType="pmc">PMC5391751</ArticleId>
+        </ArticleIdList>
+        <ReferenceList>
+            <Reference>
+                <Citation>J Am Chem Soc. 2008 Apr 9;130(14):4607-9</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">18338894</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Antimicrob Agents Chemother. 2006 Mar;50(3):1013-20</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">16495264</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>ACS Med Chem Lett. 2012 Mar 02;3(4):332-6</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">24900473</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Med Chem. 2014 Mar 13;57(5):1673-93</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">24446688</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Gastroenterology. 2011 Feb;140(2):667-75</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21056040</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Virol. 2000 Feb;74(4):2046-51</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">10644379</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Comput Chem. 2002 Dec;23(16):1623-41</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">12395429</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Hepatology. 2015 Jan;61(1):77-87</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">25069599</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Lancet. 2014 Aug 2;384(9941):403-13</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">24907225</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Lancet HIV. 2015 Aug;2(8):e319-27</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">26423374</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Hepatology. 2011 Oct;54(4):1433-44</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">21898493</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Anal Biochem. 2008 Feb 1;373(1):1-8</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">18022380</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Virol. 2004 Aug;78(15):7904-15</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">15254163</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Hepatology. 2015 Nov;62(5):1623-32</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">26095927</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Science. 1999 Jul 2;285(5424):110-3</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">10390360</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>PLoS Pathog. 2012;8(7):e1002832</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">22910833</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Antimicrob Agents Chemother. 2010 Dec;54(12):5288-97</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">20855726</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Liver Int. 2009 Jan;29 Suppl 1:74-81</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">19207969</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Antimicrob Agents Chemother. 2015 Feb;59(2):988-97</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">25451053</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Antimicrob Agents Chemother. 2006 Mar;50(3):899-909</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">16495249</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Science. 2000 Dec 8;290(5498):1972-4</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">11110665</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>Lancet. 2015 Mar 21;385(9973):1075-86</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">25467591</ArticleId>
+                </ArticleIdList>
+            </Reference>
+            <Reference>
+                <Citation>J Hepatol. 2015 May;62(5):1008-14</Citation>
+                <ArticleIdList>
+                    <ArticleId IdType="pubmed">25445400</ArticleId>
+                </ArticleIdList>
+            </Reference>
+        </ReferenceList>
+    </PubmedData>
+</PubmedArticle>
+
+
+<PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+        <PMID Version="1">27291249</PMID>
+        <DateCompleted>
+            <Year>2017</Year>
+            <Month>11</Month>
+            <Day>03</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2017</Year>
+            <Month>11</Month>
+            <Day>24</Day>
+        </DateRevised>
+        <Article PubModel="Print-Electronic">
+            <Journal>
+                <ISSN IssnType="Electronic">1365-2893</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <Volume>23</Volume>
+                    <Issue>10</Issue>
+                    <PubDate>
+                        <Year>2016</Year>
+                        <Month>10</Month>
+                    </PubDate>
+                </JournalIssue>
+                <Title>Journal of viral hepatitis</Title>
+                <ISOAbbreviation>J. Viral Hepat.</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>Efficacy and safety of grazoprevir + ribavirin for 12 or 24 weeks in treatment-naïve patients with hepatitis C virus genotype 1 infection.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>789-97</MedlinePgn>
+            </Pagination>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1111/jvh.12552</ELocationID>
+            <Abstract>
+                <AbstractText>Grazoprevir (GZR) is a second-generation hepatitis C virus NS3/4A protease inhibitor. The aim of this study was to evaluate GZR plus ribavirin (RBV) in patients with HCV GT1 infection. Noncirrhotic, IL28B CC patients with HCV genotype 1 infection were randomized to GZR 100 mg once daily and RBV for 12 or 24 weeks. Patients in the 12-week arm with detectable HCV RNA at treatment week 4 (TW4) had treatment extended to 24 weeks (response-guided therapy, RGT). The primary endpoint was sustained virologic response (SVR12) at follow-up week 12 (HCV RNA &lt;25 IU/mL) in the per-protocol (PP) population (excluding patients with important protocol deviations). Twenty-six patients were randomized and 22 were included in the PP population. SVR12 was 58.3% (7 of 12) and 90% (9 of 10) in the RGT and 24-week arms, respectively. Seven PP patients had virologic failure, including one patient in the 24-week arm who relapsed after follow-up week 12. All three breakthrough patients had wild-type (WT) virus at baseline and developed breakthrough at TW6 or TW12 with Y56H, A156T and D168A/N mutations. Of the five relapse patients, four had WT at baseline (at relapse three had WT and one had V55A and D168A), and one had S122A/T at baseline and S122T at relapse. There were no serious adverse events (AEs), discontinuations due to AEs or grade 3/4 elevations in total and/or direct bilirubin. Grazoprevir plus RBV was associated with a rapid and sustained suppression of HCV RNA. These results support further evaluation of grazoprevir-based regimens (NCT01716156; protocol P039).</AbstractText>
+                <CopyrightInformation>© 2016 John Wiley &amp; Sons Ltd.</CopyrightInformation>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Gane</LastName>
+                    <ForeName>E</ForeName>
+                    <Initials>E</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Auckland Clinical Studies, Auckland, New Zealand. edgane@adhb.govt.nz.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Ben Ari</LastName>
+                    <ForeName>Z</ForeName>
+                    <Initials>Z</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Liver Disease Center, Sheba Medical Center, Ramat Gan, Israel.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>The Sackler School of Medicine, Tel Aviv University, Tel Aviv, Israel.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Mollison</LastName>
+                    <ForeName>L</ForeName>
+                    <Initials>L</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Fremantle Hepatitis Services, Fremantle Hospital, Fremantle, WA, Australia.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Zuckerman</LastName>
+                    <ForeName>E</ForeName>
+                    <Initials>E</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Liver Unit, Carmel Medical Center Technion Faculty of Medicine, Haifa, Israel.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Bruck</LastName>
+                    <ForeName>R</ForeName>
+                    <Initials>R</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Gastroenterology and Liver Diseases, Tel Aviv Sourasky Medical Center, Tel Aviv, Israel.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Baruch</LastName>
+                    <ForeName>Y</ForeName>
+                    <Initials>Y</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Liver Unit, Rambam Healthcare Campus and the Technion Faculty of Medicine, Haifa, Israel.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Howe</LastName>
+                    <ForeName>A Y M</ForeName>
+                    <Initials>AY</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Merck &amp; Co., Inc., Kenilworth, NJ, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Wahl</LastName>
+                    <ForeName>J</ForeName>
+                    <Initials>J</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Merck &amp; Co., Inc., Kenilworth, NJ, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Bhanja</LastName>
+                    <ForeName>S</ForeName>
+                    <Initials>S</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Merck &amp; Co., Inc., Kenilworth, NJ, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Hwang</LastName>
+                    <ForeName>P</ForeName>
+                    <Initials>P</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Merck &amp; Co., Inc., Kenilworth, NJ, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Zhao</LastName>
+                    <ForeName>Y</ForeName>
+                    <Initials>Y</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Merck &amp; Co., Inc., Kenilworth, NJ, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Robertson</LastName>
+                    <ForeName>M N</ForeName>
+                    <Initials>MN</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Merck &amp; Co., Inc., Kenilworth, NJ, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <DataBankList CompleteYN="Y">
+                <DataBank>
+                    <DataBankName>ClinicalTrials.gov</DataBankName>
+                    <AccessionNumberList>
+                        <AccessionNumber>NCT01716156</AccessionNumber>
+                    </AccessionNumberList>
+                </DataBank>
+            </DataBankList>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+                <PublicationType UI="D016449">Randomized Controlled Trial</PublicationType>
+                <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2016</Year>
+                <Month>06</Month>
+                <Day>12</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>England</Country>
+            <MedlineTA>J Viral Hepat</MedlineTA>
+            <NlmUniqueID>9435672</NlmUniqueID>
+            <ISSNLinking>1352-0504</ISSNLinking>
+        </MedlineJournalInfo>
+        <ChemicalList>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance UI="D000998">Antiviral Agents</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance UI="D011810">Quinoxalines</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>49717AWG6K</RegistryNumber>
+                <NameOfSubstance UI="D012254">Ribavirin</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>8YE81R1X1J</RegistryNumber>
+                <NameOfSubstance UI="C578009">MK-5172</NameOfSubstance>
+            </Chemical>
+        </ChemicalList>
+        <CitationSubset>IM</CitationSubset>
+        <MeshHeadingList>
+            <MeshHeading>
+                <DescriptorName UI="D000328" MajorTopicYN="N">Adult</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D000998" MajorTopicYN="N">Antiviral Agents</DescriptorName>
+                <QualifierName UI="Q000009" MajorTopicYN="N">adverse effects</QualifierName>
+                <QualifierName UI="Q000627" MajorTopicYN="Y">therapeutic use</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D064420" MajorTopicYN="N">Drug-Related Side Effects and Adverse Reactions</DescriptorName>
+                <QualifierName UI="Q000453" MajorTopicYN="N">epidemiology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D005260" MajorTopicYN="N">Female</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D005838" MajorTopicYN="Y">Genotype</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D016174" MajorTopicYN="N">Hepacivirus</DescriptorName>
+                <QualifierName UI="Q000145" MajorTopicYN="Y">classification</QualifierName>
+                <QualifierName UI="Q000235" MajorTopicYN="Y">genetics</QualifierName>
+                <QualifierName UI="Q000302" MajorTopicYN="N">isolation &amp; purification</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D019698" MajorTopicYN="N">Hepatitis C, Chronic</DescriptorName>
+                <QualifierName UI="Q000188" MajorTopicYN="Y">drug therapy</QualifierName>
+                <QualifierName UI="Q000821" MajorTopicYN="N">virology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D008297" MajorTopicYN="N">Male</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D008875" MajorTopicYN="N">Middle Aged</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D011810" MajorTopicYN="N">Quinoxalines</DescriptorName>
+                <QualifierName UI="Q000009" MajorTopicYN="N">adverse effects</QualifierName>
+                <QualifierName UI="Q000627" MajorTopicYN="Y">therapeutic use</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D012008" MajorTopicYN="N">Recurrence</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D012254" MajorTopicYN="N">Ribavirin</DescriptorName>
+                <QualifierName UI="Q000009" MajorTopicYN="N">adverse effects</QualifierName>
+                <QualifierName UI="Q000627" MajorTopicYN="Y">therapeutic use</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D000072230" MajorTopicYN="N">Sustained Virologic Response</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D016896" MajorTopicYN="N">Treatment Outcome</DescriptorName>
+            </MeshHeading>
+        </MeshHeadingList>
+        <KeywordList Owner="NOTNLM">
+            <Keyword MajorTopicYN="Y">adverse event</Keyword>
+            <Keyword MajorTopicYN="Y">clinical trial</Keyword>
+            <Keyword MajorTopicYN="Y">efficacy</Keyword>
+            <Keyword MajorTopicYN="Y">randomized</Keyword>
+            <Keyword MajorTopicYN="Y">resistance</Keyword>
+        </KeywordList>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="received">
+                <Year>2016</Year>
+                <Month>02</Month>
+                <Day>29</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="accepted">
+                <Year>2016</Year>
+                <Month>04</Month>
+                <Day>10</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2016</Year>
+                <Month>6</Month>
+                <Day>14</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2016</Year>
+                <Month>6</Month>
+                <Day>14</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2017</Year>
+                <Month>11</Month>
+                <Day>4</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">27291249</ArticleId>
+            <ArticleId IdType="doi">10.1111/jvh.12552</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
+
+
+<PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+        <PMID Version="1">25266289</PMID>
+        <DateCompleted>
+            <Year>2015</Year>
+            <Month>09</Month>
+            <Day>01</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2016</Year>
+            <Month>11</Month>
+            <Day>25</Day>
+        </DateRevised>
+        <Article PubModel="Print-Electronic">
+            <Journal>
+                <ISSN IssnType="Electronic">1537-6591</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <Volume>59</Volume>
+                    <Issue>12</Issue>
+                    <PubDate>
+                        <Year>2014</Year>
+                        <Month>Dec</Month>
+                        <Day>15</Day>
+                    </PubDate>
+                </JournalIssue>
+                <Title>Clinical infectious diseases : an official publication of the Infectious Diseases Society of America</Title>
+                <ISOAbbreviation>Clin. Infect. Dis.</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>Virologic resistance analysis from a phase 2 study of MK-5172 combined with pegylated interferon/ribavirin in treatment-naive patients with hepatitis C virus genotype 1 infection.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>1657-65</MedlinePgn>
+            </Pagination>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1093/cid/ciu696</ELocationID>
+            <Abstract>
+                <AbstractText Label="BACKGROUND" NlmCategory="BACKGROUND">Virologic failure following treatment of hepatitis C virus (HCV) genotype 1 with direct-acting antiviral agents is often accompanied by the emergence of resistant variants. MK-5172 is an investigational once-daily protease inhibitor. We analyzed variants in treatment-naive noncirrhotic patients with virologic failure on MK-5172 (100-800 mg/day) plus pegylated interferon alfa/ribavirin (peg-IFN/RBV) during a phase 2 trial.</AbstractText>
+                <AbstractText Label="METHODS" NlmCategory="METHODS">Population and selective clonal sequencing were performed at baseline and at virologic failure in the 4 MK-5172 dosing arms. MK-5172 activity was determined using a mutant replicon assay.</AbstractText>
+                <AbstractText Label="RESULTS" NlmCategory="RESULTS">Six of 266 (2.3%) MK-5172 recipients satisfied prespecified criteria for virologic failure, all with genotype 1a infection. Five patients with virologic failure were in the MK-5172 100-mg arm, including 4 patients with low plasma MK-5172 levels documented during triple therapy. Variants associated with &gt;4-fold loss of potency were detected in 3 of the 4 patients with genotype 1a breakthrough while on MK-5172. The fifth patient had undetectable HCV-RNA levels at the end of triple therapy but subsequently broke through during the peg-IFN/RBV tail 16 weeks after completion of MK-5172. Three patients had D168 variants at virologic failure, including 2 with the D168A variant associated with a 95-fold loss of potency. The sole apparent relapse was actually a genotype 3a reinfection in the MK-5172 200-mg group.</AbstractText>
+                <AbstractText Label="CONCLUSIONS" NlmCategory="CONCLUSIONS">Virologic failure occurred uncommonly (6/266 [2.3%]) in MK-5172/peg-IFN/RBV recipients. The most prevalent treatment-emergent variants were detected at the D168 locus. D168A variants conferring approximately 2-log reduction in MK-5172 susceptibility emerged in 2 of the 4 evaluable patients with genotype 1a breakthrough. Clinical Trials Registration. NCT01353911.</AbstractText>
+                <CopyrightInformation>© The Author 2014. Published by Oxford University Press on behalf of the Infectious Diseases Society of America. All rights reserved. For Permissions, please e-mail: journals.permissions@oup.com.</CopyrightInformation>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Howe</LastName>
+                    <ForeName>Anita Y M</ForeName>
+                    <Initials>AY</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Merck Research Laboratories, West Point.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Black</LastName>
+                    <ForeName>Stuart</ForeName>
+                    <Initials>S</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Merck Research Laboratories, West Point.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Curry</LastName>
+                    <ForeName>Stephanie</ForeName>
+                    <Initials>S</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Merck Research Laboratories, West Point.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Ludmerer</LastName>
+                    <ForeName>Steven W</ForeName>
+                    <Initials>SW</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Merck Research Laboratories, West Point.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Liu</LastName>
+                    <ForeName>Rong</ForeName>
+                    <Initials>R</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Merck Research Laboratories, West Point.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Barnard</LastName>
+                    <ForeName>Richard J O</ForeName>
+                    <Initials>RJ</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Merck Research Laboratories, West Point.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Newhard</LastName>
+                    <ForeName>William</ForeName>
+                    <Initials>W</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Merck Research Laboratories, West Point.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Hwang</LastName>
+                    <ForeName>Peggy M T</ForeName>
+                    <Initials>PM</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Merck Research Laboratories, West Point.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Nickle</LastName>
+                    <ForeName>David</ForeName>
+                    <Initials>D</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Merck Research Laboratories, West Point.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Gilbert</LastName>
+                    <ForeName>Christopher</ForeName>
+                    <Initials>C</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Merck Research Laboratories, West Point.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Caro</LastName>
+                    <ForeName>Luzelena</ForeName>
+                    <Initials>L</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Merck Research Laboratories, West Point.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>DiNubile</LastName>
+                    <ForeName>Mark J</ForeName>
+                    <Initials>MJ</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Office of the Chief Medical Officer, Merck, North Wales, Pennsylvania.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Mobashery</LastName>
+                    <ForeName>Niloufar</ForeName>
+                    <Initials>N</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Merck Research Laboratories, West Point.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <DataBankList CompleteYN="Y">
+                <DataBank>
+                    <DataBankName>ClinicalTrials.gov</DataBankName>
+                    <AccessionNumberList>
+                        <AccessionNumber>NCT01353911</AccessionNumber>
+                    </AccessionNumberList>
+                </DataBank>
+            </DataBankList>
+            <PublicationTypeList>
+                <PublicationType UI="D017427">Clinical Trial, Phase II</PublicationType>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+                <PublicationType UI="D016449">Randomized Controlled Trial</PublicationType>
+                <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2014</Year>
+                <Month>09</Month>
+                <Day>28</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>United States</Country>
+            <MedlineTA>Clin Infect Dis</MedlineTA>
+            <NlmUniqueID>9203213</NlmUniqueID>
+            <ISSNLinking>1058-4838</ISSNLinking>
+        </MedlineJournalInfo>
+        <ChemicalList>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance UI="D011810">Quinoxalines</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>49717AWG6K</RegistryNumber>
+                <NameOfSubstance UI="D012254">Ribavirin</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>8YE81R1X1J</RegistryNumber>
+                <NameOfSubstance UI="C578009">MK-5172</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>9008-11-1</RegistryNumber>
+                <NameOfSubstance UI="D007372">Interferons</NameOfSubstance>
+            </Chemical>
+        </ChemicalList>
+        <CitationSubset>IM</CitationSubset>
+        <CommentsCorrectionsList>
+            <CommentsCorrections RefType="CommentIn">
+                <RefSource>Clin Infect Dis. 2014 Dec 15;59(12):1675-7</RefSource>
+                <PMID Version="1">25266288</PMID>
+            </CommentsCorrections>
+        </CommentsCorrectionsList>
+        <MeshHeadingList>
+            <MeshHeading>
+                <DescriptorName UI="D024882" MajorTopicYN="N">Drug Resistance, Viral</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D005838" MajorTopicYN="N">Genotype</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D006526" MajorTopicYN="N">Hepatitis C</DescriptorName>
+                <QualifierName UI="Q000188" MajorTopicYN="Y">drug therapy</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D007372" MajorTopicYN="N">Interferons</DescriptorName>
+                <QualifierName UI="Q000627" MajorTopicYN="Y">therapeutic use</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D011810" MajorTopicYN="N">Quinoxalines</DescriptorName>
+                <QualifierName UI="Q000627" MajorTopicYN="Y">therapeutic use</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D012254" MajorTopicYN="N">Ribavirin</DescriptorName>
+                <QualifierName UI="Q000627" MajorTopicYN="Y">therapeutic use</QualifierName>
+            </MeshHeading>
+        </MeshHeadingList>
+        <KeywordList Owner="NOTNLM">
+            <Keyword MajorTopicYN="N">MK-5172</Keyword>
+            <Keyword MajorTopicYN="N">hepatitis C genotype 1</Keyword>
+            <Keyword MajorTopicYN="N">resistance-associated variants</Keyword>
+            <Keyword MajorTopicYN="N">treatment-naive</Keyword>
+        </KeywordList>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2014</Year>
+                <Month>10</Month>
+                <Day>1</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2014</Year>
+                <Month>10</Month>
+                <Day>1</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2015</Year>
+                <Month>9</Month>
+                <Day>2</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">25266289</ArticleId>
+            <ArticleId IdType="pii">ciu696</ArticleId>
+            <ArticleId IdType="doi">10.1093/cid/ciu696</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
 </Publications>
