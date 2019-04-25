@@ -306,11 +306,11 @@ function ensureAlmtRasObject(rasId, gene, structure, almtName) {
 		});
 	}
 }
-/*
+
 loadResistanceFindings("EBR", "elbasvir", "NS5A", 
 		{"Pooled1": ["C-SURFER", "C-EDGE TN", "C-EDGE CO-INFECTION", "C-EDGE TE", "C-WORTHY", "C-SALVAGE"], 
 	 "Pooled2": ["C-SURFER", "C-EDGE CO-INFECTION", "C-EDGE TN", "C-EDGE TE", "C-WORTHY", "C-SALVAGE"], 
-	 "Pooled3": ["C‐SCAPE ", "C-EDGE TN", "C-EDGE CO-INFECTION", "C-EDGE CO-STAR", "C‐EDGE IBLD", "C-CORAL", "C-EDGE TE", "C‐EDGE Head‐2‐head"]});
+	 "Pooled3": ["C-SCAPE", "C-EDGE TN", "C-EDGE CO-INFECTION", "C-EDGE CO-STAR", "C-EDGE IBLD", "C-CORAL", "C-EDGE TE", "C-EDGE Head-2-head"]});
 loadResistanceFindings("GLE", "glecaprevir", "NS3", {"Surveyor-1_and_2":["Surveyor-1", "Surveyor-2"], "Pooled analysis": ["Surveyor-1", "Surveyor-2", "Endurance-1", "Endurance-2", "Endurance-3", "Endurance-4", "Expedition-1", "Expedition-2"]});
 loadResistanceFindings("PIB", "pibrentasvir", "NS5A", {"Surveyor-1_and_2":["Surveyor-1", "Surveyor-2"], "Pooled": ["Surveyor-1", "Surveyor-2", "Endurance-1", "Endurance-2", "Endurance-3", "Endurance-4", "Expedition-1", "Expedition-2"]});
 loadResistanceFindings("VEL", "velpatasvir", "NS5A", {"Pooled analysis": ["ASTRAL-1", "ASTRAL-2", "ASTRAL-3", "ASTRAL-5", "POLARIS-2", "POLARIS-3"]});
@@ -331,10 +331,10 @@ loadResistanceFindings("DCV", "daclatasvir", "NS5A", {
 	"Pooled3": ["NCT01257204", "NCT01359644", "NCT02032875", "NCT02032888", "NCT01616524"]});
 
 loadResistanceFindings("LDV", "ledipasvir", "NS5A", {"Pooled1": ["ION-1", "ION-2", "ION-3", "ELECTRON", "LONESTAR"]});
-*/
+
 loadResistanceFindings("GZR", "grazoprevir", "NS3", {
 	"Pooled1": ["NCT01710501", "NCT01716156"],
 	"Pooled2": ["C-SURFER", "C-EDGE TN", "C-EDGE CO-INFECTION", "C-EDGE TE", "C-WORTHY", "C-SALVAGE"],
-	"Pooled3": ["C-SCAPE", "C-EDGE TN", "C-EDGE CO-INFECTION", "C-EDGE CO-STAR", "C‐EDGE IBLD", "C-CORAL", "C-EDGE TE", "C‐EDGE Head‐2‐head"]});
+	"Pooled3": ["C-SCAPE", "C-EDGE TN", "C-EDGE CO-INFECTION", "C-EDGE CO-STAR", "C-EDGE IBLD", "C-CORAL", "C-EDGE TE", "C-EDGE Head-2-head"]});
 
 
