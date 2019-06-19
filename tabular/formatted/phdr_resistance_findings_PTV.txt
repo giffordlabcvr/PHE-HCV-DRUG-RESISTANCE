@@ -1,0 +1,145 @@
+gene	substitution	virusGenotype	baselineRas	rxEmergentRas	rasContext	drug	vitroOrVivo	ec50	clinicalTrialName	trialRegimen	regimenNumbers	trialCohort	trialNotes / no of patients	pubmed	Weight of evidence		
+NS3	168H	4	No	Yes	NA	PTV	vivo		Case report*	PTV_r_OBV_RBV	non cirrhotic		case report	30882744			
+NS3	168V	2a	no	yes	NA	PTV	vivo		Real world study*	PTV_r_OBV_RBV	non cirrhotic		real world study	30485638			
+NS3	122R	1b	yes	no	NA	PTV	vivo		Case report*	PTV_r_OBV_DSV_RBV	non cirrhotic; TN			29575060			
+NS3	168V	1a	no	yes	NA	PTV	vivo		Pooled1	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN			24795200			
+NS3	168A	1a	yes	no	NA	PTV	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711			
+NS3	168V	1a	no	yes	none	PTV	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711			
+NS3	56H+168Y	1a	no	yes	none	PTV	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711			
+NS3	155K+168V	1a	no	yes	none	PTV	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711			
+NS3	36M+155K	1a	no	yes	none	PTV	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711			
+NS3	168Y	1a	no	yes	none	PTV	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711			
+NS3	36A+155K	1a	no	yes	none	PTV	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711			
+NS3	36M+155K	1a	no	yes	none	PTV	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711			
+NS3	56H+168Y	1b	no	yes	none	PTV	vivo		PEARL-I	PTV_r_OBV	non cirrhotic and cirrhotic; TE			26170136			
+NS3	168V	1b	no	yes	none	PTV	vivo		PEARL-I	PTV_r_OBV	non cirrhotic and cirrhotic; TE			26170136			
+NS3	168V	4a					vitro	313						26282418			
+NS3	56H	4d					vitro	8						26282418			
+NS3	168V	4d					vitro	313						26282418			
+NS3	56H+168V	4d					vitro	12,533						26282418			
+NS3	56H+168V	4d	no	yes	NA	NA	vivo		PEARL-I	PTV_r_OBV	TN; non cirrhotic			26282418			
+NS3	168V	4d	no	yes	NA	NA	vivo		PEARL-I	PTV_r_OBV	TN; non cirrhotic			26282418			
+NS3	168V	1b	no	yes	none	NA	vivo		Pooled3	PTV_r_OBV	TN&TE: non cirrhotic and cirrhotic			26643326			
+NS3	56H+168V	1b	no	yes	none	NA	vivo		Pooled3	PTV_r_OBV	TN&TE: non cirrhotic and cirrhotic			26643326			
+NS3	168A	1b					vitro	27						26643326			
+NS3	168E	1b					vitro	4						26643326			
+NS3	168V	1b					vitro	159						26643326			
+NS3	56H+168A	1b					vitro	700						26643326			
+NS3	56H+168V	1b					vitro	2,472						26643326			
+NS3	80K	1a	yes	no			vivo		Pooled2	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	TN & TE; noncirrhotic and cirrhotic		Pooled	EASL_2016_Abs_LBP503			
+NS3	80K+155K	1a	yes	no			vivo		Pooled2	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	TN & TE; noncirrhotic and cirrhotic		Pooled	EASL_2016_Abs_LBP503			
+NS3	155K	1a	yes	no			vivo	PrOD+RBV	TURQUOISE-II	PTV_r_OBV_DSV	prev PR; cirrhosis		Pooled	EASL_2016_Abs_LBP503			
+NS3	168V	1a	no	yes			vivo		SAPPHIRE-II	PTV_r_OBV_DSV_RBV	TE, non cirrhotic			24720679			
+NS3	56H+168A	1b	no	yes			vivo		SAPPHIRE-II	PTV_r_OBV_DSV_RBV	TE, non cirrhotic			24720679			
+NS3	168V	1a	no	yes			vivo		TURQUOISE-I	PTV_r_OBV_DSV_RBV	TE, cirrhotic 			25706092			
+NS3	155K	1a	no	yes			vivo		TURQUOISE-I	PTV_r_OBV_DSV_RBV	TE, cirrhotic 			25706092			
+NS3	168V	1b	no	yes			vivo		M12-536	PTV_r_OBV	TE, cirrhotic and noncirrhoitc			25644279			
+NS3	168V	2	no	yes			vivo		M12-536	PTV_r_OBV	TE, cirrhotic and noncirrhoitc			25644279			
+NS3	168Y	2	no	yes			vivo		M12-536	PTV_r_OBV	TE, cirrhotic and noncirrhoitc			25644279			
+NS3	36A	1a					vitro	3						25451053			
+NS3	36L	1a					vitro	2						25451053			
+NS3	36M	1a					vitro	2						25451053			
+NS3	43L	1a					vitro	20						25451053			
+NS3	80K	1a					vitro	3						25451053			
+NS3	80L	1a					vitro	2						25451053			
+NS3	80R	1a					vitro	2						25451053			
+NS3	155G	1a					vitro	14						25451053			
+NS3	155K	1a					vitro	37						25451053			
+NS3	155S	1a					vitro	7						25451053			
+NS3	155T	1a					vitro	7						25451053			
+NS3	155W	1a					vitro	11						25451053			
+NS3	156T	1a					vitro	17						25451053			
+NS3	168A	1a					vitro	50						25451053			
+NS3	168E	1a					vitro	14						25451053			
+NS3	168H	1a					vitro	62						25451053			
+NS3	168N	1a					vitro	13						25451053			
+NS3	168V	1a					vitro	96						25451053			
+NS3	168Y	1a					vitro	219						25451053			
+NS3	36M+155K	1a					vitro	79						25451053			
+NS3	80K+155K	1a					vitro	19						25451053			
+NS3	155K	1b					vitro	40						25451053			
+NS3	156T	1b					vitro	7						25451053			
+NS3	168A	1b					vitro	27						25451053			
+NS3	168E	1b					vitro	4						25451053			
+NS3	168H	1b					vitro	76						25451053			
+NS3	168T	1b					vitro	49						25451053			
+NS3	168V	1b					vitro	159						25451053			
+NS3	168Y	1b					vitro	337						25451053			
+NS3	156T	1a					vitro	145-224						30964552			
+NS3	156L	2a					vitro	39-70						30964552			
+NS3	156V	2a					vitro	73						30964552			
+NS3	156L	3a					vitro	16-22						30964552			
+NS3	156T	3a					vitro	>11						30964552			
+NS3	156V	3a					vitro	>11						30964552			
+NS3	80K	1a					vitro	2						30395912			
+NS3	80R	1b					vitro	2						30395912			
+NS3	80K	3a					vitro	3						30395912			
+NS3	80R	4a					vitro	2						30395912			
+NS3	155K	1a	no	yes			vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520			
+NS3	155K	1a					vitro	10-100						29146520			
+NS3	168V	1a	no	yes			vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520			
+NS3	168V	1a					vitro	10-100						29146520			
+NS3	56H	1b	no	yes			vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520			
+NS3	168V	1b	no	yes			vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520			
+NS3	168V	1b					vitro	>100						29146520			
+NS3	56H	4	no	yes			vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520			
+NS3	168V	4	no	yes			vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520			
+NS3	168V	4					vitro	>100						29146520			
+NS3	123Q	2a					vitro	2.9						27021330			
+NS3	132V	2a					vitro	2.6						27021330			
+NS3	156S	2a					vitro	2.7						27021330			
+NS3	177V	2a					vitro	2						27021330			
+NS3	54S+156S	2a					vitro	2.3						27021330			
+NS3	54S+156S+177V	2a					vitro	3.7						27021330			
+NS3	156S+177V	2a					vitro	2						27021330			
+NS3	156G	3a					vitro	3.5						27021330			
+NS3	168R	3a					vitro	15.2						27021330			
+NS3	156S	4a					vitro	6						27021330			
+NS3	156S	5a					vitro	5.8						27021330			
+NS3	155K	5a					vitro	45.6						27021330			
+NS3	36A	6a					vitro	3						27021330			
+NS3	43C	6a					vitro	2.5						27021330			
+NS3	158I	6a					vitro	2.9						27021330			
+NS3	18V+155K	5a					vitro	14.1						27021330			
+NS3	30V+156S	5a					vitro	5.7						27021330			
+NS3	54S+155K	5a					vitro	14						27021330			
+NS3	155K+168R	3a					vitro	2.6						27021330			
+NS3	117L+156S	5a					vitro	3.7						27021330			
+NS3	54A+156S	6a					vitro	2.7						27021330			
+NS3	54A+158I	6a					vitro	3.8						27021330			
+NS3	166S	3a	yes	no			vivo		NCT02068222	PIB_PTV_r_RBV		Phase 2, non cirrhotic		26778412			
+NS3	155K	4a					vitro	45						26392503			
+NS3	155K	5a					vitro	46						26392503			
+NS3	155K	6a					vitro	7						26392503			
+NS3	155K	1a					vitro	95						26392503			
+NS3	155K	2a					vitro	4						26392503			
+NS3	155Q	1a					vitro	30						26392503			
+NS3	155T	6a					vitro	2						26392503			
+NS3	156G	1a					vitro	4						26392503			
+NS3	156G	2a					vitro	2						26392503			
+NS3	156G	3a					vitro	2						26392503			
+NS3	156G	4a					vitro	2						26392503			
+NS3	156S	1a					vitro	9						26392503			
+NS3	156S	2a					vitro	2						26392503			
+NS3	156S	3a					vitro	2						26392503			
+NS3	156S	4a					vitro	8						26392503			
+NS3	156S	5a					vitro	6						26392503			
+NS3	168A	1a					vitro	951						26392503			
+NS3	168A	2a					vitro	19						26392503			
+NS3	168A	5a					vitro	223						26392503			
+NS3	168A	6a					vitro	109						26392503			
+NS3	168E	2a					vitro	6						26392503			
+NS3	168E	5a					vitro	15						26392503			
+NS3	168E	6a					vitro	3						26392503			
+NS3	168G	2a					vitro	5						26392503			
+NS3	168G	6a					vitro	22						26392503			
+NS3	168H	2a					vitro	23						26392503			
+NS3	168H	3a					vitro	2						26392503			
+NS3	168H	5a					vitro	114						26392503			
+NS3	168N	2a					vitro	3						26392503			
+NS3	168N	5a					vitro	4						26392503			
+NS3	168N	6a					vitro	3						26392503			
+NS3	168V	2a					vitro	29						26392503			
+NS3	168V	3a					vitro	4						26392503			
+NS3	168V	5a					vitro	254						26392503			
+NS3	168V	6a					vitro	165						26392503			

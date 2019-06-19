@@ -1,0 +1,45 @@
+gene	substitution	virusGenotype	baselineRas	rxEmergentRas	rasContext	drug	vitroOrVivo	ec50	clinicalTrialName	trialRegimen	regimenNumbers	trialCohort	trialNotes / no of patients	pubmed	Weight of evidence
+NS5B	159F+316N	1b	yes	no	NA	DSV	vivo		Case report*	PTV_r_OBV_DSV	non cirrhotic		case report	29575060	
+NS5B	556G	1b	no	yes	159F+316N	DSV	vivo		Case report*	PTV_r_OBV_DSV	non cirrhotic		case report	29575060	
+NS5B	556G	1a	no	yes	NA	DSV	vivo		Pooled1	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN			24795200	
+NS5B	556G	1a	yes	yes	none	DSV	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711	
+NS5B	414T+556G	1a	no	yes	none	DSV	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711	
+NS5B	316Y+556G	1a	yes	no	NA	DSV	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711	
+NS5B	554S+556G	1a	no	yes	none	DSV	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711	
+NS5B	559G	1a	no	yes	none	DSV	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711	
+NS5B	553T	1a	no	yes	none	DSV	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711	
+NS5B	414I	1a	yes	no	NA	DSV	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711	
+NS5B	558R	1a	no	yes	M414I	DSV	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711	
+NS5B	316N+556G	1b	yes	no	NA	DSV	vivo		GARNET	PTV_r_OBV_DSV	non cirrhotic; TN  			28416221	
+NS5B	556R	1a	yes	no	NA	DSV	vivo		Pooled2	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	TN & TE; noncirrhotic and cirrhotic		Pooled	EASL_2016_Abs_LBP503	
+NS5B	556G	1a	no	yes		DSV	vivo		SAPPHIRE-II	PTV_r_OBV_DSV_RBV	TE, non cirrhotic			24720679	
+NS5B	316N+556G	1b	no	yes		DSV	vivo		SAPPHIRE-II	PTV_r_OBV_DSV_RBV	TE, non cirrhotic			24720679	
+NS5B	556G	1a	no	yes		DSV	vivo		TURQUOISE-I	PTV_r_OBV_DSV_RBV	TE, cirrhotic 			25706092	
+NS5B	556G	1a	no	yes		DSV	vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520	
+NS5B	316N	1b	no	yes		DSV	vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520	
+NS5B	316N	1b				DSV	vitro	2-20						29146520	
+NS5B	556G	1b				DSV	vitro	10-20						29146520	
+NS5B	556G	1b	no	yes		DSV	vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520	
+NS5B	316Y	1a				DSV	vitro	1472						25534735	
+NS5B	414T	1a				DSV	vitro	32						25534735	
+NS5B	448C	1a				DSV	vitro	940						25534735	
+NS5B	448H	1a				DSV	vitro	975						25534735	
+NS5B	556G	1a				DSV	vitro	30						25534735	
+NS5B	316N	1b				DSV	vitro	5						25534735	
+NS5B	316Y	1b				DSV	vitro	1569						25534735	
+NS5B	368T	1b				DSV	vitro	139						25534735	
+NS5B	411S	1b				DSV	vitro	84						25534735	
+NS5B	414T	1b				DSV	vitro	47						25534735	
+NS5B	448C	1b				DSV	vitro	414						25534735	
+NS5B	448H	1b				DSV	vitro	46						25534735	
+NS5B	553V	1b				DSV	vitro	120						25534735	
+NS5B	556G	1b				DSV	vitro	11						25534735	
+NS5B	395G	1a				DSV	vitro	10						25534735	
+NS5B	444K	1a				DSV	vitro	23						25534735	
+NS5B	556N	1a				DSV	vitro	29						25534735	
+NS5B	565F	1a				DSV	vitro	17						25534735	
+NS5B	445F	1b				DSV	vitro	16						25534735	
+NS5B	451S	1b				DSV	vitro	16						25534735	
+NS5B	585V	1b				DSV	vitro	16						25534735	
+NS5B	495A	1b				DSV	vitro	2.4						25534735	
+NS5B	316N+556G	1b	yes	yes		DSV	vivo		Case report*	PTV_r_OBV_DSV_RBV			case report	27670383	

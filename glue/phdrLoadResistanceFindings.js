@@ -73,7 +73,7 @@ function loadResistanceFindings(shortname, drugId, gene, pooledMap) {
 		});
 		
 		var vitroOrVivo = rfObj.vitroOrVivo.trim().replace(" ", "").toLowerCase();
-		if(vitroOrVivo == "invitro" || vitroOrVivo == "both") {
+		if(vitroOrVivo == "invitro" || vitroOrVivo == "vitro" || vitroOrVivo == "both") {
 			glue.command(["create", "custom-table-row", "phdr_in_vitro_result", rfId]);
 			glue.inMode("custom-table-row/phdr_in_vitro_result/"+rfId, function() {
 				glue.command(["set", "link-target", "phdr_resistance_finding", "custom-table-row/phdr_resistance_finding/"+rfId]);
@@ -81,7 +81,7 @@ function loadResistanceFindings(shortname, drugId, gene, pooledMap) {
 				var ec50Min;
 				var ec50Max;
 				if(ec50 == "NA") {
-					error(rfObj, "Resistance finding with in vitro result does not report EC50 log FC");
+					error(rfObj, "Resistance finding with in vitro result does not report EC50 FC");
 				} else if(ec50.indexOf("±") > 0) {
 					var midpoint = parseFloat(ec50.substring(0, ec50.indexOf("±")));
 					var radius = parseFloat(ec50.substring(ec50.indexOf("±")+1));
@@ -103,7 +103,7 @@ function loadResistanceFindings(shortname, drugId, gene, pooledMap) {
 				} else if(ec50.indexOf("-") > 0) {
 					var bits = ec50.split("-");
 					if(bits.length != 2) {
-						error(rfObj, "Malformed EC50 log FC: "+rfObj.ec50);
+						error(rfObj, "Malformed EC50 FC: "+rfObj.ec50);
 					}
 					ec50Min = parseFloat(bits[0]);
 					ec50Max = parseFloat(bits[1]);
@@ -112,10 +112,10 @@ function loadResistanceFindings(shortname, drugId, gene, pooledMap) {
 					ec50Max = parseFloat(ec50);
 				}
 				if(ec50Min != null && isNaN(parseFloat(ec50Min))) {
-					error(rfObj, "Malformed minimum EC50 log FC: "+ec50Min);
+					error(rfObj, "Malformed minimum EC50 FC: "+ec50Min);
 				}
 				if(ec50Max != null && isNaN(parseFloat(ec50Max))) {
-					error(rfObj, "Malformed maximum EC50 log FC: "+ec50Max);
+					error(rfObj, "Malformed maximum EC50 FC: "+ec50Max);
 				}
 				if(ec50Min != null) {
 					glue.command(["set", "field", "ec50_min", parseFloat(ec50Min)]);
@@ -161,7 +161,7 @@ function loadResistanceFindings(shortname, drugId, gene, pooledMap) {
 				}
 			});
 		}
-		if(vitroOrVivo == "invivo" || vitroOrVivo == "both") {
+		if(vitroOrVivo == "invivo" || vitroOrVivo == "vivo" || vitroOrVivo == "both") {
 			categoryFactors.anyInVivo = true;
 			if(categoryFactors.inVivoBaseline == null) {
 				categoryFactors.inVivoBaseline = false;
@@ -336,5 +336,16 @@ loadResistanceFindings("GZR", "grazoprevir", "NS3", {
 	"Pooled1": ["NCT01710501", "NCT01716156"],
 	"Pooled2": ["C-SURFER", "C-EDGE TN", "C-EDGE CO-INFECTION", "C-EDGE TE", "C-WORTHY", "C-SALVAGE"],
 	"Pooled3": ["C-SCAPE", "C-EDGE TN", "C-EDGE CO-INFECTION", "C-EDGE CO-STAR", "C-EDGE IBLD", "C-CORAL", "C-EDGE TE", "C-EDGE Head-2-head"]});
+
+
+loadResistanceFindings("PTV", "paritaprevir", "NS3", {"Pooled1": ["PEARL-III", "PEARL-IV"], 
+	"Pooled2": ["SAPPHIRE-II", "TURQUOISE-II", "PEARL-IV"], 
+	"Pooled3": ["M12-536", "GIFT-I"]});
+loadResistanceFindings("OBV", "ombitasvir", "NS5A", {"Pooled1": ["PEARL-III", "PEARL-IV"], 
+	"Pooled2": ["SAPPHIRE-II", "TURQUOISE-II", "PEARL-IV"], 
+	"Pooled3": ["M12-536", "GIFT-I"]});
+loadResistanceFindings("DSV", "dasabuvir", "NS5B", {"Pooled1": ["PEARL-III", "PEARL-IV"], 
+	"Pooled2": ["SAPPHIRE-II", "TURQUOISE-II", "PEARL-IV"], 
+	"Pooled3": ["M12-536", "GIFT-I"]});
 
 

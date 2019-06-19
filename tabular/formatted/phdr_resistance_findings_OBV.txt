@@ -1,0 +1,63 @@
+gene	substitution	virusGenotype	baselineRas	rxEmergentRas	rasContext	vitroOrVivo	ec50	clinicalTrialName	trialRegimen	regimenNumbers	trialCohort	trialNotes / no of patients	pubmed	Weight of evidence	
+NS5A	28V	4	Yes	No	NA	vivo		Case report*	PTV_r_OBV_DSV_RBV	non cirrh		case report	30882744		
+NS5A	93C	4	Yes	No	NA	vivo		Case report*	PTV_r_OBV_DSV_RBV	non cirrh			30882744		
+NS5A	31M	2a	yes	no	NA	vivo		Real world*	PTV_r_OBV_DSV_RBV	non cirrh			30485638		
+NS5A	24S	2a	no	yes	L31M+C92S	vivo		Real world*	PTV_r_OBV_DSV_RBV	non cirrh			30485638		
+NS5A	28S	2a	no	yes	L31M 	vivo		Real world*	PTV_r_OBV_DSV_RBV	non cirrh			30485638		
+NS5A	93H	1b	no	yes	none	vivo		Case report*	PTV_r_OBV_DSV 	non cirrh		case report	29575060		
+NS5A	28T	1a	no	yes	NA	vivo		Pooled1	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN			24795200		
+NS5A	30R	1a	no	yes	NA	vivo		Pooled1	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN			24795200		
+NS5A	28V	1a	yes	no	NA	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711		
+NS5A	30R	1a	yes	yes	none	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711		
+NS5A	31M	1a	yes	no	NA	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711		
+NS5A	28T+58P	1a	no	yes	NA	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711		
+NS5A	93N	1a	yes	no	NA	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711		
+NS5A	28V+30K	1a	no	yes	NA	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711		
+NS5A	28T	1a	no	yes	M28V	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711		
+NS5A	28T+30R	1a	no	yes	NA	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711		
+NS5A	93H	1b	yes	yes	NA	vivo		PEARL-I	PTV_r_OBV 	non cirrhotic and cirrhotic; TE			26170136		
+NS5A	58S	1b	no	yes	Y93H	vivo		PEARL-I	PTV_r_OBV 	non cirrhotic and cirrhotic; TE			26170136		
+NS5A	58S+93H	1b	yes	no	NA	vivo		PEARL-I	PTV_r_OBV 	non cirrhotic and cirrhotic; TE			26170136		
+NS5A	28V	4d	no	yes	NA	vivo		PEARL-I	PTV_r_OBV 	TN; non cirrhotic			26282418		
+NS5A	58P	4d	yes	no	NA	vivo		PEARL-I	PTV_r_OBV 	TN; non cirrhotic			26282418		
+NS5A	28S+31I	4d	no	yes	T58P	vivo		PEARL-I	PTV_r_OBV 	TN; non cirrhotic			26282418		
+NS5A	58S	4d	yes	no	NA	vivo		PEARL-I	PTV_r_OBV 	TN; non cirrhotic			26282418		
+NS5A	28M+30Q	1b	no	no		vivo		Pooled3	PTV_r_OBV 	TN&TE: non cirrhotic and cirrhotic			26643326		
+NS5A	93H	1b	no	yes	L28M+R30Q	vivo		Pooled3	PTV_r_OBV 	TN&TE: non cirrhotic and cirrhotic			26643326		
+NS5A	93H	1b	yes	no		vivo		Pooled3	PTV_r_OBV 	TN&TE: non cirrhotic and cirrhotic			26643326		
+NS5A	58S+93H	1b	yes	no		vivo		Pooled3	PTV_r_OBV 	TN&TE: non cirrhotic and cirrhotic			26643326		
+NS5A	30Q	1b	no	yes	Y93H	vivo		Pooled3	PTV_r_OBV 	TN&TE: non cirrhotic and cirrhotic			26643326		
+NS5A	92M+93H	1b	yes	no		vivo		Pooled3	PTV_r_OBV 	TN&TE: non cirrhotic and cirrhotic			26643326		
+NS5A	92T+93H	1b	yes	no		vivo		Pooled3	PTV_r_OBV 	TN&TE: non cirrhotic and cirrhotic			26643326		
+NS5A	92V+93H	1b	yes	no		vivo		Pooled3	PTV_r_OBV 	TN&TE: non cirrhotic and cirrhotic			26643326		
+NS5A	58S	1b	no	yes	Y93H	vivo		Pooled3	PTV_r_OBV 	TN&TE: non cirrhotic and cirrhotic			26643326		
+NS5A	28M+30Q+93H	1b	yes	no		vivo		Pooled3	PTV_r_OBV 	TN&TE: non cirrhotic and cirrhotic			26643326		
+NS5A	31M+93H	1b	yes	no		vivo		Pooled3	PTV_r_OBV 	TN&TE: non cirrhotic and cirrhotic			26643326		
+NS5A	31V	1b	no	yes	Y93H	vivo		Pooled3	PTV_r_OBV 	TN&TE: non cirrhotic and cirrhotic			26643326		
+NS5A	92E+93H	1b	yes	no		vivo		Pooled3	PTV_r_OBV 	TN&TE: non cirrhotic and cirrhotic			26643326		
+NS5A	31F	1b	no	yes	A92E	vivo		Pooled3	PTV_r_OBV 	TN&TE: non cirrhotic and cirrhotic			26643326		
+NS5A	31M	1b	yes	no	NA	vivo		GARNET	PTV_r_OBV_DSV	non cirrhotic; TN  			28416221		
+NS5A	93C	1b	no	yes	L31M	vivo		GARNET	PTV_r_OBV_DSV	non cirrhotic; TN  			28416221		
+NS5A	93L	1a	yes	no		vivo		Pooled2	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	TN & TE; noncirrhotic and cirrhotic		Pooled	EASL_2016_Abs_LBP503		
+NS5A	58D	1a	yes	no		vivo		Pooled2	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	TN & TE; noncirrhotic and cirrhotic		Pooled	EASL_2016_Abs_LBP503		
+NS5A	28V	1a	yes	no		vivo		Pooled2	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	TN & TE; noncirrhotic and cirrhotic		Pooled	EASL_2016_Abs_LBP503		
+NS5A	30E	1a	yes	no		vivo		Pooled2	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	TN & TE; noncirrhotic and cirrhotic		Pooled	EASL_2016_Abs_LBP503		
+NS5A	30R	1a	yes	no		vivo		Pooled2	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	TN & TE; noncirrhotic and cirrhotic		Pooled	EASL_2016_Abs_LBP503		
+NS5A	93N	1a	yes	no		vivo		Pooled2	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	TN & TE; noncirrhotic and cirrhotic		Pooled	EASL_2016_Abs_LBP503		
+NS5A	28T	1a	yes	no		vivo		Pooled2	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	TN & TE; noncirrhotic and cirrhotic		Pooled	EASL_2016_Abs_LBP503		
+NS5A	28V+30R	1a	yes	no		vivo		Pooled2	PTV_r_OBV_DSV_RBV	TE, cirrhotic		Pooled	EASL_2016_Abs_LBP503		
+NS5A	58L	4a	yes	no		vivo		AGATE-I	PTV_r_OBV_RBV	TE, cirrhotic			28404108		
+NS5A	28M+93H	4a	no	yes	P58L	vivo		AGATE-I	PTV_r_OBV_RBV	TE, cirrhotic			28404108		
+NS5A	93H	1b	no	yes		vivo		SAPPHIRE-II	PTV_r_OBV_DSV_RBV	TE, non cirrhotic			24720679		
+NS5A	28T	1a	no	yes		vivo		TURQUOISE-I	PTV_r_OBV_DSV_RBV	TE, cirrhotic 			25706092		
+NS5A	30R	1a	no	yes		vivo		TURQUOISE-I	PTV_r_OBV_DSV_RBV	TE, cirrhotic 			25706092		
+NS5A	93H	1b	no	yes		vivo		M12-536	PTV_r_OBV	TE, cirrhotic and noncirrhoitc			25644279		
+NS5A	28F	2	no	yes		vivo		M12-536	PTV_r_OBV	TE, cirrhotic and noncirrhoitc			25644279		
+NS5A	28T	1a	no	yes		vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520		
+NS5A	28V	1a	no	yes		vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520		
+NS5A	30H	1a	no	yes		vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520		
+NS5A	30R	1a	no	yes		vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520		
+NS5A	93H	1b	no	yes		vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520		
+NS5A	28V	4	no	yes		vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520		
+NS5A	93H	1b	yes	yes		vivo		Case report*	PTV_r_OBV_DSV_RBV	case report			27670383		
+NS5A	30G	1a	no	yes		vivo		PEARL-IV	PTV_r_OBV_DSV	TN; no cirrhosis			EASL_2016_Abs_LBP503		
