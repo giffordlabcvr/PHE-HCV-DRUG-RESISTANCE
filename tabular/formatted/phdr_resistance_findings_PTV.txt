@@ -80,9 +80,11 @@ NS3	155K	1a					vitro	10-100						29146520
 NS3	168V	1a	no	yes			vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520			
 NS3	168V	1a					vitro	10-100						29146520			
 NS3	56H	1b	no	yes			vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520			
+NS3	56H	1b					vitro	2-20						29146520			
 NS3	168V	1b	no	yes			vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520			
 NS3	168V	1b					vitro	>100						29146520			
 NS3	56H	4	no	yes			vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520			
+NS3	56H	4					vitro	20-100						29146520			
 NS3	168V	4	no	yes			vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520			
 NS3	168V	4					vitro	>100						29146520			
 NS3	123Q	2a					vitro	2.9						27021330			

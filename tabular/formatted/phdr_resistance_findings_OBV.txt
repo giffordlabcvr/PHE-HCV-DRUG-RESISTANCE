@@ -1,12 +1,71 @@
 gene	substitution	virusGenotype	baselineRas	rxEmergentRas	rasContext	vitroOrVivo	ec50	clinicalTrialName	trialRegimen	regimenNumbers	trialCohort	trialNotes / no of patients	pubmed	Weight of evidence	
 NS5A	28V	4	Yes	No	NA	vivo		Case report*	PTV_r_OBV_DSV_RBV	non cirrh		case report	30882744		
 NS5A	93C	4	Yes	No	NA	vivo		Case report*	PTV_r_OBV_DSV_RBV	non cirrh			30882744		
+NS5A	28A	6a				vitro	1720						30718256		
+NS5A	28F	6a				vitro	13						30718256		
+NS5A	28M	6a				vitro	21						30718256		
+NS5A	28T	6a				vitro	1483						30718256		
+NS5A	28V	6a				vitro	81						30718256		
+NS5A	31I	6a				vitro	108						30718256		
+NS5A	93I	6a				vitro	29						30718256		
+NS5A	93S	6a				vitro	46						30718256		
+NS5A	28T+30S	6a				vitro	1746						30718256		
+NS5A	28V+30S	6a				vitro	9.5						30718256		
+NS5A	28V+30T	6a				vitro	2.9						30718256		
+NS5A	28T+31I	6a				vitro	5000						30718256		
+NS5A	28V+30S+93S	6a				vitro	174						30718256		
+NS5A	31M	6a				vitro	26						30718256		
+NS5A	58A	6a				vitro	74						30718256		
+NS5A	58S	6a				vitro	44						30718256		
+NS5A	28A+30S	6a				vitro	1121						30718256		
 NS5A	31M	2a	yes	no	NA	vivo		Real world*	PTV_r_OBV_DSV_RBV	non cirrh			30485638		
 NS5A	24S	2a	no	yes	L31M+C92S	vivo		Real world*	PTV_r_OBV_DSV_RBV	non cirrh			30485638		
 NS5A	28S	2a	no	yes	L31M 	vivo		Real world*	PTV_r_OBV_DSV_RBV	non cirrh			30485638		
 NS5A	93H	1b	no	yes	none	vivo		Case report*	PTV_r_OBV_DSV 	non cirrh		case report	29575060		
 NS5A	28T	1a	no	yes	NA	vivo		Pooled1	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN			24795200		
 NS5A	30R	1a	no	yes	NA	vivo		Pooled1	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN			24795200		
+NS5A	28T	1a				vitro	8965						25451055		
+NS5A	28V	1a				vitro	58						25451055		
+NS5A	30R	1a				vitro	800						25451055		
+NS5A	58D	1a				vitro	243						25451055		
+NS5A	93C	1a				vitro	1675						25451055		
+NS5A	93H	1a				vitro	41383						25451055		
+NS5A	93N	1a				vitro	66740						25451055		
+NS5A	93S	1a				vitro	1013						25451055		
+NS5A	30H	1a				vitro	3						25451055		
+NS5A	31M	1a				vitro	2						25451055		
+NS5A	30L+93H	1a				vitro	416						25451055		
+NS5A	30L+93S	1a				vitro	218						25451055		
+NS5A	28T	1b				vitro	661						25451055		
+NS5A	31F	1b				vitro	10						25451055		
+NS5A	31V	1b				vitro	8						25451055		
+NS5A	93H	1b				vitro	77						25451055		
+NS5A	28M+31F	1b				vitro	569						25451055		
+NS5A	28V+31F	1b				vitro	2170						25451055		
+NS5A	31F+58L	1b				vitro	78						25451055		
+NS5A	28M+93H	1b				vitro	415						25451055		
+NS5A	30Q+93H	1b				vitro	284						25451055		
+NS5A	31F+93H	1b				vitro	10272						25451055		
+NS5A	31V+93H	1b				vitro	12328						25451055		
+NS5A	58A+93H	1b				vitro	1226						25451055		
+NS5A	58L+93H	1b				vitro	135						25451055		
+NS5A	28M	1b				vitro	2						25451055		
+NS5A	24A	2a				vitro	38						25451055		
+NS5A	28S	2a				vitro	4710						25451055		
+NS5A	28F	2b				vitro	47						25451055		
+NS5A	28F+31M	2b				vitro	247						25451055		
+NS5A	31V	2b				vitro	511						25451055		
+NS5A	28T	3a				vitro	659						25451055		
+NS5A	31F	3a				vitro	28						25451055		
+NS5A	93H	3a				vitro	6728						25451055		
+NS5A	28V	4a				vitro	23						25451055		
+NS5A	28I	5a				vitro	79						25451055		
+NS5A	31V	5a				vitro	243						25451055		
+NS5A	31F	5a				vitro	289						25451055		
+NS5A	31V	6a				vitro	68						25451055		
+NS5A	58N	6a				vitro	101						25451055		
+NS5A	58A	6a				vitro	18						25451055		
+NS5A	58S	6a				vitro	18						25451055		
 NS5A	28V	1a	yes	no	NA	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711		
 NS5A	30R	1a	yes	yes	none	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711		
 NS5A	31M	1a	yes	no	NA	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirrhotic; TN and TE			26100711		
@@ -18,6 +77,10 @@ NS5A	28T+30R	1a	no	yes	NA	vivo		AVIATOR	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	non cirr
 NS5A	93H	1b	yes	yes	NA	vivo		PEARL-I	PTV_r_OBV 	non cirrhotic and cirrhotic; TE			26170136		
 NS5A	58S	1b	no	yes	Y93H	vivo		PEARL-I	PTV_r_OBV 	non cirrhotic and cirrhotic; TE			26170136		
 NS5A	58S+93H	1b	yes	no	NA	vivo		PEARL-I	PTV_r_OBV 	non cirrhotic and cirrhotic; TE			26170136		
+NS5A	28V	4a	NA	NA	NA	vitro	23						26282418		
+NS5A	28V	4d	NA	NA	NA	vitro	310						26282418		
+NS5A	31I	4d	NA	NA	NA	vitro	2.5						26282418		
+NS5A	28V+58S	4d	NA	NA	NA	vitro	760						26282418		
 NS5A	28V	4d	no	yes	NA	vivo		PEARL-I	PTV_r_OBV 	TN; non cirrhotic			26282418		
 NS5A	58P	4d	yes	no	NA	vivo		PEARL-I	PTV_r_OBV 	TN; non cirrhotic			26282418		
 NS5A	28S+31I	4d	no	yes	T58P	vivo		PEARL-I	PTV_r_OBV 	TN; non cirrhotic			26282418		
@@ -36,6 +99,18 @@ NS5A	31M+93H	1b	yes	no		vivo		Pooled3	PTV_r_OBV 	TN&TE: non cirrhotic and cirrho
 NS5A	31V	1b	no	yes	Y93H	vivo		Pooled3	PTV_r_OBV 	TN&TE: non cirrhotic and cirrhotic			26643326		
 NS5A	92E+93H	1b	yes	no		vivo		Pooled3	PTV_r_OBV 	TN&TE: non cirrhotic and cirrhotic			26643326		
 NS5A	31F	1b	no	yes	A92E	vivo		Pooled3	PTV_r_OBV 	TN&TE: non cirrhotic and cirrhotic			26643326		
+NS5A	28M	1b				vitro	2						26643326		
+NS5A	31F	1b				vitro	10						26643326		
+NS5A	31V	1b				vitro	8						26643326		
+NS5A	93H	1b				vitro	77						26643326		
+NS5A	93S	1b				vitro	12						26643326		
+NS5A	31F+92E	1b				vitro	1022						26643326		
+NS5A	28M+93H	1b				vitro	415						26643326		
+NS5A	30Q+93H	1b				vitro	284						26643326		
+NS5A	31M+93H	1b				vitro	142						26643326		
+NS5A	31V+93H	1b				vitro	12328						26643326		
+NS5A	58S+93H	1b				vitro	1401						26643326		
+NS5A	28M+30Q+93H	1b				vitro	981						26643326		
 NS5A	31M	1b	yes	no	NA	vivo		GARNET	PTV_r_OBV_DSV	non cirrhotic; TN  			28416221		
 NS5A	93C	1b	no	yes	L31M	vivo		GARNET	PTV_r_OBV_DSV	non cirrhotic; TN  			28416221		
 NS5A	93L	1a	yes	no		vivo		Pooled2	PTV_r_OBV_DSV;PTV_r_OBV_DSV_RBV	TN & TE; noncirrhotic and cirrhotic		Pooled	EASL_2016_Abs_LBP503		
@@ -57,7 +132,14 @@ NS5A	28T	1a	no	yes		vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146
 NS5A	28V	1a	no	yes		vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520		
 NS5A	30H	1a	no	yes		vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520		
 NS5A	30R	1a	no	yes		vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520		
+NS5A	28T	1a				vitro	>100						29146520		
+NS5A	28V	1a				vitro	>100						29146520		
+NS5A	30H	1a				vitro	>100						29146520		
+NS5A	30R	1a				vitro	>100						29146520		
+NS5A	93H	1b				vitro	20-100						29146520		
 NS5A	93H	1b	no	yes		vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520		
+NS5A	93H	4				vitro	20-100						29146520		
+NS5A	28V	4				vitro	20-100						29146520		
 NS5A	28V	4	no	yes		vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520		
 NS5A	93H	1b	yes	yes		vivo		Case report*	PTV_r_OBV_DSV_RBV	case report			27670383		
 NS5A	30G	1a	no	yes		vivo		PEARL-IV	PTV_r_OBV_DSV	TN; no cirrhosis			EASL_2016_Abs_LBP503		

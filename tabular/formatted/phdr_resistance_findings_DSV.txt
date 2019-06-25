@@ -17,6 +17,7 @@ NS5B	316N+556G	1b	no	yes		DSV	vivo		SAPPHIRE-II	PTV_r_OBV_DSV_RBV	TE, non cirrho
 NS5B	556G	1a	no	yes		DSV	vivo		TURQUOISE-I	PTV_r_OBV_DSV_RBV	TE, cirrhotic 			25706092	
 NS5B	556G	1a	no	yes		DSV	vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520	
 NS5B	316N	1b	no	yes		DSV	vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520	
+NS5B	159F	1b				DSV	vitro	2-20						29146520	
 NS5B	316N	1b				DSV	vitro	2-20						29146520	
 NS5B	556G	1b				DSV	vitro	10-20						29146520	
 NS5B	556G	1b	no	yes		DSV	vivo		Retrospective real world study*	PTV_r_OBV_DSV				29146520	
