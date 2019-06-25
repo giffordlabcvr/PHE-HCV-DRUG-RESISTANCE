@@ -95,77 +95,6 @@ No
 </table>
 </div>
 
-<div id="featureCoverage">
-
-<#if result.featuresWithCoverage??>
-
-<h3>Genome coding region coverage</h3>
-
-<#if phdrReport.sequenceDataFormat = "SAM/BAM">
-
-<table id="featureCoverageTable">
-<colgroup>
-    <col class="tableHeader"/>
-    <col/>
-    <col/>
-    <col/>
-    <col/>
-</colgroup>
-
-<thead>
-<tr>
-	<th rowspan="2">Genome region</th>
-	<th colspan="4">Proportion of nucleotide sites with depth</th>
-</tr>
-<tr>
-	<th>&ge; 1</th>
-	<th>&ge; 10</th>
-	<th>&ge; 100</th>
-	<th>&ge; 1000</th>
-</tr>
-<#list result.featuresWithCoverage as feature>
-<tr>
-<td><b>${feature.displayName}</b></td>
-<#list feature.depthCoveragePcts as depthCoveragePct>
-<td>${depthCoveragePct.pctPositions?string("##0.#")}%</td>
-</#list>
-</tr>
-</#list>
-</table>
-
-<#else>
-
-<#if result.featuresWithCoverage?size == 0>
-<p>No coverage of coding regions</p>
-<#else>
-<table id="featureCoverageTable">
-<colgroup>
-    <col class="tableHeader"/>
-    <col/>
-</colgroup>
-<#list result.featuresWithCoverage as feature>
-<#if feature.coveragePct gt 0>
-<tr>
-<td><b>${feature.displayName}</b></td>
-<td>${feature.coveragePct?string("##0.#")}%</td>
-</tr>
-</#if>
-</#list>
-</table>
-</#if>
-
-</#if>
-
-
-</#if>
-
-
-
-
-
-</div>
-
-<div class="pagebreak"> </div>
 
 <div id="antiviralResistance">
 <h3>Antiviral resistance summary</h3>
@@ -189,7 +118,7 @@ No
 	<th rowspan="2">Drug category</th>
 	<th rowspan="2">Drug</th>
 	<th colspan="3">Resistance-associated polymorphisms<sup>1</sup></th>
-	<th rowspan="2" colspan="2">Resistance level<sup>2</sup></th>
+	<th rowspan="2" colspan="2">Resistance detection level<sup>2</sup></th>
 </tr>
 <tr>
 	<th>Category I</th>
@@ -250,11 +179,11 @@ Insufficient coverage at resistance locations to assess resistance level
 Category I polymorphisms have the strongest evidence: either (a) <em>in vitro</em> resistance level &ge; 5 and found at baseline or treatment-emergent <em>in vivo</em>, or 
 (b) both found at baseline and treatment-emergent. Category II: <em>in vitro</em> level &ge; 50 or found at baseline or treatment-emergent.
 Category III: <em>in vitro</em> level &ge; 5</li>
-<li>Resistance level to a given drug is assigned to one of four categories. 
-Strong resistance: any category I polymorphisms.
-Moderate resistance: any category II polymorphisms. 
-Weak resistance: any category III polymorphisms. 
-Susceptible: none of the above.
+<li>Resistance detection for a given drug is assigned to one of four categories. 
+Resistance detected: any category I polymorphisms.
+Probable resistance detected: any category II polymorphisms. 
+Possible resistance detected: any category III polymorphisms. 
+No signficant resistance detected: none of the above.
 </li>
 </ol>
 </div>
@@ -412,6 +341,8 @@ No resistance analysis was performed for the sequence.
 
 <div class="pagebreak"> </div>
 
+
+
 <#if result.substitutionsOfInterest ?? && (result.substitutionsOfInterest?size gt 0)>
 
 <div id="substitutionsOfInterestDiv">
@@ -457,6 +388,72 @@ No resistance analysis was performed for the sequence.
 
 
 <div class="pagebreak"> </div>
+
+
+<div id="featureCoverage">
+
+<#if result.featuresWithCoverage??>
+
+<h3>Genome coding region coverage</h3>
+
+<#if phdrReport.sequenceDataFormat = "SAM/BAM">
+
+<table id="featureCoverageTable">
+<colgroup>
+    <col class="tableHeader"/>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th rowspan="2">Genome region</th>
+	<th colspan="4">Proportion of nucleotide sites with depth</th>
+</tr>
+<tr>
+	<th>&ge; 1</th>
+	<th>&ge; 10</th>
+	<th>&ge; 100</th>
+	<th>&ge; 1000</th>
+</tr>
+<#list result.featuresWithCoverage as feature>
+<tr>
+<td><b>${feature.displayName}</b></td>
+<#list feature.depthCoveragePcts as depthCoveragePct>
+<td>${depthCoveragePct.pctPositions?string("##0.#")}%</td>
+</#list>
+</tr>
+</#list>
+</table>
+
+<#else>
+
+<#if result.featuresWithCoverage?size == 0>
+<p>No coverage of coding regions</p>
+<#else>
+<table id="featureCoverageTable">
+<colgroup>
+    <col class="tableHeader"/>
+    <col/>
+</colgroup>
+<#list result.featuresWithCoverage as feature>
+<#if feature.coveragePct gt 0>
+<tr>
+<td><b>${feature.displayName}</b></td>
+<td>${feature.coveragePct?string("##0.#")}%</td>
+</tr>
+</#if>
+</#list>
+</table>
+</#if>
+</#if>
+</#if>
+</div>
+
+<div class="pagebreak"> </div>
+
 
 </#if>
 

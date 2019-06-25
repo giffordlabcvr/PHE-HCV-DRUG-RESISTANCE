@@ -960,6 +960,10 @@ function assessResistanceForDrug(result, drug, useAaSpan) {
 	var rasScores_category_II = [];
 	var rasScores_category_III = [];
 	
+	var cat_I_keys = {};
+	var cat_II_keys = {};
+	var cat_III_keys = {};
+	
 	var overallSufficientCoverage = true;
 
 	var sufficientCoverage_I = true;
@@ -972,8 +976,10 @@ function assessResistanceForDrug(result, drug, useAaSpan) {
 			_.each(alignmentRas.alignmentRasDrug, function(alignmentRasDrug) {
 				if(alignmentRasDrug.drug == drug.id) {
 					if(alignmentRasDrug.resistanceCategory != "insignificant") {
+						var key = scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
 						var rasScoreDetails = {
 							gene: scanResult.rasDetails.gene,
+							key: key,
 							structure: scanResult.rasDetails.structure,
 							displayStructure: alignmentRas.displayStructure,
 							rapUrl: "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure,
@@ -985,7 +991,10 @@ function assessResistanceForDrug(result, drug, useAaSpan) {
 						}
 						if(alignmentRasDrug.resistanceCategory == "category_I") {
 							if(scanResult.present) {
-								rasScores_category_I.push(rasScoreDetails); 
+								if(cat_I_keys[key] == null) { // avoid duplicates
+									rasScores_category_I.push(rasScoreDetails); 
+									cat_I_keys[key] = "yes";
+								}
 							} else if(!scanResult.sufficientCoverage) {
 								if(aaSpan <= aaSpanThreshold || !useAaSpan) {
 									sufficientCoverage_I = false;
@@ -993,7 +1002,10 @@ function assessResistanceForDrug(result, drug, useAaSpan) {
 							}
 						} else if(alignmentRasDrug.resistanceCategory == "category_II") {
 							if(scanResult.present) {
-								rasScores_category_II.push(rasScoreDetails); 
+								if(cat_II_keys[key] == null) { // avoid duplicates
+									rasScores_category_II.push(rasScoreDetails); 
+									cat_II_keys[key] = "yes";
+								}
 							} else if(!scanResult.sufficientCoverage) {
 								if(aaSpan <= aaSpanThreshold || !useAaSpan) {
 									sufficientCoverage_II = false;
@@ -1001,7 +1013,10 @@ function assessResistanceForDrug(result, drug, useAaSpan) {
 							}
 						} else if(alignmentRasDrug.resistanceCategory == "category_III") {
 							if(scanResult.present) {
-								rasScores_category_III.push(rasScoreDetails); 
+								if(cat_III_keys[key] == null) { // avoid duplicates
+									rasScores_category_III.push(rasScoreDetails); 
+									cat_III_keys[key] = "yes";
+								}
 							} else if(!scanResult.sufficientCoverage) {
 								if(aaSpan <= aaSpanThreshold || !useAaSpan) {
 									sufficientCoverage_III = false;
@@ -1014,16 +1029,20 @@ function assessResistanceForDrug(result, drug, useAaSpan) {
 		});
 	});
 
+	// don't report the same RAS in two categories; only the higher category
+	rasScores_category_II = _.filter(rasScores_category_II, function(rsc2) { return cat_I_keys[rsc2.key] == null; });
+	rasScores_category_III = _.filter(rasScores_category_III, function(rsc2) { return cat_I_keys[rsc2.key] == null && cat_II_keys[rsc2.key] == null; });
+	
 	// overall sufficient coverage = false if:
     // No category I RAS detected and sufficientCoverage_I is false or
 	// No category I, II RAS detected and sufficientCoverage_II is false or
 	// No category I, II or III RAS detected and sufficientCoverage_III is false
 	
 	// drug score: 4 levels:
-	// strong_resistance:		Any category I RASs.
-	// moderate_resistance:		Any category II RAS.
-	// weak_resistance:			Any category III RAS.
-	// susceptible:				None of the above.
+	// Resistance detected:					Any category I RASs.
+	// Probable resistance detected:		Any category II RAS.
+	// Possible resistance detected:		Any category III RAS.
+	// No signficant resistance detected:	None of the above.
 	
 	
 	var numCategoryI = rasScores_category_I.length;
@@ -1032,26 +1051,26 @@ function assessResistanceForDrug(result, drug, useAaSpan) {
 
 	if(numCategoryI > 0) {
 		drugScore = 'strong_resistance';
-		drugScoreDisplay = 'Strong resistance';
-		drugScoreDisplayShort = 'Strong';
+		drugScoreDisplay = 'Resistance detected';
+		drugScoreDisplayShort = 'Resistance';
 	} else if(!sufficientCoverage_I) {
 		overallSufficientCoverage = false;
 	} else if(numCategoryII > 0) {
 		drugScore = 'moderate_resistance';
-		drugScoreDisplay = 'Moderate resistance';
-		drugScoreDisplayShort = 'Moderate';
+		drugScoreDisplay = 'Probable resistance detected';
+		drugScoreDisplayShort = 'Probable resistance';
 	} else if(!sufficientCoverage_II) {
 		overallSufficientCoverage = false;
 	} else if(numCategoryIII > 0) {
 		drugScore = 'weak_resistance';
-		drugScoreDisplay = 'Weak resistance';
-		drugScoreDisplayShort = 'Weak';
+		drugScoreDisplay = 'Possible resistance detected';
+		drugScoreDisplayShort = 'Possible resistance';
 	} else if(!sufficientCoverage_III) {
 		overallSufficientCoverage = false;
 	} else {
 		drugScore = 'susceptible';
-		drugScoreDisplay = 'Susceptible';
-		drugScoreDisplayShort = 'Susceptible';
+		drugScoreDisplay = 'No signficant resistance detected';
+		drugScoreDisplayShort = 'No signficant resistance';
 	}
 	
 	return {
