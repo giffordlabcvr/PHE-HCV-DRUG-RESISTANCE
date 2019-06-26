@@ -145,7 +145,7 @@ Insufficient coverage at resistance locations to assess resistance level
 <td>
 <#if drugAssessment.rasScores_category_I?? && drugAssessment.rasScores_category_I?size gt 0>
 <#list drugAssessment.rasScores_category_I as rasScore>
-	<a href="${rasScore.rapUrl}" target="_blank">${rasScore.displayStructure}</a><#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if><#if !rasScore?is_last>,</#if></#list>
+	<a href="${rasScore.rapUrl}" target="_blank">${rasScore.displayStructure}</a><#if phdrReport.sequenceDataFormat = "FASTA" && rasScore.reliesOnNonDefiniteAa><sup>&dagger;</sup></#if><#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if><#if !rasScore?is_last>,</#if></#list>
 <#else>
 	-
 </#if>
@@ -153,7 +153,7 @@ Insufficient coverage at resistance locations to assess resistance level
 <td>
 <#if drugAssessment.rasScores_category_II?? && drugAssessment.rasScores_category_II?size gt 0>
 <#list drugAssessment.rasScores_category_II as rasScore>
-	<a href="${rasScore.rapUrl}" target="_blank">${rasScore.displayStructure}</a><#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if><#if !rasScore?is_last>,</#if></#list>
+	<a href="${rasScore.rapUrl}" target="_blank">${rasScore.displayStructure}</a><#if phdrReport.sequenceDataFormat = "FASTA" && rasScore.reliesOnNonDefiniteAa><sup>&dagger;</sup></#if><#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if><#if !rasScore?is_last>,</#if></#list>
 <#else>
 	- 
 </#if>
@@ -161,12 +161,12 @@ Insufficient coverage at resistance locations to assess resistance level
 <td>
 <#if drugAssessment.rasScores_category_III?? && drugAssessment.rasScores_category_III?size gt 0>
 <#list drugAssessment.rasScores_category_III as rasScore>
-	<a href="${rasScore.rapUrl}" target="_blank">${rasScore.displayStructure}</a><#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if><#if !rasScore?is_last>,</#if></#list>
+	<a href="${rasScore.rapUrl}" target="_blank">${rasScore.displayStructure}</a><#if phdrReport.sequenceDataFormat = "FASTA" && rasScore.reliesOnNonDefiniteAa><sup>&dagger;</sup></#if><#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if><#if !rasScore?is_last>,</#if></#list>
 <#else>
 	- 
 </#if>
 </td>
-<td>${drugAssessment.drugScoreDisplay}</td>
+<td>${drugAssessment.drugScoreDisplay}<#if phdrReport.sequenceDataFormat = "FASTA" && drugAssessment.reliesOnNonDefiniteAa><sup>&dagger;</sup></#if></td>
 <td class="resistanceBlock resistanceColourCode_${drugAssessment.drugScore}"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 </#if>
 </tr>
@@ -174,18 +174,25 @@ Insufficient coverage at resistance locations to assess resistance level
 </#list>
 </table>
 <div id="resistanceAlgorithmNotes">
-<ol>
-<li>Polymorphisms are assigned to one of three categories according to the strength of evidence for drug resistance. 
+<ul class="footnoteList">
+<li>1. Polymorphisms are assigned to one of three categories according to the strength of evidence for drug resistance. 
 Category I polymorphisms have the strongest evidence: either (a) <em>in vitro</em> resistance level &ge; 5 and found at baseline or treatment-emergent <em>in vivo</em>, or 
 (b) both found at baseline and treatment-emergent. Category II: <em>in vitro</em> level &ge; 50 or found at baseline or treatment-emergent.
 Category III: <em>in vitro</em> level &ge; 5</li>
-<li>Resistance detection for a given drug is assigned to one of four categories. 
+<li>2. Resistance detection for a given drug is assigned to one of four categories. 
 Resistance detected: any category I polymorphisms.
 Probable resistance detected: any category II polymorphisms. 
 Possible resistance detected: any category III polymorphisms. 
 No signficant resistance detected: none of the above.
 </li>
-</ol>
+<#if phdrReport.sequenceDataFormat = "FASTA" && result.reliesOnNonDefiniteAa>
+<li>&dagger;&nbsp; The FASTA nucleotide sequence is ambiguous at a resistance-associated location. 
+This nucleotide ambiguity is consistent with the presence of atypical or resistance-associated codons but may also be 
+explained by combinations of non-resistant codons. The ambiguity may be resolved via direct analysis of the 
+deep sequencing data (SAM/BAM file). 
+</li>
+</#if>
+</ul>
 </div>
 <#else>
 No resistance analysis was performed for the sequence.
@@ -242,9 +249,7 @@ No resistance analysis was performed for the sequence.
 <tr class="firstRow">
 <td rowspan = "${alignmentRas.numFindings}">${rasScanResult.rasDetails.gene}</td>
 <td rowspan = "${alignmentRas.numFindings}">
-	<a href="${rasScanResult.rapUrl}" target="_blank">
-	${alignmentRas.displayStructure}
-	</a>
+	<a href="${rasScanResult.rapUrl}" target="_blank">${alignmentRas.displayStructure}</a><#if phdrReport.sequenceDataFormat = "FASTA" && rasScanResult.reliesOnNonDefiniteAa><sup>&dagger;</sup></#if>
 </td>
 <#if phdrReport.sequenceDataFormat = "SAM/BAM">
 <td rowspan = "${alignmentRas.numFindings}">${rasScanResult.pctPresent?string("##0.#")}%</td>
@@ -368,11 +373,9 @@ No resistance analysis was performed for the sequence.
 	<td>${substitutionOfInterest.virusProtein}</td>
 	<td>
 <#if substitutionOfInterest.rapUrl ??>
-	<a href="${substitutionOfInterest.rapUrl}" target="_blank">
-</#if>
-	${substitutionOfInterest.displayStructure}
-<#if substitutionOfInterest.rapUrl ??>
-	</a>
+	<a href="${substitutionOfInterest.rapUrl}" target="_blank">${substitutionOfInterest.displayStructure}</a><#if phdrReport.sequenceDataFormat = "FASTA" && substitutionOfInterest.reliesOnNonDefiniteAa><sup>&dagger;</sup></#if>
+<#else>
+	${substitutionOfInterest.displayStructure}<#if phdrReport.sequenceDataFormat = "FASTA" && substitutionOfInterest.reliesOnNonDefiniteAa><sup>&dagger;</sup></#if>
 </#if>
 </td>
 <#if phdrReport.sequenceDataFormat = "SAM/BAM">

@@ -128,7 +128,10 @@ function initResultMap(fastaDocument, fastaMap, resultMap, placerResultContainer
 	// initialise result map.
 	var sequenceObjs = _.values(fastaMap);
 	_.each(sequenceObjs, function(sequenceObj) {
-		resultMap[sequenceObj.id] = { id: sequenceObj.id };
+		resultMap[sequenceObj.id] = { 
+			id: sequenceObj.id, 
+			reliesOnNonDefiniteAa: false
+		};
 	});
 	// apply recogniser to fastaMap
 	recogniseFasta(fastaMap, resultMap);
@@ -279,6 +282,7 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 					scanResult.rasDetails = rasFinding.phdrRasVariation;
 					if(scanResult.present) {
 						addRasPublications(rasFinding, publicationIdToObj);
+						scanResult.reliesOnNonDefiniteAa = determineReliesOnNonDefiniteAa(scanResult, sequenceResult);
 					}
 				});
 				// at this stage sequenceResult.rasScanResults contains absent / insufficient coverage variation scan results, 
@@ -309,7 +313,8 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 							scanResult.featureName, scanResult.variationName);
 					glue.log("FINE", "phdrReportingController.generateSingleFastaReport rasFinding:", rasFinding);
 					scanResult.rasDetails = rasFinding.phdrRasVariation;
-					checkForSameGenotypeRas(genotypingResult, scanResult, reportedPolymorphismKeys, sequenceResult.substitutionsOfInterest);
+					scanResult.reliesOnNonDefiniteAa = determineReliesOnNonDefiniteAa(scanResult, sequenceResult);
+					checkForSameGenotypeRas(genotypingResult, scanResult, reportedPolymorphismKeys, sequenceResult.substitutionsOfInterest, sequenceResult);
 				});
 				
 				sequenceResult.differentGenotypeRasScanResults = differentGenotypeRasScanResults;
@@ -320,7 +325,8 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 							scanResult.featureName, scanResult.variationName);
 					glue.log("FINE", "phdrReportingController.generateSingleFastaReport rasFinding:", rasFinding);
 					scanResult.rasDetails = rasFinding.phdrRasVariation;
-					checkForDifferentGenotypeRas(genotypingResult, scanResult, reportedPolymorphismKeys, sequenceResult.substitutionsOfInterest);
+					scanResult.reliesOnNonDefiniteAa = determineReliesOnNonDefiniteAa(scanResult, sequenceResult);
+					checkForDifferentGenotypeRas(genotypingResult, scanResult, reportedPolymorphismKeys, sequenceResult.substitutionsOfInterest, sequenceResult);
 				});
 
 				
@@ -328,7 +334,7 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 				glue.log("FINE", "phdrReportingController.generateSingleFastaReport residuesAtRasAssociatedLocations", 
 						sequenceResult.residuesAtRasAssociatedLocations);
 				_.each(sequenceResult.residuesAtRasAssociatedLocations, function(residueObj) {
-					checkForWildTypeSubstitution(genotypingResult, residueObj, reportedPolymorphismKeys, sequenceResult.substitutionsOfInterest);
+					checkForWildTypeSubstitution(genotypingResult, residueObj, reportedPolymorphismKeys, sequenceResult.substitutionsOfInterest, sequenceResult);
 				});
 				
 				sequenceResult.visualisationHints = visualisationHints(queryNucleotides, targetRefName, genotypingResult, queryToTargetRefSegs, sequenceResult.rasScanResults);
@@ -354,6 +360,26 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 
 	glue.log("FINE", "phdrReportingController.generateSingleFastaReport phdrReport:", phdrReport);
 	return phdrReport;
+}
+
+function determineReliesOnNonDefiniteAa(scanResult, sequenceResult) {
+	if(scanResult.variationType == "aminoAcidSimplePolymorphism") {
+		var relies = scanResult.matches[0].reliesOnNonDefiniteAa;
+		if(relies) {
+			sequenceResult.reliesOnNonDefiniteAa = true;
+		}
+		return relies;
+	}
+	if(scanResult.variationType == "conjunction") {
+		var conjunctsRelyOnNonDefiniteAa = _.map(scanResult.matches[0].conjuncts, function(conjunctResult) { return determineReliesOnNonDefiniteAa(conjunctResult, sequenceResult); });
+		var relies = conjunctsRelyOnNonDefiniteAa.indexOf(true) >= 0;
+		if(relies) {
+			sequenceResult.reliesOnNonDefiniteAa = true;
+		}
+		return relies;
+	}
+	
+	return false;
 }
 
 function fastaResiduesAtRasAssociatedLocations(queryNucleotides, queryToTargetRefSegs, targetRefName) {
@@ -428,6 +454,7 @@ function checkForSameGenotypeRas(genotypingResult, scanResult, reportedPolymorph
 		rsgObj.displayStructure = computeDisplayStructure(scanResult.rasDetails.gene, scanResult.rasDetails.structure, almtName);
 		rsgObj.reasonForInterest = "rap_in_same_gt";
 		rsgObj.displayReasonForInterest = "Associated with resistance in other subtypes of "+gtDisplayClade;
+		rsgObj.reliesOnNonDefiniteAa = scanResult.reliesOnNonDefiniteAa;
 		// minority percentage / depth data if appropriate
 		if(scanResult.pctPresent != null) {
 			rsgObj.pctPresent = scanResult.pctPresent;
@@ -455,6 +482,7 @@ function checkForDifferentGenotypeRas(genotypingResult, scanResult, reportedPoly
 		rdgObj.displayStructure = computeDisplayStructure(scanResult.rasDetails.gene, scanResult.rasDetails.structure, almtName);
 		rdgObj.reasonForInterest = "rap_in_different_gt";
 		rdgObj.displayReasonForInterest = "Associated with resistance in genotypes other than "+gtDisplayClade;
+		rdgObj.reliesOnNonDefiniteAa = scanResult.reliesOnNonDefiniteAa;
 		// minority percentage / depth data if appropriate
 		if(scanResult.pctPresent != null) {
 			rdgObj.pctPresent = scanResult.pctPresent;
@@ -487,7 +515,7 @@ function computeDisplayStructure(gene, structure, almtName) {
 }
 
 
-function checkForWildTypeSubstitution(genotypingResult, residueObj, reportedPolymorphismKeys, substitutionsOfInterest) {
+function checkForWildTypeSubstitution(genotypingResult, residueObj, reportedPolymorphismKeys, substitutionsOfInterest, sequenceResult) {
 	var almtName;
 	var displayClade;
 	if(genotypingResult.subtypeCladeCategoryResult.finalClade != null) {
@@ -507,6 +535,8 @@ function checkForWildTypeSubstitution(genotypingResult, residueObj, reportedPoly
 		// SAM/BAM case
 		residues = [residueObj.aminoAcid];
 	}
+	
+	var definiteAas = residueObj.definiteAas.split("");
 	
 	var typicalAAs = glue.getTableColumn(glue.command([
 		"list", "custom-table-row", "phdr_alignment_typical_aa", 
@@ -528,6 +558,13 @@ function checkForWildTypeSubstitution(genotypingResult, residueObj, reportedPoly
 				wtSubObj.reasonForInterest = "sub_at_rap_location";
 				wtSubObj.atypicalForClade = almtName;
 				wtSubObj.displayReasonForInterest = "Atypical substitution for "+displayClade+" at a location associated with resistance";
+				if(definiteAas.indexOf(residueAA) >= 0) {
+					wtSubObj.reliesOnNonDefiniteAa = false;
+				} else {
+					sequenceResult.reliesOnNonDefiniteAa = true;
+					wtSubObj.reliesOnNonDefiniteAa = true;
+				}
+
 				if(residueObj.pctAaReads != null) {
 					// SAM/BAM case
 					wtSubObj.pctPresent = residueObj.pctAaReads;
@@ -853,7 +890,7 @@ function reportBam(bamFilePath, minReadProportionPct) {
 						samRefResult.residuesAtRasAssociatedLocations);
 				_.each(samRefResult.residuesAtRasAssociatedLocations, function(residueObj) {
 					checkForWildTypeSubstitution(genotypingResult, residueObj, reportedPolymorphismKeys, 
-							samRefResult.substitutionsOfInterest);
+							samRefResult.substitutionsOfInterest, samRefResult);
 				});
 
 				
@@ -984,7 +1021,8 @@ function assessResistanceForDrug(result, drug, useAaSpan) {
 							displayStructure: alignmentRas.displayStructure,
 							rapUrl: "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure,
 							category: alignmentRasDrug.resistanceCategory,
-							displayCategory: alignmentRasDrug.displayCategory
+							displayCategory: alignmentRasDrug.displayCategory,
+							reliesOnNonDefiniteAa: scanResult.reliesOnNonDefiniteAa
 						};
 						if(scanResult.pctPresent != null) {
 							rasScoreDetails.readsPctPresent = scanResult.pctPresent;
@@ -1049,22 +1087,27 @@ function assessResistanceForDrug(result, drug, useAaSpan) {
 	var numCategoryII = rasScores_category_II.length;
 	var numCategoryIII = rasScores_category_III.length;
 
+	var reliesOnNonDefiniteAa = false;
+	
 	if(numCategoryI > 0) {
 		drugScore = 'strong_resistance';
 		drugScoreDisplay = 'Resistance detected';
 		drugScoreDisplayShort = 'Resistance';
+		reliesOnNonDefiniteAa = _.every(rasScores_category_I, function(rasScore) { return rasScore.reliesOnNonDefiniteAa; });
 	} else if(!sufficientCoverage_I) {
 		overallSufficientCoverage = false;
 	} else if(numCategoryII > 0) {
 		drugScore = 'moderate_resistance';
 		drugScoreDisplay = 'Probable resistance detected';
 		drugScoreDisplayShort = 'Probable resistance';
+		reliesOnNonDefiniteAa = _.every(rasScores_category_II, function(rasScore) { return rasScore.reliesOnNonDefiniteAa; });
 	} else if(!sufficientCoverage_II) {
 		overallSufficientCoverage = false;
 	} else if(numCategoryIII > 0) {
 		drugScore = 'weak_resistance';
 		drugScoreDisplay = 'Possible resistance detected';
 		drugScoreDisplayShort = 'Possible resistance';
+		reliesOnNonDefiniteAa = _.every(rasScores_category_III, function(rasScore) { return rasScore.reliesOnNonDefiniteAa; });
 	} else if(!sufficientCoverage_III) {
 		overallSufficientCoverage = false;
 	} else {
@@ -1081,7 +1124,8 @@ function assessResistanceForDrug(result, drug, useAaSpan) {
 		drugScoreDisplayShort: drugScoreDisplayShort,
 		rasScores_category_I: rasScores_category_I,
 		rasScores_category_II: rasScores_category_II,
-		rasScores_category_III: rasScores_category_III
+		rasScores_category_III: rasScores_category_III,
+		reliesOnNonDefiniteAa:reliesOnNonDefiniteAa
 	};
 	
 }
