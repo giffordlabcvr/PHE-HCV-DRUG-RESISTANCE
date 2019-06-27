@@ -11,3 +11,5 @@ run script glue/phdrLoadPublications.js
 run script glue/phdrLoadRas.js
 
 run script glue/phdrLoadResistanceFindings.js
+
+run script glue/phdrPopulateAlignmentDrugResistanceLiterature.js

@@ -285,9 +285,12 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 						scanResult.reliesOnNonDefiniteAa = determineReliesOnNonDefiniteAa(scanResult, sequenceResult);
 					}
 				});
+				var drugs = glue.tableToObjects(glue.command(["list", "custom-table-row", "phdr_drug", "id", "category"]));
+				var resistanceLiteratureMap = resistanceLiterature(genotypingResult, drugs);
+				glue.logInfo("resistanceLiteratureMap", resistanceLiteratureMap);
 				// at this stage sequenceResult.rasScanResults contains absent / insufficient coverage variation scan results, 
 				// which is important for assessing whether the sequence has insufficient coverage overall for a given drug.
-				sequenceResult.drugScores = assessResistance(sequenceResult, false);
+				sequenceResult.drugScores = assessResistance(drugs, sequenceResult, false);
 
 				// now remove non-present variation scan results.
 				sequenceResult.rasScanResults = _.filter(sequenceResult.rasScanResults, function(scanResult) {
@@ -842,9 +845,11 @@ function reportBam(bamFilePath, minReadProportionPct) {
 					}
 				});
 				glue.log("FINE", "phdrReportingController.reportBam rasScanResults including absent:", samRefResult.rasScanResults);
+				var drugs = glue.tableToObjects(glue.command(["list", "custom-table-row", "phdr_drug", "id", "category"]));
+				var resistanceLiteratureMap = resistanceLiterature(genotypingResult, drugs);
 				// at this stage sequenceResult.rasScanResults contains absent / insufficient coverage variation scan results, 
 				// which is important for assessing whether the sequence has insufficient coverage overall for a given drug.
-				samRefResult.drugScores = assessResistance(samRefResult, true);
+				samRefResult.drugScores = assessResistance(drugs, samRefResult, true);
 
 				// now remove non-present variation scan results.
 				samRefResult.rasScanResults = _.filter(samRefResult.rasScanResults, function(scanResult) {
@@ -965,10 +970,7 @@ function bamResiduesAtRasAssociatedLocations(bamFilePath, samRefSense, samRefNam
 }
 
 
-function assessResistance(result, useAaSpan) {
-	var drugs = 
-		glue.tableToObjects(
-				glue.command(["list", "custom-table-row", "phdr_drug", "id", "category"]));
+function assessResistance(drugs, result, useAaSpan) {
 	var assessmentList = _.map(drugs, function(drug) { 
 		return assessResistanceForDrug(result, drug, useAaSpan); 
 	});
@@ -1380,3 +1382,28 @@ function addOverview(phdrReport) {
 	
 }
 
+function resistanceLiterature(genotypingResult, drugs) {
+	var gtAlmtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
+	var stAlmtName = genotypingResult.subtypeCladeCategoryResult.finalClade;
+	var gtDrugResistanceLiteratureObjs = glue.tableToObjects(glue.command(["list", "custom-table-row", "phdr_alignment_drug", 
+		"-w", "alignment.name = '"+gtAlmtName+"'", 
+		"phdr_drug.id", "resistance_literature"]));
+	var stDrugResistanceLiteratureObjs = [];
+	if(stAlmtName != null) {
+		var stDrugResistanceLiteratureObjs = glue.tableToObjects(glue.command(["list", "custom-table-row", "phdr_alignment_drug", 
+			"-w", "alignment.name = '"+stAlmtName+"'", 
+			"phdr_drug.id", "resistance_literature"]));
+	}
+	var drugIdToResistanceLiterature = {};
+	_.each(drugs, function(drugObj) {
+		var drugId = drugObj.id;
+		var gtDrugResistanceLiteratureObj = _.find(gtDrugResistanceLiteratureObjs, function(gtdrlo) { return gtdrlo["phdr_drug.id"] == drugId; });
+		var stDrugResistanceLiteratureObj = _.find(stDrugResistanceLiteratureObjs, function(stdrlo) { return stdrlo["phdr_drug.id"] == drugId; });
+		
+		drugIdToResistanceLiterature[drugId] = {
+			gtResistanceLiterature: gtDrugResistanceLiteratureObj.resistance_literature,
+			stResistanceLiterature: stDrugResistanceLiteratureObj == null ? null : stDrugResistanceLiteratureObj.resistance_literature
+		};
+	});
+	return drugIdToResistanceLiterature;
+}

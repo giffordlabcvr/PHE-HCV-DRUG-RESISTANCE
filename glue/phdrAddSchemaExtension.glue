@@ -11,12 +11,20 @@ create custom-table phdr_result_trial
 create custom-table phdr_regimen
 create custom-table phdr_result_regimen
 create custom-table phdr_alignment_typical_aa
+create custom-table phdr_alignment_drug
 
 table phdr_drug
   create field abbreviation VARCHAR
   create field category VARCHAR
   create field producer VARCHAR
   create field research_code VARCHAR
+  exit
+
+table phdr_alignment_drug
+  # this field captures whether the published evidence base has characterised
+  # resistance to an adequately complete level for a specific drug and subtype or genotype
+  # possible values 'good', 'poor', 'none' 
+  create field resistance_literature VARCHAR
   exit
 
 table phdr_ras
@@ -116,6 +124,11 @@ create link phdr_resistance_finding phdr_in_vitro_result -m ONE_TO_ONE
 
 # phdr_resistance_finding objects are associated zero or one phdr_in_vivo_result objects
 create link phdr_resistance_finding phdr_in_vivo_result -m ONE_TO_ONE
+
+# phdr_alignment_drug objects associated an alignment (subtype or genotype) with a drug.
+create link phdr_alignment_drug phdr_drug -m ONE_TO_ONE
+create link phdr_alignment_drug alignment -m ONE_TO_ONE
+
 
 # phdr_in_vivo_result objects are associated to a set of clinical trials, in a many-to-many relationship
 # implemented using an intermediate join table phdr_result_trial
