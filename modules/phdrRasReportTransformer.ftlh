@@ -67,6 +67,9 @@ No
 </td>
 <tr>
 
+<#assign insufficientResearchFootnote=false>
+
+
 <td><b>Genotype</b></td>
 <#if isForwardHcv>
 <td>${result.genotypingResult.genotypeCladeCategoryResult.shortRenderedName}</td>
@@ -139,7 +142,7 @@ No
 <td>${drugAssessment.drug.id}</td>
 <#if !drugAssessment.sufficientCoverage>
 <td colspan="5">
-Insufficient coverage at resistance locations to assess resistance level
+Insufficient coverage at resistance locations to assess resistance
 </td>
 <#else>
 <td>
@@ -166,8 +169,16 @@ Insufficient coverage at resistance locations to assess resistance level
 	- 
 </#if>
 </td>
+<#if !drugAssessment.genotypeHasGoodResistanceLiterature && !(drugAssessment.rasScores_category_I?? && drugAssessment.rasScores_category_I?size gt 0)>
+<td>
+Insufficient research in genotype<sup>&Dagger;</sup>
+<#assign insufficientResearchFootnote=true>
+</td>
+<td class="resistanceBlock resistanceColourCode_insufficient_research"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+<#else>
 <td>${drugAssessment.drugScoreDisplay}<#if phdrReport.sequenceDataFormat = "FASTA" && drugAssessment.reliesOnNonDefiniteAa><sup>&dagger;</sup></#if></td>
 <td class="resistanceBlock resistanceColourCode_${drugAssessment.drugScore}"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+</#if>
 </#if>
 </tr>
 </#list>
@@ -190,6 +201,11 @@ No signficant resistance detected: none of the above.
 This nucleotide ambiguity is consistent with the presence of atypical or resistance-associated codons but may also be 
 explained by combinations of non-resistant codons. The ambiguity may be resolved via direct analysis of the 
 deep sequencing data (SAM/BAM file). 
+</li>
+</#if>
+<#if insufficientResearchFootnote>
+<li>&Dagger;&nbsp; While some resistant polymorphisms may be reported, there is insufficient research on resistance to the drug in genotype 
+${result.genotypingResult.genotypeCladeCategoryResult.shortRenderedName} to accurately assess the overall resistance level.
 </li>
 </#if>
 </ul>

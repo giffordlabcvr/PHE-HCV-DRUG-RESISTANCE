@@ -290,7 +290,7 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 				glue.logInfo("resistanceLiteratureMap", resistanceLiteratureMap);
 				// at this stage sequenceResult.rasScanResults contains absent / insufficient coverage variation scan results, 
 				// which is important for assessing whether the sequence has insufficient coverage overall for a given drug.
-				sequenceResult.drugScores = assessResistance(drugs, sequenceResult, false);
+				sequenceResult.drugScores = assessResistance(drugs, sequenceResult, resistanceLiteratureMap, false);
 
 				// now remove non-present variation scan results.
 				sequenceResult.rasScanResults = _.filter(sequenceResult.rasScanResults, function(scanResult) {
@@ -849,7 +849,7 @@ function reportBam(bamFilePath, minReadProportionPct) {
 				var resistanceLiteratureMap = resistanceLiterature(genotypingResult, drugs);
 				// at this stage sequenceResult.rasScanResults contains absent / insufficient coverage variation scan results, 
 				// which is important for assessing whether the sequence has insufficient coverage overall for a given drug.
-				samRefResult.drugScores = assessResistance(drugs, samRefResult, true);
+				samRefResult.drugScores = assessResistance(drugs, samRefResult, resistanceLiteratureMap, true);
 
 				// now remove non-present variation scan results.
 				samRefResult.rasScanResults = _.filter(samRefResult.rasScanResults, function(scanResult) {
@@ -970,9 +970,9 @@ function bamResiduesAtRasAssociatedLocations(bamFilePath, samRefSense, samRefNam
 }
 
 
-function assessResistance(drugs, result, useAaSpan) {
+function assessResistance(drugs, result, resistanceLiteratureMap, useAaSpan) {
 	var assessmentList = _.map(drugs, function(drug) { 
-		return assessResistanceForDrug(result, drug, useAaSpan); 
+		return assessResistanceForDrug(result, drug, resistanceLiteratureMap[drug.id], useAaSpan); 
 	});
 	var categoryToDrugs = _.groupBy(assessmentList, function(assessment) { return assessment.drug.category; });
 	var categoryAssessments = _.map(_.pairs(categoryToDrugs), function(pair) {return { category:pair[0], drugAssessments:pair[1]};});
@@ -985,7 +985,9 @@ function assessResistance(drugs, result, useAaSpan) {
 // These RASs are unlikely to be found to be present / absent in BAM reads
 // because it is unlikely that reads will cover all locations.
 // However, this must not be taken as evidence that coverage is insufficient.
-function assessResistanceForDrug(result, drug, useAaSpan) {
+function assessResistanceForDrug(result, drug, resistanceLiteratureObj, useAaSpan) {
+	
+
 	
 	// if AA span is higher than this, negative sufficientCoverage for the variation
 	// scan result does not count as insufficient coverage for the drug.
@@ -1004,7 +1006,8 @@ function assessResistanceForDrug(result, drug, useAaSpan) {
 	var cat_III_keys = {};
 	
 	var overallSufficientCoverage = true;
-
+	var genotypeHasGoodResistanceLiterature = resistanceLiteratureObj.gtResistanceLiterature == "good";
+	
 	var sufficientCoverage_I = true;
 	var sufficientCoverage_II = true;
 	var sufficientCoverage_III = true;
@@ -1092,34 +1095,34 @@ function assessResistanceForDrug(result, drug, useAaSpan) {
 	var reliesOnNonDefiniteAa = false;
 	
 	if(numCategoryI > 0) {
-		drugScore = 'strong_resistance';
+		drugScore = 'resistance_detected';
 		drugScoreDisplay = 'Resistance detected';
 		drugScoreDisplayShort = 'Resistance';
 		reliesOnNonDefiniteAa = _.every(rasScores_category_I, function(rasScore) { return rasScore.reliesOnNonDefiniteAa; });
 	} else if(!sufficientCoverage_I) {
 		overallSufficientCoverage = false;
 	} else if(numCategoryII > 0) {
-		drugScore = 'moderate_resistance';
+		drugScore = 'probable_resistance_detected';
 		drugScoreDisplay = 'Probable resistance detected';
 		drugScoreDisplayShort = 'Probable resistance';
 		reliesOnNonDefiniteAa = _.every(rasScores_category_II, function(rasScore) { return rasScore.reliesOnNonDefiniteAa; });
 	} else if(!sufficientCoverage_II) {
 		overallSufficientCoverage = false;
 	} else if(numCategoryIII > 0) {
-		drugScore = 'weak_resistance';
+		drugScore = 'possible_resistance_detected';
 		drugScoreDisplay = 'Possible resistance detected';
 		drugScoreDisplayShort = 'Possible resistance';
 		reliesOnNonDefiniteAa = _.every(rasScores_category_III, function(rasScore) { return rasScore.reliesOnNonDefiniteAa; });
 	} else if(!sufficientCoverage_III) {
 		overallSufficientCoverage = false;
 	} else {
-		drugScore = 'susceptible';
+		drugScore = 'no_significant_resistance_detected';
 		drugScoreDisplay = 'No signficant resistance detected';
 		drugScoreDisplayShort = 'No signficant resistance';
 	}
+
 	
 	return {
-		sufficientCoverage: overallSufficientCoverage,
 		drug: drug,
 		drugScore: drugScore, 
 		drugScoreDisplay: drugScoreDisplay,
@@ -1127,7 +1130,9 @@ function assessResistanceForDrug(result, drug, useAaSpan) {
 		rasScores_category_I: rasScores_category_I,
 		rasScores_category_II: rasScores_category_II,
 		rasScores_category_III: rasScores_category_III,
-		reliesOnNonDefiniteAa:reliesOnNonDefiniteAa
+		reliesOnNonDefiniteAa: reliesOnNonDefiniteAa,
+		genotypeHasGoodResistanceLiterature: genotypeHasGoodResistanceLiterature,
+		sufficientCoverage: overallSufficientCoverage
 	};
 	
 }

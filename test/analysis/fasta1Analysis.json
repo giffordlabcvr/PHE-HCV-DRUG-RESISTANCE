@@ -642,7 +642,7 @@
                 "id": "glecaprevir",
                 "category": "NS3/4A protease inhibitors"
               },
-              "drugScore": "susceptible",
+              "drugScore": "no_significant_resistance_detected",
               "drugScoreDisplay": "Susceptible",
               "rasScores": {}
             },
