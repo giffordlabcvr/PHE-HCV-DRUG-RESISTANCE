@@ -67,8 +67,8 @@ No
 </td>
 <tr>
 
-<#assign insufficientResearchFootnote=false>
-
+<#assign genotypeInsufficientResearchFootnote=false>
+<#assign subtypeInsufficientResearchFootnote=false>
 
 <td><b>Genotype</b></td>
 <#if isForwardHcv>
@@ -172,11 +172,11 @@ Insufficient coverage at resistance locations to assess resistance
 <#if !drugAssessment.genotypeHasGoodResistanceLiterature && !(drugAssessment.rasScores_category_I?? && drugAssessment.rasScores_category_I?size gt 0)>
 <td>
 Insufficient research in genotype<sup>&Dagger;</sup>
-<#assign insufficientResearchFootnote=true>
+<#assign genotypeInsufficientResearchFootnote=true>
 </td>
 <td class="resistanceBlock resistanceColourCode_insufficient_research"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 <#else>
-<td>${drugAssessment.drugScoreDisplay}<#if phdrReport.sequenceDataFormat = "FASTA" && drugAssessment.reliesOnNonDefiniteAa><sup>&dagger;</sup></#if></td>
+<td>${drugAssessment.drugScoreDisplay}<#if phdrReport.sequenceDataFormat = "FASTA" && drugAssessment.reliesOnNonDefiniteAa><sup>&dagger;</sup></#if><#if drugAssessment.insufficientSubtypeResearch>*<#assign subtypeInsufficientResearchFootnote=true></#if></td>
 <td class="resistanceBlock resistanceColourCode_${drugAssessment.drugScore}"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 </#if>
 </#if>
@@ -184,32 +184,6 @@ Insufficient research in genotype<sup>&Dagger;</sup>
 </#list>
 </#list>
 </table>
-<div id="resistanceAlgorithmNotes">
-<ul class="footnoteList">
-<li>1. Polymorphisms are assigned to one of three categories according to the strength of evidence for drug resistance. 
-Category I polymorphisms have the strongest evidence: either (a) <em>in vitro</em> resistance level &ge; 5 and found at baseline or treatment-emergent <em>in vivo</em>, or 
-(b) both found at baseline and treatment-emergent. Category II: <em>in vitro</em> level &ge; 50 or found at baseline or treatment-emergent.
-Category III: <em>in vitro</em> level &ge; 5</li>
-<li>2. Resistance detection for a given drug is assigned to one of four categories. 
-Resistance detected: any category I polymorphisms.
-Probable resistance detected: any category II polymorphisms. 
-Possible resistance detected: any category III polymorphisms. 
-No signficant resistance detected: none of the above.
-</li>
-<#if phdrReport.sequenceDataFormat = "FASTA" && result.reliesOnNonDefiniteAa>
-<li>&dagger;&nbsp; The FASTA nucleotide sequence is ambiguous at a resistance-associated location. 
-This nucleotide ambiguity is consistent with the presence of atypical or resistance-associated codons but may also be 
-explained by combinations of non-resistant codons. The ambiguity may be resolved via direct analysis of the 
-deep sequencing data (SAM/BAM file). 
-</li>
-</#if>
-<#if insufficientResearchFootnote>
-<li>&Dagger;&nbsp; While some resistant polymorphisms may be reported, there is insufficient research on resistance to the drug in genotype 
-${result.genotypingResult.genotypeCladeCategoryResult.shortRenderedName} to accurately assess the overall resistance level.
-</li>
-</#if>
-</ul>
-</div>
 <#else>
 No resistance analysis was performed for the sequence.
 </#if>
@@ -245,7 +219,7 @@ No resistance analysis was performed for the sequence.
 <th style="width:8%">Polymorphism</th>
 <th style="width:8%">Genotype / Subtype</th>
 <th style="width:8%">Resisted drug</th>
-<th style="width:6%">Resistance category</th>
+<th style="width:6%">Resistance category<sup>1</sup></th>
 <th style="width:8%">EC50 log fold change <em>in vitro</em></th>
 
 <th style="width:19%">Clinical trials / study cohort</th>
@@ -276,7 +250,7 @@ No resistance analysis was performed for the sequence.
 <tr>
 </#if>
 <#if resistanceFinding?index == 0>
-<td rowspan = "${alignmentRasDrug.numFindings}">${alignmentRasDrug.drug}</td>
+<td rowspan = "${alignmentRasDrug.numFindings}">${alignmentRasDrug.drug}<#if alignmentRasDrug.includedBecauseSubtypeResistanceLiteratureInsufficient>*<#assign subtypeInsufficientResearchFootnote=true></#if></td>
 <td rowspan = "${alignmentRasDrug.numFindings}">${alignmentRasDrug.displayResistanceCategory}</td>
 </#if>
 <td <#if evenRow>id="resistanceFindingEven"</#if>>
@@ -351,6 +325,38 @@ No
 </#list>
 </tbody>
 </table>
+
+<div id="resistanceAlgorithmNotes">
+<ul class="footnoteList">
+<li>1. Polymorphisms are assigned to one of three categories according to the strength of evidence for drug resistance. 
+Category I polymorphisms have the strongest evidence: either (a) <em>in vitro</em> resistance level &ge; 5 and found at baseline or treatment-emergent <em>in vivo</em>, or 
+(b) both found at baseline and treatment-emergent. Category II: <em>in vitro</em> level &ge; 50 or found at baseline or treatment-emergent.
+Category III: <em>in vitro</em> level &ge; 5</li>
+<li>2. Resistance detection for a given drug is assigned to one of four categories. 
+Resistance detected: any category I polymorphisms.
+Probable resistance detected: any category II polymorphisms. 
+Possible resistance detected: any category III polymorphisms. 
+No signficant resistance detected: none of the above.
+</li>
+<#if phdrReport.sequenceDataFormat = "FASTA" && result.reliesOnNonDefiniteAa>
+<li>&dagger;&nbsp; The FASTA nucleotide sequence is ambiguous at a resistance-associated location. 
+This nucleotide ambiguity is consistent with the presence of atypical or resistance-associated codons but may also be 
+explained by combinations of non-resistant codons. The ambiguity may be resolved via direct analysis of the 
+deep sequencing data (SAM/BAM file). 
+</li>
+</#if>
+<#if genotypeInsufficientResearchFootnote>
+<li>&Dagger;&nbsp; While some resistant polymorphisms may be reported, there is insufficient research on resistance to the drug in genotype 
+${result.genotypingResult.genotypeCladeCategoryResult.shortRenderedName} to accurately assess the overall resistance level.
+</li>
+</#if>
+<#if subtypeInsufficientResearchFootnote>
+<li>*&nbsp; Resistance to the drug in subtype ${result.genotypingResult.subtypeCladeCategoryResult.shortRenderedName} is not well understood and so resistance findings associated with other subtypes of genotype  
+${result.genotypingResult.genotypeCladeCategoryResult.shortRenderedName} were also included in the main analysis.
+</li>
+</#if>
+</ul>
+</div>
 <#else>
 No resistance-associated polymorphisms were detected.
 </#if>
