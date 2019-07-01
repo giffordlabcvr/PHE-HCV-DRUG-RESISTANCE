@@ -252,14 +252,18 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 				sequenceResult.featuresWithCoverage = generateFeaturesWithCoverage(targetRefName, queryToTargetRefSegs);
 				
 				var variationWhereClauses = getVariationWhereClauses(genotypingResult);
-				var thisCladeWhereClause = variationWhereClauses.thisCladeWhereClause;
+				var mainSectionWhereClause = variationWhereClauses.mainSectionWhereClause;
 				var sameGenotypeWhereClause = variationWhereClauses.sameGenotypeWhereClause;
 				var differentGenotypeWhereClause = variationWhereClauses.differentGenotypeWhereClause;
 
 				sequenceResult.targetRefName = targetRefName;
-				var thisCladeRasScanResults = 
+				
+				// run the main scan 
+				var mainSectionRasScanResults = 
 					fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefName, 
-							thisCladeWhereClause, false, false);
+							mainSectionWhereClause, false, false);
+
+				// other scans for the "other polymorphisms of interest" section
 				var sameGenotypeRasScanResults = 
 					fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefName, 
 							sameGenotypeWhereClause, true, true);
@@ -269,7 +273,7 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 				var residuesAtRasAssociatedLocations = 
 					fastaResiduesAtRasAssociatedLocations(queryNucleotides, queryToTargetRefSegs, 
 							targetRefName);
-				sequenceResult.rasScanResults = thisCladeRasScanResults;
+				sequenceResult.rasScanResults = mainSectionRasScanResults;
 				// map for recording polymorphisms reported at a higher significance (e.g. confirmed RAS), so that they don't 
 				// get reported again at a lower significance (e.g. atypical for subtype).
 				var reportedPolymorphismKeys = {};
@@ -443,8 +447,9 @@ function fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefNam
 
 function checkForSameGenotypeRas(genotypingResult, scanResult, reportedPolymorphismKeys, substitutionsOfInterest) {
 	var almtName;
-	if(genotypingResult.subtypeCladeCategoryResult.finalClade != null) {
-		almtName = genotypingResult.subtypeCladeCategoryResult.finalClade;
+	var subtypeAlmtName = getSubtypeAlmtName(genotypingResult);
+	if(subtypeAlmtName != null) {
+		almtName = subtypeAlmtName;
 	} else if(genotypingResult.genotypeCladeCategoryResult.finalClade != null) {
 		almtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
 	}
@@ -470,9 +475,10 @@ function checkForSameGenotypeRas(genotypingResult, scanResult, reportedPolymorph
 
 
 function checkForDifferentGenotypeRas(genotypingResult, scanResult, reportedPolymorphismKeys, substitutionsOfInterest) {
-	var almtName;
-	if(genotypingResult.subtypeCladeCategoryResult.finalClade != null) {
-		almtName = genotypingResult.subtypeCladeCategoryResult.finalClade;
+
+	var subtypeAlmtName = getSubtypeAlmtName(genotypingResult);
+	if(subtypeAlmtName != null) {
+		almtName = genotypingResult.subtypeAlmtName;
 	} else if(genotypingResult.genotypeCladeCategoryResult.finalClade != null) {
 		almtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
 	}
@@ -521,8 +527,9 @@ function computeDisplayStructure(gene, structure, almtName) {
 function checkForWildTypeSubstitution(genotypingResult, residueObj, reportedPolymorphismKeys, substitutionsOfInterest, sequenceResult) {
 	var almtName;
 	var displayClade;
-	if(genotypingResult.subtypeCladeCategoryResult.finalClade != null) {
-		almtName = genotypingResult.subtypeCladeCategoryResult.finalClade;
+	var subtypeAlmtName = getSubtypeAlmtName(genotypingResult);
+	if(subtypeAlmtName != null) {
+		almtName = subtypeAlmtName;
 		displayClade = genotypingResult.subtypeCladeCategoryResult.finalCladeRenderedName.replace("HCV ", "").toLowerCase();
 	} else if(genotypingResult.genotypeCladeCategoryResult.finalClade != null) {
 		almtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
@@ -589,7 +596,7 @@ function visualisationHints(queryNucleotides, targetRefName, genotypingResult, q
 			comparisonReferenceNames.push(glue.command(["show", "reference"]).showReferenceResult.referenceName);
 		});
 	}
-	var subtypeAlmtName = genotypingResult.subtypeCladeCategoryResult.finalClade;
+	var subtypeAlmtName = getSubtypeAlmtName(genotypingResult);
 	if(subtypeAlmtName != null) {
 		glue.inMode("alignment/"+subtypeAlmtName, function() {
 			comparisonReferenceNames.push(glue.command(["show", "reference"]).showReferenceResult.referenceName);
@@ -674,15 +681,18 @@ function visualisationHints(queryNucleotides, targetRefName, genotypingResult, q
 
 
 function getVariationWhereClauses(genotypingResult) {
-	var thisCladeWhereClause = "phdr_ras != null";
+	var mainSectionWhereClause = "phdr_ras != null";
 	var sameGenotypeWhereClause = "false";
 	var differentGenotypeWhereClause = "false";
 	var genotypeAlmtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
-	var subtypeAlmtName = genotypingResult.subtypeCladeCategoryResult.finalClade;
+	var subtypeAlmtName = getSubtypeAlmtName(genotypingResult);
 	if(genotypeAlmtName != null && subtypeAlmtName == null) {
 		// genotype known, subtype unknown, include RASs for genotype only.
-		thisCladeWhereClause = thisCladeWhereClause + 
+		mainSectionWhereClause = mainSectionWhereClause + 
 			" and phdr_ras.phdr_alignment_ras.alignment.name = '"+genotypeAlmtName+"'";
+		sameGenotypeWhereClause = "phdr_ras != null and "+
+			"phdr_ras.phdr_alignment_ras.alignment.parent.name = '"+genotypeAlmtName+"' and "+
+			"phdr_ras.phdr_alignment_ras.phdr_alignment_ras_drug.numeric_resistance_category <= 3";
 		differentGenotypeWhereClause = "phdr_ras != null and "+
 			"phdr_ras.phdr_alignment_ras.alignment.parent.name !='"+genotypeAlmtName+"' and "+
 			"phdr_ras.phdr_alignment_ras.alignment.name !='"+genotypeAlmtName+"' and "+
@@ -690,7 +700,7 @@ function getVariationWhereClauses(genotypingResult) {
 	}
 	if(genotypeAlmtName != null && subtypeAlmtName != null) {
 		// genotype known, subtype known, include RASs for specific subtype or genotype.
-		thisCladeWhereClause = thisCladeWhereClause + 
+		mainSectionWhereClause = mainSectionWhereClause + 
 			" and (phdr_ras.phdr_alignment_ras.alignment.name ='"+subtypeAlmtName+"' or "+
 			"phdr_ras.phdr_alignment_ras.alignment.name ='"+genotypeAlmtName+"')";
 		sameGenotypeWhereClause = "phdr_ras != null and "+
@@ -702,7 +712,7 @@ function getVariationWhereClauses(genotypingResult) {
 			"phdr_ras.phdr_alignment_ras.phdr_alignment_ras_drug.numeric_resistance_category <= 3";
 	}
 	var variationWhereClauses = {
-		thisCladeWhereClause: thisCladeWhereClause,
+		mainSectionWhereClause: mainSectionWhereClause,
 		sameGenotypeWhereClause: sameGenotypeWhereClause,
 		differentGenotypeWhereClause: differentGenotypeWhereClause,
 	};
@@ -795,7 +805,7 @@ function reportBam(bamFilePath, minReadProportionPct) {
 				samRefResult.featuresWithCoverage = generateFeaturesWithDepthCoverage(targetRefName, bamFilePath);
 				
 				var variationWhereClauses = getVariationWhereClauses(genotypingResult);
-				var thisCladeWhereClause = variationWhereClauses.thisCladeWhereClause;
+				var mainSectionWhereClause = variationWhereClauses.mainSectionWhereClause;
 				var sameGenotypeWhereClause = variationWhereClauses.sameGenotypeWhereClause;
 				var differentGenotypeWhereClause = variationWhereClauses.differentGenotypeWhereClause;				
 
@@ -803,10 +813,11 @@ function reportBam(bamFilePath, minReadProportionPct) {
 				
 				// run the main scan with no min depth / min read pct.
 				// this is to find important variations for which there is insufficient coverage.
-				var thisCladeRasScanResults = 
+				var mainSectionRasScanResults = 
 					bamVariationScan(bamFilePath, samRefSense, samRefResult.samReference.name, targetRefName, 
-							thisCladeWhereClause, 0, 0);
+							mainSectionWhereClause, 0, 0);
 
+				// other scans for the "other polymorphisms of interest" section
 				var sameGenotypeRasScanResults = 
 					bamVariationScan(bamFilePath, samRefSense, samRefResult.samReference.name, targetRefName, 
 							sameGenotypeWhereClause, phdrSamThresholds.minDepth, minReadProportionPct);
@@ -819,7 +830,7 @@ function reportBam(bamFilePath, minReadProportionPct) {
 					bamResiduesAtRasAssociatedLocations(bamFilePath, samRefSense, 
 							samRefResult.samReference.name, targetRefName, minReadProportionPct);
 				
-				samRefResult.rasScanResults = thisCladeRasScanResults;
+				samRefResult.rasScanResults = mainSectionRasScanResults;
 				// map for recording polymorphisms reported at a higher significance (e.g. confirmed RAS), so that they don't 
 				// get reported again at a lower significance (e.g. atypical for subtype).
 				var reportedPolymorphismKeys = {};
@@ -1144,7 +1155,7 @@ function getRasFinding(genotypingResult, referenceName, featureName, variationNa
 			"/variation/"+variationName, function() {
 		rasFinding = glue.command(["render-object", "phdrRasVariationRenderer"]);
 		var genotypeAlmtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
-		var subtypeAlmtName = genotypingResult.subtypeCladeCategoryResult.finalClade;
+		var subtypeAlmtName = getSubtypeAlmtName(genotypingResult);
 		if(subtypeAlmtName != null && genotypeAlmtName != null) {
 			rasFinding.phdrRasVariation.alignmentRas = _.filter(rasFinding.phdrRasVariation.alignmentRas, function(alignmentRas) {
 				if(alignmentRas.clade.alignmentName == subtypeAlmtName || alignmentRas.clade.alignmentName == genotypeAlmtName ) {
@@ -1295,7 +1306,8 @@ function genotypeFasta(fastaMap, resultMap, placerResultContainer) {
 				genotypingResult.genotypeCladeCategoryResult.shortRenderedName = 
 					genotypingResult.genotypeCladeCategoryResult.finalCladeRenderedName.replace("HCV Genotype ", "");
 			}
-			if(genotypingResult.subtypeCladeCategoryResult.finalCladeRenderedName == null) {
+			var subtypeAlmtName = getSubtypeAlmtName(genotypingResult);
+			if(subtypeAlmtName == null) {
 				genotypingResult.subtypeCladeCategoryResult.shortRenderedName = "unknown";
 			} else {
 				genotypingResult.subtypeCladeCategoryResult.shortRenderedName = 
@@ -1389,7 +1401,7 @@ function addOverview(phdrReport) {
 
 function resistanceLiterature(genotypingResult, drugs) {
 	var gtAlmtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
-	var stAlmtName = genotypingResult.subtypeCladeCategoryResult.finalClade;
+	var stAlmtName = getSubtypeAlmtName(genotypingResult);
 	var gtDrugResistanceLiteratureObjs = glue.tableToObjects(glue.command(["list", "custom-table-row", "phdr_alignment_drug", 
 		"-w", "alignment.name = '"+gtAlmtName+"'", 
 		"phdr_drug.id", "resistance_literature"]));
@@ -1412,3 +1424,12 @@ function resistanceLiterature(genotypingResult, drugs) {
 	});
 	return drugIdToResistanceLiterature;
 }
+
+function getSubtypeAlmtName(genotypingResult) {
+	var subtypeAlmtName = genotypingResult.subtypeCladeCategoryResult.finalClade;
+	if(subtypeAlmtName != null && subtypeAlmtName.indexOf("unassigned") >= 0) {
+		subtypeAlmtName = null;
+	}
+	return subtypeAlmtName;
+}
+
