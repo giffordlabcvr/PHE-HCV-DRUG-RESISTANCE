@@ -1,6 +1,229 @@
 <Publications>
 <PubmedArticle>
     <MedlineCitation Status="Publisher" Owner="NLM">
+        <PMID Version="1">31078622</PMID>
+        <DateRevised>
+            <Year>2019</Year>
+            <Month>05</Month>
+            <Day>12</Day>
+        </DateRevised>
+        <Article PubModel="Print-Electronic">
+            <Journal>
+                <ISSN IssnType="Electronic">1528-0012</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <PubDate>
+                        <Year>2019</Year>
+                        <Month>May</Month>
+                        <Day>09</Day>
+                    </PubDate>
+                </JournalIssue>
+                <Title>Gastroenterology</Title>
+                <ISOAbbreviation>Gastroenterology</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>Amino Acid Substitutions in Genotype 3a Hepatitis C Virus Polymerase Protein Affect Responses to Sofosbuvir.</ArticleTitle>
+            <ELocationID EIdType="pii" ValidYN="Y">S0016-5085(19)40865-2</ELocationID>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1053/j.gastro.2019.05.007</ELocationID>
+            <Abstract>
+                <AbstractText Label="BACKGROUND &amp; AIMS" NlmCategory="OBJECTIVE">Sofosbuvir is a frequently used pan-genotype inhibitor of hepatitis C virus (HCV) polymerase. This drug eliminates most chronic HCV infections and resistance-associated substitutions in the polymerase are rare. However, HCV genotype 3 responds slightly less well to sofosbuvir-based therapies than other genotypes. We collected data from England's National Health Service Early Access Program to search for virus factors associated with sofosbuvir treatment failure.</AbstractText>
+                <AbstractText Label="METHODS" NlmCategory="METHODS">We collected patient serum samples and used the capture-fusion assay to assess viral sensitivity to sofosbuvir in 14 HCV genotype 3 samples. We identified polymorphisms associated with reduced response and created modified forms of HCV and replicons containing the substitutions of interest and tested their sensitivity to sofosbuvir and ribavirin. We examined the effects of these polymorphisms by performing logistic regression multivariate analysis on their association with sustained virologic response (SVR) in a separate cohort of 411 patients with chronic HCV genotype 3 infection who had been treated with sofosbuvir and ribavirin, with or without pegylated interferon.</AbstractText>
+                <AbstractText Label="RESULTS" NlmCategory="RESULTS">We identified a substitution in the HCV genotype 3a NS5b polymerase at amino acid 150 (alanine [A] to valine [V]), V at position 150 was observed in 42% of patients) with a reduced response to sofosbuvir in virus replication assays. In patients treated with sofosbuvir-containing regimens, the A150V variant was associated with a reduced response to treatment with sofosbuvir and ribavirin, with or without pegylated interferon. In 326 patients with V at position 150, 71% achieved an SVR, compared to 88% with A at position 150. In cells, V at position 150 reduced the response to sofosbuvir 7-fold. We found that another rare substitution, glutamic acid [E] at position 206, significantly reduced the response to sofosbuvir (8.34-fold reduction); the combinations of V at position 150 and E at position 206 reduced the virus response to sofosbuvir 35.77-fold. Additionally, in a single patient, we identified 5 rare polymorphisms that reduced sensitivity to sofosbuvir our cell system.</AbstractText>
+                <AbstractText Label="CONCLUSIONS" NlmCategory="CONCLUSIONS">A common polymorphism, V at position 150 in the HCV genotype 3a NS5b polymerase, combined with other variants, reduces the virus response to sofosbuvir. Clinically, infection with HCV G3 containing this variant reduces odds of SVR. In addition, we identified rare combinations of variants in HCV G3 that reduce response to sofosbuvir.</AbstractText>
+                <CopyrightInformation>Copyright © 2019 AGA Institute. Published by Elsevier Inc. All rights reserved.</CopyrightInformation>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Wing</LastName>
+                    <ForeName>Peter A C</ForeName>
+                    <Initials>PAC</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Barts Liver Centre, Blizard Institute, Queen Mary University of London, London, UK.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Jones</LastName>
+                    <ForeName>Meleri</ForeName>
+                    <Initials>M</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Barts Liver Centre, Blizard Institute, Queen Mary University of London, London, UK.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Cheung</LastName>
+                    <ForeName>Michelle</ForeName>
+                    <Initials>M</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Barts Liver Centre, Blizard Institute, Queen Mary University of London, London, UK.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>DaSilva</LastName>
+                    <ForeName>Sampath</ForeName>
+                    <Initials>S</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Barts Liver Centre, Blizard Institute, Queen Mary University of London, London, UK.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Bamford</LastName>
+                    <ForeName>Connor</ForeName>
+                    <Initials>C</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>MRC University of Glasgow Centre for Virus Research.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Jason Lee</LastName>
+                    <ForeName>Wing-Yiu</ForeName>
+                    <Initials>WY</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Barts Liver Centre, Blizard Institute, Queen Mary University of London, London, UK.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Aranday-Cortes</LastName>
+                    <ForeName>Elihu</ForeName>
+                    <Initials>E</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>MRC University of Glasgow Centre for Virus Research.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Da Silva Filipe</LastName>
+                    <ForeName>Ana</ForeName>
+                    <Initials>A</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>MRC University of Glasgow Centre for Virus Research.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>McLauchlan</LastName>
+                    <ForeName>John</ForeName>
+                    <Initials>J</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>MRC University of Glasgow Centre for Virus Research.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Smith</LastName>
+                    <ForeName>David</ForeName>
+                    <Initials>D</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Nuffield Department of Medicine, University of Oxford, and the NIHR Oxford Biomedical Research Centre, Oxford University NHS Trust.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Irving</LastName>
+                    <ForeName>William</ForeName>
+                    <Initials>W</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>NIHR Nottingham Biomedical Research Centre, Nottingham University Hospitals NHS Trust and the University of Nottingham.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Cunningham</LastName>
+                    <ForeName>Morven</ForeName>
+                    <Initials>M</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Barts Liver Centre, Blizard Institute, Queen Mary University of London, London, UK.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Ansari</LastName>
+                    <ForeName>Azim</ForeName>
+                    <Initials>A</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Nuffield Department of Medicine, University of Oxford, and the NIHR Oxford Biomedical Research Centre, Oxford University NHS Trust.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Barnes</LastName>
+                    <ForeName>Eleanor</ForeName>
+                    <Initials>E</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Nuffield Department of Medicine, University of Oxford, and the NIHR Oxford Biomedical Research Centre, Oxford University NHS Trust.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Foster</LastName>
+                    <ForeName>Graham R</ForeName>
+                    <Initials>GR</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Barts Liver Centre, Blizard Institute, Queen Mary University of London, London, UK. Electronic address: g.r.foster@qmul.ac.uk.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2019</Year>
+                <Month>05</Month>
+                <Day>09</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>United States</Country>
+            <MedlineTA>Gastroenterology</MedlineTA>
+            <NlmUniqueID>0374630</NlmUniqueID>
+            <ISSNLinking>0016-5085</ISSNLinking>
+        </MedlineJournalInfo>
+        <KeywordList Owner="NOTNLM">
+            <Keyword MajorTopicYN="N">amino acid change</Keyword>
+            <Keyword MajorTopicYN="N">genetics</Keyword>
+            <Keyword MajorTopicYN="N">mutation</Keyword>
+            <Keyword MajorTopicYN="N">response to therapy</Keyword>
+        </KeywordList>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="received">
+                <Year>2018</Year>
+                <Month>06</Month>
+                <Day>06</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="revised">
+                <Year>2019</Year>
+                <Month>04</Month>
+                <Day>25</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="accepted">
+                <Year>2019</Year>
+                <Month>05</Month>
+                <Day>07</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2019</Year>
+                <Month>5</Month>
+                <Day>13</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2019</Year>
+                <Month>5</Month>
+                <Day>13</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2019</Year>
+                <Month>5</Month>
+                <Day>13</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>aheadofprint</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">31078622</ArticleId>
+            <ArticleId IdType="pii">S0016-5085(19)40865-2</ArticleId>
+            <ArticleId IdType="doi">10.1053/j.gastro.2019.05.007</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
+<PubmedArticle>
+    <MedlineCitation Status="Publisher" Owner="NLM">
         <PMID Version="1">30964552</PMID>
         <DateRevised>
             <Year>2019</Year>

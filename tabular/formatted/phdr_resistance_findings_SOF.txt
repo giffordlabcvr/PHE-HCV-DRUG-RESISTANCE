@@ -102,3 +102,12 @@ NS5B	2a	179A+282T+293L+479P	NA	NA	NA	Sofosbuvir	in vitro	9	NA	NA		Lam		22430955
 NS5B	2a	179A+282T+289L+479P	NA	NA	NA	Sofosbuvir	in vitro	11.4	NA	NA		Lam		22430955	
 NS5B	2a	179A+282T+289L+293L+479P	NA	NA	NA	Sofosbuvir	in vitro	11.8	NA	NA		Lam		22430955	
 NS5B	2a	179A+282T+289L+293L+434T	NA	NA	NA	Sofosbuvir	in vitro	10.6	NA	NA		Lam		22430955	
+NS5B	3a	150V	Yes	No	NA	Sofosbuvir	in vivo	NA	BOSON	SOF/RBV; SOF/PEG/RBV		Wing	 (30% cirrhosis)	31078622	
+NS5B	3a	150V	NA	NA	NA	Sofosbuvir	in vitro	7.8	NA	NA		Wing		31078622	
+NS5B	3a	206E	NA	NA	NA	Sofosbuvir	in vitro	8.3	NA	NA		Wing		31078622	
+NS5B	3a	100R	NA	NA	NA	Sofosbuvir	in vitro	2	NA	NA		Wing		31078622	
+NS5B	3a	188D	NA	NA	NA	Sofosbuvir	in vitro	10.9	NA	NA		Wing		31078622	
+NS5B	3a	244I	NA	NA	NA	Sofosbuvir	in vitro	16.4	NA	NA		Wing		31078622	
+NS5B	3a	100R+188D	NA	NA	NA	Sofosbuvir	in vitro	31.8	NA	NA		Wing		31078622	
+NS5B	3a	150V+206E	NA	NA	NA	Sofosbuvir	in vitro	35.8	NA	NA		Wing		31078622	
+NS5B	3a	282T	NA	NA	NA	Sofosbuvir	in vitro	71.7	NA	NA		Wing		31078622	
