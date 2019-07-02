@@ -107,10 +107,22 @@ No
 <#if isForwardHcv && result.genotypingResult.genotypeCladeCategoryResult.finalClade??>
 
 <p>
-	Please note that the HCV-GLUE drug resistance interpretation system has not yet been clinically validated. 
+	Please note that the HCV-GLUE drug resistance interpretation system has not yet been formally validated for 
+	clinical use. 
+</p>
+<p>
+	HCV-GLUE detects the presence of resistance-associated substitutions (RAS) and variants in viral genome sequences 
+	and summarises the evidence that these confer resistance to direct-acting antiviral drugs (DAAs). 
 	<br/>
-   <b>No clinical decisions should be made based on the outputs of HCV-GLUE drug resistance analysis.</b>
+	It is essential to note that the prediction of reduced susceptibility to an individual DAA by HCV-GLUE is unlikely
+	to be of clinical relevance in treatment-naïve, non-cirrhotic patients, with the exception of elbasvir.
 	<br/>
+	In the presence of cirrhosis or with a history of prior exposure to DAA, the antiviral susceptibility results 
+	may be of value in choosing an optimal treatment regimen. As such decisions are complex, we recommend that 
+	treatment selection should be taken by a multi-professional expert team only after review of relevant viral, 
+	patient and DAA-related factors.
+</p>
+<p>
    Please subscribe to the <a target="_blank" 
    href="https://www.researchgate.net/project/HCV-GLUE-an-online-database-and-sequence-analysis-tool-supporting-treatment-and-eradication-of-hepatitis-C-virus">
    HCV-GLUE ResearchGate project</a> to be notified of updates.
