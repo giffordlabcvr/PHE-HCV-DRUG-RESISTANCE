@@ -1190,8 +1190,8 @@ function assessResistanceForDrug(result, drug, resistanceLiteratureObj, useAaSpa
 		overallSufficientCoverage = false;
 	} else {
 		drugScore = 'no_significant_resistance_detected';
-		drugScoreDisplay = 'No signficant resistance detected';
-		drugScoreDisplayShort = 'No signficant resistance';
+		drugScoreDisplay = 'No resistance detected';
+		drugScoreDisplayShort = 'No resistance';
 	}
 
 	return {
