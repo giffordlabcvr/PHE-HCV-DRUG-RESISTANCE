@@ -69,6 +69,7 @@ No
 
 <#assign genotypeInsufficientResearchFootnote=false>
 <#assign subtypeInsufficientResearchFootnote=false>
+<#assign unknownSubtypeResearchFootnote=false>
 
 <td><b>Genotype</b></td>
 <#if isForwardHcv>
@@ -176,7 +177,7 @@ Insufficient research in genotype<sup>&Dagger;</sup>
 </td>
 <td class="resistanceBlock resistanceColourCode_insufficient_research"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 <#else>
-<td>${drugAssessment.drugScoreDisplay}<#if phdrReport.sequenceDataFormat = "FASTA" && drugAssessment.reliesOnNonDefiniteAa><sup>&dagger;</sup></#if><#if drugAssessment.insufficientSubtypeResearch>*<#assign subtypeInsufficientResearchFootnote=true></#if></td>
+<td>${drugAssessment.drugScoreDisplay}<#if phdrReport.sequenceDataFormat = "FASTA" && drugAssessment.reliesOnNonDefiniteAa><sup>&dagger;</sup></#if><#if drugAssessment.insufficientSubtypeResearch>*<#assign subtypeInsufficientResearchFootnote=true></#if><#if drugAssessment.unknownSubtypeResearch>**<#assign unknownSubtypeResearchFootnote=true></#if></td>
 <td class="resistanceBlock resistanceColourCode_${drugAssessment.drugScore}"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 </#if>
 </#if>
@@ -250,7 +251,7 @@ No resistance analysis was performed for the sequence.
 <tr>
 </#if>
 <#if resistanceFinding?index == 0>
-<td rowspan = "${alignmentRasDrug.numFindings}">${alignmentRasDrug.drug}<#if alignmentRasDrug.includedBecauseSubtypeResistanceLiteratureInsufficient>*<#assign subtypeInsufficientResearchFootnote=true></#if></td>
+<td rowspan = "${alignmentRasDrug.numFindings}">${alignmentRasDrug.drug}<#if alignmentRasDrug.includedBecauseSubtypeResistanceLiteratureInsufficient>*<#assign subtypeInsufficientResearchFootnote=true></#if><#if alignmentRasDrug.includedBecauseSubtypeUnknown>**<#assign unknownSubtypeResearchFootnote=true></#if></td>
 <td rowspan = "${alignmentRasDrug.numFindings}">${alignmentRasDrug.displayResistanceCategory}</td>
 </#if>
 <td <#if evenRow>id="resistanceFindingEven"</#if>>
@@ -351,8 +352,13 @@ ${result.genotypingResult.genotypeCladeCategoryResult.shortRenderedName} to accu
 </li>
 </#if>
 <#if subtypeInsufficientResearchFootnote>
-<li>*&nbsp; Resistance to the drug in subtype ${result.genotypingResult.subtypeCladeCategoryResult.shortRenderedName} is not well understood and so resistance findings associated with other subtypes of genotype  
-${result.genotypingResult.genotypeCladeCategoryResult.shortRenderedName} were also included in the main analysis.
+<li>*&nbsp; Resistance to the drug in subtype ${result.genotypingResult.subtypeCladeCategoryResult.shortRenderedName} is not well-characterised, therefore findings associated with other subtypes of genotype  
+${result.genotypingResult.genotypeCladeCategoryResult.shortRenderedName} were included in the analysis.
+</li>
+</#if>
+<#if unknownSubtypeResearchFootnote>
+<li>**&nbsp; The sequence subtype is unknown, therefore findings associated with the known subtypes of genotype  
+${result.genotypingResult.genotypeCladeCategoryResult.shortRenderedName} were included in the analysis.
 </li>
 </#if>
 </ul>

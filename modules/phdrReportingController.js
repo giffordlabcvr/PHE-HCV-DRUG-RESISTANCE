@@ -1049,10 +1049,15 @@ function assessResistanceForDrug(result, drug, resistanceLiteratureObj, useAaSpa
 	var sufficientCoverage_II = true;
 	var sufficientCoverage_III = true;
 
+	// assume a single category depends on a ras that was included because of insufficient / unknown subtype research
+	// until we find a counterexample.
 	var insufficientSubtypeResearch_I = true;
 	var insufficientSubtypeResearch_II = true;
 	var insufficientSubtypeResearch_III = true;
-	
+	var unknownSubtypeResearch_I = true;
+	var unknownSubtypeResearch_II = true;
+	var unknownSubtypeResearch_III = true;
+
 	_.each(result.rasScanResults, function(scanResult) {
 		var aaSpan = scanResult.rasDetails.aaSpan;
 		_.each(scanResult.rasDetails.alignmentRas, function(alignmentRas) {
@@ -1078,6 +1083,9 @@ function assessResistanceForDrug(result, drug, resistanceLiteratureObj, useAaSpa
 								if(!alignmentRasDrug.includedBecauseSubtypeResistanceLiteratureInsufficient) {
 									insufficientSubtypeResearch_I = false;
 								}
+								if(!alignmentRasDrug.includedBecauseSubtypeUnknown) {
+									unknownSubtypeResearch_I = false;
+								}
 								if(cat_I_keys[key] == null) { // avoid duplicates
 									rasScores_category_I.push(rasScoreDetails); 
 									cat_I_keys[key] = "yes";
@@ -1092,6 +1100,9 @@ function assessResistanceForDrug(result, drug, resistanceLiteratureObj, useAaSpa
 								if(!alignmentRasDrug.includedBecauseSubtypeResistanceLiteratureInsufficient) {
 									insufficientSubtypeResearch_II = false;
 								}
+								if(!alignmentRasDrug.includedBecauseSubtypeUnknown) {
+									unknownSubtypeResearch_II = false;
+								}
 								if(cat_II_keys[key] == null) { // avoid duplicates
 									rasScores_category_II.push(rasScoreDetails); 
 									cat_II_keys[key] = "yes";
@@ -1105,6 +1116,9 @@ function assessResistanceForDrug(result, drug, resistanceLiteratureObj, useAaSpa
 							if(scanResult.present) {
 								if(!alignmentRasDrug.includedBecauseSubtypeResistanceLiteratureInsufficient) {
 									insufficientSubtypeResearch_III = false;
+								}
+								if(!alignmentRasDrug.includedBecauseSubtypeUnknown) {
+									unknownSubtypeResearch_III = false;
 								}
 								if(cat_III_keys[key] == null) { // avoid duplicates
 									rasScores_category_III.push(rasScoreDetails); 
@@ -1144,12 +1158,15 @@ function assessResistanceForDrug(result, drug, resistanceLiteratureObj, useAaSpa
 
 	var reliesOnNonDefiniteAa = false;
 	var insufficientSubtypeResearch = false;
+	var unknownSubtypeResearch = false;
+
 	
 	if(numCategoryI > 0) {
 		drugScore = 'resistance_detected';
 		drugScoreDisplay = 'Resistance detected';
 		drugScoreDisplayShort = 'Resistance';
 		insufficientSubtypeResearch = insufficientSubtypeResearch_I;
+		unknownSubtypeResearch = unknownSubtypeResearch_I;
 		reliesOnNonDefiniteAa = _.every(rasScores_category_I, function(rasScore) { return rasScore.reliesOnNonDefiniteAa; });
 	} else if(!sufficientCoverage_I) {
 		overallSufficientCoverage = false;
@@ -1158,6 +1175,7 @@ function assessResistanceForDrug(result, drug, resistanceLiteratureObj, useAaSpa
 		drugScoreDisplay = 'Probable resistance detected';
 		drugScoreDisplayShort = 'Probable resistance';
 		insufficientSubtypeResearch = insufficientSubtypeResearch_II;
+		unknownSubtypeResearch = unknownSubtypeResearch_II;
 		reliesOnNonDefiniteAa = _.every(rasScores_category_II, function(rasScore) { return rasScore.reliesOnNonDefiniteAa; });
 	} else if(!sufficientCoverage_II) {
 		overallSufficientCoverage = false;
@@ -1166,6 +1184,7 @@ function assessResistanceForDrug(result, drug, resistanceLiteratureObj, useAaSpa
 		drugScoreDisplay = 'Possible resistance detected';
 		drugScoreDisplayShort = 'Possible resistance';
 		insufficientSubtypeResearch = insufficientSubtypeResearch_III;
+		unknownSubtypeResearch = unknownSubtypeResearch_III;
 		reliesOnNonDefiniteAa = _.every(rasScores_category_III, function(rasScore) { return rasScore.reliesOnNonDefiniteAa; });
 	} else if(!sufficientCoverage_III) {
 		overallSufficientCoverage = false;
@@ -1186,7 +1205,8 @@ function assessResistanceForDrug(result, drug, resistanceLiteratureObj, useAaSpa
 		reliesOnNonDefiniteAa: reliesOnNonDefiniteAa,
 		genotypeHasGoodResistanceLiterature: genotypeHasGoodResistanceLiterature,
 		sufficientCoverage: overallSufficientCoverage,
-		insufficientSubtypeResearch: insufficientSubtypeResearch
+		insufficientSubtypeResearch: insufficientSubtypeResearch,
+		unknownSubtypeResearch: unknownSubtypeResearch
 	};
 	
 }
