@@ -147,14 +147,14 @@ function loadResistanceFindings(shortname, drugId, gene, pooledMap) {
 				var ec50RangeString = null;
 				if(ec50Min != null && ec50Max != null) {
 					if(ec50Min == ec50Max) {
-						ec50RangeString = ec50Min.toString();
+						ec50RangeString = formatNumber(ec50Min);
 					} else {
-						ec50RangeString = ec50Min.toString()+" - "+ec50Max.toString();
+						ec50RangeString = formatNumber(ec50Min)+" - "+formatNumber(ec50Max);
 					}
 				} else if(ec50Min != null && ec50Max == null) {
-					ec50RangeString = "> "+ec50Min.toString();
+					ec50RangeString = "> "+formatNumber(ec50Min);
 				} else if(ec50Min == null && ec50Max != null) {
-					ec50RangeString = "< "+ec50Max.toString();
+					ec50RangeString = "< "+formatNumber(ec50Max);
 				}
 				if(ec50RangeString != null) {
 					glue.command(["set", "field", "ec50_range_string", ec50RangeString]);
@@ -306,6 +306,28 @@ function ensureAlmtRasObject(rasId, gene, structure, almtName) {
 		});
 	}
 }
+
+function formatNumber(value) {
+	if(value % 1 === 0) {
+		return String(value);
+	}
+	return toFixed(value, 2);
+}
+
+function toFixed(value, precision) {
+    var precision = precision || 0,
+        power = Math.pow(10, precision),
+        absValue = Math.abs(Math.round(value * power)),
+        result = (value < 0 ? '-' : '') + String(Math.floor(absValue / power));
+
+    if (precision > 0) {
+        var fraction = String(absValue % power),
+            padding = new Array(Math.max(precision - fraction.length, 0) + 1).join('0');
+        result += '.' + padding + fraction;
+    }
+    return result;
+}
+
 
 loadResistanceFindings("EBR", "elbasvir", "NS5A", 
 		{"Pooled1": ["C-SURFER", "C-EDGE TN", "C-EDGE CO-INFECTION", "C-EDGE TE", "C-WORTHY", "C-SALVAGE"], 
