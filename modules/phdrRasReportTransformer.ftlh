@@ -113,10 +113,8 @@ No
 <p>
 	HCV-GLUE detects the presence of resistance-associated substitutions (RAS) and variants in viral genome sequences 
 	and summarises the evidence that these confer resistance to direct-acting antiviral drugs (DAAs). 
-	<br/>
 	It is essential to note that the prediction of reduced susceptibility to an individual DAA by HCV-GLUE is unlikely
 	to be of clinical relevance in treatment-naïve, non-cirrhotic patients, with the exception of elbasvir.
-	<br/>
 	In the presence of cirrhosis or with a history of prior exposure to DAA, the antiviral susceptibility results 
 	may be of value in choosing an optimal treatment regimen. As such decisions are complex, we recommend that 
 	treatment selection should be taken by a multi-professional expert team only after review of relevant viral, 
@@ -161,7 +159,7 @@ Insufficient coverage at resistance locations to assess resistance
 <td>
 <#if drugAssessment.rasScores_category_I?? && drugAssessment.rasScores_category_I?size gt 0>
 <#list drugAssessment.rasScores_category_I as rasScore>
-	<a href="${rasScore.rapUrl}" target="_blank">${rasScore.displayStructure}</a><#if phdrReport.sequenceDataFormat = "FASTA" && rasScore.reliesOnNonDefiniteAa><sup>&dagger;</sup></#if><#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if><#if !rasScore?is_last>,</#if></#list>
+	<a href="${rasScore.rapUrl}" target="_blank">${rasScore.displayStructure}</a><#if phdrReport.sequenceDataFormat = "FASTA" && rasScore.reliesOnNonDefiniteAa><sup>&dagger;</sup></#if><#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0")}%)</#if><#if !rasScore?is_last>,</#if></#list>
 <#else>
 	-
 </#if>
@@ -169,7 +167,7 @@ Insufficient coverage at resistance locations to assess resistance
 <td>
 <#if drugAssessment.rasScores_category_II?? && drugAssessment.rasScores_category_II?size gt 0>
 <#list drugAssessment.rasScores_category_II as rasScore>
-	<a href="${rasScore.rapUrl}" target="_blank">${rasScore.displayStructure}</a><#if phdrReport.sequenceDataFormat = "FASTA" && rasScore.reliesOnNonDefiniteAa><sup>&dagger;</sup></#if><#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if><#if !rasScore?is_last>,</#if></#list>
+	<a href="${rasScore.rapUrl}" target="_blank">${rasScore.displayStructure}</a><#if phdrReport.sequenceDataFormat = "FASTA" && rasScore.reliesOnNonDefiniteAa><sup>&dagger;</sup></#if><#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0")}%)</#if><#if !rasScore?is_last>,</#if></#list>
 <#else>
 	- 
 </#if>
@@ -177,7 +175,7 @@ Insufficient coverage at resistance locations to assess resistance
 <td>
 <#if drugAssessment.rasScores_category_III?? && drugAssessment.rasScores_category_III?size gt 0>
 <#list drugAssessment.rasScores_category_III as rasScore>
-	<a href="${rasScore.rapUrl}" target="_blank">${rasScore.displayStructure}</a><#if phdrReport.sequenceDataFormat = "FASTA" && rasScore.reliesOnNonDefiniteAa><sup>&dagger;</sup></#if><#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0.#")}%)</#if><#if !rasScore?is_last>,</#if></#list>
+	<a href="${rasScore.rapUrl}" target="_blank">${rasScore.displayStructure}</a><#if phdrReport.sequenceDataFormat = "FASTA" && rasScore.reliesOnNonDefiniteAa><sup>&dagger;</sup></#if><#if phdrReport.sequenceDataFormat = "SAM/BAM"> (${rasScore.readsPctPresent?string("##0")}%)</#if><#if !rasScore?is_last>,</#if></#list>
 <#else>
 	- 
 </#if>
@@ -255,7 +253,7 @@ No resistance analysis was performed for the sequence.
 	<a href="${rasScanResult.rapUrl}" target="_blank">${alignmentRas.displayStructure}</a><#if phdrReport.sequenceDataFormat = "FASTA" && rasScanResult.reliesOnNonDefiniteAa><sup>&dagger;</sup></#if>
 </td>
 <#if phdrReport.sequenceDataFormat = "SAM/BAM">
-<td rowspan = "${alignmentRas.numFindings}">${rasScanResult.pctPresent?string("##0.#")}%</td>
+<td rowspan = "${alignmentRas.numFindings}">${rasScanResult.pctPresent?string("##0")}%</td>
 <td rowspan = "${alignmentRas.numFindings}">${(rasScanResult.readsPresent+rasScanResult.readsAbsent)?c}</td>
 </#if>
 <td rowspan = "${alignmentRas.numFindings}">${alignmentRas.clade.displayName?replace("HCV ", "")}</td>
@@ -419,7 +417,7 @@ No resistance analysis was performed for the sequence.
 </#if>
 </td>
 <#if phdrReport.sequenceDataFormat = "SAM/BAM">
-<td>${substitutionOfInterest.pctPresent?string("##0.#")}%</td>
+<td>${substitutionOfInterest.pctPresent?string("##0")}%</td>
 <td>${(substitutionOfInterest.depth)?c}</td>
 </#if>
 	<td>${substitutionOfInterest.displayReasonForInterest}</td>
