@@ -291,13 +291,13 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 				
 				sequenceResult.rasScanResults = removeEmptyScanResults(sequenceResult.rasScanResults);
 				
+				var subtypeAlmtName = getSubtypeAlmtName(genotypingResult);
+				if(subtypeAlmtName != null) {
+					almtName = subtypeAlmtName;
+				} else if(genotypingResult.genotypeCladeCategoryResult.finalClade != null) {
+					almtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
+				}
 				_.each(sequenceResult.rasScanResults, function(scanResult) {
-					var subtypeAlmtName = getSubtypeAlmtName(genotypingResult);
-					if(subtypeAlmtName != null) {
-						almtName = subtypeAlmtName;
-					} else if(genotypingResult.genotypeCladeCategoryResult.finalClade != null) {
-						almtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
-					}
 					if(scanResult.present) {
 						addRasPublications(scanResult.rasDetails, publicationIdToObj);
 						_.each(scanResult.rasDetails.alignmentRas, function(alignmentRas) {
@@ -556,15 +556,17 @@ function checkForWildTypeSubstitution(genotypingResult, residueObj, reportedPoly
 	var gene = residueObj.feature;
 	var codon = residueObj.codonLabel;
 	var residues;
+	var definiteAas;
 	if(residueObj.possibleAas != null) {
 		// FASTA consensus case, use the set of possible AAs given any ambiguity codes in the triplet.
 		residues = residueObj.possibleAas.split("").sort();
+		definiteAas = residueObj.definiteAas.split("");
 	} else {
 		// SAM/BAM case
 		residues = [residueObj.aminoAcid];
+		definiteAas = [residueObj.aminoAcid];
 	}
 	
-	var definiteAas = residueObj.definiteAas.split("");
 	
 	var typicalAAs = glue.getTableColumn(glue.command([
 		"list", "custom-table-row", "phdr_alignment_typical_aa", 
@@ -863,8 +865,10 @@ function reportBam(bamFilePath, minReadProportionPct) {
 						scanResult.rasDetails = rasFinding.phdrRasVariation;
 					});
 
-					samRefResult.rasScanResults = removeEmptyScanResuts(samRefResult.rasScanResults);
 					
+					samRefResult.rasScanResults = removeEmptyScanResults(samRefResult.rasScanResults);
+
+					var subtypeAlmtName = getSubtypeAlmtName(genotypingResult);
 					if(subtypeAlmtName != null) {
 						almtName = subtypeAlmtName;
 					} else if(genotypingResult.genotypeCladeCategoryResult.finalClade != null) {
