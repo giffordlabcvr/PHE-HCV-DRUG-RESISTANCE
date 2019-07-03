@@ -509,7 +509,7 @@ No resistance analysis was performed for the sequence.
 </colgroup>
 <tr><td><b>GLUE engine version</b></td><td>${phdrReport.engineVersion}</td></tr>
 <tr><td><b>HCV project version</b></td><td>${phdrReport.projectVersion}</td></tr>
-<tr><td><b>PHE extension version</b></td><td>${phdrReport.extensionVersion}</td></tr>
+<tr><td><b>PHE drug resistance extension version</b></td><td>${phdrReport.extensionVersion}</td></tr>
 <#if phdrReport.sequenceDataFormat = "SAM/BAM">
 <tr><td><b>Minimum read proportion</b></td><td>${phdrReport.minReadProportionPct?string("##0.#")}%</td></tr>
 <tr><td><b>Minimum read depth</b></td><td>${phdrReport.phdrSamThresholds.minDepth?c}</td></tr>
