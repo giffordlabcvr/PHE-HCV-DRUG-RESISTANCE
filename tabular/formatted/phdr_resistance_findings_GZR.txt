@@ -9,8 +9,6 @@ virusGenotype	gene	substitution	baselineRas	rxEmergentRas	rasContext	drug	vitroO
 1a	NS3	80K+168A	no	yes	NA	GZR	in vivo		C-EDGE CO-INFECTION	EBR/GZR			218	26423374			
 1a	NS3	107I	yes	yes		GZR	in vivo		C-EDGE TE	EBR/GZR;EBR/GZR/RBV			420	27720838			
 1a	NS3	155K	no	yes		GZR	in vivo		C-EDGE TE	EBR/GZR;EBR/GZR/RBV			420	27720838			
-1a	NS3	155R	no	yes		GZR	in vivo		C-EDGE TE	EBR/GZR;EBR/GZR/RBV			420	27720838			
-1a	NS3	156A	no	yes		GZR	in vivo		C-EDGE TE	EBR/GZR;EBR/GZR/RBV			420	27720838			
 1a	NS3	156T	no	yes		GZR	in vivo		C-EDGE TE	EBR/GZR;EBR/GZR/RBV			420	27720838			
 1a	NS3	156T+158A	no	yes		GZR	in vivo		C-EDGE TE	EBR/GZR;EBR/GZR/RBV			420	27720838			
 1a	NS3	156T+170I	no	yes		GZR	in vivo		C-EDGE TE	EBR/GZR;EBR/GZR/RBV			420	27720838			
@@ -42,7 +40,6 @@ virusGenotype	gene	substitution	baselineRas	rxEmergentRas	rasContext	drug	vitroO
 3	NS3	56Y+168K+170I	no	yes		GZR	in vivo		C-WORTHY	EBR/GZR/RBV		g3  	253	25467591			
 3	NS3	56Y+168Q+170I	no	yes		GZR	in vivo		C-WORTHY	EBR/GZR/RBV		g3  	253	25467591			
 3	NS3	80K	no	yes		GZR	in vivo		C-WORTHY	EBR/GZR/RBV		g3  	253	25467591			
-1a	NS3	156A	no	yes		GZR	in vivo		C-WORTHY	EBR/GZR;EBR/GZR/RBV			253	25467591			
 1a	NS3	156T	no	yes		GZR	in vivo		C-WORTHY	EBR/GZR;EBR/GZR/RBV			253	25467591			
 1a	NS3	36M+80K+107I	no	yes		GZR	in vivo		C-WORTHY	EBR/GZR;EBR/GZR/RBV			253	25467591			
 1a	NS3	56H+168A	no	yes		GZR	in vivo		C-WORTHY	EBR/GZR;EBR/GZR/RBV			253	25467591			
