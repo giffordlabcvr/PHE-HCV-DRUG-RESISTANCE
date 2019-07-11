@@ -28,7 +28,6 @@ virusGenotype	gene	substitution	baselineRas	rxEmergentRas	rasContext	drug	vitroO
 1b	NS3	54S	yes	no		GZR	in vivo		C-SALVAGE	EBR/GZR/RBV		treatment-experienced (previous SIM/TEL/BOC)	79	26371152			
 1b	NS3	54S+156T	no	yes		GZR	in vivo		C-SALVAGE	EBR/GZR/RBV		treatment-experienced (previous SIM/TEL/BOC)	79	26371152			
 3	NS3	156G	no	yes		GZR	in vivo		C-WORTHY	EBR/GZR/RBV		g3  	253	25467591			
-3	NS3	170I	yes	no		GZR	in vivo		C-WORTHY	EBR/GZR/RBV		g3  	253	25467591			
 3	NS3	132I+170I	yes	no		GZR	in vivo		C-WORTHY	EBR/GZR/RBV		g3  	253	25467591			
 3	NS3	156G+170I	no	yes		GZR	in vivo		C-WORTHY	EBR/GZR/RBV		g3  	253	25467591			
 3	NS3	168R+170I	yes	no		GZR	in vivo		C-WORTHY	EBR/GZR/RBV		g3  	253	25467591			

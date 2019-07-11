@@ -29,7 +29,6 @@ virusGenotype	gene	substitution	baselineRas	rxEmergentRas	rasContext	drug	vitroO
 1a	NS5A	30R	NA	NA	NA	VEL	in vitro	2.2	NA	NA	NA	NA	EASL_2013_Poster_1191		
 1a	NS5A	30R	NA	NA	NA	VEL	in vitro	2.2	NA	NA	NA	NA	27353271		
 4a	NS5A	30R	NA	NA	NA	VEL	in vitro	2.4	NA	NA	NA	NA	27353271		
-4d	NS5A	30R	Yes	No	NA	VEL	in vivo	NA	POLARIS-1	SOF/VEL/VOX	NA	NA	28564569		
 1a	NS5A	30R+31M	NA	NA	NA	VEL	in vitro	198.4	NA	NA	NA	NA	27353271		
 1c	NS5A	30R+31M	Yes	No	NA	VEL	in vivo	1.4	Pooled analysis	SOF/VEL	NA	1c/1h	29221887		
 1h	NS5A	30R+31M	Yes	No	NA	VEL	in vivo	1.4	Pooled analysis	SOF/VEL	NA	1c/1h	29221887		
@@ -62,7 +61,6 @@ virusGenotype	gene	substitution	baselineRas	rxEmergentRas	rasContext	drug	vitroO
 1a	NS5A	32del	NA	NA	NA	VEL	in vitro	>999	NA	NA	NA	NA	29274866		
 1b	NS5A	32del	NA	NA	NA	VEL	in vitro	>999	NA	NA	NA	NA	29274866		
 1a	NS5A	32L	NA	NA	NA	VEL	in vitro	28.4	NA	NA	NA	NA	27353271		
-2b	NS5A	44K	NA	NA	NA	VEL	in vitro	2.8	NA	NA	NA	NA	EASL_2013_Poster_1191		
 1a	NS5A	58D	NA	NA	NA	VEL	in vitro	7.3	NA	NA	NA	NA	27353271		
 1a	NS5A	58D+93C	No	Yes	31M	VEL	in vivo	NA	POLARIS-4	SOF/VEL 	NA	NA	28564569		
 2b	NS5A	58S	NA	NA	NA	VEL	in vitro	2.5	NA	NA	NA	NA	EASL_2013_Poster_1191		

@@ -164,7 +164,6 @@ virusGenotype	gene	substitution	baselineRas	rxEmergentRas	rasContext	drug	vitroO
 1b	NS5A	31I	no	yes	R30Q+Y93H	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	206 patients; TN, TE with PR, TPV or SIM; 25% with cirrhosis; 26 failures	26878268	
 1b	NS5A	31M+93H	no	yes		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	206 patients; TN, TE with PR, TPV or SIM; 25% with cirrhosis; 26 failures	26878268	
 1b	NS5A	30Q+93H	no	yes		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	206 patients; TN, TE with PR, TPV or SIM; 25% with cirrhosis; 26 failures	26878268	
-1b	NS5A	54H 	yes	Yes	Y93H	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	206 patients; TN, TE with PR, TPV or SIM; 25% with cirrhosis; 26 failures	26878268	
 1b	NS5A	54L	yes	yes	Y93H	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	206 patients; TN, TE with PR, TPV or SIM; 25% with cirrhosis; 26 failures	26878268	
 1b	NS5A	92K	no	yes	R30Q	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	206 patients; TN, TE with PR, TPV or SIM; 25% with cirrhosis; 26 failures	26878268	
 1b	NS5A	32del	no	yes		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV  	prior SIM-therapy	26878268	
@@ -321,7 +320,6 @@ virusGenotype	gene	substitution	baselineRas	rxEmergentRas	rasContext	drug	vitroO
 1b	NS5A	31V+93H	no	yes	F37L+Q54H	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
 1b	NS5A	24K+28M	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
 1b	NS5A	30G 	no	yes	Q24K+L28M	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
-1b	NS5A	54H	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
 1b	NS5A	31M+93H	no	yes	Q54H	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
 1b	NS5A	24K+28M+30Q+92T	yes	no		DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
 1b	NS5A	92K	no	yes	Q24K+L28M+R30Q	DCV	in vivo	NA	Real world (Japan)*	DCV/ASV	335 patients; 29% cirrhosis	28078469	
@@ -351,11 +349,9 @@ virusGenotype	gene	substitution	baselineRas	rxEmergentRas	rasContext	drug	vitroO
 1a	NS5A	28V	yes	no		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
 1b	NS5A	28V	yes	no		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
 1a	NS5A	28A+30R	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
-1b	NS5A	28A+30R	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
 1a	NS5A	30E	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
 1b	NS5A	30E	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
 1a	NS5A	30E+62Q	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
-1b	NS5A	30E+62Q	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
 1a	NS5A	30R+58D	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
 1b	NS5A	30R+58D	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
 1a	NS5A	31M+93C	no	yes		DCV	in vivo	NA	NCT01012895	DCV/ASV/RBV	101 patients; non cirrhotic	24444658	
