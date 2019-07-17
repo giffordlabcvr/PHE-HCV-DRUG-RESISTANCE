@@ -77,6 +77,7 @@ function reportFastaWeb(base64, filePath) {
 	// apply blast recogniser / genotyping together on set, as this is more efficient.
 	initResultMap(fastaDocument, fastaMap, resultMap, placerResultContainer);
 	// apply report generation to each sequence in the set.
+	glue.setRunningDescription("Scanning for drug resistance");
 	var phdrReports = _.map(fastaDocument.nucleotideFasta.sequences, function(sequence) {
 		return generateSingleFastaReport(_.pick(fastaMap, sequence.id), _.pick(resultMap, sequence.id), filePath);
 	});
@@ -133,6 +134,7 @@ function initResultMap(fastaDocument, fastaMap, resultMap, placerResultContainer
 			reliesOnNonDefiniteAa: false
 		};
 	});
+	glue.setRunningDescription("Sequence type recognition");
 	// apply recogniser to fastaMap
 	recogniseFasta(fastaMap, resultMap);
 
@@ -1320,6 +1322,8 @@ function genotypeFasta(fastaMap, resultMap, placerResultContainer) {
 	});
 	if(!_.isEmpty(genotypingFastaMap)) {
 
+		glue.setRunningDescription("Phylogenetic placement");
+
 		// run the placer and generate a placer result document
 		var placerResultDocument;
 		glue.inMode("module/maxLikelihoodPlacer", function() {
@@ -1371,6 +1375,9 @@ function genotypeFasta(fastaMap, resultMap, placerResultContainer) {
 			resultMap[queryName].placements = placements;
 		});
 		
+		
+		glue.setRunningDescription("Genotype and subtype assignment");
+
 		
 		var genotypingResults;
 		glue.inMode("module/maxLikelihoodGenotyper", function() {
