@@ -71,6 +71,10 @@ function reportFastaWeb(base64, filePath) {
 	if(numSequencesInFile == 0) {
 		throw new Error("No sequences found in FASTA file");
 	}
+	var maxSequencesWithoutAuth = 20;
+	if(numSequencesInFile > maxSequencesWithoutAuth && !glue.hasAuthorisation("hcvFastaAnalysisLargeSubmissions")) {
+		throw new Error("Not authorised to analyse FASTA files with more than "+maxSequencesWithoutAuth+" sequences");
+	}
 	var fastaMap = {};
 	var resultMap = {};
 	var placerResultContainer = {};
