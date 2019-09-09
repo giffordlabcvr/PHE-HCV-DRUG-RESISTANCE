@@ -62,7 +62,9 @@ function reportBamAsHtml(bamFilePath, minReadProportionPct, htmlFilePath) {
 
 
 function reportFastaWeb(base64, filePath) {
-	glue.log("FINE", "phdrReportingController.reportFastaWeb invoked");
+	// glue.logInfo("start");
+
+	// glue.log("FINE", "phdrReportingController.reportFastaWeb invoked");
 	var fastaDocument;
 	glue.inMode("module/phdrFastaUtility", function() {
 		fastaDocument = glue.command(["base64-to-nucleotide-fasta", base64]);
@@ -81,10 +83,43 @@ function reportFastaWeb(base64, filePath) {
 	// apply blast recogniser / genotyping together on set, as this is more efficient.
 	initResultMap(fastaDocument, fastaMap, resultMap, placerResultContainer);
 	// apply report generation to each sequence in the set.
-	glue.setRunningDescription("Scanning for drug resistance");
-	var phdrReports = _.map(fastaDocument.nucleotideFasta.sequences, function(sequence) {
-		return generateSingleFastaReport(_.pick(fastaMap, sequence.id), _.pick(resultMap, sequence.id), filePath);
+// 	var t0 = Java.type("java.lang.System").currentTimeMillis();
+	
+	
+	var cmdDocs = _.map(fastaDocument.nucleotideFasta.sequences, function(sequence) {
+		return { 
+			"modePath": "module/phdrReportingController",
+			"command": {
+				"invoke-function" : {
+					"functionName" : "generateSingleFastaReport",
+					"document" : 
+						{ 
+							singleFastaInputDoc: {
+								sequenceNts: sequence.sequence,
+								sequenceResult: resultMap[sequence.id],
+								fastaFilePath: filePath
+							}
+						} 
+				}
+			}
+		};
 	});
+	var phdrReports;
+	var i = 0;
+	var numSeqs = fastaDocument.nucleotideFasta.sequences.length;
+	glue.setRunningDescription("Scanned "+i+"/"+numSeqs+" sequences for drug resistance");
+	phdrReports = glue.parallelCommands(cmdDocs, {
+		"completedCmdCallback": function() {
+			i++;
+			glue.setRunningDescription("Scanned "+i+"/"+numSeqs+" sequences for drug resistance");
+		}
+	});
+
+// 	var t1 = Java.type("java.lang.System").currentTimeMillis();
+
+	// glue.logInfo("generateSingleFastaReport took "+(t1-t0)+" ms");
+	
+	
 	var result = {
 		phdrWebReport:  { 
 			results: phdrReports, 
@@ -92,8 +127,8 @@ function reportFastaWeb(base64, filePath) {
 		}
 	};
 
-	glue.log("FINE", "phdrReportingController.reportFastaWeb result", result);
-	
+	// glue.log("FINE", "phdrReportingController.reportFastaWeb result", result);
+	// glue.logInfo("complete");
 	return result;
 	
 //	return staticResult;
@@ -103,7 +138,7 @@ function reportFastaWeb(base64, filePath) {
  * Entry point for generating a report for a fasta file containing a single sequence.
  */
 function reportFasta(fastaFilePath) {
-	glue.log("FINE", "phdrReportingController.reportFasta invoked, input file:"+fastaFilePath);
+	// glue.log("FINE", "phdrReportingController.reportFasta invoked, input file:"+fastaFilePath);
 	// Load fasta and put in a fastaMap
 	var fastaDocument;
 	glue.inMode("module/phdrFastaUtility", function() {
@@ -120,13 +155,20 @@ function reportFasta(fastaFilePath) {
 	var resultMap = {};
 	var placerResultContainer = {};
 	initResultMap(fastaDocument, fastaMap, resultMap, placerResultContainer);
-	var singleFastaReport = generateSingleFastaReport(fastaMap, resultMap, fastaFilePath);
+	var inputDoc = {
+			singleFastaInputDoc : {
+				sequenceNts: _.values(fastaMap)[0].sequence,
+				sequenceResult: _.values(resultMap)[0],
+				fastaFilePath: fastaFilePath
+			}
+	};
+	var singleFastaReport = generateSingleFastaReport(inputDoc);
 	singleFastaReport.phdrReport["placerResult"] = placerResultContainer.placerResult;
 	return singleFastaReport;
 }
 
 function initResultMap(fastaDocument, fastaMap, resultMap, placerResultContainer) {
-	glue.log("FINE", "phdrReportingController.initResultMap fastaDocument:", fastaDocument);
+	// glue.log("FINE", "phdrReportingController.initResultMap fastaDocument:", fastaDocument);
 	_.each(fastaDocument.nucleotideFasta.sequences, function(sequenceObj) {
 		fastaMap[sequenceObj.id] = sequenceObj;
 	});
@@ -142,12 +184,12 @@ function initResultMap(fastaDocument, fastaMap, resultMap, placerResultContainer
 	// apply recogniser to fastaMap
 	recogniseFasta(fastaMap, resultMap);
 
-	glue.log("FINE", "phdrReportingController.initResultMap, result map after recogniser", resultMap);
+	// glue.log("FINE", "phdrReportingController.initResultMap, result map after recogniser", resultMap);
 
 	// apply genotyping
 	genotypeFasta(fastaMap, resultMap, placerResultContainer);
 
-	glue.log("FINE", "phdrReportingController.initResultMap, result map after genotyping", resultMap);
+	// glue.log("FINE", "phdrReportingController.initResultMap, result map after genotyping", resultMap);
 }
 
 function generateQueryToTargetRefSegs(targetRefName, nucleotides) {
@@ -167,7 +209,7 @@ function generateQueryToTargetRefSegs(targetRefName, nucleotides) {
 				]
 			}
 		});
-		glue.log("FINE", "phdrReportingController.generateQueryToTargetRefSegs, alignResult", alignResult);
+		// glue.log("FINE", "phdrReportingController.generateQueryToTargetRefSegs, alignResult", alignResult);
 	});
 	return alignResult.compoundAlignerResult.sequence[0].alignedSegment;
 	
@@ -241,140 +283,200 @@ function generateFeaturesWithDepthCoverage(targetRefName, bamFile) {
 	
 } 
 
-function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
+function generateSingleFastaReport(inputDocument) {
+	var sequenceNts = inputDocument.singleFastaInputDoc.sequenceNts;
+	var sequenceResult = inputDocument.singleFastaInputDoc.sequenceResult;
+	var fastaFilePath = inputDocument.singleFastaInputDoc.fastaFilePath;
+	
 	var publicationIdToObj = {};
 	nextPubIndex = 1;
-	
-	
+
 	// apply variation scanning
-	_.each(_.values(resultMap), function(sequenceResult) {
-		var genotypingResult = sequenceResult.genotypingResult;
-		if(genotypingResult != null) {
-			if(genotypingResult.genotypeCladeCategoryResult.finalClade != null) {
-				var targetRefName = genotypingResultToTargetRefName(genotypingResult);
-				var nucleotides = fastaMap[sequenceResult.id].sequence;
-				var queryToTargetRefSegs = generateQueryToTargetRefSegs(targetRefName, nucleotides);
-				var queryNucleotides = fastaMap[sequenceResult.id].sequence;
-				sequenceResult.featuresWithCoverage = generateFeaturesWithCoverage(targetRefName, queryToTargetRefSegs);
-				
-				var variationWhereClauses = getVariationWhereClauses(genotypingResult);
-				var mainSectionWhereClause = variationWhereClauses.mainSectionWhereClause;
-				var sameGenotypeWhereClause = variationWhereClauses.sameGenotypeWhereClause;
-				var differentGenotypeWhereClause = variationWhereClauses.differentGenotypeWhereClause;
+	// prvrTime = 0;
 
-				sequenceResult.targetRefName = targetRefName;
-				
-				// run the main scan 
-				var mainSectionRasScanResults = 
-					fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefName, 
-							mainSectionWhereClause, false, false);
+	var genotypingResult = sequenceResult.genotypingResult;
+	if(genotypingResult != null) {
+		if(genotypingResult.genotypeCladeCategoryResult.finalClade != null) {
+			var targetRefName = genotypingResultToTargetRefName(genotypingResult);
+			var nucleotides = sequenceNts;
+			var queryToTargetRefSegs = generateQueryToTargetRefSegs(targetRefName, nucleotides);
+			var queryNucleotides = sequenceNts;
+			sequenceResult.featuresWithCoverage = generateFeaturesWithCoverage(targetRefName, queryToTargetRefSegs);
 
-				// other scans for the "other polymorphisms of interest" section
-				var sameGenotypeRasScanResults = 
-					fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefName, 
-							sameGenotypeWhereClause, true, true);
-				var differentGenotypeRasScanResults = 
-					fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefName, 
-							differentGenotypeWhereClause, true, true);
-				var residuesAtRasAssociatedLocations = 
-					fastaResiduesAtRasAssociatedLocations(queryNucleotides, queryToTargetRefSegs, 
-							targetRefName);
-				sequenceResult.rasScanResults = mainSectionRasScanResults;
-				// map each drug to resistance literature level (good / poor / none) for genotype and subtype
-				var drugs = glue.tableToObjects(glue.command(["list", "custom-table-row", "phdr_drug", "id", "category"]));
-				var resistanceLiteratureMap = resistanceLiterature(genotypingResult, drugs);
-				// map for recording polymorphisms reported at a higher significance (e.g. confirmed RAS), so that they don't 
-				// get reported again at a lower significance (e.g. atypical for subtype).
-				var reportedPolymorphismKeys = {};
-				glue.log("FINE", "phdrReportingController.generateSingleFastaReport rasScanResults:", 
-						sequenceResult.rasScanResults);
-				_.each(sequenceResult.rasScanResults, function(scanResult) {
-					var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
-							scanResult.featureName, scanResult.variationName, resistanceLiteratureMap, true);
-					glue.log("FINE", "phdrReportingController.generateSingleFastaReport rasFinding:", rasFinding);
-					scanResult.rasDetails = rasFinding.phdrRasVariation;
-				});
-				
-				sequenceResult.rasScanResults = removeEmptyScanResults(sequenceResult.rasScanResults);
-				
-				var subtypeAlmtName = getSubtypeAlmtName(genotypingResult);
-				if(subtypeAlmtName != null) {
-					almtName = subtypeAlmtName;
-				} else if(genotypingResult.genotypeCladeCategoryResult.finalClade != null) {
-					almtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
-				}
-				_.each(sequenceResult.rasScanResults, function(scanResult) {
-					if(scanResult.present) {
-						addRasPublications(scanResult.rasDetails, publicationIdToObj);
-						_.each(scanResult.rasDetails.alignmentRas, function(alignmentRas) {
-							// rewrite display structure so that it's specific to the current sequence genotype / subtype
-							alignmentRas.displayStructure = computeDisplayStructure(scanResult.rasDetails.gene, scanResult.rasDetails.structure, almtName);
-						});
-						
-						scanResult.reliesOnNonDefiniteAa = determineReliesOnNonDefiniteAa(scanResult, sequenceResult);
-					}
-				});
+			var variationWhereClauses = getVariationWhereClauses(genotypingResult);
+			var mainSectionWhereClause = variationWhereClauses.mainSectionWhereClause;
+			var sameGenotypeWhereClause = variationWhereClauses.sameGenotypeWhereClause;
+			var differentGenotypeWhereClause = variationWhereClauses.differentGenotypeWhereClause;
 
-				
-				// at this stage sequenceResult.rasScanResults contains absent / insufficient coverage variation scan results, 
-				// which is important for assessing whether the sequence has insufficient coverage overall for a given drug.
-				sequenceResult.drugScores = assessResistance(drugs, sequenceResult, resistanceLiteratureMap, false);
+			sequenceResult.targetRefName = targetRefName;
 
-				// now remove non-present variation scan results.
-				sequenceResult.rasScanResults = _.filter(sequenceResult.rasScanResults, function(scanResult) {
-					return scanResult.present;
-				});
+			// var t0 = Java.type("java.lang.System").currentTimeMillis();
+			// run the main scan 
+			var mainSectionRasScanResults = 
+				fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefName, 
+						mainSectionWhereClause, false, false);
 
-				glue.log("FINE", "phdrReportingController.generateSingleFastaReport sequenceResult.drugScores:", sequenceResult.drugScores);
+			// var t1 = Java.type("java.lang.System").currentTimeMillis();
+			// glue.logInfo("scan 1: "+(t1-t0)+" ms")
 
-				
-				_.each(sequenceResult.rasScanResults, function(scanResult) {
-					scanResult.rapUrl = "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
-					reportedPolymorphismKeys[scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure] = "thisCladeRAS";
-				});
+			// other scans for the "other polymorphisms of interest" section
+			var sameGenotypeRasScanResults = 
+				fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefName, 
+						sameGenotypeWhereClause, true, true);
 
-				
-				
-				sequenceResult.substitutionsOfInterest = [];
-				sequenceResult.sameGenotypeRasScanResults = sameGenotypeRasScanResults;
-				glue.log("FINE", "phdrReportingController.generateSingleFastaReport sameGenotypeRasScanResults:", 
-						sequenceResult.sameGenotypeRasScanResults);
-				_.each(sequenceResult.sameGenotypeRasScanResults, function(scanResult) {
-					var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
-							scanResult.featureName, scanResult.variationName, resistanceLiteratureMap, false);
-					glue.log("FINE", "phdrReportingController.generateSingleFastaReport rasFinding:", rasFinding);
-					scanResult.rasDetails = rasFinding.phdrRasVariation;
-					scanResult.reliesOnNonDefiniteAa = determineReliesOnNonDefiniteAa(scanResult, sequenceResult);
-					checkForSameGenotypeRas(genotypingResult, scanResult, reportedPolymorphismKeys, sequenceResult.substitutionsOfInterest, sequenceResult);
-				});
-				
-				sequenceResult.differentGenotypeRasScanResults = differentGenotypeRasScanResults;
-				glue.log("FINE", "phdrReportingController.generateSingleFastaReport differentGenotypeRasScanResults:", 
-						sequenceResult.differentGenotypeRasScanResults);
-				_.each(sequenceResult.differentGenotypeRasScanResults, function(scanResult) {
-					var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
-							scanResult.featureName, scanResult.variationName, resistanceLiteratureMap, false);
-					glue.log("FINE", "phdrReportingController.generateSingleFastaReport rasFinding:", rasFinding);
-					scanResult.rasDetails = rasFinding.phdrRasVariation;
-					scanResult.reliesOnNonDefiniteAa = determineReliesOnNonDefiniteAa(scanResult, sequenceResult);
-					checkForDifferentGenotypeRas(genotypingResult, scanResult, reportedPolymorphismKeys, sequenceResult.substitutionsOfInterest, sequenceResult);
-				});
+			// var t2 = Java.type("java.lang.System").currentTimeMillis();
+			// glue.logInfo("scan 2: "+(t2-t1)+" ms")
 
-				
-				sequenceResult.residuesAtRasAssociatedLocations = residuesAtRasAssociatedLocations;
-				glue.log("FINE", "phdrReportingController.generateSingleFastaReport residuesAtRasAssociatedLocations", 
-						sequenceResult.residuesAtRasAssociatedLocations);
-				_.each(sequenceResult.residuesAtRasAssociatedLocations, function(residueObj) {
-					checkForWildTypeSubstitution(genotypingResult, residueObj, reportedPolymorphismKeys, sequenceResult.substitutionsOfInterest, sequenceResult);
-				});
-				
-				sequenceResult.visualisationHints = visualisationHints(queryNucleotides, targetRefName, genotypingResult, queryToTargetRefSegs, sequenceResult.rasScanResults);
+			var differentGenotypeRasScanResults = 
+				fastaVariationScan(queryNucleotides, queryToTargetRefSegs, targetRefName, 
+						differentGenotypeWhereClause, true, true);
+
+			// var t3 = Java.type("java.lang.System").currentTimeMillis();
+			// glue.logInfo("scan 3: "+(t3-t2)+" ms")
+
+			var residuesAtRasAssociatedLocations = 
+				fastaResiduesAtRasAssociatedLocations(queryNucleotides, queryToTargetRefSegs, 
+						targetRefName);
+
+			// var t4 = Java.type("java.lang.System").currentTimeMillis();
+			// glue.logInfo("scan 4: "+(t4-t3)+" ms")
+
+			sequenceResult.rasScanResults = mainSectionRasScanResults;
+			// map each drug to resistance literature level (good / poor / none) for genotype and subtype
+			var drugs = glue.tableToObjects(glue.command(["list", "custom-table-row", "phdr_drug", "id", "category"]));
+			var resistanceLiteratureMap = resistanceLiterature(genotypingResult, drugs);
+			// map for recording polymorphisms reported at a higher significance (e.g. confirmed RAS), so that they don't 
+			// get reported again at a lower significance (e.g. atypical for subtype).
+			var reportedPolymorphismKeys = {};
+			// glue.log("FINE", "phdrReportingController.generateSingleFastaReport rasScanResults:", 
+			//		sequenceResult.rasScanResults);
+
+			// var rfTime = 0;
+
+
+			_.each(sequenceResult.rasScanResults, function(scanResult) {
+
+				// var p0 = Java.type("java.lang.System").currentTimeMillis();
+				var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
+						scanResult.featureName, scanResult.variationName, resistanceLiteratureMap, true);
+				// var p1 = Java.type("java.lang.System").currentTimeMillis();
+				// rfTime += (p1 - p0);
+				// glue.log("FINE", "phdrReportingController.generateSingleFastaReport rasFinding:", rasFinding);
+				scanResult.rasDetails = rasFinding.phdrRasVariation;
+			});
+
+			// glue.logInfo("rfTime: "+rfTime+" ms")
+
+
+			// var t5 = Java.type("java.lang.System").currentTimeMillis();
+			// glue.logInfo("phase 5: "+(t5-t4)+" ms")
+
+			sequenceResult.rasScanResults = removeEmptyScanResults(sequenceResult.rasScanResults);
+
+			var subtypeAlmtName = getSubtypeAlmtName(genotypingResult);
+			if(subtypeAlmtName != null) {
+				almtName = subtypeAlmtName;
+			} else if(genotypingResult.genotypeCladeCategoryResult.finalClade != null) {
+				almtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
 			}
+
+			// var pubTime = 0;
+
+			_.each(sequenceResult.rasScanResults, function(scanResult) {
+				if(scanResult.present) {
+					// var p0 = Java.type("java.lang.System").currentTimeMillis();
+					addRasPublications(scanResult.rasDetails, publicationIdToObj);
+					// var p1 = Java.type("java.lang.System").currentTimeMillis();
+					// pubTime += (p1 - p0);
+
+					_.each(scanResult.rasDetails.alignmentRas, function(alignmentRas) {
+						// rewrite display structure so that it's specific to the current sequence genotype / subtype
+						alignmentRas.displayStructure = computeDisplayStructure(scanResult.rasDetails.gene, scanResult.rasDetails.structure, almtName);
+					});
+
+					scanResult.reliesOnNonDefiniteAa = determineReliesOnNonDefiniteAa(scanResult, sequenceResult);
+				}
+			});
+
+			// glue.logInfo("pubTime: "+pubTime+" ms")
+
+			// var t6 = Java.type("java.lang.System").currentTimeMillis();
+			// glue.logInfo("phase 6: "+(t6-t5)+" ms")
+
+			// at this stage sequenceResult.rasScanResults contains absent / insufficient coverage variation scan results, 
+			// which is important for assessing whether the sequence has insufficient coverage overall for a given drug.
+			sequenceResult.drugScores = assessResistance(drugs, sequenceResult, resistanceLiteratureMap, false);
+
+			// now remove non-present variation scan results.
+			sequenceResult.rasScanResults = _.filter(sequenceResult.rasScanResults, function(scanResult) {
+				return scanResult.present;
+			});
+
+			// glue.log("FINE", "phdrReportingController.generateSingleFastaReport sequenceResult.drugScores:", sequenceResult.drugScores);
+
+			// var t7 = Java.type("java.lang.System").currentTimeMillis();
+			// glue.logInfo("phase 7: "+(t7-t6)+" ms")
+
+			_.each(sequenceResult.rasScanResults, function(scanResult) {
+				scanResult.rapUrl = "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
+				reportedPolymorphismKeys[scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure] = "thisCladeRAS";
+			});
+
+
+
+			sequenceResult.substitutionsOfInterest = [];
+			sequenceResult.sameGenotypeRasScanResults = sameGenotypeRasScanResults;
+			// glue.log("FINE", "phdrReportingController.generateSingleFastaReport sameGenotypeRasScanResults:", 
+			//		sequenceResult.sameGenotypeRasScanResults);
+			_.each(sequenceResult.sameGenotypeRasScanResults, function(scanResult) {
+				var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
+						scanResult.featureName, scanResult.variationName, resistanceLiteratureMap, false);
+				// glue.log("FINE", "phdrReportingController.generateSingleFastaReport rasFinding:", rasFinding);
+				scanResult.rasDetails = rasFinding.phdrRasVariation;
+				scanResult.reliesOnNonDefiniteAa = determineReliesOnNonDefiniteAa(scanResult, sequenceResult);
+				checkForSameGenotypeRas(genotypingResult, scanResult, reportedPolymorphismKeys, sequenceResult.substitutionsOfInterest, sequenceResult);
+			});
+
+			// var t8 = Java.type("java.lang.System").currentTimeMillis();
+			// glue.logInfo("phase 8: "+(t8-t7)+" ms")
+
+
+			sequenceResult.differentGenotypeRasScanResults = differentGenotypeRasScanResults;
+			// glue.log("FINE", "phdrReportingController.generateSingleFastaReport differentGenotypeRasScanResults:", 
+			// sequenceResult.differentGenotypeRasScanResults);
+			_.each(sequenceResult.differentGenotypeRasScanResults, function(scanResult) {
+				var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
+						scanResult.featureName, scanResult.variationName, resistanceLiteratureMap, false);
+				// glue.log("FINE", "phdrReportingController.generateSingleFastaReport rasFinding:", rasFinding);
+				scanResult.rasDetails = rasFinding.phdrRasVariation;
+				scanResult.reliesOnNonDefiniteAa = determineReliesOnNonDefiniteAa(scanResult, sequenceResult);
+				checkForDifferentGenotypeRas(genotypingResult, scanResult, reportedPolymorphismKeys, sequenceResult.substitutionsOfInterest, sequenceResult);
+			});
+
+			// var t9 = Java.type("java.lang.System").currentTimeMillis();
+			// glue.logInfo("phase 9: "+(t9-t8)+" ms")
+
+			sequenceResult.residuesAtRasAssociatedLocations = residuesAtRasAssociatedLocations;
+			// glue.log("FINE", "phdrReportingController.generateSingleFastaReport residuesAtRasAssociatedLocations", 
+			//		sequenceResult.residuesAtRasAssociatedLocations);
+			_.each(sequenceResult.residuesAtRasAssociatedLocations, function(residueObj) {
+				checkForWildTypeSubstitution(genotypingResult, residueObj, reportedPolymorphismKeys, sequenceResult.substitutionsOfInterest, sequenceResult);
+			});
+			// var t10 = Java.type("java.lang.System").currentTimeMillis();
+			// glue.logInfo("phase 10: "+(t10-t9)+" ms")
+
+			sequenceResult.visualisationHints = visualisationHints(queryNucleotides, targetRefName, genotypingResult, queryToTargetRefSegs, sequenceResult.rasScanResults);
+
+			// var t11 = Java.type("java.lang.System").currentTimeMillis();
+			// glue.logInfo("phase 11: "+(t11-t10)+" ms")
+
+
+			// glue.logInfo("prvrTime: "+prvrTime+" ms")
+
 		}
-	});
-	glue.log("FINE", "phdrReportingController.generateSingleFastaReport publicationIdToObj:", publicationIdToObj);
-	
-	var results = _.values(resultMap);
+	}
+	// glue.log("FINE", "phdrReportingController.generateSingleFastaReport publicationIdToObj:", publicationIdToObj);
+
 	var publications = _.values(publicationIdToObj);
 	publications = _.sortBy(publications, "index");
 
@@ -383,13 +485,13 @@ function generateSingleFastaReport(fastaMap, resultMap, fastaFilePath) {
 		phdrReport: {
 			sequenceDataFormat: "FASTA",
 			filePath: fastaFilePath,
-			sequenceResult: results[0], 
+			sequenceResult: sequenceResult, 
 			publications: publications
 		}
 	};
 	addOverview(phdrReport);
 
-	glue.log("FINE", "phdrReportingController.generateSingleFastaReport phdrReport:", phdrReport);
+	// glue.log("FINE", "phdrReportingController.generateSingleFastaReport phdrReport:", phdrReport);
 	return phdrReport;
 }
 
@@ -729,7 +831,7 @@ function getVariationWhereClauses(genotypingResult) {
 		sameGenotypeWhereClause: sameGenotypeWhereClause,
 		differentGenotypeWhereClause: differentGenotypeWhereClause,
 	};
-	glue.log("FINEST", "variationWhereClauses", variationWhereClauses);
+	// glue.log("FINEST", "variationWhereClauses", variationWhereClauses);
 	return variationWhereClauses;
 }
 
@@ -754,7 +856,7 @@ function addRasPublications(rasDetails, publicationIdToObj) {
 }
 
 function reportBam(bamFilePath, minReadProportionPct) {
-	glue.log("FINE", "phdrReportingController.reportBam invoked, input file:"+bamFilePath);
+	// glue.log("FINE", "phdrReportingController.reportBam invoked, input file:"+bamFilePath);
 	var phdrReport;
 	glue.inSession("samFileSession", ["phdrSamReporter", bamFilePath], function() {
 
@@ -867,7 +969,7 @@ function reportBam(bamFilePath, minReadProportionPct) {
 
 						var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
 								scanResult.featureName, scanResult.variationName, resistanceLiteratureMap, true);
-						glue.log("FINE", "phdrReportingController.reportBam rasFinding:", rasFinding);
+						// glue.log("FINE", "phdrReportingController.reportBam rasFinding:", rasFinding);
 						scanResult.rasDetails = rasFinding.phdrRasVariation;
 					});
 
@@ -891,7 +993,7 @@ function reportBam(bamFilePath, minReadProportionPct) {
 						}
 					});
 					
-					glue.log("FINE", "phdrReportingController.reportBam rasScanResults including absent:", samRefResult.rasScanResults);
+					// glue.log("FINE", "phdrReportingController.reportBam rasScanResults including absent:", samRefResult.rasScanResults);
 					// at this stage sequenceResult.rasScanResults contains absent / insufficient coverage variation scan results, 
 					// which is important for assessing whether the sequence has insufficient coverage overall for a given drug.
 					samRefResult.drugScores = assessResistance(drugs, samRefResult, resistanceLiteratureMap, true);
@@ -901,7 +1003,7 @@ function reportBam(bamFilePath, minReadProportionPct) {
 						return scanResult.present;
 					});
 
-					glue.log("FINE", "phdrReportingController.reportBam rasScanResults excluding absent:", samRefResult.rasScanResults);
+					// glue.log("FINE", "phdrReportingController.reportBam rasScanResults excluding absent:", samRefResult.rasScanResults);
 
 
 					_.each(samRefResult.rasScanResults, function(scanResult) {
@@ -914,43 +1016,43 @@ function reportBam(bamFilePath, minReadProportionPct) {
 
 					samRefResult.substitutionsOfInterest = [];
 					samRefResult.sameGenotypeRasScanResults = sameGenotypeRasScanResults;
-					glue.log("FINE", "phdrReportingController.reportBam sameGenotypeRasScanResults:", 
-							samRefResult.sameGenotypeRasScanResults);
+					// glue.log("FINE", "phdrReportingController.reportBam sameGenotypeRasScanResults:", 
+					//		samRefResult.sameGenotypeRasScanResults);
 					_.each(samRefResult.sameGenotypeRasScanResults, function(scanResult) {
 						var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
 								scanResult.featureName, scanResult.variationName, resistanceLiteratureMap, false);
-						glue.log("FINE", "phdrReportingController.reportBam rasFinding:", rasFinding);
+						// glue.log("FINE", "phdrReportingController.reportBam rasFinding:", rasFinding);
 						scanResult.rasDetails = rasFinding.phdrRasVariation;
 						checkForSameGenotypeRas(genotypingResult, scanResult, reportedPolymorphismKeys, samRefResult.substitutionsOfInterest);
 					});
 
 					samRefResult.differentGenotypeRasScanResults = differentGenotypeRasScanResults;
-					glue.log("FINE", "phdrReportingController.reportBam differentGenotypeRasScanResults:", 
-							samRefResult.differentGenotypeRasScanResults);
+					// glue.log("FINE", "phdrReportingController.reportBam differentGenotypeRasScanResults:", 
+					//		samRefResult.differentGenotypeRasScanResults);
 					_.each(samRefResult.differentGenotypeRasScanResults, function(scanResult) {
 						var rasFinding = getRasFinding(genotypingResult, scanResult.referenceName, 
 								scanResult.featureName, scanResult.variationName, resistanceLiteratureMap, false);
-						glue.log("FINE", "phdrReportingController.reportBam rasFinding:", rasFinding);
+						// glue.log("FINE", "phdrReportingController.reportBam rasFinding:", rasFinding);
 						scanResult.rasDetails = rasFinding.phdrRasVariation;
 						checkForDifferentGenotypeRas(genotypingResult, scanResult, reportedPolymorphismKeys, samRefResult.substitutionsOfInterest);
 					});
 
 					samRefResult.residuesAtRasAssociatedLocations = residuesAtRasAssociatedLocations;
-					glue.log("FINE", "phdrReportingController.reportBam residuesAtRasAssociatedLocations", 
-							samRefResult.residuesAtRasAssociatedLocations);
+					// glue.log("FINE", "phdrReportingController.reportBam residuesAtRasAssociatedLocations", 
+					//		samRefResult.residuesAtRasAssociatedLocations);
 					_.each(samRefResult.residuesAtRasAssociatedLocations, function(residueObj) {
 						checkForWildTypeSubstitution(genotypingResult, residueObj, reportedPolymorphismKeys, 
 								samRefResult.substitutionsOfInterest, samRefResult);
 					});
 
 
-					glue.log("FINE", "phdrReportingController.reportBam samRefResult.drugScores:", samRefResult.drugScores);
+					// glue.log("FINE", "phdrReportingController.reportBam samRefResult.drugScores:", samRefResult.drugScores);
 	
 				}
 				
 			}
 		});
-		glue.log("FINE", "phdrReportingController.reportBam publicationIdToObj:", publicationIdToObj);
+		// glue.log("FINE", "phdrReportingController.reportBam publicationIdToObj:", publicationIdToObj);
 	
 		var publications = _.values(publicationIdToObj);
 		publications = _.sortBy(publications, "index");
@@ -966,7 +1068,7 @@ function reportBam(bamFilePath, minReadProportionPct) {
 				}
 		};
 		addOverview(phdrReport);
-		glue.log("FINE", "phdrReportingController.reportBam phdrReport:", phdrReport);
+		// glue.log("FINE", "phdrReportingController.reportBam phdrReport:", phdrReport);
 		
 	});
 	
@@ -1221,12 +1323,17 @@ function assessResistanceForDrug(result, drug, resistanceLiteratureObj, useAaSpa
 	
 }
 
+//var prvrTime = 0;
+
 function getRasFinding(genotypingResult, referenceName, featureName, variationName, resistanceLiteratureMap, filterFindings) {
 	var rasFinding;
 	glue.inMode("/reference/"+referenceName+
 			"/feature-location/"+featureName+
 			"/variation/"+variationName, function() {
+// 		var t0 = Java.type("java.lang.System").currentTimeMillis();
 		rasFinding = glue.command(["render-object", "phdrRasVariationRenderer"]);
+// 		var t1 = Java.type("java.lang.System").currentTimeMillis();
+//		prvrTime += (t1-t0);
 	});
 
 	var genotypeAlmtName = genotypingResult.genotypeCladeCategoryResult.finalClade;
@@ -1394,7 +1501,7 @@ function genotypeFasta(fastaMap, resultMap, placerResultContainer) {
 				}
 			}).genotypingDocumentResult.queryGenotypingResults;
 		});
-		glue.log("FINE", "phdrReportingController.genotypeFasta genotypingResults:", genotypingResults);
+		// glue.log("FINE", "phdrReportingController.genotypeFasta genotypingResults:", genotypingResults);
 		_.each(genotypingResults, function(genotypingResult) {
 			genotypingResult.genotypeCladeCategoryResult = _.find(genotypingResult.queryCladeCategoryResult, 
 					function(cladeCategoryResult) { return cladeCategoryResult.categoryName == "genotype"; });
@@ -1415,8 +1522,8 @@ function genotypeFasta(fastaMap, resultMap, placerResultContainer) {
 			}
 				
 				
-			glue.log("FINE", "phdrReportingController.genotypeFasta genotypeCladeCategoryResult", genotypingResult.genotypeCladeCategoryResult);
-			glue.log("FINE", "phdrReportingController.genotypeFasta subtypeCladeCategoryResult", genotypingResult.subtypeCladeCategoryResult);
+			// glue.log("FINE", "phdrReportingController.genotypeFasta genotypeCladeCategoryResult", genotypingResult.genotypeCladeCategoryResult);
+			// glue.log("FINE", "phdrReportingController.genotypeFasta subtypeCladeCategoryResult", genotypingResult.subtypeCladeCategoryResult);
 			
 			
 			resultMap[genotypingResult.queryName].genotypingResult = genotypingResult;
@@ -1466,7 +1573,7 @@ function recogniseFasta(fastaMap, resultMap) {
 				}
 		}));
 	});
-	glue.log("FINE", "phdrReportingController.reportFasta recogniserResults:", recogniserResults);
+	// glue.log("FINE", "phdrReportingController.reportFasta recogniserResults:", recogniserResults);
 	_.each(recogniserResults, function(recogniserResult) {
 		if(recogniserResult.direction == 'FORWARD') {
 			resultMap[recogniserResult.querySequenceId].isForwardHcv = true;

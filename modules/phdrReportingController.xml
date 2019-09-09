@@ -11,12 +11,19 @@
 		</parameter>
 		<documentResultType/> 
 	</function>
-	
 	<function>
 		<name>reportFasta</name>
 		<parameter>
 			<name>fastaFilePath</name>
 			<pathCompleter/>
+		</parameter>
+		<documentResultType/> 
+	</function>
+	<function>
+		<name>generateSingleFastaReport</name>
+		<consumesDocument>true</consumesDocument>
+		<parameter>
+			<name>document</name>
 		</parameter>
 		<documentResultType/> 
 	</function>
