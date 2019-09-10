@@ -34,7 +34,7 @@ _.each(almtRasObjs, function(almtRasObj) {
 			polymorphism: almtRasObj["display_structure"],
 			combination: structureBits.length > 1 ? "Yes" : "No",
 			mixedWildtype: mixedWildtypeRas ? "Yes" : "No",
-			hcvGlueLink: "=HYPERLINK(\"http://hcv.glue.cvr.ac.uk/#/project/rap/"+almtRasObj["phdr_ras.gene"]+":"+almtRasObj["phdr_ras.structure"]+"\")",
+			hcvGlueLink: "=HYPERLINK(\"http://hcv-glue.cvr.gla.ac.uk/#/project/rap/"+almtRasObj["phdr_ras.gene"]+":"+almtRasObj["phdr_ras.structure"]+"\")",
 		});
 	}
 });

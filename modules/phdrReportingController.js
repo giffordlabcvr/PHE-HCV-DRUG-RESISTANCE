@@ -418,7 +418,7 @@ function generateSingleFastaReport(inputDocument) {
 			// glue.logInfo("phase 7: "+(t7-t6)+" ms")
 
 			_.each(sequenceResult.rasScanResults, function(scanResult) {
-				scanResult.rapUrl = "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
+				scanResult.rapUrl = "http://hcv-glue.cvr.gla.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
 				reportedPolymorphismKeys[scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure] = "thisCladeRAS";
 			});
 
@@ -584,7 +584,7 @@ function checkForSameGenotypeRas(genotypingResult, scanResult, reportedPolymorph
 	if(reportedPolymorphismKeys[polyKey] == null) {
 		var rsgObj = {};
 		rsgObj.virusProtein = scanResult.rasDetails.gene;
-		rsgObj.rapUrl = "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
+		rsgObj.rapUrl = "http://hcv-glue.cvr.gla.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
 		rsgObj.displayStructure = computeDisplayStructure(scanResult.rasDetails.gene, scanResult.rasDetails.structure, almtName);
 		rsgObj.reasonForInterest = "rap_in_same_gt";
 		rsgObj.displayReasonForInterest = "Associated with resistance in other subtypes of "+gtDisplayClade;
@@ -613,7 +613,7 @@ function checkForDifferentGenotypeRas(genotypingResult, scanResult, reportedPoly
 	if(reportedPolymorphismKeys[polyKey] == null) {
 		var rdgObj = {};
 		rdgObj.virusProtein = scanResult.rasDetails.gene;
-		rdgObj.rapUrl = "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
+		rdgObj.rapUrl = "http://hcv-glue.cvr.gla.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
 		rdgObj.displayStructure = computeDisplayStructure(scanResult.rasDetails.gene, scanResult.rasDetails.structure, almtName);
 		rdgObj.reasonForInterest = "rap_in_different_gt";
 		rdgObj.displayReasonForInterest = "Associated with resistance in genotypes other than "+gtDisplayClade;
@@ -1007,7 +1007,7 @@ function reportBam(bamFilePath, minReadProportionPct) {
 
 
 					_.each(samRefResult.rasScanResults, function(scanResult) {
-						scanResult.rapUrl = "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
+						scanResult.rapUrl = "http://hcv-glue.cvr.gla.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure;
 						reportedPolymorphismKeys[scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure] = "confirmed_rap";
 
 					});
@@ -1182,7 +1182,7 @@ function assessResistanceForDrug(result, drug, resistanceLiteratureObj, useAaSpa
 							key: key,
 							structure: scanResult.rasDetails.structure,
 							displayStructure: alignmentRas.displayStructure,
-							rapUrl: "http://hcv.glue.cvr.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure,
+							rapUrl: "http://hcv-glue.cvr.gla.ac.uk/#/project/rap/"+scanResult.rasDetails.gene+":"+scanResult.rasDetails.structure,
 							category: alignmentRasDrug.resistanceCategory,
 							displayCategory: alignmentRasDrug.displayCategory,
 							reliesOnNonDefiniteAa: scanResult.reliesOnNonDefiniteAa
