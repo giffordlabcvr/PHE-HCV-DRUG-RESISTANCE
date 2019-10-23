@@ -347,7 +347,7 @@ Category III: <em>in vitro</em> level &ge; 5</li>
 Resistance detected: any category I polymorphisms.
 Probable resistance detected: any category II polymorphisms. 
 Possible resistance detected: any category III polymorphisms. 
-No signficant resistance detected: none of the above.
+No significant resistance detected: none of the above.
 </li>
 <#if phdrReport.sequenceDataFormat = "FASTA" && result.reliesOnNonDefiniteAa>
 <li>&dagger;&nbsp; The FASTA nucleotide sequence is ambiguous at a resistance-associated location. 

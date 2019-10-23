@@ -1261,7 +1261,7 @@ function assessResistanceForDrug(result, drug, resistanceLiteratureObj, useAaSpa
 	// Resistance detected:					Any category I RASs.
 	// Probable resistance detected:		Any category II RAS.
 	// Possible resistance detected:		Any category III RAS.
-	// No signficant resistance detected:	None of the above.
+	// No significant resistance detected:	None of the above.
 	
 	
 	var numCategoryI = rasScores_category_I.length;
