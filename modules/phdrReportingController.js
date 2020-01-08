@@ -1437,7 +1437,7 @@ function genotypeFasta(fastaMap, resultMap, placerResultContainer) {
 
 		// run the placer and generate a placer result document
 		var placerResultDocument;
-		glue.inMode("module/maxLikelihoodPlacer", function() {
+		glue.inMode("module/hcvMaxLikelihoodPlacer", function() {
 			placerResultDocument = glue.command({
 				"place": {
 					"fasta-document": {
@@ -1455,7 +1455,7 @@ function genotypeFasta(fastaMap, resultMap, placerResultContainer) {
 		
 		// list the query summaries within the placer result document
 		var placementSummaries;
-		glue.inMode("module/maxLikelihoodPlacer", function() {
+		glue.inMode("module/hcvMaxLikelihoodPlacer", function() {
 			placementSummaries = glue.tableToObjects(glue.command({
 				"list": {
 					"query-from-document": {
@@ -1472,7 +1472,7 @@ function genotypeFasta(fastaMap, resultMap, placerResultContainer) {
 			var placements;
 			
 			// list the placements for that query.
-			glue.inMode("module/maxLikelihoodPlacer", function() {
+			glue.inMode("module/hcvMaxLikelihoodPlacer", function() {
 				placements = glue.tableToObjects(glue.command({
 					"list": {
 						"placement-from-document": {
@@ -1491,7 +1491,7 @@ function genotypeFasta(fastaMap, resultMap, placerResultContainer) {
 
 		
 		var genotypingResults;
-		glue.inMode("module/maxLikelihoodGenotyper", function() {
+		glue.inMode("module/hcvMaxLikelihoodGenotyper", function() {
 			genotypingResults = glue.command({
 				"genotype": {
 					"placer-result-document": {

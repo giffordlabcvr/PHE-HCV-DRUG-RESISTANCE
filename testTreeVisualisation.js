@@ -42,7 +42,7 @@ var minNeighboursToShow = 15;
 
 
 // generate a tree for the placement, as a command document.
-glue.inMode("module/maxLikelihoodPlacer", function() {
+glue.inMode("module/hcvMaxLikelihoodPlacer", function() {
 	glueTree = glue.command({
 			"export": {
 				"placement-from-document": {
@@ -59,7 +59,7 @@ glue.inMode("module/maxLikelihoodPlacer", function() {
 
 var neighbourObjs;
 
-glue.inMode("module/maxLikelihoodPlacer", function() {
+glue.inMode("module/hcvMaxLikelihoodPlacer", function() {
 	neighbourObjs = glue.tableToObjects(glue.command({
 			"list": {
 				"neighbour-from-document": {

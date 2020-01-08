@@ -60,7 +60,7 @@ function visualisePhyloAsSvg(document) {
 	var placerResult = document.inputDocument.placerResult;
 	
 	// generate a tree for the placement, as a command document.
-	glue.inMode("module/maxLikelihoodPlacer", function() {
+	glue.inMode("module/hcvMaxLikelihoodPlacer", function() {
 		glueTree = glue.command({
 				"export": {
 					"placement-from-document": {
@@ -77,7 +77,7 @@ function visualisePhyloAsSvg(document) {
 
 	var neighbourObjs;
 
-	glue.inMode("module/maxLikelihoodPlacer", function() {
+	glue.inMode("module/hcvMaxLikelihoodPlacer", function() {
 		neighbourObjs = glue.tableToObjects(glue.command({
 				"list": {
 					"neighbour-from-document": {
