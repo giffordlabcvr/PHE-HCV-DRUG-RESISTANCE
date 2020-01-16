@@ -1,4 +1,5 @@
-run script glue/phdrLoadTypicalAas.js
+#Had to temporarily comment this out as the json refers to alignments that no longer exist such as AL_1_unassigned_KJ439779
+#run script glue/phdrLoadTypicalAas.js
 
 run script glue/phdrLoadDrugs.js
 
