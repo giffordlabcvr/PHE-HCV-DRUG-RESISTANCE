@@ -8,6 +8,7 @@ var almtNames = glue.getTableColumn(glue.command(["list", "alignment", "-w", "re
 var almtNameToFreqs = {};
 
 _.each(almtNames, function(almtName) {
+	glue.log("FINEST", "Generating alignment frequencies from "+almtName);
 	glue.inMode("/alignment/"+almtName, function() {
 		var freqObjs = glue.tableToObjects(glue.command(["amino-acid", "frequency", 
 			"--recursive", 
@@ -15,6 +16,7 @@ _.each(almtNames, function(almtName) {
 			"--almtColsSelector", "phdrRasPositionColumnsSelector"]));
 		almtNameToFreqs[almtName] = freqObjs;
 	});
+	glue.command(["new-context"]);
 });
 
 glue.command(["file-util", "save-string", JSON.stringify(almtNameToFreqs, null, 2), "tabular/formatted/typicalAas.json"]);
